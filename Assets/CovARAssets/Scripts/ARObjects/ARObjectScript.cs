@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
@@ -14,7 +15,7 @@ public class ARObjectScript : MonoBehaviour
     [SerializeField] private E_ARObjectStates _ARObjectState;
 
     [Header("ARObject parts: (Automatic)")]
-    [SerializeField] private List<St_ARObjectPart> _ARObjectPartsList = new();
+    [SerializeField] private List<St_ARObjectPart> _ARObjectSpecificPartsList = new();
 
     [Header("ARObjectManager reference: ")]
     [SerializeField] private ARObjectManager _ARObjectManager;
@@ -36,46 +37,82 @@ public class ARObjectScript : MonoBehaviour
         ARObjectBehaviour();
     }
 
-    //////////////////////////////////////////////////////////////////////// INIT ////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////// INIT ////////////////////////////////////////////////////////////
 
-    void InitARObjectScript()
+    public void InitARObjectScript()
     {
-        _ARObjectPartsList = new List<St_ARObjectPart>(); // Inicialitzem
-        SetARObjectPartsList(this.gameObject);
+        _ARObjectSpecificPartsList = new List<St_ARObjectPart>(); // Inicialitzem
+        SetARObjectPartsList();
+
         _ARObjectManager = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
         _HUDManagerScrit = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
     }
 
-    void TraverseAndGetTheObjectPart(Transform parent)
+    void SetARObjectPartsList()
     {
-        foreach (Transform child in parent)
+        // Busquem els components en els fills de manera optimitzada al Start
+        ARObjectPartScript[] allPartsInChilds = GetComponentsInChildren<ARObjectPartScript>(true);
+
+        // Guardem tot usant LINQ a la llista
+        _ARObjectSpecificPartsList = allPartsInChilds.Select(part => new St_ARObjectPart
         {
-            var partScript = child.GetComponent<ARObjectPartScript>();
-            if (partScript != null)
+            _ARObjectPartType = part.GetARObjectPartData()._ARObjectPartType,
+            _ARObjectPartReference = part.gameObject
+        }).ToList();
+    }
+
+    // ==========================================
+    // AFEGIT: FUNCIONS DINÀMIQUES DEL SCRIPT NOU
+    // ==========================================
+
+    public void AddObjectToARObjectPartsList(GameObject objToRegister, bool checkIfUnique = true)
+    {
+        var partScripts = objToRegister.GetComponentsInChildren<ARObjectPartScript>();
+
+        foreach (var partScript in partScripts)
+        {
+            // Passem el bool a la funció de processament
+            ProcessSinglePart(partScript, checkIfUnique);
+        }
+    }
+
+    private void ProcessSinglePart(ARObjectPartScript partScript, bool checkIfUnique)
+    {
+        if (partScript == null) return;
+
+        if (partScript.GetARGeneralObjectPart() == E_ARObjectGeneralParts.PoolSpecificPart)
+        {
+            // COMPROVACIÓ D'OBJECTE REPETIT
+            // Busquem si algun element de la llista ja té exactament la mateixa referència de GameObject
+            bool alreadyExists = _ARObjectSpecificPartsList.Exists(item => item._ARObjectPartReference == partScript.gameObject);
+
+            if (!alreadyExists)
             {
-                // Crear còpia nova de les dades que té el script
-                St_ARObjectPart copiedPart = new St_ARObjectPart
+                St_ARObjectPart newPart = new St_ARObjectPart
                 {
                     _ARObjectPartType = partScript.GetARObjectPartData()._ARObjectPartType,
                     _ARObjectPartReference = partScript.gameObject
                 };
 
-                _ARObjectPartsList.Add(copiedPart);
+                _ARObjectSpecificPartsList.Add(newPart);
             }
-
-            // Recursivitat
-            TraverseAndGetTheObjectPart(child);
         }
     }
 
-    void SetARObjectPartsList(GameObject arObject)
+    public void RemoveObjectFromARPartsList(GameObject objToRemove)
     {
-        TraverseAndGetTheObjectPart(arObject.transform);
+        // Utilitzem RemoveAll per netejar qualsevol entrada que coincideixi amb aquest GameObject
+        int removedCount = _ARObjectSpecificPartsList.RemoveAll(item => item._ARObjectPartReference == objToRemove);
+
+        if (removedCount > 0)
+        {
+            //Debug.Log($"S'han eliminat {removedCount} referències de l'objecte {objToRemove.name}");
+        }
     }
 
-   
+    // ==========================================
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////// GETTER //////////////////////////////////////////////////////////////////////////
 
@@ -88,7 +125,7 @@ public class ARObjectScript : MonoBehaviour
         return _ARObjectState;
     }
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////////// SETTER ////////////////////////////////////////////////////////////////////////////
 
@@ -98,17 +135,17 @@ public class ARObjectScript : MonoBehaviour
     }
 
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////// STATE MACHINE //////////////////////////////////////////////////////////////////////////
 
     void ARObjectBehaviour()
     {
-        switch(_ARObjectState)
+        switch (_ARObjectState)
         {
             case E_ARObjectStates.DefaultState: break;
             case E_ARObjectStates.MovingState: ARObjectMovingXZAxisBehaviour(); break;
-            case E_ARObjectStates.RotatingState: RotateYAxisARObject();  break;
+            case E_ARObjectStates.RotatingState: RotateYAxisARObject(); break;
             case E_ARObjectStates.ReSizeingState: break;
         }
     }
@@ -161,8 +198,7 @@ public class ARObjectScript : MonoBehaviour
         Vector3 worldPos = _ARObjectManager.GetARCamera().ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, objectDistance));
         Vector3 targetPos = new Vector3(worldPos.x, fixedY, worldPos.z);
 
-        float speed = 200f;
-        this.transform.position = Vector3.MoveTowards(this.transform.position, targetPos, speed * Time.deltaTime);
+        this.transform.position = Vector3.Lerp(this.transform.position, targetPos, Time.deltaTime * 15f);
     }
 
     void StopDragging()
@@ -196,31 +232,28 @@ public class ARObjectScript : MonoBehaviour
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////////////////////////// ROTATE /////////////////////////////////////////////////////////////////////////////
-    
+
     GameObject GetRotationSlider()
     {
         GameObject myRotationSlider = null;
 
-        if(_HUDManagerScrit.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel").Count != 0)
+        if (_HUDManagerScrit.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel").Count != 0)
         {
             foreach (GameObject slider in _HUDManagerScrit.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel"))
             {
-                if(slider.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Slider)
+                if (slider.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Slider)
                 {
                     myRotationSlider = slider;
                 }
             }
-                
         }
-       
+
         return myRotationSlider;
     }
 
-
-
     void RotateYAxisARObject()
     {
-        if(GetRotationSlider())
+        if (GetRotationSlider())
         {
             float _YValueRot = GetRotationSlider().GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult;
             this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, _YValueRot, this.transform.localEulerAngles.z);
@@ -230,7 +263,6 @@ public class ARObjectScript : MonoBehaviour
             Debug.LogError("ARObjectScript -> Error alhora d'agafar el slider de rotació... (Alvaro)");
         }
     }
-
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

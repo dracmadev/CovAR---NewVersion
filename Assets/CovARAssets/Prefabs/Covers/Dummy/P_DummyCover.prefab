@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 2597907075448245835}
   - component: {fileID: 159741702838371422}
   - component: {fileID: 3877578488204713651}
+  - component: {fileID: 8557671946790455109}
   m_Layer: 0
   m_Name: FootRight
   m_TagString: Untagged
@@ -216,6 +217,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8557671946790455109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379300742449423321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectPartData:
+    _ARObjectPartType: 0
+    _ARObjectPartReference: {fileID: 0}
+  _CurrentARObject: {fileID: 0}
 --- !u!1 &2509726430463764127
 GameObject:
   m_ObjectHideFlags: 0
