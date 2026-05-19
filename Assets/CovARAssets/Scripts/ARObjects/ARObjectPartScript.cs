@@ -78,16 +78,12 @@ public class ARObjectPartScript : MonoBehaviour
             _ARObjectManager = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
         }
 
-        AddAndDeleteARObjectPartsList(E_ARObjectParts.Lights, true);
-        AddAndDeleteARObjectPartsList(E_ARObjectParts.Skimmer, true);
-
-
+      
     }
 
     private void OnDestroy()
     {
-        AddAndDeleteARObjectPartsList(E_ARObjectParts.Lights, false);
-        AddAndDeleteARObjectPartsList(E_ARObjectParts.Skimmer, false);
+       
     }
 
     void AddAndDeleteARObjectPartsList(E_ARObjectParts part, bool add)

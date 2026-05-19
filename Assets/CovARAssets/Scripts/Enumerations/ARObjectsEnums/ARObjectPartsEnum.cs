@@ -3,17 +3,14 @@ using System;
 public enum E_ARObjectParts
 { 
    None = 0,
-   Water,
-   Shelf,
-   PoolBody,
-   Floor,
-   DepthMask,
-   Staircase,
-   Deck,
-   ShelfExtension,
-   Lights,
-   Ladders,
-   OtherParts,
-   ShelfCorner,
-   Skimmer,
+    FootRight = 1,
+    FootLeft = 2,
+    CoverAxis = 3,
+    Lama = 4,
+    UpCoverPlane = 5,
+    FrontCoverPlane = 6,
+    BackCoverPlane = 7,
+    Rails = 8,
+    ExamplePool = 9,
+
 }
