@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: bab18ae074ab4b1479ac4c8b907592dd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298099
+  packageName: Mesh Pivot Updater
+  packageVersion: 1.0.0
+  assetPath: Packages/com.lamou.meshpivotupdater/Editor/Inspector/MeshSaverEditor.cs
+  uploadId: 697478

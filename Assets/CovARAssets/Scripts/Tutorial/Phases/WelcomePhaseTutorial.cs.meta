@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: af61f49fcd6feaf47ac5a3e666708965
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - messageTextPrefab: {fileID: 8350128789667776494, guid: d69717392d0e31049a2cd78e8a7e2396,
+      type: 3}
+  - messageTextWithNextPrefab: {fileID: 8350128789667776494, guid: d69717392d0e31049a2cd78e8a7e2396,
+      type: 3}
+  - pointerArrowPrefab: {fileID: 9029882760996853917, guid: bb221b5784697d44883672fbd6beb4d2,
+      type: 3}
+  - messageTextPrefab_PoolMaker: {fileID: 8350128789667776494, guid: 7cf4b0d704ab05c47b7ac5ef4e24caf4,
+      type: 3}
+  - messageTextWithNextPrefab_PoolMaker: {fileID: 8350128789667776494, guid: 7cf4b0d704ab05c47b7ac5ef4e24caf4,
+      type: 3}
+  - pointerArrowPrefab_PoolMaker: {fileID: 9029882760996853917, guid: f8b1ae2e8bf891041b424007f85886a2,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 198cf778437393e49b29fa799d98d628
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298099
+  packageName: Mesh Pivot Updater
+  packageVersion: 1.0.0
+  assetPath: Packages/com.lamou.meshpivotupdater/Editor/MeshPivotUpdaterEditor.asmdef
+  uploadId: 697478

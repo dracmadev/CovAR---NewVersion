@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: babf71d6b752b174b998d729afe147d2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - messageTextPrefab: {fileID: 8350128789667776494, guid: 6fbe024118977af4e913ec236fc8f0ce,
+      type: 3}
+  - messageTextWithNextPrefab: {fileID: 8350128789667776494, guid: 65c003d2c679b694fada3111399bfd7e,
+      type: 3}
+  - pointerArrowPrefab: {fileID: 9029882760996853917, guid: bb221b5784697d44883672fbd6beb4d2,
+      type: 3}
+  - messageTextPrefab_PoolMaker: {fileID: 8350128789667776494, guid: 2a1467189558f1149bd1f49cd1abd892,
+      type: 3}
+  - messageTextWithNextPrefab_PoolMaker: {fileID: 8350128789667776494, guid: 5f9b54efacc83c84bb67fcf85fce0f71,
+      type: 3}
+  - pointerArrowPrefab_PoolMaker: {fileID: 9029882760996853917, guid: f8b1ae2e8bf891041b424007f85886a2,
+      type: 3}
+  - saveButton: {instanceID: 0}
+  - confirmSaveButton: {instanceID: 0}
+  - closeSavePopupButton: {instanceID: 0}
+  - blueprintButton: {instanceID: 0}
+  - closeBlueprint: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

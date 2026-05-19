@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d265c4352ac51a540ad0bacce25ed2ec
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298099
+  packageName: Mesh Pivot Updater
+  packageVersion: 1.0.0
+  assetPath: Packages/com.lamou.meshpivotupdater/Editor/Stage/MeshViewStage.cs
+  uploadId: 697478
