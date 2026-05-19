@@ -647,6 +647,44 @@ public class UIAnimationComponent : MonoBehaviour
                 }
 
                 break;
+
+            case E_SelectedButtonMode.SetPositionByOffsetANDChangeColor:
+               
+                if (_UIBehaviourComponent != null)
+                {
+                    if (_UIBehaviourComponent.GetButtonIsSelectedState())
+                    {
+                        myButton.image.color = UI_ButtonOnSelectedData._OnSelectedColor;
+
+                        if (_UIBehaviourComponent.GetButtonBehaviourData().bButtonInMobileMode) //MOBILE
+                        {
+                            SelectedAnimOnMobileMode();
+                        }
+                        else //NORMAL
+                        {
+                            SelectedAnim();
+                        }
+
+                        _HUDManagerScrit.DeselectAllUIFromSpecificPanel(this.gameObject);
+                    }
+                    else
+                    {
+                        myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
+                        if (UI_ButtonOnSelectedData.DeselectWhenYouClick)
+                        {
+                            if (_UIBehaviourComponent.GetButtonBehaviourData().bButtonInMobileMode) //MOBILE
+                            {
+                                DeselectAnimOnMobileMode();
+                            }
+                            else //NORMAL
+                            {
+                                DeselectAnim();
+                            }
+
+                        }
+                    }
+                }
+                break;
         }
         
     }
@@ -677,6 +715,21 @@ public class UIAnimationComponent : MonoBehaviour
 
                     if (_UIBehaviourComponent != null)
                     {
+                        myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
+                    }
+                    break;
+                case E_SelectedButtonMode.SetPositionByOffsetANDChangeColor:
+                    if (_UIBehaviourComponent != null)
+                    {
+                        if (_UIBehaviourComponent.GetButtonBehaviourData().bButtonInMobileMode) //MOBILE
+                        {
+                            DeselectAnimOnMobileMode();
+                        }
+                        else //NORMAL
+                        {
+                            DeselectAnim();
+                        }
+
                         myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
                     }
                     break;

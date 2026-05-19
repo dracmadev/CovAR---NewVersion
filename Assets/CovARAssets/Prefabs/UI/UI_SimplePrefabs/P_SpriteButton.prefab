@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -693, y: -625}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1871111117455260839
 CanvasRenderer:
@@ -140,13 +140,14 @@ MonoBehaviour:
   mySlider: {fileID: 0}
   myInputField: {fileID: 0}
   myText: {fileID: 0}
+  animationType: 0
   UI_ComponentStruct:
-    animationType: 0
     animationDuration: 0
     appearEase: 0
     disapearEase: 0
     hiddenPositionOnXAxis: 0
     offsetPositionOnXAxisForMobileMode: 0
+    offsetPositionOnYAxisForMobileMode: 0
     hiddenPositionOnYAxis: 0
     bDontStartHide: 0
   UI_ButtonOnClickAnimType: 1
@@ -160,6 +161,16 @@ MonoBehaviour:
   UI_ButtonOnClickSwipeStruct:
     animationDuration: 0.2
     bDontDoFlipFlop: 0
+  UI_ButtonOnSelectedData:
+    bActiveSelectedState: 0
+    bStartSelected: 0
+    DeselectWhenYouClick: 0
+    _SelectButtonMode: 0
+    offsetPositionOnXAxisForSelectedMode: 0
+    _OnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _OnSelectedSprite: {fileID: 0}
+    _UnSelectedSprite: {fileID: 0}
   UI_InputFieldStruct:
     animDuration: 0
     shakeStrenght: 0
@@ -199,13 +210,21 @@ MonoBehaviour:
     popUpTitle: 
     popUpContentList: []
     defaultPopUpRef: {fileID: 0}
+    bUseAnimation: 0
+    _AnimCont: {fileID: 0}
   buttonType: 3
+  inputFieldType: 0
   St_InputFieldBehaviourData:
-    inputFieldType: 0
     _min: 0
     _max: 0
+    _maxLenght: 0
     bRemeberMe: 0
     playerPrefName: 
+    _eyeGameObj: {fileID: 0}
+    _eyeOpen: {fileID: 0}
+    _eyeClosed: {fileID: 0}
+    _eyeClosedColor: {r: 0, g: 0, b: 0, a: 0}
+    _eyeOpenColor: {r: 0, g: 0, b: 0, a: 0}
     key: 
   St_DropdownBehaviourData:
     bOptionsManually: 0
@@ -218,10 +237,26 @@ MonoBehaviour:
     sliderMin: 0
     sliderMax: 0
     sliderResult: 0
+  St_ToggleBehaviourScript:
+    _OnActiveToggle: {fileID: 0}
+    _UnActiveToggle: {fileID: 0}
+    _OnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    bCurrentToggleState: 0
+    bDependsOnPlayerPref: 0
+    _PlayerPref: 
   St_DefaultPopUpBehaviourData:
     _PopUpTitle: {fileID: 0}
     _PopUpDescription: {fileID: 0}
     _PopUpImage: {fileID: 0}
     _PopUpButtonsList: []
+    _PopUpAnimator: {fileID: 0}
     popUpTitle: 
     popUpContentList: []
+  bPremiumBehaviour: 0
+  _UIPremiumBehaviour:
+    bOnlyForPremiumUsers: 0
+    _ImageDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _GetPremiumButton: {fileID: 0}
+  bFeatureNotAviable: 0

@@ -535,7 +535,6 @@ public class HUDManagerScript : MonoBehaviour
 
     void TraverseAndDeselect(Transform parent, GameObject myself)
     {
-   
         foreach (Transform child in parent)
         {
             var anim = child.GetComponent<UIAnimationComponent>();
@@ -543,7 +542,7 @@ public class HUDManagerScript : MonoBehaviour
             {
                 child.GetComponent<UIBehaviourComponent>().SetButtonSelectedState(false);
                 anim.DesSelectButton();
-                //Debug.Log("[UnSelect] -> " + child.name);
+               // Debug.Log("[UnSelect] -> " + child.name);
             }
 
             // Recórrer recursivament *aquesta mateixa funció*

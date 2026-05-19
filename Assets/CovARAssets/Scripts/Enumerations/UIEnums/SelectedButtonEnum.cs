@@ -6,5 +6,6 @@ public enum E_SelectedButtonMode
     SetPositionByOffset = 0,
     ChangeColor = 1,
     SetSprite = 2,
-    None = 3
+    None = 3,
+    SetPositionByOffsetANDChangeColor = 4,
 }

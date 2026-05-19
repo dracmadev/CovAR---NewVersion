@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 98, y: 0}
-  m_SizeDelta: {x: 195, y: 150}
+  m_AnchoredPosition: {x: 160, y: 0}
+  m_SizeDelta: {x: 200, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8023104623467379314
 MonoBehaviour:
@@ -51,16 +51,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -99,7 +99,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 175, y: 125}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &942258629587862330
 CanvasRenderer:
@@ -129,9 +129,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 8e22082562b0da74c8f85ac49ae92e84, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -156,7 +156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1154155122089214749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -171,9 +171,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 757786076303192423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -137.5}
   m_SizeDelta: {x: 195, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6883729171879981437
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Image button
+  m_text: MOVE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -242,6 +242,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -337,16 +338,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.72156864, b: 0.8627451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b6502d7fd5277264b9d94da6a0d0b690, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7b97abd677673144bd0d6bf5ceb19c4, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -373,13 +374,13 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
-    m_NormalColor: {r: 0.84705883, g: 0.84705883, b: 0.84705883, a: 1}
-    m_HighlightedColor: {r: 0.84705883, g: 0.84705883, b: 0.84705883, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.84705883, g: 0.84705883, b: 0.84705883, a: 1}
-    m_DisabledColor: {r: 0.84705883, g: 0.84705883, b: 0.84705883, a: 0.19215687}
+    m_NormalColor: {r: 0, g: 0.75686276, b: 0.8745098, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.75686276, b: 0.8745098, a: 1}
+    m_PressedColor: {r: 0.052954797, g: 0.5786614, b: 0.6603774, a: 1}
+    m_SelectedColor: {r: 0, g: 0.75686276, b: 0.8745098, a: 1}
+    m_DisabledColor: {r: 0, g: 0.75686276, b: 0.8745098, a: 0.18431373}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -399,15 +400,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MoveBonesTestCode, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_TargetAssemblyTypeName: ARObjectManager, Assembly-CSharp
+        m_MethodName: SetCurrentARObjectState
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MovingState
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &7994064633840285418
@@ -430,11 +431,12 @@ MonoBehaviour:
   myText: {fileID: 0}
   animationType: 2
   UI_ComponentStruct:
-    animationDuration: 0.3
+    animationDuration: 0.2
     appearEase: 27
     disapearEase: 26
     hiddenPositionOnXAxis: 450
     offsetPositionOnXAxisForMobileMode: 75
+    offsetPositionOnYAxisForMobileMode: 0
     hiddenPositionOnYAxis: 350
     bDontStartHide: 0
   UI_ButtonOnClickAnimType: 1
@@ -449,8 +451,15 @@ MonoBehaviour:
     animationDuration: 0
     bDontDoFlipFlop: 0
   UI_ButtonOnSelectedData:
-    bActiveSelectedState: 0
+    bActiveSelectedState: 1
+    bStartSelected: 0
+    DeselectWhenYouClick: 0
+    _SelectButtonMode: 4
     offsetPositionOnXAxisForSelectedMode: 75
+    _OnSelectedColor: {r: 0.78039217, g: 0.9529412, b: 0.9843137, a: 1}
+    _UnSelectedColor: {r: 0, g: 0.72156864, b: 0.86274517, a: 1}
+    _OnSelectedSprite: {fileID: 0}
+    _UnSelectedSprite: {fileID: 0}
   UI_InputFieldStruct:
     animDuration: 0
     shakeStrenght: 0
@@ -478,7 +487,7 @@ MonoBehaviour:
   St_ButtonBehaviourData:
     _buttonText: {fileID: 0}
     _buttonImage: {fileID: 0}
-    bShowText: 1
+    bShowText: 0
     bChangeImage: 0
     _buttonImageChanged: {fileID: 21300000, guid: f0d9bcb0daf31468385cd551f205df5a,
       type: 3}
@@ -493,6 +502,8 @@ MonoBehaviour:
     - popUpImage: {fileID: 21300000, guid: f0d9bcb0daf31468385cd551f205df5a, type: 3}
       popUpDescription: Look! An astrounaut
     defaultPopUpRef: {fileID: 0}
+    bUseAnimation: 0
+    _AnimCont: {fileID: 0}
   buttonType: 0
   inputFieldType: 0
   St_InputFieldBehaviourData:
@@ -501,6 +512,11 @@ MonoBehaviour:
     _maxLenght: 0
     bRemeberMe: 0
     playerPrefName: 
+    _eyeGameObj: {fileID: 0}
+    _eyeOpen: {fileID: 0}
+    _eyeClosed: {fileID: 0}
+    _eyeClosedColor: {r: 0, g: 0, b: 0, a: 0}
+    _eyeOpenColor: {r: 0, g: 0, b: 0, a: 0}
     key: 
   St_DropdownBehaviourData:
     bOptionsManually: 0
@@ -513,10 +529,26 @@ MonoBehaviour:
     sliderMin: 0
     sliderMax: 0
     sliderResult: 0
+  St_ToggleBehaviourScript:
+    _OnActiveToggle: {fileID: 0}
+    _UnActiveToggle: {fileID: 0}
+    _OnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    bCurrentToggleState: 0
+    bDependsOnPlayerPref: 0
+    _PlayerPref: 
   St_DefaultPopUpBehaviourData:
     _PopUpTitle: {fileID: 0}
     _PopUpDescription: {fileID: 0}
     _PopUpImage: {fileID: 0}
     _PopUpButtonsList: []
+    _PopUpAnimator: {fileID: 0}
     popUpTitle: 
     popUpContentList: []
+  bPremiumBehaviour: 0
+  _UIPremiumBehaviour:
+    bOnlyForPremiumUsers: 0
+    _ImageDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _GetPremiumButton: {fileID: 0}
+  bFeatureNotAviable: 0
