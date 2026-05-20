@@ -137,15 +137,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7803922, g: 0.95294124, b: 0.9843138, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7f4340a7028ffaf40b1e6432241bb2c1, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -179,8 +179,7 @@ MonoBehaviour:
     disapearEase: 26
     hiddenPositionOnXAxis: 0
     offsetPositionOnXAxisForMobileMode: 0
-    offsetPositionOnXAxisForSelectedMode: 0
-    _UIElementsToCheckForSelectedState: []
+    offsetPositionOnYAxisForMobileMode: 0
     hiddenPositionOnYAxis: 0
     bDontStartHide: 0
   UI_ButtonOnClickAnimType: 0
@@ -194,6 +193,16 @@ MonoBehaviour:
   UI_ButtonOnClickSwipeStruct:
     animationDuration: 0
     bDontDoFlipFlop: 0
+  UI_ButtonOnSelectedData:
+    bActiveSelectedState: 0
+    bStartSelected: 0
+    DeselectWhenYouClick: 0
+    _SelectButtonMode: 0
+    offsetPositionOnXAxisForSelectedMode: 0
+    _OnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _OnSelectedSprite: {fileID: 0}
+    _UnSelectedSprite: {fileID: 0}
   UI_InputFieldStruct:
     animDuration: 0
     shakeStrenght: 0
@@ -233,6 +242,8 @@ MonoBehaviour:
     popUpTitle: 
     popUpContentList: []
     defaultPopUpRef: {fileID: 0}
+    bUseAnimation: 0
+    _AnimCont: {fileID: 0}
   buttonType: 0
   inputFieldType: 0
   St_InputFieldBehaviourData:
@@ -241,6 +252,11 @@ MonoBehaviour:
     _maxLenght: 0
     bRemeberMe: 0
     playerPrefName: 
+    _eyeGameObj: {fileID: 0}
+    _eyeOpen: {fileID: 0}
+    _eyeClosed: {fileID: 0}
+    _eyeClosedColor: {r: 0, g: 0, b: 0, a: 0}
+    _eyeOpenColor: {r: 0, g: 0, b: 0, a: 0}
     key: 
   St_DropdownBehaviourData:
     bOptionsManually: 0
@@ -253,13 +269,29 @@ MonoBehaviour:
     sliderMin: 0
     sliderMax: 0
     sliderResult: 0
+  St_ToggleBehaviourScript:
+    _OnActiveToggle: {fileID: 0}
+    _UnActiveToggle: {fileID: 0}
+    _OnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    bCurrentToggleState: 0
+    bDependsOnPlayerPref: 0
+    _PlayerPref: 
   St_DefaultPopUpBehaviourData:
     _PopUpTitle: {fileID: 0}
     _PopUpDescription: {fileID: 0}
     _PopUpImage: {fileID: 0}
     _PopUpButtonsList: []
+    _PopUpAnimator: {fileID: 0}
     popUpTitle: 
     popUpContentList: []
+  bPremiumBehaviour: 0
+  _UIPremiumBehaviour:
+    bOnlyForPremiumUsers: 0
+    _ImageDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _GetPremiumButton: {fileID: 0}
+  bFeatureNotAviable: 0
 --- !u!1 &2055988760542869274
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,8 +497,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4284559141
+  m_fontColor: {r: 0.14509805, g: 0.18431373, b: 0.3803922, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -494,6 +526,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -692,7 +725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d85ccead4ae714b0682b281b94267e7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c50dde9505c7d64090686b5e81247b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -814,8 +847,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4284559141
+  m_fontColor: {r: 0.14509805, g: 0.18431373, b: 0.38039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -838,11 +871,12 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 60
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1000,18 +1034,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3cd54c0f4e7dd3c45adde3b17e4e99dc,
+        type: 3}
+    - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
@@ -1186,22 +1231,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9bb890b4ad4878b48b93797be632b726,
+      objectReference: {fileID: 21300000, guid: d35487f2981530d489caf7ed8f29ea20,
         type: 3}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
@@ -1386,22 +1431,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4959e1d36628d4543ae19d46343a17e3,
+      objectReference: {fileID: 21300000, guid: 3cd54c0f4e7dd3c45adde3b17e4e99dc,
         type: 3}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
@@ -1461,22 +1511,22 @@ PrefabInstance:
     - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
@@ -1501,7 +1551,7 @@ PrefabInstance:
     - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6105153959242871141, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
