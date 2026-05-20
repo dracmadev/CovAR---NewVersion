@@ -5,6 +5,7 @@ public enum E_ButtonType
     ImageButton = 0,
     TextButton = 1,
     TextButtonWithoutBackground = 2,
-    SpriteButton = 3
+    SpriteButton = 3,
+    HideUIButton = 4,
 }
 

@@ -68,9 +68,13 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
     [Header("Is This feature not Aviable yet?")]
     [SerializeField] private bool bFeatureNotAviable;
 
+    [Header("Buttons you want to Hide:")]
+    [SerializeField] private GameObject[] _ButtonsToHideArray;
+    bool buttonsAreShown = true;
     //General local variables
     UIAnimationComponent _UIAnimationComponent;
     HUDManagerScript _HUDManagerScrit;
+    ARObjectManager _ARObjectManagerScript;
 
     //Button local variables
     Sprite _currentButtonImage;
@@ -114,6 +118,7 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
         }
 
         _HUDManagerScrit = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
+        _ARObjectManagerScript = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
     }
 
     void InitButton()
@@ -353,6 +358,11 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
     public Animator GetAnimatorFromPopUp()
     {
         return St_DefaultPopUpBehaviourData._PopUpAnimator;
+    }
+
+    public E_ButtonType GetButtonType()
+    {
+        return buttonType;
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -944,6 +954,70 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+
+
+    //////////////////////////////////////////////// HIDE BUTTONS MODE //////////////////////////////////////////////////////////////////
+    
+
+     void OnClickShowButtonsOnHideModeArray()
+     {
+        if(_ButtonsToHideArray.Length != 0)
+        {
+            foreach (GameObject button in _ButtonsToHideArray)
+            {
+                if (button.GetComponent<UIAnimationComponent>())
+                {
+                    button.GetComponent<UIAnimationComponent>().ShowPannel();
+                }
+            }
+        }
+        
+     }
+     void OnClickHideButtonsOnHideModeArray()
+     {
+        if (_ButtonsToHideArray.Length != 0)
+        {
+            foreach (GameObject button in _ButtonsToHideArray)
+            {
+                if (button.GetComponent<UIAnimationComponent>())
+                {
+                    button.GetComponent<UIAnimationComponent>().HidePannel();
+
+                    if (_UIAnimationComponent.GetButtonOnSelectData().DeselectWhenYouClick)
+                    {
+                        if (GetButtonBehaviourData().bButtonInMobileMode) //MOBILE
+                        {
+                            _UIAnimationComponent.DeselectAnimOnMobileMode();
+                        }
+                        else //NORMAL
+                        {
+                            _UIAnimationComponent.DeselectAnim();
+                        }
+                    }
+                }
+
+                _ARObjectManagerScript.SetCurrentARObjectState("DefaultState");
+            }
+        }
+     }
+
+    public void OnClickFlipFlopHideButtonsBehaviour()
+    {
+        if (buttonsAreShown)
+        {
+            OnClickHideButtonsOnHideModeArray();
+            buttonsAreShown = false;
+        }
+        else
+        {
+            OnClickShowButtonsOnHideModeArray();
+            buttonsAreShown = true;
+        }
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

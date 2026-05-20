@@ -34,7 +34,7 @@ public class UIBehaviourComponentEditor : Editor
                 E_ButtonType buttonType = (E_ButtonType)buttonTypeProp.enumValueIndex;
 
                 SerializedProperty buttonStructProp = serializedObject.FindProperty("St_ButtonBehaviourData");
-
+                SerializedProperty listOfButtonsToHide = serializedObject.FindProperty("_ButtonsToHideArray");
                 EditorGUILayout.Space(5);
                 EditorGUILayout.LabelField("Button Behaviour Settings", EditorStyles.boldLabel);
 
@@ -50,18 +50,25 @@ public class UIBehaviourComponentEditor : Editor
                         DrawField(buttonStructProp, "bButtonInMobileMode");
                         DrawField(buttonStructProp, "bHasAnimation"); 
                         DrawField(buttonStructProp, "key");
-                        DrawField(buttonStructProp, "bHaveTutorialPopUp"); 
+                        DrawField(buttonStructProp, "bHaveTutorialPopUp");
+                        EditorGUILayout.PropertyField(listOfButtonsToHide, false);
                         break;
 
                     case E_ButtonType.TextButton:
                         DrawField(buttonStructProp, "key");
+                        EditorGUILayout.PropertyField(listOfButtonsToHide, false);
                         break;
 
                     case E_ButtonType.TextButtonWithoutBackground:
                         DrawField(buttonStructProp, "key");
+                        EditorGUILayout.PropertyField(listOfButtonsToHide, false);
                         break;
 
                     case E_ButtonType.SpriteButton:
+                        EditorGUILayout.PropertyField(listOfButtonsToHide, false);
+                        break;
+                    case E_ButtonType.HideUIButton:
+                        EditorGUILayout.PropertyField(listOfButtonsToHide, true);
                         break;
                 }
 

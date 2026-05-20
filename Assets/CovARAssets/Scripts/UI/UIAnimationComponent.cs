@@ -235,10 +235,14 @@ public class UIAnimationComponent : MonoBehaviour
         return UI_ButtonOnSelectedData._UnSelectedSprite;
     }
 
+    public St_ButtonOnSelectData GetButtonOnSelectData()
+    {
+        return UI_ButtonOnSelectedData;
+    }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////////////// ANIMATIONS PANEL /////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////// ANIMATIONS PANEL /////////////////////////////////////////////////////////////////////////////////////
     void AppearGrowing() //AppearChangingScale
     {
         transform.DOScale(Vector3.one, UI_ComponentStruct.animationDuration).SetEase(UI_ComponentStruct.appearEase);
@@ -434,7 +438,7 @@ public class UIAnimationComponent : MonoBehaviour
         UI_ComponentRect.DOAnchorPos(UI_ComponentVisiblePositionOnSelectedState, UI_ComponentStruct.animationDuration).SetEase(UI_ComponentStruct.appearEase);
     }
 
-    void DeselectAnim()
+    public void DeselectAnim()
     {
         UI_ComponentRect.DOAnchorPos(UI_ComponentVisiblePosition, UI_ComponentStruct.animationDuration).SetEase(UI_ComponentStruct.disapearEase);
     }
@@ -443,7 +447,7 @@ public class UIAnimationComponent : MonoBehaviour
         UI_ComponentRect.DOAnchorPos(UI_ComponentVisiblePositionOnSelectedStateOnMobileMode, UI_ComponentStruct.animationDuration).SetEase(UI_ComponentStruct.appearEase);
     }
 
-    void DeselectAnimOnMobileMode()
+    public void DeselectAnimOnMobileMode()
     {
         UI_ComponentRect.DOAnchorPos(UI_ComponentVisiblePositionOnMobileMode, UI_ComponentStruct.animationDuration).SetEase(UI_ComponentStruct.disapearEase);
     }
@@ -504,7 +508,12 @@ public class UIAnimationComponent : MonoBehaviour
         {
             UpdateSelectedState();
         }
-       //Debug.Log("OnClick");
+
+
+        if (_UIBehaviourComponent != null && _UIBehaviourComponent.GetButtonType() == E_ButtonType.HideUIButton)
+        {
+            _UIBehaviourComponent.OnClickFlipFlopHideButtonsBehaviour();
+        }
     }
     
     void OnClickDefaultAnim()
