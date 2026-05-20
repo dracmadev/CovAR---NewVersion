@@ -347,7 +347,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: f7b97abd677673144bd0d6bf5ceb19c4, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -552,3 +552,4 @@ MonoBehaviour:
     _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
     _GetPremiumButton: {fileID: 0}
   bFeatureNotAviable: 0
+  _ButtonsToHideArray: []

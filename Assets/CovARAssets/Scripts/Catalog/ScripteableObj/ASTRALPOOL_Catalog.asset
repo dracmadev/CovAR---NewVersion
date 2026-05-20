@@ -1,0 +1,284 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992e1df1b66f81d46b716f0a6d7d4a61, type: 3}
+  m_Name: ASTRALPOOL_Catalog
+  m_EditorClassIdentifier: 
+  _CompanysArray:
+  - _CompanyType: 1
+    _CompanyLogo: {fileID: 21300000, guid: cf7a06e2c033d9942b839c4df1fde895, type: 3}
+    _CompanyKey: Catalog.Company.Astralpool
+    _CompanyLink: https://www.astralpool.com/es/es.html
+    _ProductsArray:
+    - _ProductType: 1
+      _ProductSprite: {fileID: 21300000, guid: 6db0f8f30a61ef3459fafc740394fc6a, type: 3}
+      _ProductKey: Catalog.Product.GroundRoller
+      _ModelsArray:
+      - _ModelType: 1
+        _ModelLogo: {fileID: 21300000, guid: 43d7e5ea4c3b8d04bad85e8a1085fefc, type: 3}
+        _ModelKey: Catalog.Model.Astralpool.Octeo
+        _MaterialsArray:
+        - _MaterialType: 7
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 43d7e5ea4c3b8d04bad85e8a1085fefc,
+            type: 3}
+          _MaterialKey: Catalog.Material.White&White
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 8
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 32bee6f4317252745a9f9adf5425afb7,
+            type: 3}
+          _MaterialKey: Catalog.Material.White&Black
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 9
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 25227513e442ebc459e26234e42ee4ae,
+            type: 3}
+          _MaterialKey: Catalog.Material.Black&White
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 10
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 099de4d31e901334da2274df764f2df3,
+            type: 3}
+          _MaterialKey: Catalog.Material.Black&Black
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 2
+        _ModelLogo: {fileID: 21300000, guid: 2b39901f07cd553468450863b06b915d, type: 3}
+        _ModelKey: Catalog.Model.Astralpool.Sveltea
+        _MaterialsArray:
+        - _MaterialType: 1
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 2b39901f07cd553468450863b06b915d,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 2
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: c5d33d0b6fbd5ac47a049bf16003f317,
+            type: 3}
+          _MaterialKey: Catalog.Material.Antracita
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 3
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 0c14567042540d34fb98d033c1e1fe67,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 5
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 4340bba7870e29f46a3884652577ba68,
+            type: 3}
+          _MaterialKey: Catalog.Material.Sand
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 3
+        _ModelLogo: {fileID: 21300000, guid: eaf20199a87048e4abc1447956f309d5, type: 3}
+        _ModelKey: Catalog.Model.Astralpool.SvelteaManual
+        _MaterialsArray:
+        - _MaterialType: 1
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 968a22df7f8fcd84e95cc0438a0497a1,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 2
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: fe2f1dc440231d746b39d7094f1d63d6,
+            type: 3}
+          _MaterialKey: Catalog.Material.Antracita
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 3
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 8e2386ea474d51345b1c128954f09130,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 5
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: eaf20199a87048e4abc1447956f309d5,
+            type: 3}
+          _MaterialKey: Catalog.Material.Sand
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 4
+        _ModelLogo: {fileID: 21300000, guid: 92df486b2b44b3f41985a8f0e1da27ef, type: 3}
+        _ModelKey: Catalog.Model.Astralpool.Coverly
+        _MaterialsArray:
+        - _MaterialType: 1
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 92df486b2b44b3f41985a8f0e1da27ef,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 2
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 31d90c2ab658e4548b26b4365260c974,
+            type: 3}
+          _MaterialKey: Catalog.Material.Antracita
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 3
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 049236c32ec005f41a31a30082b9cc52,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 5
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: eb53976341e3e5c46bed3065cf78efe7,
+            type: 3}
+          _MaterialKey: Catalog.Material.Sand
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 5
+        _ModelLogo: {fileID: 21300000, guid: a8f69e5a48eac0e4ba8a80602194c3d3, type: 3}
+        _ModelKey: Catalog.Model.Astralpool.Bellasun
+        _MaterialsArray: []
+      - _ModelType: 7
+        _ModelLogo: {fileID: 21300000, guid: 91d2b40252619bc4498d6b4985f69d72, type: 3}
+        _ModelKey: Lebanc (Modelo grande)
+        _MaterialsArray:
+        - _MaterialType: 1
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 91d2b40252619bc4498d6b4985f69d72,
+            type: 3}
+          _MaterialKey: Catalog.Material.White
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 1
+          _PartToApplyMaterial: 1
+          _MaterialSprite: {fileID: 21300000, guid: 8fe811a31f90cf64d84e4c0d8331fd5c,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 1
+          _PartToApplyMaterial: 2
+          _MaterialSprite: {fileID: 21300000, guid: 91d2b40252619bc4498d6b4985f69d72,
+            type: 3}
+          _MaterialKey: Catalog.Material.White
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 3
+          _PartToApplyMaterial: 2
+          _MaterialSprite: {fileID: 21300000, guid: 11e6f3993ec7bfe4a92c4af4b3c32334,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 6
+          _PartToApplyMaterial: 2
+          _MaterialSprite: {fileID: 21300000, guid: c912ac97500f5fd46adc903139e5ba48,
+            type: 3}
+          _MaterialKey: Catalog.Material.Wood
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 1
+          _PartToApplyMaterial: 3
+          _MaterialSprite: {fileID: 21300000, guid: 063d8cc8963f4bd43b578ade7ac20773,
+            type: 3}
+          _MaterialKey: Catalog.Material.White
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 3
+          _PartToApplyMaterial: 3
+          _MaterialSprite: {fileID: 21300000, guid: 89efdbc6e1d394e439cf522b9e9cb0f1,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 6
+          _PartToApplyMaterial: 3
+          _MaterialSprite: {fileID: 21300000, guid: d51f7e616313c344abc880758b23d435,
+            type: 3}
+          _MaterialKey: Catalog.Material.Wood
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 8
+        _ModelLogo: {fileID: 21300000, guid: 91d2b40252619bc4498d6b4985f69d72, type: 3}
+        _ModelKey: Catalog.Model.Astralpool.LebancSmall
+        _MaterialsArray: []
+    - _ProductType: 2
+      _ProductSprite: {fileID: 21300000, guid: d69d36f098a388c4ebad13d6c9f11adc, type: 3}
+      _ProductKey: Catalog.Product.SubmergedCover
+      _ModelsArray:
+      - _ModelType: 9
+        _ModelLogo: {fileID: 21300000, guid: 8ac602b23147ace4dbbfa2b14d731bf5, type: 3}
+        _ModelKey: Catalog.Model.Astralpool.Rousillon
+        _MaterialsArray:
+        - _MaterialType: 1
+          _PartToApplyMaterial: 2
+          _MaterialSprite: {fileID: 21300000, guid: 2f2cba345e762df4387f0653531cf78f,
+            type: 3}
+          _MaterialKey: Catalog.Material.White
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 2
+          _PartToApplyMaterial: 2
+          _MaterialSprite: {fileID: 21300000, guid: 5886510c11c654b42bf699be83b58c8a,
+            type: 3}
+          _MaterialKey: Catalog.Material.Antracita
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 5
+          _PartToApplyMaterial: 2
+          _MaterialSprite: {fileID: 21300000, guid: be81af7a6802f0e4e8e35827b05bb6aa,
+            type: 3}
+          _MaterialKey: Catalog.Material.Sand
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 6
+          _PartToApplyMaterial: 2
+          _MaterialSprite: {fileID: 21300000, guid: 5c004e4950753764a9ee00827b1a6c7f,
+            type: 3}
+          _MaterialKey: Catalog.Material.Wood
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}

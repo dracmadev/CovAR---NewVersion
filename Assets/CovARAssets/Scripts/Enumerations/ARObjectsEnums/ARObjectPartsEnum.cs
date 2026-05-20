@@ -2,7 +2,7 @@ using System;
 
 public enum E_ARObjectParts
 { 
-   None = 0,
+    None = 0,
     FootRight = 1,
     FootLeft = 2,
     CoverAxis = 3,
