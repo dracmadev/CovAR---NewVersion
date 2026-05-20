@@ -982,23 +982,27 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
             {
                 if (button.GetComponent<UIAnimationComponent>())
                 {
-                    button.GetComponent<UIAnimationComponent>().HidePannel();
+                    UIAnimationComponent _UiAnimComp = button.GetComponent<UIAnimationComponent>();
 
-                    if (_UIAnimationComponent.GetButtonOnSelectData().DeselectWhenYouClick)
+                    _UiAnimComp.HidePannel();
+
+                    if (_UiAnimComp.GetButtonOnSelectData().DeselectWhenYouClick)
                     {
                         if (GetButtonBehaviourData().bButtonInMobileMode) //MOBILE
                         {
-                            _UIAnimationComponent.DeselectAnimOnMobileMode();
+                            _UiAnimComp.DeselectAnimOnMobileMode();
                         }
                         else //NORMAL
                         {
-                            _UIAnimationComponent.DeselectAnim();
+                            _UiAnimComp.DeselectAnim();
                         }
                     }
-                }
 
-                _ARObjectManagerScript.SetCurrentARObjectState("DefaultState");
+                    _UiAnimComp.SetColorOfButtonDependingOnSelectState(false);
+                }
             }
+
+            _ARObjectManagerScript.SetCurrentARObjectState("DefaultState");
         }
      }
 

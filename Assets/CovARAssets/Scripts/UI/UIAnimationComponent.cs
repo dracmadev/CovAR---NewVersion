@@ -678,9 +678,10 @@ public class UIAnimationComponent : MonoBehaviour
                     }
                     else
                     {
-                        myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
+                       
                         if (UI_ButtonOnSelectedData.DeselectWhenYouClick)
                         {
+                            myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
                             if (_UIBehaviourComponent.GetButtonBehaviourData().bButtonInMobileMode) //MOBILE
                             {
                                 DeselectAnimOnMobileMode();
@@ -743,6 +744,20 @@ public class UIAnimationComponent : MonoBehaviour
                     }
                     break;
             }
+        }
+    }
+
+
+
+    public void SetColorOfButtonDependingOnSelectState(bool selected)
+    {
+        if(selected)
+        {
+            myButton.image.color = UI_ButtonOnSelectedData._OnSelectedColor;
+        }
+        else
+        {
+            myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
         }
     }
 
