@@ -793,6 +793,30 @@ ColorTapaLateral.Madera,Madera,Bois,Wood
 ,,,
 ,,,
 Catalog.Company.Astralpool,Astralpool,Astralpool,Astralpool
-Catalog.Company.BacPoolSystem,BAC pool systems,BAC pool systems,BAC pool systems
-Catalog.Company.GroundRoller,Persiana exterior,Volet hors-sol,Ground pool cover
-Catalog.Company.SubmergedCover,Persiana sumergida,Volet immergé,Submerged pool cover
+Catalog.Company.BacPoolSystem,BAC Pool Systems,BAC Pool Systems,BAC Pool Systems
+Catalog.Product.GroundRoller,Persiana exterior,Volet hors-sol,Ground pool cover
+Catalog.Product.SubmergedCover,Persiana sumergida,Volet immergé,Submerged pool cover
+Catalog.Model.Astralpool.Octeo,Octeo,Octeo,Octeo
+Catalog.Model.Astralpool.Sveltea,Sveltea,Sveltea,Sveltea
+Catalog.Model.Astralpool.SvelteaManual,Sveltea Manual,Sveltea Manuel,Sveltea Manual
+Catalog.Model.Astralpool.Coverly,Coverly,Coverly,Coverly
+Catalog.Model.Astralpool.Bellasun,Bellasun,Bellasun,Bellasun
+Catalog.Model.Astralpool.LebancBig,Lebanc (Modelo grande),Lebanc (Grand modèle),Lebanc (Large model)
+Catalog.Model.Astralpool.LebancSmall,Lebanc (Modelo pequeño),Lebanc (Petit modèle),Lebanc (Small model)
+Catalog.Model.Astralpool.Rousillon,Rousillon,Rousillon,Rousillon
+Catalog.Material.White,Blanco,Blanc,White
+Catalog.Material.Gray,Gris,Gris,Grey
+Catalog.Material.Antracita,Gris Antracita,Gris anthracite,Anthracite Grey
+Catalog.Material.Sand,Arena,Sable,Sand
+Catalog.Material.Azul,Azul,Bleu,Blue
+Catalog.Material.Wood,Madera,Bois,Wood
+Catalog.Material.White&White,Blanco & Blanco,Blanc et blanc,White & White
+Catalog.Material.White&Black,Blanco & Gris Antracita,Blanc et gris anthracite,White & Anthracite Grey
+Catalog.Material.Black&White,Gris Antracita & Blanco,Gris anthracite et blanc,Anthracite Grey & White
+Catalog.Material.Black&Black,Gris Antracita & Gris Antracita,Gris anthracite et gris anthracite,Anthracite Grey & Anthracite Grey
+,,,
+,,,
+,,,
+,,,
+InGame.PlaneFinderPanel.InfoText,"Apunte hacia el suelo hasta que aparezca una marca, a continuación, púlsela.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
+InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit
