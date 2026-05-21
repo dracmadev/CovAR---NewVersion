@@ -328,7 +328,6 @@ public class ARObjectManager : MonoBehaviour
         _CovARObjectData._CurrentMaterial._Material02 = null;
         _CovARObjectData._CurrentMaterial._Material03 = null;
         _CovARObjectData._CurrentMaterial._MaterialSprite = null;
-        _CovARObjectData._CurrentMaterial._PartToApplyMaterial = E_PartToApplyMaterial.None;
         _CovARObjectData._CurrentMaterial._MaterialKey = "";
         _CovARObjectData._CurrentMaterial._MaterialSprite = null;
         _CovARObjectData._CurrentMaterial._MaterialType = E_MaterialType.None;
