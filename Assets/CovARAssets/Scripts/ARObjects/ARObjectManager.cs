@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class ARObjectManager : MonoBehaviour
 {
@@ -19,6 +20,14 @@ public class ARObjectManager : MonoBehaviour
     [Header("PlaneFinder reference: (Automatic)")]
     [SerializeField] private GameObject _PlaneFinder;
     [SerializeField] private bool bDontShowPlaneFinderAtStart;
+    [Header("CovAR DATA:")]
+    [SerializeField] private St_CovARObjectData _CovARObjectData;
+
+    [Header("CovAR Catalogs:")]
+    [SerializeField] private CovARCatalogScripteableObj _AstralpoolProductsCatalog;
+
+    [Header("CovAR CURRENT Catalogs:")]
+    [SerializeField] private CovARCatalogScripteableObj _CurrentProductCatalog;
 
     //Local variables
     HUDManagerScript _HUDManagerScrit;
@@ -55,7 +64,7 @@ public class ARObjectManager : MonoBehaviour
             SetActivePlaneFinder(true);
         }
 
-        
+        InitCatalogBehaviour();
     }
 
     void InitARCameraRef()
@@ -222,5 +231,184 @@ public class ARObjectManager : MonoBehaviour
         return _CurrentARObject;
     }
 
+    public St_Company GetCurrentCompanyData()
+    {
+        return _CovARObjectData._CurrentCompany;
+    }
+
+    public St_Product GetCurrentProductData()
+    {
+        return _CovARObjectData._CurrentProduct;
+    }
+
+    public  St_Model GetCurrentModelData()
+    {
+        return _CovARObjectData._CurrentModel;
+    }
+
+    public St_Material GetCurrentMaterialData()
+    {
+        return _CovARObjectData._CurrentMaterial;
+    }
+
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////// SETTER  //////////////////////////////////////////////////////////////////
+    public void SetCurrentCompanyData(St_Company company)
+    {
+        if (company != null)
+        {
+            _CovARObjectData._CurrentCompany = company;
+        }
+    }
+
+    public void SetCurrentProductData(St_Product product)
+    {
+        if(product != null)
+        {
+            _CovARObjectData._CurrentProduct = product;
+        }
+    }
+
+    public void SetCurrentModelData(St_Model model)
+    {
+        if (model != null)
+        {
+            _CovARObjectData._CurrentModel = model;
+        }
+    }
+
+    public void SetCurrentMaterialData(St_Material material)
+    {
+        if (material != null)
+        {
+            _CovARObjectData._CurrentMaterial = material;
+        }
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////////// CATALOG BEHAVIOUR //////////////////////////////////////////////////////////////////
+
+
+    public void InitCatalogBehaviour()
+    {
+        if(_AstralpoolProductsCatalog != null)
+        {
+            _CurrentProductCatalog = _AstralpoolProductsCatalog;
+        }
+
+        SetCurrentCompanyData(GetFirstCompanyFromCatalog(_CurrentProductCatalog));
+        SetCurrentProductData(GetFirstProductFromCurrentCompany(GetCurrentCompanyData()));
+        SetCurrentModelData(GetFirstModelFromCurrentProduct(GetCurrentProductData()));
+        SetCurrentMaterialData(GetFirstMaterialFromCurrentModel(GetCurrentModelData()));
+    }
+
+    public CovARCatalogScripteableObj GetCurrentProductCatalog()
+    {
+        return _CurrentProductCatalog;
+    }
+
+    
+
+
+    public St_Company GetFirstCompanyFromCatalog(CovARCatalogScripteableObj currentProductCatalog)
+    {
+        if (currentProductCatalog == null || currentProductCatalog._CompanysArray == null || currentProductCatalog._CompanysArray.Length == 0)
+        {
+            return null;
+        }
+        return currentProductCatalog._CompanysArray[0];
+    }
+
+    public St_Product GetFirstProductFromCurrentCompany(St_Company currentCompany)
+    {
+        if (currentCompany == null || currentCompany._ProductsArray == null || currentCompany._ProductsArray.Length == 0)
+        {
+            return null;
+        }
+        return currentCompany._ProductsArray[0];
+    }
+
+    public St_Model GetFirstModelFromCurrentProduct(St_Product currentProduct)
+    {
+        if (currentProduct == null || currentProduct._ModelsArray == null || currentProduct._ModelsArray.Length == 0)
+        {
+            return null;
+        }
+        return currentProduct._ModelsArray[0];
+    }
+
+    public St_Material GetFirstMaterialFromCurrentModel(St_Model currentModel)
+    {
+        if (currentModel == null || currentModel._MaterialsArray == null || currentModel._MaterialsArray.Length == 0)
+        {
+            return null;
+        }
+        return currentModel._MaterialsArray[0];
+    }
+
+    public St_Company GetSpecificCompanyFromCatalog(CovARCatalogScripteableObj currentProductCatalog, E_CompanyType specificCompany)
+    {
+        if (currentProductCatalog == null || currentProductCatalog._CompanysArray == null) return null;
+
+        foreach (St_Company company in currentProductCatalog._CompanysArray)
+        {
+            if (company._CompanyType == specificCompany)
+            {
+                return company;
+            }
+        }
+        return null;
+    }
+
+    public St_Product GetSpecificProductFromCurrentCompany(St_Company currentCompany, E_ProductType specificProduct)
+    {
+        if (currentCompany == null || currentCompany._ProductsArray == null) return null;
+
+        foreach (St_Product product in currentCompany._ProductsArray)
+        {
+            if (product._ProductType == specificProduct)
+            {
+                return product;
+            }
+        }
+
+        return null;
+    }
+
+    public St_Model GetSpecificModelFromCurrentProduct(St_Product currentProduct, E_ModelType specificModel)
+    {
+        if (currentProduct == null || currentProduct._ModelsArray == null) return null;
+
+        foreach (St_Model model in currentProduct._ModelsArray)
+        {
+            if (model._ModelType == specificModel)
+            {
+                return model;
+            }
+        }
+
+        return null;
+    }
+
+    public St_Material GetSpecificMaterialFromCurrentModel(St_Model currentModel, E_MaterialType specificMaterial)
+    {
+        if (currentModel == null || currentModel._MaterialsArray == null) return null;
+
+        foreach (St_Material material in currentModel._MaterialsArray)
+        {
+            if (material._MaterialType == specificMaterial)
+            {
+                return material;
+            }
+        }
+
+        return null;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6144878731566648987}
   - component: {fileID: 6662883639222517293}
   - component: {fileID: 3265051137966313298}
+  - component: {fileID: 6990606438210741698}
   m_Layer: 0
   m_Name: P_SimpleUIText
   m_TagString: Untagged
@@ -105,6 +106,7 @@ MonoBehaviour:
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -132,7 +134,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 9.1241455, y: 12.165508, z: 9.124268, w: 9.124142}
+  m_margin: {x: 5.543274, y: 5.898964, z: 3.7529907, w: 5.5432663}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -156,13 +158,14 @@ MonoBehaviour:
   mySlider: {fileID: 0}
   myInputField: {fileID: 0}
   myText: {fileID: 0}
+  animationType: 0
   UI_ComponentStruct:
-    animationType: 0
     animationDuration: 0
     appearEase: 0
     disapearEase: 0
     hiddenPositionOnXAxis: 0
     offsetPositionOnXAxisForMobileMode: 0
+    offsetPositionOnYAxisForMobileMode: 0
     hiddenPositionOnYAxis: 0
     bDontStartHide: 0
   UI_ButtonOnClickAnimType: 0
@@ -176,6 +179,16 @@ MonoBehaviour:
   UI_ButtonOnClickSwipeStruct:
     animationDuration: 0
     bDontDoFlipFlop: 0
+  UI_ButtonOnSelectedData:
+    bActiveSelectedState: 0
+    bStartSelected: 0
+    DeselectWhenYouClick: 0
+    _SelectButtonMode: 0
+    offsetPositionOnXAxisForSelectedMode: 0
+    _OnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _OnSelectedSprite: {fileID: 0}
+    _UnSelectedSprite: {fileID: 0}
   UI_InputFieldStruct:
     animDuration: 0
     shakeStrenght: 0
@@ -201,7 +214,6 @@ MonoBehaviour:
   myInputField: {fileID: 0}
   myDropdown: {fileID: 0}
   St_ButtonBehaviourData:
-    buttonType: 0
     _buttonText: {fileID: 0}
     _buttonImage: {fileID: 0}
     bShowText: 0
@@ -216,12 +228,21 @@ MonoBehaviour:
     popUpTitle: 
     popUpContentList: []
     defaultPopUpRef: {fileID: 0}
+    bUseAnimation: 0
+    _AnimCont: {fileID: 0}
+  buttonType: 0
+  inputFieldType: 0
   St_InputFieldBehaviourData:
-    inputFieldType: 0
     _min: 0
     _max: 0
+    _maxLenght: 0
     bRemeberMe: 0
     playerPrefName: 
+    _eyeGameObj: {fileID: 0}
+    _eyeOpen: {fileID: 0}
+    _eyeClosed: {fileID: 0}
+    _eyeClosedColor: {r: 0, g: 0, b: 0, a: 0}
+    _eyeOpenColor: {r: 0, g: 0, b: 0, a: 0}
     key: 
   St_DropdownBehaviourData:
     bOptionsManually: 0
@@ -234,10 +255,40 @@ MonoBehaviour:
     sliderMin: 0
     sliderMax: 0
     sliderResult: 0
+  St_ToggleBehaviourScript:
+    _OnActiveToggle: {fileID: 0}
+    _UnActiveToggle: {fileID: 0}
+    _OnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    bCurrentToggleState: 0
+    bDependsOnPlayerPref: 0
+    _PlayerPref: 
   St_DefaultPopUpBehaviourData:
     _PopUpTitle: {fileID: 0}
     _PopUpDescription: {fileID: 0}
     _PopUpImage: {fileID: 0}
     _PopUpButtonsList: []
+    _PopUpAnimator: {fileID: 0}
     popUpTitle: 
     popUpContentList: []
+  bPremiumBehaviour: 0
+  _UIPremiumBehaviour:
+    bOnlyForPremiumUsers: 0
+    _ImageDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _GetPremiumButton: {fileID: 0}
+  bFeatureNotAviable: 0
+  _ButtonsToHideArray: []
+--- !u!114 &6990606438210741698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957359499106498821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd4f5b64009c9f48a304c45a86ef6da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: 
