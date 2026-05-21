@@ -102,6 +102,8 @@ public class ModelSlotBehaviour : MonoBehaviour
         {
             _ModelBlockBehaviour.OnSelectButton(this);
         }
+
+        _ARObjectManager.SetCurrentModel(_CurrentModelData._ModelType);
     }
 
     ///////////////////////////////////////////////////////////////////////////////// GETTERS /////////////////////////////////////////////////////////////////////////////////

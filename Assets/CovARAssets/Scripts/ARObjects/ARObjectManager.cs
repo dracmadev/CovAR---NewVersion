@@ -287,6 +287,52 @@ public class ARObjectManager : MonoBehaviour
         }
     }
 
+    public void SetCurrentCompany(E_CompanyType company)
+    {
+        SetCurrentCompanyData(GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), company));
+    }
+
+    public void SetCurrentProduct(E_ProductType product)
+    {
+        SetCurrentProductData(GetSpecificProductFromCurrentCompany(GetCurrentCompanyData(), product));
+        
+        //ADD MORE
+    }
+
+    public void SetCurrentModel(E_ModelType model)
+    {
+        SetCurrentModelData(GetSpecificModelFromCurrentProduct(GetCurrentProductData(), model));
+
+        if(GetFirstMaterialFromCurrentModel(GetCurrentModelData()) != null)
+        {
+            SetCurrentMaterial(GetFirstMaterialFromCurrentModel(GetCurrentModelData())._MaterialType);
+        }
+        else
+        {
+            SetCurrentMaterialToNull();
+        }
+       
+        //ADD MORE
+    }
+
+    public void SetCurrentMaterial(E_MaterialType material)
+    {
+        SetCurrentMaterialData(GetSpecificMaterialFromCurrentModel(GetCurrentModelData(), material));
+
+        //ADD MORE
+    }
+
+    public void SetCurrentMaterialToNull()
+    {
+        _CovARObjectData._CurrentMaterial._Material01 = null;
+        _CovARObjectData._CurrentMaterial._Material02 = null;
+        _CovARObjectData._CurrentMaterial._Material03 = null;
+        _CovARObjectData._CurrentMaterial._MaterialSprite = null;
+        _CovARObjectData._CurrentMaterial._PartToApplyMaterial = E_PartToApplyMaterial.None;
+        _CovARObjectData._CurrentMaterial._MaterialKey = "";
+        _CovARObjectData._CurrentMaterial._MaterialSprite = null;
+        _CovARObjectData._CurrentMaterial._MaterialType = E_MaterialType.None;
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -64,7 +64,7 @@ public class ProductBlockBehaviour : MonoBehaviour
             string translatedName = LocalizationManager.Localize(product._ProductKey);
             Sprite productIcon = product._ProductSprite;
 
-            // 🛠️ SOLUCIÓ: Creem l'opció buida i n'assignem els valors directament
+            // Creem l'opció buida i n'assignem els valors directament
             TMP_Dropdown.OptionData option = new TMP_Dropdown.OptionData();
             option.text = translatedName;
             option.image = productIcon;
@@ -94,26 +94,25 @@ public class ProductBlockBehaviour : MonoBehaviour
         // 1. Actualitzem quin és el producte seleccionat actualment
         _currentProductSelected = _IncomingProductList[index];
 
-        // 2. Avisem al teu ARObjectManager global perquè sàpiga quin és el producte actiu a l'aplicació
+        // 2. Avisem al teu ARObjectManager 
         if (_ARObjectManager != null)
         {
-            _ARObjectManager.SetCurrentProductData(_currentProductSelected);
+            _ARObjectManager.SetCurrentProduct(_currentProductSelected._ProductType);
         }
 
-        // 3. ACTUALITZEM ELS MODELS! Cridem la funció pública del teu script anterior
+        // 3. ACTUALITZEM ELS MODELS! 
         if (_modelBlockUI != null && _currentProductSelected._ModelsArray != null)
         {
-            St_Model[] modelsDeAquestProducte = _currentProductSelected._ModelsArray;
+            St_Model[] modelsArray = _currentProductSelected._ModelsArray;
 
-            // Agafem el primer model per defecte d'aquest nou producte per passar-lo com a seleccionat
-            St_Model primerModel = null;
-            if (modelsDeAquestProducte.Length > 0)
+            St_Model firstModel = null;
+            if (modelsArray.Length > 0)
             {
-                primerModel = modelsDeAquestProducte[0];
+                firstModel = modelsArray[0];
+                _ARObjectManager.SetCurrentModel(firstModel._ModelType);
             }
 
-            // Invoquem la inicialització dinàmica dels teus slots de models
-            _modelBlockUI.InitCatalogModelBlock(modelsDeAquestProducte, primerModel);
+            _modelBlockUI.InitCatalogModelBlock(modelsArray, firstModel);
         }
     }
 }
