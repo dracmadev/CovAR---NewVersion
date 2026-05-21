@@ -49,26 +49,31 @@ public class ModelSlotBehaviour : MonoBehaviour
 
         bImActive = active;
 
+        if (_ModelSlotCG != null) _ModelSlotCG.DOKill();
+
         if (active)
         {
-            if (_ModelSlotCG != null)
-            {
-                _ModelSlotCG.alpha = 1f;
-                _ModelSlotCG.interactable = true;
-                _ModelSlotCG.blocksRaycasts = true;
-            }
+            _ModelSlotCG.alpha = 0f;
+            _ModelSlotCG.interactable = true;
+            _ModelSlotCG.blocksRaycasts = true;
         }
         else
         {
-            if (_ModelSlotCG != null)
-            {
-                _ModelSlotCG.alpha = 0f;
-                _ModelSlotCG.interactable = false;
-                _ModelSlotCG.blocksRaycasts = false;
-            }
+            _ModelSlotCG.alpha = 0f;
+            _ModelSlotCG.interactable = false;
+            _ModelSlotCG.blocksRaycasts = false;
 
             if (_ModelSelectedTickCG != null) _ModelSelectedTickCG.alpha = 0f;
         }
+    }
+
+    public void AnimateFadeIn(float delayTime)
+    {
+        if (_ModelSlotCG == null) return;
+
+        _ModelSlotCG.DOFade(1f, 0.3f)
+                    .SetDelay(delayTime)
+                    .SetEase(Ease.OutCubic);
     }
 
     public void SetSelectStateFromModelSlot(bool isSelected)

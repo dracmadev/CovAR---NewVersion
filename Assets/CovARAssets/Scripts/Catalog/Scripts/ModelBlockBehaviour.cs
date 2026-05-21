@@ -34,27 +34,11 @@ public class ModelBlockBehaviour : MonoBehaviour
         if (arManagerGO != null)
         {
             _ARObjectManager = arManagerGO.GetComponent<ARObjectManager>();
-
-            if(_ARObjectManager.GetCurrentProductCatalog() == null)
-            {
-                _ARObjectManager.InitCatalogBehaviour();
-            }
         }
 
         if (_ModelSlotsArray == null || _ModelSlotsArray.Length == 0)
         {
             _ModelSlotsArray = GetComponentsInChildren<ModelSlotBehaviour>(true);
-        }
-      
-        if (_ARObjectManager != null && _ARObjectManager.GetCurrentProductData() != null)
-        {
-            St_Model[] modelsArray = _ARObjectManager.GetCurrentProductData()._ModelsArray;
-
-            InitCatalogModelBlock(modelsArray, _ARObjectManager.GetFirstModelFromCurrentProduct(_ARObjectManager.GetCurrentProductData()));
-        }
-        else
-        {
-            Debug.LogWarning("No current product data found in ARObjectManager o el Manager és null.");
         }
     }
 
@@ -78,7 +62,7 @@ public class ModelBlockBehaviour : MonoBehaviour
     {
         if (_ModelSlotsArray == null || _ModelSlotsArray.Length == 0) return;
 
-        int activeCount = 0; 
+        int activeCount = 0;
 
         for (int i = 0; i < _ModelSlotsArray.Length; i++)
         {
@@ -89,7 +73,7 @@ public class ModelBlockBehaviour : MonoBehaviour
                 St_Model data = _IncomingModelsModelsList[i];
 
                 _ModelSlotsArray[i].SetModelData(data);
-                _ModelSlotsArray[i].SetImageOfModelSlot(data._ModelLogo); 
+                _ModelSlotsArray[i].SetImageOfModelSlot(data._ModelLogo);
                 _ModelSlotsArray[i].SetStateOfModelSlot(true);            
 
                 activeCount++;
@@ -115,6 +99,19 @@ public class ModelBlockBehaviour : MonoBehaviour
         if (_contentRT != null)
         {
             LayoutRebuilder.ForceRebuildLayoutImmediate(_contentRT);
+        }
+
+        // --- AnimacioDeApareixer ---
+        float currentDelay = 0f;
+        float delayBetweenSlots = 0.03f; 
+
+        for (int i = 0; i < _ModelSlotsArray.Length; i++)
+        {
+            if (_ModelSlotsArray[i].GetActiveState())
+            {
+                _ModelSlotsArray[i].AnimateFadeIn(currentDelay);
+                currentDelay += delayBetweenSlots; 
+            }
         }
 
         SelectCurrentModelVisual();
