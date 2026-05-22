@@ -7,7 +7,7 @@ Login.Button.ClaveOlvidada,¿Has olvidado tu contraseña?,Avez-vous oublié votr
 Login.Button.NuevaClave,Cambiar contraseña,Changer le mot de passe,Change password
 Login.Button.CrearCuenta,Crear cuenta,Créer un compte,Create account
 Login.Button.VincularDispositivo,Vincular licencia a este dispositivo,Lier la licence à cet appareil,Link license to this device
-Login.Panel.ClaveOlvidada,Escribe tu correo,Saisissez votre adresse e-mail,Enter your email
+Login.Panel.ClaveOlvidada,Escribe tu correo,Saisissez votre adresse e-mail,Enter your email address
 Login.Panel.AppCodeOlvidada,Escribe un correo  a infomarketing@fluidra.com solicitando la clave. Adjunta el nombre de tu empresa y el CIF para que podamos validar tu petición.,Envoyez un courriel à infomarketing@fluidra.com pour demander le mot de passe. Veuillez indiquer le nom de votre entreprise et votre numéro d'identification fiscale (CIF) afin que nous puissions valider votre demande.,Send an email to infomarketing@fluidra.com requesting the password. Include your company name and tax ID number (CIF) so we can validate your request.
 Login.Panel.CorreoEnviado,"Se ha mandado un correo con la nueva clave. En caso de no verlo en la bandeja de entrada, revise la carpeta de correo no deseado / spam.","Un courriel contenant votre nouveau mot de passe vous a été envoyé. Si vous ne le voyez pas dans votre boîte de réception, veuillez vérifier votre dossier de courriers indésirables.","An email with the new password has been sent. If you don't see it in your inbox, please check your spam/junk mail folder."
 Login.Panel.CreacionUsuario.Titulo,Crear usuario,Créer un utilisateur,Create user
@@ -554,7 +554,7 @@ La plateforme s'enroule entièrement dans un compartiment sous-marin recouvert d
 The platform rolls up completely inside an underwater compartment covered by a submerged conduit plate. This cover is suitable for pools under renovation or construction."
 Main.VoletTypeWindow.HelpPanel.RollersText,"Los rodillos para piscinas elevadas permiten una perfecta conservación de la cubierta.
 
-Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une parfaite préservation de la couverture.
+Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une protection optimale de la couverture.
 
 Ces enrouleurs facilitent la manipulation de la couverture d'été. Une fois rétractée, il est simple de la ranger, libérant ainsi l'espace de baignade. Ils sont équipés d'un système de freinage pour bloquer le cylindre et sont très résistants.","Rollers for above-ground pools ensure the cover is perfectly preserved.
 
@@ -624,7 +624,7 @@ Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 We'll guide you step-by-step through how the application works.
 
 Press OK to begin the tutorial."
-Tutorial.Texto.ARMark,"Apunta hacia el suelo hasta que aparezca una marca, a continuación, púlsala.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
+Tutorial.Texto.ARMark,"Apunta hacia el suelo hasta que aparezca una marca, a continuación, púlsala.","Pointez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez dessus.","Point it towards the ground until a mark appears, then tap it."
 Tutorial.Texto.ExplicacionMenus1,"Como puedes ver en la imagen, dispones de dos menús para configurar tus persianas.","Comme vous pouvez le voir sur l'image, vous disposez de deux menus pour configurer vos volets","As you can see in the image, you have two menus to configure your blinds."
 Tutorial.Texto.ExplicacionMenus2,"En la izquierda, tenemos el menú general donde desplazar, configurar las dimensiones de la persiana y acceder al plano técnico.","À gauche, vous trouverez le menu général qui vous permet de faire défiler les options, de configurer les dimensions du volet et d'accéder au dessin technique.","On the left, we have the general menu where you can scroll, configure the dimensions of the blind and access the technical drawing."
 Tutorial.Texto.ExplicacionMenus3,"Por último, a la derecha, tenemos el menú de diseño, donde podemos personalizar la persiana a nuestro gusto.","Enfin, à droite, se trouve le menu de personnalisation, qui nous permet de personnaliser le volet à notre guise.","Finally, on the right, we have the design menu, where we can customize the blind to our liking."
@@ -796,6 +796,8 @@ Catalog.Company.Astralpool,Astralpool,Astralpool,Astralpool
 Catalog.Company.BacPoolSystem,BAC Pool Systems,BAC Pool Systems,BAC Pool Systems
 Catalog.Product.GroundRoller,Persiana exterior,Volet hors-sol,Ground pool cover
 Catalog.Product.SubmergedCover,Persiana sumergida,Volet immergé,Submerged pool cover
+Catalog.Product.Benches&Claddings,Bancos y revestimientos,Bancs et revêtements,Benches and claddings
+Catalog.Product.Lamas,Lamas,Lamas,Lamas
 Catalog.Model.Astralpool.Octeo,Octeo,Octeo,Octeo
 Catalog.Model.Astralpool.Sveltea,Sveltea,Sveltea,Sveltea
 Catalog.Model.Astralpool.SvelteaManual,Sveltea Manual,Sveltea Manuel,Sveltea Manual
@@ -803,6 +805,8 @@ Catalog.Model.Astralpool.Coverly,Coverly,Coverly,Coverly
 Catalog.Model.Astralpool.Bellasun,Bellasun,Bellasun,Bellasun
 Catalog.Model.Astralpool.LebancBig,Lebanc (Modelo grande),Lebanc (Grand modèle),Lebanc (Large model)
 Catalog.Model.Astralpool.LebancSmall,Lebanc (Modelo pequeño),Lebanc (Petit modèle),Lebanc (Small model)
+Catalog.Model.Astralpool.LebancTopCladding,Revesitimiento superior,Revêtement supérieur,Top cladding
+Catalog.Model.Astralpool.LebancSidesCladding,Revesitimientos laterales,Revêtement latéral,Sides cladding
 Catalog.Model.Astralpool.Rousillon,Rousillon,Rousillon,Rousillon
 Catalog.Material.White,Blanco,Blanc,White
 Catalog.Material.Gray,Gris,Gris,Grey
@@ -815,6 +819,11 @@ Catalog.Material.White&Black,Blanco & Gris Antracita,Blanc et gris anthracite,Wh
 Catalog.Material.Black&White,Gris Antracita & Blanco,Gris anthracite et blanc,Anthracite Grey & White
 Catalog.Material.Black&Black,Gris Antracita & Gris Antracita,Gris anthracite et gris anthracite,Anthracite Grey & Anthracite Grey
 Catalog.CatalogPanel.SelectProduct,Producto:,Produit:,Product:
+Catalog.Lamas.Model.PVC,PVC,PVC,PVC
+Catalog.Lamas.Model.Policarbonat,Policarbonato,Polycarbonate,Polycarbonate
+,,,
+,,,
+,,,
 ,,,
 ,,,
 ,,,
