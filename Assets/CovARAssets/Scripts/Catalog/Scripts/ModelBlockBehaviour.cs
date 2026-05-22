@@ -74,13 +74,19 @@ public class ModelBlockBehaviour : MonoBehaviour
 
                 _ModelSlotsArray[i].SetModelData(data);
                 _ModelSlotsArray[i].SetImageOfModelSlot(data._ModelLogo);
-                _ModelSlotsArray[i].SetStateOfModelSlot(true);            
+
+                _ModelSlotsArray[i].SetTextOfModelSlot(data._ModelKey);
+
+                _ModelSlotsArray[i].SetStateOfModelSlot(true);
 
                 activeCount++;
             }
             else
             {
                 _ModelSlotsArray[i].SetModelData(null);
+
+                _ModelSlotsArray[i].SetTextOfModelSlot("");
+
                 _ModelSlotsArray[i].SetStateOfModelSlot(false);
             }
         }
@@ -88,11 +94,13 @@ public class ModelBlockBehaviour : MonoBehaviour
         // --- CONTROL DEL SCROLL ---
         if (_scrollRect != null)
         {
-            _scrollRect.horizontal = (activeCount > _MaxModelSlotsBeforeScrollCanMove);
+           
+            _scrollRect.horizontal = false;
+            _scrollRect.vertical = (activeCount > _MaxModelSlotsBeforeScrollCanMove);
 
             if (activeCount <= _MaxModelSlotsBeforeScrollCanMove && _contentRT != null)
             {
-                _contentRT.anchoredPosition = new Vector2(0, _contentRT.anchoredPosition.y);
+                _contentRT.anchoredPosition = new Vector2(_contentRT.anchoredPosition.x, 0);
             }
         }
 
@@ -168,20 +176,22 @@ public class ModelBlockBehaviour : MonoBehaviour
 
         _contentRT.DOKill();
 
-        if (!_scrollRect.horizontal)
+        if (!_scrollRect.vertical)
         {
-            _contentRT.anchoredPosition = new Vector2(0, _contentRT.anchoredPosition.y);
+            _contentRT.anchoredPosition = new Vector2(_contentRT.anchoredPosition.x, 0);
             return;
         }
 
-        float itemCenterX = targetItem.anchoredPosition.x;
+        float itemCenterY = targetItem.anchoredPosition.y;
 
-        float targetX = -itemCenterX + (_viewportRT.rect.width / 2);
+        float targetY = -itemCenterY - (_viewportRT.rect.height / 2);
 
-        float minScroll = -(_contentRT.rect.width - _viewportRT.rect.width);
-        float maxScroll = 0;
-        targetX = Mathf.Clamp(targetX, minScroll, maxScroll);
 
-        _contentRT.DOAnchorPosX(targetX, 0.4f).SetEase(Ease.OutCubic);
+        float maxScroll = _contentRT.rect.height - _viewportRT.rect.height;
+        float minScroll = 0;
+
+        targetY = Mathf.Clamp(targetY, minScroll, maxScroll);
+
+        _contentRT.DOAnchorPosY(targetY, 0.4f).SetEase(Ease.OutCubic);
     }
-}
+ }

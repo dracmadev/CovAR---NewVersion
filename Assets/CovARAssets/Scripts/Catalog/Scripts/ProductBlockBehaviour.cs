@@ -2,13 +2,15 @@
 using TMPro; 
 using Assets.SimpleLocalization.Scripts; 
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class ProductBlockBehaviour : MonoBehaviour
 {
     [Header("PRODUCT BLOCK BEHAVIOUR")]
     [Space()]
     [Header("UI Components")]
-    [SerializeField] private TMP_Dropdown _productDropdown; 
+    [SerializeField] private TMP_Dropdown _productDropdown;
+    [SerializeField] private Image _CurrentProductImage; 
     [SerializeField] private ModelBlockBehaviour _modelBlockUI; 
 
     [Header("Current Selection data: (Just to see)")]
@@ -91,16 +93,18 @@ public class ProductBlockBehaviour : MonoBehaviour
     {
         if (_IncomingProductList == null || index >= _IncomingProductList.Length) return;
 
-        // 1. Actualitzem quin és el producte seleccionat actualment
         _currentProductSelected = _IncomingProductList[index];
 
-        // 2. Avisem al teu ARObjectManager 
+        if (_CurrentProductImage != null)
+        {
+            _CurrentProductImage.sprite = _currentProductSelected._ProductSprite;
+        }
+
         if (_ARObjectManager != null)
         {
             _ARObjectManager.SetCurrentProduct(_currentProductSelected._ProductType);
         }
 
-        // 3. ACTUALITZEM ELS MODELS! 
         if (_modelBlockUI != null && _currentProductSelected._ModelsArray != null)
         {
             St_Model[] modelsArray = _currentProductSelected._ModelsArray;

@@ -821,8 +821,8 @@ Catalog.Material.Black&Black,Gris Antracita & Gris Antracita,Gris anthracite et 
 Catalog.CatalogPanel.SelectProduct,Producto:,Produit:,Product:
 Catalog.Lamas.Model.PVC,PVC,PVC,PVC
 Catalog.Lamas.Model.Policarbonat,Policarbonato,Polycarbonate,Polycarbonate
-,,,
-,,,
+Catalog.Lamas.Model.Title,Modelo,Modèle,Model
+Catalog.Lamas.Material.Title,Material,Matériel,Material
 ,,,
 ,,,
 ,,,

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,7 @@ public class ModelSlotBehaviour : MonoBehaviour
     [SerializeField] private Image _ModelSlotImage;
     [SerializeField] private CanvasGroup _ModelSlotCG;
     [SerializeField] private CanvasGroup _ModelSelectedTickCG;
+    [SerializeField] private TMP_Text _ModelNameText;
 
     private ModelBlockBehaviour _ModelBlockBehaviour;
     private ARObjectManager _ARObjectManager;
@@ -104,6 +106,22 @@ public class ModelSlotBehaviour : MonoBehaviour
         }
 
         _ARObjectManager.SetCurrentModel(_CurrentModelData._ModelType);
+    }
+
+
+    public void SetTextOfModelSlot(string translationKey)
+    {
+        if (_ModelNameText != null)
+        {
+            if (!string.IsNullOrEmpty(translationKey))
+            {
+                _ModelNameText.text = Assets.SimpleLocalization.Scripts.LocalizationManager.Localize(translationKey);
+            }
+            else
+            {
+                _ModelNameText.text = "";
+            }
+        }
     }
 
     ///////////////////////////////////////////////////////////////////////////////// GETTERS /////////////////////////////////////////////////////////////////////////////////

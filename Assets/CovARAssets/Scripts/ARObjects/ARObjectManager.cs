@@ -238,17 +238,17 @@ public class ARObjectManager : MonoBehaviour
 
     public St_Product GetCurrentProductData()
     {
-        return _CovARObjectData._CurrentProduct;
+        return _CovARObjectData._CurrentModelProduct;
     }
 
     public  St_Model GetCurrentModelData()
     {
-        return _CovARObjectData._CurrentModel;
+        return _CovARObjectData._CurrentModelModel;
     }
 
     public St_Material GetCurrentMaterialData()
     {
-        return _CovARObjectData._CurrentMaterial;
+        return _CovARObjectData._CurrentModelMaterial;
     }
 
 
@@ -267,7 +267,7 @@ public class ARObjectManager : MonoBehaviour
     {
         if(product != null)
         {
-            _CovARObjectData._CurrentProduct = product;
+            _CovARObjectData._CurrentModelProduct = product;
         }
     }
 
@@ -275,7 +275,7 @@ public class ARObjectManager : MonoBehaviour
     {
         if (model != null)
         {
-            _CovARObjectData._CurrentModel = model;
+            _CovARObjectData._CurrentModelModel = model;
         }
     }
 
@@ -283,7 +283,7 @@ public class ARObjectManager : MonoBehaviour
     {
         if (material != null)
         {
-            _CovARObjectData._CurrentMaterial = material;
+            _CovARObjectData._CurrentModelMaterial = material;
         }
     }
 
@@ -324,13 +324,8 @@ public class ARObjectManager : MonoBehaviour
 
     public void SetCurrentMaterialToNull()
     {
-        _CovARObjectData._CurrentMaterial._Material01 = null;
-        _CovARObjectData._CurrentMaterial._Material02 = null;
-        _CovARObjectData._CurrentMaterial._Material03 = null;
-        _CovARObjectData._CurrentMaterial._MaterialSprite = null;
-        _CovARObjectData._CurrentMaterial._MaterialKey = "";
-        _CovARObjectData._CurrentMaterial._MaterialSprite = null;
-        _CovARObjectData._CurrentMaterial._MaterialType = E_MaterialType.None;
+        _CovARObjectData._CurrentModelMaterial = null;
+       
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -23,6 +23,7 @@ MonoBehaviour:
       _ProductKey: Catalog.Product.GroundRoller
       _ModelsArray:
       - _ModelType: 1
+        _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 43d7e5ea4c3b8d04bad85e8a1085fefc, type: 3}
         _ModelKey: Catalog.Model.Astralpool.Octeo
         _MaterialsArray:
@@ -55,6 +56,7 @@ MonoBehaviour:
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
       - _ModelType: 2
+        _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 2b39901f07cd553468450863b06b915d, type: 3}
         _ModelKey: Catalog.Model.Astralpool.Sveltea
         _MaterialsArray:
@@ -87,13 +89,14 @@ MonoBehaviour:
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
       - _ModelType: 3
+        _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: eaf20199a87048e4abc1447956f309d5, type: 3}
         _ModelKey: Catalog.Model.Astralpool.SvelteaManual
         _MaterialsArray:
         - _MaterialType: 1
           _MaterialSprite: {fileID: 21300000, guid: 968a22df7f8fcd84e95cc0438a0497a1,
             type: 3}
-          _MaterialKey: Catalog.Material.Gray
+          _MaterialKey: Catalog.Material.White
           _Material01: {fileID: 0}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
@@ -119,6 +122,7 @@ MonoBehaviour:
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
       - _ModelType: 4
+        _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 92df486b2b44b3f41985a8f0e1da27ef, type: 3}
         _ModelKey: Catalog.Model.Astralpool.Coverly
         _MaterialsArray:
@@ -151,6 +155,7 @@ MonoBehaviour:
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
       - _ModelType: 5
+        _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: a8f69e5a48eac0e4ba8a80602194c3d3, type: 3}
         _ModelKey: Catalog.Model.Astralpool.Bellasun
         _MaterialsArray: []
@@ -159,6 +164,7 @@ MonoBehaviour:
       _ProductKey: Catalog.Product.SubmergedCover
       _ModelsArray:
       - _ModelType: 6
+        _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 8ac602b23147ace4dbbfa2b14d731bf5, type: 3}
         _ModelKey: Catalog.Model.Astralpool.Rousillon
         _MaterialsArray:
@@ -195,8 +201,9 @@ MonoBehaviour:
       _ProductKey: Catalog.Product.Benches&Claddings
       _ModelsArray:
       - _ModelType: 7
+        _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 3670c842e3b71504d8989ee74c890c19, type: 3}
-        _ModelKey: Catalog.Model.Astralpool.Rousillon
+        _ModelKey: Catalog.Model.Astralpool.LebancSmall
         _MaterialsArray:
         - _MaterialType: 1
           _MaterialSprite: {fileID: 21300000, guid: 91d2b40252619bc4498d6b4985f69d72,
@@ -213,8 +220,9 @@ MonoBehaviour:
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
       - _ModelType: 8
+        _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 68c378bb7238bbb4f9c43f880296b711, type: 3}
-        _ModelKey: Catalog.Model.Astralpool.Rousillon
+        _ModelKey: Catalog.Model.Astralpool.LebancBig
         _MaterialsArray:
         - _MaterialType: 1
           _MaterialSprite: {fileID: 21300000, guid: 91d2b40252619bc4498d6b4985f69d72,
@@ -231,6 +239,7 @@ MonoBehaviour:
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
       - _ModelType: 9
+        _ModelGeneralType: 2
         _ModelLogo: {fileID: 21300000, guid: e5460bd5c07f606489e7b1461e5dd7ce, type: 3}
         _ModelKey: Catalog.Model.Astralpool.LebancTopCladding
         _MaterialsArray:
@@ -256,6 +265,7 @@ MonoBehaviour:
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
       - _ModelType: 10
+        _ModelGeneralType: 2
         _ModelLogo: {fileID: 21300000, guid: ec8e48b6b686f20489e726d7c9f88769, type: 3}
         _ModelKey: Catalog.Model.Astralpool.LebancSidesCladding
         _MaterialsArray:
@@ -285,6 +295,7 @@ MonoBehaviour:
       _ProductKey: Catalog.Product.Lamas
       _ModelsArray:
       - _ModelType: 12
+        _ModelGeneralType: 3
         _ModelLogo: {fileID: 21300000, guid: a92ae76552437de4eb268df0853e2ffb, type: 3}
         _ModelKey: Catalog.Lamas.Model.PVC
         _MaterialsArray:
@@ -317,6 +328,7 @@ MonoBehaviour:
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
       - _ModelType: 11
+        _ModelGeneralType: 3
         _ModelLogo: {fileID: 21300000, guid: a7741cebaf4fcc74d94969527ed0979b, type: 3}
         _ModelKey: Catalog.Lamas.Model.Policarbonat
         _MaterialsArray:
