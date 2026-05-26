@@ -24,10 +24,10 @@ public class MaterialBlockBehaviour : MonoBehaviour
 
     void Start()
     {
-        InitMaterialBlockBehaviour();
+        //On CatalogManager
     }
 
-    void InitMaterialBlockBehaviour()
+    public void InitMaterialBlockBehaviour()
     {
         GameObject arManagerGO = GameObject.FindGameObjectWithTag("ARObjectManager");
         if (arManagerGO != null)

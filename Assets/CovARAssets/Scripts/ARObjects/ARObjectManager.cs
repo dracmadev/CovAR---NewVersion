@@ -7,6 +7,9 @@ public class ARObjectManager : MonoBehaviour
 {
     [Header("AR OBJECT MANAGER")]
     [Space(25)]
+    [Header("Current Company Selected:")]
+    [SerializeField] private E_CompanyType _CurrentCompanyRunning;
+
     [Header("First object to visualize:")]
     [SerializeField] private E_PoolType _CurrentPoolType;
 
@@ -256,17 +259,28 @@ public class ARObjectManager : MonoBehaviour
         return _CurrentMaterialSelected;
     }
 
+    public E_CompanyType GetCurrentCompanyRunning()
+    {
+        return _CurrentCompanyRunning;
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////// SETTER  //////////////////////////////////////////////////////////////////
-    public void SetCurrentCompanyData(St_Company company)
+    public void SetCurrentCompanyData(E_CompanyType company)
     {
-        if (company != null)
+        foreach(St_Company currentComp in _CurrentProductCatalog._CompanysArray)
         {
-            _CovARObjectData._CurrentCompany = company;
-            _CurrentCompanySelected = company;
+            if (currentComp._CompanyType == company)
+            {
+                _CovARObjectData._CurrentCompany = currentComp;
+                _CurrentCompanySelected = currentComp;
+                break;
+            }
         }
+       
+        
     }
 
     public void SetCurrentProductData(St_Product product)
@@ -358,7 +372,7 @@ public class ARObjectManager : MonoBehaviour
 
     public void SetCurrentCompany(E_CompanyType company)
     {
-        SetCurrentCompanyData(GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), company));
+        SetCurrentCompanyData(company);
     }
 
     public void SetCurrentProduct(E_ProductType product)
@@ -403,7 +417,8 @@ public class ARObjectManager : MonoBehaviour
         }
 
         //Init CurrentCatalogVariables
-        SetCurrentCompanyData(GetFirstCompanyFromCatalog(_CurrentProductCatalog));
+        SetCurrentCompanyData(_CurrentCompanyRunning);
+
         SetCurrentProductData(GetFirstProductFromCurrentCompany(GetCurrentCompanyData()));
         SetCurrentModelData(GetFirstModelFromCurrentProduct(GetCurrentProductData()));
         SetCurrentMaterialData(GetFirstMaterialFromCurrentModel(GetCurrentModelData()));

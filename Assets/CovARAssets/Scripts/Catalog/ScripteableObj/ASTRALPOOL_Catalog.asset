@@ -353,3 +353,8 @@ MonoBehaviour:
           _Material01: {fileID: 0}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
+  - _CompanyType: 2
+    _CompanyLogo: {fileID: 21300000, guid: 4561ff91e3b89e84b978e723fc090dc9, type: 3}
+    _CompanyKey: Catalog.Company.Astralpool
+    _CompanyLink: https://www.astralpool.com/es/es.html
+    _ProductsArray: []

@@ -27,10 +27,10 @@ public class ModelBlockBehaviour : MonoBehaviour
 
     void Start()
     {
-        InitModelBlockBehaviour();
+        //On CatalogManager
     }
 
-    void InitModelBlockBehaviour()
+    public void InitModelBlockBehaviour()
     {
         GameObject arManagerGO = GameObject.FindGameObjectWithTag("ARObjectManager");
         if (arManagerGO != null)

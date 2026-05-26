@@ -21,10 +21,10 @@ public class ProductBlockBehaviour : MonoBehaviour
 
     void Start()
     {
-        InitProductBlockBehaviour();
+        //On CatalogManager
     }
 
-    void InitProductBlockBehaviour()
+    public void InitProductBlockBehaviour()
     {
         
         GameObject arManagerGO = GameObject.FindGameObjectWithTag("ARObjectManager");
