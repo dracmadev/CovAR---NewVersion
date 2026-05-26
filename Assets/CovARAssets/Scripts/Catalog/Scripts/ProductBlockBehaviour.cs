@@ -113,7 +113,7 @@ public class ProductBlockBehaviour : MonoBehaviour
             if (modelsArray.Length > 0)
             {
                 firstModel = modelsArray[0];
-                _ARObjectManager.SetCurrentModel(firstModel._ModelType);
+                _ARObjectManager.SetCurrentModel(firstModel._ModelType, firstModel._ModelGeneralType);
             }
 
             _modelBlockUI.InitCatalogModelBlock(modelsArray, firstModel);

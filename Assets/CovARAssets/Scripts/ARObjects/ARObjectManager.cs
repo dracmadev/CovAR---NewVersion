@@ -299,18 +299,29 @@ public class ARObjectManager : MonoBehaviour
         //ADD MORE
     }
 
-    public void SetCurrentModel(E_ModelType model)
+    public void SetCurrentModel(E_ModelType model, E_ModelGeneralType generalModel)
     {
-        SetCurrentModelData(GetSpecificModelFromCurrentProduct(GetCurrentProductData(), model));
+        switch(generalModel)
+        {
+            case E_ModelGeneralType.None: break;
+            case E_ModelGeneralType.Model:
 
-        if(GetFirstMaterialFromCurrentModel(GetCurrentModelData()) != null)
-        {
-            SetCurrentMaterial(GetFirstMaterialFromCurrentModel(GetCurrentModelData())._MaterialType);
+                SetCurrentModelData(GetSpecificModelFromCurrentProduct(GetCurrentProductData(), model));
+
+                if (GetFirstMaterialFromCurrentModel(GetCurrentModelData()) != null)
+                {
+                    SetCurrentMaterial(GetFirstMaterialFromCurrentModel(GetCurrentModelData())._MaterialType);
+                }
+                else
+                {
+                    SetCurrentMaterialToNull();
+                }
+
+                break;
+            case E_ModelGeneralType.Cladding: break;
+            case E_ModelGeneralType.Lamas: break;
         }
-        else
-        {
-            SetCurrentMaterialToNull();
-        }
+        
        
         //ADD MORE
     }

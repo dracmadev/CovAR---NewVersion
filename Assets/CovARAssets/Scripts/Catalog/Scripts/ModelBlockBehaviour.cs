@@ -13,6 +13,8 @@ public class ModelBlockBehaviour : MonoBehaviour
     [Header("Max slots before ScrollView can move?:")]
     [SerializeField] private int _MaxModelSlotsBeforeScrollCanMove;
 
+    [Header("MATERIAL BLOCK Ref:")]
+    [SerializeField] private MaterialBlockBehaviour _MaterialBlockBehaviour;
 
     [Header("Array of ModelSlots:")]
     [SerializeField] private ModelSlotBehaviour[] _ModelSlotsArray;
@@ -158,6 +160,12 @@ public class ModelBlockBehaviour : MonoBehaviour
 
                     RectTransform slotRT = slot.GetComponent<RectTransform>();
                     SnapToModel(slotRT);
+
+                    if(_MaterialBlockBehaviour != null)
+                    {
+                        slot.OnUpdateMaterials(_MaterialBlockBehaviour);
+                    }
+                        
                 }
                 else
                 {

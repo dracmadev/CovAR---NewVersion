@@ -17,8 +17,11 @@ public class ModelSlotBehaviour : MonoBehaviour
     [SerializeField] private CanvasGroup _ModelSelectedTickCG;
     [SerializeField] private TMP_Text _ModelNameText;
 
+    
+
     private ModelBlockBehaviour _ModelBlockBehaviour;
     private ARObjectManager _ARObjectManager;
+
     private bool bImActive;
 
     //////////////////////////////////////////////////////////////////////////////// INIT ////////////////////////////////////////////////////////////////////////////////
@@ -105,7 +108,9 @@ public class ModelSlotBehaviour : MonoBehaviour
             _ModelBlockBehaviour.OnSelectButton(this);
         }
 
-        _ARObjectManager.SetCurrentModel(_CurrentModelData._ModelType);
+        _ARObjectManager.SetCurrentModel(_CurrentModelData._ModelType, _CurrentModelData._ModelGeneralType);
+
+       
     }
 
 
@@ -122,6 +127,15 @@ public class ModelSlotBehaviour : MonoBehaviour
                 _ModelNameText.text = "";
             }
         }
+    }
+
+    public void OnUpdateMaterials(MaterialBlockBehaviour _MaterialBlockBehaviour)
+    {
+        if( _MaterialBlockBehaviour != null)
+        {
+            _MaterialBlockBehaviour.InitCatalogMaterialBlock(_CurrentModelData._MaterialsArray, _ARObjectManager.GetFirstMaterialFromCurrentModel(_CurrentModelData));
+        }
+        
     }
 
     ///////////////////////////////////////////////////////////////////////////////// GETTERS /////////////////////////////////////////////////////////////////////////////////
