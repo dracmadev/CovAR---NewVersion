@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class ARObjectManager : MonoBehaviour
 {
@@ -22,7 +23,11 @@ public class ARObjectManager : MonoBehaviour
     [SerializeField] private bool bDontShowPlaneFinderAtStart;
     [Header("CovAR DATA:")]
     [SerializeField] private St_CovARObjectData _CovARObjectData;
-
+    [Header("Current Company/Product/Model/Material Selected:")]
+    [SerializeField] private St_Company _CurrentCompanySelected;
+    [SerializeField] private St_Product _CurrentProductSelected;
+    [SerializeField] private St_Model _CurrentModelSelected;
+    [SerializeField] private St_Material _CurrentMaterialSelected;
     [Header("CovAR Catalogs:")]
     [SerializeField] private CovARCatalogScripteableObj _AstralpoolProductsCatalog;
 
@@ -233,22 +238,22 @@ public class ARObjectManager : MonoBehaviour
 
     public St_Company GetCurrentCompanyData()
     {
-        return _CovARObjectData._CurrentCompany;
+        return _CurrentCompanySelected;
     }
 
     public St_Product GetCurrentProductData()
     {
-        return _CovARObjectData._CurrentModelProduct;
+        return _CurrentProductSelected;
     }
 
     public  St_Model GetCurrentModelData()
     {
-        return _CovARObjectData._CurrentModelModel;
+        return _CurrentModelSelected;
     }
 
     public St_Material GetCurrentMaterialData()
     {
-        return _CovARObjectData._CurrentModelMaterial;
+        return _CurrentMaterialSelected;
     }
 
 
@@ -260,6 +265,7 @@ public class ARObjectManager : MonoBehaviour
         if (company != null)
         {
             _CovARObjectData._CurrentCompany = company;
+            _CurrentCompanySelected = company;
         }
     }
 
@@ -267,7 +273,19 @@ public class ARObjectManager : MonoBehaviour
     {
         if(product != null)
         {
-            _CovARObjectData._CurrentModelProduct = product;
+            switch(product._ProductType)
+            {
+                case E_ProductType.None: break;
+                case E_ProductType.GroundRollerCover: _CovARObjectData._CurrentModelProduct = product; break;
+                case E_ProductType.SubmergedRollerCover: _CovARObjectData._CurrentModelProduct = product; break;
+                case E_ProductType.BencheAndCladdings: _CovARObjectData._CurrentCladdingProduct = product; break;
+                case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverProduct = product; break;
+                case E_ProductType.Lamas: _CovARObjectData._CurrentLamasProduct = product; break;
+
+            }
+
+           
+            _CurrentProductSelected = product;
         }
     }
 
@@ -275,7 +293,30 @@ public class ARObjectManager : MonoBehaviour
     {
         if (model != null)
         {
-            _CovARObjectData._CurrentModelModel = model;
+            if(_CurrentProductSelected != null)
+            {
+                switch (_CurrentProductSelected._ProductType)
+                {
+                    case E_ProductType.None: break;
+                    case E_ProductType.GroundRollerCover: _CovARObjectData._CurrentModelModel = model; break;
+                    case E_ProductType.SubmergedRollerCover: _CovARObjectData._CurrentModelModel = model; break;
+                    case E_ProductType.BencheAndCladdings: 
+                        
+                        switch(model._ModelType)
+                        {
+                            case E_ModelType.AP_LeBancBigFoot: _CovARObjectData._CurrentModelModel = model; break;
+                            case E_ModelType.AP_LeBancSmallFoot: _CovARObjectData._CurrentModelModel = model; break;
+                            case E_ModelType.AP_LeBancTopCladding: _CovARObjectData._CurrentTopCladdingModel = model; break;
+                            case E_ModelType.AP_LeBancSidesCladding: _CovARObjectData._CurrentSidesCladdingModel = model; break;
+                        }
+
+                        break;
+                    case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverModel = model; break;
+                    case E_ProductType.Lamas: _CovARObjectData._CurrentLamasModel = model; break;
+                }
+            }
+
+            _CurrentModelSelected = model;
         }
     }
 
@@ -283,7 +324,35 @@ public class ARObjectManager : MonoBehaviour
     {
         if (material != null)
         {
-            _CovARObjectData._CurrentModelMaterial = material;
+            if(_CurrentModelSelected != null)
+            {
+                switch (_CurrentModelSelected._ModelType)
+                {
+                    case E_ModelType.None: break;
+                    
+                    ////////////////////////////////////////////////////////////// MODELS ///////////////////////////////////////////////////////////////
+                    case E_ModelType.AP_Octeo: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.AP_Sveltea: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.AP_SvelteaManual: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.AP_Coverly: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.AP_Bellasun: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.AP_Rousillon: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.AP_LeBancSmallFoot: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.AP_LeBancBigFoot: _CovARObjectData._CurrentModelMaterial = material; break;
+
+                    //////////////////////////////////////////////////////////// CLADDINGS AND BENCHES ///////////////////////////////////////////////////
+                    case E_ModelType.AP_LeBancTopCladding: _CovARObjectData._CurrentTopCladdingMaterial = material; break;
+                    case E_ModelType.AP_LeBancSidesCladding: _CovARObjectData._CurrentSidesCladdingMaterial = material; break;
+
+                    //////////////////////////////////////////////////////////// LAMAS  //////////////////////////////////////////////////////////////////
+                    case E_ModelType.AP_LamasPolicarbonate: _CovARObjectData._CurrentLamasMaterial = material; break;
+                    case E_ModelType.AP_LamasPVC: _CovARObjectData._CurrentLamasMaterial = material; break;
+
+
+                }
+            }
+
+           _CurrentMaterialSelected = material;
         }
     }
 
@@ -301,28 +370,9 @@ public class ARObjectManager : MonoBehaviour
 
     public void SetCurrentModel(E_ModelType model, E_ModelGeneralType generalModel)
     {
-        switch(generalModel)
-        {
-            case E_ModelGeneralType.None: break;
-            case E_ModelGeneralType.Model:
+       SetCurrentModelData(GetSpecificModelFromCurrentProduct(GetCurrentProductData(), model));
 
-                SetCurrentModelData(GetSpecificModelFromCurrentProduct(GetCurrentProductData(), model));
 
-                if (GetFirstMaterialFromCurrentModel(GetCurrentModelData()) != null)
-                {
-                    SetCurrentMaterial(GetFirstMaterialFromCurrentModel(GetCurrentModelData())._MaterialType);
-                }
-                else
-                {
-                    SetCurrentMaterialToNull();
-                }
-
-                break;
-            case E_ModelGeneralType.Cladding: break;
-            case E_ModelGeneralType.Lamas: break;
-        }
-        
-       
         //ADD MORE
     }
 
@@ -352,10 +402,27 @@ public class ARObjectManager : MonoBehaviour
             _CurrentProductCatalog = _AstralpoolProductsCatalog;
         }
 
+        //Init CurrentCatalogVariables
         SetCurrentCompanyData(GetFirstCompanyFromCatalog(_CurrentProductCatalog));
         SetCurrentProductData(GetFirstProductFromCurrentCompany(GetCurrentCompanyData()));
         SetCurrentModelData(GetFirstModelFromCurrentProduct(GetCurrentProductData()));
         SetCurrentMaterialData(GetFirstMaterialFromCurrentModel(GetCurrentModelData()));
+
+        //Init Lamas
+        InitLamasCovARData();
+    }
+
+    public void InitLamasCovARData()
+    {
+        foreach(St_Product product in _CurrentCompanySelected._ProductsArray)
+        {
+            if (product._ProductType == E_ProductType.Lamas)
+            {
+               _CovARObjectData._CurrentLamasProduct = product;
+               _CovARObjectData._CurrentLamasModel = GetFirstModelFromCurrentProduct(product);
+                _CovARObjectData._CurrentLamasMaterial = GetFirstMaterialFromCurrentModel(_CovARObjectData._CurrentLamasModel);
+            }
+        }
     }
 
     public CovARCatalogScripteableObj GetCurrentProductCatalog()

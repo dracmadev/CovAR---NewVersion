@@ -13,17 +13,19 @@ public class St_CovARObjectData
     public St_Product _CurrentModelProduct;
     public St_Model _CurrentModelModel;
     public St_Material _CurrentModelMaterial;
-    [Header("CLADDING DATA (TOP):")]
-    public St_Product _CurrentTopCladdingProduct;
+    [Header("CLADDING DATA:")]
+    public St_Product _CurrentCladdingProduct;
     public St_Model _CurrentTopCladdingModel;
     public St_Material _CurrentTopCladdingMaterial;
-    [Header("CLADDING DATA (SIDES):")]
-    public St_Product _CurrentSidesCladdingProduct;
     public St_Model _CurrentSidesCladdingModel;
     public St_Material _CurrentSidesCladdingMaterial;
     [Header("LAMAS DATA:")]
     public St_Product _CurrentLamasProduct;
     public St_Model _CurrentLamasModel;
     public St_Material _CurrentLamasMaterial;
+    [Header("FABRIC COVER DATA:")]
+    public St_Product _CurrentFabricCoverProduct;
+    public St_Model _CurrentFabricCoverModel;
+    public St_Material _CurrentFabricCoverMaterial;
 }
     
