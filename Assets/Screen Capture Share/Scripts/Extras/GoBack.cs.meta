@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 296e4c9c549ab7e4f939fff3ae1eed44
+timeCreated: 1510790789
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 105069
+  packageName: Native Screen Share - Try It
+  packageVersion: 1.1.0
+  assetPath: Assets/Screen Capture Share/Scripts/Extras/GoBack.cs
+  uploadId: 294553

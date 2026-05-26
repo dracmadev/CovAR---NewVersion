@@ -1,0 +1,40 @@
+fileFormatVersion: 2
+guid: 9669aba9d5761354a972cf016d23501b
+timeCreated: 1497126951
+licenseType: Store
+PluginImporter:
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  isOverridable: 0
+  platformData:
+    data:
+      first:
+        Android: Android
+      second:
+        enabled: 1
+        settings: {}
+    data:
+      first:
+        Any: 
+      second:
+        enabled: 0
+        settings: {}
+    data:
+      first:
+        Editor: Editor
+      second:
+        enabled: 0
+        settings:
+          DefaultValueInitialized: true
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 105069
+  packageName: Native Screen Share - Try It
+  packageVersion: 1.1.0
+  assetPath: Assets/Screen Capture Share/Plugins/Android/libs/screensnapshot-release.aar
+  uploadId: 294553

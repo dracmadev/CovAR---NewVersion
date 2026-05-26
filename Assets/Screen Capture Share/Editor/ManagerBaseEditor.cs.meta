@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d5d1e21fce61f2445aed0036462e5db2
+timeCreated: 1510778433
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 105069
+  packageName: Native Screen Share - Try It
+  packageVersion: 1.1.0
+  assetPath: Assets/Screen Capture Share/Editor/ManagerBaseEditor.cs
+  uploadId: 294553

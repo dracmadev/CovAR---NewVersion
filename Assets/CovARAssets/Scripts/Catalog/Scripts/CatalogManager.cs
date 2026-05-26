@@ -13,9 +13,16 @@ public class CatalogManager : MonoBehaviour
     [SerializeField] private ProductBlockBehaviour _ProductBlock;
     [SerializeField] private ModelBlockBehaviour _ModelBlock;
     [SerializeField] private MaterialBlockBehaviour _MaterialBlock;
-    private ARObjectManager _ARObjectManager;
 
-   
+    [Header("Panel Names depending on Product:")]
+    [SerializeField] private string _GroundRollerManipulatePanelName;
+    [SerializeField] private string _SubmergedRollerManipulatePanelName;
+    [SerializeField] private string _BenchRollerManipulatePanelName;
+    [SerializeField] private string _FabricCoverManipulatePanelName;
+
+    private ARObjectManager _ARObjectManager;
+    private HUDManagerScript _HUDManagerScript;
+
     void Start()
     {
         InitCatalog();
@@ -35,6 +42,9 @@ public class CatalogManager : MonoBehaviour
         {
             _ARObjectManager = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
         }
+
+        _HUDManagerScript = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
+
 
         _ARObjectManager.InitCatalogBehaviour();
 
@@ -85,7 +95,32 @@ public class CatalogManager : MonoBehaviour
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    /////////////////////////////////////////////////////////// SETTERS
+
+    /////////////////////////////////////////////////////////// SETTERS //////////////////////////////////////////////////////////////
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ////////////////////////////////////////////////////////// GETTER ////////////////////////////////////////////////////////////////
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////////////// BEHAVIOUR /////////////////////////////////////////////////////////////////
+
+    public void OnClickCloseCatalog()
+    {
+        switch(_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType)
+        {
+            case E_ProductType.None: break;
+            case E_ProductType.GroundRollerCover: _HUDManagerScript.TravelToPanel(_GroundRollerManipulatePanelName); break;
+            case E_ProductType.SubmergedRollerCover: _HUDManagerScript.TravelToPanel(_SubmergedRollerManipulatePanelName); break;
+            case E_ProductType.BencheAndCladdings: _HUDManagerScript.TravelToPanel(_BenchRollerManipulatePanelName); break;
+            case E_ProductType.FabricCover: _HUDManagerScript.TravelToPanel(_FabricCoverManipulatePanelName); break;
+            
+
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }

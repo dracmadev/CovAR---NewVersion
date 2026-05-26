@@ -222,7 +222,17 @@ public class ARObjectManager : MonoBehaviour
         if (_PlaneFinder != null)
         {
             _PlaneFinder.SetActive(active);
+
+            
         }
+
+      
+    }
+
+    public void OnARObjectPosicioned()
+    {
+        SetActivePlaneFinder(false);
+        _HUDManagerScrit.TravelToPanel("AP_ManipulateGroundRollerPanel");
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -264,6 +274,10 @@ public class ARObjectManager : MonoBehaviour
         return _CurrentCompanyRunning;
     }
 
+    public St_CovARObjectData GetCovARObjectData()
+    {
+        return _CovARObjectData;
+    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -318,8 +332,10 @@ public class ARObjectManager : MonoBehaviour
                         
                         switch(model._ModelType)
                         {
-                            case E_ModelType.AP_LeBancBigFoot: _CovARObjectData._CurrentModelModel = model; break;
-                            case E_ModelType.AP_LeBancSmallFoot: _CovARObjectData._CurrentModelModel = model; break;
+                            case E_ModelType.AP_LeBancBigFoot: _CovARObjectData._CurrentModelModel = model;
+                                _CovARObjectData._CurrentModelProduct = _CurrentProductSelected;  break;
+                            case E_ModelType.AP_LeBancSmallFoot: _CovARObjectData._CurrentModelModel = model;
+                                _CovARObjectData._CurrentModelProduct = _CurrentProductSelected; break;
                             case E_ModelType.AP_LeBancTopCladding: _CovARObjectData._CurrentTopCladdingModel = model; break;
                             case E_ModelType.AP_LeBancSidesCladding: _CovARObjectData._CurrentSidesCladdingModel = model; break;
                         }

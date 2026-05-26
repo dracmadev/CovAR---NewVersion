@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 8289df1de075b8c4a8328c17c449ef0f
+timeCreated: 1510777311
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 105069
+  packageName: Native Screen Share - Try It
+  packageVersion: 1.1.0
+  assetPath: Assets/Screen Capture Share/Editor/OpenScenesEditorWindow.cs
+  uploadId: 294553

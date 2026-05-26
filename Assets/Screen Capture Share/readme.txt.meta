@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 71a5ed7562ba5ba40baf595ceca8de70
+timeCreated: 1510801642
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 105069
+  packageName: Native Screen Share - Try It
+  packageVersion: 1.1.0
+  assetPath: Assets/Screen Capture Share/readme.txt
+  uploadId: 294553

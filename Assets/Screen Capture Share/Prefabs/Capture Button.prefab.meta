@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0f21a9c966cbaf44f963ea6bf1065809
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 105069
+  packageName: Native Screen Share - Try It
+  packageVersion: 1.1.0
+  assetPath: Assets/Screen Capture Share/Prefabs/Capture Button.prefab
+  uploadId: 294553

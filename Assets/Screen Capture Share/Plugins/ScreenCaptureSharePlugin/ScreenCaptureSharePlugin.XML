@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScreenCaptureSharePlugin</name>
+    </assembly>
+    <members>
+        <member name="T:ScreenCaptureSharePlugin.Core.CaptureEventArgs">
+            <summary>
+            Event args for image capture 
+            </summary>
+        </member>
+        <member name="F:ScreenCaptureSharePlugin.Core.CaptureEventArgs.Empty">
+            <summary>
+            Override for an empty event args
+            </summary>
+        </member>
+        <member name="F:ScreenCaptureSharePlugin.Core.CaptureEventArgs.filename">
+            <summary>
+            The full file name to the image including the path and the extension
+            </summary>
+        </member>
+        <member name="F:ScreenCaptureSharePlugin.Core.CaptureEventArgs.texture2D">
+            <summary>
+            The texture loaded from the image file path
+            </summary>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Core.CaptureEventArgs.#ctor(System.String,UnityEngine.Texture2D)">
+            <summary>
+            Creates a new capture args
+            </summary>
+            <param name="filename">The full file name to the image including the path and the extension</param>
+            <param name="texture2D">The texture loaded from the image file path</param>
+        </member>
+        <member name="T:ScreenCaptureSharePlugin.Core.CaptureShareSettings">
+            <summary>
+            Setting required to manage types
+            </summary>
+        </member>
+        <member name="P:ScreenCaptureSharePlugin.Core.CaptureShareSettings.Instance">
+            <summary>
+            Access to single instance class
+            </summary>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Core.CaptureShareSettings.GetTryIt">
+            <summary>
+            Is this version the free Try It version
+            </summary>
+            <returns>True if this is the Try It version</returns>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Core.CaptureShareSettings.GetInEditor">
+            <summary>
+            The project is running in the Unity Editor
+            </summary>
+            <returns>rue if this is the application is running in the Unity Editor</returns>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Core.CaptureShareSettings.DoTryIt(System.Action)">
+            <summary>
+            Allows action to be invoked depending on is try it version
+            </summary>
+            <param name="action">The action to preform.  ie The main action to disable the functionality</param>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Core.CaptureShareSettings.DoTryIt``1(System.Func{``0})">
+            <summary>
+            Allows action to be invoked depending on is try it version
+            </summary>
+            <param name="action">The action to preform.  ie The main action to disable the functionality</param>
+        </member>
+        <member name="T:ScreenCaptureSharePlugin.CaptureIO.CaptureFile">
+            <summary>
+            Saves and load byte data as image file
+            </summary>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.CaptureIO.CaptureFile.SaveToFile(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Saves image byte information to file
+            </summary>
+            <param name="filenameFull">Full path and file name for image, including the extension</param>
+            <param name="fileHeader">Byte header for image data</param>
+            <param name="fileData">Raw image byte information</param>
+            <returns></returns>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.CaptureIO.CaptureFile.SaveFileStream(System.Byte[],System.Byte[],System.String)">
+            <summary>
+            Saves image byte information to file
+            </summary>
+            <param name="fileHeader">Byte header for image data</param>
+            <param name="fileData">Raw image byte information</param>
+            <param name="filenameFull">Full path and file name for image, including the extension</param>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.CaptureIO.CaptureFile.LoadFromFile(System.String)">
+            <summary>
+            Loads an image file from a file path
+            </summary>
+            <param name="filePath">Full path and extension to the image</param>
+            <returns>A texture file for the image</returns>
+        </member>
+        <member name="T:ScreenCaptureSharePlugin.Render.CaptureFormat">
+            <summary>
+            Possible image formats
+            </summary>
+        </member>
+        <member name="F:ScreenCaptureSharePlugin.Render.CaptureFormat.RAW">
+            <summary>
+            Raw format without commpression
+            </summary>
+        </member>
+        <member name="F:ScreenCaptureSharePlugin.Render.CaptureFormat.JPG">
+            <summary>
+            Jpeg ‎lossy compression
+            </summary>
+        </member>
+        <member name="F:ScreenCaptureSharePlugin.Render.CaptureFormat.PNG">
+            <summary>
+            Png format
+            </summary>
+        </member>
+        <member name="F:ScreenCaptureSharePlugin.Render.CaptureFormat.PPM">
+            <summary>
+            Ppm compression
+            </summary>
+        </member>
+        <member name="T:ScreenCaptureSharePlugin.Render.CaptureRenderer">
+            <summary>
+            Captures the screenshot from the camera and sets the render texture
+            </summary>
+        </member>
+        <member name="P:ScreenCaptureSharePlugin.Render.CaptureRenderer.rect">
+            <summary>
+            The rect that defines the texture size
+            </summary>
+        </member>
+        <member name="P:ScreenCaptureSharePlugin.Render.CaptureRenderer.renderTexture">
+            <summary>
+            Render texture to hold the image buffer data
+            </summary>
+        </member>
+        <member name="P:ScreenCaptureSharePlugin.Render.CaptureRenderer.screenshot">
+            <summary>
+            Texture to hold the processed image data
+            </summary>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Render.CaptureRenderer.RecordScreenshot(UnityEngine.Camera,ScreenCaptureSharePlugin.Render.Config)">
+            <summary>
+            Records the screen from the camera using the provided options
+            <para>IMPORTANT: Must call the method CaptureRenderer.DisposeResources()</para>
+            </summary>
+            <param name="camera">Camera to use to get the screenshot</param>
+            <param name="config">Set the configuration for the image capture</param>
+            <returns>CaptureRenderer with the captures screenshot data</returns>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Render.CaptureRenderer.ResetValues">
+            <summary>
+            Disposes of the texture and clears the variable values
+            </summary>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Render.CaptureRenderer.DisposeResources">
+            <summary>
+            Disposes of the texture and clears the variable values
+            </summary>
+        </member>
+        <member name="T:ScreenCaptureSharePlugin.Render.Config">
+            <summary>
+            Set the configuration for the image capture
+            </summary>
+        </member>
+        <member name="P:ScreenCaptureSharePlugin.Render.Config.baseFilename">
+            <summary>
+            The filename without path nor extension
+            </summary>
+        </member>
+        <member name="P:ScreenCaptureSharePlugin.Render.Config.width">
+            <summary>
+            Width of the resulting texture2D
+            </summary>
+        </member>
+        <member name="P:ScreenCaptureSharePlugin.Render.Config.height">
+            <summary>
+            Height of the resulting texture2D
+            </summary>
+        </member>
+        <member name="P:ScreenCaptureSharePlugin.Render.Config.format">
+            <summary>
+            Texture capture format
+            <para>RAW, JPG, PNG, PPM</para>
+            </summary>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Render.Config.#ctor(System.String,System.Int32,System.Int32,ScreenCaptureSharePlugin.Render.CaptureFormat)">
+            <summary>
+            Create a new config data structure
+            </summary>
+            <param name="baseFilename">The filename without path nor extension</param>
+            <param name="width">Width of the resulting texture2D</param>
+            <param name="height">Height of the resulting texture2D</param>
+            <param name="format">Texture capture format</param>
+        </member>
+        <member name="T:ScreenCaptureSharePlugin.Wrappers.AndroidShareWrapper">
+            <summary>
+            Warpper to expose Native Android screen capture and share intent
+            </summary>
+        </member>
+        <member name="P:ScreenCaptureSharePlugin.Wrappers.AndroidShareWrapper.filenameFull">
+            <summary>
+            Full filename including the path and extension
+            </summary>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Wrappers.AndroidShareWrapper.CallShareIntent(System.String)">
+            <summary>
+            Opens the Native Android share dialog
+            </summary>
+            <param name="message">An additional message to send with the screenshot image</param>
+        </member>
+        <member name="M:ScreenCaptureSharePlugin.Wrappers.AndroidShareWrapper.GetFilenameFull(System.String)">
+            <summary>
+            Gets the full file name from the file name
+            <para>NOTE: Do not include the extension</para>
+            </summary>
+            <param name="filename"></param>
+            <returns>Full filename to the capture screenshot</returns>
+        </member>
+    </members>
+</doc>
