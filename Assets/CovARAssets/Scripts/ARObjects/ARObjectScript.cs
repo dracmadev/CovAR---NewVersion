@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ARObjectScript : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class ARObjectScript : MonoBehaviour
     [SerializeField] private E_ARObjectStates _ARObjectState;
 
     [Header("ARObject parts: (Automatic)")]
-    [SerializeField] private List<St_ARObjectPart> _ARObjectSpecificPartsList = new();
+    [SerializeField] private List<ARObjectPartScript> _ARObjectSpecificPartsList = new();
+    [Header("ARObject Bones: (Automatic)")]
+    [SerializeField] private List<ARObjectPartScript> _ARObjectBonesList = new();
 
     [Header("ARObjectManager reference: ")]
     [SerializeField] private ARObjectManager _ARObjectManager;
@@ -25,7 +28,13 @@ public class ARObjectScript : MonoBehaviour
     //MOVMENT
     bool isDragging;
     //HUD
-    HUDManagerScript _HUDManagerScrit;
+    HUDManagerScript _HUDManagerScript;
+
+    //ROTATION
+    GameObject _RotationSliderRef;
+    private float _initialYRotation;
+    private bool _hasSavedInitialRotation = false;
+
 
     void Start()
     {
@@ -41,11 +50,13 @@ public class ARObjectScript : MonoBehaviour
 
     public void InitARObjectScript()
     {
-        _ARObjectSpecificPartsList = new List<St_ARObjectPart>(); // Inicialitzem
+        _ARObjectSpecificPartsList = new List<ARObjectPartScript>(); // Inicialitzem
+        _ARObjectBonesList = new List<ARObjectPartScript>(); // Inicialitzem
+
         SetARObjectPartsList();
 
         _ARObjectManager = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
-        _HUDManagerScrit = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
+        _HUDManagerScript = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
     }
 
     void SetARObjectPartsList()
@@ -53,70 +64,51 @@ public class ARObjectScript : MonoBehaviour
         // Busquem els components en els fills de manera optimitzada al Start
         ARObjectPartScript[] allPartsInChilds = GetComponentsInChildren<ARObjectPartScript>(true);
 
-        // Guardem tot usant LINQ a la llista
-        _ARObjectSpecificPartsList = allPartsInChilds.Select(part => new St_ARObjectPart
+        // Netegem les llistes 
+        _ARObjectSpecificPartsList.Clear();
+        _ARObjectBonesList.Clear();
+
+        foreach (ARObjectPartScript part in allPartsInChilds)
         {
-            _ARObjectPartType = part.GetARObjectPartData()._ARObjectPartType,
-            _ARObjectPartReference = part.gameObject
-        }).ToList();
+            if (part.GetARGeneralObjectPart() == E_ARObjectGeneralParts.PoolSpecificPart)
+            {
+                AddObjectToList(part.gameObject, _ARObjectSpecificPartsList);
+            }
+            else if (part.GetARGeneralObjectPart() == E_ARObjectGeneralParts.Bones)
+            {
+                AddObjectToList(part.gameObject, _ARObjectBonesList);
+            }
+        }
     }
 
-    // ==========================================
-    // AFEGIT: FUNCIONS DINÀMIQUES DEL SCRIPT NOU
-    // ==========================================
-
-    public void AddObjectToARObjectPartsList(GameObject objToRegister, bool checkIfUnique = true)
+    public void AddObjectToList(GameObject objToRegister, List<ARObjectPartScript> list, bool checkIfUnique = true)
     {
         var partScripts = objToRegister.GetComponentsInChildren<ARObjectPartScript>();
 
         foreach (var partScript in partScripts)
         {
-            // Passem el bool a la funció de processament
-            ProcessSinglePart(partScript, checkIfUnique);
+            ProcessARObjectPart(partScript, checkIfUnique, list);
         }
     }
 
-    private void ProcessSinglePart(ARObjectPartScript partScript, bool checkIfUnique)
+    private void ProcessARObjectPart(ARObjectPartScript partScript, bool checkIfUnique, List<ARObjectPartScript> list)
     {
         if (partScript == null) return;
 
-        if (partScript.GetARGeneralObjectPart() == E_ARObjectGeneralParts.PoolSpecificPart)
+      //Comprovem si existeix 
+        bool alreadyExists = list.Exists(item => item.GetARObjectPartData()._ARObjectPartReference == partScript.gameObject);
+
+        if (!checkIfUnique || !alreadyExists)
         {
-            // COMPROVACIÓ D'OBJECTE REPETIT
-            // Busquem si algun element de la llista ja té exactament la mateixa referència de GameObject
-            bool alreadyExists = _ARObjectSpecificPartsList.Exists(item => item._ARObjectPartReference == partScript.gameObject);
-
-            if (!alreadyExists)
-            {
-                St_ARObjectPart newPart = new St_ARObjectPart
-                {
-                    _ARObjectPartType = partScript.GetARObjectPartData()._ARObjectPartType,
-                    _ARObjectPartReference = partScript.gameObject
-                };
-
-                _ARObjectSpecificPartsList.Add(newPart);
-            }
+            list.Add(partScript);
         }
     }
-
-    public void RemoveObjectFromARPartsList(GameObject objToRemove)
-    {
-        // Utilitzem RemoveAll per netejar qualsevol entrada que coincideixi amb aquest GameObject
-        int removedCount = _ARObjectSpecificPartsList.RemoveAll(item => item._ARObjectPartReference == objToRemove);
-
-        if (removedCount > 0)
-        {
-            //Debug.Log($"S'han eliminat {removedCount} referències de l'objecte {objToRemove.name}");
-        }
-    }
-
-    // ==========================================
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////// GETTER //////////////////////////////////////////////////////////////////////////
 
-    public E_PoolType GetPoolType()
+    public E_PoolType GeCoverType()
     {
         return _PoolType;
     }
@@ -125,9 +117,33 @@ public class ARObjectScript : MonoBehaviour
         return _ARObjectState;
     }
 
+    public GameObject GetBoneObjBasedOnDirection(E_ARObjectComponentsDirection direction)
+    {
+        foreach (ARObjectPartScript bone in _ARObjectBonesList)
+        {
+            if (bone.GetBoneData()._BoneDirection == direction)
+            {
+                return bone.GetARObjectPartData()._ARObjectPartReference;
+            }
+        }
+        return null;
+    }
+
+    public GameObject GetARObjectSpecificPartBasedOnType(E_ARObjectParts part)
+    {
+        foreach (ARObjectPartScript specificPart in _ARObjectSpecificPartsList)
+        {
+            if (specificPart.GetARObjectPartData()._ARObjectPartType == part)
+            {
+                return specificPart.GetARObjectPartData()._ARObjectPartReference;
+            }
+        }
+        return null;
+    }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    ////////////////////////////////////////////////////////////// SETTER ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////// SETTER //////////////////////////////////////////////////////////////////////////
 
     public void SetARObjectState(E_ARObjectStates newState)
     {
@@ -232,24 +248,63 @@ public class ARObjectScript : MonoBehaviour
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////////////////////////// ROTATE /////////////////////////////////////////////////////////////////////////////
-
+    
+    public void InitRotationState()
+    {
+        AssignRotationButtonsEvents();
+    }
+    
+    
     GameObject GetRotationSlider()
     {
-        GameObject myRotationSlider = null;
-
-        if (_HUDManagerScrit.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel").Count != 0)
+        if (_RotationSliderRef == null)
         {
-            foreach (GameObject slider in _HUDManagerScrit.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel"))
+            if (_HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel").Count != 0)
             {
-                if (slider.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Slider)
+                foreach (GameObject slider in _HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel"))
                 {
-                    myRotationSlider = slider;
+                    if (slider.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Slider)
+                    {
+                        _RotationSliderRef = slider;
+                    }
                 }
             }
         }
 
-        return myRotationSlider;
+        return _RotationSliderRef;
     }
+
+
+    Button GetRotationMinusButton()
+    {
+        if (_HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel").Count != 0)
+        {
+            foreach (GameObject obj in _HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel"))
+            {
+                if (obj.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Button && obj.name.Contains("Minus"))
+                {
+                    return obj.GetComponent<Button>();
+                }
+            }
+        }
+        return null;
+    }
+
+    Button GetRotationPlusButton()
+    {
+        if (_HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel").Count != 0)
+        {
+            foreach (GameObject obj in _HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel"))
+            {
+                if (obj.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Button && obj.name.Contains("Plus"))
+                {
+                    return obj.GetComponent<Button>();
+                }
+            }
+        }
+        return null;
+    }
+
 
     void RotateYAxisARObject()
     {
@@ -261,6 +316,77 @@ public class ARObjectScript : MonoBehaviour
         else
         {
             Debug.LogError("ARObjectScript -> Error alhora d'agafar el slider de rotació... (Alvaro)");
+        }
+    }
+
+    public void MinusRotateARObject()
+    {
+        GameObject sliderObj = GetRotationSlider();
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            float newRot = sliderData.sliderResult - 5f;
+            sliderData.sliderResult = Mathf.Clamp(newRot, sliderData.sliderMin, sliderData.sliderMax);
+
+            this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, sliderData.sliderResult, this.transform.localEulerAngles.z);
+
+            UpdateRotationSlider();
+        }
+    }
+
+    public void PlusRotateARObject()
+    {
+        GameObject sliderObj = GetRotationSlider();
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            float newRot = sliderData.sliderResult + 5f;
+            sliderData.sliderResult = Mathf.Clamp(newRot, sliderData.sliderMin, sliderData.sliderMax);
+
+            this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, sliderData.sliderResult, this.transform.localEulerAngles.z);
+
+            UpdateRotationSlider();
+        }
+    }
+
+    void UpdateRotationSlider()
+    {
+        GameObject sliderObj = GetRotationSlider();
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            float normalizedStartingSliderValue = (sliderData.sliderResult - sliderData.sliderMin) /
+                                                 (sliderData.sliderMax - sliderData.sliderMin);
+
+            sliderObj.GetComponent<UnityEngine.UI.Slider>().value = normalizedStartingSliderValue;
+        }
+    }
+
+    void AssignRotationButtonsEvents()
+    {
+        Button minusBtn = GetRotationMinusButton(); // MINUS
+        if (minusBtn != null)
+        {
+            minusBtn.onClick.RemoveListener(MinusRotateARObject);
+            minusBtn.onClick.AddListener(MinusRotateARObject);
+        }
+        else
+        {
+            Debug.LogWarning("No s'ha trobat el botó Minus per assignar l'esdeveniment.");
+        }
+
+        Button plusBtn = GetRotationPlusButton(); //PLUS
+        if (plusBtn != null)
+        {
+            plusBtn.onClick.RemoveListener(PlusRotateARObject);
+            plusBtn.onClick.AddListener(PlusRotateARObject);
+        }
+        else
+        {
+            Debug.LogWarning("No s'ha trobat el botó Plus per assignar l'esdeveniment.");
         }
     }
 

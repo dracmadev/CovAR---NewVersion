@@ -86,6 +86,7 @@ public class ARObjectPartScript : MonoBehaviour
        
     }
 
+    /*
     void AddAndDeleteARObjectPartsList(E_ARObjectParts part, bool add)
     {
         if(_ARObjectGeneralPart == E_ARObjectGeneralParts.PoolSpecificPart)
@@ -119,6 +120,6 @@ public class ARObjectPartScript : MonoBehaviour
         }
 
     }
-
+    */
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

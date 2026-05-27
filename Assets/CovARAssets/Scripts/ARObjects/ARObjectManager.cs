@@ -102,6 +102,7 @@ public class ARObjectManager : MonoBehaviour
 
             case E_ARObjectStates.RotatingState:
                 _HUDManagerScrit.ShowSpecificSubMenu("RotationSubPanel");
+                _CurrentARObject.GetComponent<ARObjectScript>().InitRotationState();
                 break;
 
             case E_ARObjectStates.ReSizeingState:
@@ -136,7 +137,7 @@ public class ARObjectManager : MonoBehaviour
         // Buscamos el nuevo prefab en la lista e instanciamos
         foreach (GameObject prefab in _PoolPrefabs)
         {
-            if (prefab.GetComponent<ARObjectScript>().GetPoolType() == _ARObjectToActive)
+            if (prefab.GetComponent<ARObjectScript>().GeCoverType() == _ARObjectToActive)
             {
                 _CurrentARObject = Instantiate(prefab, transform);
 
