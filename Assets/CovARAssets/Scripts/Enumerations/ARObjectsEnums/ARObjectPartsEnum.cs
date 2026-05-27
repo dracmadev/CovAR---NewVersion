@@ -12,5 +12,6 @@ public enum E_ARObjectParts
     BackCoverPlane = 7,
     Rails = 8,
     ExamplePool = 9,
+    CoverAxisLamas = 10,
 
 }
