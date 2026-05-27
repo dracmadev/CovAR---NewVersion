@@ -34,7 +34,6 @@ public class ARObjectScript : MonoBehaviour
     private GameObject _lenghtSliderRef;
     private List<GameObject> _boneRightObjList = new List<GameObject>();
     private GameObject _footRightObj;
-    private float _footRightOriginalX;
 
     void Start()
     {
@@ -405,11 +404,7 @@ public class ARObjectScript : MonoBehaviour
         //GET RIGHT FOOT
         _footRightObj = GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight);
 
-        //INIT POS
-        if (_footRightObj != null)
-        {
-            _footRightOriginalX = _footRightObj.transform.localPosition.x;
-        }
+        AssignLenghtButtonsEvents();
     }
 
 
@@ -431,6 +426,97 @@ public class ARObjectScript : MonoBehaviour
 
         _footRightObj.transform.localPosition = new Vector3(currentSliderValue, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
 
+    }
+
+    public void MinusLenghtARObject()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("SetARObjectLenghtSupPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            // Arrodonim 
+            float currentVal = sliderData.sliderResult;
+            float newLenght = Mathf.Floor(currentVal / 0.05f) * 0.05f;
+
+            if (Mathf.Approximately(newLenght, currentVal))
+            {
+                newLenght -= 0.05f;
+            }
+
+            sliderData.sliderResult = Mathf.Clamp(newLenght, sliderData.sliderMin, sliderData.sliderMax);
+
+            SetARObjectLenght();
+
+            UpdateLenghtSlider();
+        }
+    }
+
+    public void PlusLenghtARObject()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("SetARObjectLenghtSupPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            // Arrodonim 
+            float currentVal = sliderData.sliderResult;
+            float newLenght = Mathf.Ceil(currentVal / 0.05f) * 0.05f;
+
+            if (Mathf.Approximately(newLenght, currentVal))
+            {
+                newLenght += 0.05f;
+            }
+
+            sliderData.sliderResult = Mathf.Clamp(newLenght, sliderData.sliderMin, sliderData.sliderMax);
+
+            SetARObjectLenght();
+
+            UpdateLenghtSlider();
+        }
+    }
+
+    void UpdateLenghtSlider()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("SetARObjectLenghtSupPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            float normalizedStartingSliderValue = (sliderData.sliderResult - sliderData.sliderMin) /
+                                                 (sliderData.sliderMax - sliderData.sliderMin);
+
+            sliderObj.GetComponent<UnityEngine.UI.Slider>().value = normalizedStartingSliderValue;
+        }
+    }
+
+    void AssignLenghtButtonsEvents()
+    {
+        Button minusBtn = GetButtonWithSpecificNameFromSpecificSubPanel("SetARObjectLenghtSupPanel", "Minus");
+        if (minusBtn != null)
+        {
+            minusBtn.onClick.RemoveListener(MinusLenghtARObject);
+            minusBtn.onClick.AddListener(MinusLenghtARObject);
+        }
+        else
+        {
+            Debug.LogWarning("No s'ha trobat el botó Minus per a la mida.");
+        }
+
+        Button plusBtn = GetButtonWithSpecificNameFromSpecificSubPanel("SetARObjectLenghtSupPanel", "Plus");
+
+        if (plusBtn != null)
+        {
+            plusBtn.onClick.RemoveListener(PlusLenghtARObject);
+            plusBtn.onClick.AddListener(PlusLenghtARObject);
+        }
+        else
+        {
+            Debug.LogWarning("No s'ha trobat el botó Plus per a la mida.");
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
