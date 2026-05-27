@@ -30,10 +30,6 @@ public class ARObjectScript : MonoBehaviour
     //HUD
     HUDManagerScript _HUDManagerScript;
 
-    //ROTATION
-    GameObject _RotationSliderRef;
-    private float _initialYRotation;
-    private bool _hasSavedInitialRotation = false;
 
 
     void Start()
@@ -168,6 +164,44 @@ public class ARObjectScript : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+    //////////////////////////////////////////////////// AROBJECT BEHAVIOURS //////////////////////////////////////////////////////////////////////////
+
+    GameObject GetSliderFromSpecificSubPanel(string subPanelName)
+    {
+        
+        if (_HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel(subPanelName).Count != 0)
+        {
+            foreach (GameObject slider in _HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel(subPanelName))
+            {
+                if (slider.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Slider)
+                {
+                    return  slider;
+                }
+            }
+        }
+        
+
+        return null;
+    }
+
+    Button GetButtonWithSpecificNameFromSpecificSubPanel(string subPanelName, string specificNameOnButton)
+    {
+        if (_HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel(subPanelName).Count != 0)
+        {
+            foreach (GameObject obj in _HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel(subPanelName))
+            {
+                if (obj.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Button && obj.name.Contains(specificNameOnButton))
+                {
+                    return obj.GetComponent<Button>();
+                }
+            }
+        }
+        return null;
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     ////////////////////////////////////////////////////// MOVE AR OBJECT ///////////////////////////////////////////////////////////////////////////
 
     void ARObjectMovingXZAxisBehaviour()
@@ -254,63 +288,11 @@ public class ARObjectScript : MonoBehaviour
         AssignRotationButtonsEvents();
     }
     
-    
-    GameObject GetRotationSlider()
-    {
-        if (_RotationSliderRef == null)
-        {
-            if (_HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel").Count != 0)
-            {
-                foreach (GameObject slider in _HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel"))
-                {
-                    if (slider.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Slider)
-                    {
-                        _RotationSliderRef = slider;
-                    }
-                }
-            }
-        }
-
-        return _RotationSliderRef;
-    }
-
-
-    Button GetRotationMinusButton()
-    {
-        if (_HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel").Count != 0)
-        {
-            foreach (GameObject obj in _HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel"))
-            {
-                if (obj.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Button && obj.name.Contains("Minus"))
-                {
-                    return obj.GetComponent<Button>();
-                }
-            }
-        }
-        return null;
-    }
-
-    Button GetRotationPlusButton()
-    {
-        if (_HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel").Count != 0)
-        {
-            foreach (GameObject obj in _HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel("RotationSubPanel"))
-            {
-                if (obj.GetComponent<UIBehaviourComponent>().GetUIComponentType() == E_UIComponents.Button && obj.name.Contains("Plus"))
-                {
-                    return obj.GetComponent<Button>();
-                }
-            }
-        }
-        return null;
-    }
-
-
     void RotateYAxisARObject()
     {
-        if (GetRotationSlider())
+        if (GetSliderFromSpecificSubPanel("RotationSubPanel"))
         {
-            float _YValueRot = GetRotationSlider().GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult;
+            float _YValueRot = GetSliderFromSpecificSubPanel("RotationSubPanel").GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult;
             this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, _YValueRot, this.transform.localEulerAngles.z);
         }
         else
@@ -321,7 +303,8 @@ public class ARObjectScript : MonoBehaviour
 
     public void MinusRotateARObject()
     {
-        GameObject sliderObj = GetRotationSlider();
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
+        
         if (sliderObj != null)
         {
             var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
@@ -337,7 +320,8 @@ public class ARObjectScript : MonoBehaviour
 
     public void PlusRotateARObject()
     {
-        GameObject sliderObj = GetRotationSlider();
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
+
         if (sliderObj != null)
         {
             var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
@@ -353,7 +337,8 @@ public class ARObjectScript : MonoBehaviour
 
     void UpdateRotationSlider()
     {
-        GameObject sliderObj = GetRotationSlider();
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
+
         if (sliderObj != null)
         {
             var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
@@ -367,7 +352,7 @@ public class ARObjectScript : MonoBehaviour
 
     void AssignRotationButtonsEvents()
     {
-        Button minusBtn = GetRotationMinusButton(); // MINUS
+        Button minusBtn = GetButtonWithSpecificNameFromSpecificSubPanel("RotationSubPanel", "Minus"); // MINUS
         if (minusBtn != null)
         {
             minusBtn.onClick.RemoveListener(MinusRotateARObject);
@@ -378,7 +363,7 @@ public class ARObjectScript : MonoBehaviour
             Debug.LogWarning("No s'ha trobat el botó Minus per assignar l'esdeveniment.");
         }
 
-        Button plusBtn = GetRotationPlusButton(); //PLUS
+        Button plusBtn = GetButtonWithSpecificNameFromSpecificSubPanel("RotationSubPanel", "Plus"); //PLUS
         if (plusBtn != null)
         {
             plusBtn.onClick.RemoveListener(PlusRotateARObject);
