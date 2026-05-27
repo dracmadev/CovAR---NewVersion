@@ -48,8 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PoolType: 1
+  _MaxLenghtDistance: 14
   _ARObjectState: 0
   _ARObjectSpecificPartsList: []
+  _ARObjectBonesList: []
   _ARObjectManager: {fileID: 0}
 --- !u!1001 &2595838288052679581
 PrefabInstance:
@@ -77,7 +79,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ab25211aad8199d4a8afbc5e99c27f16,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.966
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab25211aad8199d4a8afbc5e99c27f16,
         type: 3}
@@ -374,7 +376,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.017
+      value: 0.021
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
@@ -431,6 +433,31 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ARObject
       objectReference: {fileID: 0}
+    - target: {fileID: -3230517834897953847, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -3230517834897953847, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -3230517834897953847, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -1462160926247460349, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.42
+      objectReference: {fileID: 0}
+    - target: {fileID: -955545610891565809, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
       propertyPath: m_Name
@@ -451,6 +478,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ARObject
       objectReference: {fileID: 0}
+    - target: {fileID: 3060412424013799052, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060412424013799052, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060412424013799052, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 3796784388878362308, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
       propertyPath: m_Name
@@ -460,6 +502,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: ARObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840775454776557530, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840775454776557530, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6182815924573000745, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
@@ -675,7 +727,7 @@ MonoBehaviour:
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
-    _BoneDirection: 2
+    _BoneDirection: 1
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}

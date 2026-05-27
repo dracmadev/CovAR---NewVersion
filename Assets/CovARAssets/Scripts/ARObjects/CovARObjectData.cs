@@ -27,5 +27,8 @@ public class St_CovARObjectData
     public St_Product _CurrentFabricCoverProduct;
     public St_Model _CurrentFabricCoverModel;
     public St_Material _CurrentFabricCoverMaterial;
+    [Space(25)]
+    [Header("CURRENT AROBJECT LENGHT:")]
+    public float _CurrentARObjectLenght = 1;
 }
     

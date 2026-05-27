@@ -107,6 +107,7 @@ public class ARObjectManager : MonoBehaviour
 
             case E_ARObjectStates.SetLenghtState:
                 _HUDManagerScrit.ShowSpecificSubMenu("SetARObjectLenghtSupPanel");
+                _CurrentARObject.GetComponent<ARObjectScript>().InitSetLenghtState();
                 break;
         }
     }

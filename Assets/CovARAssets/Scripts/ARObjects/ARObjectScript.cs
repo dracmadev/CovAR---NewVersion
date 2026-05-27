@@ -11,6 +11,7 @@ public class ARObjectScript : MonoBehaviour
     [Space(25)]
     [Header("Type of ARObject:")]
     [SerializeField] private E_PoolType _PoolType;
+    [SerializeField] private float _MaxLenghtDistance = 10f;
 
     [Header("Current ARObject state: (Exposed for debug)")]
     [SerializeField] private E_ARObjectStates _ARObjectState;
@@ -30,7 +31,10 @@ public class ARObjectScript : MonoBehaviour
     //HUD
     HUDManagerScript _HUDManagerScript;
 
-
+    private GameObject _lenghtSliderRef;
+    private List<GameObject> _boneRightObjList = new List<GameObject>();
+    private GameObject _footRightObj;
+    private float _footRightOriginalX;
 
     void Start()
     {
@@ -113,16 +117,20 @@ public class ARObjectScript : MonoBehaviour
         return _ARObjectState;
     }
 
-    public GameObject GetBoneObjBasedOnDirection(E_ARObjectComponentsDirection direction)
+    public List<GameObject> GetAllBoneObjsBasedOnDirection(E_ARObjectComponentsDirection direction)
     {
-        foreach (ARObjectPartScript bone in _ARObjectBonesList)
+        List<GameObject> foundBones = new List<GameObject>();
+
+        ARObjectPartScript[] allParts = GetComponentsInChildren<ARObjectPartScript>(true);
+
+        foreach (ARObjectPartScript part in allParts)
         {
-            if (bone.GetBoneData()._BoneDirection == direction)
+            if (part.GetBoneData() != null && part.GetBoneData()._BoneDirection == direction)
             {
-                return bone.GetARObjectPartData()._ARObjectPartReference;
+                foundBones.Add(part.gameObject);
             }
         }
-        return null;
+        return foundBones;
     }
 
     public GameObject GetARObjectSpecificPartBasedOnType(E_ARObjectParts part)
@@ -158,7 +166,7 @@ public class ARObjectScript : MonoBehaviour
             case E_ARObjectStates.DefaultState: break;
             case E_ARObjectStates.MovingState: ARObjectMovingXZAxisBehaviour(); break;
             case E_ARObjectStates.RotatingState: RotateYAxisARObject(); break;
-            case E_ARObjectStates.SetLenghtState: break;
+            case E_ARObjectStates.SetLenghtState: /* O fa amb un lister al ON Value change*/  break;
         }
     }
 
@@ -376,4 +384,54 @@ public class ARObjectScript : MonoBehaviour
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////// SET AROBJECT LENGHT ////////////////////////////////////////////////////////////////////////
+
+    public void InitSetLenghtState()
+    {
+        _lenghtSliderRef = GetSliderFromSpecificSubPanel("SetARObjectLenghtSupPanel");
+
+        if (_lenghtSliderRef != null)
+        {
+            _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxLenghtDistance;
+        }
+
+        _lenghtSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetARObjectLenght(); });
+        _lenghtSliderRef.GetComponent<Slider>().onValueChanged.AddListener(delegate { SetARObjectLenght(); });
+
+        //GET RIGHT BONES
+        _boneRightObjList = GetAllBoneObjsBasedOnDirection(E_ARObjectComponentsDirection.RIGHT);
+
+        //GET RIGHT FOOT
+        _footRightObj = GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight);
+
+        //INIT POS
+        if (_footRightObj != null)
+        {
+            _footRightOriginalX = _footRightObj.transform.localPosition.x;
+        }
+    }
+
+
+
+    void SetARObjectLenght()
+    {
+        if (_lenghtSliderRef == null) return;
+        if (_boneRightObjList.Count == 0) return;
+        if (_footRightObj == null) return;
+
+        float currentSliderValue = (_lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult);
+
+        foreach (GameObject boneObj in _boneRightObjList)
+        {
+            Vector3 bonePos = boneObj.transform.localPosition;
+            boneObj.transform.localPosition = new Vector3(currentSliderValue * 100, bonePos.y, bonePos.z);
+            _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = currentSliderValue;
+        }
+
+        _footRightObj.transform.localPosition = new Vector3(currentSliderValue, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
+
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
