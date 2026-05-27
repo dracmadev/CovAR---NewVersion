@@ -214,7 +214,7 @@ public class ARObjectScript : MonoBehaviour
         Vector3 worldPos = _ARObjectManager.GetARCamera().ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, objectDistance));
         Vector3 targetPos = new Vector3(worldPos.x, fixedY, worldPos.z);
 
-        this.transform.position = Vector3.Lerp(this.transform.position, targetPos, Time.deltaTime * 15f);
+        this.transform.position = Vector3.Lerp(this.transform.position, targetPos, Time.deltaTime * 25f);
     }
 
     void StopDragging()
