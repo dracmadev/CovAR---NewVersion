@@ -154,7 +154,7 @@ MonoBehaviour:
   UI_ButtonOnClickDefaultStruct:
     scaleUpFactor: 1.2
     animationDuration: 0.2
-    easeType: 0
+    easeType: 27
   UI_ButtonOnClickGoSidesStruct:
     moveAmount: 50
     animationDuration: 0.2
@@ -260,3 +260,4 @@ MonoBehaviour:
     _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
     _GetPremiumButton: {fileID: 0}
   bFeatureNotAviable: 0
+  _ButtonsToHideArray: []
