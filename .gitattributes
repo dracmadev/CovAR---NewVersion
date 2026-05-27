@@ -1,0 +1,15 @@
+# Configurar el comportament per defecte per als salts de línia
+* text=auto
+
+# Forçar text amb LF per a fitxers de codi i metadades d'Unity
+*.cs text eol=lf
+*.meta text eol=lf
+*.asset text eol=lf
+*.unity text eol=lf
+*.mat text eol=lf
+*.shader text eol=lf
+
+# Deixar els fitxers binaris tranquils
+*.png binary
+*.jpg binary
+*.fbx binary
