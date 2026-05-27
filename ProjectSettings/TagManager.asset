@@ -3,19 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - DefaultPopUp
-  - PlaneReticula
-  - ARObject
-  - ARObjectManager
-  - PlaneFinder
-  - HUD
-  - GeolocalizationManager
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - ARObject
+  - 
   - Water
   - UI
   - 

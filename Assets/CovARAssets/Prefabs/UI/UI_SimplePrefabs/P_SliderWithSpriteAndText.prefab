@@ -74,6 +74,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6310730481692783201, guid: 97934677460ac5641a0f13e44b826b86,
+        type: 3}
+      propertyPath: UI_ComponentStruct.animationDuration
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7653137509452421496, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_Pivot.x

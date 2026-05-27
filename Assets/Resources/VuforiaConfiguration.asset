@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: AYWPGmj/////AAABmQwuBBSb0UeJkba1gjPtED5GrXPowHkMCqwQg1tB+8zOPZwP5AYXTtiNyVCT8HBFfrTPlIvBgqhbIUYIw6eJPcbTxIubZSWsa+kxWQfozQPwhwPBAGTh3ShHFAeZkX2KztKvBBoD/Je5dKq3UqYropqdZkqQqAoFKjL4NCooN9/lCH1Jj+FDV1WUiAjHwfRTSb0mpq11ysCqDKu0tufkQQuaxaKq27nBAUOcRQRI1cbIg0zfrlPPFX3KoOFJBvgzfo4hEAJufx153pYIdxk3sOnW+Fsmw7YJifUh67grVxMWhMymIiBI/phpGJQBVkJRp9aobg5VPCPvABNsjIwSVLQZ0nbC9GUtMZNmOt78htvr
-    ufoLicenseKey: QVcvYy9FMy8vLy8vQUFBQUtENXlObzFpZjBPNGdUYVRQSTNWbllJemJOekJQNWlGZzZZR0NpQlFqaSt6OFEraURWcnVKbXBBd3NhOUVsWmY1QmVsK0FqNFh3eDFBbmdqSVo2WmMvU3Y5akErYXZGa1ZOMW9JL2RydUtKbkNSdndhU0ozL2N5a2MzeEM4WDcyTGZSeUZKMU1RajJyVGM1M3lVZ21YV3g2Y25rbEtNaklJZXRTL0g3Z1FlSGhtU29vSXlFWmJwQWxneElUWkRVb3YvSmlDKytZVjRscnlVNm84NnREblJveW9XQkpOSlJ0VUhFSk9FVHdOVFRhS1pNdm1BZFhZajFjbUU1SGd1T015L0dJc2lsT2tDektQMUhRNGIyOTBEYXJoRytETGM2dURKcXJzdDRzTm5KOEw3ejBiZ0dheG44YktJd014a2NjMmVxMkVJT1hLNGs5ejFvRjlYSGoxRVM4dWRLd3lWVjFQSmtVOU14cDB4eng=
+    vuforiaLicenseKey: Ac0LL/D/////AAABmeuPOD2uHk5Krms4iQ0zjoNfPn4k5CS116eMPr+g9SkchkGpCCfvjEajlCc+UGitVQGehTKFTEIccG//e+TN/VUsr+DOTPgMqlm7Qi1nq2QGLMaxK5X50tdaw9FGfe7eeUFAaiqmb54HXtr3eQXH5Wg9MtyUIShzYq9L/vduZ1j0D6dvTeQwL0SCvAmV4a2RssGh90G0gfUibcic6EpS+FgJoWOrjYlTzHCr3u7dPnBRUx/ILYFrWICalrxoSZ6nSzq08/HLKJHp9x3GS07HmOc1hVJCYue/Pxv2eJQ8Zzak3ZxOhaw9dLby4Y/jJpha365ZkKgj4VkWR6jSbaF4kthPrRKqHzyNtdUz7FliPe6a
+    ufoLicenseKey: QVZRcGkvYi8vLy8vQUFBQUtJSm1sRldab1U0OW9wTEJVMWpjMjk4RU8zR2N3MkF2SVZweXhlenhGNm9oZW1DNXlJejRRWnQwY1hoTmlpRFFUelczYkp4Skh0SzRXY1JuNVZtVk1iWVJGVm1USWFFeHBGanY1Z3dLdHgzSFdxUkwzQ1VibE9QVWttaEhIOGJtdC9mWEkzT2lVTGVGWVdLUkk2WCtUUCtGSUMzVEVjVk4wKytoOEdDTVM4akdQMDdFUkdrdnVsN0hnZHBhVVI5Nng2NUdzM012YnFvQnJrRG1QY0JkZ0V6Y1NCSFpKUmdOWWpTUFVDR0oyNVpUNWplTXZoRUFadnJZbktHNkdhZmI2dTI4bGkrL3F3WGhycGdzakxtRDJwWUNSclEzV3BDTDZ1bmlwVlZJUjZsUHNJK1lLOTJoUzBxMWtOb2FZSWtuZVJmY1piTFhPSk1WWGFyL1FvTmNpWDNEK2cyenUzVGNGR3R0L1ZzOU5VbmM=
     delayedInitialization: 0
     cameraFocusModeSetting: 2
     cameraDeviceModeSetting: -1
@@ -23,7 +23,7 @@ MonoBehaviour:
     modelTargetRecoWhileExtendedTracked: 1
     shareRecordingsInITunes: 0
     logLevel: 0
-    version: 11.3.4
+    version: 11.4.4
     eulaAcceptedVersions: '{"Values":["","0.0","10.8","9.8","10.1","10.2","10.3","10.7","10.9","10.10","10.11","10.12","10.13","10.14","10.15","10.17","10.18","10.19","10.21","10.20","10.22","10.25","10.27","11.0","11.1","11.3","11.4"]}'
   database:
     disableModelExtraction: 0
@@ -55,4 +55,4 @@ MonoBehaviour:
   webcam:
     renderTextureLayer: 30
   packageInformation:
-    ARFoundationVersion: 6.2.0
+    ARFoundationVersion: 

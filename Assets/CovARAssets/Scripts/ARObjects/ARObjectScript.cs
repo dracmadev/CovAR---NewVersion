@@ -158,7 +158,7 @@ public class ARObjectScript : MonoBehaviour
             case E_ARObjectStates.DefaultState: break;
             case E_ARObjectStates.MovingState: ARObjectMovingXZAxisBehaviour(); break;
             case E_ARObjectStates.RotatingState: RotateYAxisARObject(); break;
-            case E_ARObjectStates.ReSizeingState: break;
+            case E_ARObjectStates.SetLenghtState: break;
         }
     }
 

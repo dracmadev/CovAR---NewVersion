@@ -105,8 +105,8 @@ public class ARObjectManager : MonoBehaviour
                 _CurrentARObject.GetComponent<ARObjectScript>().InitRotationState();
                 break;
 
-            case E_ARObjectStates.ReSizeingState:
-                _HUDManagerScrit.HideAllOfSubMenus();
+            case E_ARObjectStates.SetLenghtState:
+                _HUDManagerScrit.ShowSpecificSubMenu("SetARObjectLenghtSupPanel");
                 break;
         }
     }
@@ -201,16 +201,16 @@ public class ARObjectManager : MonoBehaviour
                 }
                 break;
 
-            case "ReSizeingState":
+            case "SetLenghtState":
                 if (GetCurrentARObject() != null)
                 {
-                    if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.ReSizeingState)
+                    if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetLenghtState)
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
                     }
                     else
                     {
-                        GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.ReSizeingState);
+                        GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.SetLenghtState);
                     }
                     UpdateARObjectSpecificState();
                 }

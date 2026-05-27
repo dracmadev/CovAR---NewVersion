@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
-using Vuforia;
+//using Vuforia;
 
 public class TakeScreenShootAndShare : MonoBehaviour
 {
