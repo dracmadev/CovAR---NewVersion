@@ -10,6 +10,7 @@ TagManager:
   - ARObjectManager
   - PlaneFinder
   - HUD
+  - GeolocalizationManager
   layers:
   - Default
   - TransparentFX
