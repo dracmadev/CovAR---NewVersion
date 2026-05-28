@@ -1,0 +1,545 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1405804555908658066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7906242092378976095}
+  - component: {fileID: 4657153747621097485}
+  m_Layer: 0
+  m_Name: P_ROUSILLON
+  m_TagString: ARObject
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7906242092378976095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405804555908658066}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2415791828049042241}
+  - {fileID: 2577333915627381250}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4657153747621097485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405804555908658066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dbe3ec647e1fb4cacdc970cf326bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PoolType: 8
+  _MaxARObjectLenghtDistance: 8
+  _MaxLamasLenghtDistance: 14
+  _ARObjectState: 0
+  _ARObjectSpecificPartsList: []
+  _ARObjectBonesList: []
+  _ARObjectManager: {fileID: 0}
+--- !u!1001 &2616097664163644905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7906242092378976095}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0473
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277483607751931695, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -6478536213147159724, guid: 10e1e0b1d27a1d14fa49e33b6377f3c7,
+        type: 3}
+    - target: {fileID: -5988971838916165696, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_TagString
+      value: ARObject
+      objectReference: {fileID: 0}
+    - target: {fileID: -5266785677919700964, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_Name
+      value: Cladding (Submerged)
+      objectReference: {fileID: 0}
+    - target: {fileID: -5266785677919700964, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_TagString
+      value: ARObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_Name
+      value: FBX_PlaneWithBones
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_TagString
+      value: ARObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629027807311914165, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_Name
+      value: RightBone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629027807311914165, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_TagString
+      value: ARObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796784388878362308, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_Name
+      value: LeftBone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796784388878362308, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_TagString
+      value: ARObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3796784388878362308, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4596725719756945185}
+    - targetCorrespondingSourceObject: {fileID: 2629027807311914165, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4804456417773941192}
+  m_SourcePrefab: {fileID: 100100000, guid: c856b12abf26c5746a4f476042eb518c, type: 3}
+--- !u!1 &14091528075436380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2629027807311914165, guid: c856b12abf26c5746a4f476042eb518c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2616097664163644905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4804456417773941192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14091528075436380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 3
+  _ARObjectPartData:
+    _ARObjectPartType: 0
+    _ARObjectPartReference: {fileID: 0}
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 2
+    _BoneDirection: 1
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}
+--- !u!1 &1224659957105025837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3796784388878362308, guid: c856b12abf26c5746a4f476042eb518c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2616097664163644905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4596725719756945185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224659957105025837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 3
+  _ARObjectPartData:
+    _ARObjectPartType: 0
+    _ARObjectPartReference: {fileID: 0}
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 1
+    _BoneDirection: 2
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}
+--- !u!4 &2577333915627381250 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2616097664163644905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2741606556676848810
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7906242092378976095}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.049
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.257
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8513424388201257645, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_Name
+      value: RousillonAxis
+      objectReference: {fileID: 0}
+    - target: {fileID: -8513424388201257645, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_TagString
+      value: ARObject
+      objectReference: {fileID: 0}
+    - target: {fileID: -5988971838916165696, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_TagString
+      value: ARObject
+      objectReference: {fileID: 0}
+    - target: {fileID: -3540725318260445992, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5056615754408047630, guid: 156dafa605bc6d24c92aa92d2cc56e16,
+        type: 3}
+    - target: {fileID: 919132149155446097, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_Name
+      value: FBX_CubeAxis
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_TagString
+      value: ARObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629027807311914165, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_Name
+      value: RightBone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629027807311914165, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_TagString
+      value: ARObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796784388878362308, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_Name
+      value: LeftBone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796784388878362308, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_TagString
+      value: ARObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3796784388878362308, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3897793972743436023}
+    - targetCorrespondingSourceObject: {fileID: 2629027807311914165, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5756494096287033040}
+    - targetCorrespondingSourceObject: {fileID: -8513424388201257645, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8523154228371182250}
+  m_SourcePrefab: {fileID: 100100000, guid: 2f2697bd9acf9dc47ae03b2f61536f20, type: 3}
+--- !u!1 &175651929063004191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2629027807311914165, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+    type: 3}
+  m_PrefabInstance: {fileID: 2741606556676848810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5756494096287033040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175651929063004191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 3
+  _ARObjectPartData:
+    _ARObjectPartType: 0
+    _ARObjectPartReference: {fileID: 0}
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 2
+    _BoneDirection: 1
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}
+--- !u!1 &1350173796934163054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3796784388878362308, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+    type: 3}
+  m_PrefabInstance: {fileID: 2741606556676848810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3897793972743436023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350173796934163054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 3
+  _ARObjectPartData:
+    _ARObjectPartType: 0
+    _ARObjectPartReference: {fileID: 0}
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 1
+    _BoneDirection: 2
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}
+--- !u!4 &2415791828049042241 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+    type: 3}
+  m_PrefabInstance: {fileID: 2741606556676848810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3446970313567836665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8513424388201257645, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+    type: 3}
+  m_PrefabInstance: {fileID: 2741606556676848810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8523154228371182250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3446970313567836665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 1
+  _ARObjectPartData:
+    _ARObjectPartType: 5
+    _ARObjectPartReference: {fileID: 0}
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 0
+    _BoneDirection: 0
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}

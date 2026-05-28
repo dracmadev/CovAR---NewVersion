@@ -122,32 +122,47 @@ public class ARObjectManager : MonoBehaviour
         Vector3 lastPosition = Vector3.zero;
         Quaternion lastRotation = Quaternion.identity;
 
-        // Si ya había un objeto antes, guardamos dónde estaba para que el nuevo aparezca exactamente ahí
         if (_CurrentARObject != null)
         {
             lastPosition = _CurrentARObject.transform.position;
             lastRotation = _CurrentARObject.transform.rotation;
         }
 
-        // Neteja de memòria: Destruimos todos los hijos actuales
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
 
-        // Buscamos el nuevo prefab en la lista e instanciamos
         foreach (GameObject prefab in _PoolPrefabs)
         {
             if (prefab.GetComponent<ARObjectScript>().GeCoverType() == _ARObjectToActive)
             {
                 _CurrentARObject = Instantiate(prefab, transform);
 
-                // Si ya había una posición guardada, se la aplicamos a la nueva piscina
                 if (lastPosition != Vector3.zero)
                 {
                     _CurrentARObject.transform.position = lastPosition;
                     _CurrentARObject.transform.rotation = lastRotation;
                 }
+
+                // ==================== AQUÍ S'APLICA LA LOGICA PAS A PAS ====================
+                ARObjectScript newObjScript = _CurrentARObject.GetComponent<ARObjectScript>();
+
+                // 1. Inicialitzem primer les llistes internes del nou model (ossos, peus...)
+                newObjScript.InitARObjectScript();
+
+                // 2. Llegim la llargada màxima que té configurada aquest model nou
+                float maxLenghtOfNewModel = newObjScript.GetMaxARObjectLenghtDistance();
+
+                // 3. Comprovem els límits: si la mida actual supera el màxim del nou model, la retallem
+                if (_CovARObjectData._CurrentARObjectLenght > maxLenghtOfNewModel)
+                {
+                    _CovARObjectData._CurrentARObjectLenght = maxLenghtOfNewModel;
+                }
+
+                // 4. Cridem a la teva nova funció passant-li el valor numèric final calculat
+                newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                // ===========================================================================
 
                 SetCurrentARObjectState("DefaultState");
                 break;

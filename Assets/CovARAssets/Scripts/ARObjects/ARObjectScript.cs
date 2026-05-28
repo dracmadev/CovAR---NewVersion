@@ -34,7 +34,7 @@ public class ARObjectScript : MonoBehaviour
     HUDManagerScript _HUDManagerScript;
 
     //OBJ LENGHT
-    private GameObject _lenghtSliderRef;
+    private  GameObject _lenghtSliderRef;
     private List<GameObject> _boneRightObjList = new List<GameObject>();
     private GameObject _footRightObj;
     private GameObject _feedbackLenghtText;
@@ -138,14 +138,25 @@ public class ARObjectScript : MonoBehaviour
 
     public GameObject GetARObjectSpecificPartBasedOnType(E_ARObjectParts part)
     {
-        foreach (ARObjectPartScript specificPart in _ARObjectSpecificPartsList)
+        ARObjectPartScript[] allParts = GetComponentsInChildren<ARObjectPartScript>(true);
+
+        foreach (ARObjectPartScript specificPart in allParts)
         {
-            if (specificPart.GetARObjectPartData()._ARObjectPartType == part)
+            if (specificPart != null && specificPart.GetARObjectPartData() != null)
             {
-                return specificPart.GetARObjectPartData()._ARObjectPartReference;
+                if (specificPart.GetARObjectPartData()._ARObjectPartType == part)
+                {
+                    return specificPart.gameObject;
+                }
             }
         }
+
         return null;
+    }
+
+    public float GetMaxARObjectLenghtDistance()
+    {
+        return _MaxARObjectLenghtDistance;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -416,29 +427,31 @@ public class ARObjectScript : MonoBehaviour
         if (_lenghtSliderRef != null)
         {
             _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxARObjectLenghtDistance;
+
+            _lenghtSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetARObjectLenght(); });
+            _lenghtSliderRef.GetComponent<Slider>().onValueChanged.AddListener(delegate { SetARObjectLenght(); });
+
+            _feedbackLenghtText = GetFeedbackTextFromSpecificSlider(_lenghtSliderRef);
+
+            AssignLenghtButtonsEvents();
         }
-
-        _lenghtSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetARObjectLenght(); });
-        _lenghtSliderRef.GetComponent<Slider>().onValueChanged.AddListener(delegate { SetARObjectLenght(); });
-
-        //GET RIGHT BONES
+        else
+        {
+            Debug.LogWarning("InitSetLenghtState: El slider de la llargada no s'ha trobat (segurament el panell està ocult). Ens saltem la UI de moment.");
+        }
+      
+        // GET RIGHT BONES
         _boneRightObjList = GetAllBoneObjsBasedOnDirection(E_ARObjectComponentsDirection.RIGHT);
 
-        //GET RIGHT FOOT
+        // GET RIGHT FOOT
         _footRightObj = GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight);
-
-        //GET FEEDBACK TEXT
-        _feedbackLenghtText = GetFeedbackTextFromSpecificSlider(_lenghtSliderRef);
-
-
-        AssignLenghtButtonsEvents();
+        Debug.Log("****FOOT RIGHT: " + (_footRightObj != null ? _footRightObj.name : "null"));
     }
 
     void SetARObjectLenght()
     {
         if (_lenghtSliderRef == null) return;
         if (_boneRightObjList.Count == 0) return;
-        if (_footRightObj == null) return;
 
         float currentSliderValue = (_lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult);
 
@@ -449,8 +462,11 @@ public class ARObjectScript : MonoBehaviour
             _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = currentSliderValue;
         }
 
-        _footRightObj.transform.localPosition = new Vector3(currentSliderValue, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
-
+        if(_footRightObj != null)
+        {
+            _footRightObj.transform.localPosition = new Vector3(currentSliderValue, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
+        }
+       
         _feedbackLenghtText.GetComponent<TMP_Text>().text = currentSliderValue.ToString("F2") + "m";
     }
 
@@ -543,6 +559,26 @@ public class ARObjectScript : MonoBehaviour
         {
             Debug.LogWarning("No s'ha trobat el botó Plus per a la mida.");
         }
+    }
+
+    public void SetARObjectLenghtByNum(float newLenght)
+    {
+        InitSetLenghtState();
+
+        if (_boneRightObjList.Count == 0) return;
+
+        foreach (GameObject boneObj in _boneRightObjList)
+        {
+            Vector3 bonePos = boneObj.transform.localPosition;
+            boneObj.transform.localPosition = new Vector3(newLenght * 100, bonePos.y, bonePos.z);
+        }
+
+        if(_footRightObj != null)
+        {
+            _footRightObj.transform.localPosition = new Vector3(newLenght, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
+        }
+
+        _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = newLenght;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
