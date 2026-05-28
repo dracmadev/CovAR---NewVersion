@@ -13,5 +13,6 @@ public enum E_ARObjectParts
     Rails = 8,
     ExamplePool = 9,
     CoverAxisLamas = 10,
+    Crank = 11,
 
 }
