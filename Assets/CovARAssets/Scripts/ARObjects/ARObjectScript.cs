@@ -12,7 +12,8 @@ public class ARObjectScript : MonoBehaviour
     [Space(25)]
     [Header("Type of ARObject:")]
     [SerializeField] private E_PoolType _PoolType;
-    [SerializeField] private float _MaxLenghtDistance = 10f;
+    [SerializeField] private float _MaxARObjectLenghtDistance = 10f;
+    [SerializeField] private float _MaxLamasLenghtDistance = 10f;
 
     [Header("Current ARObject state: (Exposed for debug)")]
     [SerializeField] private E_ARObjectStates _ARObjectState;
@@ -414,7 +415,7 @@ public class ARObjectScript : MonoBehaviour
 
         if (_lenghtSliderRef != null)
         {
-            _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxLenghtDistance;
+            _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxARObjectLenghtDistance;
         }
 
         _lenghtSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetARObjectLenght(); });
