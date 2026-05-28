@@ -570,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _CurrentModelData:
     _ModelType: 0
+    _ModelGeneralType: 0
     _ModelLogo: {fileID: 0}
     _ModelKey: 
     _MaterialsArray: []

@@ -2304,13 +2304,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _CurrentCompanyRunning: 1
-  _CurrentPoolType: 4
+  _CurrentPoolType: 6
   _PoolPrefabs:
   - {fileID: 630147544002518466, guid: 5a1bc7294f33b9e4f872154dba162973, type: 3}
   - {fileID: 5707838377665097836, guid: fa6af5877e8286541bf4962d685218f2, type: 3}
   - {fileID: 3318207263874940135, guid: c7f8aac64979ed74c8ba93c1407a85d9, type: 3}
   - {fileID: 2928426802175405735, guid: fea0d1daa505b0149862db3d7466ef5f, type: 3}
   - {fileID: 3527025305465046855, guid: 78ce50c538eb93c479be4079e8ff95c1, type: 3}
+  - {fileID: 5118885789371567751, guid: 00c4ba7b3e5fd844c87e8b36022697f3, type: 3}
   _CurrentARObject: {fileID: 0}
   _ARCamera: {fileID: 0}
   _PlaneFinder: {fileID: 0}
@@ -3307,8 +3308,8 @@ Transform:
   m_GameObject: {fileID: 679900107}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.204, z: -0.05}
-  m_LocalScale: {x: 0.202, y: 0.408, z: 0.096}
+  m_LocalPosition: {x: -0, y: 0.302, z: -0.0242}
+  m_LocalScale: {x: 0.202, y: 0.61, z: 0.54}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
