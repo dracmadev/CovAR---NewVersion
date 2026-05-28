@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -31,9 +32,11 @@ public class ARObjectScript : MonoBehaviour
     //HUD
     HUDManagerScript _HUDManagerScript;
 
+    //OBJ LENGHT
     private GameObject _lenghtSliderRef;
     private List<GameObject> _boneRightObjList = new List<GameObject>();
     private GameObject _footRightObj;
+    private GameObject _feedbackLenghtText;
 
     void Start()
     {
@@ -207,6 +210,25 @@ public class ARObjectScript : MonoBehaviour
         return null;
     }
 
+    GameObject GetFeedbackTextFromSpecificSlider(GameObject slider)
+    {
+        if (slider == null)
+        {
+            return null;
+        }
+
+        UIBehaviourComponent[] allBehaviours = slider.GetComponentsInChildren<UIBehaviourComponent>(true);
+
+        foreach (var uiBehaviour in allBehaviours)
+        {
+            if (uiBehaviour.GetUIComponentType() == E_UIComponents.Text)
+            {
+                return uiBehaviour.gameObject;
+            }
+        }
+
+        return null;
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////// MOVE AR OBJECT ///////////////////////////////////////////////////////////////////////////
@@ -404,10 +426,12 @@ public class ARObjectScript : MonoBehaviour
         //GET RIGHT FOOT
         _footRightObj = GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight);
 
+        //GET FEEDBACK TEXT
+        _feedbackLenghtText = GetFeedbackTextFromSpecificSlider(_lenghtSliderRef);
+
+
         AssignLenghtButtonsEvents();
     }
-
-
 
     void SetARObjectLenght()
     {
@@ -426,6 +450,7 @@ public class ARObjectScript : MonoBehaviour
 
         _footRightObj.transform.localPosition = new Vector3(currentSliderValue, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
 
+        _feedbackLenghtText.GetComponent<TMP_Text>().text = currentSliderValue.ToString("F2") + "m";
     }
 
     public void MinusLenghtARObject()

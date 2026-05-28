@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PoolType: 1
-  _MaxLenghtDistance: 14
+  _MaxLenghtDistance: 7.5
   _ARObjectState: 0
   _ARObjectSpecificPartsList: []
   _ARObjectBonesList: []
