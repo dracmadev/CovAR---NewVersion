@@ -728,6 +728,7 @@ public class UIAnimationComponent : MonoBehaviour
                         myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
                     }
                     break;
+
                 case E_SelectedButtonMode.SetPositionByOffsetANDChangeColor:
                     if (_UIBehaviourComponent != null)
                     {
@@ -741,12 +742,60 @@ public class UIAnimationComponent : MonoBehaviour
                         }
 
                         myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
+                       
                     }
                     break;
             }
         }
     }
 
+    public void ForceDesSelectButton()
+    {
+        switch (UI_ButtonOnSelectedData._SelectButtonMode)
+        {
+            case E_SelectedButtonMode.SetPositionByOffset:
+
+                if (_UIBehaviourComponent != null)
+                {
+                    if (_UIBehaviourComponent.GetButtonBehaviourData().bButtonInMobileMode) //MOBILE
+                    {
+                        DeselectAnimOnMobileMode();
+                    }
+                    else //NORMAL
+                    {
+                        DeselectAnim();
+                    }
+                }
+
+                break;
+
+            case E_SelectedButtonMode.ChangeColor:
+
+                if (_UIBehaviourComponent != null)
+                {
+                    myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
+                }
+                break;
+
+            case E_SelectedButtonMode.SetPositionByOffsetANDChangeColor:
+                if (_UIBehaviourComponent != null)
+                {
+                    if (_UIBehaviourComponent.GetButtonBehaviourData().bButtonInMobileMode) //MOBILE
+                    {
+                        DeselectAnimOnMobileMode();
+                    }
+                    else //NORMAL
+                    {
+                        DeselectAnim();
+                    }
+
+                    myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
+                    Debug.Log("UNSELECT BUTTON [" + this.gameObject.name + "] -> Color set to unselected color");
+                }
+                break;
+        }
+        
+    }
 
 
     public void SetColorOfButtonDependingOnSelectState(bool selected)

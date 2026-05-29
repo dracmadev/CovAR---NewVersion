@@ -225,27 +225,7 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
             {
                 foreach (Transform child2 in child1.gameObject.transform)
                 {
-                    /*
-                    if (child2.GetComponent<TMP_Text>())
-                    {
-                        St_DefaultPopUpBehaviourData._PopUpTitle = child2.GetComponent<TMP_Text>();
-                    }
-                    
-                    foreach (Transform child3 in child2.gameObject.transform)
-                    {
-                        if (child3.GetComponent<TMP_Text>())
-                        {
-                            St_DefaultPopUpBehaviourData._PopUpDescription = child3.GetComponent<TMP_Text>();
-                        }
-                        else if (child3.GetComponent<Button>())
-                        {
-                            St_DefaultPopUpBehaviourData._PopUpButtonsList.Add(child3.GetComponent<Button>());
-                        }
-                        else if (child3.GetComponent<Image>())
-                        {
-                            St_DefaultPopUpBehaviourData._PopUpImage = child3.GetComponent<Image>();
-                        }
-                    } */
+                
                 }
             }
         }

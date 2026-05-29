@@ -61,33 +61,33 @@ PrefabInstance:
     - target: {fileID: 2690482533194530249, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 181.7018
+      value: 182.7005
       objectReference: {fileID: 0}
     - target: {fileID: 2690482533194530249, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 82.3734
+      value: 93.8588
       objectReference: {fileID: 0}
     - target: {fileID: 2690482533194530249, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.6698
+      value: -1.1704
       objectReference: {fileID: 0}
     - target: {fileID: 2690482533194530249, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.2256
+      value: 1.0228
       objectReference: {fileID: 0}
     - target: {fileID: 4674187234242773669, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0d3a50d919dd19a4aa261fff1205ff02,
+      objectReference: {fileID: 21300000, guid: 5a71c6cba54adc54999454a1b4777eef,
         type: 3}
     - target: {fileID: 4674187234242773669, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_PreserveAspect
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6004492848720011788, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
@@ -207,17 +207,27 @@ PrefabInstance:
     - target: {fileID: 8742138251862701882, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 49.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742138251862701882, guid: 97934677460ac5641a0f13e44b826b86,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -0.37878418
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742138251862701882, guid: 97934677460ac5641a0f13e44b826b86,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -0.75439453
       objectReference: {fileID: 0}
     - target: {fileID: 8742138251862701882, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_fontSizeMax
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8742138251862701882, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_fontSizeMin
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8742138251862701882, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}

@@ -244,6 +244,7 @@ public class HUDManagerScript : MonoBehaviour
 
             if (anim != null && anim.GetUIComponentType() != E_UIComponents.DefaultPopUp && anim.GetAnimationType() != E_UIAnimationType.None)
             {
+                anim.ForceDesSelectButton();
                 anim.HidePannel();
             }
 
