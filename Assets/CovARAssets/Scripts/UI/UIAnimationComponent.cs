@@ -790,7 +790,6 @@ public class UIAnimationComponent : MonoBehaviour
                     }
 
                     myButton.image.color = UI_ButtonOnSelectedData._UnSelectedColor;
-                    Debug.Log("UNSELECT BUTTON [" + this.gameObject.name + "] -> Color set to unselected color");
                 }
                 break;
         }

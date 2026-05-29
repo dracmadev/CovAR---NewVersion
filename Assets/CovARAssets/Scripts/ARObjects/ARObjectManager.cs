@@ -573,5 +573,83 @@ public class ARObjectManager : MonoBehaviour
         return null;
     }
 
+
+    public void SetCovARFootMaterial(St_Material currentMatData)
+    {
+        ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
+        GameObject footRight = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight); //RIGHT FOOT
+        footRight.TryGetComponent(out Renderer rendRight);
+        GameObject footLeft = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootLeft); // LEFT FOOT
+        footLeft.TryGetComponent(out Renderer rendLeft);
+
+        if (arScript != null)
+        {
+            switch (_CurrentPoolType)
+            {
+                case E_PoolType.AP_Octeo:
+                            
+                    if (footRight != null && rendRight != null)
+                    {
+                        Material[] mats = rendRight.materials; 
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendRight.materials = mats; 
+                    }
+
+                    if (footLeft != null && rendLeft != null)
+                    {
+                        Material[] mats = rendLeft.materials; 
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendLeft.materials = mats;
+                    }
+
+                    break;
+                case E_PoolType.AP_Sveltea:
+
+                    if (footRight != null && rendRight != null)
+                    {
+                        Material[] mats = rendRight.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendRight.materials = mats;
+                    }
+
+                    if (footLeft != null && rendLeft != null)
+                    {
+                        Material[] mats = rendLeft.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendLeft.materials = mats;
+                    }
+
+                    break;
+                case E_PoolType.AP_SvelteaManual:
+
+                    if (footRight != null && rendRight != null)
+                    {
+                        Material[] mats = rendRight.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendRight.materials = mats;
+                    }
+
+                    if (footLeft != null && rendLeft != null)
+                    {
+                        Material[] mats = rendLeft.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendLeft.materials = mats;
+                    }
+
+                    break;
+                case E_PoolType.AP_Coverly: break;
+                case E_PoolType.AP_Bellasun: break;
+                case E_PoolType.AP_Lebanc_Small: break;
+                case E_PoolType.AP_Lebanc_Big: break;
+                case E_PoolType.AP_Rousillon: break;
+            }
+        }
+    }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

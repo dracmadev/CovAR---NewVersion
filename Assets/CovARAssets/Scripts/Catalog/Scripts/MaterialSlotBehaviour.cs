@@ -98,9 +98,8 @@ public class MaterialSlotBehaviour : MonoBehaviour
 
         if (_ARObjectManager != null && _CurrentMaterialData != null)
         {
-            // Suposo que el teu ARObjectManager tindrà un mètode semblant a aquest
-            // on li passes el tipus o directament les referències dels materials
             _ARObjectManager.SetCurrentMaterial(_CurrentMaterialData._MaterialType);
+            SetCurrentMaterial();
         }
     }
 
@@ -121,4 +120,13 @@ public class MaterialSlotBehaviour : MonoBehaviour
 
     public bool GetActiveState() => bImActive;
     public St_Material GetCurrentMaterialData() => _CurrentMaterialData;
+
+
+    public void SetCurrentMaterial()
+    {
+        if(_ARObjectManager != null)
+        {
+            _ARObjectManager.SetCovARFootMaterial(_CurrentMaterialData);
+        }
+    }
 }
