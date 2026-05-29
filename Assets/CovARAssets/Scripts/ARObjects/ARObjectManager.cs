@@ -60,7 +60,7 @@ public class ARObjectManager : MonoBehaviour
 
 
         InitARCameraRef();
-        SetActiveARObject(_CurrentPoolType);
+        //SetActiveARObject(_CurrentPoolType);
         InitPlaneFinder();
 
         if (bDontShowPlaneFinderAtStart)
@@ -158,6 +158,7 @@ public class ARObjectManager : MonoBehaviour
                     _CovARObjectData._CurrentARObjectLenght = maxLenghtOfNewModel;
                 }
 
+                Debug.Log("Lenght: " + _CovARObjectData._CurrentARObjectLenght);
                 newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
 
                 SetCurrentARObjectState("DefaultState");

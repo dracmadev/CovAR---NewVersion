@@ -54,19 +54,19 @@ public class ProductBlockBehaviour : MonoBehaviour
     {
         if (_productDropdown == null || _IncomingProductList == null || _IncomingProductList.Length == 0) return;
 
-        // Netejem les opcions que vinguin per defecte al Dropdown d'Unity
+        // Netejem les opcions 
         _productDropdown.ClearOptions();
 
-        // Creem la llista d'opcions temporals compatible amb TMP_Dropdown
+        // Creem la llista
         List<TMP_Dropdown.OptionData> newOptions = new List<TMP_Dropdown.OptionData>();
 
         foreach (St_Product product in _IncomingProductList)
         {
-            // Traduïm la lletra fent servir la clau del producte amb el teu SimpleLocalization
+            // Traduïm 
             string translatedName = LocalizationManager.Localize(product._ProductKey);
             Sprite productIcon = product._ProductSprite;
 
-            // Creem l'opció buida i n'assignem els valors directament
+            // Creem l'opció buida i assignem 
             TMP_Dropdown.OptionData option = new TMP_Dropdown.OptionData();
             option.text = translatedName;
             option.image = productIcon;
@@ -74,14 +74,12 @@ public class ProductBlockBehaviour : MonoBehaviour
             newOptions.Add(option);
         }
 
-        // Afegim totes les opcions de cop al Dropdown
+        // Afegim opcions 
         _productDropdown.AddOptions(newOptions);
 
-        // Escoltació de canvis: primer netegem per seguretat i despres lliguem el mètode
         _productDropdown.onValueChanged.RemoveListener(OnDropdownProductChanged);
         _productDropdown.onValueChanged.AddListener(OnDropdownProductChanged);
 
-        // Per defecte, seleccionem el primer producte de la llista al frame 1
         if (_IncomingProductList.Length > 0)
         {
             _productDropdown.value = 0;

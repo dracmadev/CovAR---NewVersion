@@ -566,18 +566,41 @@ public class ARObjectScript : MonoBehaviour
 
         if (_boneRightObjList.Count == 0) return;
 
+        // 1. Guardem primer el valor real
+        if (_lenghtSliderRef != null)
+        {
+            _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult = newLenght;
+        }
+
+        // 2. Apliquem la posició 
         foreach (GameObject boneObj in _boneRightObjList)
         {
             Vector3 bonePos = boneObj.transform.localPosition;
             boneObj.transform.localPosition = new Vector3(newLenght * 100, bonePos.y, bonePos.z);
         }
 
-        if(_footRightObj != null)
+        if (_footRightObj != null)
         {
             _footRightObj.transform.localPosition = new Vector3(newLenght, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
         }
 
         _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = newLenght;
+
+        // 3. Modifiquem el slider
+        if (_lenghtSliderRef != null)
+        {
+            var sliderData = _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            float normalizedValue = (newLenght - sliderData.sliderMin) / (sliderData.sliderMax - sliderData.sliderMin);
+
+            Slider unitySlider = _lenghtSliderRef.GetComponent<UnityEngine.UI.Slider>();
+            unitySlider.value = normalizedValue;
+        }
+
+        if (_feedbackLenghtText != null)
+        {
+            _feedbackLenghtText.GetComponent<TMP_Text>().text = newLenght.ToString("F2") + "m";
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

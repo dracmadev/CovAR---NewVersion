@@ -139,6 +139,7 @@ public class ModelBlockBehaviour : MonoBehaviour
                 if (slot.GetCurrentModelData()._ModelType == _currentModelSelected._ModelType)
                 {
                     OnSelectButton(slot);
+                    slot.OnClickSelectModel();
                     break; 
                 }
             }
