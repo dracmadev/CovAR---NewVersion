@@ -110,6 +110,7 @@ public class ModelSlotBehaviour : MonoBehaviour
 
         _ARObjectManager.SetCurrentModel(_CurrentModelData._ModelType, _CurrentModelData._ModelGeneralType);
 
+        _ARObjectManager.SetActiveARObject(GetPoolTypeBasedOnModelType());
        
     }
 
@@ -148,6 +149,31 @@ public class ModelSlotBehaviour : MonoBehaviour
     public St_Model GetCurrentModelData()
     {
         return _CurrentModelData;
+    }
+
+     E_PoolType GetPoolTypeBasedOnModelType()
+     {
+        E_PoolType returnVar = E_PoolType.None;
+
+        switch (_CurrentModelData._ModelType)
+        {
+            case E_ModelType.None: returnVar = E_PoolType.None;  break;
+            case E_ModelType.AP_Octeo: returnVar = E_PoolType.AP_Octeo; break;
+            case E_ModelType.AP_Sveltea: returnVar = E_PoolType.AP_Sveltea; break;
+            case E_ModelType.AP_SvelteaManual: returnVar = E_PoolType.AP_SvelteaManual; break;
+            case E_ModelType.AP_Coverly: returnVar = E_PoolType.AP_Coverly; break;
+            case E_ModelType.AP_Bellasun: returnVar = E_PoolType.AP_Bellasun; break;
+            case E_ModelType.AP_Rousillon: returnVar = E_PoolType.AP_Rousillon; break;
+            case E_ModelType.AP_LeBancSmallFoot: returnVar = E_PoolType.AP_Lebanc_Small; break;
+            case E_ModelType.AP_LeBancBigFoot: returnVar = E_PoolType.AP_Lebanc_Big; break;
+            case E_ModelType.AP_LeBancTopCladding: returnVar = E_PoolType.None; break;
+            case E_ModelType.AP_LeBancSidesCladding: returnVar = E_PoolType.None; break;
+            case E_ModelType.AP_LamasPolicarbonate: returnVar = E_PoolType.None; break;
+            case E_ModelType.AP_LamasPVC: returnVar = E_PoolType.None; break;
+
+        }
+
+        return returnVar;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

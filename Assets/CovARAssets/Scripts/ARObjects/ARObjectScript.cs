@@ -445,7 +445,6 @@ public class ARObjectScript : MonoBehaviour
 
         // GET RIGHT FOOT
         _footRightObj = GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight);
-        Debug.Log("****FOOT RIGHT: " + (_footRightObj != null ? _footRightObj.name : "null"));
     }
 
     void SetARObjectLenght()

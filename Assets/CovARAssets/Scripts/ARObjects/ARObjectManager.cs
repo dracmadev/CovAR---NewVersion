@@ -119,6 +119,8 @@ public class ARObjectManager : MonoBehaviour
     // Instanciación dinámica real: guarda la posición/rotación anterior, destruye y genera el nuevo prefab
     public void SetActiveARObject(E_PoolType _ARObjectToActive)
     {
+        if (_ARObjectToActive == E_PoolType.None) { return; }
+
         Vector3 lastPosition = Vector3.zero;
         Quaternion lastRotation = Quaternion.identity;
 
@@ -145,24 +147,18 @@ public class ARObjectManager : MonoBehaviour
                     _CurrentARObject.transform.rotation = lastRotation;
                 }
 
-                // ==================== AQUÍ S'APLICA LA LOGICA PAS A PAS ====================
                 ARObjectScript newObjScript = _CurrentARObject.GetComponent<ARObjectScript>();
 
-                // 1. Inicialitzem primer les llistes internes del nou model (ossos, peus...)
                 newObjScript.InitARObjectScript();
 
-                // 2. Llegim la llargada màxima que té configurada aquest model nou
                 float maxLenghtOfNewModel = newObjScript.GetMaxARObjectLenghtDistance();
 
-                // 3. Comprovem els límits: si la mida actual supera el màxim del nou model, la retallem
                 if (_CovARObjectData._CurrentARObjectLenght > maxLenghtOfNewModel)
                 {
                     _CovARObjectData._CurrentARObjectLenght = maxLenghtOfNewModel;
                 }
 
-                // 4. Cridem a la teva nova funció passant-li el valor numèric final calculat
                 newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
-                // ===========================================================================
 
                 SetCurrentARObjectState("DefaultState");
                 break;
