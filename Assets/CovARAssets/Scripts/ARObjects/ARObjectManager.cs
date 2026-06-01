@@ -798,7 +798,62 @@ public class ARObjectManager : MonoBehaviour
         GameObject frontSideCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FrontCoverPlane); // Front CLADDING
         GameObject backSideCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.BackCoverPlane); // Back CLADDING
 
+        switch(_CurrentModelSelected._ModelType)
+        {
+            case E_ModelType.AP_LeBancTopCladding:
+                if (topCladding != null)
+                {
+                    topCladding.TryGetComponent(out Renderer rendTopCladding);
+                    if (rendTopCladding != null)
+                    {
+                        Material[] mats = rendTopCladding.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendTopCladding.materials = mats;
+                    }
+                }
+                break;
 
+            case E_ModelType.AP_LeBancSidesCladding:
+
+                if(currentMatData._MaterialType == E_MaterialType.None)
+                {
+                    frontSideCladding.SetActive(false);
+                    backSideCladding.SetActive(false);
+                }
+                else
+                {
+
+
+                    if (frontSideCladding != null)
+                    {
+                        frontSideCladding.SetActive(true);
+
+                        frontSideCladding.TryGetComponent(out Renderer rendFrontSideCladding);
+                        if (rendFrontSideCladding != null)
+                        {
+                            Material[] mats = rendFrontSideCladding.materials;
+                            mats[0] = currentMatData._Material01;
+                            mats[1] = currentMatData._Material02;
+                            rendFrontSideCladding.materials = mats;
+                        }
+                    }
+                    if (backSideCladding != null)
+                    {
+                        backSideCladding.SetActive(true);
+
+                        backSideCladding.TryGetComponent(out Renderer rendBackSideCladding);
+                        if (rendBackSideCladding != null)
+                        {
+                            Material[] mats = rendBackSideCladding.materials;
+                            mats[0] = currentMatData._Material01;
+                            mats[1] = currentMatData._Material02;
+                            rendBackSideCladding.materials = mats;
+                        }
+                    }
+                }
+                break;
+        }
     }
 
     
