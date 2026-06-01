@@ -27,7 +27,7 @@ public class CustomSplineInstantiate : MonoBehaviour
 
     void Start()
     {
-        InitializeSlatPool();
+        //InitializeSlatPool();
        
     }
 
@@ -36,7 +36,7 @@ public class CustomSplineInstantiate : MonoBehaviour
         UpdateBlind();
     }
 
-    void InitializeSlatPool()
+    public void InitializeSlatPool()
     {
         float totalLength = splineContainer.CalculateLength();
         _MAXLamas = Mathf.FloorToInt(totalLength / _lamasSize);
@@ -97,11 +97,10 @@ public class CustomSplineInstantiate : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Funció pública per activar l'animació de sortida des del calaix (0 fins a 0.54)
-    /// </summary>
     public void PlayInitialOpenAnimation()
     {
+        InitializeSlatPool();
+
         if (!_isAnimatingInitial)
         {
             StartCoroutine(AnimateToThresholdRoutine());

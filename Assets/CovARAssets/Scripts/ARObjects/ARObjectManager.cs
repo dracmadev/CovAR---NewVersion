@@ -39,7 +39,7 @@ public class ARObjectManager : MonoBehaviour
 
     //Local variables
     HUDManagerScript _HUDManagerScrit;
-
+    bool bARObjectPlaced = false;
 
     void Start()
     {
@@ -165,11 +165,11 @@ public class ARObjectManager : MonoBehaviour
 
                 SetCurrentARObjectState("DefaultState");
 
-                if (newObjScript.GetCustomSplineInstantiateScript())
+                if(_CurrentARObject.GetComponent<ARObjectScript>().GetCustomSplineInstantiateScript() && bARObjectPlaced)
                 {
-                    newObjScript.GetCustomSplineInstantiateScript().PlayInitialOpenAnimation();
+                    _CurrentARObject.GetComponent<ARObjectScript>().GetCustomSplineInstantiateScript().PlayInitialOpenAnimation();
                 }
-               
+
                 break;
             }
         }
@@ -255,6 +255,8 @@ public class ARObjectManager : MonoBehaviour
     {
         SetActivePlaneFinder(false);
         _HUDManagerScrit.TravelToPanel("AP_ManipulateGroundRollerPanel");
+        bARObjectPlaced = true;
+        _CurrentARObject.GetComponent<ARObjectScript>().GetCustomSplineInstantiateScript().PlayInitialOpenAnimation();
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
