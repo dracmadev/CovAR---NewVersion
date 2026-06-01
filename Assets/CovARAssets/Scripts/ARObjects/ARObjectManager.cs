@@ -121,6 +121,8 @@ public class ARObjectManager : MonoBehaviour
     {
         if (_ARObjectToActive == E_PoolType.None) { return; }
 
+        _CurrentPoolType = _ARObjectToActive;
+
         Vector3 lastPosition = Vector3.zero;
         Quaternion lastRotation = Quaternion.identity;
 
@@ -158,7 +160,7 @@ public class ARObjectManager : MonoBehaviour
                     _CovARObjectData._CurrentARObjectLenght = maxLenghtOfNewModel;
                 }
 
-                Debug.Log("Lenght: " + _CovARObjectData._CurrentARObjectLenght);
+               
                 newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
 
                 SetCurrentARObjectState("DefaultState");
@@ -577,77 +579,136 @@ public class ARObjectManager : MonoBehaviour
     public void SetCovARFootMaterial(St_Material currentMatData)
     {
         ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
+
         GameObject footRight = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight); //RIGHT FOOT
-        footRight.TryGetComponent(out Renderer rendRight);
+
         GameObject footLeft = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootLeft); // LEFT FOOT
-        footLeft.TryGetComponent(out Renderer rendLeft);
+       
+       
 
         if (arScript != null)
         {
             switch (_CurrentPoolType)
             {
                 case E_PoolType.AP_Octeo:
-                            
-                    if (footRight != null && rendRight != null)
+
+                    footRight.TryGetComponent(out Renderer rendRight_Octeo);
+
+                    if (footRight != null && rendRight_Octeo != null)
                     {
-                        Material[] mats = rendRight.materials; 
+                        Material[] mats = rendRight_Octeo.materials; 
                         mats[0] = currentMatData._Material01;
                         mats[1] = currentMatData._Material02;
-                        rendRight.materials = mats; 
+                        rendRight_Octeo.materials = mats; 
                     }
 
-                    if (footLeft != null && rendLeft != null)
+                    footLeft.TryGetComponent(out Renderer rendLeft_Octeo);
+
+                    if (footLeft != null && rendLeft_Octeo != null)
                     {
-                        Material[] mats = rendLeft.materials; 
+                        Material[] mats = rendLeft_Octeo.materials; 
                         mats[0] = currentMatData._Material01;
                         mats[1] = currentMatData._Material02;
-                        rendLeft.materials = mats;
+                        rendLeft_Octeo.materials = mats;
                     }
 
                     break;
                 case E_PoolType.AP_Sveltea:
 
-                    if (footRight != null && rendRight != null)
+                    footRight.TryGetComponent(out Renderer rendRight_Sverltea);
+
+                    if (footRight != null && rendRight_Sverltea != null)
                     {
-                        Material[] mats = rendRight.materials;
+                        Material[] mats = rendRight_Sverltea.materials;
                         mats[0] = currentMatData._Material01;
                         mats[1] = currentMatData._Material02;
-                        rendRight.materials = mats;
+                        rendRight_Sverltea.materials = mats;
                     }
 
-                    if (footLeft != null && rendLeft != null)
+                    footLeft.TryGetComponent(out Renderer rendLeft_Sveltea);
+
+                    if (footLeft != null && rendLeft_Sveltea != null)
                     {
-                        Material[] mats = rendLeft.materials;
+                        Material[] mats = rendLeft_Sveltea.materials;
                         mats[0] = currentMatData._Material01;
                         mats[1] = currentMatData._Material02;
-                        rendLeft.materials = mats;
+                        rendLeft_Sveltea.materials = mats;
                     }
 
                     break;
                 case E_PoolType.AP_SvelteaManual:
 
-                    if (footRight != null && rendRight != null)
+                    footRight.TryGetComponent(out Renderer rendRight_SverlteaM);
+
+                    if (footRight != null && rendRight_SverlteaM != null)
                     {
-                        Material[] mats = rendRight.materials;
+                        Material[] mats = rendRight_SverlteaM.materials;
                         mats[0] = currentMatData._Material01;
                         mats[1] = currentMatData._Material02;
-                        rendRight.materials = mats;
+                        rendRight_SverlteaM.materials = mats;
                     }
 
-                    if (footLeft != null && rendLeft != null)
+                    footLeft.TryGetComponent(out Renderer rendLeft_SvelteaM);
+
+                    if (footLeft != null && rendLeft_SvelteaM != null)
                     {
-                        Material[] mats = rendLeft.materials;
+                        Material[] mats = rendLeft_SvelteaM.materials;
                         mats[0] = currentMatData._Material01;
                         mats[1] = currentMatData._Material02;
-                        rendLeft.materials = mats;
+                        rendLeft_SvelteaM.materials = mats;
                     }
 
                     break;
-                case E_PoolType.AP_Coverly: break;
+                case E_PoolType.AP_Coverly:
+
+                    footRight.TryGetComponent(out Renderer rendRight_Coverly);
+
+                    if (footRight != null && rendRight_Coverly != null)
+                    {
+                        Material[] mats = rendRight_Coverly.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendRight_Coverly.materials = mats;
+                    }
+
+                    footLeft.TryGetComponent(out Renderer rendLeft_Coverly);
+
+                    if (footLeft != null && rendLeft_Coverly != null)
+                    {
+                        Material[] mats = rendLeft_Coverly.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendLeft_Coverly.materials = mats;
+                    }
+
+                    break;
                 case E_PoolType.AP_Bellasun: break;
                 case E_PoolType.AP_Lebanc_Small: break;
                 case E_PoolType.AP_Lebanc_Big: break;
-                case E_PoolType.AP_Rousillon: break;
+                case E_PoolType.AP_Rousillon:
+
+                  
+                    GameObject submergedTarima = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.UpCoverPlane); //TARIMA
+                    submergedTarima.TryGetComponent(out Renderer renderSubmergedTarima);
+                    GameObject axisLamas = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.CoverAxisLamas); // AXIS LAMAS
+                    axisLamas.TryGetComponent(out Renderer renderSubmergedAxisLamas);
+
+
+                    if (submergedTarima != null && renderSubmergedTarima != null)
+                    {
+                        Material[] mats = renderSubmergedTarima.materials;
+                        mats[0] = currentMatData._Material01;
+                        renderSubmergedTarima.materials = mats;
+                    }
+
+                    if (axisLamas != null && renderSubmergedAxisLamas != null)
+                    {
+                        Material[] mats = renderSubmergedAxisLamas.materials;
+                        mats[0] = currentMatData._Material02;
+                        renderSubmergedAxisLamas.materials = mats;
+                    }
+
+                    break;
             }
         }
     }

@@ -74,7 +74,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0473
+      value: 0.34720004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
@@ -188,6 +188,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4804456417773941192}
+    - targetCorrespondingSourceObject: {fileID: -5266785677919700964, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1882459393432754491}
   m_SourcePrefab: {fileID: 100100000, guid: c856b12abf26c5746a4f476042eb518c, type: 3}
 --- !u!1 &14091528075436380 stripped
 GameObject:
@@ -281,6 +285,52 @@ MonoBehaviour:
     _ARObjectBoneParents: []
     _ARObjectReSizeDirection: 0
   _CurrentARObject: {fileID: 0}
+--- !u!1 &1343938163396001269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5266785677919700964, guid: c856b12abf26c5746a4f476042eb518c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2616097664163644905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1882459393432754491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343938163396001269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 1
+  _ARObjectPartData:
+    _ARObjectPartType: 5
+    _ARObjectPartReference: {fileID: 0}
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 0
+    _BoneDirection: 0
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}
 --- !u!4 &2577333915627381250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
@@ -308,7 +358,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.2509
+      value: 0.049
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
         type: 3}
@@ -545,7 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ARObjectGeneralPart: 1
   _ARObjectPartData:
-    _ARObjectPartType: 5
+    _ARObjectPartType: 10
     _ARObjectPartReference: {fileID: 0}
   _ARObjectBoneData:
     partScript: {fileID: 0}

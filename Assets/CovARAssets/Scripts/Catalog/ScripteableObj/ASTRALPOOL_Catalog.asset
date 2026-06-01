@@ -130,29 +130,29 @@ MonoBehaviour:
           _MaterialSprite: {fileID: 21300000, guid: 92df486b2b44b3f41985a8f0e1da27ef,
             type: 3}
           _MaterialKey: Catalog.Material.White
-          _Material01: {fileID: 0}
-          _Material02: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
+          _Material02: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
           _Material03: {fileID: 0}
         - _MaterialType: 2
           _MaterialSprite: {fileID: 21300000, guid: 31d90c2ab658e4548b26b4365260c974,
             type: 3}
           _MaterialKey: Catalog.Material.Antracita
-          _Material01: {fileID: 0}
-          _Material02: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
+          _Material02: {fileID: 2100000, guid: 49f4b46e9e1295e46912c5dc937cde80, type: 2}
           _Material03: {fileID: 0}
         - _MaterialType: 3
           _MaterialSprite: {fileID: 21300000, guid: 049236c32ec005f41a31a30082b9cc52,
             type: 3}
           _MaterialKey: Catalog.Material.Gray
-          _Material01: {fileID: 0}
-          _Material02: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
+          _Material02: {fileID: 2100000, guid: dd1f88649cd51ee478906b4de84fbee0, type: 2}
           _Material03: {fileID: 0}
         - _MaterialType: 5
           _MaterialSprite: {fileID: 21300000, guid: eb53976341e3e5c46bed3065cf78efe7,
             type: 3}
           _MaterialKey: Catalog.Material.Sand
-          _Material01: {fileID: 0}
-          _Material02: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
+          _Material02: {fileID: 2100000, guid: cd78c98d40e3e9c49a49ef04ab242d12, type: 2}
           _Material03: {fileID: 0}
       - _ModelType: 5
         _ModelGeneralType: 1
@@ -172,29 +172,29 @@ MonoBehaviour:
           _MaterialSprite: {fileID: 21300000, guid: 2f2cba345e762df4387f0653531cf78f,
             type: 3}
           _MaterialKey: Catalog.Material.White
-          _Material01: {fileID: 0}
-          _Material02: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: cd8e451114534d347a2f11e8ad183a28, type: 2}
+          _Material02: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
           _Material03: {fileID: 0}
-        - _MaterialType: 2
-          _MaterialSprite: {fileID: 21300000, guid: 5886510c11c654b42bf699be83b58c8a,
+        - _MaterialType: 3
+          _MaterialSprite: {fileID: 21300000, guid: 26fb8d687fb92cc48bff4e0d35d8eb1e,
             type: 3}
-          _MaterialKey: Catalog.Material.Antracita
-          _Material01: {fileID: 0}
-          _Material02: {fileID: 0}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 2100000, guid: c0bfdef7ef786a946b733de70910e275, type: 2}
+          _Material02: {fileID: 2100000, guid: dd1f88649cd51ee478906b4de84fbee0, type: 2}
           _Material03: {fileID: 0}
         - _MaterialType: 5
           _MaterialSprite: {fileID: 21300000, guid: be81af7a6802f0e4e8e35827b05bb6aa,
             type: 3}
           _MaterialKey: Catalog.Material.Sand
-          _Material01: {fileID: 0}
-          _Material02: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: d45e79cdf0ba27c40973f9b279a1cabf, type: 2}
+          _Material02: {fileID: 2100000, guid: cd78c98d40e3e9c49a49ef04ab242d12, type: 2}
           _Material03: {fileID: 0}
         - _MaterialType: 6
           _MaterialSprite: {fileID: 21300000, guid: 5c004e4950753764a9ee00827b1a6c7f,
             type: 3}
           _MaterialKey: Catalog.Material.Wood
-          _Material01: {fileID: 0}
-          _Material02: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: f18dd974323b4e244be5fea1a955733f, type: 2}
+          _Material02: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
           _Material03: {fileID: 0}
     - _ProductType: 3
       _ProductSprite: {fileID: 21300000, guid: 1c50dde9505c7d64090686b5e81247b8, type: 3}
