@@ -25,6 +25,7 @@ public class ARObjectScript : MonoBehaviour
 
     [Header("ARObjectManager reference: ")]
     [SerializeField] private ARObjectManager _ARObjectManager;
+    [SerializeField] private CustomSplineInstantiate _CustomSplineInstantiateScript;
 
 
     //LOCAL VARIABLES
@@ -157,6 +158,11 @@ public class ARObjectScript : MonoBehaviour
     public float GetMaxARObjectLenghtDistance()
     {
         return _MaxARObjectLenghtDistance;
+    }
+
+    public CustomSplineInstantiate GetCustomSplineInstantiateScript()
+    {
+        return _CustomSplineInstantiateScript;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

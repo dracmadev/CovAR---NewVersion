@@ -55,6 +55,7 @@ MonoBehaviour:
   _ARObjectSpecificPartsList: []
   _ARObjectBonesList: []
   _ARObjectManager: {fileID: 0}
+  _CustomSplineInstantiateScript: {fileID: 4315736431702842628}
 --- !u!1 &6423277896226251640
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +386,8 @@ MonoBehaviour:
     type: 3}
   _sliderValue: 0
   _lamasSize: 0.05
+  _minPathThreshold: 0.054
+  _animationDuration: 2
 --- !u!1001 &2595838288052679581
 PrefabInstance:
   m_ObjectHideFlags: 0

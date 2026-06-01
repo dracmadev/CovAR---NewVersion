@@ -116,7 +116,7 @@ public class ARObjectManager : MonoBehaviour
 
     ////////////////////////////////////////////////////// SETTERS ///////////////////////////////////////////////////////////////////
 
-    // Instanciación dinámica real: guarda la posición/rotación anterior, destruye y genera el nuevo prefab
+    // Instanciación dinámica
     public void SetActiveARObject(E_PoolType _ARObjectToActive)
     {
         if (_ARObjectToActive == E_PoolType.None) { return; }
@@ -164,6 +164,12 @@ public class ARObjectManager : MonoBehaviour
                 newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
 
                 SetCurrentARObjectState("DefaultState");
+
+                if (newObjScript.GetCustomSplineInstantiateScript())
+                {
+                    newObjScript.GetCustomSplineInstantiateScript().PlayInitialOpenAnimation();
+                }
+               
                 break;
             }
         }
@@ -858,6 +864,8 @@ public class ARObjectManager : MonoBehaviour
 
     
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+   
     
 
 }
