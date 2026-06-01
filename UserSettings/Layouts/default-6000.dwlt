@@ -1042,6 +1042,20 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: unity-spline-inspector
+      index: 18
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
     m_ContainerData:
     - containerId: overlay-toolbar__top
       scrollOffset: 0
@@ -1063,15 +1077,15 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 1001.37244, y: 835.0157, z: 2.9979782}
+    m_Target: {x: 0.90409535, y: -0.26289442, z: 1.9959891}
     speed: 2
-    m_Value: {x: 1001.37244, y: 835.0157, z: 2.9979782}
+    m_Value: {x: 0.90409535, y: -0.26289442, z: 1.9959891}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1117,17 +1131,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: -0.1504048, y: 0.08175422, z: -0.01248406, w: -0.9851665}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.1504048, y: 0.08175423, z: -0.01248406, w: -0.98516655}
   m_Size:
-    m_Target: 1351.151
+    m_Target: 1.6469753
     speed: 2
-    m_Value: 1351.151
+    m_Value: 1.6469753
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1.005
     m_SpeedNormalized: 0.49999997
@@ -1225,7 +1239,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 207}
     m_SelectedIDs: d09a0100
     m_LastClickedID: 105168
-    m_ExpandedIDs: 0000000020d60000
+    m_ExpandedIDs: 0000000088d80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1254,7 +1268,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000020d60000
+    m_ExpandedIDs: 0000000088d80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
