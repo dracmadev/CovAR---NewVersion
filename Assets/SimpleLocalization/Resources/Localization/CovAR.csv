@@ -624,7 +624,7 @@ Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 We'll guide you step-by-step through how the application works.
 
 Press OK to begin the tutorial."
-Tutorial.Texto.ARMark,"Apunta hacia el suelo hasta que aparezca una marca, a continuación, púlsala.","Pointez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez dessus.","Point it towards the ground until a mark appears, then tap it."
+Tutorial.Texto.ARMark,"Apunta hacia el suelo hasta que aparezca una marca, a continuación, púlsala.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
 Tutorial.Texto.ExplicacionMenus1,"Como puedes ver en la imagen, dispones de dos menús para configurar tus persianas.","Comme vous pouvez le voir sur l'image, vous disposez de deux menus pour configurer vos volets","As you can see in the image, you have two menus to configure your blinds."
 Tutorial.Texto.ExplicacionMenus2,"En la izquierda, tenemos el menú general donde desplazar, configurar las dimensiones de la persiana y acceder al plano técnico.","À gauche, vous trouverez le menu général qui vous permet de faire défiler les options, de configurer les dimensions du volet et d'accéder au dessin technique.","On the left, we have the general menu where you can scroll, configure the dimensions of the blind and access the technical drawing."
 Tutorial.Texto.ExplicacionMenus3,"Por último, a la derecha, tenemos el menú de diseño, donde podemos personalizar la persiana a nuestro gusto.","Enfin, à droite, se trouve le menu de personnalisation, qui nous permet de personnaliser le volet à notre guise.","Finally, on the right, we have the design menu, where we can customize the blind to our liking."
@@ -818,6 +818,7 @@ Catalog.Material.White&White,Blanco & Blanco,Blanc et blanc,White & White
 Catalog.Material.White&Black,Blanco & Gris Antracita,Blanc et gris anthracite,White & Anthracite Grey
 Catalog.Material.Black&White,Gris Antracita & Blanco,Gris anthracite et blanc,Anthracite Grey & White
 Catalog.Material.Black&Black,Gris Antracita & Gris Antracita,Gris anthracite et gris anthracite,Anthracite Grey & Anthracite Grey
+Catalog.Material.NoSideCladding,Quitar revesitimientos laterales,Retirer les revêtement latéral,Remove side claddings
 Catalog.CatalogPanel.SelectProduct,Producto:,Produit:,Product:
 Catalog.Lamas.Model.PVC,PVC,PVC,PVC
 Catalog.Lamas.Model.Policarbonat,Policarbonato,Polycarbonate,Polycarbonate
@@ -828,4 +829,4 @@ Catalog.Lamas.Material.Title,Material,Matériel,Material
 ,,,
 ,,,
 InGame.PlaneFinderPanel.InfoText,"Apunte hacia el suelo hasta que aparezca una marca, a continuación, púlsela.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
-InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit
+InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit.

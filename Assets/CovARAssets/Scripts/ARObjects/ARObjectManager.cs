@@ -583,8 +583,6 @@ public class ARObjectManager : MonoBehaviour
         GameObject footRight = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight); //RIGHT FOOT
 
         GameObject footLeft = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootLeft); // LEFT FOOT
-       
-       
 
         if (arScript != null)
         {
@@ -683,8 +681,52 @@ public class ARObjectManager : MonoBehaviour
 
                     break;
                 case E_PoolType.AP_Bellasun: break;
-                case E_PoolType.AP_Lebanc_Small: break;
-                case E_PoolType.AP_Lebanc_Big: break;
+                case E_PoolType.AP_Lebanc_Small:
+
+                    footRight.TryGetComponent(out Renderer rendRight_LebancS);
+
+                    if (footRight != null && rendRight_LebancS != null)
+                    {
+                        Material[] mats = rendRight_LebancS.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendRight_LebancS.materials = mats;
+                    }
+
+                    footLeft.TryGetComponent(out Renderer rendLeft_LebancS);
+
+                    if (footLeft != null && rendLeft_LebancS != null)
+                    {
+                        Material[] mats = rendLeft_LebancS.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendLeft_LebancS.materials = mats;
+                    }
+
+                    break;
+                case E_PoolType.AP_Lebanc_Big:
+
+                    footRight.TryGetComponent(out Renderer rendRight_LebancB);
+
+                    if (footRight != null && rendRight_LebancB != null)
+                    {
+                        Material[] mats = rendRight_LebancB.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendRight_LebancB.materials = mats;
+                    }
+
+                    footLeft.TryGetComponent(out Renderer rendLeft_LebancB);
+
+                    if (footLeft != null && rendLeft_LebancB != null)
+                    {
+                        Material[] mats = rendLeft_LebancB.materials;
+                        mats[0] = currentMatData._Material01;
+                        mats[1] = currentMatData._Material02;
+                        rendLeft_LebancB.materials = mats;
+                    }
+
+                    break;
                 case E_PoolType.AP_Rousillon:
 
                   
@@ -712,5 +754,55 @@ public class ARObjectManager : MonoBehaviour
             }
         }
     }
+
+    public void SetCovARSubmergedMaterial(St_Material currentMatData)
+    {
+        ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
+        GameObject submergedTarima = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.UpCoverPlane); //TARIMA
+        GameObject axisLamas = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.CoverAxisLamas); // AXIS LAMAS
+
+        if (arScript != null)
+        {
+            switch (_CurrentPoolType)
+            {
+                case E_PoolType.AP_Rousillon:
+
+                    submergedTarima.TryGetComponent(out Renderer renderSubmergedTarima);
+                   
+                    axisLamas.TryGetComponent(out Renderer renderSubmergedAxisLamas);
+
+                    if (submergedTarima != null && renderSubmergedTarima != null)
+                    {
+                        Material[] mats = renderSubmergedTarima.materials;
+                        mats[0] = currentMatData._Material01;
+                        renderSubmergedTarima.materials = mats;
+                    }
+
+                    if (axisLamas != null && renderSubmergedAxisLamas != null)
+                    {
+                        Material[] mats = renderSubmergedAxisLamas.materials;
+                        mats[0] = currentMatData._Material02;
+                        renderSubmergedAxisLamas.materials = mats;
+                    }
+
+                    break;
+            }
+        }
+    }
+
+    public void SetCovARCladdingsMaterial(St_Material currentMatData)
+    {
+        ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
+
+        GameObject topCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.UpCoverPlane); //TOP CLADDING
+        GameObject frontSideCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FrontCoverPlane); // Front CLADDING
+        GameObject backSideCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.BackCoverPlane); // Back CLADDING
+
+
+    }
+
+    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+
 }

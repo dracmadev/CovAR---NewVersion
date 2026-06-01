@@ -98,8 +98,7 @@ public class MaterialSlotBehaviour : MonoBehaviour
 
         if (_ARObjectManager != null && _CurrentMaterialData != null)
         {
-            _ARObjectManager.SetCurrentMaterial(_CurrentMaterialData._MaterialType);
-            SetCurrentMaterial();
+            SetMaterialBehaviour();
         }
     }
 
@@ -120,13 +119,33 @@ public class MaterialSlotBehaviour : MonoBehaviour
 
     public bool GetActiveState() => bImActive;
     public St_Material GetCurrentMaterialData() => _CurrentMaterialData;
-
-
-    public void SetCurrentMaterial()
+  
+    public void SetMaterialBehaviour()
     {
-        if(_ARObjectManager != null)
+        _ARObjectManager.SetCurrentMaterial(_CurrentMaterialData._MaterialType);
+
+        switch (_ARObjectManager.GetCurrentProductData()._ProductType)
         {
-            _ARObjectManager.SetCovARFootMaterial(_CurrentMaterialData);
+            case E_ProductType.None: break;
+            case E_ProductType.GroundRollerCover:
+                _ARObjectManager.SetCovARFootMaterial(_CurrentMaterialData);
+                break;
+            case E_ProductType.SubmergedRollerCover:
+                _ARObjectManager.SetCovARSubmergedMaterial(_CurrentMaterialData);
+                break;
+            case E_ProductType.BencheAndCladdings:
+                
+                switch(_ARObjectManager.GetCurrentModelData()._ModelType)
+                {
+                    case E_ModelType.AP_LeBancBigFoot: _ARObjectManager.SetCovARFootMaterial(_CurrentMaterialData); break;
+                    case E_ModelType.AP_LeBancSmallFoot: _ARObjectManager.SetCovARFootMaterial(_CurrentMaterialData); break;
+                    case E_ModelType.AP_LeBancTopCladding: break;
+                    case E_ModelType.AP_LeBancSidesCladding: break;
+                }
+
+                break;
+            case E_ProductType.FabricCover: break;
+            case E_ProductType.Lamas: break;
         }
     }
 }
