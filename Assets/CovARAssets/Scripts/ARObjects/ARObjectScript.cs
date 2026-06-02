@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -39,6 +39,11 @@ public class ARObjectScript : MonoBehaviour
     private List<GameObject> _boneRightObjList = new List<GameObject>();
     private GameObject _footRightObj;
     private GameObject _feedbackLenghtText;
+
+    //LAMAS LENGHT
+    public GameObject _lamasLenghtSliderRef;
+    public GameObject _lamasFeedbackLenghtText;
+
 
     void Start()
     {
@@ -175,6 +180,7 @@ public class ARObjectScript : MonoBehaviour
     }
 
 
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////// STATE MACHINE //////////////////////////////////////////////////////////////////////////
@@ -197,7 +203,6 @@ public class ARObjectScript : MonoBehaviour
 
     GameObject GetSliderFromSpecificSubPanel(string subPanelName)
     {
-        
         if (_HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel(subPanelName).Count != 0)
         {
             foreach (GameObject slider in _HUDManagerScript.GetAllOfUIComponentsFromSpecificSubPanel(subPanelName))
@@ -208,8 +213,6 @@ public class ARObjectScript : MonoBehaviour
                 }
             }
         }
-        
-
         return null;
     }
 
@@ -344,7 +347,7 @@ public class ARObjectScript : MonoBehaviour
         }
         else
         {
-            Debug.LogError("ARObjectScript -> Error alhora d'agafar el slider de rotaci�... (Alvaro)");
+            Debug.LogError("ARObjectScript -> Error alhora d'agafar el slider de rotació... (Alvaro)");
         }
     }
 
@@ -407,7 +410,7 @@ public class ARObjectScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No s'ha trobat el bot� Minus per assignar l'esdeveniment.");
+            Debug.LogWarning("No s'ha trobat el botó Minus per assignar l'esdeveniment.");
         }
 
         Button plusBtn = GetButtonWithSpecificNameFromSpecificSubPanel("RotationSubPanel", "Plus"); //PLUS
@@ -418,7 +421,7 @@ public class ARObjectScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No s'ha trobat el bot� Plus per assignar l'esdeveniment.");
+            Debug.LogWarning("No s'ha trobat el botó Plus per assignar l'esdeveniment.");
         }
     }
 
@@ -443,7 +446,7 @@ public class ARObjectScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("InitSetLenghtState: El slider de la llargada no s'ha trobat (segurament el panell est� ocult). Ens saltem la UI de moment.");
+            Debug.LogWarning("InitSetLenghtState: El slider de la llargada no s'ha trobat (segurament el panell està ocult). Ens saltem la UI de moment.");
         }
       
         // GET RIGHT BONES
@@ -550,7 +553,7 @@ public class ARObjectScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No s'ha trobat el bot� Minus per a la mida.");
+            Debug.LogWarning("No s'ha trobat el botó Minus per a la mida.");
         }
 
         Button plusBtn = GetButtonWithSpecificNameFromSpecificSubPanel("SetARObjectLenghtSupPanel", "Plus");
@@ -562,7 +565,7 @@ public class ARObjectScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No s'ha trobat el bot� Plus per a la mida.");
+            Debug.LogWarning("No s'ha trobat el botó Plus per a la mida.");
         }
     }
 
@@ -578,7 +581,7 @@ public class ARObjectScript : MonoBehaviour
             _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult = newLenght;
         }
 
-        // 2. Apliquem la posici� 
+        // 2. Apliquem la posició 
         foreach (GameObject boneObj in _boneRightObjList)
         {
             Vector3 bonePos = boneObj.transform.localPosition;
@@ -610,4 +613,153 @@ public class ARObjectScript : MonoBehaviour
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////// SET LAMAS LENGHT ////////////////////////////////////////////////////////////////////////
+
+    public void InitSetLamasLenghtState()
+    {
+        _lamasLenghtSliderRef = GetSliderFromSpecificSubPanel("SetLamasLenghtSubPanel");
+
+        // 🛠️ INJECTEM EL MÀXIM AL SCRIPT DEL SPLINE Abans de configurar la UI
+        if (_CustomSplineInstantiateScript != null)
+        {
+            _CustomSplineInstantiateScript.SetupMaxLamasDistance(_MaxLamasLenghtDistance);
+        }
+
+        if (_lamasLenghtSliderRef != null)
+        {
+            // El slider de la UI ara tindrà com a límit màxim de dades exactament els metres reals (ex: 10 o 15)
+            _lamasLenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxLamasLenghtDistance;
+
+            _lamasLenghtSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetLamasLenght(); });
+            _lamasLenghtSliderRef.GetComponent<Slider>().onValueChanged.AddListener(delegate { SetLamasLenght(); });
+
+            _lamasFeedbackLenghtText = GetFeedbackTextFromSpecificSlider(_lamasLenghtSliderRef);
+
+            AssignLamasLenghtButtonsEvents();
+        }
+        else
+        {
+            Debug.LogWarning("InitSetLenghtState: El slider de la llargada no s'ha trobat.");
+        }
+    }
+
+    void AssignLamasLenghtButtonsEvents()
+    {
+        Button minusBtn = GetButtonWithSpecificNameFromSpecificSubPanel("SetLamasLenghtSubPanel", "Minus");
+
+        if (minusBtn != null)
+        {
+            minusBtn.onClick.RemoveListener(MinusLamasLenght);
+            minusBtn.onClick.AddListener(MinusLamasLenght);
+        }
+        else
+        {
+            Debug.LogWarning("No s'ha trobat el botó Minus per a la mida (lamas).");
+        }
+
+        Button plusBtn = GetButtonWithSpecificNameFromSpecificSubPanel("SetLamasLenghtSubPanel", "Plus");
+
+        if (plusBtn != null)
+        {
+            plusBtn.onClick.RemoveListener(PlusLamasLenght);
+            plusBtn.onClick.AddListener(PlusLamasLenght);
+        }
+        else
+        {
+            Debug.LogWarning("No s'ha trobat el botó Plus per a la mida (lamas).");
+        }
+    }
+
+    public void MinusLamasLenght()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("SetLamasLenghtSubPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            // Arrodonim 
+            float currentVal = sliderData.sliderResult;
+            float newLenght = Mathf.Floor(currentVal / 0.05f) * 0.05f;
+
+            if (Mathf.Approximately(newLenght, currentVal))
+            {
+                newLenght -= 0.05f;
+            }
+
+            sliderData.sliderResult = Mathf.Clamp(newLenght, sliderData.sliderMin, sliderData.sliderMax);
+
+            SetLamasLenght();
+
+            UpdateLamasLenghtSlider();
+        }
+    }
+
+    public void PlusLamasLenght()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("SetLamasLenghtSubPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            // Arrodonim 
+            float currentVal = sliderData.sliderResult;
+            float newLenght = Mathf.Ceil(currentVal / 0.05f) * 0.05f;
+
+            if (Mathf.Approximately(newLenght, currentVal))
+            {
+                newLenght += 0.05f;
+            }
+
+            sliderData.sliderResult = Mathf.Clamp(newLenght, sliderData.sliderMin, sliderData.sliderMax);
+
+            SetLamasLenght();
+
+            UpdateLamasLenghtSlider();
+        }
+    }
+
+    void UpdateLamasLenghtSlider()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("SetLamasLenghtSubPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            float normalizedStartingSliderValue = (sliderData.sliderResult - sliderData.sliderMin) /
+                                                 (sliderData.sliderMax - sliderData.sliderMin);
+
+            sliderObj.GetComponent<UnityEngine.UI.Slider>().value = normalizedStartingSliderValue;
+        }
+    }
+
+    void SetLamasLenght()
+    {
+        if (_lamasLenghtSliderRef == null) return;
+        if (_CustomSplineInstantiateScript == null) return;
+
+        // 1. Agafem les dades calculades en metres del teu component custom de UI
+        var sliderData = _lamasLenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
+        float currentSliderValueInMeters = sliderData.sliderResult;
+
+        // 2. Traduïm els metres a un valor normalitzat entre 0 i 1 (que és el que demana la persiana)
+        float normalizedValue = (currentSliderValueInMeters - sliderData.sliderMin) /
+                               (sliderData.sliderMax - sliderData.sliderMin);
+
+        normalizedValue = Mathf.Clamp01(normalizedValue);
+
+        // 3. Passem el valor al script del Spline utilitzant la funció pública
+        _CustomSplineInstantiateScript.SetSliderValueFromUI(normalizedValue);
+
+        // 4. Actualitzem el text de la pantalla per a que l'usuari vegi els metres reals (ex: "1.45m")
+        if (_lamasFeedbackLenghtText != null)
+        {
+            _lamasFeedbackLenghtText.GetComponent<TMPro.TMP_Text>().text = currentSliderValueInMeters.ToString("F2") + "m";
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

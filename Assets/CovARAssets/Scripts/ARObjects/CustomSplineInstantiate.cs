@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -14,30 +14,32 @@ public class CustomSplineInstantiate : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float _sliderValue = 0f;
     [SerializeField] private float _lamasSize = 0.05f;
+    [SerializeField] private float _currentMaxDistance = 15f;
 
     [Header("Limits & Animation")]
-    [Range(0f, 1f)]
-    [SerializeField] private float _minPathThreshold = 0.54f; // El teu nou "0" real (la boca del calaix)
-    [SerializeField] private float _animationDuration = 2f;    // Temps en segons que triga l'animació inicial
+    [SerializeField] private float _animationDuration = 2f;    // Temps en segons que triga l'animaciÃ³ inicial
 
     private GameObject[] _LamasArray;
     private int _MAXLamas;
     private bool _isAnimatingInitial = false;
-    private float _animationProgress = 0f;
-
-    void Start()
-    {
-        //InitializeSlatPool();
-       
-    }
 
     void Update()
     {
-        UpdateBlind();
+        if (_LamasArray != null && !_isAnimatingInitial)
+        {
+            UpdateBlind();
+        }
     }
 
     public void InitializeSlatPool()
     {
+        if (splineContainer == null || splineContainer.Spline == null) return;
+
+        if (_LamasArray != null)
+        {
+            foreach (var go in _LamasArray) { if (go != null) Destroy(go); }
+        }
+
         float totalLength = splineContainer.CalculateLength();
         _MAXLamas = Mathf.FloorToInt(totalLength / _lamasSize);
 
@@ -49,28 +51,49 @@ public class CustomSplineInstantiate : MonoBehaviour
         }
     }
 
-    void UpdateBlind()
+    // =================================================================================================
+    // MÃˆTODE AUXILIAR: CALCULA ELS METRES REALS FINALS FINS A UN KNOT CONCRET SUMANT CORBES
+    // =================================================================================================
+    private float GetDistanceToKnot(int knotIndex)
     {
-        if (splineContainer == null || _LamasArray == null || _LamasArray.Length == 0) return;
+        if (splineContainer == null || splineContainer.Spline == null) return 0f;
 
-        float totalLength = splineContainer.CalculateLength();
-        float targetProgress = 0f;
-
-        if (_isAnimatingInitial)
+        float distance = 0f;
+        // Una corba (Curve) uneix el Knot 'j' amb el Knot 'j+1'. 
+        // Sumem les longituds de totes les corbes prÃ¨vies fins a arribar al Knot demanat.
+        for (int j = 0; j < knotIndex; j++)
         {
-            // Durant l'animació inicial, anem de 0 a 0.54 directament
-            targetProgress = _animationProgress * _minPathThreshold;
+            if (j < splineContainer.Spline.Count - 1)
+            {
+                distance += splineContainer.Spline.GetCurveLength(j);
+            }
         }
-        else
-        {
-            // LÒGICA DE MAPEIG: Tradueix el slider (0 a 1) per a que vagi de (0.54 a 1)
-            // Fórmula: Min + (Slider * (Max - Min))
-            targetProgress = _minPathThreshold + (_sliderValue * (1f - _minPathThreshold));
-        }
+        return distance;
+    }
 
-        // Calculem quants metres realment equival aquest percentatge de camí
-        float distanciaActualPersiana = totalLength * targetProgress;
-        int lamesAActivar = Mathf.CeilToInt(distanciaActualPersiana / _lamasSize);
+    // =================================================================================================
+    // UPDATE BLIND: CONTROLAT PEL SLIDER (Del Knot 9 real al Knot 11 real)
+    // =================================================================================================
+    public void UpdateBlind()
+    {
+        if (_isAnimatingInitial) return;
+        if (splineContainer == null || splineContainer.Spline == null || _LamasArray == null) return;
+
+        float totalSplineLength = splineContainer.CalculateLength();
+
+        // Busquem els metres reals sumant les geometries dels segments del propi Spline
+        float iniciPersianaMetres = GetDistanceToKnot(9);
+        float finalAbsolutSplineMetres = GetDistanceToKnot(11);
+
+        // Calculem la capacitat real disponible en aquest segment
+        float recorridoMaximGeometric = finalAbsolutSplineMetres - iniciPersianaMetres;
+        float metresUtilsPiscina = Mathf.Min(_currentMaxDistance, recorridoMaximGeometric);
+
+        float extensioSolicitadaUI = _sliderValue * metresUtilsPiscina;
+
+        // Calculem quantes lames s'han d'activar des del rodet (0 absolut) fins al cap del slider
+        int lamesAActivar = Mathf.CeilToInt((iniciPersianaMetres + extensioSolicitadaUI) / _lamasSize);
+        lamesAActivar = Mathf.Clamp(lamesAActivar, 0, _MAXLamas);
 
         for (int i = 0; i < _MAXLamas; i++)
         {
@@ -78,17 +101,29 @@ public class CustomSplineInstantiate : MonoBehaviour
             {
                 _LamasArray[i].SetActive(true);
 
-                float distanciaEnMetres = distanciaActualPersiana - (i * _lamasSize);
-                if (distanciaEnMetres < 0f) distanciaEnMetres = 0f;
+                float posicioLamaEnMetres = (iniciPersianaMetres + extensioSolicitadaUI) - (i * _lamasSize);
+                if (posicioLamaEnMetres < 0f) posicioLamaEnMetres = 0f;
 
-                float t = distanciaEnMetres / totalLength;
+                float t = posicioLamaEnMetres / totalSplineLength;
+                t = Mathf.Clamp01(t);
 
-                Vector3 position = splineContainer.EvaluatePosition(t);
+                _LamasArray[i].transform.position = splineContainer.EvaluatePosition(t);
+
                 Vector3 direction = splineContainer.EvaluateTangent(t);
                 Vector3 up = splineContainer.EvaluateUpVector(t);
 
-                _LamasArray[i].transform.position = position;
-                _LamasArray[i].transform.rotation = Quaternion.LookRotation(direction, up);
+                if (direction.sqrMagnitude > 0.0001f)
+                {
+                    _LamasArray[i].transform.rotation = Quaternion.LookRotation(direction, up);
+                }
+                else
+                {
+                    Vector3 fallbackDirection = splineContainer.EvaluateTangent(Mathf.Clamp01(t + 0.01f));
+                    if (fallbackDirection.sqrMagnitude > 0.0001f)
+                        _LamasArray[i].transform.rotation = Quaternion.LookRotation(fallbackDirection, up);
+                    else
+                        _LamasArray[i].transform.rotation = Quaternion.identity;
+                }
             }
             else
             {
@@ -97,6 +132,9 @@ public class CustomSplineInstantiate : MonoBehaviour
         }
     }
 
+    // =================================================================================================
+    // ANIMACIÃ“ INICIAL: DES DEL KNOT 0 FINS A LA SORTIDA REAL DEL KNOT 9
+    // =================================================================================================
     public void PlayInitialOpenAnimation()
     {
         InitializeSlatPool();
@@ -110,29 +148,88 @@ public class CustomSplineInstantiate : MonoBehaviour
     private IEnumerator AnimateToThresholdRoutine()
     {
         _isAnimatingInitial = true;
-        _animationProgress = 0f;
-        _sliderValue = 0f; // Ens assegurem que el slider comenci a 0
 
-        float elapsedTime = 0f;
+        float totalSplineLength = splineContainer.CalculateLength();
 
-        while (elapsedTime < _animationDuration)
+        // Obtenim de forma geomÃ¨trica pura quants metres reals fa el tram curt des de l'inici fins al Knot 9
+        float posicioKnot9EnMetres = GetDistanceToKnot(9);
+
+        float tempsTranscorregut = 0f;
+
+        while (tempsTranscorregut < _animationDuration)
         {
-            elapsedTime += Time.deltaTime;
-            // Fem una progressió suau lineal
-            _animationProgress = Mathf.Clamp01(elapsedTime / _animationDuration);
+            tempsTranscorregut += Time.deltaTime;
+            float percentatgeAnimacio = tempsTranscorregut / _animationDuration;
+
+            // AvanÃ§a la persiana exclusivament pel tram que separa la recollida de la boca del calaix
+            float distanciaCapPersiana = Mathf.Lerp(0f, posicioKnot9EnMetres, percentatgeAnimacio);
+
+            UpdateBlindForAnimation(distanciaCapPersiana, totalSplineLength);
+
             yield return null;
         }
 
-        _animationProgress = 1f;
-        _isAnimatingInitial = false; // L'animació ha acabat, ara el slider torna a tenir el control
+        UpdateBlindForAnimation(posicioKnot9EnMetres, totalSplineLength);
+
+        _isAnimatingInitial = false;
+
+        // Passem el relleu al Slider, definint que el seu 0 Ã©s la lÃ­nia del Knot 9 on ha acabat l'animaciÃ³
+        _sliderValue = 0f;
+        UpdateBlind();
+    }
+
+    private void UpdateBlindForAnimation(float distanciaCapPersiana, float totalSplineLength)
+    {
+        int lamesAActivar = Mathf.CeilToInt(distanciaCapPersiana / _lamasSize);
+        if (distanciaCapPersiana > 0f && lamesAActivar == 0) lamesAActivar = 1;
+        lamesAActivar = Mathf.Clamp(lamesAActivar, 0, _MAXLamas);
+
+        for (int i = 0; i < _MAXLamas; i++)
+        {
+            if (i < lamesAActivar)
+            {
+                _LamasArray[i].SetActive(true);
+
+                float posicioLamaEnMetres = distanciaCapPersiana - (i * _lamasSize);
+                if (posicioLamaEnMetres < 0f) posicioLamaEnMetres = 0f;
+
+                float t = posicioLamaEnMetres / totalSplineLength;
+                t = Mathf.Clamp01(t);
+
+                _LamasArray[i].transform.position = splineContainer.EvaluatePosition(t);
+
+                Vector3 tangent = splineContainer.EvaluateTangent(t);
+                Vector3 up = splineContainer.EvaluateUpVector(t);
+
+                if (tangent.sqrMagnitude > 0.0001f)
+                {
+                    _LamasArray[i].transform.rotation = Quaternion.LookRotation(tangent, up);
+                }
+            }
+            else
+            {
+                _LamasArray[i].SetActive(false);
+            }
+        }
     }
 
     private void OnValidate()
     {
-        // En l'editor (sense Play), previsualitzem el comportament del slider mapejat
-        if (_LamasArray != null && _LamasArray.Length > 0 && !_isAnimatingInitial)
+        if (splineContainer != null && splineContainer.Spline != null && _LamasArray != null && _LamasArray.Length > 0 && !_isAnimatingInitial)
         {
             UpdateBlind();
         }
+    }
+
+    public void SetSliderValueFromUI(float normalizedValue)
+    {
+        _sliderValue = Mathf.Clamp01(normalizedValue);
+        UpdateBlind();
+    }
+
+    public void SetupMaxLamasDistance(float maxDistanceInMeters)
+    {
+        _currentMaxDistance = maxDistanceInMeters;
+        UpdateBlind();
     }
 }

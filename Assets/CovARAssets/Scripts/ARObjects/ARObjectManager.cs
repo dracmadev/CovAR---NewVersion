@@ -109,6 +109,11 @@ public class ARObjectManager : MonoBehaviour
                 _HUDManagerScrit.ShowSpecificSubMenu("SetARObjectLenghtSupPanel");
                 _CurrentARObject.GetComponent<ARObjectScript>().InitSetLenghtState();
                 break;
+
+            case E_ARObjectStates.SetLamasLenghtState:
+                _HUDManagerScrit.ShowSpecificSubMenu("SetLamasLenghtSubPanel");
+                _CurrentARObject.GetComponent<ARObjectScript>().InitSetLamasLenghtState();
+                break;
         }
     }
 
@@ -233,6 +238,23 @@ public class ARObjectManager : MonoBehaviour
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.SetLenghtState);
                     }
+                    UpdateARObjectSpecificState();
+                }
+                break;
+
+            case "SetLamasLenghtState":
+                Debug.Log("Toggle SetLamasLenghtState");
+                if (GetCurrentARObject() != null)
+                {
+                    if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetLamasLenghtState)
+                    {
+                        GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
+                    }
+                    else
+                    {
+                        GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.SetLamasLenghtState);
+                    }
+
                     UpdateARObjectSpecificState();
                 }
                 break;
