@@ -7756,7 +7756,7 @@ PrefabInstance:
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: DefaultState
+      value: SetLamasLenghtState
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -10900,7 +10900,7 @@ PrefabInstance:
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: DefaultState
+      value: SetLamasLenghtState
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}

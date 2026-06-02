@@ -41,8 +41,8 @@ public class ARObjectScript : MonoBehaviour
     private GameObject _feedbackLenghtText;
 
     //LAMAS LENGHT
-    public GameObject _lamasLenghtSliderRef;
-    public GameObject _lamasFeedbackLenghtText;
+    private GameObject _lamasLenghtSliderRef;
+    private GameObject _lamasFeedbackLenghtText;
 
 
     void Start()
