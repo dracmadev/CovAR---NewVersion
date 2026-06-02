@@ -178,7 +178,6 @@ public class ARObjectManager : MonoBehaviour
         }
     }
 
-    // Comportamiento de "Toggle" (interruptor) para el movimiento y rotación del nuevo manager
     public void SetCurrentARObjectState(string StateName)
     {
         switch (StateName)
@@ -194,7 +193,6 @@ public class ARObjectManager : MonoBehaviour
             case "MovingState":
                 if (GetCurrentARObject() != null)
                 {
-                    // Si ya estaba moviéndose, vuelve a Default
                     if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.MovingState)
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
@@ -211,7 +209,6 @@ public class ARObjectManager : MonoBehaviour
             case "RotatingState":
                 if (GetCurrentARObject() != null)
                 {
-                    // Si ya estaba rotando, vuelve a Default
                     if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.RotatingState)
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
@@ -241,7 +238,6 @@ public class ARObjectManager : MonoBehaviour
                 break;
 
             case "SetLamasLenghtState":
-                Debug.Log("Toggle SetLamasLenghtState");
                 if (GetCurrentARObject() != null)
                 {
                     if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetLamasLenghtState)
@@ -264,11 +260,7 @@ public class ARObjectManager : MonoBehaviour
         if (_PlaneFinder != null)
         {
             _PlaneFinder.SetActive(active);
-
-            
         }
-
-      
     }
 
     public void OnARObjectPosicioned()
