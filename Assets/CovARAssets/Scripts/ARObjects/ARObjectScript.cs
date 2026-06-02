@@ -759,7 +759,16 @@ public class ARObjectScript : MonoBehaviour
         {
             _lamasFeedbackLenghtText.GetComponent<TMPro.TMP_Text>().text = _CustomSplineInstantiateScript.GetCurrentPosition().ToString("F2") + "m";
         }
+
+        _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght = _CustomSplineInstantiateScript.GetCurrentPosition();
     }
+
+   public void SetLamasLenghtByNum(float newLenght)
+   {
+        InitSetLamasLenghtState();
+        
+        _CustomSplineInstantiateScript.SetLamasLenghtByNum(newLenght, _MaxLamasLenghtDistance, _lamasLenghtSliderRef, _lamasFeedbackLenghtText);
+   }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

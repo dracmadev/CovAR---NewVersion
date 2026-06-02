@@ -23,6 +23,8 @@ public class CustomSplineInstantiate : MonoBehaviour
     private int _MAXLamas;
     private bool _isAnimatingInitial = false;
 
+    ARObjectManager _ARObjectManager;
+
     void Update()
     {
         if (_LamasArray != null && !_isAnimatingInitial)
@@ -33,6 +35,8 @@ public class CustomSplineInstantiate : MonoBehaviour
 
     public void InitializeSlatPool()
     {
+        _ARObjectManager = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
+
         if (splineContainer == null || splineContainer.Spline == null) return;
 
         if (_LamasArray != null)
@@ -260,5 +264,65 @@ public class CustomSplineInstantiate : MonoBehaviour
         float extensioArrodonidaUI = Mathf.Round(extensioSolicitadaUI / _lamasSize) * _lamasSize;
 
         return Mathf.Max(0f, extensioArrodonidaUI);
+    }
+
+    public void SetLamasLenghtByNum(float newLenght, float maxLamasLenghtDistance, GameObject lenghtSliderRef, GameObject feedbackLenghtText)
+    {
+        // 0. Seguretat bàsica si no hi ha dades inicialitzades
+        if (splineContainer == null || splineContainer.Spline == null) return;
+        if (_LamasArray == null || _LamasArray.Length == 0) InitializeSlatPool();
+
+        // 1. Calculem els límits geomètrics d'aquest Spline
+        float iniciPersianaMetres = GetDistanceToKnot(9);
+        float finalAbsolutSplineMetres = GetDistanceToKnot(11);
+        float recorridoMaximGeometric = finalAbsolutSplineMetres - iniciPersianaMetres;
+
+        // El topall real serà el mínim entre la geometria real o el límit del prefab
+        float limitMaximDaquestModel = Mathf.Min(maxLamasLenghtDistance, recorridoMaximGeometric);
+
+        // Forcem que la llargada estigui dins de les barres (aquí es xafa si venia de 12m i el nou model en fa 10m)
+        newLenght = Mathf.Clamp(newLenght, 0f, limitMaximDaquestModel);
+
+        // Arrodonim net per seguretat de la UI i de les dades
+        float metresNetsUI = Mathf.Round(newLenght / _lamasSize) * _lamasSize;
+
+        // 2. Assignem les variables de control del moviment fluid
+        _currentMaxDistance = limitMaximDaquestModel;
+        _sliderValue = _currentMaxDistance > 0f ? Mathf.Clamp01(metresNetsUI / _currentMaxDistance) : 0f;
+
+        // 3. Forcem el redibuix de les lames
+        UpdateBlind();
+
+        // 4. MODIFIQUEM EL SLIDER DE LA INTERFÍCIE (UI)
+        if (lenghtSliderRef != null)
+        {
+            var uiBehaviour = lenghtSliderRef.GetComponent<UIBehaviourComponent>();
+            if (uiBehaviour != null)
+            {
+                var sliderData = uiBehaviour.GetSliderData();
+                sliderData.sliderMin = 0f;
+                sliderData.sliderMax = limitMaximDaquestModel;
+                sliderData.sliderResult = metresNetsUI;
+
+                UnityEngine.UI.Slider unitySlider = lenghtSliderRef.GetComponent<UnityEngine.UI.Slider>();
+                if (unitySlider != null)
+                {
+                    float normalizedValue = metresNetsUI / limitMaximDaquestModel;
+                    unitySlider.value = Mathf.Clamp01(normalizedValue);
+                }
+            }
+        }
+
+        // 5. ACTUALITZACIÓ DEL TEXT DE LA UI
+        if (feedbackLenghtText != null)
+        {
+            feedbackLenghtText.GetComponent<TMPro.TMP_Text>().text = metresNetsUI.ToString("F2") + "m";
+        }
+
+        // 6. LA TEVA LÍNIA: Actualitzem directament la persistència del Manager al moment!
+        if (_ARObjectManager != null)
+        {
+            _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght = metresNetsUI;
+        }
     }
 }

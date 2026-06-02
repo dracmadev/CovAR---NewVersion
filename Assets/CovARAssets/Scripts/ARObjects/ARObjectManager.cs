@@ -167,13 +167,9 @@ public class ARObjectManager : MonoBehaviour
 
                
                 newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                newObjScript.SetLamasLenghtByNum(_CovARObjectData._CurrentLamasLenght);
 
                 SetCurrentARObjectState("DefaultState");
-
-                if(_CurrentARObject.GetComponent<ARObjectScript>().GetCustomSplineInstantiateScript() && bARObjectPlaced)
-                {
-                    _CurrentARObject.GetComponent<ARObjectScript>().GetCustomSplineInstantiateScript().PlayInitialOpenAnimation();
-                }
 
                 break;
             }

@@ -2761,6 +2761,7 @@ MonoBehaviour:
       _Material02: {fileID: 0}
       _Material03: {fileID: 0}
     _CurrentARObjectLenght: 1
+    _CurrentLamasLenght: 0
   _CurrentCompanySelected:
     _CompanyType: 0
     _CompanyLogo: {fileID: 0}

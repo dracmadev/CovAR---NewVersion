@@ -326,11 +326,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splineContainer: {fileID: 3533750870631851640}
-  lamaPrefab: {fileID: 919132149155446097, guid: 156dafa605bc6d24c92aa92d2cc56e16,
+  lamaPrefab: {fileID: 3582606339723511777, guid: 110872d682eafdb408e748b4cbd6c490,
     type: 3}
   _sliderValue: 0
   _lamasSize: 0.05
-  _minPathThreshold: 0.054
+  _currentMaxDistance: 15
   _animationDuration: 2
 --- !u!1 &5707838377665097836
 GameObject:
@@ -388,6 +388,8 @@ MonoBehaviour:
   _ARObjectBonesList: []
   _ARObjectManager: {fileID: 0}
   _CustomSplineInstantiateScript: {fileID: 7516913794194685964}
+  _lamasLenghtSliderRef: {fileID: 0}
+  _lamasFeedbackLenghtText: {fileID: 0}
 --- !u!1001 &963123206886040791
 PrefabInstance:
   m_ObjectHideFlags: 0
