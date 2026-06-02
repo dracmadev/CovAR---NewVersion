@@ -170,6 +170,7 @@ public class ARObjectManager : MonoBehaviour
 
                 newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
                 
+                SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
 
                 SetCurrentARObjectState("DefaultState");
 
@@ -843,8 +844,6 @@ public class ARObjectManager : MonoBehaviour
                 }
                 else
                 {
-
-
                     if (frontSideCladding != null)
                     {
                         frontSideCladding.SetActive(true);
