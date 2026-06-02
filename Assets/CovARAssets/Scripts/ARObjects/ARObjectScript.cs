@@ -757,7 +757,7 @@ public class ARObjectScript : MonoBehaviour
         // 4. Actualitzem el text de la pantalla per a que l'usuari vegi els metres reals (ex: "1.45m")
         if (_lamasFeedbackLenghtText != null)
         {
-            _lamasFeedbackLenghtText.GetComponent<TMPro.TMP_Text>().text = currentSliderValueInMeters.ToString("F2") + "m";
+            _lamasFeedbackLenghtText.GetComponent<TMPro.TMP_Text>().text = _CustomSplineInstantiateScript.GetCurrentPosition().ToString("F2") + "m";
         }
     }
 

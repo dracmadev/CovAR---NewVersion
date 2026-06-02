@@ -81,18 +81,24 @@ public class CustomSplineInstantiate : MonoBehaviour
 
         float totalSplineLength = splineContainer.CalculateLength();
 
-        // Busquem els metres reals sumant les geometries dels segments del propi Spline
+        // 1. Busquem els metres geomètrics dels Knots
         float iniciPersianaMetres = GetDistanceToKnot(9);
         float finalAbsolutSplineMetres = GetDistanceToKnot(11);
 
-        // Calculem la capacitat real disponible en aquest segment
+        // 2. Calculem l'espai màxim disponible de la piscina
         float recorridoMaximGeometric = finalAbsolutSplineMetres - iniciPersianaMetres;
         float metresUtilsPiscina = Mathf.Min(_currentMaxDistance, recorridoMaximGeometric);
 
+        // 3. Extensió sol·licitada per la UI
         float extensioSolicitadaUI = _sliderValue * metresUtilsPiscina;
 
-        // Calculem quantes lames s'han d'activar des del rodet (0 absolut) fins al cap del slider
-        int lamesAActivar = Mathf.CeilToInt((iniciPersianaMetres + extensioSolicitadaUI) / _lamasSize);
+        // --- CORRECCIÓ DE METRES NETS DES DEL ZERO ---
+        // Arrodonim l'extensió de la UI perquè vagi EN SALTS EXACTES de la mida de la lama.
+        // Així forcem que si el slider està a 0, la distància extra sigui EXACTAMENT 0.00f.
+        float extensioArrodonidaUI = Mathf.Round(extensioSolicitadaUI / _lamasSize) * _lamasSize;
+
+        // 4. Calculem quantes lames s'han d'activar en total (les de dins del calaix + les de la piscina)
+        int lamesAActivar = Mathf.CeilToInt((iniciPersianaMetres + extensioArrodonidaUI) / _lamasSize);
         lamesAActivar = Mathf.Clamp(lamesAActivar, 0, _MAXLamas);
 
         for (int i = 0; i < _MAXLamas; i++)
@@ -101,7 +107,8 @@ public class CustomSplineInstantiate : MonoBehaviour
             {
                 _LamasArray[i].SetActive(true);
 
-                float posicioLamaEnMetres = (iniciPersianaMetres + extensioSolicitadaUI) - (i * _lamasSize);
+                // Calculem la posició de cada lama utilitzant la distància neta arrodonida
+                float posicioLamaEnMetres = (iniciPersianaMetres + extensioArrodonidaUI) - (i * _lamasSize);
                 if (posicioLamaEnMetres < 0f) posicioLamaEnMetres = 0f;
 
                 float t = posicioLamaEnMetres / totalSplineLength;
@@ -231,5 +238,28 @@ public class CustomSplineInstantiate : MonoBehaviour
     {
         _currentMaxDistance = maxDistanceInMeters;
         UpdateBlind();
+    }
+
+    public float GetCurrentPosition()
+    {
+        if (_isAnimatingInitial) return 0f;
+        if (splineContainer == null || splineContainer.Spline == null || _LamasArray == null || _LamasArray.Length == 0) return 0f;
+
+        // Si el slider està a zero absolut, evitem qualsevol recompte i tornem 0 clavat
+        if (_sliderValue <= 0.001f) return 0f;
+
+        // Busquem el límit geomètric i apliquem la mateixa lògica d'extensió arrodonida
+        float iniciPersianaMetres = GetDistanceToKnot(9);
+        float finalAbsolutSplineMetres = GetDistanceToKnot(11);
+
+        float recorridoMaximGeometric = finalAbsolutSplineMetres - iniciPersianaMetres;
+        float metresUtilsPiscina = Mathf.Min(_currentMaxDistance, recorridoMaximGeometric);
+
+        float extensioSolicitadaUI = _sliderValue * metresUtilsPiscina;
+
+        // Tornem directament el valor arrodonit de 0.05 en 0.05 que s'està aplicant a l'escena 3D
+        float extensioArrodonidaUI = Mathf.Round(extensioSolicitadaUI / _lamasSize) * _lamasSize;
+
+        return Mathf.Max(0f, extensioArrodonidaUI);
     }
 }
