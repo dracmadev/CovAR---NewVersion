@@ -571,17 +571,40 @@ public class ARObjectScript : MonoBehaviour
 
     public void SetARObjectLenghtByNum(float newLenght)
     {
+        // 1. Inicialitzem primer l'estat dels ossos i busquem referències
         InitSetLenghtState();
 
         if (_boneRightObjList.Count == 0) return;
 
-        // 1. Guardem primer el valor real
+        // 2. Guardem el valor real a les dades del teu slider custom
         if (_lenghtSliderRef != null)
         {
-            _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult = newLenght;
+            var sliderData = _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
+            sliderData.sliderMin = 0f;
+            sliderData.sliderMax = _MaxARObjectLenghtDistance;
+            sliderData.sliderResult = newLenght;
+
+            // 3. Modifiquem el slider natiu de Unity (0 a 1) de forma proporcional
+            Slider unitySlider = _lenghtSliderRef.GetComponent<UnityEngine.UI.Slider>();
+            if (unitySlider != null)
+            {
+                float normalizedValue = 0f;
+                if (sliderData.sliderMax - sliderData.sliderMin > 0f)
+                {
+                    normalizedValue = (newLenght - sliderData.sliderMin) / (sliderData.sliderMax - sliderData.sliderMin);
+                }
+
+                // Bloquegem temporalment el TEU mètode anònim original per a que no es trepitgi en instanciar
+                unitySlider.onValueChanged.RemoveListener(delegate { SetARObjectLenght(); });
+
+                unitySlider.value = Mathf.Clamp01(normalizedValue);
+
+                // El tornem a activar netament per a quan l'usuari munti el dit
+                unitySlider.onValueChanged.AddListener(delegate { SetARObjectLenght(); });
+            }
         }
 
-        // 2. Apliquem la posició 
+        // 4. Apliquem físicament la posició real als teus ossos (Bones)
         foreach (GameObject boneObj in _boneRightObjList)
         {
             Vector3 bonePos = boneObj.transform.localPosition;
@@ -593,19 +616,13 @@ public class ARObjectScript : MonoBehaviour
             _footRightObj.transform.localPosition = new Vector3(newLenght, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
         }
 
-        _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = newLenght;
-
-        // 3. Modifiquem el slider
-        if (_lenghtSliderRef != null)
+        // 5. Guardem la dada al Manager per a que l'estat quedi heretat
+        if (_ARObjectManager != null && _ARObjectManager.GetCovARObjectData() != null)
         {
-            var sliderData = _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
-
-            float normalizedValue = (newLenght - sliderData.sliderMin) / (sliderData.sliderMax - sliderData.sliderMin);
-
-            Slider unitySlider = _lenghtSliderRef.GetComponent<UnityEngine.UI.Slider>();
-            unitySlider.value = normalizedValue;
+            _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = newLenght;
         }
 
+        // 6. Fiquem el text a la UI clavat amb els metres reals passats
         if (_feedbackLenghtText != null)
         {
             _feedbackLenghtText.GetComponent<TMP_Text>().text = newLenght.ToString("F2") + "m";

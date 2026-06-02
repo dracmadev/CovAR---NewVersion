@@ -165,9 +165,11 @@ public class ARObjectManager : MonoBehaviour
                     _CovARObjectData._CurrentARObjectLenght = maxLenghtOfNewModel;
                 }
 
-               
-                newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
                 newObjScript.SetLamasLenghtByNum(_CovARObjectData._CurrentLamasLenght);
+
+
+                newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                
 
                 SetCurrentARObjectState("DefaultState");
 
