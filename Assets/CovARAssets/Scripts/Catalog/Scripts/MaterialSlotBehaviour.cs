@@ -145,7 +145,7 @@ public class MaterialSlotBehaviour : MonoBehaviour
 
                 break;
             case E_ProductType.FabricCover: break;
-            case E_ProductType.Lamas: break;
+            case E_ProductType.Lamas: _ARObjectManager.SetLamasMaterial(_CurrentMaterialData); break;
         }
     }
 }

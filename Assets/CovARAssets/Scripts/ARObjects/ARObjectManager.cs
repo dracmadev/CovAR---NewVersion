@@ -876,10 +876,35 @@ public class ARObjectManager : MonoBehaviour
         }
     }
 
-    
+    public void SetLamasMaterial(St_Material currentMatData)
+    {
+        ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
+
+        GameObject lamasCoverAxis = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.CoverAxisLamas);
+        if (lamasCoverAxis != null && lamasCoverAxis.TryGetComponent(out Renderer renderLamasCoverAxis))
+        {
+            Material[] matsAxis = renderLamasCoverAxis.materials;
+            matsAxis[0] = currentMatData._Material01;
+            renderLamasCoverAxis.materials = matsAxis; 
+        }
+
+        List<GameObject> lamasList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.Lama);
+
+
+        foreach (GameObject lamaObj in lamasList)
+        {
+            if (lamaObj != null && lamaObj.TryGetComponent(out Renderer renderLama))
+            {
+                Material[] matsLama = renderLama.materials;
+                matsLama[0] = currentMatData._Material01; 
+                renderLama.materials = matsLama; 
+            }
+        }
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-   
-    
+
+
+
 
 }

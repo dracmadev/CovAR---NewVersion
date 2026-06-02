@@ -160,6 +160,26 @@ public class ARObjectScript : MonoBehaviour
         return null;
     }
 
+    public List<GameObject> GetARObjectSpecificPartListBasedOnType(E_ARObjectParts part)
+    {
+        List<GameObject> foundParts = new List<GameObject>();
+
+        ARObjectPartScript[] allParts = GetComponentsInChildren<ARObjectPartScript>(true);
+
+        foreach (ARObjectPartScript specificPart in allParts)
+        {
+            if (specificPart != null && specificPart.GetARObjectPartData() != null)
+            {
+                if (specificPart.GetARObjectPartData()._ARObjectPartType == part)
+                {
+                    foundParts.Add(specificPart.gameObject);
+                }
+            }
+        }
+
+        return foundParts;
+    }
+
     public float GetMaxARObjectLenghtDistance()
     {
         return _MaxARObjectLenghtDistance;

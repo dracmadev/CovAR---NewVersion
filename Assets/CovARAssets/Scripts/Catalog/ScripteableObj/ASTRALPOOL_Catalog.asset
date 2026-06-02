@@ -270,21 +270,21 @@ MonoBehaviour:
         _ModelKey: Catalog.Model.Astralpool.LebancSidesCladding
         _MaterialsArray:
         - _MaterialType: 1
-          _MaterialSprite: {fileID: 21300000, guid: 91d2b40252619bc4498d6b4985f69d72,
+          _MaterialSprite: {fileID: 21300000, guid: 063d8cc8963f4bd43b578ade7ac20773,
             type: 3}
           _MaterialKey: Catalog.Material.White
           _Material01: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
           _Material02: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
           _Material03: {fileID: 0}
         - _MaterialType: 3
-          _MaterialSprite: {fileID: 21300000, guid: 11e6f3993ec7bfe4a92c4af4b3c32334,
+          _MaterialSprite: {fileID: 21300000, guid: 89efdbc6e1d394e439cf522b9e9cb0f1,
             type: 3}
           _MaterialKey: Catalog.Material.Gray
           _Material01: {fileID: 2100000, guid: dd1f88649cd51ee478906b4de84fbee0, type: 2}
           _Material02: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
           _Material03: {fileID: 0}
         - _MaterialType: 6
-          _MaterialSprite: {fileID: 21300000, guid: c912ac97500f5fd46adc903139e5ba48,
+          _MaterialSprite: {fileID: 21300000, guid: d51f7e616313c344abc880758b23d435,
             type: 3}
           _MaterialKey: Catalog.Material.Gray
           _Material01: {fileID: 2100000, guid: ae609c23b230e314ba2940a69291e991, type: 2}
@@ -310,28 +310,28 @@ MonoBehaviour:
           _MaterialSprite: {fileID: 21300000, guid: 711ccb48ba584ef419286ab4d4d099d3,
             type: 3}
           _MaterialKey: Catalog.Material.White
-          _Material01: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: c60a7f91cb618bb4ebab8856963942e5, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
         - _MaterialType: 3
           _MaterialSprite: {fileID: 21300000, guid: 6dd99ca5136a3ab468a25f93530838a5,
             type: 3}
           _MaterialKey: Catalog.Material.Gray
-          _Material01: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: 5d5df99473122ca4ca5a4d6c748439a5, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
         - _MaterialType: 2
           _MaterialSprite: {fileID: 21300000, guid: 4d4f71148349a1e429fe5fd4688284e7,
             type: 3}
           _MaterialKey: Catalog.Material.Antracita
-          _Material01: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: 9027244dd3be1f74a955968bf1694b92, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
         - _MaterialType: 5
           _MaterialSprite: {fileID: 21300000, guid: 412155d8de2b5aa44900bcf125dd35b3,
             type: 3}
           _MaterialKey: Catalog.Material.Sand
-          _Material01: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: 28f8997f420dd2842819cee81a806660, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
       - _ModelType: 11
@@ -339,25 +339,25 @@ MonoBehaviour:
         _ModelLogo: {fileID: 21300000, guid: a7741cebaf4fcc74d94969527ed0979b, type: 3}
         _ModelKey: Catalog.Lamas.Model.Policarbonat
         _MaterialsArray:
-        - _MaterialType: 1
+        - _MaterialType: 3
           _MaterialSprite: {fileID: 21300000, guid: efd8cd26a9743704c9303e18488b2e9a,
             type: 3}
-          _MaterialKey: Catalog.Material.White
-          _Material01: {fileID: 0}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 2100000, guid: 47b2bd274165cb345b25c038a3478f30, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
         - _MaterialType: 2
           _MaterialSprite: {fileID: 21300000, guid: c80736a1dfe40b949b35685627309e54,
             type: 3}
           _MaterialKey: Catalog.Material.Antracita
-          _Material01: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: bdf78b14505324a42a58fb411d3798a3, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
         - _MaterialType: 4
           _MaterialSprite: {fileID: 21300000, guid: fb9253746be74c84087711e48fa7075e,
             type: 3}
           _MaterialKey: Catalog.Material.Azul
-          _Material01: {fileID: 0}
+          _Material01: {fileID: 2100000, guid: 7178560b0981a1044a9590dd142d6722, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
   - _CompanyType: 2
