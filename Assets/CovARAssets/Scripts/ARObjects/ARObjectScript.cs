@@ -571,20 +571,17 @@ public class ARObjectScript : MonoBehaviour
 
     public void SetARObjectLenghtByNum(float newLenght)
     {
-        // 1. Inicialitzem primer l'estat dels ossos i busquem referències
         InitSetLenghtState();
 
         if (_boneRightObjList.Count == 0) return;
 
-        // 2. Guardem el valor real a les dades del teu slider custom
         if (_lenghtSliderRef != null)
         {
             var sliderData = _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
-            sliderData.sliderMin = 0f;
+            sliderData.sliderMin = 1f;
             sliderData.sliderMax = _MaxARObjectLenghtDistance;
             sliderData.sliderResult = newLenght;
 
-            // 3. Modifiquem el slider natiu de Unity (0 a 1) de forma proporcional
             Slider unitySlider = _lenghtSliderRef.GetComponent<UnityEngine.UI.Slider>();
             if (unitySlider != null)
             {
@@ -604,7 +601,7 @@ public class ARObjectScript : MonoBehaviour
             }
         }
 
-        // 4. Apliquem físicament la posició real als teus ossos (Bones)
+        // Apliquem posició
         foreach (GameObject boneObj in _boneRightObjList)
         {
             Vector3 bonePos = boneObj.transform.localPosition;
@@ -616,13 +613,12 @@ public class ARObjectScript : MonoBehaviour
             _footRightObj.transform.localPosition = new Vector3(newLenght, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
         }
 
-        // 5. Guardem la dada al Manager per a que l'estat quedi heretat
+        // Guardem dada al Manager 
         if (_ARObjectManager != null && _ARObjectManager.GetCovARObjectData() != null)
         {
             _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = newLenght;
         }
 
-        // 6. Fiquem el text a la UI clavat amb els metres reals passats
         if (_feedbackLenghtText != null)
         {
             _feedbackLenghtText.GetComponent<TMP_Text>().text = newLenght.ToString("F2") + "m";
@@ -637,7 +633,6 @@ public class ARObjectScript : MonoBehaviour
     {
         _lamasLenghtSliderRef = GetSliderFromSpecificSubPanel("SetLamasLenghtSubPanel");
 
-        // 🛠️ INJECTEM EL MÀXIM AL SCRIPT DEL SPLINE Abans de configurar la UI
         if (_CustomSplineInstantiateScript != null)
         {
             _CustomSplineInstantiateScript.SetupMaxLamasDistance(_MaxLamasLenghtDistance);
@@ -645,7 +640,6 @@ public class ARObjectScript : MonoBehaviour
 
         if (_lamasLenghtSliderRef != null)
         {
-            // El slider de la UI ara tindrà com a límit màxim de dades exactament els metres reals (ex: 10 o 15)
             _lamasLenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxLamasLenghtDistance;
 
             _lamasLenghtSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetLamasLenght(); });
@@ -657,7 +651,7 @@ public class ARObjectScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("InitSetLenghtState: El slider de la llargada no s'ha trobat.");
+            Debug.LogWarning("InitSetLamasLenghtState: El slider de la llargada no s'ha trobat.");
         }
     }
 
@@ -758,20 +752,19 @@ public class ARObjectScript : MonoBehaviour
         if (_lamasLenghtSliderRef == null) return;
         if (_CustomSplineInstantiateScript == null) return;
 
-        // 1. Agafem les dades calculades en metres del teu component custom de UI
+        // 1. Agafem dades calculades en metres 
         var sliderData = _lamasLenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
         float currentSliderValueInMeters = sliderData.sliderResult;
 
-        // 2. Traduïm els metres a un valor normalitzat entre 0 i 1 (que és el que demana la persiana)
+        // 2. Traduïm els metres
         float normalizedValue = (currentSliderValueInMeters - sliderData.sliderMin) /
                                (sliderData.sliderMax - sliderData.sliderMin);
 
         normalizedValue = Mathf.Clamp01(normalizedValue);
 
-        // 3. Passem el valor al script del Spline utilitzant la funció pública
+        // 3. Passem valor al script del Spline
         _CustomSplineInstantiateScript.SetSliderValueFromUI(normalizedValue);
 
-        // 4. Actualitzem el text de la pantalla per a que l'usuari vegi els metres reals (ex: "1.45m")
         if (_lamasFeedbackLenghtText != null)
         {
             _lamasFeedbackLenghtText.GetComponent<TMPro.TMP_Text>().text = _CustomSplineInstantiateScript.GetCurrentPosition().ToString("F2") + "m";
