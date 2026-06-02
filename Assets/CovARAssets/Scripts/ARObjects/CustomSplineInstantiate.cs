@@ -81,24 +81,23 @@ public class CustomSplineInstantiate : MonoBehaviour
 
         float totalSplineLength = splineContainer.CalculateLength();
 
-        // 1. Busquem els metres geomètrics dels Knots
+        // 1. Busquem els metres geomètrics de la sortida (Knot 9) i el topall (Knot 11)
         float iniciPersianaMetres = GetDistanceToKnot(9);
         float finalAbsolutSplineMetres = GetDistanceToKnot(11);
 
-        // 2. Calculem l'espai màxim disponible de la piscina
+        // 2. Espai útil real de la piscina
         float recorridoMaximGeometric = finalAbsolutSplineMetres - iniciPersianaMetres;
         float metresUtilsPiscina = Mathf.Min(_currentMaxDistance, recorridoMaximGeometric);
 
-        // 3. Extensió sol·licitada per la UI
+        // 3. ATENCIÓ: Eliminem l'arrodoniment brusc del càlcul 3D! 
+        // Deixem que l'extensió sigui totalment fluida i contínua, com a l'animació inicial.
         float extensioSolicitadaUI = _sliderValue * metresUtilsPiscina;
 
-        // --- CORRECCIÓ DE METRES NETS DES DEL ZERO ---
-        // Arrodonim l'extensió de la UI perquè vagi EN SALTS EXACTES de la mida de la lama.
-        // Així forcem que si el slider està a 0, la distància extra sigui EXACTAMENT 0.00f.
-        float extensioArrodonidaUI = Mathf.Round(extensioSolicitadaUI / _lamasSize) * _lamasSize;
+        // El cap avançat de la persiana és fluid
+        float distanciaCapPersiana = iniciPersianaMetres + extensioSolicitadaUI;
 
-        // 4. Calculem quantes lames s'han d'activar en total (les de dins del calaix + les de la piscina)
-        int lamesAActivar = Mathf.CeilToInt((iniciPersianaMetres + extensioArrodonidaUI) / _lamasSize);
+        // 4. Quantes lames necessitem actives (calculat amb la distància fluida)
+        int lamesAActivar = Mathf.CeilToInt(distanciaCapPersiana / _lamasSize);
         lamesAActivar = Mathf.Clamp(lamesAActivar, 0, _MAXLamas);
 
         for (int i = 0; i < _MAXLamas; i++)
@@ -107,8 +106,8 @@ public class CustomSplineInstantiate : MonoBehaviour
             {
                 _LamasArray[i].SetActive(true);
 
-                // Calculem la posició de cada lama utilitzant la distància neta arrodonida
-                float posicioLamaEnMetres = (iniciPersianaMetres + extensioArrodonidaUI) - (i * _lamasSize);
+                // CLAVAT A L'ANIMACIÓ INICIAL: La fórmula exacta que saps que funciona bé
+                float posicioLamaEnMetres = distanciaCapPersiana - (i * _lamasSize);
                 if (posicioLamaEnMetres < 0f) posicioLamaEnMetres = 0f;
 
                 float t = posicioLamaEnMetres / totalSplineLength;
