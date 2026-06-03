@@ -780,7 +780,7 @@ public class ARObjectManager : MonoBehaviour
     {
         ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
         GameObject submergedTarima = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.UpCoverPlane); //TARIMA
-        GameObject axisLamas = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.CoverAxisLamas); // AXIS LAMAS
+        GameObject axisLamas = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.CoverAxis); // AXIS LAMAS
 
         if (arScript != null)
         {

@@ -931,7 +931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ARObjectGeneralPart: 1
   _ARObjectPartData:
-    _ARObjectPartType: 10
+    _ARObjectPartType: 3
     _ARObjectPartReference: {fileID: 0}
   _ARObjectBoneData:
     partScript: {fileID: 0}
