@@ -10,6 +10,7 @@ public class St_Model
     public E_ModelGeneralType   _ModelGeneralType;
     public Sprite _ModelLogo;
     public string _ModelKey;
+    public Sprite _BlueprintModelImage;
     public St_Material[] _MaterialsArray;
 
 }
