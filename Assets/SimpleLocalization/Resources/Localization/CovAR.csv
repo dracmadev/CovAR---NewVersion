@@ -554,7 +554,7 @@ La plateforme s'enroule entièrement dans un compartiment sous-marin recouvert d
 The platform rolls up completely inside an underwater compartment covered by a submerged conduit plate. This cover is suitable for pools under renovation or construction."
 Main.VoletTypeWindow.HelpPanel.RollersText,"Los rodillos para piscinas elevadas permiten una perfecta conservación de la cubierta.
 
-Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une protection optimale de la couverture.
+Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une parfaite préservation de la couverture.
 
 Ces enrouleurs facilitent la manipulation de la couverture d'été. Une fois rétractée, il est simple de la ranger, libérant ainsi l'espace de baignade. Ils sont équipés d'un système de freinage pour bloquer le cylindre et sont très résistants.","Rollers for above-ground pools ensure the cover is perfectly preserved.
 
@@ -562,7 +562,7 @@ These rollers make handling the summer cover easier. Once retracted, it's simple
 Main.PoseWindow.GuidanceText,Posiciona la persiana.  Pulsa el candado cuando hayas finalizado.,Positionnez le volet. Appuyez sur le verrou une fois terminé.,Position the blind. Press the lock when you're finished.
 Main.PoseWindow.HelpPanel.TranslationText,Utilice un dedo para mover el volet.,Utilisez un doigt pour déplacer la volée.,Use one finger to move the volley.
 Main.PoseWindow.HelpPanel.RotationText,Utilice el control deslizante en la pantalla para girar el volet.,Utilisez le curseur à l'écran pour faire pivoter le volet.,Use the slider on the screen to rotate the volet.
-Main.Volet.GuidanceText,Manten pulsado sobre un botón para conocer que hace.,Appuyez longuement sur un bouton pour découvrir sa fonction.,Press and hold a button to find out what it does.
+Main.Volet.GuidanceText,Manten pulsado sobre un botón para conocer que hace.,Maintenez le bouton enfoncé pour découvrir sa fonction.,Press and hold a button to find out what it does.
 DebugText.PasswordRecovery.UsuarioNoExiste,Este usuario no existe en nuestra base de datos.,Cet utilisateur n'existe pas dans notre base de données.,This user does not exist in our database.
 DebugText.PasswordRecovery.Error,La conexión ha fallado.,La connexion a échoué.,The connection has failed.
 DebugText.ChangePassword.Error,La conexión ha fallado.,La connexion a échoué.,The connection has failed.
@@ -624,7 +624,7 @@ Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 We'll guide you step-by-step through how the application works.
 
 Press OK to begin the tutorial."
-Tutorial.Texto.ARMark,"Apunta hacia el suelo hasta que aparezca una marca, a continuación, púlsala.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
+Tutorial.Texto.ARMark,"Apunta hacia el suelo hasta que aparezca una marca, a continuación, púlsala.","Pointez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez dessus.","Point it towards the ground until a mark appears, then tap it."
 Tutorial.Texto.ExplicacionMenus1,"Como puedes ver en la imagen, dispones de dos menús para configurar tus persianas.","Comme vous pouvez le voir sur l'image, vous disposez de deux menus pour configurer vos volets","As you can see in the image, you have two menus to configure your blinds."
 Tutorial.Texto.ExplicacionMenus2,"En la izquierda, tenemos el menú general donde desplazar, configurar las dimensiones de la persiana y acceder al plano técnico.","À gauche, vous trouverez le menu général qui vous permet de faire défiler les options, de configurer les dimensions du volet et d'accéder au dessin technique.","On the left, we have the general menu where you can scroll, configure the dimensions of the blind and access the technical drawing."
 Tutorial.Texto.ExplicacionMenus3,"Por último, a la derecha, tenemos el menú de diseño, donde podemos personalizar la persiana a nuestro gusto.","Enfin, à droite, se trouve le menu de personnalisation, qui nous permet de personnaliser le volet à notre guise.","Finally, on the right, we have the design menu, where we can customize the blind to our liking."
@@ -829,4 +829,19 @@ Catalog.Lamas.Material.Title,Material,Matériel,Material
 ,,,
 ,,,
 InGame.PlaneFinderPanel.InfoText,"Apunte hacia el suelo hasta que aparezca una marca, a continuación, púlsela.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
-InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit.
+InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit
+,,,
+,,,
+,,,
+,,,
+FichaTecnica.InfoBasica.Modelo,Modelo:,Modèle:,Model:
+FichaTecnica.InfoBasica.Dimensiones,Dimensiones:,Dimensions:,Dimensions:
+FichaTecnica.InfoBasica.Color,Colores:,Couleurs:,Colors:
+FichaTecnica.InfoBasica.ColorSoportes,Soportes:,PIED:,Legs:
+FichaTecnica.InfoBasica.ColorLamas,Lamas:,LAMES:,Slats:
+FichaTecnica.InfoBasica.ColorTarima,Tarima:,Revêtement de sol :,Platform:
+FichaTecnica.InfoBasica.ColorRevestimientoSuperior,Revestimiento superior:,Revêtement supérieur :,Upper cladding:
+FichaTecnica.InfoBasica.ColorRevestimientoLateal,Color revestimientos:,Revêtements latéraux :,Side cladding:
+FichaTecinca.MaterialLama.Title,Material lamas:,MATERIAU DES LAMES:,Slat material:
+FichaTecnica.MaterialInfo.Titulo,INFORMACIÓN BÁSICA,INFORMATIONS DE BASE,BASIC INFORMATION
+FichaTecnica.ProductosAsociados.Titulo,PRODUCTOS ASOCIADOS,PRODUITS ASSOCIÉS,RELATED PRODUCTS
