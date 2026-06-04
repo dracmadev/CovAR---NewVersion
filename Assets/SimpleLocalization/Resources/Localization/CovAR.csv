@@ -845,3 +845,38 @@ FichaTecnica.InfoBasica.ColorRevestimientoLateal,Color revestimientos:,Revêteme
 FichaTecinca.MaterialLama.Title,Material lamas:,MATERIAU DES LAMES:,Slat material:
 FichaTecnica.MaterialInfo.Titulo,INFORMACIÓN BÁSICA,INFORMATIONS DE BASE,BASIC INFORMATION
 FichaTecnica.ProductosAsociados.Titulo,PRODUCTOS ASOCIADOS,PRODUITS ASSOCIÉS,RELATED PRODUCTS
+FichaTecnica.BasicDropdownOptions.Option01,None,None,None
+FichaTecnica.ProductosAsociados.Led,Iluminación LED Solar,Éclairage solaire LED,Solar LED Lighting
+FichaTecnica.BasicDropdownOptions.Option02,Añadir,Ajouter,Add
+FichaTecnica.BasicDropdownOptions.Option03,No añadir,Ne pas ajouter,Do not add
+FichaTecnica.ProductosAsociados.CoverConnect,Cover Connect:,Cover Connect:,Cover Connect:
+FichaTecnica.ProductosAsociados.CoverConnect.Option2,Caja control mural + App. Movil,Boîtier de commande mural + application mobile,Wall-mounted control box + Mobile app
+FichaTecnica.ProductosAsociados.CoverConnect.Option3,Mando a distancia llavero,Porte-clés télécommande,Remote control keychain
+FichaTecnica.ProductosAsociados.Electrolisis,Contacto para electrólisis,Contact d'électrolyse,Electrolysis contact
+FichaTecnica.InfoBasica.PoolMaterial.Title,Material de la piscina:,Matériel de piscine :,Pool material:
+FichaTecnica.InfoBasica.PoolMaterial.Option02,Gresite,Gresite,Gresite
+FichaTecnica.InfoBasica.PoolMaterial.Option03,Liner,Doublure,Liner
+FichaTecnica.InfoBasica.PoolMaterial.Option04,Poliéster,Polyester,Polyester
+FichaTecnica.InfoBasica.PoolMaterial.Option05,Porcelánica,Porcelaine,Porcelain
+FichaTecnica.ProductosAsociados.SistemaSeguridad,Sistema seguridad:,Système de sécurité :,Security system:
+FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option02,Tela,Tissu,Fabric
+FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option03,ABS,ABS,ABS
+FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option04,Acero inoxidable,Acier inoxydable,Stainless steel
+Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de couverture :,Cover model:
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
+FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
+FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
+FichaTecnica.ProductosAsociados.Vigas.DropDown.Option2,Kit Viga 100x70,Kit de poutre 100x70,100x70 Beam Kit
+FichaTecnica.ProductosAsociados.Vigas.DropDown.Option3,Kit Viga 100x110,Kit de poutre 100x110,100x110 Beam Kit
+FichaTecnica.ProductosAsociados.Vigas.DropDown.Option4,Kit Tabique 100x70,Kit de cloison 100x70,Partition Kit 100x70
+FichaTecnica.ProductosAsociados.Vigas.DropDown.Option5,Kit Tabique 100x110,Kit de cloison 100x110,Partition Kit 100x110
+FichaTecnica.ProductosAsociados.Tapas,Tapa:,Couverture:,Cover:
+FichaTecnica.ProductosAsociados.Tapas.Option2,Madera exótica 750x1000,Bois exotique 750x1000,Exotic wood 750x1000
+FichaTecnica.ProductosAsociados.Tapas.Option3,Madera exótica 950x1000,Bois exotique 950x1000,Exotic wood 950x1000
+FichaTecnica.ProductosAsociados.Tapas.Option4,Por encargo,Sur mesure,Custom made
+FichaTecnica.Anotaciones.Titulo,ANOTACIONES:,REMARQUES :,NOTES:
+FichaTecnica.Anotaciones.Input,Introduce texto...,Saisissez du texte...,Enter text...

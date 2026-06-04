@@ -1,0 +1,24 @@
+using TMPro;
+using UnityEngine;
+
+public class APTopInformationBlock : MonoBehaviour
+{
+    [Header("[ASTRALPOOL] TOP INFORMATION BLOCK")]
+    [Space()]
+    [Header("CUSTOMER INFO:")]
+    [SerializeField] private TMP_Text _CurrentCustomerNameText;
+    [SerializeField] private TMP_Text _CurrentCustomerEmailText;
+    [Header("OTHER INFO:")]
+    [SerializeField] private TMP_Text _CurrentOrderDate;
+    [SerializeField] private TMP_Text _CurrentOrderLocation;
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
