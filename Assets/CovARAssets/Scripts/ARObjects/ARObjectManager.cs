@@ -60,7 +60,7 @@ public class ARObjectManager : MonoBehaviour
 
 
         InitARCameraRef();
-        //SetActiveARObject(_CurrentPoolType);
+
         InitPlaneFinder();
 
         if (bDontShowPlaneFinderAtStart)
@@ -72,7 +72,7 @@ public class ARObjectManager : MonoBehaviour
             SetActivePlaneFinder(true);
         }
 
-        InitCatalogBehaviour();
+       // InitCatalogBehaviour();
     }
 
     void InitARCameraRef()
@@ -267,6 +267,7 @@ public class ARObjectManager : MonoBehaviour
     public void OnARObjectPosicioned()
     {
         SetActivePlaneFinder(false);
+        SetActiveARObject(_CurrentPoolType);
         _HUDManagerScrit.TravelToPanel("AP_ManipulateGroundRollerPanel");
         bARObjectPlaced = true;
         _CurrentARObject.GetComponent<ARObjectScript>().GetCustomSplineInstantiateScript().PlayInitialOpenAnimation();
@@ -314,6 +315,11 @@ public class ARObjectManager : MonoBehaviour
     public St_CovARObjectData GetCovARObjectData()
     {
         return _CovARObjectData;
+    }
+
+    public bool GetIsARObjectPlaced()
+    {
+        return bARObjectPlaced;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

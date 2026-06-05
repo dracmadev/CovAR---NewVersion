@@ -662,62 +662,62 @@ FichaTecnica.EscribirCorreo,Correo del cliente...,Courriel du client...,Customer
 FichaTecnica.Cliente,CLIENTE,CLIENT,CUSTOMER
 FichaTecnica.ClienteInput,Entra texto...,Saisissez du texte...,Enter text...
 FichaTecnica.Fecha,FECHA:,DATE:,DATE:
-FichaTecnica.InfoBasica.Titulo,INFORMACIÓN BÁSICA,INFORMATIONS DE BASE,BASIC INFORMATION
-FichaTecnica.InfoBasica.Modelo,Modelo:,Modèle:,Model:
-FichaTecnica.InfoBasica.Dimensiones,Dimensiones:,Dimensions:,Dimensions:
-FichaTecnica.InfoBasica.ColorSoportes,Color soportes:,COULEUR PIED :,Legs Color:
-FichaTecnica.InfoBasica.ColorLamas,Color lamas:,COULEUR DES LAMES:,Slat Color:
-FichaTecnica.InfoBasica.ColorTarima,Color tarima:,Couleur du revêtement de sol :,Platform Color:
-FichaTecnica.Anotaciones.Titulo,ANOTACIONES,NOTES,NOTES
-FichaTecnica.Anotaciones.Input,Introduce texto...,Saisissez du texte...,Enter text...
-FichaTecnica.ProductosAsociados.Titulo,PRODUCTOS ASOCIADOS,PRODUITS ASSOCIÉS,RELATED PRODUCTS
-FichaTecnica.ProductosAsociados.Led,Iluminación LED Solar,Éclairage solaire LED,Solar LED Lighting
-FichaTecnica.ProductosAsociados.Electrolisis,Contacto para electrólisis,Contact d'électrolyse,Electrolysis contact
-FichaTecnica.ProductosAsociados.CoverConnect.DropDown.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.CoverConnect.DropDown.Option2,App Cover Connect,App Cover Connect,App Cover Connect
-FichaTecnica.ProductosAsociados.CoverConnect.DropDown.Option3,Mando mural + Receptor bluetooth + App. Cover Connect,Télécommande murale + récepteur Bluetooth + application Cover Connect,Wall remote control + Bluetooth receiver + App. Cover Connect
-FichaTecnica.ProductosAsociados.CoverConnect.DropDown.Option4,Mando llavero + Receptor bluetooth + App. Cover Connect,Télécommande porte-clés + récepteur Bluetooth + application Cover Connect,Key fob remote + Bluetooth receiver + Cover Connect app
-FichaTecnica.ProductosAsociados.CoverConnect.DropDown.Option5,Kit aplicación Cover Connect Zen'it - Control con smartphone,Kit d'application Zen'it Cover Connect - Contrôle par smartphone,Zen'it Cover Connect app kit - Smartphone control
-FichaTecnica.ProductosAsociados.Mecanismo,Mecánica,Mécanique,Mechanics
-FichaTecnica.ProductosAsociados.InputMecanismo,Motoro en el eje,Moteur sur arbre,Motor on shaft
-FichaTecnica.ProductosAsociados.Lamas,Lama:,Slat:,Slat:
-FichaTecnica.ProductosAsociados.Lamas.DropDown.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.Lamas.DropDown.Option2,PVC,PVC,PVC
-FichaTecnica.ProductosAsociados.Lamas.DropDown.Option3,Policarbonato,Polycarbonate,Polycarbonate
-FichaTecnica.ProductosAsociados.EscaleraLamas,Escalera Lamas:,Escalier des Lamas :,Lamas Staircase:
-FichaTecnica.ProductosAsociados.EscaleraLamas.DropDown.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.EscaleraLamas.DropDown.Option2,Romana,Romain,Roman
-FichaTecnica.ProductosAsociados.EscaleraLamas.DropDown.Option3,Recta,Ligne droite,Straight line
-FichaTecnica.ProductosAsociados.EscaleraLamas.DropDown.Option4,Trapezoidal,Trapézoïdal,Trapezoidal
-FichaTecnica.ProductosAsociados.SistemaSeguridad,Sistema seguridad:,Système de sécurité :,Security system:
-FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option2,Tela,Tissu,Fabric
-FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option3,ABS,ABS,ABS
-FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option4,Acero inoxidable,Acier inoxydable,Stainless steel
-FichaTecnica.ProductosAsociados.Vigas,Vigas:,Poutres :,Beams:
-FichaTecnica.ProductosAsociados.Vigas.DropDown.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.Vigas.DropDown.Option2,Kit Viga 100x70,Kit de poutre 100x70,100x70 Beam Kit
-FichaTecnica.ProductosAsociados.Vigas.DropDown.Option3,Kit Viga 100x110,Kit de poutre 100x110,100x110 Beam Kit
-FichaTecnica.ProductosAsociados.Vigas.DropDown.Option4,Kit Tabique 100x70,Kit de cloison 100x70,Partition Kit 100x70
-FichaTecnica.ProductosAsociados.Vigas.DropDown.Option5,Kit Tabique 100x110,Kit de cloison 100x110,Partition Kit 100x110
-FichaTecnica.ProductosAsociados.Tapas,Tapas:,Tapas :,Tapas:
-FichaTecnica.ProductosAsociados.Tapas.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.Tapas.Option2,Madera exótica 750x1000,Bois exotique 750x1000,Exotic wood 750x1000
-FichaTecnica.ProductosAsociados.Tapas.Option3,Madera exótica 950x1000,Bois exotique 950x1000,Exotic wood 950x1000
-FichaTecnica.ProductosAsociados.Tapas.Option4,Por encargo,Sur mesure,Custom made
-FichaTecnica.ProductosAsociados.SoporteAntiflexion,Soporte Antiflexion:,Support anti-flexion :,Anti-flexion support:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.SoporteAntiflexion.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.SoporteAntiflexion.Option2,Bajo piedra corona 650x1080,Sous la couronne en pierre 650x1080,Under stone crown 650x1080
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.SoporteAntiflexion.Option3,Bajo piedra corona 1080x1500,Sous la couronne en pierre 1080x1500,Under stone crown 1080x1500
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.SoporteAntiflexion.Option4,Sobre muro 650x1080,Sur le mur 650x1080,On wall 650x1080
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.SoporteAntiflexion.Option5,Sobre muro 1080x1500,Sur le mur 1080x1500,On wall 1080x1500
-FichaTecnica.ProductosAsociados.CoverConnect.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.CoverConnect.Option2,Caja control mural + App. Movil,Boîtier de commande mural + application mobile,Wall-mounted control box + Mobile app
-FichaTecnica.ProductosAsociados.CoverConnect.Option3,Mando a distancia llavero,Porte-clés télécommande,Remote control keychain
-FichaTecnica.ProductosAsociados.SumergidaViga.Text,Viga de fibra:,Faisceau de fibres :,Fiber beam:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica2.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica2.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica2.Option3,Motor en el eje fijación en la pared + kit de fijación en gresite,"Moteur sur arbre, montage mural + kit de fixation pour mosaïque","Motor on shaft, wall mounting + mosaic tile fixing kit"
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
 ColorLama.Blanco,Blanco,Blanc,White
 ColorLama.Gris,Gris,Gris,Grey
 ColorLama.Gris Medio,Gris Medio,Gris moyen,Medium Gray
@@ -758,18 +758,18 @@ FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Optio
 FichaTecnica.InfoBasica.LeBanc.TipoModelo,Tipo de modelo:,Type de modèle :,Model type:
 FichaTecnica.InfoBasica.LeBanc.TapaSuperior,Color revestimiento superior:,Couleur de la couche de finition :,Top coating color:
 FichaTecnica.InfoBasica.LeBanc.TapaLateral,Color revestimiento lateral:,Couleur du panneau latéral :,Side panel color:
-FichaTecnica.InfoBasica.PoolMaterial.Title,Material de la piscina:,Matériel de piscine :,Pool material:
-FichaTecnica.InfoBasica.PoolMaterial.OptionA,            -   ,-,-
-FichaTecnica.InfoBasica.PoolMaterial.OptionB,Gresite,Gresite,Gresite
-FichaTecnica.InfoBasica.PoolMaterial.OptionC,Liner,Doublure,Liner
-FichaTecnica.InfoBasica.PoolMaterial.OptionD,Poliéster,Polyester,Polyester
-FichaTecnica.InfoBasica.PoolMaterial.OptionE,Porcelánica,Porcelaine,Porcelain
-FichaTecnica.InfoBasica.Tensores.Titulo,Sistemas de seguridad,Systèmes de sécurité,Security systems
-FichaTecnica.InfoBasica.Tensores.OptionA,Selecciona una modelo... ,Sélectionnez un modèle...,Select a model...
-FichaTecnica.InfoBasica.Tensores.OptionB,Hebillas con correa de tela,Boucles avec sangle en tissu,Buckles with fabric strap
-FichaTecnica.InfoBasica.Tensores.OptionC,ABS,ABS,ABS
-FichaTecnica.InfoBasica.Tensores.OptionD,Acero inoxidable 316L electropulido,acier inoxydable électropoli 316L,316L electropolished stainless steel
-Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta,mannequin de couverture,Cover model
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
 TipoDeModelo.Small,Pequeño,Petit,Little
 TipoDeModelo.Big,Grande,Grand,Big
 ColorTapaSuperior.Blanco,Blanco,Blanc,White

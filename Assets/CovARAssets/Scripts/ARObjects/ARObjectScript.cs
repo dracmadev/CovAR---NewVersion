@@ -362,7 +362,7 @@ public class ARObjectScript : MonoBehaviour
     {
         if (GetSliderFromSpecificSubPanel("RotationSubPanel"))
         {
-            float _YValueRot = GetSliderFromSpecificSubPanel("RotationSubPanel").GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult;
+            float _YValueRot = (GetSliderFromSpecificSubPanel("RotationSubPanel").GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult)*-1;
             this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, _YValueRot, this.transform.localEulerAngles.z);
         }
         else
