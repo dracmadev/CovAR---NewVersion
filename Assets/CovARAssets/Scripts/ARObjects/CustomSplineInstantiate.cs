@@ -26,12 +26,19 @@ public class CustomSplineInstantiate : MonoBehaviour
     private int _MAXLamas;
     private bool _isAnimatingInitial = false;
 
+    private float _lastSliderValue = 0f;
+
+
     ARObjectManager _ARObjectManager;
 
     void Update()
     {
         if (_LamasArray != null && !_isAnimatingInitial)
         {
+            
+            if (Mathf.Approximately(_sliderValue, _lastSliderValue)) return;
+
+            _lastSliderValue = _sliderValue;
             UpdateBlind();
         }
     }
@@ -176,6 +183,7 @@ public class CustomSplineInstantiate : MonoBehaviour
 
                 _isAnimatingInitial = false;
                 _sliderValue = 0f;
+                _lastSliderValue = 0f; 
                 UpdateBlind();
             });
     }
@@ -226,6 +234,7 @@ public class CustomSplineInstantiate : MonoBehaviour
     public void SetSliderValueFromUI(float normalizedValue)
     {
         _sliderValue = Mathf.Clamp01(normalizedValue);
+        _lastSliderValue = _sliderValue; 
         UpdateBlind();
     }
 
