@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,6 +41,8 @@ public class APRelatedProductsBlock : MonoBehaviour
 
     ARObjectManager _ARObjectManager;
 
+    private Dictionary<E_APRelatedproducts, CanvasGroup> _canvasGroupMap;
+
     /////////////////////////////////////////////////////////////////// DEFAULT FUNCTIONS //////////////////////////////////////////////////////////////////////////
 
     void Start()
@@ -61,8 +64,73 @@ public class APRelatedProductsBlock : MonoBehaviour
     public void InitRelatedProduct(ARObjectManager objManager)
     {
         _ARObjectManager = objManager;
+
+        InitDictionaty();
+        ChooseWichRelatedProductsShow();
+
     }
 
+    void InitDictionaty()
+    {
+        _canvasGroupMap = new Dictionary<E_APRelatedproducts, CanvasGroup>()
+        {
+            { E_APRelatedproducts.LedLights,       _CGLedLightBlock },
+            { E_APRelatedproducts.Electrolisis,    _CGElectrolisisBlock },
+            { E_APRelatedproducts.CoverConnect,    _CGCoverConnectBlock },
+            { E_APRelatedproducts.PoolMaterial,    _CGPoolMaterialBlock },
+            { E_APRelatedproducts.SecuritySystem,  _CGSecuritySystemBlock },
+            { E_APRelatedproducts.SubmergedModel, _CGSubmergedModelBlock },
+            { E_APRelatedproducts.Mecanics,        _CGMecanicsBlock },
+            { E_APRelatedproducts.Beam,            _CGBeamBlock },
+            { E_APRelatedproducts.Cover,           _CGConnectBlock }
+        };
+    }
+
+    public void ChooseWichRelatedProductsShow()
+    {
+        if (_ARObjectManager == null || _ARObjectManager.GetCurrentARObject() == null) return;
+
+        ARObjectScript arObj = _ARObjectManager.GetCurrentARObject().GetComponent<ARObjectScript>();
+        if (arObj == null) return;
+
+        // 1.Amaguem TOTS els CanvasGroups per defecte
+        foreach (var kvp in _canvasGroupMap)
+        {
+            if (kvp.Value != null) SetCanvasGroupActive(kvp.Value, false);
+        }
+
+        // 2. Obtenim la llista d'enums de l'objecte actual
+        var relatedProductsList = arObj.GetARObjectRelatedProductsList();
+
+        if (relatedProductsList != null)
+        {
+            // 3. Activem NOMÉS els CanvasGroups  estan a la llista
+            foreach (St_APRelatedProduct product in relatedProductsList)
+            {
+                
+                E_APRelatedproducts currentEnum = product._RelatedProductType;
+
+                if (_canvasGroupMap.TryGetValue(currentEnum, out CanvasGroup cg))
+                {
+                    if (cg != null) SetCanvasGroupActive(cg, true);
+                }
+            }
+        }
+    }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////////////////////////// GETTER /////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////////////////////////// SETTER /////////////////////////////////////////////////////////////////////////
+    private void SetCanvasGroupActive(CanvasGroup cg, bool isActive)
+    {
+        cg.alpha = isActive ? 1f : 0f;
+        cg.interactable = isActive;
+        cg.blocksRaycasts = isActive;
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 }

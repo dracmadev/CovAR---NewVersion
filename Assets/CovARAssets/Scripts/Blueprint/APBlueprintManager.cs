@@ -37,8 +37,16 @@ public class APBlueprintManager : MonoBehaviour
         }
 
 
+        InitBlocks();
 
+    }
 
+    void InitBlocks()
+    {
+        if(_APRelatedProductsBlock != null)
+        {
+            _APRelatedProductsBlock.InitRelatedProduct(_ARObjectManager);
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,6 +59,15 @@ public class APBlueprintManager : MonoBehaviour
         if(_HUDManagerScript != null)
         {
             _HUDManagerScript.TravelToLastPanel();
+        }
+    }
+
+    public void OnClickTravelToAPBlueprint()
+    {
+        if (_HUDManagerScript != null)
+        {
+            InitAPCatalog();
+            _HUDManagerScript.TravelToPanel("AstralpoolBlueprintPanel");
         }
     }
 
