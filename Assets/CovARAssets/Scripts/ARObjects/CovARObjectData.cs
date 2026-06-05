@@ -31,5 +31,7 @@ public class St_CovARObjectData
     [Header("CURRENT AROBJECT LENGHT:")]
     public float _CurrentARObjectLenght = 1;
     public float _CurrentLamasLenght = 0;
+   
+    
 }
     

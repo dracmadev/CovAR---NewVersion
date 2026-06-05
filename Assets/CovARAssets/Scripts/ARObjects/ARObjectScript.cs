@@ -18,6 +18,10 @@ public class ARObjectScript : MonoBehaviour
     [Header("Current ARObject state: (Exposed for debug)")]
     [SerializeField] private E_ARObjectStates _ARObjectState;
 
+    [Header("ARObject related products list:")]
+    [SerializeField] private St_APRelatedProduct[] _ARObjectRelatedProductsList;
+
+
     [Header("ARObject parts: (Automatic)")]
     [SerializeField] private List<ARObjectPartScript> _ARObjectSpecificPartsList = new();
     [Header("ARObject Bones: (Automatic)")]

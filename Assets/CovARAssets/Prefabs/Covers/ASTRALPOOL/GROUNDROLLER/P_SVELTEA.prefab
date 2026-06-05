@@ -386,6 +386,11 @@ MonoBehaviour:
   _MaxARObjectLenghtDistance: 5
   _MaxLamasLenghtDistance: 10
   _ARObjectState: 0
+  _ARObjectRelatedProductsList:
+  - _RelatedProductType: 2
+  - _RelatedProductType: 3
+  - _RelatedProductType: 4
+  - _RelatedProductType: 5
   _ARObjectSpecificPartsList: []
   _ARObjectBonesList: []
   _ARObjectManager: {fileID: 0}
