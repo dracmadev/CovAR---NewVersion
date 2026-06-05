@@ -109,8 +109,9 @@ public class ModelSlotBehaviour : MonoBehaviour
         }
 
         _ARObjectManager.SetCurrentModel(_CurrentModelData._ModelType, _CurrentModelData._ModelGeneralType);
+        _ARObjectManager.SetCurrentMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(_CurrentModelData)._MaterialType);
 
-       if(_ARObjectManager.GetIsARObjectPlaced())
+        if (_ARObjectManager.GetIsARObjectPlaced())
        {
             _ARObjectManager.SetActiveARObject(GetPoolTypeBasedOnModelType());
        }

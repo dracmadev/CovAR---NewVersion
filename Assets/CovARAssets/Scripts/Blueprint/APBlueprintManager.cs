@@ -47,6 +47,11 @@ public class APBlueprintManager : MonoBehaviour
         {
             _APRelatedProductsBlock.InitRelatedProduct(_ARObjectManager);
         }
+
+        if(_APBasicInfoBlock != null)
+        {
+            _APBasicInfoBlock.InitBasicInfo(_ARObjectManager);
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
