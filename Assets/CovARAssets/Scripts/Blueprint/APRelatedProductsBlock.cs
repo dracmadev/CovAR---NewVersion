@@ -1,3 +1,4 @@
+using Assets.SimpleLocalization.Scripts;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -20,7 +21,8 @@ public class APRelatedProductsBlock : MonoBehaviour
     [SerializeField] private TMP_Dropdown _PoolMaterialDropdown;
     [SerializeField] private CanvasGroup _CGPoolMaterialBlock;
     [Header("SECURITY SYSTEM:")]
-    [SerializeField] private TMP_Dropdown _SecuritySystemDropdown;
+    [SerializeField] private Button _SecuritySystemDropdown;
+    [SerializeField] private LocalizedTMPText _SecuritySystemText;
     [SerializeField] private CanvasGroup _CGSecuritySystemBlock;
     [Header("SUBMERGED MODEL:")]
     [SerializeField] private TMP_Dropdown _SubmergedModelDropdown;
@@ -67,6 +69,9 @@ public class APRelatedProductsBlock : MonoBehaviour
 
         InitDictionaty();
         ChooseWichRelatedProductsShow();
+
+
+        _SubmergedModelDropdown.onValueChanged.AddListener(delegate { OnValueChangedInSubmergedType(); });
 
     }
 
@@ -131,6 +136,32 @@ public class APRelatedProductsBlock : MonoBehaviour
         cg.interactable = isActive;
         cg.blocksRaycasts = isActive;
     }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ////////////////////////////////////////////////////////////////////////// BEHAVIOUR /////////////////////////////////////////////////////////////////////////
+
+    void OnValueChangedInSubmergedType()
+    {
+        if(_CGSubmergedModelBlock.alpha != 0)
+        {
+            int selectedIndex = _SubmergedModelDropdown.value;
+
+            if (selectedIndex == 0)
+            {
+                SetCanvasGroupActive(_CGConnectBlock, true);
+                SetCanvasGroupActive(_CGCoverConnectBlock, true);
+            }
+            else if (selectedIndex == 1)
+            {
+                SetCanvasGroupActive(_CGConnectBlock, false);
+                SetCanvasGroupActive(_CGCoverConnectBlock, false);
+            }
+            
+        }
+       
+    }
+
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }
