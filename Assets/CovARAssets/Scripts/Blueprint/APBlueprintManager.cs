@@ -69,9 +69,11 @@ public class APBlueprintManager : MonoBehaviour
 
     public void OnClickTravelToAPBlueprint()
     {
+       InitAPCatalog();
+
         if (_HUDManagerScript != null)
         {
-            InitAPCatalog();
+
             _HUDManagerScript.TravelToPanel("AstralpoolBlueprintPanel");
         }
     }

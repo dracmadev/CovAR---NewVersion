@@ -274,7 +274,7 @@ MonoBehaviour:
           _Material01: {fileID: 2100000, guid: dd1f88649cd51ee478906b4de84fbee0, type: 2}
           _Material02: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
           _Material03: {fileID: 0}
-        - _MaterialType: 0
+        - _MaterialType: 6
           _MaterialSprite: {fileID: 21300000, guid: c912ac97500f5fd46adc903139e5ba48,
             type: 3}
           _MaterialKey: Catalog.Material.Wood

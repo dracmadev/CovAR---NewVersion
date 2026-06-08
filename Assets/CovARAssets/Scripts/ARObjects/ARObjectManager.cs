@@ -369,13 +369,17 @@ public class ARObjectManager : MonoBehaviour
                 switch (_CurrentProductSelected._ProductType)
                 {
                     case E_ProductType.None: break;
-                    case E_ProductType.GroundRollerCover: _CovARObjectData._CurrentModelModel = model; 
-                                                       // _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                                                       // _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None; 
-                                                       break;
+                    case E_ProductType.GroundRollerCover: _CovARObjectData._CurrentModelModel = model;
+
+                        _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
+                        _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
+
+                        break;
                     case E_ProductType.SubmergedRollerCover: _CovARObjectData._CurrentModelModel = model;
-                        // _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        // _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None; 
+
+                        _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
+                        _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
+
                         break;
                     case E_ProductType.BencheAndCladdings: 
                         
@@ -383,26 +387,24 @@ public class ARObjectManager : MonoBehaviour
                         {
                             case E_ModelType.AP_LeBancBigFoot: _CovARObjectData._CurrentModelModel = model;
                                 _CovARObjectData._CurrentModelProduct = _CurrentProductSelected;
-                                /*
+                                
                                 _CovARObjectData._CurrentTopCladdingMaterial = GetFirstMaterialFromCurrentModel(_CovARObjectData._CurrentModelModel);
                                 _CovARObjectData._CurrentSidesCladdingMaterial = GetFirstMaterialFromCurrentModel(_CovARObjectData._CurrentModelModel);
-                                */
+                                
                                 break;
                             case E_ModelType.AP_LeBancSmallFoot: _CovARObjectData._CurrentModelModel = model;
                                 _CovARObjectData._CurrentModelProduct = _CurrentProductSelected;
-                                /*
+                                
                                 _CovARObjectData._CurrentTopCladdingMaterial = GetFirstMaterialFromCurrentModel(_CovARObjectData._CurrentModelModel);
                                 _CovARObjectData._CurrentSidesCladdingMaterial = GetFirstMaterialFromCurrentModel(_CovARObjectData._CurrentModelModel);
-                                */
+                                
                                 break;
                             case E_ModelType.AP_LeBancTopCladding: _CovARObjectData._CurrentTopCladdingModel = model; break;
                             case E_ModelType.AP_LeBancSidesCladding: _CovARObjectData._CurrentSidesCladdingModel = model; break;
                         }
 
                         break;
-                    case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverModel = model;
-                                                    _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                                                    _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None; break;  
+                    case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverModel = model;break;
                     case E_ProductType.Lamas: _CovARObjectData._CurrentLamasModel = model; break;
                 }
             }
