@@ -2,6 +2,7 @@ using Assets.SimpleLocalization.Scripts;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class APRelatedProductsBlock : MonoBehaviour
@@ -15,7 +16,8 @@ public class APRelatedProductsBlock : MonoBehaviour
     [SerializeField] private Toggle _ElectrolisisCheckMark;
     [SerializeField] private CanvasGroup _CGElectrolisisBlock;
     [Header("COVER CONNECT:")]
-    [SerializeField] private TMP_Dropdown _CoverConnectDropdown;
+    [SerializeField] private TMP_Dropdown _CoverConnectDropdown_GroundRoller;
+    [SerializeField] private TMP_Dropdown _CoverConnectDropdown_Submerged;
     [SerializeField] private CanvasGroup _CGCoverConnectBlock;
     [Header("POOL MATERIAL:")]
     [SerializeField] private TMP_Dropdown _PoolMaterialDropdown;
@@ -72,11 +74,10 @@ public class APRelatedProductsBlock : MonoBehaviour
         InitDictionaty();
         ChooseWichRelatedProductsShow();
 
-        _SubmergedModelDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInSubmergedType(); });
-        _SubmergedModelDropdown.onValueChanged.AddListener(delegate { OnValueChangedInSubmergedType(); });
 
-        _PoolMaterialDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInPoolMaterial(); });
-        _PoolMaterialDropdown.onValueChanged.AddListener(delegate { OnValueChangedInPoolMaterial(); });
+        InitModelSpecificBehaviours();
+
+
     }
 
     void InitDictionaty()
@@ -124,6 +125,47 @@ public class APRelatedProductsBlock : MonoBehaviour
                     if (cg != null) SetCanvasGroupActive(cg, true);
                 }
             }
+        }
+    }
+
+    void InitModelSpecificBehaviours()
+    {
+        switch(_ARObjectManager.GetCurrentPoolTypeData())
+        {
+            case E_PoolType.AP_Octeo: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
+                case E_PoolType.AP_Sveltea: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
+                case E_PoolType.AP_SvelteaManual: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
+                case E_PoolType.AP_Coverly: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
+                case E_PoolType.AP_Bellasun: InitCoverConnectBehaviour(0); break;
+                case E_PoolType.AP_Lebanc_Big: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
+                case E_PoolType.AP_Lebanc_Small: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
+                case E_PoolType.AP_Rousillon: InitPoolMaterialBehaviour(); InitSubmergedTypeBehaviour(); InitCoverConnectBehaviour(1); break;
+        }
+    }
+
+    void InitSubmergedTypeBehaviour()
+    {
+        _SubmergedModelDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInSubmergedType(); });
+        _SubmergedModelDropdown.onValueChanged.AddListener(delegate { OnValueChangedInSubmergedType(); });
+    }
+
+    void InitPoolMaterialBehaviour()
+    {
+        _PoolMaterialDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInPoolMaterial(); });
+        _PoolMaterialDropdown.onValueChanged.AddListener(delegate { OnValueChangedInPoolMaterial(); });
+    }
+    
+    void InitCoverConnectBehaviour(int option)
+    {
+        if(option == 0)
+        {
+            _CoverConnectDropdown_GroundRoller.gameObject.SetActive(true);
+            _CoverConnectDropdown_Submerged.gameObject.SetActive(false);
+        }
+        else if (option == 1)
+        {
+            _CoverConnectDropdown_GroundRoller.gameObject.SetActive(false);
+            _CoverConnectDropdown_Submerged.gameObject.SetActive(true);
         }
     }
 

@@ -852,6 +852,9 @@ FichaTecnica.BasicDropdownOptions.Option03,No añadir,Ne pas ajouter,Do not add
 FichaTecnica.ProductosAsociados.CoverConnect,Cover Connect:,Cover Connect:,Cover Connect:
 FichaTecnica.ProductosAsociados.CoverConnect.Option2,Caja control mural + App. Movil,Boîtier de commande mural + application mobile,Wall-mounted control box + Mobile app
 FichaTecnica.ProductosAsociados.CoverConnect.Option3,Mando a distancia llavero,Porte-clés télécommande,Remote control keychain
+FichaTecnica.ProductosAsociados.CoverConnect.Option4,Mando a distancia + receptor Bluetooth + aplicación Cover Connect,Télécommande porte-clés + récepteur Bluetooth + application Cover Connect,Key fob remote + Bluetooth receiver + Cover connect app
+FichaTecnica.ProductosAsociados.CoverConnect.Option5,Caja de control de pared + receptor Bluetooth + aplicación Cover Connect,Boîtier de commande mural + récepteur Bluetooth + application Cover Connect,Wall-mounted control box  + Bluetooth reciver + Cover connect app
+FichaTecnica.ProductosAsociados.CoverConnect.Option6,Aplicación Cover Connect,Application Cover Connect,Cover Connect App
 FichaTecnica.ProductosAsociados.Electrolisis,Contacto para electrólisis,Contact d'électrolyse,Electrolysis contact
 FichaTecnica.InfoBasica.PoolMaterial.Title,Material de la piscina:,Matériel de piscine :,Pool material:
 FichaTecnica.InfoBasica.PoolMaterial.Option02,Gresite,Gresite,Gresite
