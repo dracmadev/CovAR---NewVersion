@@ -33,6 +33,7 @@ public class APRelatedProductsBlock : MonoBehaviour
     [SerializeField] private CanvasGroup _CGMecanicsBlock;
     [Header("BEAM:")]
     [SerializeField] private TMP_Dropdown _BeamDropdown;
+    [SerializeField] private GameObject _BeamText;
     [SerializeField] private CanvasGroup _CGBeamBlock;
     [Header("COVER:")]
     [SerializeField] private TMP_Dropdown _CoverDropdown;
@@ -153,11 +154,17 @@ public class APRelatedProductsBlock : MonoBehaviour
             {
                 SetCanvasGroupActive(_CGConnectBlock, true);
                 SetCanvasGroupActive(_CGCoverConnectBlock, true);
+
+                _BeamText.SetActive(false);
+                _BeamDropdown.gameObject.SetActive(true);
             }
             else if (selectedIndex == 1)
             {
                 SetCanvasGroupActive(_CGConnectBlock, false);
                 SetCanvasGroupActive(_CGCoverConnectBlock, false);
+
+                _BeamText.SetActive(true);
+                _BeamDropdown.gameObject.SetActive(false);
             }
             
         }
