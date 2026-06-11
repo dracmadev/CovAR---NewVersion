@@ -1966,6 +1966,8 @@ MonoBehaviour:
   _CanvasGroupSidesCladdingBlock: {fileID: 6222851714702378544}
   _CurrentModelLenghtInputText: {fileID: 8067683053616115926}
   _CurrentLamasLenghtInputText: {fileID: 1789801733969243748}
+  _WrongColorFeedback: {r: 0.92156863, g: 0.62113726, b: 0.62113726, a: 1}
+  _CurrentColor: {r: 0.92156863, g: 0.92156863, b: 0.92156863, a: 1}
   _CurrentBlueprintModelImage: {fileID: 6469277190069317427}
   _AnnotationsInputText: {fileID: 3137273277995193902}
 --- !u!1 &1354348647419603988
@@ -14226,28 +14228,33 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
+      propertyPath: m_text
+      value: "\u200B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
+        type: 3}
       propertyPath: m_fontSize
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_margin.w
-      value: -1.9070911
+      value: 6.916565
       objectReference: {fileID: 0}
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_margin.x
-      value: 21.096222
+      value: 5.9427643
       objectReference: {fileID: 0}
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_margin.y
-      value: 1.2827224
+      value: 6.033882
       objectReference: {fileID: 0}
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_margin.z
-      value: 16.343475
+      value: -0.5754242
       objectReference: {fileID: 0}
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
@@ -14464,6 +14471,11 @@ PrefabInstance:
     - target: {fileID: 1162399778072298528, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163035800728381495, guid: 46e33ddf996ce104996ea08075f97d71,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2356176764575543763, guid: 46e33ddf996ce104996ea08075f97d71,
@@ -21762,22 +21774,22 @@ PrefabInstance:
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_margin.w
-      value: -1.9070911
+      value: 7.167619
       objectReference: {fileID: 0}
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_margin.x
-      value: 21.096222
+      value: 4.58519
       objectReference: {fileID: 0}
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_margin.y
-      value: 1.2827224
+      value: 7.764814
       objectReference: {fileID: 0}
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_margin.z
-      value: 16.343475
+      value: 0.41965485
       objectReference: {fileID: 0}
     - target: {fileID: 247229643559496400, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
@@ -21839,7 +21851,7 @@ PrefabInstance:
     - target: {fileID: 434940417761870688, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_margin.x
-      value: 12.096436
+      value: 9.381401
       objectReference: {fileID: 0}
     - target: {fileID: 434940417761870688, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
@@ -21994,6 +22006,11 @@ PrefabInstance:
     - target: {fileID: 1162399778072298528, guid: 46e33ddf996ce104996ea08075f97d71,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163035800728381495, guid: 46e33ddf996ce104996ea08075f97d71,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2356176764575543763, guid: 46e33ddf996ce104996ea08075f97d71,
