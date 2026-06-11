@@ -68,7 +68,7 @@ public class APBasicInfoBlock : MonoBehaviour
         _CurrentLamasColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey);
 
         //TOP CLADDING
-        Debug.Log("TOP CLADDING MATERIAL: " + _ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialType);
+        //Debug.Log("TOP CLADDING MATERIAL: " + _ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialType);
         if (_ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialType != E_MaterialType.None)
         {
             _CanvasGroupTopCladdingBlock.alpha = 1f;

@@ -168,7 +168,14 @@ MonoBehaviour:
         _ModelKey: Catalog.Model.Astralpool.Bellasun
         _BlueprintModelImage: {fileID: 21300000, guid: b361ce8e2be5c1547903905f9688027e,
           type: 3}
-        _MaterialsArray: []
+        _MaterialsArray:
+        - _MaterialType: 1
+          _MaterialSprite: {fileID: 21300000, guid: a8f69e5a48eac0e4ba8a80602194c3d3,
+            type: 3}
+          _MaterialKey: Catalog.Material.White
+          _Material01: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
     - _ProductType: 2
       _ProductSprite: {fileID: 21300000, guid: d69d36f098a388c4ebad13d6c9f11adc, type: 3}
       _ProductKey: Catalog.Product.SubmergedCover

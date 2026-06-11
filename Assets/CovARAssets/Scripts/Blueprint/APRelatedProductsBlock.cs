@@ -136,7 +136,7 @@ public class APRelatedProductsBlock : MonoBehaviour
                 case E_PoolType.AP_Sveltea: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
                 case E_PoolType.AP_SvelteaManual: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
                 case E_PoolType.AP_Coverly: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
-                case E_PoolType.AP_Bellasun: InitCoverConnectBehaviour(0); break;
+                case E_PoolType.AP_Bellasun: InitCoverConnectBehaviour(0); ForceSecuritySystemToOneOption(2);  break;
                 case E_PoolType.AP_Lebanc_Big: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
                 case E_PoolType.AP_Lebanc_Small: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
                 case E_PoolType.AP_Rousillon: InitPoolMaterialBehaviour(); InitSubmergedTypeBehaviour(); InitCoverConnectBehaviour(1); break;
@@ -151,6 +151,8 @@ public class APRelatedProductsBlock : MonoBehaviour
 
     void InitPoolMaterialBehaviour()
     {
+        _SecuritySystemCG.interactable = true;
+
         _PoolMaterialDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInPoolMaterial(); });
         _PoolMaterialDropdown.onValueChanged.AddListener(delegate { OnValueChangedInPoolMaterial(); });
     }
@@ -167,6 +169,15 @@ public class APRelatedProductsBlock : MonoBehaviour
             _CoverConnectDropdown_GroundRoller.gameObject.SetActive(false);
             _CoverConnectDropdown_Submerged.gameObject.SetActive(true);
         }
+    }
+
+    void ForceSecuritySystemToOneOption(int option)
+    {
+        //Debug.Log("FORCE SECURITY SYSTEM TO OPTION: " + option);
+        _SecuritySystemText.LocalizationKey = _SecuritySystemsArray[option]._SSKey;
+        _SecuritySystemText.Localize();
+
+        _SecuritySystemCG.interactable = false;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
