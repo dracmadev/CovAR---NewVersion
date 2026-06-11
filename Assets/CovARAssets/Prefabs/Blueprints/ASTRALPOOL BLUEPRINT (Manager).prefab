@@ -4800,6 +4800,7 @@ GameObject:
   - component: {fileID: 2374237247959305677}
   - component: {fileID: 2340228951070073203}
   - component: {fileID: 7509266489050454905}
+  - component: {fileID: 2171830179990373486}
   m_Layer: 0
   m_Name: SetSecuritySystem_Button
   m_TagString: Untagged
@@ -4951,7 +4952,7 @@ MonoBehaviour:
     bDontStartHide: 0
   UI_ButtonOnClickAnimType: 1
   UI_ButtonOnClickDefaultStruct:
-    scaleUpFactor: 0.15
+    scaleUpFactor: 1.15
     animationDuration: 0.2
     easeType: 27
   UI_ButtonOnClickGoSidesStruct:
@@ -5011,7 +5012,7 @@ MonoBehaviour:
     defaultPopUpRef: {fileID: 0}
     bUseAnimation: 0
     _AnimCont: {fileID: 0}
-  buttonType: 1
+  buttonType: 0
   inputFieldType: 0
   St_InputFieldBehaviourData:
     _min: 0
@@ -5060,6 +5061,18 @@ MonoBehaviour:
     _GetPremiumButton: {fileID: 0}
   bFeatureNotAviable: 0
   _ButtonsToHideArray: []
+--- !u!225 &2171830179990373486
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532737941984998530}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3535048407912798916
 GameObject:
   m_ObjectHideFlags: 0
@@ -8114,9 +8127,16 @@ MonoBehaviour:
   _CGCoverConnectBlock: {fileID: 2969938958398741997}
   _PoolMaterialDropdown: {fileID: 5031739808933007574}
   _CGPoolMaterialBlock: {fileID: 675219148960470893}
-  _SecuritySystemDropdown: {fileID: 2374237247959305677}
+  _SecuritySystemCG: {fileID: 2171830179990373486}
   _SecuritySystemText: {fileID: 2999560277667508289}
   _CGSecuritySystemBlock: {fileID: 4087089618225236948}
+  _SecuritySystemsArray:
+  - _SSImage: {fileID: 21300000, guid: 3b4cc6e59e137174191219cad648ccf4, type: 3}
+    _SSKey: FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option02
+  - _SSImage: {fileID: 21300000, guid: 6d2004f413538b24599ad84dfbadfb0d, type: 3}
+    _SSKey: FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option03
+  - _SSImage: {fileID: 21300000, guid: 8ed77c86307f4fb4fbdafb02af1de3cc, type: 3}
+    _SSKey: FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option04
   _SubmergedModelDropdown: {fileID: 4055584455089734752}
   _CGSubmergedModelBlock: {fileID: 3914415003079123331}
   _MecanicsDropdown: {fileID: 5822097561253075649}

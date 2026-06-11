@@ -21,9 +21,10 @@ public class APRelatedProductsBlock : MonoBehaviour
     [SerializeField] private TMP_Dropdown _PoolMaterialDropdown;
     [SerializeField] private CanvasGroup _CGPoolMaterialBlock;
     [Header("SECURITY SYSTEM:")]
-    [SerializeField] private Button _SecuritySystemDropdown;
+    [SerializeField] private CanvasGroup _SecuritySystemCG;
     [SerializeField] private LocalizedTMPText _SecuritySystemText;
     [SerializeField] private CanvasGroup _CGSecuritySystemBlock;
+    [SerializeField] private St_SecuritySystem[] _SecuritySystemsArray;
     [Header("SUBMERGED MODEL:")]
     [SerializeField] private TMP_Dropdown _SubmergedModelDropdown;
     [SerializeField] private CanvasGroup _CGSubmergedModelBlock;
@@ -70,9 +71,11 @@ public class APRelatedProductsBlock : MonoBehaviour
         InitDictionaty();
         ChooseWichRelatedProductsShow();
 
-
+        _SubmergedModelDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInSubmergedType(); });
         _SubmergedModelDropdown.onValueChanged.AddListener(delegate { OnValueChangedInSubmergedType(); });
 
+        _PoolMaterialDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInPoolMaterial(); });
+        _PoolMaterialDropdown.onValueChanged.AddListener(delegate { OnValueChangedInPoolMaterial(); });
     }
 
     void InitDictionaty()
@@ -159,6 +162,41 @@ public class APRelatedProductsBlock : MonoBehaviour
             
         }
        
+    }
+
+    void OnValueChangedInPoolMaterial()
+    {
+        if (_CGPoolMaterialBlock.alpha != 0)
+        {
+            int selectedIndex = _PoolMaterialDropdown.value;
+
+            if (selectedIndex == 0)
+            {
+                _SecuritySystemCG.interactable = true;
+            }
+            else if (selectedIndex == 1)
+            {
+                _SecuritySystemCG.interactable = true;
+            }
+            else if (selectedIndex == 2)
+            {
+                _SecuritySystemCG.interactable = false;
+                _SecuritySystemText.LocalizationKey = _SecuritySystemsArray[1]._SSKey;
+                _SecuritySystemText.Localize();
+            }
+            else if (selectedIndex == 3)
+            {
+                _SecuritySystemCG.interactable = true;
+            }
+            else if (selectedIndex == 4)
+            {
+                _SecuritySystemCG.interactable = false;
+                _SecuritySystemText.LocalizationKey = _SecuritySystemsArray[2]._SSKey;
+                _SecuritySystemText.Localize();
+            }
+
+        }
+
     }
 
 
