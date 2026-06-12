@@ -37,6 +37,13 @@ public class ARObjectManager : MonoBehaviour
     [Header("CovAR CURRENT Catalogs:")]
     [SerializeField] private CovARCatalogScripteableObj _CurrentProductCatalog;
 
+    [Header("ARObject Decals:")]
+    [SerializeField] private GameObject _MovmentFeedbackGO;
+    private GameObject _instantiatedFeedback;
+    [SerializeField] private GameObject _RotationFeedbackGO;
+
+
+
     //Local variables
     HUDManagerScript _HUDManagerScrit;
     bool bARObjectPlaced = false;
@@ -188,6 +195,7 @@ public class ARObjectManager : MonoBehaviour
                 {
                     GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
                     UpdateARObjectSpecificState();
+                    DesactiveFeedbackDecal();
                 }
                 break;
 
@@ -197,10 +205,16 @@ public class ARObjectManager : MonoBehaviour
                     if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.MovingState)
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
+
+                        DesactiveFeedbackDecal();
                     }
                     else
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.MovingState);
+                        DesactiveFeedbackDecal();
+                        ActiveFeedbackDecal(_CurrentARObject, _MovmentFeedbackGO);
+
+
                     }
                     _HUDManagerScrit.HideAllOfSubMenus();
                     UpdateARObjectSpecificState();
@@ -214,6 +228,7 @@ public class ARObjectManager : MonoBehaviour
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
                         _HUDManagerScrit.HideAllOfSubMenus();
+                        DesactiveFeedbackDecal();
                     }
                     else
                     {
@@ -229,6 +244,7 @@ public class ARObjectManager : MonoBehaviour
                     if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetLenghtState)
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
+                        DesactiveFeedbackDecal();
                     }
                     else
                     {
@@ -244,6 +260,7 @@ public class ARObjectManager : MonoBehaviour
                     if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetLamasLenghtState)
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
+                        DesactiveFeedbackDecal();
                     }
                     else
                     {
@@ -933,6 +950,37 @@ public class ARObjectManager : MonoBehaviour
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    /////////////////////////////////////////////////////////////////// DECALS ///////////////////////////////////////////////////////////////////
+
+    // Modificada: Ara retorna un GameObject en lloc de demanar un 'ref'
+    void ActiveFeedbackDecal(GameObject pare, GameObject objToInstaciate)
+    {
+        if (objToInstaciate != null || pare != null)
+        {
+            GameObject newFeedback = Instantiate(objToInstaciate);
+
+
+            newFeedback.transform.SetParent(pare.transform);
+            newFeedback.transform.localPosition = Vector3.zero;
+            newFeedback.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+        }
+    }
+
+    void DesactiveFeedbackDecal()
+    {
+        Debug.Log("Desactivant decals");
+
+        GameObject[] decalsActius = GameObject.FindGameObjectsWithTag("MovmentDecal");
+
+        foreach (GameObject decal in decalsActius)
+        {
+            Destroy(decal);
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

@@ -3379,6 +3379,9 @@ MonoBehaviour:
   _AstralpoolProductsCatalog: {fileID: 11400000, guid: 500f0d510e6799140be18cfe13100959,
     type: 2}
   _CurrentProductCatalog: {fileID: 0}
+  _MovmentFeedbackGO: {fileID: 5518047774292776789, guid: d96ec8ee70ef4454b8b2dc4659131db5,
+    type: 3}
+  _RotationFeedbackGO: {fileID: 0}
 --- !u!1 &578714005
 GameObject:
   m_ObjectHideFlags: 0

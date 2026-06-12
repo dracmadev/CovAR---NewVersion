@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - PlaneFinder
+  - GeolocalizationManager
+  - ARObjectManager
+  - HUD
+  - PlaneReticula
+  - ARObject
+  - DefaultPopUp
+  - MovmentDecal
   layers:
   - Default
   - TransparentFX
