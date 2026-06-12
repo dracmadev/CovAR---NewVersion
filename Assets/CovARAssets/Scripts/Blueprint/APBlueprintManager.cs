@@ -8,9 +8,16 @@ public class APBlueprintManager : MonoBehaviour
     [SerializeField] private APTopInformationBlock _APTopInformationBlock;
     [SerializeField] private APBasicInfoBlock _APBasicInfoBlock;
     [SerializeField] private APRelatedProductsBlock _APRelatedProductsBlock;
+    [SerializeField] private BlueprintPopUpBehaviour _BlueprintPopUpBlock;
     [Header("Other references:")]
     [SerializeField] private ARObjectManager _ARObjectManager;
     [SerializeField] private HUDManagerScript _HUDManagerScript;
+
+    [Header("Order Data:")]
+    [SerializeField] private St_OrderData _OrderData;
+
+    string LastPanelBeforeBlueprintPopUp;
+
     void Start()
     {
         InitAPCatalog();
@@ -37,6 +44,8 @@ public class APBlueprintManager : MonoBehaviour
         }
 
 
+
+
         InitBlocks();
 
     }
@@ -52,10 +61,26 @@ public class APBlueprintManager : MonoBehaviour
         {
             _APBasicInfoBlock.InitBasicInfo(_ARObjectManager);
         }
+
+        if (_BlueprintPopUpBlock != null)
+        {
+            _OrderData._CustomerName = _BlueprintPopUpBlock.GetCustomerName();
+            _OrderData._CustomerMail = _BlueprintPopUpBlock.GetCustomerMail();
+            LastPanelBeforeBlueprintPopUp = _BlueprintPopUpBlock.GetLastPanelBeforeBlueprintPopUp();
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    /////////////////////////////////////////////////////////////////// GETTER /////////////////////////////////////////////////////////////////////////
+
+    public St_OrderData GetOrderData()
+    {
+        return _OrderData;
+    }
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////////////////////// BEHAVIOUR /////////////////////////////////////////////////////////////////
 
@@ -63,7 +88,7 @@ public class APBlueprintManager : MonoBehaviour
     {
         if(_HUDManagerScript != null)
         {
-            _HUDManagerScript.TravelToLastPanel();
+            _HUDManagerScript.TravelToPanel(LastPanelBeforeBlueprintPopUp);
         }
     }
 

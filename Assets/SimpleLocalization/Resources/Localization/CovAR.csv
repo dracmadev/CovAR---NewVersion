@@ -1,18 +1,18 @@
 Key,Spanish,French,English
 Menu.Welcome,Bienvenido,Accueillir,Welcome
-Login.Input.Mail,correo...,mail...,mail...
+,,,
 Login.Input.Clave,contraseña...,mot de passe...,key...
 Login.Button.Acceder,Acceder,Accéder,Enter
 Login.Button.ClaveOlvidada,¿Has olvidado tu contraseña?,Avez-vous oublié votre mot de passe ?,Have you forgotten your password?
 Login.Button.NuevaClave,Cambiar contraseña,Changer le mot de passe,Change password
 Login.Button.CrearCuenta,Crear cuenta,Créer un compte,Create account
 Login.Button.VincularDispositivo,Vincular licencia a este dispositivo,Lier la licence à cet appareil,Link license to this device
-Login.Panel.ClaveOlvidada,Escribe tu correo,Saisissez votre adresse e-mail,Enter your email
+Login.Panel.ClaveOlvidada,Escribe tu correo,Saisissez votre adresse e-mail,Enter your email address
 Login.Panel.AppCodeOlvidada,Escribe un correo  a infomarketing@fluidra.com solicitando la clave. Adjunta el nombre de tu empresa y el CIF para que podamos validar tu petición.,Envoyez un courriel à infomarketing@fluidra.com pour demander le mot de passe. Veuillez indiquer le nom de votre entreprise et votre numéro d'identification fiscale (CIF) afin que nous puissions valider votre demande.,Send an email to infomarketing@fluidra.com requesting the password. Include your company name and tax ID number (CIF) so we can validate your request.
 Login.Panel.CorreoEnviado,"Se ha mandado un correo con la nueva clave. En caso de no verlo en la bandeja de entrada, revise la carpeta de correo no deseado / spam.","Un courriel contenant votre nouveau mot de passe vous a été envoyé. Si vous ne le voyez pas dans votre boîte de réception, veuillez vérifier votre dossier de courriers indésirables.","An email with the new password has been sent. If you don't see it in your inbox, please check your spam/junk mail folder."
 Login.Panel.CreacionUsuario.Titulo,Crear usuario,Créer un utilisateur,Create user
 Login.Panel.CreacionUsuario.Instrucciones,"En caso de no poder crear un usuario, contacte con infomarketing@fluidra.com","Si vous ne parvenez pas à créer un compte utilisateur, veuillez contacter infomarketing@fluidra.com","If you are unable to create a user account, please contact infomarketing@fluidra.com"
-Login.Input.Nombre,Nombre...,Nom...,Name...
+,,,
 Login.Input.Apellidos,Apellidos...,Noms de famille...,Last names...
 Login.Input.Telefono,Teléfono...,Téléphone...,Phone...
 Login.Input.Empresa,Empresa...,Entreprise...,Company...
@@ -554,7 +554,7 @@ La plateforme s'enroule entièrement dans un compartiment sous-marin recouvert d
 The platform rolls up completely inside an underwater compartment covered by a submerged conduit plate. This cover is suitable for pools under renovation or construction."
 Main.VoletTypeWindow.HelpPanel.RollersText,"Los rodillos para piscinas elevadas permiten una perfecta conservación de la cubierta.
 
-Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une parfaite préservation de la couverture.
+Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une protection optimale de la couverture.
 
 Ces enrouleurs facilitent la manipulation de la couverture d'été. Une fois rétractée, il est simple de la ranger, libérant ainsi l'espace de baignade. Ils sont équipés d'un système de freinage pour bloquer le cylindre et sont très résistants.","Rollers for above-ground pools ensure the cover is perfectly preserved.
 
@@ -624,7 +624,7 @@ Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 We'll guide you step-by-step through how the application works.
 
 Press OK to begin the tutorial."
-Tutorial.Texto.ARMark,"Apunta hacia el suelo hasta que aparezca una marca, a continuación, púlsala.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
+Tutorial.Texto.ARMark,"Apunta hacia el suelo hasta que aparezca una marca, a continuación, púlsala.","Pointez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez dessus.","Point it towards the ground until a mark appears, then tap it."
 Tutorial.Texto.ExplicacionMenus1,"Como puedes ver en la imagen, dispones de dos menús para configurar tus persianas.","Comme vous pouvez le voir sur l'image, vous disposez de deux menus pour configurer vos volets","As you can see in the image, you have two menus to configure your blinds."
 Tutorial.Texto.ExplicacionMenus2,"En la izquierda, tenemos el menú general donde desplazar, configurar las dimensiones de la persiana y acceder al plano técnico.","À gauche, vous trouverez le menu général qui vous permet de faire défiler les options, de configurer les dimensions du volet et d'accéder au dessin technique.","On the left, we have the general menu where you can scroll, configure the dimensions of the blind and access the technical drawing."
 Tutorial.Texto.ExplicacionMenus3,"Por último, a la derecha, tenemos el menú de diseño, donde podemos personalizar la persiana a nuestro gusto.","Enfin, à droite, se trouve le menu de personnalisation, qui nous permet de personnaliser le volet à notre guise.","Finally, on the right, we have the design menu, where we can customize the blind to our liking."
@@ -651,14 +651,14 @@ Tutorial.Texto.Lamas1,Pulsa el botón para poder modificar el color de las lamas
 Tutorial.Texto.Lamas2,Selecciona el color que desees.,Sélectionnez la couleur que vous souhaitez.,Select the color you want.
 Tutorial.Texto.Screenshot,Pulsa el botón para realizar una captura de pantalla que se guardará en tu dispositivo y que también podrás compartir.,Appuyez sur le bouton pour prendre une capture d'écran qui sera enregistrée sur votre appareil et que vous pourrez également partager.,Press the button to take a screenshot that will be saved to your device and that you can also share.
 Tutorial.Texto.FichaTecnica1,Pulsa el botón para abrir la ficha técnica.,Appuyez sur le bouton pour ouvrir la fiche technique.,Press the button to open the technical data sheet.
-Tutorial.Texto.FichaTecnica2,"En la ficha técnica, podrás ver un resumen de la configuración de la persiana. Además de poder añadir el nombre del cliente, anotaciones, configurar otras opciones relacionadas con productos asociados a la persiana y hacer una captura de pantalla.","Dans les spécifications techniques, vous trouverez un résumé de la configuration du volet. Vous pouvez également ajouter le nom du client, des notes, configurer d'autres options relatives aux produits associés au volet et effectuer une capture d'écran.","In the technical specifications, you'll see a summary of the blind's configuration. You can also add the customer's name, notes, configure other options related to products associated with the blind, and take a screenshot."
+Tutorial.Texto.FichaTecnica2,"En la ficha técnica, podrás ver un resumen de la configuración de la persiana. Además de poder añadir el nombre del cliente, anotaciones, configurar otras opciones relacionadas con productos asociados a la persiana y hacer una captura de pantalla.","Dans les spécifications techniques, vous trouverez un résumé de la configuration du volet. Vous pouvez également ajouter le nom du client, des notes, configurer d'autres options relatives aux produits associés au volet et effectuer une capture d'écran.","In the technical specifications, you can see a summary of the blind's configuration. You can also add the customer's name, notes, configure other options related to products associated with the blind, and take a screenshot."
 Tutorial.Texto.FichaTecnica3,Pulsa el botón de la flecha para volver a la pantalla de configuración y continuar con el tutorial.,Appuyez sur la touche flèche pour revenir à l'écran des paramètres et poursuivre le tutoriel.,Press the arrow button to return to the settings screen and continue with the tutorial.
 Tutorial.Texto.HelpPopup,"Si en algún momento quieres recordar que es lo que hacen los botones del menú principal y del menú del diseño, manteniendo pulsado cualquiera de estos desplegará un texto explicativo sobre lo que hacen.","Si vous souhaitez à tout moment vous rappeler à quoi servent les boutons du menu principal et du menu de conception, il vous suffit d'appuyer longuement sur l'un d'eux pour afficher un texte explicatif.","If at any time you want to remember what the buttons in the main menu and the design menu do, pressing and holding any of them will display an explanatory text about what they do."
 Tutorial.Texto.EsconderMenus,"Si deseas esconder los botones del menú para visualizar mejor la pantalla, pulsa los botones que se encuentran encima de cada menú.","Pour masquer les boutons du menu et mieux visualiser l'écran, appuyez sur les boutons situés au-dessus de chaque menu.","If you want to hide the menu buttons to better view the screen, press the buttons located above each menu."
 Tutorial.Texto.BotonAtras,Pulsa el botón de atrás  para finalizar el tutorial y continuar utilizando la aplicación.,"Pour revenir au menu de conception, appuyez sur le bouton situé en bas du menu.",Press the back button to end the tutorial and continue using the application.
-FichaTecnica.Titulo,PLANO TÉCNICO,PLAN TECHNIQUE,TECHNICAL PLAN
-FichaTecnica.EscribirNombre,Nombre del cliente...,Nom du client...,Customer name...
-FichaTecnica.EscribirCorreo,Correo del cliente...,Courriel du client...,Customer email...
+,,,
+,,,
+,,,
 FichaTecnica.Cliente,CLIENTE,CLIENT,CUSTOMER
 FichaTecnica.ClienteInput,Entra texto...,Saisissez du texte...,Enter text...
 FichaTecnica.Fecha,FECHA:,DATE:,DATE:
@@ -739,7 +739,7 @@ ColorSoporte.Sable,Sable,Sabre,Saber
 ColorSoporte.Arena,Arena,Sable,Sand
 ColorSoporte.Madera,Madera,Bois,Wood
 Sumergida.Modelo.SumergidaTapaFuera,Sumergida Tapa fuera,Immergé. Couvercle enlevé.,Submerged. Lid off.
-Aceptar,Aceptar,Accepter,Accept
+,,,
 FichaTecnica.PopUp.InfoScreen.Title,DESCARGAR PLANO TÉCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.InfoScreen.Message,¿Estas seguro de querer guardar esta orden?,Êtes-vous sûr de vouloir enregistrer cette commande ?,Are you sure you want to save this order?
 FichaTecnica.PopUp.InfoScreen.Warning,(Es importante rellenar los  datos del cliente ya que se visualizarán el plano técnico),(Il est important de renseigner les coordonnées du client car elles figureront sur le dessin technique.),(It is important to fill in the customer details as they will be displayed on the technical drawing)
@@ -750,7 +750,7 @@ FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE H
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -829,7 +829,7 @@ Catalog.Lamas.Material.Title,Material,Matériel,Material
 ,,,
 ,,,
 InGame.PlaneFinderPanel.InfoText,"Apunte hacia el suelo hasta que aparezca una marca, a continuación, púlsela.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
-InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit
+InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit.
 ,,,
 ,,,
 ,,,
@@ -871,7 +871,7 @@ Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de co
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -885,3 +885,14 @@ FichaTecnica.ProductosAsociados.Tapas.Option3,Madera exótica 950x1000,Bois exot
 FichaTecnica.ProductosAsociados.Tapas.Option4,Por encargo,Sur mesure,Custom made
 FichaTecnica.Anotaciones.Titulo,ANOTACIONES:,REMARQUES :,NOTES:
 FichaTecnica.Anotaciones.Input,Introduce texto...,Saisissez du texte...,Enter text...
+FichaTecnica.Titulo,PLANO TÉCNICO,PLAN TECHNIQUE,TECHNICAL PLAN
+FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Renseignez les informations client pour générer le dessin technique.,Complete the customer details to generate the technical drawing.
+FichaTecnica.EscribirNombre,Nombre del cliente...,Nom du client...,Customer name...
+FichaTecnica.EscribirCorreo,Correo del cliente...,Courriel du client...,Customer email...
+,,,
+,,,
+,,,
+Login.Input.Mail,correo...,mail...,mail...
+Login.Input.Nombre,Nombre...,Nom...,Name...
+Login.Input.Aceptar,Aceptar,Accepter,Accept
+Login.Input.Volver,Volver,Retour,Return
