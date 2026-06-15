@@ -5557,7 +5557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b537e2ddd40a8b44851ed025c2c35d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bOnARScene: 0
+  bOnARScene: 1
   _UIPanelList:
   - _PanelName: PlaneFinderPanel
     _PanelRef: {fileID: 1740908116}
