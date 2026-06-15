@@ -554,7 +554,7 @@ La plateforme s'enroule entièrement dans un compartiment sous-marin recouvert d
 The platform rolls up completely inside an underwater compartment covered by a submerged conduit plate. This cover is suitable for pools under renovation or construction."
 Main.VoletTypeWindow.HelpPanel.RollersText,"Los rodillos para piscinas elevadas permiten una perfecta conservación de la cubierta.
 
-Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une protection optimale de la couverture.
+Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une parfaite préservation de la couverture.
 
 Ces enrouleurs facilitent la manipulation de la couverture d'été. Une fois rétractée, il est simple de la ranger, libérant ainsi l'espace de baignade. Ils sont équipés d'un système de freinage pour bloquer le cylindre et sont très résistants.","Rollers for above-ground pools ensure the cover is perfectly preserved.
 
@@ -624,7 +624,7 @@ Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 We'll guide you step-by-step through how the application works.
 
 Press OK to begin the tutorial."
-Tutorial.Texto.ARMark,"Apunta hacia el suelo hasta que aparezca una marca, a continuación, púlsala.","Pointez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez dessus.","Point it towards the ground until a mark appears, then tap it."
+Tutorial.Texto.ARMark,"Apunta hacia el suelo hasta que aparezca una marca, a continuación, púlsala.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
 Tutorial.Texto.ExplicacionMenus1,"Como puedes ver en la imagen, dispones de dos menús para configurar tus persianas.","Comme vous pouvez le voir sur l'image, vous disposez de deux menus pour configurer vos volets","As you can see in the image, you have two menus to configure your blinds."
 Tutorial.Texto.ExplicacionMenus2,"En la izquierda, tenemos el menú general donde desplazar, configurar las dimensiones de la persiana y acceder al plano técnico.","À gauche, vous trouverez le menu général qui vous permet de faire défiler les options, de configurer les dimensions du volet et d'accéder au dessin technique.","On the left, we have the general menu where you can scroll, configure the dimensions of the blind and access the technical drawing."
 Tutorial.Texto.ExplicacionMenus3,"Por último, a la derecha, tenemos el menú de diseño, donde podemos personalizar la persiana a nuestro gusto.","Enfin, à droite, se trouve le menu de personnalisation, qui nous permet de personnaliser le volet à notre guise.","Finally, on the right, we have the design menu, where we can customize the blind to our liking."
@@ -896,3 +896,10 @@ Login.Input.Mail,correo...,mail...,mail...
 Login.Input.Nombre,Nombre...,Nom...,Name...
 Login.Input.Aceptar,Aceptar,Accepter,Accept
 Login.Input.Volver,Volver,Retour,Return
+,,,
+,,,
+,,,
+ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photographie - CovAR,Photograph - CovAR
+ScreenshootAndShare.Photo.Descrip,Esta fotografía sacada con la aplicación  de CovAR.,Cette photographie a été prise à l'aide de l'application CovAR.,This photograph was taken using the CovAR application.
+ScreenshootAndShare.Blueprint.Title,Plano técnico,dessin technique,Technical drawing
+ScreenshootAndShare.Blueprint.Descrip,Este plano técnico ha sido generado con la aplicación  de CovAR.,Ce dessin technique a été généré à l'aide de l'application CovAR.,This technical drawing was generated using the CovAR application.

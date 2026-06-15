@@ -12566,8 +12566,18 @@ MonoBehaviour:
   _APTopInformationBlock: {fileID: 997711460273141432}
   _APBasicInfoBlock: {fileID: 8314988309307443839}
   _APRelatedProductsBlock: {fileID: 37677813367744825}
+  _BlueprintPopUpBlock: {fileID: 0}
   _ARObjectManager: {fileID: 0}
   _HUDManagerScript: {fileID: 0}
+  _GeolocalizationManager: {fileID: 0}
+  _OrderData:
+    _CustomerName: 
+    _CustomerMail: 
+    _CurrentDate: 
+    _CurrentLocation: 
+    _UserID: 0
+    _ProductID: 0
+    _StockID: 0
 --- !u!1 &8267373806134476519
 GameObject:
   m_ObjectHideFlags: 0
@@ -17282,7 +17292,7 @@ PrefabInstance:
     - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}
       propertyPath: m_text
-      value: Barcelona, Spain, 08013
+      value: N/A
       objectReference: {fileID: 0}
     - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}

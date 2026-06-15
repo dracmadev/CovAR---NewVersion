@@ -12,6 +12,7 @@ public class APBlueprintManager : MonoBehaviour
     [Header("Other references:")]
     [SerializeField] private ARObjectManager _ARObjectManager;
     [SerializeField] private HUDManagerScript _HUDManagerScript;
+    [SerializeField] private GeolocalizationManager _GeolocalizationManager;
 
     [Header("Order Data:")]
     [SerializeField] private St_OrderData _OrderData;
@@ -42,8 +43,13 @@ public class APBlueprintManager : MonoBehaviour
         {
             _HUDManagerScript = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
         }
-
-
+        if (GameObject.FindGameObjectWithTag("GeolocalizationManager"))
+        {
+            _GeolocalizationManager = GameObject.FindGameObjectWithTag("GeolocalizationManager").GetComponent<GeolocalizationManager>();
+        }
+        
+        _OrderData._CurrentDate = System.DateTime.Now.ToString("dd/MM/yyyy");
+        _OrderData._CurrentLocation = _GeolocalizationManager.GetGeolocText();
 
 
         InitBlocks();
@@ -52,7 +58,14 @@ public class APBlueprintManager : MonoBehaviour
 
     void InitBlocks()
     {
-        if(_APRelatedProductsBlock != null)
+
+        if(_APTopInformationBlock != null)
+        {
+            _APTopInformationBlock.InitTopInformationBlock(_OrderData._CustomerName, _OrderData._CustomerMail, _OrderData._CurrentDate, _OrderData._CurrentLocation);
+        }
+
+
+        if (_APRelatedProductsBlock != null)
         {
             _APRelatedProductsBlock.InitRelatedProduct(_ARObjectManager);
         }
@@ -103,6 +116,8 @@ public class APBlueprintManager : MonoBehaviour
             _HUDManagerScript.TravelToPanel("AstralpoolBlueprintPanel");
         }
     }
+
+  
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

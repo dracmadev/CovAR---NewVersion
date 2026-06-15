@@ -2988,6 +2988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448580711}
+  - component: {fileID: 448580712}
   m_Layer: 0
   m_Name: SUB PANELS
   m_TagString: Untagged
@@ -3017,6 +3018,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &448580712
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448580710}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &477510541
 GameObject:
   m_ObjectHideFlags: 0
@@ -7094,7 +7107,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1177223387}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1171207992}
+        m_TargetAssemblyTypeName: TakeScreenShootAndShare, Assembly-CSharp
+        m_MethodName: OnClickTakePhotoAndShare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1177223387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8802,6 +8827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1399656915}
+  - component: {fileID: 1399656916}
   m_Layer: 0
   m_Name: PANELS
   m_TagString: Untagged
@@ -8836,6 +8862,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1399656916
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399656914}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1410846162 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9145936723075693088, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
@@ -10523,6 +10561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1546362428}
+  - component: {fileID: 1546362429}
   m_Layer: 0
   m_Name: POP UPS
   m_TagString: Untagged
@@ -10550,6 +10589,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1546362429
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546362427}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!224 &1564187789 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
@@ -13524,6 +13575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2096393525}
   - component: {fileID: 2096393526}
+  - component: {fileID: 2096393527}
   m_Layer: 0
   m_Name: COMPANY MARK
   m_TagString: Untagged
@@ -13571,6 +13623,18 @@ MonoBehaviour:
   _BACPoolSystemsImage: {fileID: 21300000, guid: 364fbb6778e747a4cbb561e1cb666af4,
     type: 3}
   _CompanyMarkImage: {fileID: 663358189}
+--- !u!225 &2096393527
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096393524}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1848355331101592649
 PrefabInstance:
   m_ObjectHideFlags: 0

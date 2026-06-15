@@ -69,9 +69,9 @@ public class TakeScreenShootAndShare : MonoBehaviour
         _isSharingProcessActive = true;
         yield return new WaitForSeconds(0.25f);
 
-        if (bHideHUDForScreenshoot)
+        if(bHideHUDForScreenshoot)
         {
-            HideOrShowHUDForScreenshoot(false);
+            _HUDManagerScript.HideAllHUD();
         }
 
         yield return new WaitForEndOfFrame();
@@ -86,16 +86,16 @@ public class TakeScreenShootAndShare : MonoBehaviour
 
         if (bHideHUDForScreenshoot)
         {
-            SubjectName = LocalizationManager.Localize("PM.Email.TakeAndShareScreenshoot.TitlePhoto");
-            DescripName = LocalizationManager.Localize("PM.Email.TakeAndShareScreenshoot.BodyPhoto"); 
+            SubjectName = LocalizationManager.Localize("ScreenshootAndShare.Photo.Title");
+            DescripName = LocalizationManager.Localize("ScreenshootAndShare.Photo.Descrip"); 
             filename = "Photo_" + _GeolocalizationManager.GetCountry() + "_" + _GeolocalizationManager.GetPostCode() + "_" + GetCurrentDate() + ".png";
         }
         else
         {
            
               
-            SubjectName = LocalizationManager.Localize("PM.Email.TakeAndShareScreenshoot.TitleScreenshoot");
-            DescripName = LocalizationManager.Localize("PM.Email.TakeAndShareScreenshoot.BodyScreenshoot");
+            SubjectName = LocalizationManager.Localize("ScreenshootAndShare.Blueprint.Title");
+            DescripName = LocalizationManager.Localize("ScreenshootAndShare.Blueprint.Descrip");
             
             filename = "Screenshoot_" + _GeolocalizationManager.GetCountry() + "_" + _GeolocalizationManager.GetPostCode() + "_" + GetCurrentDate() + ".png";
         }
@@ -106,7 +106,7 @@ public class TakeScreenShootAndShare : MonoBehaviour
 
         // Desa a la galeria
        
-        NativeGallery.SaveImageToGallery(filePath, "Pool Maker", filename);
+        NativeGallery.SaveImageToGallery(filePath, "CovAR", filename);
         
 
         // Comparteix amb Callback
@@ -121,7 +121,10 @@ public class TakeScreenShootAndShare : MonoBehaviour
             })
             .Share();
 
-        HideOrShowHUDForScreenshoot(true);
+        if (bHideHUDForScreenshoot)
+        {
+            _HUDManagerScript.ShowAllHUD();
+        }
     }
 
     // Funció que crida la corrutina de reinici
@@ -164,12 +167,6 @@ public class TakeScreenShootAndShare : MonoBehaviour
         // 3. Temps extra per deixar que la textura de la càmera es renderitzi
         yield return new WaitForSeconds(0.3f);
 
-        // 4. Reactivació del HUD
-        if (_HUDManagerScript != null)
-        {
-            HideOrShowHUDForScreenshoot(true);
-        }
-
         Debug.Log("✅ Procés de recuperació de visibilitat finalitzat.");
     }
 
@@ -189,24 +186,7 @@ public class TakeScreenShootAndShare : MonoBehaviour
         return DateTime.Now.ToString("dd-MM-yyyy");
     }
 
-    void HideOrShowHUDForScreenshoot(bool show)
-    {
-        if (show)
-        {
-            _HUDManagerScript.ShowAllHUD();
-        }
-        else
-        {
-            if (PlayerPrefs.GetString("PremiumState") == "1")
-            {
-                _HUDManagerScript.HideAllHUD();
-            }
-            else
-            {
-                _HUDManagerScript.HideHUDAndShowWaterMark();
-            }
-        }
-    }
+
 
 
 
