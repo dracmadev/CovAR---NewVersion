@@ -286,6 +286,7 @@ public class ARObjectManager : MonoBehaviour
         SetActivePlaneFinder(false);
         SetActiveARObject(_CurrentPoolType);
         _HUDManagerScrit.TravelToPanel("AP_ManipulateGroundRollerPanel");
+        _HUDManagerScrit.OnShowCompanyMark(true);
         bARObjectPlaced = true;
         _CurrentARObject.GetComponent<ARObjectScript>().GetCustomSplineInstantiateScript().PlayInitialOpenAnimation();
     }

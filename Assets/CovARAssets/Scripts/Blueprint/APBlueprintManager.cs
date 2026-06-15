@@ -88,6 +88,7 @@ public class APBlueprintManager : MonoBehaviour
     {
         if(_HUDManagerScript != null)
         {
+            _HUDManagerScript.OnShowCompanyMark(true);
             _HUDManagerScript.TravelToPanel(LastPanelBeforeBlueprintPopUp);
         }
     }
@@ -98,7 +99,7 @@ public class APBlueprintManager : MonoBehaviour
 
         if (_HUDManagerScript != null)
         {
-
+            _HUDManagerScript.OnShowCompanyMark(false);
             _HUDManagerScript.TravelToPanel("AstralpoolBlueprintPanel");
         }
     }

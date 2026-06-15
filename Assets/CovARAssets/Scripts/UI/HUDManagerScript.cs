@@ -95,7 +95,8 @@ public class HUDManagerScript : MonoBehaviour
         if(_AppLogoMark != null)
         {
             _originalPositionOfPoolMakerMark = _AppLogoMark.transform.localPosition;
-           // OnHideTransitionBetweenScenes();
+            OnShowCompanyMark(false);
+            // OnHideTransitionBetweenScenes();
         }
        
         TutorialManager.OnExitTutorial += TravelToMainMenuFromTutorial;
@@ -779,6 +780,25 @@ public class HUDManagerScript : MonoBehaviour
         HideAllOfSubMenus();
        
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    /////////////////////////////////////////// APP LOGO MARK /////////////////////////////////////////////////////////////////////////////
+    
+    public void OnShowCompanyMark(bool show)
+    {
+        if (_AppLogoMark != null)
+        {
+            UICompanyMarkBehaviour anim = _AppLogoMark.GetComponent<UICompanyMarkBehaviour>();
+
+            if (anim != null)
+            {
+                anim.OnCompanyMarkBehaviour(show);
+            }
+
+        }
+    }
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
