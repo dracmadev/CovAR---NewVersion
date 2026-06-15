@@ -13567,6 +13567,10 @@ MonoBehaviour:
   _YOffset: 500
   _animEase: 4
   _IsOnScreen: 0
+  _AstralPoolImage: {fileID: 21300000, guid: 09be1138cb3360c4290f2e3a7d765135, type: 3}
+  _BACPoolSystemsImage: {fileID: 21300000, guid: 364fbb6778e747a4cbb561e1cb666af4,
+    type: 3}
+  _CompanyMarkImage: {fileID: 663358189}
 --- !u!1001 &1848355331101592649
 PrefabInstance:
   m_ObjectHideFlags: 0

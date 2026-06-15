@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UICompanyMarkBehaviour : MonoBehaviour
 {
@@ -12,14 +13,25 @@ public class UICompanyMarkBehaviour : MonoBehaviour
 
     [Header("Behaviour settings:")]
     [SerializeField] private bool _IsOnScreen = false;
+    [SerializeField] private Sprite _AstralPoolImage;
+    [SerializeField] private Sprite _BACPoolSystemsImage;
+    [SerializeField] private Image _CompanyMarkImage;
+
 
 
     private RectTransform _rectTransform;
     private Vector2 _originalLocalPosition;
     private Vector2 _hiddenLocalPosition;
 
+    ARObjectManager _ARObjectManager;
+
     void Start()
     {
+        if (GameObject.FindGameObjectWithTag("ARObjectManager"))
+        {
+            _ARObjectManager = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
+        }
+
         _rectTransform = GetComponent<RectTransform>();
 
         _originalLocalPosition = _rectTransform.anchoredPosition;
@@ -30,6 +42,8 @@ public class UICompanyMarkBehaviour : MonoBehaviour
         {
             _rectTransform.anchoredPosition = _hiddenLocalPosition;
         }
+
+        ChooseCorrectImage();
     }
 
 
@@ -65,6 +79,23 @@ public class UICompanyMarkBehaviour : MonoBehaviour
 
         _rectTransform.DOAnchorPos(_hiddenLocalPosition, _animDuration)
             .SetEase(_animEase);
+    }
+
+    void ChooseCorrectImage()
+    {
+        if(_ARObjectManager != null)
+        {
+            switch(_ARObjectManager.GetCurrentCompanyRunning())
+            {
+                case E_CompanyType.Astralpool:
+                    _CompanyMarkImage.sprite = _AstralPoolImage;
+                    break;
+                case E_CompanyType.BACPoolSystems:
+                    _CompanyMarkImage.sprite = _BACPoolSystemsImage;
+                    break;
+            }
+        }
+        
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
