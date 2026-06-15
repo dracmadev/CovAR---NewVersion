@@ -366,7 +366,8 @@ public class ARObjectScript : MonoBehaviour
     {
         AssignRotationButtonsEvents();
     }
-    
+
+    /* OLD
     void RotateYAxisARObject()
     {
         if (GetSliderFromSpecificSubPanel("RotationSubPanel"))
@@ -379,7 +380,26 @@ public class ARObjectScript : MonoBehaviour
             Debug.LogError("ARObjectScript -> Error alhora d'agafar el slider de rotació... (Alvaro)");
         }
     }
+    */
+    void RotateYAxisARObject()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
+        if (sliderObj != null)
+        {
+            float sliderValue = sliderObj.GetComponent<UnityEngine.UI.Slider>().value; // Valor entre 0 i 1
 
+            // Fórmula: a 0.5 dona 0 | a 0 dona 180 | a 1 dona -180
+            float _YValueRot = (0.5f - sliderValue) * 360f;
+
+            this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, _YValueRot, this.transform.localEulerAngles.z);
+        }
+        else
+        {
+            Debug.LogError("ARObjectScript -> Error alhora d'agafar el slider de rotació... (Alvaro)");
+        }
+    }
+
+    /* OLD
     public void MinusRotateARObject()
     {
         GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
@@ -412,8 +432,61 @@ public class ARObjectScript : MonoBehaviour
 
             UpdateRotationSlider();
         }
+    }*/
+
+    public void MinusRotateARObject()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            // 1. Arrodonim cap amunt al múltiple de 5 més proper
+            // Exemple: si estigués a -41f / 5f = -8.2 -> Ceil(-8.2) = -8 -> -8 * 5 = -40f
+            float currentRotRounded = Mathf.Ceil(sliderData.sliderResult / 5f) * 5f;
+
+            // 2. Sumem 5 graus per avançar cap a +180
+            float newRot = currentRotRounded + 5f;
+
+            // 3. Limitem dins el rang
+            sliderData.sliderResult = Mathf.Clamp(newRot, sliderData.sliderMin, sliderData.sliderMax);
+
+            // 4. Apliquem la rotació
+            this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, sliderData.sliderResult, this.transform.localEulerAngles.z);
+
+            // 5. Sincronitzem el slider visual
+            UpdateRotationSlider();
+        }
     }
 
+    public void PlusRotateARObject()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            // 1. Arrodonim cap avall al múltiple de 5 més proper (perquè volem que baixi cap a -180)
+            // Exemple: 132f / 5f = 26.4 -> Floor(26.4) = 26 -> 26 * 5 = 130f
+            float currentRotRounded = Mathf.Floor(sliderData.sliderResult / 5f) * 5f;
+
+            // 2. Restem 5 graus directament per avançar cap a -180
+            float newRot = currentRotRounded - 5f;
+
+            // 3. Limitem dins el rang permès (-180 a 180)
+            sliderData.sliderResult = Mathf.Clamp(newRot, sliderData.sliderMin, sliderData.sliderMax);
+
+            // 4. Apliquem la rotació
+            this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, sliderData.sliderResult, this.transform.localEulerAngles.z);
+
+            // 5. Sincronitzem el slider visual
+            UpdateRotationSlider();
+        }
+    }
+
+    /* OLD
     void UpdateRotationSlider()
     {
         GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
@@ -426,6 +499,22 @@ public class ARObjectScript : MonoBehaviour
                                                  (sliderData.sliderMax - sliderData.sliderMin);
 
             sliderObj.GetComponent<UnityEngine.UI.Slider>().value = normalizedStartingSliderValue;
+        }
+    }*/
+
+    void UpdateRotationSlider()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            // Convertim els graus (de -180 a 180) a un valor normalitzat de Slider (de 0 a 1)
+            float normalizedSliderValue = 0.5f - (sliderData.sliderResult / 360f);
+
+            // Assegurem que no surti del rang 0 a 1 per seguretat
+            sliderObj.GetComponent<UnityEngine.UI.Slider>().value = Mathf.Clamp01(normalizedSliderValue);
         }
     }
 

@@ -1740,6 +1740,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plus_SpriteButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3509115113201699791, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_Sprite
@@ -11369,7 +11374,7 @@ PrefabInstance:
     - target: {fileID: 8201365937932261837, guid: 97934677460ac5641a0f13e44b826b86,
         type: 3}
       propertyPath: m_Value
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11409,6 +11414,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Minus_SpriteButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3509115113201699791, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
