@@ -101,25 +101,33 @@ public class ARObjectManager : MonoBehaviour
         {
             case E_ARObjectStates.DefaultState:
                 _HUDManagerScrit.HideAllOfSubMenus();
+                DesactiveFeedbackDecal();
                 break;
 
             case E_ARObjectStates.MovingState:
                 _HUDManagerScrit.HideAllOfSubMenus();
+                DesactiveFeedbackDecal();
+                ActiveFeedbackDecal(_CurrentARObject, _MovmentFeedbackGO);
+
                 break;
 
             case E_ARObjectStates.RotatingState:
                 _HUDManagerScrit.ShowSpecificSubMenu("RotationSubPanel");
                 _CurrentARObject.GetComponent<ARObjectScript>().InitRotationState();
+                DesactiveFeedbackDecal();
+                ActiveFeedbackDecal(_CurrentARObject, _RotationFeedbackGO);
                 break;
 
             case E_ARObjectStates.SetLenghtState:
                 _HUDManagerScrit.ShowSpecificSubMenu("SetARObjectLenghtSupPanel");
                 _CurrentARObject.GetComponent<ARObjectScript>().InitSetLenghtState();
+                DesactiveFeedbackDecal();
                 break;
 
             case E_ARObjectStates.SetLamasLenghtState:
                 _HUDManagerScrit.ShowSpecificSubMenu("SetLamasLenghtSubPanel");
                 _CurrentARObject.GetComponent<ARObjectScript>().InitSetLamasLenghtState();
+                DesactiveFeedbackDecal();
                 break;
         }
     }
@@ -195,7 +203,7 @@ public class ARObjectManager : MonoBehaviour
                 {
                     GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
                     UpdateARObjectSpecificState();
-                    DesactiveFeedbackDecal();
+                   
                 }
                 break;
 
@@ -205,15 +213,10 @@ public class ARObjectManager : MonoBehaviour
                     if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.MovingState)
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
-
-                        DesactiveFeedbackDecal();
                     }
                     else
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.MovingState);
-                        DesactiveFeedbackDecal();
-                        ActiveFeedbackDecal(_CurrentARObject, _MovmentFeedbackGO);
-
 
                     }
                     _HUDManagerScrit.HideAllOfSubMenus();
@@ -228,7 +231,6 @@ public class ARObjectManager : MonoBehaviour
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
                         _HUDManagerScrit.HideAllOfSubMenus();
-                        DesactiveFeedbackDecal();
                     }
                     else
                     {
@@ -244,7 +246,6 @@ public class ARObjectManager : MonoBehaviour
                     if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetLenghtState)
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
-                        DesactiveFeedbackDecal();
                     }
                     else
                     {
@@ -260,7 +261,6 @@ public class ARObjectManager : MonoBehaviour
                     if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetLamasLenghtState)
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
-                        DesactiveFeedbackDecal();
                     }
                     else
                     {
