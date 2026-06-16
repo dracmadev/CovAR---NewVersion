@@ -118,7 +118,12 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
         }
 
         _HUDManagerScrit = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
-        _ARObjectManagerScript = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
+
+        if(GameObject.FindGameObjectWithTag("ARObjectManager"))
+        {
+            _ARObjectManagerScript = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
+        }
+            
     }
 
     void InitButton()

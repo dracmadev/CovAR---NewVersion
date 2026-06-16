@@ -180,7 +180,7 @@ public class UIAnimationComponent : MonoBehaviour
                     UI_ComponentBaseScale = transform.localScale;
                     transform.localScale = UI_ComponentOriginalScale * 0.98f; 
                     cg.alpha = 0;
-                    this.gameObject.SetActive(false);
+                    //this.gameObject.SetActive(false);
                 }
                 else Debug.LogError("THIS UI COMPONENT [ " + gameObject.name + " ] DON'T HAVE A CANVAS GROUP!!");
                 break;
@@ -262,6 +262,8 @@ public class UIAnimationComponent : MonoBehaviour
             .SetEase(UI_ComponentStruct.appearEase));
         seq.Join(cg.DOFade(1f, UI_ComponentStruct.animationDuration)
             .SetEase(UI_ComponentStruct.appearEase));
+
+        Debug.Log("[" + this.gameObject.name + "] -> AppearWithAplhaAnim() -> Appear Animation with Alpha is playing...");
     }
 
     void DisappearWithAplhaAnim()
