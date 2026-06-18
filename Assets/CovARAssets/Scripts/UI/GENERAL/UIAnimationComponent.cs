@@ -263,7 +263,7 @@ public class UIAnimationComponent : MonoBehaviour
         seq.Join(cg.DOFade(1f, UI_ComponentStruct.animationDuration)
             .SetEase(UI_ComponentStruct.appearEase));
 
-        Debug.Log("[" + this.gameObject.name + "] -> AppearWithAplhaAnim() -> Appear Animation with Alpha is playing...");
+        
     }
 
     void DisappearWithAplhaAnim()
