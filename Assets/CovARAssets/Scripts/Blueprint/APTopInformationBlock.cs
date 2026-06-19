@@ -33,6 +33,7 @@ public class APTopInformationBlock : MonoBehaviour
         _CurrentCustomerEmailText.text = customerEmail;
         _CurrentOrderDate.text = orderDate;
         _CurrentOrderLocation.text = orderLocation;
+     
     }
 
 

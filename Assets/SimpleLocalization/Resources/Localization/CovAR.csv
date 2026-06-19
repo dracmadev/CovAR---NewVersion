@@ -1,4 +1,4 @@
-Key,Español,French,English
+Key,Spanish,French,English
 Menu.Welcome,Bienvenido,Accueillir,Welcome
 ,,,
 ,,,
@@ -487,14 +487,14 @@ En cas de problème d'accès à l'application, veuillez contacter infomarketing@
 If you have any problems accessing the application, please contact infomarketing@fluidra.com"
 Login.Panel.CambiarDispositivo.Title,Cambiar de dispositivo,Dispositif de commutation,Switch device
 Login.Panel.CambiarDispositivo.Texto,Migrar la licencia liberará este usuario del anterior dispositivo y lo vinculará al actual. La migración debe realizarse solo en el caso que quiera vincular esta licencia de uso a otro dispositivo.,La migration de la licence libérera cet utilisateur de l'appareil précédent et l'associera à l'appareil actuel. La migration ne doit être effectuée que si vous souhaitez associer cette licence à un autre appareil.,Migrating the license will release this user from the previous device and link it to the current one. Migration should only be performed if you want to link this license to another device.
-Login.Panel.CambiarDispositivo.Cambiado,La aplicación se ha vinculado a este dispositivo correctamente,L'application a été associée avec succès à cet appareil.,The app has been successfully linked to this device
+Login.Panel.CambiarDispositivo.Cambiado,La aplicación se ha vinculado a este dispositivo correctamente,L'application s'est connectée avec succès à cet appareil.,The app has successfully linked to this device
 Login.Input.ClaveActual,clave actual...,clé actuelle...,current key...
 Login.Input.NuevaClave,nueva clave...,nouvelle clé...,new key...
 Login.Input.RepetirNuevaClave,repetir nueva clave...,Répétez la nouvelle touche...,Repeat new key...
 Login.Panel.Settings.CambiarClave.Title,Cambiar de clave,Changer le mot de passe,Change password
-Login.Panel.Settings.Menu.Title,Ajustes de cuenta,Paramètres du compte,Account settings
+,,,
 Login.Panel.Settings.Menu.Clave,Cambiar de clave,Changer le mot de passe,Change password
-Login.Panel.Settings.Menu.Idioma,Idioma,Langue,Language
+,,,
 Login.Panel.Settings.Menu.Tutorial.Title,Tutorial de la aplicación:,Tutoriel d'application :,Application tutorial:
 Login.Panel.Settings.ClaveCambiada,Clave cambiada correctamente.,Clé modifiée avec succès.,Key changed successfully.
 Login.Panel.Settings.Menu.Idioma.Title,Selecciona el idioma,Sélectionnez la langue,Select the language
@@ -750,7 +750,7 @@ FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE H
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -862,16 +862,14 @@ FichaTecnica.InfoBasica.PoolMaterial.Option03,Liner,Doublure,Liner
 FichaTecnica.InfoBasica.PoolMaterial.Option04,Poliéster,Polyester,Polyester
 FichaTecnica.InfoBasica.PoolMaterial.Option05,Porcelánica,Porcelaine,Porcelain
 FichaTecnica.ProductosAsociados.SistemaSeguridad,Sistema seguridad:,Système de sécurité :,Security system:
-FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option02,"
-Hebillas con correa de tela",Boucles avec sangle en tissu,Buckles with fabric strap
+FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option02,Hebillas con correa de tela,Boucles avec sangle en tissu,Buckles with fabric strap
 FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option03,ABS,ABS,ABS
-FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option04,"
-Acero inoxidable electropulido 316L",Acier inoxydable électropoli 316L,316L electropolished stainless steel
+FichaTecnica.ProductosAsociados.SistemaSeguridad.DropDown.Option04,Acero inoxidable electropulido 316L,Acier inoxydable électropoli 316L,316L electropolished stainless steel
 Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de couverture :,Cover model:
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -900,8 +898,10 @@ Login.Input.Volver,Volver,Retour,Return
 Login.Button.ClaveOlvidada,¿Has olvidado tu contraseña?,Avez-vous oublié votre mot de passe ?,Have you forgotten your password?
 Login.Button.NuevaClave,Cambiar contraseña,Changer le mot de passe,Change password
 Login.Button.CrearCuenta,Crear cuenta,Créer un compte,Create account
-,,,
-,,,
+Login.Panel.Settings.Menu.Idioma,Selecciona el idioma,Sélectionnez la langue,Select the language
+Login.Panel.Settings.Menu.Title,Ajustes de cuenta,Paramètres du compte,Account settings
+Login.Panel.Settings.CloseApp.Title,Salir de la aplicación,Quitter l'application,Exit the application
+Login.Panel.Settings.CloseApp.Button,Cerrar aplicación,Fermer l'application,Close application
 ,,,
 ,,,
 ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photo - CovAR,Photograph - CovAR

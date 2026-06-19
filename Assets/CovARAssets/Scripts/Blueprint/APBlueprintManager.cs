@@ -58,8 +58,15 @@ public class APBlueprintManager : MonoBehaviour
 
     void InitBlocks()
     {
+        if (_BlueprintPopUpBlock != null)
+        {
+            _OrderData._CustomerName = _BlueprintPopUpBlock.GetCustomerName();
+            _OrderData._CustomerMail = _BlueprintPopUpBlock.GetCustomerMail();
+            LastPanelBeforeBlueprintPopUp = _BlueprintPopUpBlock.GetLastPanelBeforeBlueprintPopUp();
+        }
 
-        if(_APTopInformationBlock != null)
+
+        if (_APTopInformationBlock != null)
         {
             _APTopInformationBlock.InitTopInformationBlock(_OrderData._CustomerName, _OrderData._CustomerMail, _OrderData._CurrentDate, _OrderData._CurrentLocation);
         }
@@ -75,12 +82,7 @@ public class APBlueprintManager : MonoBehaviour
             _APBasicInfoBlock.InitBasicInfo(_ARObjectManager);
         }
 
-        if (_BlueprintPopUpBlock != null)
-        {
-            _OrderData._CustomerName = _BlueprintPopUpBlock.GetCustomerName();
-            _OrderData._CustomerMail = _BlueprintPopUpBlock.GetCustomerMail();
-            LastPanelBeforeBlueprintPopUp = _BlueprintPopUpBlock.GetLastPanelBeforeBlueprintPopUp();
-        }
+       
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

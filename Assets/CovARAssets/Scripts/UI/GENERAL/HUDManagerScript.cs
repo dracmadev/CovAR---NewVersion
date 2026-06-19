@@ -2,6 +2,10 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Rendering;
+using Unity.VisualScripting;
+using DG.Tweening;
+
+
 
 
 #if UNITY_EDITOR
@@ -50,7 +54,7 @@ public class HUDManagerScript : MonoBehaviour
     [SerializeField] public GameObject _PanelsGO;
     [SerializeField] public GameObject _SubPanelsGO;
     [SerializeField] private GameObject _PopUpsGO;
-    [SerializeField] private GameObject _WaterMark;
+    [SerializeField] private GameObject _TransitionPanelGO;
     [SerializeField] private GameObject _AppLogoMark;
     Vector3 _originalPositionOfPoolMakerMark;
 
@@ -60,6 +64,7 @@ public class HUDManagerScript : MonoBehaviour
     float deltaTime;
 
     private ARObjectManager _ARObjectManager;
+    private List<MovingFLuidraLogoScript> _MovingFLuidraLogoScript = new List<MovingFLuidraLogoScript>();
 
     void Start()
     {
@@ -92,11 +97,28 @@ public class HUDManagerScript : MonoBehaviour
             _ARObjectManager = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
         }
 
-        if(_AppLogoMark != null)
+        GameObject[] logos = GameObject.FindGameObjectsWithTag("FluidraLogoObj");
+
+        if (logos != null && logos.Length > 0)
+        {
+            foreach (GameObject logoObj in logos)
+            {
+                MovingFLuidraLogoScript script = logoObj.GetComponent<MovingFLuidraLogoScript>();
+                _MovingFLuidraLogoScript.Add(script);
+            }
+        }
+
+        if (_AppLogoMark != null)
         {
             _originalPositionOfPoolMakerMark = _AppLogoMark.transform.localPosition;
             OnShowCompanyMark(false);
             // OnHideTransitionBetweenScenes();
+        }
+
+
+        if(_TransitionPanelGO != null)
+        {
+            StartCoroutine(HideTransitionPanelCoroutine());
         }
        
         TutorialManager.OnExitTutorial += TravelToMainMenuFromTutorial;
@@ -647,6 +669,26 @@ public class HUDManagerScript : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("Scene_Login_PO");
     }
 
+    public void OnClickMoveToScene(string Scene)
+    {
+       StartCoroutine(MoveToSceneCoroutine(Scene));
+    }
+
+    IEnumerator MoveToSceneCoroutine(string Scene)
+    {
+        HideCurrentPanelOnScreen();
+        yield return new WaitForSeconds(transitionTime);
+
+        foreach (MovingFLuidraLogoScript script in _MovingFLuidraLogoScript)
+        {
+            script.BackgroundHide();
+        }
+        yield return new WaitForSeconds(0.5f);
+
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(Scene);
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////// SCENES /////////////////////////////////////////////////////////////////
@@ -719,33 +761,12 @@ public class HUDManagerScript : MonoBehaviour
         }
     }
 
-    void ShowWaterMarkGO(bool show)
-    {
-        if(_WaterMark != null)
-        {
-            CanvasGroup cgWaterMark = _WaterMark.GetComponent<CanvasGroup>();
-
-            if  (cgWaterMark != null)
-            {
-                if (show)
-                {
-                    cgWaterMark.alpha = 1;
-                }
-                else
-                {
-                    cgWaterMark.alpha = 0;
-                }
-            }
-        }
-       
-    }
-
     public void HideAllHUD()
     {
         ShowPanelsGO(false);
         ShowSubPanelsGO(false);
         ShowPopUpGO(false);
-        ShowWaterMarkGO(false);
+       
     }
 
     public void ShowAllHUD()
@@ -753,7 +774,7 @@ public class HUDManagerScript : MonoBehaviour
         ShowPanelsGO(true);
         ShowSubPanelsGO(true);
         ShowPopUpGO(true);
-        ShowWaterMarkGO(false);
+       
     }
 
     public void HideHUDAndShowWaterMark()
@@ -761,7 +782,7 @@ public class HUDManagerScript : MonoBehaviour
         ShowPanelsGO(false);
         ShowSubPanelsGO(false);
         ShowPopUpGO(false);
-        ShowWaterMarkGO(true);
+       
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -802,5 +823,61 @@ public class HUDManagerScript : MonoBehaviour
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  
+
+    /////////////////////////////////////////////////////// TRANSITION BETWEEN SCENES /////////////////////////////////////////////////////////////////
+
+
+    IEnumerator HideTransitionPanelCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        HideTransitionPanel();
+       
+    }
+
+    public void HideTransitionPanel()
+    {
+        CanvasGroup cgTransition = _TransitionPanelGO.GetComponent<CanvasGroup>();
+
+        if (cgTransition != null)
+        {
+            // 1. Bloquegem interaccions immediatament perquè l'usuari no cliqui res mentre marxa
+            cgTransition.interactable = false;
+            cgTransition.blocksRaycasts = false;
+
+            // 2. Animació de l'alfa d'1 a 0 en 0.3 segons
+            cgTransition.DOFade(0f, 0.3f)
+                .SetEase(Ease.InOutSine)
+                .OnComplete(() =>
+                {
+                    // Opcional: Desactivar el GameObject sencer en acabar l'animació
+                    _TransitionPanelGO.SetActive(false);
+                });
+        }
+    }
+
+    public void ShowTransitionPanel()
+    {
+        CanvasGroup cgTransition = _TransitionPanelGO.GetComponent<CanvasGroup>();
+
+        if (cgTransition != null)
+        {
+            // Opcional: Ens assegurem que el GameObject estigui actiu abans de fer l'animació
+            _TransitionPanelGO.SetActive(true);
+
+            // 1. Animació de l'alfa de 0 a 1 en 0.3 segons
+            cgTransition.DOFade(1f, 1f)
+                .SetEase(Ease.InOutSine)
+                .OnComplete(() =>
+                {
+                    // 2. Quan ha acabat de renéixer, activem el pas de clics i la interacció
+                    cgTransition.interactable = true;
+                    cgTransition.blocksRaycasts = true;
+                });
+        }
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 }

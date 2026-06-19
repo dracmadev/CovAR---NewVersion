@@ -12,6 +12,7 @@ TagManager:
   - ARObject
   - DefaultPopUp
   - MovmentDecal
+  - FluidraLogoObj
   layers:
   - Default
   - TransparentFX
