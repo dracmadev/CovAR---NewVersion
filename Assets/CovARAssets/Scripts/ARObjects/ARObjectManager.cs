@@ -129,6 +129,12 @@ public class ARObjectManager : MonoBehaviour
                 _CurrentARObject.GetComponent<ARObjectScript>().InitSetLamasLenghtState();
                 DesactiveFeedbackDecal();
                 break;
+
+            case E_ARObjectStates.SetFabricCoverLenghtState:
+                _HUDManagerScrit.ShowSpecificSubMenu("SetFabricCoverLenghtSubPanel");
+                _CurrentARObject.GetComponent<ARObjectScript>().InitSetFabricCoverLenghtState();
+                DesactiveFeedbackDecal();
+                break;
         }
     }
 
@@ -270,6 +276,21 @@ public class ARObjectManager : MonoBehaviour
                     UpdateARObjectSpecificState();
                 }
                 break;
+            case "SetFabricCoverLenghtState":
+                if (GetCurrentARObject() != null)
+                {
+                    if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetFabricCoverLenghtState)
+                    {
+                        GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
+                    }
+                    else
+                    {
+                        GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.SetFabricCoverLenghtState);
+                    }
+
+                    UpdateARObjectSpecificState();
+                }
+                break;
         }
     }
 
@@ -373,7 +394,8 @@ public class ARObjectManager : MonoBehaviour
                 case E_ProductType.GroundRollerCover: _CovARObjectData._CurrentModelProduct = product; break;
                 case E_ProductType.SubmergedRollerCover: _CovARObjectData._CurrentModelProduct = product; break;
                 case E_ProductType.BencheAndCladdings: _CovARObjectData._CurrentCladdingProduct = product; break;
-                case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverProduct = product; break;
+                case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverProduct = product;
+                                                _CovARObjectData._CurrentModelProduct = product; break;
                 case E_ProductType.Lamas: _CovARObjectData._CurrentLamasProduct = product; break;
 
             }
@@ -427,7 +449,9 @@ public class ARObjectManager : MonoBehaviour
                         }
 
                         break;
-                    case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverModel = model;
+                    case E_ProductType.FabricCover:
+                        _CovARObjectData._CurrentModelModel = model;
+                        _CovARObjectData._CurrentFabricCoverModel = model;
 
                         _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
                         _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;

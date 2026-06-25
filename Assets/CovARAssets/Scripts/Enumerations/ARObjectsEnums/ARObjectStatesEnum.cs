@@ -7,4 +7,5 @@ public enum E_ARObjectStates
     RotatingState = 2,
     SetLenghtState = 3,
     SetLamasLenghtState = 4,
+    SetFabricCoverLenghtState = 5,
 }

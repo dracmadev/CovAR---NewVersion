@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -48,6 +49,11 @@ public class ARObjectScript : MonoBehaviour
     private GameObject _lamasLenghtSliderRef;
     private GameObject _lamasFeedbackLenghtText;
 
+    //Fabric Cover Lenght 
+    private GameObject _fabricCoverSliderRef;
+    private GameObject _fabricCoverFeedbackText;
+    private List<GameObject> _boneUpObjList = new List<GameObject>();
+    private  List<GameObject> _boneParentsList = new List<GameObject>();
 
     void Start()
     {
@@ -139,6 +145,38 @@ public class ARObjectScript : MonoBehaviour
         foreach (ARObjectPartScript part in allParts)
         {
             if (part.GetBoneData() != null && part.GetBoneData()._BoneDirection == direction)
+            {
+                foundBones.Add(part.gameObject);
+            }
+        }
+        return foundBones;
+    }
+
+    public List<GameObject> GetAllBoneObjsBasedOnSecondDirection(E_ARObjectComponentsDirection direction)
+    {
+        List<GameObject> foundBones = new List<GameObject>();
+
+        ARObjectPartScript[] allParts = GetComponentsInChildren<ARObjectPartScript>(true);
+
+        foreach (ARObjectPartScript part in allParts)
+        {
+            if (part.GetBoneData() != null && part.GetBoneData()._BoneSecondDirection == direction)
+            {
+                foundBones.Add(part.gameObject);
+            }
+        }
+        return foundBones;
+    }
+
+    public List<GameObject> GetAllBoneParentsBasedOnMovmentType(E_ARObjectReSizeDirections direction)
+    {
+        List<GameObject> foundBones = new List<GameObject>();
+
+        ARObjectPartScript[] allParts = GetComponentsInChildren<ARObjectPartScript>(true);
+
+        foreach (ARObjectPartScript part in allParts)
+        {
+            if (part.GetBoneParentData() != null && part.GetBoneParentData()._ARObjectReSizeDirection == direction)
             {
                 foundBones.Add(part.gameObject);
             }
@@ -840,4 +878,256 @@ public class ARObjectScript : MonoBehaviour
    }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////// SET FABRIC COVER LENGHT ////////////////////////////////////////////////////////////////////////
+
+    public void InitSetFabricCoverLenghtState()
+    {
+        _fabricCoverSliderRef = GetSliderFromSpecificSubPanel("SetFabricCoverLenghtSubPanel");
+
+        if (_fabricCoverSliderRef != null)
+        {
+            _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMin = 0.5f;
+            _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxLamasLenghtDistance;
+
+            _fabricCoverSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetFabricCoverLenght(); });
+            _fabricCoverSliderRef.GetComponent<Slider>().onValueChanged.AddListener(delegate { SetFabricCoverLenght(); });
+
+            _fabricCoverFeedbackText = GetFeedbackTextFromSpecificSlider(_fabricCoverSliderRef);
+
+            AssignFabricCoverLenghtButtonsEvents();
+        }
+        else
+        {
+            Debug.LogWarning("InitSetFabricCoverLenghtState: El slider de la llargada de la coberta no s'ha trobat. Ens saltem la UI de moment.");
+        }
+
+        // GET UP BONES (Segona direcció)
+        _boneUpObjList = GetAllBoneObjsBasedOnSecondDirection(E_ARObjectComponentsDirection.UP);
+        _boneParentsList = GetAllBoneParentsBasedOnMovmentType(E_ARObjectReSizeDirections.UpOnZAxis);
+    }
+
+    void SetFabricCoverLenght()
+    {
+        if (_fabricCoverSliderRef == null) return;
+
+        float currentSliderValue = (_fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult);
+
+        // 1. Calcular la Z de l'objecte (va de 50 a 1000, etc.)
+        float objectTargetZ = currentSliderValue * 100f;
+
+        // 2. Aplicar l'equació exacta per a la Z del BoneParent
+        float parentTargetZ = (2f * objectTargetZ) - 100f;
+
+        // Moure els ossos de la llista principal (Objecte)
+        if (_boneUpObjList != null)
+        {
+            foreach (GameObject boneObj in _boneUpObjList)
+            {
+                if (boneObj != null)
+                {
+                    Vector3 currentPos = boneObj.transform.localPosition;
+                    boneObj.transform.localPosition = new Vector3(currentPos.x, currentPos.y, objectTargetZ);
+                }
+            }
+        }
+
+        // Moure els ossos de la llista de Parents aplicant l'equació
+        if (_boneParentsList != null)
+        {
+            foreach (GameObject parentObj in _boneParentsList)
+            {
+                var partScript = parentObj.GetComponent<ARObjectPartScript>();
+                if (partScript != null && partScript.GetBoneParentData() != null && partScript.GetBoneParentData()._ARObjectBones != null)
+                {
+                    foreach (GameObject innerBone in partScript.GetBoneParentData()._ARObjectBones)
+                    {
+                        if (innerBone != null)
+                        {
+                            Vector3 currentPos = innerBone.transform.localPosition;
+                            innerBone.transform.localPosition = new Vector3(currentPos.x, currentPos.y, parentTargetZ);
+                        }
+                    }
+                }
+            }
+        }
+
+        _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght = currentSliderValue;
+
+        if (_fabricCoverFeedbackText != null)
+        {
+            _fabricCoverFeedbackText.GetComponent<TMP_Text>().text = currentSliderValue.ToString("F2") + "m";
+        }
+    }
+
+    public void MinusFabricCoverLenght()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("SetFabricCoverLenghtSubPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            // Arrodonim 
+            float currentVal = sliderData.sliderResult;
+            float newLenght = Mathf.Floor(currentVal / 0.05f) * 0.05f;
+
+            if (Mathf.Approximately(newLenght, currentVal))
+            {
+                newLenght -= 0.05f;
+            }
+
+            sliderData.sliderResult = Mathf.Clamp(newLenght, sliderData.sliderMin, sliderData.sliderMax);
+
+            SetFabricCoverLenght();
+
+            UpdateFabricCoverLenghtSlider();
+        }
+    }
+
+    public void PlusFabricCoverLenght()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("SetFabricCoverLenghtSubPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            // Arrodonim 
+            float currentVal = sliderData.sliderResult;
+            float newLenght = Mathf.Ceil(currentVal / 0.05f) * 0.05f;
+
+            if (Mathf.Approximately(newLenght, currentVal))
+            {
+                newLenght += 0.05f;
+            }
+
+            sliderData.sliderResult = Mathf.Clamp(newLenght, sliderData.sliderMin, sliderData.sliderMax);
+
+            SetFabricCoverLenght();
+
+            UpdateFabricCoverLenghtSlider();
+        }
+    }
+
+    void UpdateFabricCoverLenghtSlider()
+    {
+        GameObject sliderObj = GetSliderFromSpecificSubPanel("SetFabricCoverLenghtSubPanel");
+
+        if (sliderObj != null)
+        {
+            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
+
+            float normalizedStartingSliderValue = (sliderData.sliderResult - sliderData.sliderMin) /
+                                                 (sliderData.sliderMax - sliderData.sliderMin);
+
+            sliderObj.GetComponent<UnityEngine.UI.Slider>().value = normalizedStartingSliderValue;
+        }
+    }
+
+    void AssignFabricCoverLenghtButtonsEvents()
+    {
+        Button minusBtn = GetButtonWithSpecificNameFromSpecificSubPanel("SetFabricCoverLenghtSubPanel", "Minus");
+        if (minusBtn != null)
+        {
+            minusBtn.onClick.RemoveListener(MinusFabricCoverLenght);
+            minusBtn.onClick.AddListener(MinusFabricCoverLenght);
+        }
+        else
+        {
+            Debug.LogWarning("No s'ha trobat el botó Minus per a la coberta de tela.");
+        }
+
+        Button plusBtn = GetButtonWithSpecificNameFromSpecificSubPanel("SetFabricCoverLenghtSubPanel", "Plus");
+
+        if (plusBtn != null)
+        {
+            plusBtn.onClick.RemoveListener(PlusFabricCoverLenght);
+            plusBtn.onClick.AddListener(PlusFabricCoverLenght);
+        }
+        else
+        {
+            Debug.LogWarning("No s'ha trobat el botó Plus per a la coberta de tela.");
+        }
+    }
+
+    public void SetFabricCoverLenghtByNum(float newLenght)
+    {
+        InitSetFabricCoverLenghtState();
+
+        if (_boneUpObjList.Count == 0) return;
+
+        if (_fabricCoverSliderRef != null)
+        {
+            var sliderData = _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
+            sliderData.sliderMin = 0.5f;
+            sliderData.sliderMax = _MaxLamasLenghtDistance;
+            sliderData.sliderResult = newLenght;
+
+            Slider unitySlider = _fabricCoverSliderRef.GetComponent<UnityEngine.UI.Slider>();
+            if (unitySlider != null)
+            {
+                float normalizedValue = 0f;
+                if (sliderData.sliderMax - sliderData.sliderMin > 0f)
+                {
+                    normalizedValue = (newLenght - sliderData.sliderMin) / (sliderData.sliderMax - sliderData.sliderMin);
+                }
+
+                unitySlider.onValueChanged.RemoveListener(delegate { SetFabricCoverLenght(); });
+                unitySlider.value = Mathf.Clamp01(normalizedValue);
+                unitySlider.onValueChanged.AddListener(delegate { SetFabricCoverLenght(); });
+            }
+        }
+
+        // 1. Calcular els valors objectiu segons els metres introduïts
+        float objectTargetZ = newLenght * 100f;          // Va de 50 a 1000, etc.
+        float parentTargetZ = (2f * objectTargetZ) - 100f; // Apliquem l'equació lineal exacta (Ex: a 50 dona 0, a 100 dona 100)
+
+        // 2. Apliquem posició als ossos de la llista principal (Objecte)
+        foreach (GameObject boneObj in _boneUpObjList)
+        {
+            if (boneObj != null)
+            {
+                Vector3 bonePos = boneObj.transform.localPosition;
+                boneObj.transform.localPosition = new Vector3(bonePos.x, bonePos.y, objectTargetZ);
+            }
+        }
+
+        // 3. Apliquem posició als ossos interns del BoneParent amb l'equació lineal
+        if (_boneParentsList != null)
+        {
+            foreach (GameObject parentObj in _boneParentsList)
+            {
+                var partScript = parentObj.GetComponent<ARObjectPartScript>();
+
+                if (partScript != null && partScript.GetBoneParentData() != null && partScript.GetBoneParentData()._ARObjectBones != null)
+                {
+                    foreach (GameObject innerBone in partScript.GetBoneParentData()._ARObjectBones)
+                    {
+                        if (innerBone != null)
+                        {
+                            Vector3 bonePos = innerBone.transform.localPosition;
+                            innerBone.transform.localPosition = new Vector3(bonePos.x, bonePos.y, parentTargetZ);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Guardem dada al Manager 
+        if (_ARObjectManager != null && _ARObjectManager.GetCovARObjectData() != null)
+        {
+            _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght = newLenght;
+        }
+
+        if (_fabricCoverFeedbackText != null)
+        {
+            _fabricCoverFeedbackText.GetComponent<TMP_Text>().text = newLenght.ToString("F2") + "m";
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 }
