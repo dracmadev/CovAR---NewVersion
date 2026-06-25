@@ -14,6 +14,7 @@ public class St_ARObjectBonesData
     [Header("Side to move:")]
     public E_SidesInLetters _BoneSide;
     public E_ARObjectComponentsDirection _BoneDirection;
+    public E_ARObjectComponentsDirection _BoneSecondDirection;
 
     public float sideLength;
 }

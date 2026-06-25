@@ -16,5 +16,6 @@ public enum E_ModelType
     AP_LeBancSidesCladding = 10,
     AP_LamasPolicarbonate = 11,
     AP_LamasPVC = 12,
+    BAC_FabricCover = 13,
 
 }

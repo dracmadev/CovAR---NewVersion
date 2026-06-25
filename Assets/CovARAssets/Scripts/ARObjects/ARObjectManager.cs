@@ -427,7 +427,12 @@ public class ARObjectManager : MonoBehaviour
                         }
 
                         break;
-                    case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverModel = model;break;
+                    case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverModel = model;
+
+                        _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
+                        _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
+                        break;
+
                     case E_ProductType.Lamas: _CovARObjectData._CurrentLamasModel = model; break;
                 }
             }
@@ -463,6 +468,9 @@ public class ARObjectManager : MonoBehaviour
                     //////////////////////////////////////////////////////////// LAMAS  //////////////////////////////////////////////////////////////////
                     case E_ModelType.AP_LamasPolicarbonate: _CovARObjectData._CurrentLamasMaterial = material; break;
                     case E_ModelType.AP_LamasPVC: _CovARObjectData._CurrentLamasMaterial = material; break;
+
+                    //////////////////////////////////////////////////////////// FABRIC COVER ////////////////////////////////////////////////////////////
+                   case E_ModelType.BAC_FabricCover: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
 
 
                 }
@@ -950,6 +958,21 @@ public class ARObjectManager : MonoBehaviour
         }
     }
 
+    public void SetFabricCoverMaterial(St_Material currentMatData)
+    {
+        ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
+
+        GameObject fabricCoverAxis = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FabricCover);
+
+        if (fabricCoverAxis != null && fabricCoverAxis.TryGetComponent(out Renderer renderFabricCover))
+        {
+            Material[] matsAxis = renderFabricCover.materials;
+            matsAxis[0] = currentMatData._Material01;
+            renderFabricCover.materials = matsAxis;
+        }
+
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -971,7 +994,7 @@ public class ARObjectManager : MonoBehaviour
 
     void DesactiveFeedbackDecal()
     {
-        Debug.Log("Desactivant decals");
+        //Debug.Log("Desactivant decals");
 
         GameObject[] decalsActius = GameObject.FindGameObjectsWithTag("MovmentDecal");
 

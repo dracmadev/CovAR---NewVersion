@@ -112,9 +112,9 @@ public class ModelSlotBehaviour : MonoBehaviour
         _ARObjectManager.SetCurrentMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(_CurrentModelData)._MaterialType);
 
         if (_ARObjectManager.GetIsARObjectPlaced())
-       {
+        {
             _ARObjectManager.SetActiveARObject(GetPoolTypeBasedOnModelType());
-       }
+        }
         
        
     }
@@ -175,6 +175,7 @@ public class ModelSlotBehaviour : MonoBehaviour
             case E_ModelType.AP_LeBancSidesCladding: returnVar = E_PoolType.None; break;
             case E_ModelType.AP_LamasPolicarbonate: returnVar = E_PoolType.None; break;
             case E_ModelType.AP_LamasPVC: returnVar = E_PoolType.None; break;
+            case E_ModelType.BAC_FabricCover: returnVar = E_PoolType.BAC_FabricCover; break;
 
         }
 

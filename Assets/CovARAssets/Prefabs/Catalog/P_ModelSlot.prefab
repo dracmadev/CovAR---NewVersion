@@ -573,6 +573,7 @@ MonoBehaviour:
     _ModelGeneralType: 0
     _ModelLogo: {fileID: 0}
     _ModelKey: 
+    _BlueprintModelImage: {fileID: 0}
     _MaterialsArray: []
   _ModelSlotButton: {fileID: 6189377421774398635}
   _ModelSlotImage: {fileID: 3461315107425146324}

@@ -366,21 +366,7 @@ public class ARObjectScript : MonoBehaviour
     {
         AssignRotationButtonsEvents();
     }
-
-    /* OLD
-    void RotateYAxisARObject()
-    {
-        if (GetSliderFromSpecificSubPanel("RotationSubPanel"))
-        {
-            float _YValueRot = (GetSliderFromSpecificSubPanel("RotationSubPanel").GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult)*-1;
-            this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, _YValueRot, this.transform.localEulerAngles.z);
-        }
-        else
-        {
-            Debug.LogError("ARObjectScript -> Error alhora d'agafar el slider de rotació... (Alvaro)");
-        }
-    }
-    */
+ 
     void RotateYAxisARObject()
     {
         GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
@@ -398,41 +384,7 @@ public class ARObjectScript : MonoBehaviour
             Debug.LogError("ARObjectScript -> Error alhora d'agafar el slider de rotació... (Alvaro)");
         }
     }
-
-    /* OLD
-    public void MinusRotateARObject()
-    {
-        GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
-        
-        if (sliderObj != null)
-        {
-            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
-
-            float newRot = sliderData.sliderResult - 5f;
-            sliderData.sliderResult = Mathf.Clamp(newRot, sliderData.sliderMin, sliderData.sliderMax);
-
-            this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, sliderData.sliderResult, this.transform.localEulerAngles.z);
-
-            UpdateRotationSlider();
-        }
-    }
-
-    public void PlusRotateARObject()
-    {
-        GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
-
-        if (sliderObj != null)
-        {
-            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
-
-            float newRot = sliderData.sliderResult + 5f;
-            sliderData.sliderResult = Mathf.Clamp(newRot, sliderData.sliderMin, sliderData.sliderMax);
-
-            this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, sliderData.sliderResult, this.transform.localEulerAngles.z);
-
-            UpdateRotationSlider();
-        }
-    }*/
+   
 
     public void MinusRotateARObject()
     {
@@ -486,22 +438,7 @@ public class ARObjectScript : MonoBehaviour
         }
     }
 
-    /* OLD
-    void UpdateRotationSlider()
-    {
-        GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
-
-        if (sliderObj != null)
-        {
-            var sliderData = sliderObj.GetComponent<UIBehaviourComponent>().GetSliderData();
-
-            float normalizedStartingSliderValue = (sliderData.sliderResult - sliderData.sliderMin) /
-                                                 (sliderData.sliderMax - sliderData.sliderMin);
-
-            sliderObj.GetComponent<UnityEngine.UI.Slider>().value = normalizedStartingSliderValue;
-        }
-    }*/
-
+  
     void UpdateRotationSlider()
     {
         GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
@@ -895,7 +832,11 @@ public class ARObjectScript : MonoBehaviour
    {
         InitSetLamasLenghtState();
         
-        _CustomSplineInstantiateScript.SetLamasLenghtByNum(newLenght, _MaxLamasLenghtDistance, _lamasLenghtSliderRef, _lamasFeedbackLenghtText);
+        if(_CustomSplineInstantiateScript != null)
+        {
+            _CustomSplineInstantiateScript.SetLamasLenghtByNum(newLenght, _MaxLamasLenghtDistance, _lamasLenghtSliderRef, _lamasFeedbackLenghtText);
+        }
+        
    }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

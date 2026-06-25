@@ -14,5 +14,6 @@ public enum E_ARObjectParts
     ExamplePool = 9,
     CoverAxisLamas = 10,
     Crank = 11,
+    FabricCover = 12,
 
 }
