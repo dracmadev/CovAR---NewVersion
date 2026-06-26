@@ -58,7 +58,8 @@ public class ARObjectScript : MonoBehaviour
     private GameObject _fabricCoverSliderRef;
     private GameObject _fabricCoverFeedbackText;
     private List<GameObject> _boneUpObjList = new List<GameObject>();
-    private  List<GameObject> _boneParentsList = new List<GameObject>();
+    private List<GameObject> _boneParentsList = new List<GameObject>();
+    private List<GameObject> _rightBonesFromAxisCoversList = new List<GameObject>();
 
 
 
@@ -566,16 +567,36 @@ public class ARObjectScript : MonoBehaviour
 
         foreach (GameObject boneObj in _boneRightObjList)
         {
-            Vector3 bonePos = boneObj.transform.localPosition;
-            boneObj.transform.localPosition = new Vector3(currentSliderValue * 100, bonePos.y, bonePos.z);
-            _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = currentSliderValue;
+            if(boneObj != null)
+            {
+                Vector3 bonePos = boneObj.transform.localPosition;
+                boneObj.transform.localPosition = new Vector3(currentSliderValue * 100, bonePos.y, bonePos.z);
+                _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = currentSliderValue;
+            }
+           
         }
 
         if(_footRightObj != null)
         {
             _footRightObj.transform.localPosition = new Vector3(currentSliderValue, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
         }
-       
+
+        if (bFabricCoverAxisBehaviourActive)
+        {
+            
+            if (_FabricCoverAxisList != null && _FabricCoverAxisList.Count != 0 && _rightBonesFromAxisCoversList != null)
+            {
+                foreach (GameObject axisBone in _rightBonesFromAxisCoversList)
+                {
+                    if (axisBone != null)
+                    {
+                        Vector3 bonePos = axisBone.transform.localPosition;
+                        axisBone.transform.localPosition = new Vector3(currentSliderValue * 100f, bonePos.y, bonePos.z);
+                    }
+                }
+            }
+        }
+
         _feedbackLenghtText.GetComponent<TMP_Text>().text = currentSliderValue.ToString("F2") + "m";
     }
 
@@ -1150,56 +1171,86 @@ public class ARObjectScript : MonoBehaviour
             return;
         }
 
+        // Netegem tant els eixos com els seus ossos abans de generar els nous
+        ClearFabricCoverAxis();
+
         if (_ARObjectManager == null || _ARObjectManager.GetCovARObjectData() == null || _CustomFabricCoverAxisPrefab == null)
         {
             Debug.LogWarning("CreateFabricCoverAxis: Falten referències.");
             return;
         }
 
-        // Llegim el valor directament des del manager guardat en metres reals
         float currentLenght = _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght;
+        // Obtenim el valor actual de l'amplada de l'objecte (en metres)
+        float currentWidthValue = _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght;
 
-        Debug.Log($"[EIXOS] Iniciant creació. Llargada total: {currentLenght}m. Distància pas: {_DistanceBetweenAxis}m.");
-
-        // Variable local temporal pel control del bucle per evitar desfasaments
         float nextAxisPositionMeters = _DistanceBetweenAxis;
 
         while (nextAxisPositionMeters < currentLenght)
         {
-            // Guardem exactament el valor local en metres per a aquesta iteració
             float targetZ = nextAxisPositionMeters;
 
-            Debug.Log($"[EIXOS] Instanciant barra a la posició Z local: {targetZ}");
-
-            // Instanciem com a fill
+            // 1. Instanciar l'eix intermedi
             GameObject newAxis = Instantiate(_CustomFabricCoverAxisPrefab, this.transform);
-
-            // Forcem la posició local immediatament de forma independent
             newAxis.transform.localPosition = new Vector3(0f, 0f, targetZ);
             newAxis.transform.localRotation = Quaternion.identity;
 
-            // Afegim a la llista
             _FabricCoverAxisList.Add(newAxis);
 
-            // Avancem el pas a la següent posició (ex: de 3.0 passa a 6.0)
+            // 2. Buscar els ossos RIGHT que hi ha DINS d'aquest prefab acabat de crear
+            List<GameObject> axisRightBones = GetRightBonesFromSpecificAxis(newAxis);
+
+            // 3. Afegir-los a la llista general de control i aplicar-los l'amplada immediatament
+            foreach (GameObject boneObj in axisRightBones)
+            {
+                if (boneObj != null)
+                {
+                    _rightBonesFromAxisCoversList.Add(boneObj);
+
+                    // Apliquem l'amplada actual multiplicada per 100 en l'eix X local del os
+                    Vector3 bonePos = boneObj.transform.localPosition;
+                    boneObj.transform.localPosition = new Vector3(currentWidthValue * 100f, bonePos.y, bonePos.z);
+                }
+            }
+
             nextAxisPositionMeters += _DistanceBetweenAxis;
         }
     }
 
+    // Funció auxiliar per buscar ossos RIGHT només dins de l'eix passat per paràmetre
+    private List<GameObject> GetRightBonesFromSpecificAxis(GameObject axisRoot)
+    {
+        List<GameObject> foundBones = new List<GameObject>();
+
+        // Busquem els scripts en els fills de l'objecte arrel de la barra creada
+        ARObjectPartScript[] allParts = axisRoot.GetComponentsInChildren<ARObjectPartScript>(true);
+
+        foreach (ARObjectPartScript part in allParts)
+        {
+            // Si té dades d'os i la direcció és UP o RIGHT (en aquest cas filtrem per RIGHT basat en el teu enu)
+            if (part.GetBoneData() != null && part.GetBoneData()._BoneDirection == E_ARObjectComponentsDirection.RIGHT)
+            {
+                foundBones.Add(part.gameObject);
+            }
+        }
+
+        return foundBones;
+    }
 
     public void ClearFabricCoverAxis()
     {
+        // Destruir eixos
         if (_FabricCoverAxisList != null)
         {
             foreach (GameObject axis in _FabricCoverAxisList)
             {
-                if (axis != null)
-                {
-                    Destroy(axis);
-                }
+                if (axis != null) Destroy(axis);
             }
             _FabricCoverAxisList.Clear();
         }
+
+        // Netejar la llista d'ossos vells (ja s'han destruït en esborrar els eixos pares)
+        _rightBonesFromAxisCoversList.Clear();
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
