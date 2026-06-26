@@ -56,6 +56,11 @@ MonoBehaviour:
   _ARObjectBonesList: []
   _ARObjectManager: {fileID: 0}
   _CustomSplineInstantiateScript: {fileID: 0}
+  bFabricCoverAxisBehaviourActive: 1
+  _DistanceBetweenAxis: 2
+  _CustomFabricCoverAxisPrefab: {fileID: 3484093399869737977, guid: ee085b5eba812a34db40ed02b5481501,
+    type: 3}
+  _FabricCoverAxisList: []
 --- !u!1001 &5801931240002133778
 PrefabInstance:
   m_ObjectHideFlags: 0

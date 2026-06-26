@@ -32,6 +32,11 @@ public class ARObjectScript : MonoBehaviour
     [SerializeField] private ARObjectManager _ARObjectManager;
     [SerializeField] private CustomSplineInstantiate _CustomSplineInstantiateScript;
 
+    [Header("Cover Fabric Axis Behaviour: ")]
+    [SerializeField] private bool bFabricCoverAxisBehaviourActive = false;
+    [SerializeField] private float _DistanceBetweenAxis = 3.0f;
+    [SerializeField] private GameObject _CustomFabricCoverAxisPrefab;
+    [SerializeField] private List<GameObject> _FabricCoverAxisList;
 
     //LOCAL VARIABLES
     //MOVMENT
@@ -54,6 +59,9 @@ public class ARObjectScript : MonoBehaviour
     private GameObject _fabricCoverFeedbackText;
     private List<GameObject> _boneUpObjList = new List<GameObject>();
     private  List<GameObject> _boneParentsList = new List<GameObject>();
+
+
+
 
     void Start()
     {
@@ -905,6 +913,9 @@ public class ARObjectScript : MonoBehaviour
         // GET UP BONES (Segona direcció)
         _boneUpObjList = GetAllBoneObjsBasedOnSecondDirection(E_ARObjectComponentsDirection.UP);
         _boneParentsList = GetAllBoneParentsBasedOnMovmentType(E_ARObjectReSizeDirections.UpOnZAxis);
+
+        // CLEAR AXIS
+        ClearFabricCoverAxis();
     }
 
     void SetFabricCoverLenght()
@@ -1128,6 +1139,70 @@ public class ARObjectScript : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+    ////////////////////////////////////////////////////////// FABRIC COVER AXIS ///////////////////////////////////////////////////////////////////////////
+
+    public void CreateFabricCoverAxis()
+    {
+        if (!bFabricCoverAxisBehaviourActive)
+        {
+            ClearFabricCoverAxis();
+            return;
+        }
+
+        if (_ARObjectManager == null || _ARObjectManager.GetCovARObjectData() == null || _CustomFabricCoverAxisPrefab == null)
+        {
+            Debug.LogWarning("CreateFabricCoverAxis: Falten referències.");
+            return;
+        }
+
+        // Llegim el valor directament des del manager guardat en metres reals
+        float currentLenght = _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght;
+
+        Debug.Log($"[EIXOS] Iniciant creació. Llargada total: {currentLenght}m. Distància pas: {_DistanceBetweenAxis}m.");
+
+        // Variable local temporal pel control del bucle per evitar desfasaments
+        float nextAxisPositionMeters = _DistanceBetweenAxis;
+
+        while (nextAxisPositionMeters < currentLenght)
+        {
+            // Guardem exactament el valor local en metres per a aquesta iteració
+            float targetZ = nextAxisPositionMeters;
+
+            Debug.Log($"[EIXOS] Instanciant barra a la posició Z local: {targetZ}");
+
+            // Instanciem com a fill
+            GameObject newAxis = Instantiate(_CustomFabricCoverAxisPrefab, this.transform);
+
+            // Forcem la posició local immediatament de forma independent
+            newAxis.transform.localPosition = new Vector3(0f, 0f, targetZ);
+            newAxis.transform.localRotation = Quaternion.identity;
+
+            // Afegim a la llista
+            _FabricCoverAxisList.Add(newAxis);
+
+            // Avancem el pas a la següent posició (ex: de 3.0 passa a 6.0)
+            nextAxisPositionMeters += _DistanceBetweenAxis;
+        }
+    }
+
+
+    public void ClearFabricCoverAxis()
+    {
+        if (_FabricCoverAxisList != null)
+        {
+            foreach (GameObject axis in _FabricCoverAxisList)
+            {
+                if (axis != null)
+                {
+                    Destroy(axis);
+                }
+            }
+            _FabricCoverAxisList.Clear();
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 }
