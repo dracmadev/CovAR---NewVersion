@@ -634,7 +634,7 @@ public class HUDManagerScript : MonoBehaviour
     {
         if(lastPanelOnScreenName == "" || TutorialManager.isTutorialActive)
         {
-            TravelToPanel("PoolShapePanel");
+            TravelToPanel("AP_ManipulateGroundRollerPanel");
         }
         else
         {           

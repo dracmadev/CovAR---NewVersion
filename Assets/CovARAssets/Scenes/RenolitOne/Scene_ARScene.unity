@@ -670,13 +670,13 @@ MonoBehaviour:
   OnInteractiveHitTest:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 43093971}
-        m_TargetAssemblyTypeName: Vuforia.ContentPositioningBehaviour, Vuforia.Unity.Engine
-        m_MethodName: PositionContentAtPlaneAnchor
+      - m_Target: {fileID: 1361303954}
+        m_TargetAssemblyTypeName: ARTrackingController, Assembly-CSharp
+        m_MethodName: ForcePlaceContent
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11267,10 +11267,11 @@ GameObject:
   - component: {fileID: 1361303949}
   - component: {fileID: 1361303952}
   - component: {fileID: 1361303951}
-  - component: {fileID: 1361303953}
+  - component: {fileID: 1361303954}
+  - component: {fileID: 1361303955}
   m_Layer: 0
   m_Name: Ground Plane Stage
-  m_TagString: Untagged
+  m_TagString: GroundPlaneStage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11355,8 +11356,21 @@ MonoBehaviour:
   mSelectedStageType: 0
   mPlaneReference: {fileID: 0}
   mMidAirReference: {fileID: 0}
-  mPreview: {fileID: 1361303953}
---- !u!114 &1361303953
+  mPreview: {fileID: 1361303955}
+--- !u!114 &1361303954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361303948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5ed137249f0b74eb1bacc3f80a2fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugText: {fileID: 0}
+--- !u!114 &1361303955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

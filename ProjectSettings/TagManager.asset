@@ -13,6 +13,7 @@ TagManager:
   - DefaultPopUp
   - MovmentDecal
   - FluidraLogoObj
+  - GroundPlaneStage
   layers:
   - Default
   - TransparentFX
