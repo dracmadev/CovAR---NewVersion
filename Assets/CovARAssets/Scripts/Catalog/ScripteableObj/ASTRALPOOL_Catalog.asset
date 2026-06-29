@@ -388,13 +388,13 @@ MonoBehaviour:
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
     - _ProductType: 4
-      _ProductSprite: {fileID: 21300000, guid: 4ee9c4aa07170af4d8353de6ad523cc3, type: 3}
-      _ProductKey: Catalog.Product.Lamas
+      _ProductSprite: {fileID: 21300000, guid: 9578a5e4e23336e4a8f9d3d87c4966db, type: 3}
+      _ProductKey: Catalog.Product.FabricCover
       _ModelsArray:
       - _ModelType: 13
         _ModelGeneralType: 1
-        _ModelLogo: {fileID: 21300000, guid: a92ae76552437de4eb268df0853e2ffb, type: 3}
-        _ModelKey: Catalog.Lamas.Model.PVC
+        _ModelLogo: {fileID: 21300000, guid: 9578a5e4e23336e4a8f9d3d87c4966db, type: 3}
+        _ModelKey: Catalog.Product.FabricCover
         _BlueprintModelImage: {fileID: 0}
         _MaterialsArray:
         - _MaterialType: 3

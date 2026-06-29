@@ -569,6 +569,16 @@ public class ARObjectScript : MonoBehaviour
 
         // GET RIGHT FOOT
         _footRightObj = GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight);
+
+        if(bFabricCoverEndSecuritySystemsActive)
+        {
+            ClearFabricCoverEndSecuritySystems();
+        }
+
+        if(bFabricCoverStartSecuritySystemsActive)
+        {
+            ClearFabricCoverStartSecuritySystems();
+        }
     }
 
     void SetARObjectLenght()
@@ -950,6 +960,16 @@ public class ARObjectScript : MonoBehaviour
 
         // CLEAR AXIS
         ClearFabricCoverAxis();
+
+        if (bFabricCoverEndSecuritySystemsActive)
+        {
+            ClearFabricCoverEndSecuritySystems();
+        }
+
+        if (bFabricCoverStartSecuritySystemsActive)
+        {
+            ClearFabricCoverStartSecuritySystems();
+        }
     }
 
     void SetFabricCoverLenght()

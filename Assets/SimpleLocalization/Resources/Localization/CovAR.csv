@@ -487,7 +487,7 @@ En cas de problème d'accès à l'application, veuillez contacter infomarketing@
 If you have any problems accessing the application, please contact infomarketing@fluidra.com"
 Login.Panel.CambiarDispositivo.Title,Cambiar de dispositivo,Dispositif de commutation,Switch device
 Login.Panel.CambiarDispositivo.Texto,Migrar la licencia liberará este usuario del anterior dispositivo y lo vinculará al actual. La migración debe realizarse solo en el caso que quiera vincular esta licencia de uso a otro dispositivo.,La migration de la licence libérera cet utilisateur de l'appareil précédent et l'associera à l'appareil actuel. La migration ne doit être effectuée que si vous souhaitez associer cette licence à un autre appareil.,Migrating the license will release this user from the previous device and link it to the current one. Migration should only be performed if you want to link this license to another device.
-Login.Panel.CambiarDispositivo.Cambiado,La aplicación se ha vinculado a este dispositivo correctamente,L'application s'est connectée avec succès à cet appareil.,The app has successfully linked to this device
+Login.Panel.CambiarDispositivo.Cambiado,La aplicación se ha vinculado a este dispositivo correctamente,L'application a été associée avec succès à cet appareil.,The app has been successfully linked to this device
 Login.Input.ClaveActual,clave actual...,clé actuelle...,current key...
 Login.Input.NuevaClave,nueva clave...,nouvelle clé...,new key...
 Login.Input.RepetirNuevaClave,repetir nueva clave...,Répétez la nouvelle touche...,Repeat new key...
@@ -750,7 +750,7 @@ FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE H
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -798,6 +798,7 @@ Catalog.Product.GroundRoller,Persiana exterior,Volet hors-sol,Ground pool cover
 Catalog.Product.SubmergedCover,Persiana sumergida,Volet immergé,Submerged pool cover
 Catalog.Product.Benches&Claddings,Bancos y revestimientos,Bancs et revêtements,Benches and claddings
 Catalog.Product.Lamas,Lamas,Lamas,Lamas
+Catalog.Product.FabricCover,Cubierta de tela,Housse en tissu,Fabric Cover
 Catalog.Model.Astralpool.Octeo,Octeo,Octeo,Octeo
 Catalog.Model.Astralpool.Sveltea,Sveltea,Sveltea,Sveltea
 Catalog.Model.Astralpool.SvelteaManual,Sveltea Manual,Sveltea Manuel,Sveltea Manual
@@ -829,7 +830,7 @@ Catalog.Lamas.Material.Title,Material,Matériel,Material
 ,,,
 ,,,
 InGame.PlaneFinderPanel.InfoText,"Apunte hacia el suelo hasta que aparezca una marca, a continuación, púlsela.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
-InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit
+InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit.
 ,,,
 ,,,
 ,,,
@@ -869,7 +870,7 @@ Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de co
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -904,7 +905,7 @@ Login.Panel.Settings.CloseApp.Title,Salir de la aplicación,Quitter l'applicatio
 Login.Panel.Settings.CloseApp.Button,Cerrar aplicación,Fermer l'application,Close application
 ,,,
 ,,,
-ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photo - CovAR,Photograph - CovAR
+ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photographie - CovAR,Photograph - CovAR
 ScreenshootAndShare.Photo.Descrip,Esta fotografía sacada con la aplicación  de CovAR.,Cette photographie a été prise à l'aide de l'application CovAR.,This photograph was taken using the CovAR application.
 ScreenshootAndShare.Blueprint.Title,Plano técnico,dessin technique,Technical drawing
 ScreenshootAndShare.Blueprint.Descrip,Este plano técnico ha sido generado con la aplicación  de CovAR.,Ce dessin technique a été généré à l'aide de l'application CovAR.,This technical drawing was generated using the CovAR application.
