@@ -15,5 +15,7 @@ public enum E_ARObjectParts
     CoverAxisLamas = 10,
     Crank = 11,
     FabricCover = 12,
+    StartSecuritySystem = 13,
+    EndSecuritySystem = 14,
 
 }

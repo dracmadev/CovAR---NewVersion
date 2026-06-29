@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4534799901151167390}
   - component: {fileID: 4756695503305106207}
   m_Layer: 0
-  m_Name: P_FABRICCVER
+  m_Name: P_FABRICOVER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,6 +61,18 @@ MonoBehaviour:
   _CustomFabricCoverAxisPrefab: {fileID: 3484093399869737977, guid: ee085b5eba812a34db40ed02b5481501,
     type: 3}
   _FabricCoverAxisList: []
+  bFabricCoverStartSecuritySystemsActive: 1
+  _DistanceBetweenStartSecuritySystems: 1
+  _DistanceBetweenStartSecuritySystemAndLimits: 0.2
+  _CustomFabricCoverStartSSPrefab: {fileID: 5323105546514865487, guid: b3a371c9464f91c478bc0f0b918a4153,
+    type: 3}
+  _FabricCoverStartSSList: []
+  bFabricCoverEndSecuritySystemsActive: 1
+  _DistanceBetweenEndSecuritySystems: 1
+  _DistanceBetweenEndsSecuritySystemAndLimits: 0.2
+  _CustomFabricCoverEndSSPrefab: {fileID: 7419960285549005629, guid: 6b143b75a26495f4fa4db9e4dbaa3ca5,
+    type: 3}
+  _FabricCoverEndSSList: []
 --- !u!1001 &5801931240002133778
 PrefabInstance:
   m_ObjectHideFlags: 0

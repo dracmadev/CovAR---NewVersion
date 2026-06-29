@@ -186,12 +186,20 @@ public class ARObjectManager : MonoBehaviour
                     _CovARObjectData._CurrentARObjectLenght = maxLenghtOfNewModel;
                 }
 
-                newObjScript.SetLamasLenghtByNum(_CovARObjectData._CurrentLamasLenght);
+                if(_CurrentProductSelected._ProductType != E_ProductType.FabricCover)
+                {
+                    newObjScript.SetLamasLenghtByNum(_CovARObjectData._CurrentLamasLenght);
+                    newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                }
+                else
+                {
+                    newObjScript.SetFabricCoverLenghtByNum(_CovARObjectData._CurrentLamasLenght);
+                    newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                    SpawnFabricCoverAxisObjects();
+                }
 
 
-                newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
-                
-                SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
+                    SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
 
                 SetCurrentARObjectState("DefaultState");
 
@@ -1044,6 +1052,21 @@ public class ARObjectManager : MonoBehaviour
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    ////////////////////////////////////////////////// SECURITY SYSTEM (Fabric Cover) ////////////////////////////////////////////////////////////
+    
+    public void SpawnFabricCoverSecuritySystem()
+    {
+        ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
+        if (arScript != null)
+        {
+           arScript.CreateFabricCoverStartSecuritySystems();
+            arScript.CreateFabricCoverEndSecuritySystems();
+        }
+    }
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

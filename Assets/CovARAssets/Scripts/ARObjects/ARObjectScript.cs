@@ -38,6 +38,19 @@ public class ARObjectScript : MonoBehaviour
     [SerializeField] private GameObject _CustomFabricCoverAxisPrefab;
     [SerializeField] private List<GameObject> _FabricCoverAxisList;
 
+    [Header("Cover Fabric Axis SecuritySystems: ")]
+    [SerializeField] private bool bFabricCoverStartSecuritySystemsActive = false;
+    [SerializeField] private float _DistanceBetweenStartSecuritySystems = 1.0f;
+    [SerializeField] private float _DistanceBetweenStartSecuritySystemAndLimits = 0.2f;
+    [SerializeField] private GameObject _CustomFabricCoverStartSSPrefab;
+    [SerializeField] private List<GameObject> _FabricCoverStartSSList;
+    [Space()]
+    [SerializeField] private bool bFabricCoverEndSecuritySystemsActive = false;
+    [SerializeField] private float _DistanceBetweenEndSecuritySystems = 1.0f;
+    [SerializeField] private float _DistanceBetweenEndsSecuritySystemAndLimits = 0.2f;
+    [SerializeField] private GameObject _CustomFabricCoverEndSSPrefab;
+    [SerializeField] private List<GameObject> _FabricCoverEndSSList;
+
     //LOCAL VARIABLES
     //MOVMENT
     bool isDragging;
@@ -1094,6 +1107,16 @@ public class ARObjectScript : MonoBehaviour
             var sliderData = _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
             sliderData.sliderMin = 0.5f;
             sliderData.sliderMax = _MaxLamasLenghtDistance;
+
+            if (newLenght < 0.5)
+            {
+                newLenght = 0.5f;
+            }
+            else if (newLenght > _MaxLamasLenghtDistance)
+            {
+                newLenght = _MaxLamasLenghtDistance;
+            }
+
             sliderData.sliderResult = newLenght;
 
             Slider unitySlider = _fabricCoverSliderRef.GetComponent<UnityEngine.UI.Slider>();
@@ -1254,6 +1277,193 @@ public class ARObjectScript : MonoBehaviour
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////// FABRIC SECURITY SYSTEM START /////////////////////////////////////////////////////////////////////////////////////
+
+
+    public void CreateFabricCoverStartSecuritySystems()
+    {
+        if (!bFabricCoverStartSecuritySystemsActive)
+        {
+            ClearFabricCoverStartSecuritySystems();
+            return;
+        }
+
+        ClearFabricCoverStartSecuritySystems();
+
+        if (_ARObjectManager == null || _ARObjectManager.GetCovARObjectData() == null || _CustomFabricCoverStartSSPrefab == null)
+        {
+            Debug.LogWarning("CreateFabricCoverStartSecuritySystems: Falten referències.");
+            return;
+        }
+
+        float totalWidth = _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght;
+
+        if (totalWidth <= 0 || _DistanceBetweenStartSecuritySystems <= 0) return;
+
+        // --- LÒGICA AMB MARGES ALS LÍMITS ---
+        // Calculem l'amplada útil real que ens queda per repartir els sistemes de seguretat
+        float usefulWidth = totalWidth - (2f * _DistanceBetweenStartSecuritySystemAndLimits);
+
+        // Control de seguretat: si la lona és tan estreta que els marges es trepitgen o no deixen espai,
+        // col·loquem un sol ancoratge al centre exacte i sortim.
+        if (usefulWidth <= 0)
+        {
+            GameObject centerAnchor = Instantiate(_CustomFabricCoverStartSSPrefab, this.transform);
+            Vector3 prefabLocalPos = _CustomFabricCoverStartSSPrefab.transform.localPosition;
+            centerAnchor.transform.localPosition = new Vector3(totalWidth / 2f, prefabLocalPos.y, -0.1f);
+            centerAnchor.transform.localRotation = _CustomFabricCoverStartSSPrefab.transform.localRotation;
+            _FabricCoverStartSSList.Add(centerAnchor);
+            return;
+        }
+
+        // Calculem els espais necessaris basant-nos en l'amplada útil
+        int numberOfSpaces = Mathf.CeilToInt(usefulWidth / _DistanceBetweenStartSecuritySystems);
+
+        float calculatedDistance = usefulWidth / numberOfSpaces;
+        float minimumDistanceAllowed = _DistanceBetweenStartSecuritySystems / 2f;
+
+        if (calculatedDistance < minimumDistanceAllowed && numberOfSpaces > 1)
+        {
+            numberOfSpaces--;
+        }
+
+        int totalAnchors = numberOfSpaces + 1;
+        float finalDistanceBetweenAnchors = usefulWidth / numberOfSpaces;
+
+        // EL NOU CANVI: El punt d'inici en X ja no és 0, sinó el límit de marge que has definit
+        float startX = _DistanceBetweenStartSecuritySystemAndLimits;
+
+        // --- INSTANCIACIÓ ---
+        for (int i = 0; i < totalAnchors; i++)
+        {
+            // Calculem la posició X local sumant la distància a partir del marge inicial
+            float targetX = startX + (i * finalDistanceBetweenAnchors);
+
+            GameObject newAnchor = Instantiate(_CustomFabricCoverStartSSPrefab, this.transform);
+
+            Vector3 prefabLocalPos = _CustomFabricCoverStartSSPrefab.transform.localPosition;
+            Quaternion prefabLocalRot = _CustomFabricCoverStartSSPrefab.transform.localRotation;
+
+            newAnchor.transform.localPosition = new Vector3(targetX, prefabLocalPos.y, -0.1f);
+            newAnchor.transform.localRotation = prefabLocalRot;
+
+            _FabricCoverStartSSList.Add(newAnchor);
+        }
+    }
+
+    public void ClearFabricCoverStartSecuritySystems()
+    {
+        // Destruir els sistemes de seguretat de l'inici
+        if (_FabricCoverStartSSList != null)
+        {
+            foreach (GameObject anchor in _FabricCoverStartSSList)
+            {
+                if (anchor != null)
+                {
+                    Destroy(anchor);
+                }
+            }
+            _FabricCoverStartSSList.Clear();
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    ////////////////////////////////////////////////////// SECURITY SYSTEM END //////////////////////////////////////////////////////////////////////////////////////////
+
+    public void CreateFabricCoverEndSecuritySystems()
+    {
+        if (!bFabricCoverEndSecuritySystemsActive)
+        {
+            ClearFabricCoverEndSecuritySystems();
+            return;
+        }
+
+        ClearFabricCoverEndSecuritySystems();
+
+        if (_ARObjectManager == null || _ARObjectManager.GetCovARObjectData() == null || _CustomFabricCoverEndSSPrefab == null)
+        {
+            Debug.LogWarning("CreateFabricCoverEndSecuritySystems: Falten referències.");
+            return;
+        }
+
+        float totalWidth = _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght;
+        float currentLength = _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght;
+
+        if (totalWidth <= 0 || _DistanceBetweenEndSecuritySystems <= 0) return;
+
+        // --- LÒGICA AMB MARGES ALS LÍMITS ---
+        float usefulWidth = totalWidth - (2f * _DistanceBetweenEndsSecuritySystemAndLimits);
+
+        // Control de seguretat si és massa estreta
+        if (usefulWidth <= 0)
+        {
+            GameObject centerAnchor = Instantiate(_CustomFabricCoverEndSSPrefab, this.transform);
+            Vector3 prefabLocalPos = _CustomFabricCoverEndSSPrefab.transform.localPosition;
+
+            centerAnchor.transform.localPosition = new Vector3(totalWidth / 2f, prefabLocalPos.y, currentLength);
+
+            // Apliquem la rotació original del prefab + 180 graus a la Y
+            Quaternion targetRotation = _CustomFabricCoverEndSSPrefab.transform.localRotation * Quaternion.Euler(0f, 180f, 0f);
+            centerAnchor.transform.localRotation = targetRotation;
+
+            _FabricCoverEndSSList.Add(centerAnchor);
+            return;
+        }
+
+        int numberOfSpaces = Mathf.CeilToInt(usefulWidth / _DistanceBetweenEndSecuritySystems);
+        float calculatedDistance = usefulWidth / numberOfSpaces;
+        float minimumDistanceAllowed = _DistanceBetweenEndSecuritySystems / 2f;
+
+        if (calculatedDistance < minimumDistanceAllowed && numberOfSpaces > 1)
+        {
+            numberOfSpaces--;
+        }
+
+        int totalAnchors = numberOfSpaces + 1;
+        float finalDistanceBetweenAnchors = usefulWidth / numberOfSpaces;
+
+        float startX = _DistanceBetweenEndsSecuritySystemAndLimits;
+
+        // --- INSTANCIACIÓ ---
+        for (int i = 0; i < totalAnchors; i++)
+        {
+            float targetX = startX + (i * finalDistanceBetweenAnchors);
+
+            GameObject newAnchor = Instantiate(_CustomFabricCoverEndSSPrefab, this.transform);
+
+            Vector3 prefabLocalPos = _CustomFabricCoverEndSSPrefab.transform.localPosition;
+
+            // Calculem la rotació combinant la original del prefab amb un gir de 180 a la Y
+            Quaternion prefabLocalRot = _CustomFabricCoverEndSSPrefab.transform.localRotation;
+            Quaternion rotatedY = prefabLocalRot * Quaternion.Euler(0f, 180f, 0f);
+
+            newAnchor.transform.localPosition = new Vector3(targetX, prefabLocalPos.y, currentLength);
+            newAnchor.transform.localRotation = rotatedY; // Apliquem la rotació amb el gir de 180
+
+            _FabricCoverEndSSList.Add(newAnchor);
+        }
+    }
+
+    public void ClearFabricCoverEndSecuritySystems()
+    {
+        if (_FabricCoverEndSSList != null)
+        {
+            foreach (GameObject anchor in _FabricCoverEndSSList)
+            {
+                if (anchor != null)
+                {
+                    Destroy(anchor);
+                }
+            }
+            _FabricCoverEndSSList.Clear();
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 }
