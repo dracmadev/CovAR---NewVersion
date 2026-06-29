@@ -1019,7 +1019,7 @@ public class ARObjectManager : MonoBehaviour
 
 
             newFeedback.transform.SetParent(pare.transform);
-            newFeedback.transform.localPosition = Vector3.zero;
+            newFeedback.transform.localPosition = new Vector3(0f, 0.01f, 0f); 
             newFeedback.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
         }
     }
