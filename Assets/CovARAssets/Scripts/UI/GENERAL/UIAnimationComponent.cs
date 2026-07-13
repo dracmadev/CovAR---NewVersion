@@ -180,6 +180,8 @@ public class UIAnimationComponent : MonoBehaviour
                     UI_ComponentBaseScale = transform.localScale;
                     transform.localScale = UI_ComponentOriginalScale * 0.98f; 
                     cg.alpha = 0;
+                    cg.interactable = false;
+                    cg.blocksRaycasts = false;
                     //this.gameObject.SetActive(false);
                 }
                 else Debug.LogError("THIS UI COMPONENT [ " + gameObject.name + " ] DON'T HAVE A CANVAS GROUP!!");
@@ -262,8 +264,13 @@ public class UIAnimationComponent : MonoBehaviour
             .SetEase(UI_ComponentStruct.appearEase));
         seq.Join(cg.DOFade(1f, UI_ComponentStruct.animationDuration)
             .SetEase(UI_ComponentStruct.appearEase));
-
-        
+       
+        seq.OnComplete(() =>
+        {
+            cg.interactable = true;
+            cg.blocksRaycasts = true;
+        });
+                  
     }
 
     void DisappearWithAplhaAnim()
@@ -278,7 +285,9 @@ public class UIAnimationComponent : MonoBehaviour
 
         seq.OnComplete(() =>
         {
-            gameObject.SetActive(false); // Set Active false
+            gameObject.SetActive(false);
+            cg.interactable = false;
+            cg.blocksRaycasts = false;
         });
     }
 

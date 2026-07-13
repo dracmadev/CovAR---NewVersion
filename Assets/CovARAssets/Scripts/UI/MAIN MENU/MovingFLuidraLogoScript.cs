@@ -63,7 +63,7 @@ public class MovingFLuidraLogoScript : MonoBehaviour
         transform.DOKill();
 
         Vector2 direccioAleatoria = Random.insideUnitCircle.normalized;
-        float distanciaSortida = 6000f; // Reduït una mica de 20000f a 2000f perquè a 2000f ja passa de llarg qualsevol Canvas de sobres
+        float distanciaSortida = 8000f; // Reduït una mica de 20000f a 2000f perquè a 2000f ja passa de llarg qualsevol Canvas de sobres
         Vector3 posicioFinal = posicioInicial + new Vector3(direccioAleatoria.x, direccioAleatoria.y, 0) * distanciaSortida;
 
         float duradaAleatoria = Random.Range(0.4f, 0.8f);
@@ -80,7 +80,7 @@ public class MovingFLuidraLogoScript : MonoBehaviour
 
         // 2. Generem una posició inicial aleatòria a l'exterior del Canvas (el mateix càlcul que el Hide)
         Vector2 direccioAleatoria = Random.insideUnitCircle.normalized;
-        float distanciaSortida = 6000f;
+        float distanciaSortida = 8000f;
         Vector3 posicioForaDePantalla = posicioInicial + new Vector3(direccioAleatoria.x, direccioAleatoria.y, 0) * distanciaSortida;
 
         // 3. Teleportem el logotip instantàniament a fora de la pantalla i resetejem escala i rotació per seguretat
