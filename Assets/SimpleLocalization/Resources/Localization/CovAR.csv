@@ -554,7 +554,7 @@ La plateforme s'enroule entièrement dans un compartiment sous-marin recouvert d
 The platform rolls up completely inside an underwater compartment covered by a submerged conduit plate. This cover is suitable for pools under renovation or construction."
 Main.VoletTypeWindow.HelpPanel.RollersText,"Los rodillos para piscinas elevadas permiten una perfecta conservación de la cubierta.
 
-Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une parfaite préservation de la couverture.
+Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une protection optimale de la couverture.
 
 Ces enrouleurs facilitent la manipulation de la couverture d'été. Une fois rétractée, il est simple de la ranger, libérant ainsi l'espace de baignade. Ils sont équipés d'un système de freinage pour bloquer le cylindre et sont très résistants.","Rollers for above-ground pools ensure the cover is perfectly preserved.
 
@@ -603,7 +603,7 @@ Main.ButtonHoldPopup.Width,Botón para configurar la anchura de la persiana.,Bou
 Main.ButtonHoldPopup.Length,Botón para configurar la longitud de la persiana.,Bouton permettant de régler la longueur du volet.,Button to set the length of the blind.
 Main.ButtonHoldPopup.Railes,Botón para mover la volet sobre los raíles.,Bouton permettant de déplacer le volet sur les rails.,Button to move the volet on the rails.
 Main.ButtonHoldPopup.Herramientas,Botón para desplegar un submenú de herramientas.,Bouton permettant d'afficher un sous-menu d'outils.,Button to display a submenu of tools.
-Main.ButtonHoldPopup.TechnicalPlane,Con este botón podrás obtener un plano técnico de tu persiana.,Ce bouton vous permet d'obtenir un dessin technique de votre volet.,With this button you can obtain a technical drawing of your blind.
+Main.ButtonHoldPopup.TechnicalPlane,Con este botón podrás obtener un plano técnico de tu persiana.,Ce bouton vous permet d'obtenir un dessin technique de votre volet.,With this button you can obtain a technical diagram of your blind.
 Main.ButtonHoldPopup.ReglaAR,Con este botón podrás utilizar una regla en Realidad Aumentada.,Ce bouton permet d'utiliser une règle en réalité augmentée.,With this button you can use a ruler in Augmented Reality.
 Main.ButtonHoldPopup.DesignSoportes,Este botón te permite configurar el tipo de soporte de la persiana.,Ce bouton vous permet de configurer le type d'assistance aux personnes aveugles.,This button allows you to configure the type of support for the blind.
 Main.ButtonHoldPopup.DesignColorLamas,Este botón te permite configurar la estética de las lamas.,Ce bouton vous permet de configurer l'apparence des lattes.,This button allows you to configure the appearance of the slats.
@@ -617,7 +617,7 @@ Te iremos explicando paso a paso como funciona la aplicación.
 
 Pulsa OK para empezar el tutorial.","Bienvenue dans le tutoriel CovAR.
 
-Nous allons vous guider pas à pas à travers le fonctionnement de l'application.
+Nous vous guiderons pas à pas à travers le fonctionnement de l'application.
 
 Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 
@@ -651,7 +651,7 @@ Tutorial.Texto.Lamas1,Pulsa el botón para poder modificar el color de las lamas
 Tutorial.Texto.Lamas2,Selecciona el color que desees.,Sélectionnez la couleur que vous souhaitez.,Select the color you want.
 Tutorial.Texto.Screenshot,Pulsa el botón para realizar una captura de pantalla que se guardará en tu dispositivo y que también podrás compartir.,Appuyez sur le bouton pour prendre une capture d'écran qui sera enregistrée sur votre appareil et que vous pourrez également partager.,Press the button to take a screenshot that will be saved to your device and that you can also share.
 Tutorial.Texto.FichaTecnica1,Pulsa el botón para abrir la ficha técnica.,Appuyez sur le bouton pour ouvrir la fiche technique.,Press the button to open the technical data sheet.
-Tutorial.Texto.FichaTecnica2,"En la ficha técnica, podrás ver un resumen de la configuración de la persiana. Además de poder añadir el nombre del cliente, anotaciones, configurar otras opciones relacionadas con productos asociados a la persiana y hacer una captura de pantalla.","Dans les spécifications techniques, vous trouverez un résumé de la configuration du volet. Vous pouvez également ajouter le nom du client, des notes, configurer d'autres options relatives aux produits associés au volet et effectuer une capture d'écran.","In the technical specifications, you'll see a summary of the blind's configuration. You can also add the customer's name, notes, configure other options related to products associated with the blind, and take a screenshot."
+Tutorial.Texto.FichaTecnica2,"En la ficha técnica, podrás ver un resumen de la configuración de la persiana. Además de poder añadir el nombre del cliente, anotaciones, configurar otras opciones relacionadas con productos asociados a la persiana y hacer una captura de pantalla.","Dans les spécifications techniques, vous trouverez un résumé de la configuration du volet. Vous pouvez également ajouter le nom du client, des notes, configurer d'autres options relatives aux produits associés au volet et effectuer une capture d'écran.","In the technical specifications, you can see a summary of the blind's configuration. You can also add the customer's name, notes, configure other options related to products associated with the blind, and take a screenshot."
 Tutorial.Texto.FichaTecnica3,Pulsa el botón de la flecha para volver a la pantalla de configuración y continuar con el tutorial.,Appuyez sur la touche flèche pour revenir à l'écran des paramètres et poursuivre le tutoriel.,Press the arrow button to return to the settings screen and continue with the tutorial.
 Tutorial.Texto.HelpPopup,"Si en algún momento quieres recordar que es lo que hacen los botones del menú principal y del menú del diseño, manteniendo pulsado cualquiera de estos desplegará un texto explicativo sobre lo que hacen.","Si vous souhaitez à tout moment vous rappeler à quoi servent les boutons du menu principal et du menu de conception, il vous suffit d'appuyer longuement sur l'un d'eux pour afficher un texte explicatif.","If at any time you want to remember what the buttons in the main menu and the design menu do, pressing and holding any of them will display an explanatory text about what they do."
 Tutorial.Texto.EsconderMenus,"Si deseas esconder los botones del menú para visualizar mejor la pantalla, pulsa los botones que se encuentran encima de cada menú.","Pour masquer les boutons du menu et mieux visualiser l'écran, appuyez sur les boutons situés au-dessus de chaque menu.","If you want to hide the menu buttons to better view the screen, press the buttons located above each menu."
@@ -750,7 +750,7 @@ FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE H
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -830,7 +830,7 @@ Catalog.Lamas.Material.Title,Material,Matériel,Material
 ,,,
 ,,,
 InGame.PlaneFinderPanel.InfoText,"Apunte hacia el suelo hasta que aparezca una marca, a continuación, púlsela.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
-InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit.
+InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit
 ,,,
 ,,,
 ,,,
@@ -870,7 +870,7 @@ Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de co
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -903,6 +903,13 @@ Login.Panel.Settings.Menu.Idioma,Selecciona el idioma,Sélectionnez la langue,Se
 Login.Panel.Settings.Menu.Title,Ajustes de cuenta,Paramètres du compte,Account settings
 Login.Panel.Settings.CloseApp.Title,Salir de la aplicación,Quitter l'application,Exit the application
 Login.Panel.Settings.CloseApp.Button,Cerrar aplicación,Fermer l'application,Close application
+Login.HelperText.loginIncorrecto,El correo o la contraseña son incorrectos.,L'adresse e-mail ou le mot de passe est incorrect.,The email or password is incorrect.
+Login.HelperText.Error,Error de conexión,Erreur de connexion,Connection error
+Login.HelperText.NoConnection,No hay intertnet... Comprueba tu conexión.,Il n'y a pas d'internet... Vérifiez votre connexion.,There's no internet... Check your connection.
+,,,
+,,,
+,,,
+,,,
 ,,,
 ,,,
 ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photographie - CovAR,Photograph - CovAR

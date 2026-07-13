@@ -9,10 +9,14 @@ public class MainMenuLoginBehaviour : MonoBehaviour
     [SerializeField] private TMP_InputField _EmailName;
     [SerializeField] private TMP_InputField _PasswordName;
     [SerializeField] private Button _LoginButton;
+    [SerializeField] private HelperTextBehaviourScript _HelperText;
+    
+    
+    private WebRequestManager _WebRequestManager;
 
     void Start()
     {
-        
+        InitLoginBehaviour();
     }
 
     // Update is called once per frame
@@ -21,8 +25,22 @@ public class MainMenuLoginBehaviour : MonoBehaviour
         LoginButtonBehaviour();
     }
 
-    ////////////////////////////////////////////////////// BEHAVIOUR ///////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////// INIT /////////////////////////////////////////////////////////////
     
+    void InitLoginBehaviour()
+    {
+        if (GameObject.FindGameObjectWithTag("WebRequestManager"))
+        {
+            _WebRequestManager = GameObject.FindGameObjectWithTag("WebRequestManager").GetComponent<WebRequestManager>();
+        }
+
+        _LoginButton.onClick.AddListener(OnClickLoginBehaviour);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ////////////////////////////////////////////////////// BEHAVIOUR ///////////////////////////////////////////////////////////
+
     void LoginButtonBehaviour()
     {
         if (_EmailName.text != "" && _PasswordName.text != "")
@@ -36,5 +54,13 @@ public class MainMenuLoginBehaviour : MonoBehaviour
 
     }
 
+    void OnClickLoginBehaviour()
+    {
+        if (_WebRequestManager != null)
+        {
+            _WebRequestManager.WR_Login(_EmailName.text, _PasswordName.text, _HelperText);
+        }
+
+    }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
