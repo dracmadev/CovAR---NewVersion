@@ -46,6 +46,7 @@ public class ARObjectManager : MonoBehaviour
 
     //Local variables
     HUDManagerScript _HUDManagerScrit;
+    WebRequestManager _WebRequestManagerScript;
     bool bARObjectPlaced = false;
 
     void Start()
@@ -64,6 +65,15 @@ public class ARObjectManager : MonoBehaviour
     void InitARObjectManager()
     {
         _HUDManagerScrit = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
+
+        if(GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+        {
+            _WebRequestManagerScript = GameObject.FindGameObjectWithTag("WebRequestManager").GetComponent<WebRequestManager>();
+
+            _CurrentCompanyRunning = _WebRequestManagerScript.GetCurrentCompany();
+        }
+
+
 
 
         InitARCameraRef();

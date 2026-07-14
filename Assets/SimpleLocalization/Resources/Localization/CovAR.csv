@@ -10,17 +10,17 @@ Login.Button.VincularDispositivo,Vincular licencia a este dispositivo,Lier la li
 Login.Panel.ClaveOlvidada,Escribe tu correo,Saisissez votre adresse e-mail,Enter your email address
 Login.Panel.AppCodeOlvidada,Escribe un correo  a infomarketing@fluidra.com solicitando la clave. Adjunta el nombre de tu empresa y el CIF para que podamos validar tu petición.,Envoyez un courriel à infomarketing@fluidra.com pour demander le mot de passe. Veuillez indiquer le nom de votre entreprise et votre numéro d'identification fiscale (CIF) afin que nous puissions valider votre demande.,Send an email to infomarketing@fluidra.com requesting the password. Include your company name and tax ID number (CIF) so we can validate your request.
 Login.Panel.CorreoEnviado,"Se ha mandado un correo con la nueva clave. En caso de no verlo en la bandeja de entrada, revise la carpeta de correo no deseado / spam.","Un courriel contenant votre nouveau mot de passe vous a été envoyé. Si vous ne le voyez pas dans votre boîte de réception, veuillez vérifier votre dossier de courriers indésirables.","An email with the new password has been sent. If you don't see it in your inbox, please check your spam/junk mail folder."
-Login.Panel.CreacionUsuario.Titulo,Crear usuario,Créer un utilisateur,Create user
+,,,
 Login.Panel.CreacionUsuario.Instrucciones,"En caso de no poder crear un usuario, contacte con infomarketing@fluidra.com","Si vous ne parvenez pas à créer un compte utilisateur, veuillez contacter infomarketing@fluidra.com","If you are unable to create a user account, please contact infomarketing@fluidra.com"
 ,,,
-Login.Input.Apellidos,Apellidos...,Noms de famille...,Last names...
-Login.Input.Telefono,Teléfono...,Téléphone...,Phone...
-Login.Input.Empresa,Empresa...,Entreprise...,Company...
-Login.Input.RepetirMail,repetir correo...,Répétez l'email...,Repeat email...
-Login.Input.RepetirClave,repetir clave...,Répéter le mot de passe...,Repeat password...
-Login.Panel.TerminosDeServicio,Términos de servicio,Conditions d'utilisation,Terms of service
-Login.Input.Country,Selecciona el país:,Sélectionnez votre pays :,Select your country:
-Login.ReSetPassword.Menu.Title,Recuperar contraseña,Récupérer le mot de passe,Recover password
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
 Login.ReSetPassword.Menu.Button,Enviar,Envoyer,Send
 Login.ReSetPassword.Menu.Descrip,Escribe el correo asociado a la cuenta y te enviaremos una nueva clave de acceso.,Saisissez l'adresse e-mail associée à votre compte et nous vous enverrons un nouveau code d'accès.,Enter the email address associated with the account and we will send you a new access code.
 Login.ReSetPassword.Mail.Title,Nueva clave ,Nouvelle clé,New key
@@ -567,8 +567,8 @@ DebugText.PasswordRecovery.UsuarioNoExiste,Este usuario no existe en nuestra bas
 DebugText.PasswordRecovery.Error,La conexión ha fallado.,La connexion a échoué.,The connection has failed.
 DebugText.ChangePassword.Error,La conexión ha fallado.,La connexion a échoué.,The connection has failed.
 DebugText.ChangePassword.DiferenteAnterior,La nueva contraseña debe ser diferente que la anterior.,Le nouveau mot de passe doit être différent du précédent.,The new password must be different from the previous one.
-DebugText.ChangePassword.NoCoinciden,Las contraseñas no coinciden.,Les mots de passe ne correspondent pas.,The passwords do not match.
-DebugText.ChangePassword.NoCumpleRequisitos,"Las contraseñas deben tener un mínimo de ocho caracteres, una mayúscula, una minúscula y un número.","Les mots de passe doivent comporter au minimum huit caractères, dont une lettre majuscule, une lettre minuscule et un chiffre.","Passwords must have a minimum of eight characters, one uppercase letter, one lowercase letter, and one number."
+,,,
+,,,
 DebugText.ChangePassword.FaltanDatos,Faltan datos por rellenar.,Des champs de données sont manquants.,Data fields are missing.
 DebugText.ChangePassword.CambiadaCorrectamente,Contraseña cambiada correctamente!,Mot de passe modifié avec succès !,Password changed successfully!
 DebugText.ChangePassword.OtherError,La contraseña no es correcta o el usuario no existe en nuestra base de datos.,Le mot de passe est incorrect ou l'utilisateur n'existe pas dans notre base de données.,The password is incorrect or the user does not exist in our database.
@@ -596,7 +596,7 @@ DebugText.RegisterAccount.TelefonoIncorrecto,El campo 'telefono' no tiene una fo
 DebugText.RegisterAccount.FormatoEmailIncorrecto,El formato del correo es incorrecto. Debe ser algo como: nombre@dominio.com,Le format de l'adresse e-mail est incorrect. Il devrait ressembler à : nom@domaine.com,The email format is incorrect. It should be something like: name@domain.com
 DebugText.RegisterAccount.AppCodeIncorrecto,Contraseña de la aplicación incorrecto.,Mot de passe de l'application incorrect.,Incorrect application password.
 DebugText.RegisterAccount.AppCodeInfo,Insterte la contraseña de la aplicación:,Saisissez le mot de passe de l'application :,Enter the application password:
-DebugText.RegisterAccount.UserNotInLeads,Esta App está reservada a clientes de Fluidra Iberia. Para más información rogamos contacten con infomarketing@fluidra.com,"Cette application est réservée aux clients de Fluidra Iberia. Pour plus d'informations, veuillez contacter infomarketing@fluidra.com","This app is reserved for Fluidra Iberia customers. For more information, please contact infomarketing@fluidra.com"
+,,,
 DebugText.LoginIntoApplication.usuarioInactivo,Usuario inactivo. Contacte con arpoolfluidra@gmail.com para activarlo.,Compte utilisateur inactif. Veuillez contacter arpoolfluidra@gmail.com pour l'activer.,Inactive user. Contact arpoolfluidra@gmail.com to activate it.
 Main.ButtonHoldPopup.Pose,Este botón te permite ajustar la posición y rotación de la persiana.,Ce bouton permet de régler la position et la rotation du volet.,This button allows you to adjust the position and rotation of the blind.
 Main.ButtonHoldPopup.Width,Botón para configurar la anchura de la persiana.,Bouton permettant de régler la largeur du volet.,Button to set the width of the blind.
@@ -890,10 +890,10 @@ FichaTecnica.EscribirNombre,Nombre del cliente...,Nom du client...,Customer name
 FichaTecnica.EscribirCorreo,Correo del cliente...,Courriel du client...,Customer email...
 ,,,
 ,,,
-Login.Input.Clave,Contraseña...,Mot de passe...,Key...
+Login.Input.Clave,*Contraseña...,*Mot de passe...,*Key...
 Login.Button.Acceder,Acceder,Accéder,Enter
-Login.Input.Mail,Correo...,Mail...,Mail...
-Login.Input.Nombre,Nombre...,Nom...,Name...
+Login.Input.Mail,*Correo...,*Mail...,*Mail...
+Login.Input.Nombre,*Nombre...,*Nom...,*Name...
 Login.Input.Aceptar,Aceptar,Accepter,Accept
 Login.Input.Volver,Volver,Retour,Return
 Login.Button.ClaveOlvidada,¿Has olvidado tu contraseña?,Avez-vous oublié votre mot de passe ?,Have you forgotten your password?
@@ -906,9 +906,22 @@ Login.Panel.Settings.CloseApp.Button,Cerrar aplicación,Fermer l'application,Clo
 Login.HelperText.loginIncorrecto,El correo o la contraseña son incorrectos.,L'adresse e-mail ou le mot de passe est incorrect.,The email or password is incorrect.
 Login.HelperText.Error,Error de conexión,Erreur de connexion,Connection error
 Login.HelperText.NoConnection,No hay intertnet... Comprueba tu conexión.,Il n'y a pas d'internet... Vérifiez votre connexion.,There's no internet... Check your connection.
-,,,
-,,,
-,,,
+Login.Panel.CreacionUsuario.Titulo,Crear usuario,Créer un utilisateur,Create user
+Login.Input.Apellidos,*Apellidos...,*Noms de famille...,*Last names...
+Login.Input.Telefono,Teléfono...,Téléphone...,Phone...
+Login.Input.Empresa,*Empresa...,*Entreprise...,*Company...
+Login.Input.RepetirMail,*Repetir correo...,*Répétez l'email...,*Repeat email...
+Login.Input.RepetirClave,*Repetir contraseña...,*Répéter le mot de passe...,*Repeat password...
+Login.Panel.TerminosDeServicio,Términos de servicio,Conditions d'utilisation,Terms of service
+Login.Input.Country,Selecciona el país:,Sélectionnez votre pays :,Select your country:
+Login.ReSetPassword.Menu.Title,Recuperar contraseña,Récupérer le mot de passe,Recover password
+Login.Input.ClaveDescrip,"La contraseña debe tener mínimo 8 digitos, una mayúscula, una minúscula y un número.","Le mot de passe doit comporter au minimum 8 caractères, une lettre majuscule, une lettre minuscule et un chiffre.","The password must have a minimum of 8 characters, one uppercase letter, one lowercase letter, and one number."
+Login.Input.CreateUserDescrip,Solo los campos con * son obligatorios para crear un usuario.,Seuls les champs marqués d'un * sont obligatoires pour créer un utilisateur.,Only fields marked with * are required to create a user.
+Login.HelperText.NotInLeads,Esta App está reservada a clientes de Fluidra Iberia. Para más información rogamos contacten con infomarketing@fluidra.com,"Cette application est réservée aux clients de Fluidra Iberia. Pour plus d'informations, veuillez contacter infomarketing@fluidra.com","This app is reserved for Fluidra Iberia customers. For more information, please contact infomarketing@fluidra.com"
+Login.HelperText.EmailNoCoinciden,Los correos no coinciden.,Les adresses électroniques ne correspondent pas.,The emails do not match.
+Login.HelperText.PasswordNoCoinciden,Las contraseñas no coinciden.,Les mots de passe ne correspondent pas.,The passwords do not match.
+Login.HelperText.NoCumpleRequisitos,"Las contraseñas deben tener un mínimo de ocho caracteres, una mayúscula, una minúscula y un número.","Les mots de passe doivent comporter au minimum huit caractères, dont une lettre majuscule, une lettre minuscule et un chiffre.","Passwords must have a minimum of eight characters, one uppercase letter, one lowercase letter, and one number."
+Login.HelperText.EmailAlreadyOnBBDD,El correo ya existe en la base de datos.,L'adresse e-mail existe déjà dans la base de données.,The email address already exists in the database.
 ,,,
 ,,,
 ,,,
