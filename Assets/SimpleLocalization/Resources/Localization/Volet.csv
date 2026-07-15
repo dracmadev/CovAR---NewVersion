@@ -7,9 +7,9 @@ Menu.Welcome,Bienvenido,Accueillir,Welcome
 ,,,
 ,,,
 Login.Button.VincularDispositivo,Vincular licencia a este dispositivo,Lier la licence à cet appareil,Link license to this device
-Login.Panel.ClaveOlvidada,Escribe tu correo,Saisissez votre adresse e-mail,Enter your email address
+,,,
 Login.Panel.AppCodeOlvidada,Escribe un correo  a infomarketing@fluidra.com solicitando la clave. Adjunta el nombre de tu empresa y el CIF para que podamos validar tu petición.,Envoyez un courriel à infomarketing@fluidra.com pour demander le mot de passe. Veuillez indiquer le nom de votre entreprise et votre numéro d'identification fiscale (CIF) afin que nous puissions valider votre demande.,Send an email to infomarketing@fluidra.com requesting the password. Include your company name and tax ID number (CIF) so we can validate your request.
-Login.Panel.CorreoEnviado,"Se ha mandado un correo con la nueva clave. En caso de no verlo en la bandeja de entrada, revise la carpeta de correo no deseado / spam.","Un courriel contenant votre nouveau mot de passe vous a été envoyé. Si vous ne le voyez pas dans votre boîte de réception, veuillez vérifier votre dossier de courriers indésirables.","An email with the new password has been sent. If you don't see it in your inbox, please check your spam/junk mail folder."
+,,,
 ,,,
 Login.Panel.CreacionUsuario.Instrucciones,"En caso de no poder crear un usuario, contacte con infomarketing@fluidra.com","Si vous ne parvenez pas à créer un compte utilisateur, veuillez contacter infomarketing@fluidra.com","If you are unable to create a user account, please contact infomarketing@fluidra.com"
 ,,,
@@ -21,17 +21,17 @@ Login.Panel.CreacionUsuario.Instrucciones,"En caso de no poder crear un usuario,
 ,,,
 ,,,
 ,,,
-Login.ReSetPassword.Menu.Button,Enviar,Envoyer,Send
-Login.ReSetPassword.Menu.Descrip,Escribe el correo asociado a la cuenta y te enviaremos una nueva clave de acceso.,Saisissez l'adresse e-mail associée à votre compte et nous vous enverrons un nouveau code d'accès.,Enter the email address associated with the account and we will send you a new access code.
-Login.ReSetPassword.Mail.Title,Nueva clave ,Nouvelle clé,New key
-Login.ReSetPassword.Mail.Body,"Buenas, hemos generado esta nueva clave para tu cuenta:   ","Bonjour, nous avons généré cette nouvelle clé pour votre compte :","Hello, we have generated this new key for your account:"
-Login.ReSetPassword.Mail.UserNotFound,Correo no encontrado en la base de datos,Adresse électronique introuvable dans la base de données,Email not found in the database
-Login.ReSetPassword.Mail.MailSended,Se ha enviado un correo con la nueva clave de acceso,Un courriel contenant le nouveau code d'accès a été envoyé.,An email with the new access code has been sent.
-Login.ReSetPassword.Mail.Error,Error al recuperar clave de acceso,Erreur lors de la récupération de la clé d'accès,Error retrieving access key
-Login.SetPassword.Menu.Title,Cambiar contraseña,Changer le mot de passe,Change password
-Login.SetPassword.Menu.ClaveActual,Contraseña actual...,Mot de passe actuel...,Current password...
-Login.SetPassword.Menu.NuevaClave,Nueva contraseña...,Nouveau mot de passe...,New password...
-Login.SetPassword.Menu.Boton,Actualizar,Mise à jour,Update
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
 Login.SetPassword.Menu.Error,Error al actualizar la contraseña,Erreur lors de la mise à jour du mot de passe,Error updating password
 Login.SetPassword.Menu.PasswordChanged,Contraseña correctamente actualizada,Mot de passe mis à jour avec succès,Password successfully updated
 Login.SetPassword.Menu.UserNotFound,Correo o contraeña no encontrados en la base de datos,Adresse électronique ou mot de passe introuvable dans la base de données,Email or password not found in the database
@@ -603,7 +603,7 @@ Main.ButtonHoldPopup.Width,Botón para configurar la anchura de la persiana.,Bou
 Main.ButtonHoldPopup.Length,Botón para configurar la longitud de la persiana.,Bouton permettant de régler la longueur du volet.,Button to set the length of the blind.
 Main.ButtonHoldPopup.Railes,Botón para mover la volet sobre los raíles.,Bouton permettant de déplacer le volet sur les rails.,Button to move the volet on the rails.
 Main.ButtonHoldPopup.Herramientas,Botón para desplegar un submenú de herramientas.,Bouton permettant d'afficher un sous-menu d'outils.,Button to display a submenu of tools.
-Main.ButtonHoldPopup.TechnicalPlane,Con este botón podrás obtener un plano técnico de tu persiana.,Ce bouton vous permet d'obtenir un dessin technique de votre volet.,With this button you can obtain a technical diagram of your blind.
+Main.ButtonHoldPopup.TechnicalPlane,Con este botón podrás obtener un plano técnico de tu persiana.,Ce bouton vous permet d'obtenir un dessin technique de votre volet.,With this button you can obtain a technical drawing of your blind.
 Main.ButtonHoldPopup.ReglaAR,Con este botón podrás utilizar una regla en Realidad Aumentada.,Ce bouton permet d'utiliser une règle en réalité augmentée.,With this button you can use a ruler in Augmented Reality.
 Main.ButtonHoldPopup.DesignSoportes,Este botón te permite configurar el tipo de soporte de la persiana.,Ce bouton vous permet de configurer le type d'assistance aux personnes aveugles.,This button allows you to configure the type of support for the blind.
 Main.ButtonHoldPopup.DesignColorLamas,Este botón te permite configurar la estética de las lamas.,Ce bouton vous permet de configurer l'apparence des lattes.,This button allows you to configure the appearance of the slats.
@@ -617,7 +617,7 @@ Te iremos explicando paso a paso como funciona la aplicación.
 
 Pulsa OK para empezar el tutorial.","Bienvenue dans le tutoriel CovAR.
 
-Nous vous guiderons pas à pas à travers le fonctionnement de l'application.
+Nous allons vous guider pas à pas à travers le fonctionnement de l'application.
 
 Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 
@@ -750,7 +750,7 @@ FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE H
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -870,7 +870,7 @@ Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de co
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -885,7 +885,7 @@ FichaTecnica.ProductosAsociados.Tapas.Option4,Por encargo,Sur mesure,Custom made
 FichaTecnica.Anotaciones.Titulo,ANOTACIONES:,REMARQUES :,NOTES:
 FichaTecnica.Anotaciones.Input,Introduce texto...,Saisissez du texte...,Enter text...
 FichaTecnica.Titulo,PLANO TÉCNICO,PLAN TECHNIQUE,TECHNICAL PLAN
-FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Renseignez les informations client pour générer le dessin technique.,Complete the customer details to generate the technical drawing.
+FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Complétez les informations client afin de générer le dessin technique.,Complete the customer details in order to generate the technical drawing.
 FichaTecnica.EscribirNombre,Nombre del cliente...,Nom du client...,Customer name...
 FichaTecnica.EscribirCorreo,Correo del cliente...,Courriel du client...,Customer email...
 ,,,
@@ -922,10 +922,24 @@ Login.HelperText.EmailNoCoinciden,Los correos no coinciden.,Les adresses électr
 Login.HelperText.PasswordNoCoinciden,Las contraseñas no coinciden.,Les mots de passe ne correspondent pas.,The passwords do not match.
 Login.HelperText.NoCumpleRequisitos,"Las contraseñas deben tener un mínimo de ocho caracteres, una mayúscula, una minúscula y un número.","Les mots de passe doivent comporter au minimum huit caractères, dont une lettre majuscule, une lettre minuscule et un chiffre.","Passwords must have a minimum of eight characters, one uppercase letter, one lowercase letter, and one number."
 Login.HelperText.EmailAlreadyOnBBDD,El correo ya existe en la base de datos.,L'adresse e-mail existe déjà dans la base de données.,The email address already exists in the database.
+Login.ReSetPassword.Menu.Descrip,Escribe el correo asociado a la cuenta y te enviaremos una nueva clave de acceso.,Saisissez l'adresse e-mail associée à votre compte et nous vous enverrons un nouveau code d'accès.,Enter the email address associated with the account and we will send you a new access code.
+Login.ReSetPassword.Menu.Button,Enviar,Envoyer,Send
+Login.Panel.ClaveOlvidada,Escribe tu correo,Saisissez votre adresse e-mail,Enter your email address
+Login.SetPassword.Menu.Title,Cambiar contraseña,Changer le mot de passe,Change password
+Login.SetPassword.Menu.ClaveActual,Contraseña actual...,Mot de passe actuel...,Current password...
+Login.SetPassword.Menu.NuevaClave,Nueva contraseña...,Nouveau mot de passe...,New password...
+Login.SetPassword.Menu.Boton,Actualizar,Mise à jour,Update
+Login.ReSetPassword.Mail.Title,CovAR - Nueva clave ,CovAR - Nouvelle clé,CovAR - New key
+Login.ReSetPassword.Mail.Body,"Buenas, hemos generado esta nueva clave para tu cuenta:   ","Bonjour, nous avons généré cette nouvelle clé pour votre compte :","Hello, we have generated this new key for your account:"
+Login.ReSetPassword.Mail.UserNotFound,Correo no encontrado en la base de datos,Adresse électronique introuvable dans la base de données,Email not found in the database
+Login.ReSetPassword.Mail.MailSended,Se ha enviado un correo con la nueva clave de acceso,Un courriel contenant le nouveau code d'accès a été envoyé.,An email with the new access code has been sent.
+Login.ReSetPassword.Mail.Error,Error al recuperar clave de acceso,Erreur lors de la récupération de la clé d'accès,Error retrieving access key
+Login.HelperText.CorreoEnviado,Se ha mandado un correo con la nueva clave,Un courriel contenant le nouveau mot de passe a été envoyé.,An email with the new password has been sent.
 ,,,
 ,,,
 ,,,
-ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photographie - CovAR,Photograph - CovAR
+,,,
+ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photo - CovAR,Photograph - CovAR
 ScreenshootAndShare.Photo.Descrip,Esta fotografía sacada con la aplicación  de CovAR.,Cette photographie a été prise à l'aide de l'application CovAR.,This photograph was taken using the CovAR application.
 ScreenshootAndShare.Blueprint.Title,Plano técnico,dessin technique,Technical drawing
 ScreenshootAndShare.Blueprint.Descrip,Este plano técnico ha sido generado con la aplicación  de CovAR.,Ce dessin technique a été généré à l'aide de l'application CovAR.,This technical drawing was generated using the CovAR application.
