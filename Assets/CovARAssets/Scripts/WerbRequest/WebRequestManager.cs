@@ -381,7 +381,8 @@ public class WebRequestManager : MonoBehaviour
         else if (_CurrentAppCompany == E_CompanyType.BACPoolSystems)
         {
             Debug.Log("Lead from -> BACPoolSystems");
-           
+            WR_SetAndSentBacPoolPassword(email, _HelperText);
+
         }
         else if (_CurrentAppCompany == E_CompanyType.None)
         {
@@ -443,6 +444,59 @@ public class WebRequestManager : MonoBehaviour
         }
     }
 
+    public void WR_SetAndSentBacPoolPassword(string email, HelperTextBehaviourScript _HelperText)
+    {
+        if (!string.IsNullOrEmpty(email))
+        {
+            //Generar nova contrasenya
+            string newPassword = GeneratePassword(8);
+            Debug.Log("[SEND MAIL] -> new password: " + newPassword);
+
+            //Localize texts
+            string emailTitle = LocalizationManager.Localize("Login.ReSetPassword.Mail.Title");
+            string emailBody = LocalizationManager.Localize("Login.ReSetPassword.Mail.Body") + " " + newPassword;
+
+            Debug.Log("[SEND MAIL] -> Mail prepared: " + email);
+
+            //Set new password on Nominalia
+            StartCoroutine(SendAndResetPasswordBacPoolCoroutine(email, newPassword, emailTitle, emailBody, _HelperText));
+        }
+    }
+
+    public IEnumerator SendAndResetPasswordBacPoolCoroutine(string email, string newPass, string title, string body, HelperTextBehaviourScript _HelperText)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("correo", email);
+        form.AddField("newPass", newPass);
+        form.AddField("subject", title);
+        form.AddField("body", body);
+
+        using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._SetAndSendNewPasswordURL_BacPoolSystem, form))
+        {
+            www.timeout = 15;
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                _HelperText.ShowLoginIncorrectMessage("Error");
+            }
+            else
+            {
+                Debug.Log("[MISSATGE DE PHP]  SendAndResetPassword: " + www.downloadHandler.text);
+
+                if (www.downloadHandler.text == "MailSended")
+                {
+                    _HelperText.ShowLoginCorrectMessage("CorreoEnviado");
+                }
+                else
+                {
+                    _HelperText.ShowLoginIncorrectMessage("Error");
+                }
+            }
+        }
+    }
+
+
     public static string GeneratePassword(int length = 8)
     {
         char[] letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
@@ -462,6 +516,234 @@ public class WebRequestManager : MonoBehaviour
         return password.ToString();
     }
 
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    /////////////////////////////////////////////////////// SET PASSWORD /////////////////////////////////////////////////////////////////////////
+
+    public void WR_OnClickSetPassword(string email, string oldPass, string newPass, HelperTextBehaviourScript _HelperText)
+    {
+        StartCoroutine(SetPasswordCoroutine(email, oldPass, newPass, _HelperText));
+    }
+
+    IEnumerator SetPasswordCoroutine(string email, string oldPass, string newPass, HelperTextBehaviourScript _HelperText)
+    {
+        StartCoroutine(WR_GetCompanyByLeadsCoroutine(email, _HelperText));
+        yield return new WaitForSeconds(2f);
+
+        if (_CurrentAppCompany == E_CompanyType.Astralpool)
+        {
+            Debug.Log("Lead from -> Astralpool");
+            StartCoroutine(SetPasswordAstralpoolCoroutine(email, oldPass, newPass, _HelperText));
+        }
+        else if (_CurrentAppCompany == E_CompanyType.BACPoolSystems)
+        {
+            Debug.Log("Lead from -> BACPoolSystems");
+            StartCoroutine(SetPasswordBacPoolCoroutine(email, oldPass, newPass, _HelperText));
+        }
+        else if (_CurrentAppCompany == E_CompanyType.None)
+        {
+            Debug.Log("Lead from -> None");
+        }
+    }
+
+
+    public IEnumerator SetPasswordAstralpoolCoroutine(string email, string oldPass, string newPass, HelperTextBehaviourScript _HelperText)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("correo", email);
+        form.AddField("loginPass", oldPass);
+        form.AddField("newloginPass", newPass);
+
+        using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._SetPasswordManuallyURL_Astralpool, form))
+        {
+            yield return www.SendWebRequest();
+
+            // Netegem la resposta de PHP d'espais en blanc o salts de línia residuals
+            string responseText = www.downloadHandler.text.Trim();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"[ERROR XARXA/SERVIDOR] Result: {www.result} | Error: {www.error}");
+                Debug.Log("[TEXT REBUT TOT I L'ERROR]: " + responseText);
+
+                _HelperText.ShowLoginIncorrectMessage("Error");
+            }
+            else
+            {
+                Debug.Log("[MISSATGE DE PHP] SetPassword: " + responseText);
+
+                if (responseText == "PasswordChanged")
+                {
+                    _HelperText.ShowLoginCorrectMessage("PasswordChangedCorrectly");
+                }
+                else if (responseText == "UserNotFound")
+                {
+                    _HelperText.ShowLoginIncorrectMessage("UserNotFound");
+                }
+                else
+                {
+                    _HelperText.ShowLoginIncorrectMessage("Error");
+                }
+            }
+        }
+    }
+
+    public IEnumerator SetPasswordBacPoolCoroutine(string email, string oldPass, string newPass, HelperTextBehaviourScript _HelperText)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("correo", email);
+        form.AddField("loginPass", oldPass);
+        form.AddField("newloginPass", newPass);
+
+        using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._SetPasswordManuallyURL_BacPoolSystem, form))
+        {
+            yield return www.SendWebRequest();
+
+            // Netegem la resposta de PHP d'espais en blanc o salts de línia residuals
+            string responseText = www.downloadHandler.text.Trim();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"[ERROR XARXA/SERVIDOR] Result: {www.result} | Error: {www.error}");
+                Debug.Log("[TEXT REBUT TOT I L'ERROR]: " + responseText);
+
+                _HelperText.ShowLoginIncorrectMessage("Error");
+            }
+            else
+            {
+                Debug.Log("[MISSATGE DE PHP] SetPassword: " + responseText);
+
+                if (responseText == "PasswordChanged")
+                {
+                    _HelperText.ShowLoginCorrectMessage("PasswordChangedCorrectly");
+                }
+                else if (responseText == "UserNotFound")
+                {
+                    _HelperText.ShowLoginIncorrectMessage("UserNotFound");
+                }
+                else
+                {
+                    _HelperText.ShowLoginIncorrectMessage("Error");
+                }
+            }
+        }
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////// DELETE USER /////////////////////////////////////////////////////////////////////////
+    
+    public void WR_OnDeleteUser(string email, HelperTextBehaviourScript _HelperText)
+    {
+        StartCoroutine(DeleteUserCoroutine(email, _HelperText));
+    }
+
+    IEnumerator DeleteUserCoroutine(string email, HelperTextBehaviourScript _HelperText)
+    {
+        StartCoroutine(WR_GetCompanyByLeadsCoroutine(email, _HelperText));
+        yield return new WaitForSeconds(2f);
+
+        if (_CurrentAppCompany == E_CompanyType.Astralpool)
+        {
+            Debug.Log("Lead from -> Astralpool");
+            StartCoroutine(DeleteUserAstralpoolCoroutine(email, _HelperText));
+        }
+        else if (_CurrentAppCompany == E_CompanyType.BACPoolSystems)
+        {
+            Debug.Log("Lead from -> BACPoolSystems");
+            StartCoroutine(DeleteUserBacPoolCoroutine(email, _HelperText)); 
+        }
+        else if (_CurrentAppCompany == E_CompanyType.None)
+        {
+            Debug.Log("Lead from -> None");
+        }
+    }
+
+    public IEnumerator DeleteUserAstralpoolCoroutine(string email, HelperTextBehaviourScript _HelperText)
+    {
+        if(email != "")
+        {
+            WWWForm form = new WWWForm();
+            form.AddField("email", email);
+
+            using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._DeleteUserURL_Astralpool, form))
+            {
+                yield return www.SendWebRequest();
+
+                // Netegem la resposta de PHP d'espais en blanc o salts de línia residuals
+                string responseText = www.downloadHandler.text.Trim();
+
+                if (www.result != UnityWebRequest.Result.Success)
+                {
+                    Debug.LogError($"[ERROR XARXA/SERVIDOR] Result: {www.result} | Error: {www.error}");
+
+                    _HelperText.ShowLoginIncorrectMessage("Error");
+                }
+                else
+                {
+                    Debug.Log("[MISSATGE DE PHP] Delete user: " + responseText);
+
+                    if (responseText == "AccountDeleted")
+                    {
+                        _HelperText.ShowLoginCorrectMessage("UserDeletedCorrectly");
+                    }
+                    else if (responseText == "CamposIncorrectos")
+                    {
+                        _HelperText.ShowLoginIncorrectMessage("UserNotFound");
+                    }
+                    else
+                    {
+                        _HelperText.ShowLoginIncorrectMessage("Error");
+                    }
+                }
+            }
+        }
+        
+    }
+
+    public IEnumerator DeleteUserBacPoolCoroutine(string email, HelperTextBehaviourScript _HelperText)
+    {
+        if (email != "")
+        {
+            WWWForm form = new WWWForm();
+            form.AddField("email", email);
+
+            using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._DeleteUserURL_BacPoolSystem, form))
+            {
+                yield return www.SendWebRequest();
+
+                // Netegem la resposta de PHP d'espais en blanc o salts de línia residuals
+                string responseText = www.downloadHandler.text.Trim();
+
+                if (www.result != UnityWebRequest.Result.Success)
+                {
+                    Debug.LogError($"[ERROR XARXA/SERVIDOR] Result: {www.result} | Error: {www.error}");
+
+                    _HelperText.ShowLoginIncorrectMessage("Error");
+                }
+                else
+                {
+                    Debug.Log("[MISSATGE DE PHP] Delete user: " + responseText);
+
+                    if (responseText == "AccountDeleted")
+                    {
+                        _HelperText.ShowLoginCorrectMessage("UserDeletedCorrectly");
+                    }
+                    else if (responseText == "CamposIncorrectos")
+                    {
+                        _HelperText.ShowLoginIncorrectMessage("UserNotFound");
+                    }
+                    else
+                    {
+                        _HelperText.ShowLoginIncorrectMessage("Error");
+                    }
+                }
+            }
+        }
+
+    }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

@@ -33,10 +33,10 @@ Login.Panel.CreacionUsuario.Instrucciones,"En caso de no poder crear un usuario,
 ,,,
 ,,,
 Login.SetPassword.Menu.Error,Error al actualizar la contraseña,Erreur lors de la mise à jour du mot de passe,Error updating password
-Login.SetPassword.Menu.PasswordChanged,Contraseña correctamente actualizada,Mot de passe mis à jour avec succès,Password successfully updated
-Login.SetPassword.Menu.UserNotFound,Correo o contraeña no encontrados en la base de datos,Adresse électronique ou mot de passe introuvable dans la base de données,Email or password not found in the database
-Login.SetPassword.Menu.NoCumpleRequisitos,"La nueva contraseña debe tener mínimo 8 digitos, una mayúscula, una minúscula y un número.","Le nouveau mot de passe doit comporter au minimum 8 caractères, une lettre majuscule, une lettre minuscule et un chiffre.","The new password must have a minimum of 8 characters, one uppercase letter, one lowercase letter, and one number."
-Login.SetPassword.Menu.SamePassword,La nueva contraseña no puede ser igual a la otra.,Le nouveau mot de passe ne peut pas être identique à l'ancien.,The new password cannot be the same as the old one.
+,,,
+,,,
+,,,
+,,,
 Login.Panel.TerminosDeServicio.Texto1,"
 CONDICIONES GENERALES DE USO DE LA APLICACIÓN SPACEPOOLS-AR
 
@@ -508,9 +508,9 @@ Login.Panel.Settings.Menu.MobileMode:Title,Que dispositivo estás usando: ,Quel 
 Login.Panel.Settings.Menu.MobileMode:Description,**Marca el dispositivo (movil o tablet) que estes usando para mejorar la interficie de la aplicación,**Veuillez sélectionner l'appareil (mobile ou tablette) que vous utilisez afin d'améliorer l'interface de l'application,**Please select the device (mobile or tablet) you are using to improve the app interface
 Login.Panel.Settings.Menu.MobileMode.OptionA,Tablet,Comprimé,Tablet
 Login.Panel.Settings.Menu.MobileMode.OptionB,Dispositivo móvil,appareil mobile,Mobile device
-Login.Panel.Settings.Menu.DeleteAcount,Eliminar cuenta,Supprimer le compte,Delete account
-Login.Panel.Settings.Menu.DeleteAcountDescrip,Esta acción eliminará tu cuenta y borrará toda tu información. El acceso a la app quedará desactivado.,Cette action supprimera votre compte et effacera toutes vos informations. L'accès à l'application sera désactivé.,This action will delete your account and erase all your information. Access to the app will be disabled.
-Login.Panel.Settings.Menu.DeleteAcountButton,Eliminar,Éliminer,Eliminate
+,,,
+,,,
+,,,
 DebugText.LoginIntoApplication.InvalidCredentials,La contraseña no es correcta o el usuario no existe en nuestra base de datos.,Le mot de passe est incorrect ou l'utilisateur n'existe pas dans notre base de données.,The password is incorrect or the user does not exist in our database.
 Advertencia.Texto,"¡ATENCIÓN! Dado que la aplicación genera imágenes de realidad aumentada a
 través del dispositivo en el que la Aplicación se encuentre operativa, algunos
@@ -617,7 +617,7 @@ Te iremos explicando paso a paso como funciona la aplicación.
 
 Pulsa OK para empezar el tutorial.","Bienvenue dans le tutoriel CovAR.
 
-Nous allons vous guider pas à pas à travers le fonctionnement de l'application.
+Nous vous guiderons pas à pas à travers le fonctionnement de l'application.
 
 Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 
@@ -750,7 +750,7 @@ FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE H
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -870,7 +870,7 @@ Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de co
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -885,7 +885,7 @@ FichaTecnica.ProductosAsociados.Tapas.Option4,Por encargo,Sur mesure,Custom made
 FichaTecnica.Anotaciones.Titulo,ANOTACIONES:,REMARQUES :,NOTES:
 FichaTecnica.Anotaciones.Input,Introduce texto...,Saisissez du texte...,Enter text...
 FichaTecnica.Titulo,PLANO TÉCNICO,PLAN TECHNIQUE,TECHNICAL PLAN
-FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Complétez les informations client afin de générer le dessin technique.,Complete the customer details in order to generate the technical drawing.
+FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Renseignez les informations client pour générer le dessin technique.,Complete the customer details to generate the technical drawing.
 FichaTecnica.EscribirNombre,Nombre del cliente...,Nom du client...,Customer name...
 FichaTecnica.EscribirCorreo,Correo del cliente...,Courriel du client...,Customer email...
 ,,,
@@ -929,13 +929,20 @@ Login.SetPassword.Menu.Title,Cambiar contraseña,Changer le mot de passe,Change 
 Login.SetPassword.Menu.ClaveActual,Contraseña actual...,Mot de passe actuel...,Current password...
 Login.SetPassword.Menu.NuevaClave,Nueva contraseña...,Nouveau mot de passe...,New password...
 Login.SetPassword.Menu.Boton,Actualizar,Mise à jour,Update
-Login.ReSetPassword.Mail.Title,CovAR - Nueva clave ,CovAR - Nouvelle clé,CovAR - New key
+Login.ReSetPassword.Mail.Title,CovAR - Nueva contraseña,CovAR - Nouveau mot de passe,CovAR - New password
 Login.ReSetPassword.Mail.Body,"Buenas, hemos generado esta nueva clave para tu cuenta:   ","Bonjour, nous avons généré cette nouvelle clé pour votre compte :","Hello, we have generated this new key for your account:"
 Login.ReSetPassword.Mail.UserNotFound,Correo no encontrado en la base de datos,Adresse électronique introuvable dans la base de données,Email not found in the database
 Login.ReSetPassword.Mail.MailSended,Se ha enviado un correo con la nueva clave de acceso,Un courriel contenant le nouveau code d'accès a été envoyé.,An email with the new access code has been sent.
 Login.ReSetPassword.Mail.Error,Error al recuperar clave de acceso,Erreur lors de la récupération de la clé d'accès,Error retrieving access key
 Login.HelperText.CorreoEnviado,Se ha mandado un correo con la nueva clave,Un courriel contenant le nouveau mot de passe a été envoyé.,An email with the new password has been sent.
-,,,
+Login.HelperText.PasswordChangedCorrectly,Contraseña correctamente actualizada,Mot de passe mis à jour avec succès,Password successfully updated
+Login.HelperText.NewPasswordNotCorrect,"La nueva contraseña debe tener mínimo 8 digitos, una mayúscula, una minúscula y un número.","Le nouveau mot de passe doit comporter au minimum 8 caractères, une lettre majuscule, une lettre minuscule et un chiffre.","The new password must have a minimum of 8 characters, one uppercase letter, one lowercase letter, and one number."
+Login.HelperText.SamePassword,La nueva contraseña no puede ser igual a la otra.,Le nouveau mot de passe ne peut pas être identique à l'ancien.,The new password cannot be the same as the old one.
+Login.HelperText.UserNotFound,Correo o contraeña no encontrados en la base de datos,Adresse électronique ou mot de passe introuvable dans la base de données,Email or password not found in the database
+Login.Panel.Settings.Menu.DeleteAcount,Eliminar cuenta,Supprimer le compte,Delete account
+Login.Panel.Settings.Menu.DeleteAcountDescrip,Esta acción eliminará tu cuenta y borrará toda tu información. El acceso a la app quedará desactivado.,Cette action supprimera votre compte et effacera toutes vos informations. L'accès à l'application sera désactivé.,This action will delete your account and erase all your information. Access to the app will be disabled.
+Login.Panel.Settings.Menu.DeleteAcountButton,Eliminar,Éliminer,Eliminate
+Login.HelperText.UserDeletedCorrectly,El usuario se ha eliminado correctamente,L'utilisateur a été supprimé avec succès.,The user has been successfully deleted
 ,,,
 ,,,
 ,,,

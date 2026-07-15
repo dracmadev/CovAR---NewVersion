@@ -43,7 +43,7 @@ public class HelperTextBehaviourScript : MonoBehaviour
         _TextHelper.color = _IncorrectMessageColor;
 
 
-        _TextHelper.DOFade(0, 3f).SetDelay(2f).SetEase(Ease.InOutQuad);
+        _TextHelper.DOFade(0, 3f).SetDelay(5f).SetEase(Ease.InOutQuad);
     }
     public void ShowLoginCorrectMessage(string key)
     {
@@ -57,6 +57,6 @@ public class HelperTextBehaviourScript : MonoBehaviour
         _TextHelper.color = _CorrectMessageColor;
 
 
-        _TextHelper.DOFade(0, 3f).SetDelay(2f).SetEase(Ease.InOutQuad);
+        _TextHelper.DOFade(0, 3f).SetDelay(5f).SetEase(Ease.InOutQuad);
     }
 }

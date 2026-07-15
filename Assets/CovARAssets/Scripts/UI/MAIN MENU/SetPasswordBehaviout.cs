@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,6 +41,7 @@ public class SetPasswordBehaviout : MonoBehaviour
         }
 
         _SendAndSetPassword.onClick.AddListener(OnClickSendAndSetPassword);
+        _UpdatePassword.onClick.AddListener(OnClickSetPassword);
 
     }
 
@@ -78,6 +80,42 @@ public class SetPasswordBehaviout : MonoBehaviour
         {
             _WebRequestManager.WR_SetAndSendPassword(_EmailSetAndSendPassword.text, _HelperText);
         }
+    }
+
+    void OnClickSetPassword()
+    {
+        if (_WebRequestManager != null)
+        {
+            if(!CheckIfThisBothCampsAreEqual(_CurrentPassword.text, _NewPassword.text))
+            {
+                if (CheckIfPasswordIsCorrect(_NewPassword.text))
+                {
+                    _WebRequestManager.WR_OnClickSetPassword(_EmailSetPassword.text, _CurrentPassword.text, _NewPassword.text, _HelperText);
+                }
+                else
+                {
+                    _HelperText.ShowLoginIncorrectMessage("NewPasswordNotCorrect");
+                }
+            }
+            else
+            {
+                _HelperText.ShowLoginIncorrectMessage("SamePassword");
+            }
+            
+        }
+    }
+
+    bool CheckIfPasswordIsCorrect(string password)
+    {
+        if (string.IsNullOrWhiteSpace(password))
+            return false;
+
+        return Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$");
+    }
+
+    bool CheckIfThisBothCampsAreEqual(string camp1, string camp2)
+    {
+        return camp1 == camp2;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
