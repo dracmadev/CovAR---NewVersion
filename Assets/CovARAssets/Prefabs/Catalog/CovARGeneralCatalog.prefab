@@ -219,6 +219,7 @@ MonoBehaviour:
     _ModelGeneralType: 0
     _ModelLogo: {fileID: 0}
     _ModelKey: 
+    _BlueprintModelImage: {fileID: 0}
     _MaterialsArray: []
 --- !u!1 &579857914769182379
 GameObject:
@@ -1778,7 +1779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cf7a06e2c033d9942b839c4df1fde895, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 711ff3a0c9d928241bf17826b2ce4be1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

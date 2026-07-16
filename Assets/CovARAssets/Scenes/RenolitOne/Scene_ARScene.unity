@@ -3716,6 +3716,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
+        type: 3}
+      propertyPath: bIsOnARScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
+        type: 3}
+      propertyPath: _WebRequestLinkStruct._GetUserCompanyURL
+      value: https://arpoolfluidra.com/Volet/GetCompanyByLeads.php
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
+        type: 3}
+      propertyPath: _WebRequestLinkStruct._LoginLinkURL_Astralpool
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8031507638861356830, guid: e31a8feccfb5af743990e79c842d6ec4,
         type: 3}
       propertyPath: m_Name
@@ -5410,6 +5425,10 @@ MonoBehaviour:
     type: 3}
   _RotationFeedbackGO: {fileID: 5518047774292776789, guid: 831b6d8b32089af49b64f6a7e3e9e538,
     type: 3}
+  _GroundRollerManipulatePanelName: AP_ManipulateGroundRollerPanel
+  _SubmergedRollerManipulatePanelName: AP_ManipulateSubmergedRollerPanel
+  _BenchRollerManipulatePanelName: AP_ManipulateBenchRollerPanel
+  _FabricCoverManipulatePanelName: BAC_ManipulateFabricCoverPanel
 --- !u!1 &578714005
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class WebRequestManager : MonoBehaviour
     [Header("WEB REQUEST LINKS")]
     [SerializeField] private St_WebRequestLinkStruct _WebRequestLinkStruct;
     [Header("Current company")]
-    [SerializeField] static private E_CompanyType _CurrentAppCompany = E_CompanyType.Astralpool;
+    [SerializeField] static private E_CompanyType _CurrentAppCompany = E_CompanyType.BACPoolSystems;
 
     HUDManagerScript _HUDManagerScript;
     ARObjectManager _ARObjectManager;

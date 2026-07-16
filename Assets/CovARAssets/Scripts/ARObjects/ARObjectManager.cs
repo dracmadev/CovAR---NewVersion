@@ -42,6 +42,12 @@ public class ARObjectManager : MonoBehaviour
     private GameObject _instantiatedFeedback;
     [SerializeField] private GameObject _RotationFeedbackGO;
 
+    [Header("Panel Names depending on Product:")]
+    [SerializeField] private string _GroundRollerManipulatePanelName;
+    [SerializeField] private string _SubmergedRollerManipulatePanelName;
+    [SerializeField] private string _BenchRollerManipulatePanelName;
+    [SerializeField] private string _FabricCoverManipulatePanelName;
+
 
 
     //Local variables
@@ -72,9 +78,6 @@ public class ARObjectManager : MonoBehaviour
 
             _CurrentCompanyRunning = _WebRequestManagerScript.GetCurrentCompany();
         }
-
-
-
 
         InitARCameraRef();
 
@@ -196,7 +199,7 @@ public class ARObjectManager : MonoBehaviour
                     _CovARObjectData._CurrentARObjectLenght = maxLenghtOfNewModel;
                 }
 
-                if(_CurrentProductSelected._ProductType != E_ProductType.FabricCover)
+                if (_CurrentProductSelected._ProductType != E_ProductType.FabricCover)
                 {
                     newObjScript.SetLamasLenghtByNum(_CovARObjectData._CurrentLamasLenght);
                     newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
@@ -208,8 +211,7 @@ public class ARObjectManager : MonoBehaviour
                     SpawnFabricCoverAxisObjects();
                 }
 
-
-                    SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
+                SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
 
                 SetCurrentARObjectState("DefaultState");
 
@@ -323,11 +325,25 @@ public class ARObjectManager : MonoBehaviour
     public void OnARObjectPosicioned()
     {
         SetActivePlaneFinder(false);
-        SetActiveARObject(_CurrentPoolType);
-        _HUDManagerScrit.TravelToPanel("AP_ManipulateGroundRollerPanel");
+        SetActiveARObject(GetFirstPoolTypeFromCatalogBasedOnCompanyActive());
+
+        switch (GetCovARObjectData()._CurrentModelProduct._ProductType)
+        {
+            case E_ProductType.None: break;
+            case E_ProductType.GroundRollerCover: _HUDManagerScrit.TravelToPanel(_GroundRollerManipulatePanelName); break;
+            case E_ProductType.SubmergedRollerCover: _HUDManagerScrit.TravelToPanel(_SubmergedRollerManipulatePanelName); break;
+            case E_ProductType.BencheAndCladdings: _HUDManagerScrit.TravelToPanel(_BenchRollerManipulatePanelName); break;
+            case E_ProductType.FabricCover: _HUDManagerScrit.TravelToPanel(_FabricCoverManipulatePanelName); break;
+        }
+   
         _HUDManagerScrit.OnShowCompanyMark(true);
         bARObjectPlaced = true;
-        _CurrentARObject.GetComponent<ARObjectScript>().GetCustomSplineInstantiateScript().PlayInitialOpenAnimation();
+        
+        if (_CurrentARObject.GetComponent<ARObjectScript>().GetCustomSplineInstantiateScript() != null)
+        {
+            _CurrentARObject.GetComponent<ARObjectScript>().GetCustomSplineInstantiateScript().PlayInitialOpenAnimation();
+        }
+        
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -598,8 +614,43 @@ public class ARObjectManager : MonoBehaviour
     }
 
     
+    public E_PoolType GetFirstPoolTypeFromCatalogBasedOnCompanyActive()
+    {
+        E_PoolType poolTypeToReturn = E_PoolType.None;
 
+        if(_CurrentProductCatalog != null)
+        {
+            if(_CurrentCompanyRunning == E_CompanyType.Astralpool)
+            {
+                switch(GetFirstModelFromCurrentProduct(GetFirstProductFromCurrentCompany(_CurrentProductCatalog._CompanysArray[0]))._ModelType)
+                {
+                    case E_ModelType.AP_Octeo: poolTypeToReturn = E_PoolType.AP_Octeo; break;
+                    case E_ModelType.AP_Sveltea: poolTypeToReturn = E_PoolType.AP_Sveltea; break;
+                    case E_ModelType.AP_SvelteaManual: poolTypeToReturn = E_PoolType.AP_SvelteaManual; break;
+                    case E_ModelType.AP_Coverly: poolTypeToReturn = E_PoolType.AP_Coverly; break;
+                    case E_ModelType.AP_Bellasun: poolTypeToReturn = E_PoolType.AP_Bellasun; break;
+                    case E_ModelType.AP_LeBancBigFoot: poolTypeToReturn = E_PoolType.AP_Lebanc_Big; break;
+                    case E_ModelType.AP_LeBancSmallFoot: poolTypeToReturn = E_PoolType.AP_Lebanc_Small; break;
+                    case E_ModelType.AP_Rousillon: poolTypeToReturn = E_PoolType.AP_Rousillon; break;
+                }
+            }
+            else if (_CurrentCompanyRunning == E_CompanyType.BACPoolSystems)
+            {
+                switch (GetFirstModelFromCurrentProduct(GetFirstProductFromCurrentCompany(_CurrentProductCatalog._CompanysArray[1]))._ModelType)
+                {
+                    case E_ModelType.BAC_FabricCover: poolTypeToReturn = E_PoolType.BAC_FabricCover; break;
+                   
+                }
+            }
+            else
+            {
+                poolTypeToReturn = E_PoolType.None;
+            }
+        }
 
+        return poolTypeToReturn;
+    }
+ 
     public St_Company GetFirstCompanyFromCatalog(CovARCatalogScripteableObj currentProductCatalog)
     {
         if (currentProductCatalog == null || currentProductCatalog._CompanysArray == null || currentProductCatalog._CompanysArray.Length == 0)

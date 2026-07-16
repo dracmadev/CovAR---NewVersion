@@ -117,7 +117,6 @@ public class CatalogManager : MonoBehaviour
             case E_ProductType.SubmergedRollerCover: _HUDManagerScript.TravelToPanel(_SubmergedRollerManipulatePanelName); break;
             case E_ProductType.BencheAndCladdings: _HUDManagerScript.TravelToPanel(_BenchRollerManipulatePanelName); break;
             case E_ProductType.FabricCover: _HUDManagerScript.TravelToPanel(_FabricCoverManipulatePanelName); break;
-            
 
         }
     }

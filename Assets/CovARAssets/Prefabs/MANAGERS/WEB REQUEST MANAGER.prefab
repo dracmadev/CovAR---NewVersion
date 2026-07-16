@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8031507638861356830}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -118.019165, y: -426.40808, z: -3.0799942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46,14 +46,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bIsOnARScene: 0
   _WebRequestLinkStruct:
-    _LoginLinkURL_Astralpool: https://arpoolfluidra.com/Volet/Login.php
-    _SetAndSendNewPasswordURL_Astralpool: 
-    _SetPasswordManuallyURL_Astralpool: 
-    _DeleteUserURL_Astralpool: 
-    _LoginLinkURL_BacPoolSystem: 
-    _SetAndSendNewPasswordURL_BacPoolSystem: 
-    _SetPasswordManuallyURL_BacPoolSystem: 
-    _DeleteUserURL_BacPoolSystem: 
-    _SetUserCompanyURL: 
-    _CreateUserURL: 
-    _SaveOrderDataURL: 
+    _LoginLinkURL_Astralpool: https://arpoolfluidra.com/Volet/Astralpool/LoginAstralpool.php
+    _CreateUserURL_Astralpool: https://arpoolfluidra.com/Volet/Astralpool/CreateUserAstralpool.php
+    _SetAndSendNewPasswordURL_Astralpool: https://arpoolfluidra.com/Volet/Astralpool/SetAndSendPasswordAstralpool.php
+    _SetPasswordManuallyURL_Astralpool: https://arpoolfluidra.com/Volet/Astralpool/SetPasswordAstralpool.php
+    _DeleteUserURL_Astralpool: https://arpoolfluidra.com/Volet/Astralpool/DeleteUserAstralpool.php
+    _LoginLinkURL_BacPoolSystem: https://arpoolfluidra.com/Volet/BACPoolSystem/LoginBacPoolSystem.php
+    _CreateUserURL_BacPoolSystem: https://arpoolfluidra.com/Volet/BACPoolSystem/CreateUserBacPoolSystem.php
+    _SetAndSendNewPasswordURL_BacPoolSystem: https://arpoolfluidra.com/Volet/BACPoolSystem/SetAndSendPasswordBacPoolSystem.php
+    _SetPasswordManuallyURL_BacPoolSystem: https://arpoolfluidra.com/Volet/BACPoolSystem/SetPasswordBacPoolSystem.php
+    _DeleteUserURL_BacPoolSystem: https://arpoolfluidra.com/Volet/BACPoolSystem/DeleteUserBacPoolSystem.php
+    _GetUserCompanyURL: https://arpoolfluidra.com/Volet/GetCompanyByLeads.php
+    _GetUserIDURL_Astralpool: 
+    _SaveOrderDataURL_Astralpool: 
+    _SaveProductDataURL_Astralpool: 
+    _GetUserIDURL_BacPoolSystem: 
+    _SaveOrderDataURL_BacPoolSystem: 
+    _SaveProductDataURL_BacPoolSystem: 
