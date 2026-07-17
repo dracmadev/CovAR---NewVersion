@@ -8,10 +8,10 @@ using UnityEngine.UI;
 [System.Serializable]
 public class St_OrderDataStruct
 {
-    [Header("MAIN MENU LINKS:")]
-    public string _UserID;
-    public string _StockID;
-    public string _ProductID;
+    [Header("Order Data:")]
+    public int _UserID;
+    public int _StockID;
+    public int  _ProductID;
     public string _CustomerName;
     public string _CustomerEmail;
     public string _PostCode;

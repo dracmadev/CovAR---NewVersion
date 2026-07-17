@@ -33,6 +33,7 @@ public class APBasicInfoBlock : MonoBehaviour
 
    
     ARObjectManager _ARObjectManager;
+    private WebRequestManager _WebRequestManager;
 
     /////////////////////////////////////////////////////////////////// DEFAULT FUNCTIONS //////////////////////////////////////////////////////////////////////////
     void Start()
@@ -53,6 +54,11 @@ public class APBasicInfoBlock : MonoBehaviour
     {
         _ARObjectManager = objManager;
 
+        if (GameObject.FindGameObjectWithTag("WebRequestManager"))
+        {
+            _WebRequestManager = GameObject.FindGameObjectWithTag("WebRequestManager").GetComponent<WebRequestManager>();
+        }
+
         InitInfo();
     }
 
@@ -66,10 +72,14 @@ public class APBasicInfoBlock : MonoBehaviour
         _CurrentBlueprintModelImage.sprite = _ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage;
         _CurrentModelColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialKey);
 
+        _WebRequestManager.SetModelBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialKey));
+
         //CURRENT LAMAS (Name, image)
         _CurrentLamasText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelKey);
         _CurrentLamasImage.sprite = _ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialSprite;
         _CurrentLamasColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey);
+
+        _WebRequestManager.SetLamasBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey));
 
         //TOP CLADDING
         //Debug.Log("TOP CLADDING MATERIAL: " + _ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialType);
@@ -77,10 +87,12 @@ public class APBasicInfoBlock : MonoBehaviour
         {
             _CanvasGroupTopCladdingBlock.alpha = 1f;
             _CurrentTopCladdingColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialKey);
+            _WebRequestManager.SetTopCladdingColor(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialKey));
         }
         else
         {
             _CanvasGroupTopCladdingBlock.alpha = 0f;
+            _WebRequestManager.SetTopCladdingColor("None");
         }
 
         //SIDES CLADDING
@@ -88,16 +100,19 @@ public class APBasicInfoBlock : MonoBehaviour
         {
             _CanvasGroupSidesCladdingBlock.alpha = 1f;
             _CurrentSidesCladdingColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentSidesCladdingMaterial._MaterialKey);
+            _WebRequestManager.SetSidesCladdingColor(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentSidesCladdingMaterial._MaterialKey));
         }
         else
         {
             _CanvasGroupSidesCladdingBlock.alpha = 0f;
+            _WebRequestManager.SetSidesCladdingColor("None");
         }
 
         //DIMENSIONS
         _CurrentModelLenghtInputText.text = _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght.ToString();
         _CurrentLamasLenghtInputText.text = _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght.ToString();
 
+        _WebRequestManager.SetDimensions(_ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght.ToString() + " x " + _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght.ToString());
       
         InitDimensionsInputTextBehaviour();
 
@@ -189,6 +204,11 @@ public class APBasicInfoBlock : MonoBehaviour
             inputField.text = "";
             inputField.ActivateInputField();
         });
+    }
+
+    public void OnUpdateDimensions()
+    {
+        _WebRequestManager.SetDimensions(_CurrentModelLenghtInputText.text.ToString() + " x " + _CurrentLamasLenghtInputText.text.ToString());
     }
 
 

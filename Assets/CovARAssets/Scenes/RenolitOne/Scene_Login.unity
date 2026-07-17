@@ -13312,58 +13312,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
         type: 3}
-      propertyPath: _WebRequestLinkStruct._GetUserCompanyURL
-      value: https://arpoolfluidra.com/Volet/GetCompanyByLeads.php
-      objectReference: {fileID: 0}
-    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
-        type: 3}
-      propertyPath: _WebRequestLinkStruct._LoginLinkURL_Astralpool
-      value: https://arpoolfluidra.com/Volet/Astralpool/LoginAstralpool.php
-      objectReference: {fileID: 0}
-    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
-        type: 3}
-      propertyPath: _WebRequestLinkStruct._CreateUserURL_Astralpool
-      value: https://arpoolfluidra.com/Volet/Astralpool/CreateUserAstralpool.php
-      objectReference: {fileID: 0}
-    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
-        type: 3}
-      propertyPath: _WebRequestLinkStruct._DeleteUserURL_Astralpool
-      value: https://arpoolfluidra.com/Volet/Astralpool/DeleteUserAstralpool.php
-      objectReference: {fileID: 0}
-    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
-        type: 3}
-      propertyPath: _WebRequestLinkStruct._LoginLinkURL_BacPoolSystem
-      value: https://arpoolfluidra.com/Volet/BACPoolSystem/LoginBacPoolSystem.php
-      objectReference: {fileID: 0}
-    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
-        type: 3}
-      propertyPath: _WebRequestLinkStruct._CreateUserURL_BacPoolSystem
-      value: https://arpoolfluidra.com/Volet/BACPoolSystem/CreateUserBacPoolSystem.php
-      objectReference: {fileID: 0}
-    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
-        type: 3}
-      propertyPath: _WebRequestLinkStruct._DeleteUserURL_BacPoolSystem
-      value: https://arpoolfluidra.com/Volet/BACPoolSystem/DeleteUserBacPoolSystem.php
-      objectReference: {fileID: 0}
-    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
-        type: 3}
-      propertyPath: _WebRequestLinkStruct._SetPasswordManuallyURL_Astralpool
-      value: https://arpoolfluidra.com/Volet/Astralpool/SetPasswordAstralpool.php
-      objectReference: {fileID: 0}
-    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
-        type: 3}
-      propertyPath: _WebRequestLinkStruct._SetAndSendNewPasswordURL_Astralpool
-      value: https://arpoolfluidra.com/Volet/Astralpool/SetAndSendPasswordAstralpool.php
-      objectReference: {fileID: 0}
-    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
-        type: 3}
-      propertyPath: _WebRequestLinkStruct._SetPasswordManuallyURL_BacPoolSystem
-      value: https://arpoolfluidra.com/Volet/BACPoolSystem/SetPasswordBacPoolSystem.php
-      objectReference: {fileID: 0}
-    - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
-        type: 3}
-      propertyPath: _WebRequestLinkStruct._SetAndSendNewPasswordURL_BacPoolSystem
-      value: https://arpoolfluidra.com/Volet/BACPoolSystem/SetAndSendPasswordBacPoolSystem.php
+      propertyPath: _WebRequestLinkStruct._GetUserIDURL_Astralpool
+      value: https://arpoolfluidra.com/Volet/Astralpool/GetUserIDAstralpool.php
       objectReference: {fileID: 0}
     - target: {fileID: 8031507638861356830, guid: e31a8feccfb5af743990e79c842d6ec4,
         type: 3}

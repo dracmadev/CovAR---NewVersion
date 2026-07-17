@@ -16,7 +16,7 @@ public class APBlueprintManager : MonoBehaviour
 
     [Header("Order Data:")]
     [SerializeField] private St_OrderData _OrderData;
-
+    private WebRequestManager _WebRequestManager;
     string LastPanelBeforeBlueprintPopUp;
 
     void Start()
@@ -47,9 +47,14 @@ public class APBlueprintManager : MonoBehaviour
         {
             _GeolocalizationManager = GameObject.FindGameObjectWithTag("GeolocalizationManager").GetComponent<GeolocalizationManager>();
         }
-        
+        if (GameObject.FindGameObjectWithTag("WebRequestManager"))
+        {
+            _WebRequestManager = GameObject.FindGameObjectWithTag("WebRequestManager").GetComponent<WebRequestManager>();
+        }
+
         _OrderData._CurrentDate = System.DateTime.Now.ToString("dd/MM/yyyy");
-        _OrderData._CurrentLocation = _GeolocalizationManager.GetGeolocText();
+        _OrderData._Country = _GeolocalizationManager.GetCountry();
+        _OrderData._PostCode = _GeolocalizationManager.GetPostCode();
 
 
         InitBlocks();
@@ -68,7 +73,9 @@ public class APBlueprintManager : MonoBehaviour
 
         if (_APTopInformationBlock != null)
         {
-            _APTopInformationBlock.InitTopInformationBlock(_OrderData._CustomerName, _OrderData._CustomerMail, _OrderData._CurrentDate, _OrderData._CurrentLocation);
+            string location = _GeolocalizationManager.GetGeolocText();
+
+            _APTopInformationBlock.InitTopInformationBlock(_OrderData, location);
         }
 
 
@@ -119,6 +126,24 @@ public class APBlueprintManager : MonoBehaviour
         }
     }
 
+
+    public void OnClickDownloadAndSaveBlueprit()
+    {
+        if(_APBasicInfoBlock != null)
+        {
+            _APBasicInfoBlock.OnUpdateDimensions();
+        }
+
+        if(_APRelatedProductsBlock != null)
+        {
+            _APRelatedProductsBlock.OnUpdateRelatedProductsOnAstralpoolData();
+        }
+
+        if(_WebRequestManager != null)
+        {
+            _WebRequestManager.OnSaveProjectAndOrderDataFromAstralpool();
+        }
+    }
   
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

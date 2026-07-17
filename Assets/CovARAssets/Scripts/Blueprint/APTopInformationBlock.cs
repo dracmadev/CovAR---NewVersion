@@ -12,6 +12,9 @@ public class APTopInformationBlock : MonoBehaviour
     [SerializeField] private TMP_Text _CurrentOrderDate;
     [SerializeField] private TMP_Text _CurrentOrderLocation;
 
+    private WebRequestManager _WebRequestManager;
+
+
     /////////////////////////////////////////////////////////////////// DEFAULT FUNCTIONS //////////////////////////////////////////////////////////////////////////
     void Start()
     {
@@ -27,13 +30,20 @@ public class APTopInformationBlock : MonoBehaviour
 
     //////////////////////////////////////////////////////////////////////////// INIT ///////////////////////////////////////////////////////////////////////////
 
-    public void InitTopInformationBlock(string customerName, string customerEmail, string orderDate, string orderLocation)
+    public void InitTopInformationBlock(St_OrderData _OrderData, string orderLocation)
     {
-        _CurrentCustomerNameText.text = customerName;
-        _CurrentCustomerEmailText.text = customerEmail;
-        _CurrentOrderDate.text = orderDate;
+        if (GameObject.FindGameObjectWithTag("WebRequestManager"))
+        {
+            _WebRequestManager = GameObject.FindGameObjectWithTag("WebRequestManager").GetComponent<WebRequestManager>();
+        }
+
+        _CurrentCustomerNameText.text = _OrderData._CustomerName;
+        _CurrentCustomerEmailText.text = _OrderData._CustomerMail;
+        _CurrentOrderDate.text = _OrderData._CurrentDate;
         _CurrentOrderLocation.text = orderLocation;
-     
+
+        _WebRequestManager.SetBasicOrderData(_OrderData);
+
     }
 
 

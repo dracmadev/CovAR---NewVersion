@@ -437,7 +437,7 @@ public class ARObjectScript : MonoBehaviour
 
             // Fórmula: a 0.5 dona 0 | a 0 dona 180 | a 1 dona -180
             float _YValueRot = (0.5f - sliderValue) * 360f;
-            Debug.Log("RotationValue: "+ _YValueRot);
+           
             this.transform.localRotation = Quaternion.Euler(this.transform.localEulerAngles.x, _YValueRot, this.transform.localEulerAngles.z);
         }
         else

@@ -57,9 +57,35 @@ MonoBehaviour:
     _SetPasswordManuallyURL_BacPoolSystem: https://arpoolfluidra.com/Volet/BACPoolSystem/SetPasswordBacPoolSystem.php
     _DeleteUserURL_BacPoolSystem: https://arpoolfluidra.com/Volet/BACPoolSystem/DeleteUserBacPoolSystem.php
     _GetUserCompanyURL: https://arpoolfluidra.com/Volet/GetCompanyByLeads.php
-    _GetUserIDURL_Astralpool: 
+    _GetUserIDURL_Astralpool: https://arpoolfluidra.com/Volet/Astralpool/GetUserIDAstralpool.php
     _SaveOrderDataURL_Astralpool: 
-    _SaveProductDataURL_Astralpool: 
+    _SaveProductDataURL_Astralpool: https://arpoolfluidra.com/Volet/Astralpool/SaveProductAstralpool.php
     _GetUserIDURL_BacPoolSystem: 
     _SaveOrderDataURL_BacPoolSystem: 
     _SaveProductDataURL_BacPoolSystem: 
+  _OrderData:
+    _CustomerName: 
+    _CustomerMail: 
+    _CurrentDate: 
+    _Country: 
+    _PostCode: 
+    _UserID: 0
+    _ProductID: 0
+    _StockID: 0
+  _AstralpoolObjectData:
+    _ModelName: 
+    _ModelColor: 
+    _LamasMaterial: 
+    _LamasColor: 
+    _TopCladdingColor: 
+    _SidesCladdingColor: 
+    _Dimensions: 
+    _LedLights: 
+    _ElectrosisContact: 
+    _CoverConnect: 
+    _PoolMaterial: 
+    _SecuritySystem: 
+    _SubmergedModel: 
+    _MecanicsType: 
+    _BeamType: 
+    _CoverType: 

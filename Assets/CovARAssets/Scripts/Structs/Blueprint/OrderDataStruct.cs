@@ -11,7 +11,8 @@ public class St_OrderData
     public string _CustomerName;
     public string _CustomerMail;
     public string _CurrentDate;
-    public string _CurrentLocation;
+    public string _Country;
+    public string _PostCode;
     public int _UserID;
     public int _ProductID;
     public int _StockID;

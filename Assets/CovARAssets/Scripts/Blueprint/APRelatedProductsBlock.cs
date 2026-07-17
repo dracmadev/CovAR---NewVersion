@@ -49,6 +49,10 @@ public class APRelatedProductsBlock : MonoBehaviour
 
     private Dictionary<E_APRelatedproducts, CanvasGroup> _canvasGroupMap;
 
+    private WebRequestManager _WebRequestManager;
+
+
+
     /////////////////////////////////////////////////////////////////// DEFAULT FUNCTIONS //////////////////////////////////////////////////////////////////////////
 
     void Start()
@@ -70,6 +74,12 @@ public class APRelatedProductsBlock : MonoBehaviour
     public void InitRelatedProduct(ARObjectManager objManager)
     {
         _ARObjectManager = objManager;
+
+        if (GameObject.FindGameObjectWithTag("WebRequestManager"))
+        {
+            _WebRequestManager = GameObject.FindGameObjectWithTag("WebRequestManager").GetComponent<WebRequestManager>();
+        }
+
 
         InitDictionaty();
         ChooseWichRelatedProductsShow();
@@ -193,6 +203,9 @@ public class APRelatedProductsBlock : MonoBehaviour
         cg.interactable = isActive;
         cg.blocksRaycasts = isActive;
     }
+
+
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////////////////////// BEHAVIOUR /////////////////////////////////////////////////////////////////////////
@@ -259,6 +272,103 @@ public class APRelatedProductsBlock : MonoBehaviour
 
     }
 
+
+    public void OnUpdateRelatedProductsOnAstralpoolData()
+    {
+        if(_WebRequestManager != null)
+        {
+            if(_CGLedLightBlock.alpha == 1)
+            {
+                _WebRequestManager.SetLedLights(_LedLightCheckMark.isOn.ToString());
+            }
+            else
+            {
+                _WebRequestManager.SetLedLights("None");
+            }
+
+            if (_CGElectrolisisBlock.alpha == 1)
+            {
+                _WebRequestManager.SetElectrosisContact(_ElectrolisisCheckMark.isOn.ToString());
+            }
+            else
+            {
+                _WebRequestManager.SetElectrosisContact("None");
+            }
+
+            if (_CGCoverConnectBlock.alpha == 1)
+            {
+                if(_ARObjectManager.GetCurrentPoolTypeData() != E_PoolType.AP_Rousillon)
+                {
+                    _WebRequestManager.SetCoverConnect(_CoverConnectDropdown_GroundRoller.options[_CoverConnectDropdown_GroundRoller.value].text);
+                }
+                else
+                {
+                    _WebRequestManager.SetCoverConnect(_CoverConnectDropdown_Submerged.options[_CoverConnectDropdown_Submerged.value].text);
+                }
+                   
+            }
+            else
+            {
+                _WebRequestManager.SetElectrosisContact("None");
+            }
+
+            if (_CGPoolMaterialBlock.alpha == 1)
+            {
+                _WebRequestManager.SetPoolMaterial(_PoolMaterialDropdown.options[_PoolMaterialDropdown.value].text);
+            }
+            else
+            {
+                _WebRequestManager.SetPoolMaterial("None");
+            }
+
+            if (_CGSecuritySystemBlock.alpha == 1)
+            {
+                _WebRequestManager.SetSecuritySystem(_SecuritySystemText.GetLocalizedText());
+            }
+            else
+            {
+                _WebRequestManager.SetSecuritySystem("None");
+            }
+
+            if (_CGSubmergedModelBlock.alpha == 1)
+            {
+                _WebRequestManager.SetSubmergedModel(_SubmergedModelDropdown.options[_SubmergedModelDropdown.value].text);
+            }
+            else
+            {
+                _WebRequestManager.SetSubmergedModel("None");
+            }
+
+
+            if (_CGMecanicsBlock.alpha == 1)
+            {
+                _WebRequestManager.SetMecanicsType(_MecanicsDropdown.options[_MecanicsDropdown.value].text);
+            }
+            else
+            {
+                _WebRequestManager.SetMecanicsType("None");
+            }
+
+            if (_CGBeamBlock.alpha == 1)
+            {
+                _WebRequestManager.SetBeamType(_BeamDropdown.options[_BeamDropdown.value].text);
+            }
+            else
+            {
+                _WebRequestManager.SetBeamType("None");
+            }
+
+            if (_CGConnectBlock.alpha == 1)
+            {
+                _WebRequestManager.SetCoverType(_CoverDropdown.options[_CoverDropdown.value].text);
+            }
+            else
+            {
+                _WebRequestManager.SetCoverType("None");
+            }
+
+        }
+    }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

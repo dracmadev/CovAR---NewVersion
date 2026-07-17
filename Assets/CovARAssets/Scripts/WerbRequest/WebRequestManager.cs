@@ -1,6 +1,8 @@
 using Assets.SimpleLocalization.Scripts;
 using System.Collections;
+using System.Drawing;
 using System.Text;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -14,7 +16,12 @@ public class WebRequestManager : MonoBehaviour
     [Header("WEB REQUEST LINKS")]
     [SerializeField] private St_WebRequestLinkStruct _WebRequestLinkStruct;
     [Header("Current company")]
-    [SerializeField] static private E_CompanyType _CurrentAppCompany = E_CompanyType.BACPoolSystems;
+    [SerializeField] static private E_CompanyType _CurrentAppCompany = E_CompanyType.Astralpool;
+    [Header("Order Data:")]
+    [SerializeField] private St_OrderData _OrderData;
+    [Header("ASTRALPOOL object data:")]
+    [SerializeField] private St_AstralpoolProductData _AstralpoolObjectData;
+
 
     HUDManagerScript _HUDManagerScript;
     ARObjectManager _ARObjectManager;
@@ -56,6 +63,93 @@ public class WebRequestManager : MonoBehaviour
         return _CurrentAppCompany;
     }
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    ////////////////////////////////////////////////////////// SETTERS //////////////////////////////////////////////////////////////////////
+
+    //ORDER SETTERS
+    public void SetUserID(int id)
+    {
+        _OrderData._UserID = id;
+    }
+    public void SetStockID(int id)
+    {
+        _OrderData._StockID = id;
+    }
+    public void SetProductID(int id)
+    {
+        _OrderData._ProductID = id;
+    }
+    public void SetBasicOrderData(St_OrderData orderData)
+    {
+        _OrderData._CustomerName = orderData._CustomerName;
+        _OrderData._CustomerMail = orderData._CustomerMail;
+        _OrderData._PostCode = orderData._PostCode;
+        _OrderData._Country = orderData._Country;
+        _OrderData._CurrentDate = orderData._CurrentDate;
+    }
+
+    public void SetModelBasicInfo(string modelName, string modelColor)
+    {
+        _AstralpoolObjectData._ModelName = modelName;
+        _AstralpoolObjectData._ModelColor = modelColor;
+    }
+   
+    public void SetLamasBasicInfo(string lamasMat, string lamasColor)
+    {
+        _AstralpoolObjectData._LamasMaterial = lamasMat;
+        _AstralpoolObjectData._LamasColor = lamasColor;
+    }
+    public void SetTopCladdingColor(string topCladdingColor)
+    {
+        _AstralpoolObjectData._TopCladdingColor = topCladdingColor;
+    }
+    public void SetSidesCladdingColor(string sides)
+    {
+        _AstralpoolObjectData._SidesCladdingColor = sides;
+    }
+    public void SetDimensions(string dimensions)
+    {
+        _AstralpoolObjectData._Dimensions = dimensions;
+    }
+    public void SetLedLights(string ledLights)
+    {
+        _AstralpoolObjectData._LedLights = ledLights;
+    }
+    public void SetElectrosisContact(string electrosisContact)
+    {
+        _AstralpoolObjectData._ElectrosisContact = electrosisContact;
+    }
+    public void SetCoverConnect(string coverConnect)
+    {
+        _AstralpoolObjectData._CoverConnect = coverConnect;
+    }
+    public void SetPoolMaterial(string poolMaterial)
+    {
+        _AstralpoolObjectData._PoolMaterial = poolMaterial;
+    }
+    public void SetSecuritySystem(string securitySystem)
+    {
+        _AstralpoolObjectData._SecuritySystem = securitySystem;
+    }
+    public void SetSubmergedModel(string submergedModel)
+    {
+        _AstralpoolObjectData._SubmergedModel = submergedModel;
+    }
+    public void SetMecanicsType(string mecanicsType)
+    {
+        _AstralpoolObjectData._MecanicsType = mecanicsType;
+    }
+    public void SetBeamType(string beamType)
+    {
+        _AstralpoolObjectData._BeamType = beamType;
+    }
+    public void SetCoverType(string coverType)
+    {
+        _AstralpoolObjectData._CoverType = coverType;
+    }
+    
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////////// LOGIN ////////////////////////////////////////////////////////////////////
@@ -746,4 +840,125 @@ public class WebRequestManager : MonoBehaviour
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////// GET USER ID ///////////////////////////////////////////////////////////////////////////////////
+
+
+    public void OnSaveProjectAndOrderDataFromAstralpool()
+    {
+        StartCoroutine(OnSaveProjectAndOrderDataFromAstralpoolCoroutine(PlayerPrefs.GetString("UserEmail")));
+    }
+
+    IEnumerator OnSaveProjectAndOrderDataFromAstralpoolCoroutine(string email)
+    {
+        if(_CurrentAppCompany == E_CompanyType.Astralpool)
+        {
+            StartCoroutine(GetUserIDAstralpool(email));
+
+            switch(_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType)
+            {
+                case E_ProductType.GroundRollerCover: _OrderData._StockID = 1; break;
+                case E_ProductType.SubmergedRollerCover: _OrderData._StockID = 2; break;
+                case E_ProductType.BencheAndCladdings: _OrderData._StockID = 3;  break;
+            }
+
+            StartCoroutine(SaveProductDataFromAstralpool());
+
+            yield return new WaitForSeconds(3f);
+        }
+        else if(_CurrentAppCompany == E_CompanyType.BACPoolSystems)
+        {
+
+        }
+          
+
+    }
+
+
+    public IEnumerator GetUserIDAstralpool(string email)
+    {
+        if (email != "")
+        {
+            WWWForm form = new WWWForm();
+            form.AddField("correo", email);
+
+            using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._GetUserIDURL_Astralpool, form))
+            {
+                yield return www.SendWebRequest();
+
+                // Netegem la resposta de PHP d'espais en blanc o salts de línia residuals
+                string responseText = www.downloadHandler.text.Trim();
+
+                if (www.result != UnityWebRequest.Result.Success)
+                {
+                    Debug.LogError($"[MISSATGE DE PHP] Result: {www.result} | Error: {www.error}");
+
+                }
+                else
+                {
+                    Debug.Log("[MISSATGE DE PHP] GetUserID: " + responseText);
+
+                    if (responseText != "0")
+                    {
+                        _OrderData._UserID = int.Parse(responseText);
+                    }
+                   
+                }
+            }
+        }
+    }
+
+    public IEnumerator SaveProductDataFromAstralpool()
+    {
+       
+        WWWForm form = new WWWForm();
+
+        form.AddField("_StokID", _OrderData._StockID);
+        form.AddField("_ModelName", _AstralpoolObjectData._ModelName);
+        form.AddField("_ModelColor", _AstralpoolObjectData._ModelColor);
+        form.AddField("_LamasMaterial", _AstralpoolObjectData._LamasMaterial);
+        form.AddField("_LamasColor", _AstralpoolObjectData._LamasColor);
+        form.AddField("_TopCladdingColor", _AstralpoolObjectData._TopCladdingColor);
+        form.AddField("_SidesCladdingColor", _AstralpoolObjectData._SidesCladdingColor);
+        form.AddField("_Dimensions", _AstralpoolObjectData._Dimensions);
+        form.AddField("_LedLights", _AstralpoolObjectData._LedLights);
+        form.AddField("_ElectrosisContact", _AstralpoolObjectData._ElectrosisContact);
+        form.AddField("_CoverConnect", _AstralpoolObjectData._CoverConnect);
+        form.AddField("_PoolMaterial", _AstralpoolObjectData._PoolMaterial);
+        form.AddField("_SecuritySystem", _AstralpoolObjectData._SecuritySystem);
+        form.AddField("_SubmergedModel", _AstralpoolObjectData._SubmergedModel);
+        form.AddField("_MecanicsType", _AstralpoolObjectData._MecanicsType);
+        form.AddField("_BeamType", _AstralpoolObjectData._BeamType);
+        form.AddField("_CoverType", _AstralpoolObjectData._CoverType);
+
+        using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._SaveProductDataURL_Astralpool, form))
+        {
+            yield return www.SendWebRequest();
+
+            // Netegem la resposta de PHP d'espais en blanc o salts de línia residuals
+            string responseText = www.downloadHandler.text.Trim();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"[MISSATGE DE PHP] Result: {www.result} | Error: {www.error}");
+
+            }
+            else
+            {
+                Debug.Log("[MISSATGE DE PHP] SaveProductData: " + responseText);
+
+                if (responseText != "0")
+                {
+                    _OrderData._ProductID = int.Parse(responseText);
+                }
+
+            }
+        }
+        
+    }
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 }

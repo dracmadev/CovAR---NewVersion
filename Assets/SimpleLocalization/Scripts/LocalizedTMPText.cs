@@ -23,6 +23,11 @@ namespace Assets.SimpleLocalization.Scripts
         {
             GetComponent<TMP_Text>().text = LocalizationManager.Localize(LocalizationKey);
         }
+
+        public string GetLocalizedText()
+        {
+            return GetComponent<TMP_Text>().text;
+        }
     }
 }
 
