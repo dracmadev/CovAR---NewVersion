@@ -58,7 +58,7 @@ public class MainMenuLoginBehaviour : MonoBehaviour
     {
         if (_WebRequestManager != null)
         {
-            _WebRequestManager.WR_Login(_EmailName.text, _PasswordName.text, _HelperText);
+            _WebRequestManager.WR_Login(_EmailName.text, _PasswordName.text, _HelperText, _LoginButton);
         }
 
     }

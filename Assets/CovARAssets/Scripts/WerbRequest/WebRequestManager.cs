@@ -154,12 +154,14 @@ public class WebRequestManager : MonoBehaviour
 
     ////////////////////////////////////////////////////////////// LOGIN ////////////////////////////////////////////////////////////////////
 
-    public void WR_Login(string email, string password, HelperTextBehaviourScript _HelperText)
+    public void WR_Login(string email, string password, HelperTextBehaviourScript _HelperText, Button loginButton)
     {
-        StartCoroutine(WR_LoginCoroutine(email, password, _HelperText));
+        loginButton.gameObject.SetActive(false);
+        _HelperText.ShowLoginCorrectMessage("LoginWait");
+        StartCoroutine(WR_LoginCoroutine(email, password, _HelperText, loginButton));
     }
 
-    IEnumerator WR_LoginAstralpoolCoroutine(string email, string password, HelperTextBehaviourScript _HelperText)
+    IEnumerator WR_LoginAstralpoolCoroutine(string email, string password, HelperTextBehaviourScript _HelperText, Button loginButton)
     {
         if (email != "" || password != "")
         {
@@ -175,6 +177,7 @@ public class WebRequestManager : MonoBehaviour
                 {
                     Debug.LogError(www.error);
                     _HelperText.ShowLoginIncorrectMessage("Error");
+                    loginButton.gameObject.SetActive(true);
                 }
                 else
                 {
@@ -188,21 +191,24 @@ public class WebRequestManager : MonoBehaviour
                     if (echo.StartsWith("loginCorrecto"))
                     {
                         _HUDManagerScript.OnClickMoveToScene("Scene_ARScene");
+                        loginButton.gameObject.SetActive(true);
                     }
                     else if (echo == "loginIncorrecto")
                     {
-                        _HelperText.ShowLoginIncorrectMessage("loginIncorrecto");   
+                        _HelperText.ShowLoginIncorrectMessage("loginIncorrecto");
+                        loginButton.gameObject.SetActive(true);
                     }
                     else
                     {
                         _HelperText.ShowLoginIncorrectMessage("Error");
+                        loginButton.gameObject.SetActive(true);
                     }
                 }
             }
         }
     }
 
-    IEnumerator WR_LoginBacPoolSystemCoroutine(string email, string password, HelperTextBehaviourScript _HelperText)
+    IEnumerator WR_LoginBacPoolSystemCoroutine(string email, string password, HelperTextBehaviourScript _HelperText, Button loginButton)
     {
         if (email != "" || password != "")
         {
@@ -218,6 +224,7 @@ public class WebRequestManager : MonoBehaviour
                 {
                     Debug.LogError(www.error);
                     _HelperText.ShowLoginIncorrectMessage("Error");
+                    loginButton.gameObject.SetActive(true);
                 }
                 else
                 {
@@ -231,21 +238,24 @@ public class WebRequestManager : MonoBehaviour
                     if (echo.StartsWith("loginCorrecto"))
                     {
                         _HUDManagerScript.OnClickMoveToScene("Scene_ARScene");
+                        loginButton.gameObject.SetActive(true);
                     }
                     else if (echo == "loginIncorrecto")
                     {
                         _HelperText.ShowLoginIncorrectMessage("loginIncorrecto");
+                        loginButton.gameObject.SetActive(true);
                     }
                     else
                     {
                         _HelperText.ShowLoginIncorrectMessage("Error");
+                        loginButton.gameObject.SetActive(true);
                     }
                 }
             }
         }
     }
 
-    IEnumerator WR_LoginCoroutine(string email, string password, HelperTextBehaviourScript _HelperText)
+    IEnumerator WR_LoginCoroutine(string email, string password, HelperTextBehaviourScript _HelperText, Button loginButton)
     {
         StartCoroutine(WR_GetCompanyByLeadsCoroutine(email, _HelperText));
         yield return new WaitForSeconds(2f);
@@ -253,12 +263,16 @@ public class WebRequestManager : MonoBehaviour
         if (_CurrentAppCompany == E_CompanyType.Astralpool)
         {
             Debug.Log("Login user from -> Astralpool");
-            StartCoroutine(WR_LoginAstralpoolCoroutine(email, password, _HelperText));
+            StartCoroutine(WR_LoginAstralpoolCoroutine(email, password, _HelperText, loginButton));
         }
         else if (_CurrentAppCompany == E_CompanyType.BACPoolSystems)
         {
             Debug.Log("Login user from -> BACPoolSystems");
-            StartCoroutine(WR_LoginBacPoolSystemCoroutine(email, password, _HelperText));
+            StartCoroutine(WR_LoginBacPoolSystemCoroutine(email, password, _HelperText, loginButton));
+        }
+        else
+        {
+            loginButton.gameObject.SetActive(true);
         }
     }
 

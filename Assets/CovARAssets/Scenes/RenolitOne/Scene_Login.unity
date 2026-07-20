@@ -1797,6 +1797,7 @@ GameObject:
   - component: {fileID: 423874188}
   - component: {fileID: 423874187}
   - component: {fileID: 423874189}
+  - component: {fileID: 423874190}
   m_Layer: 0
   m_Name: MovingFluidraLogo_RightUp
   m_TagString: FluidraLogoObj
@@ -1879,6 +1880,18 @@ MonoBehaviour:
   rotationDuration: 4.5
   scaleMultiplier: 1.03
   scaleDuration: 5.5
+--- !u!225 &423874190
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423874185}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!224 &444963291 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1162399778072298528, guid: 46e33ddf996ce104996ea08075f97d71,
@@ -11992,6 +12005,7 @@ GameObject:
   - component: {fileID: 1870527564}
   - component: {fileID: 1870527563}
   - component: {fileID: 1870527562}
+  - component: {fileID: 1870527565}
   m_Layer: 0
   m_Name: MovingFluidraLogo_LeftDown
   m_TagString: FluidraLogoObj
@@ -12074,6 +12088,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870527560}
   m_CullTransparentMesh: 1
+--- !u!225 &1870527565
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870527560}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1876910168
 GameObject:
   m_ObjectHideFlags: 0

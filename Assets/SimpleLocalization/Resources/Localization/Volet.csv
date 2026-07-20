@@ -554,7 +554,7 @@ La plateforme s'enroule entièrement dans un compartiment sous-marin recouvert d
 The platform rolls up completely inside an underwater compartment covered by a submerged conduit plate. This cover is suitable for pools under renovation or construction."
 Main.VoletTypeWindow.HelpPanel.RollersText,"Los rodillos para piscinas elevadas permiten una perfecta conservación de la cubierta.
 
-Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une protection optimale de la couverture.
+Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une parfaite préservation de la couverture.
 
 Ces enrouleurs facilitent la manipulation de la couverture d'été. Une fois rétractée, il est simple de la ranger, libérant ainsi l'espace de baignade. Ils sont équipés d'un système de freinage pour bloquer le cylindre et sont très résistants.","Rollers for above-ground pools ensure the cover is perfectly preserved.
 
@@ -617,7 +617,7 @@ Te iremos explicando paso a paso como funciona la aplicación.
 
 Pulsa OK para empezar el tutorial.","Bienvenue dans le tutoriel CovAR.
 
-Nous vous guiderons pas à pas à travers le fonctionnement de l'application.
+Nous allons vous guider pas à pas à travers le fonctionnement de l'application.
 
 Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 
@@ -750,7 +750,7 @@ FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE H
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -870,7 +870,7 @@ Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de co
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -943,7 +943,7 @@ Login.Panel.Settings.Menu.DeleteAcount,Eliminar cuenta,Supprimer le compte,Delet
 Login.Panel.Settings.Menu.DeleteAcountDescrip,Esta acción eliminará tu cuenta y borrará toda tu información. El acceso a la app quedará desactivado.,Cette action supprimera votre compte et effacera toutes vos informations. L'accès à l'application sera désactivé.,This action will delete your account and erase all your information. Access to the app will be disabled.
 Login.Panel.Settings.Menu.DeleteAcountButton,Eliminar,Éliminer,Eliminate
 Login.HelperText.UserDeletedCorrectly,El usuario se ha eliminado correctamente,L'utilisateur a été supprimé avec succès.,The user has been successfully deleted
-,,,
+Login.HelperText.LoginWait,Conectando con el servidor. Espere...,Connexion au serveur. Veuillez patienter...,Connecting to the server. Please wait...
 ,,,
 ,,,
 ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photo - CovAR,Photograph - CovAR
