@@ -304,8 +304,7 @@ public class APRelatedProductsBlock : MonoBehaviour
                 else
                 {
                     _WebRequestManager.SetCoverConnect(_CoverConnectDropdown_Submerged.options[_CoverConnectDropdown_Submerged.value].text);
-                }
-                   
+                }     
             }
             else
             {
@@ -351,7 +350,18 @@ public class APRelatedProductsBlock : MonoBehaviour
 
             if (_CGBeamBlock.alpha == 1)
             {
-                _WebRequestManager.SetBeamType(_BeamDropdown.options[_BeamDropdown.value].text);
+                if (_ARObjectManager.GetCurrentPoolTypeData() == E_PoolType.AP_Rousillon)
+                {
+                    if(_SubmergedModelDropdown.value == 0)
+                    {
+                        _WebRequestManager.SetBeamType(_BeamDropdown.options[_BeamDropdown.value].text);
+                    }
+                    else
+                    {
+                        _WebRequestManager.SetBeamType(_BeamText.GetComponent<TMP_Text>().text);
+                    }
+                }
+               
             }
             else
             {

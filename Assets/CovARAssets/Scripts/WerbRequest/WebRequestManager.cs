@@ -851,27 +851,25 @@ public class WebRequestManager : MonoBehaviour
 
     IEnumerator OnSaveProjectAndOrderDataFromAstralpoolCoroutine(string email)
     {
-        if(_CurrentAppCompany == E_CompanyType.Astralpool)
+        if (_CurrentAppCompany == E_CompanyType.Astralpool)
         {
-            StartCoroutine(GetUserIDAstralpool(email));
+            yield return StartCoroutine(GetUserIDAstralpool(email));
 
-            switch(_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType)
+            switch (_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType)
             {
                 case E_ProductType.GroundRollerCover: _OrderData._StockID = 1; break;
                 case E_ProductType.SubmergedRollerCover: _OrderData._StockID = 2; break;
-                case E_ProductType.BencheAndCladdings: _OrderData._StockID = 3;  break;
+                case E_ProductType.BencheAndCladdings: _OrderData._StockID = 3; break;
             }
 
-            StartCoroutine(SaveProductDataFromAstralpool());
+            yield return StartCoroutine(SaveProductDataFromAstralpool());
 
-            yield return new WaitForSeconds(3f);
+            yield return StartCoroutine(SaveOrderDataFromAstralpool());
         }
-        else if(_CurrentAppCompany == E_CompanyType.BACPoolSystems)
+        else if (_CurrentAppCompany == E_CompanyType.BACPoolSystems)
         {
-
+           
         }
-          
-
     }
 
 
@@ -892,7 +890,6 @@ public class WebRequestManager : MonoBehaviour
                 if (www.result != UnityWebRequest.Result.Success)
                 {
                     Debug.LogError($"[MISSATGE DE PHP] Result: {www.result} | Error: {www.error}");
-
                 }
                 else
                 {
@@ -957,6 +954,40 @@ public class WebRequestManager : MonoBehaviour
         
     }
 
+    public IEnumerator SaveOrderDataFromAstralpool()
+    {
+
+        WWWForm form = new WWWForm();
+
+        Debug.Log("[ORDER DATA] -> UserID: " + _OrderData._UserID);
+
+        form.AddField("agentID", _OrderData._UserID);
+        form.AddField("stockID", _OrderData._StockID);
+        form.AddField("productID", _OrderData._ProductID);
+        form.AddField("customerName", _OrderData._CustomerName);
+        form.AddField("customerEmail", _OrderData._CustomerMail);
+        form.AddField("postCode", _OrderData._PostCode);
+        form.AddField("country", _OrderData._Country);
+        form.AddField("orderDate", _OrderData._CurrentDate);
+
+        using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._SaveOrderDataURL_Astralpool, form))
+        {
+            yield return www.SendWebRequest();
+
+            // Netegem la resposta de PHP d'espais en blanc o salts de línia residuals
+            string responseText = www.downloadHandler.text.Trim();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"[MISSATGE DE PHP] Result: {www.result} | Error: {www.error}");
+            }
+            else
+            {
+                Debug.Log("[MISSATGE DE PHP] SaveOrderData: " + responseText);
+            }
+        }
+
+    }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

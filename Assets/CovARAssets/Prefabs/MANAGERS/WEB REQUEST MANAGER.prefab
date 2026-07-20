@@ -58,7 +58,7 @@ MonoBehaviour:
     _DeleteUserURL_BacPoolSystem: https://arpoolfluidra.com/Volet/BACPoolSystem/DeleteUserBacPoolSystem.php
     _GetUserCompanyURL: https://arpoolfluidra.com/Volet/GetCompanyByLeads.php
     _GetUserIDURL_Astralpool: https://arpoolfluidra.com/Volet/Astralpool/GetUserIDAstralpool.php
-    _SaveOrderDataURL_Astralpool: 
+    _SaveOrderDataURL_Astralpool: https://arpoolfluidra.com/Volet/Astralpool/SaveOrderAstralpool.php
     _SaveProductDataURL_Astralpool: https://arpoolfluidra.com/Volet/Astralpool/SaveProductAstralpool.php
     _GetUserIDURL_BacPoolSystem: 
     _SaveOrderDataURL_BacPoolSystem: 
