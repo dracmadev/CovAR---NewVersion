@@ -51,6 +51,8 @@ MonoBehaviour:
   _PoolType: 1
   _MaxARObjectLenghtDistance: 10
   _MaxLamasLenghtDistance: 15
+  _MaxARObjectLenghtDistanceWithPool: 2.3
+  _MaxLamasLenghtDistanceWithPool: 4.1
   _ARObjectState: 0
   _ARObjectRelatedProductsList:
   - _RelatedProductType: 1

@@ -404,6 +404,11 @@ public class ARObjectManager : MonoBehaviour
         return _CurrentPoolType;
     }
 
+    public bool GetPoolActiveState()
+    {
+        return bIsPoolActive;
+    }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////// SETTER  //////////////////////////////////////////////////////////////////
@@ -1091,7 +1096,6 @@ public class ARObjectManager : MonoBehaviour
 
     void DesactiveFeedbackDecal()
     {
-        //Debug.Log("Desactivant decals");
 
         GameObject[] decalsActius = GameObject.FindGameObjectsWithTag("MovmentDecal");
 
@@ -1140,10 +1144,12 @@ public class ARObjectManager : MonoBehaviour
     {
         if (bIsPoolActive)
         {
+            bIsPoolActive = false;
             DesactivePoolObj();
         }
         else
         {
+            bIsPoolActive = true;
             ActivePoolObj(_CurrentARObject, _PoolPrefab);
         }
     }
@@ -1156,10 +1162,42 @@ public class ARObjectManager : MonoBehaviour
             GameObject pool = Instantiate(objToInstaciate);
 
             pool.transform.SetParent(father.transform);
-            pool.transform.localPosition = new Vector3(0f, 0f, 0f);
+
+            switch(_CovARObjectData._CurrentModelModel._ModelType)
+            {
+                case E_ModelType.AP_Octeo: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.AP_Sveltea: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.AP_SvelteaManual: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.AP_Coverly: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.AP_Bellasun: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.AP_Rousillon: pool.transform.localPosition = new Vector3(0f, 0.035f, -0.56f); break;
+                case E_ModelType.AP_LeBancBigFoot: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.AP_LeBancSmallFoot: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+            }
+
             pool.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
 
-            bIsPoolActive = true;
+            ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
+
+            if(arScript != null)
+            {
+                arScript.InitSetLenghtState();
+                arScript.InitSetLamasLenghtState();
+
+                arScript.UpdateLenghtSlider();
+                arScript.UpdateLamasLenghtSlider();
+
+                if (_CovARObjectData._CurrentARObjectLenght > arScript.GetARObjectMAXLenghtWithPool())
+                {
+                    arScript.SetARObjectLenghtByNum(arScript.GetARObjectMAXLenghtWithPool());
+                }
+
+                if(_CovARObjectData._CurrentLamasLenght > arScript.GetARObjectMAXLamasLenghtWithPool())
+                {
+                    arScript.SetLamasLenghtByNum(arScript.GetARObjectMAXLamasLenghtWithPool());
+                }
+            }
+           
         }
     }
 
@@ -1172,7 +1210,16 @@ public class ARObjectManager : MonoBehaviour
             Destroy(decal);
         }
 
-        bIsPoolActive = false;
+        ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
+
+        if (arScript != null)
+        {
+            arScript.InitSetLenghtState();
+            arScript.InitSetLamasLenghtState();
+
+            arScript.UpdateLenghtSlider();
+            arScript.UpdateLamasLenghtSlider();
+        }
     }
 
 

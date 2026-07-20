@@ -15,6 +15,8 @@ public class ARObjectScript : MonoBehaviour
     [SerializeField] private E_PoolType _PoolType;
     [SerializeField] private float _MaxARObjectLenghtDistance = 10f;
     [SerializeField] private float _MaxLamasLenghtDistance = 10f;
+    [SerializeField] private float _MaxARObjectLenghtDistanceWithPool = 2.3f;
+    [SerializeField] private float _MaxLamasLenghtDistanceWithPool = 4.1f;
 
     [Header("Current ARObject state: (Exposed for debug)")]
     [SerializeField] private E_ARObjectStates _ARObjectState;
@@ -257,6 +259,14 @@ public class ARObjectScript : MonoBehaviour
     public St_APRelatedProduct[] GetARObjectRelatedProductsList()
     {
         return _ARObjectRelatedProductsList;
+    }
+    public float GetARObjectMAXLenghtWithPool()
+    {
+        return _MaxARObjectLenghtDistanceWithPool;
+    }
+    public float GetARObjectMAXLamasLenghtWithPool()
+    {
+        return _MaxLamasLenghtDistanceWithPool;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -551,7 +561,15 @@ public class ARObjectScript : MonoBehaviour
 
         if (_lenghtSliderRef != null)
         {
-            _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxARObjectLenghtDistance;
+            if(_ARObjectManager.GetPoolActiveState())
+            {
+                _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxARObjectLenghtDistanceWithPool;
+            }
+            else
+            {
+                _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxARObjectLenghtDistance;
+            }
+                
 
             _lenghtSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetARObjectLenght(); });
             _lenghtSliderRef.GetComponent<Slider>().onValueChanged.AddListener(delegate { SetARObjectLenght(); });
@@ -674,7 +692,7 @@ public class ARObjectScript : MonoBehaviour
         }
     }
 
-    void UpdateLenghtSlider()
+    public void UpdateLenghtSlider()
     {
         GameObject sliderObj = GetSliderFromSpecificSubPanel("SetARObjectLenghtSupPanel");
 
@@ -725,7 +743,16 @@ public class ARObjectScript : MonoBehaviour
         {
             var sliderData = _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
             sliderData.sliderMin = 1f;
-            sliderData.sliderMax = _MaxARObjectLenghtDistance;
+
+            if(_ARObjectManager.GetPoolActiveState())
+            {
+                sliderData.sliderMax = _MaxARObjectLenghtDistanceWithPool;
+            }
+            else
+            {
+                sliderData.sliderMax = _MaxARObjectLenghtDistance;
+            }
+
             sliderData.sliderResult = newLenght;
 
             Slider unitySlider = _lenghtSliderRef.GetComponent<UnityEngine.UI.Slider>();
@@ -781,13 +808,27 @@ public class ARObjectScript : MonoBehaviour
 
         if (_CustomSplineInstantiateScript != null)
         {
-            _CustomSplineInstantiateScript.SetupMaxLamasDistance(_MaxLamasLenghtDistance);
+            if(_ARObjectManager.GetPoolActiveState())
+            {
+                _CustomSplineInstantiateScript.SetupMaxLamasDistance(_MaxLamasLenghtDistanceWithPool);
+            }
+            else
+            {
+                _CustomSplineInstantiateScript.SetupMaxLamasDistance(_MaxLamasLenghtDistance);
+            }
         }
 
         if (_lamasLenghtSliderRef != null)
         {
-            _lamasLenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxLamasLenghtDistance;
-
+            if(_ARObjectManager.GetPoolActiveState())
+            {
+                _lamasLenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxLamasLenghtDistanceWithPool;
+            }
+            else
+            {
+                _lamasLenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxLamasLenghtDistance;
+            }
+                
             _lamasLenghtSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetLamasLenght(); });
             _lamasLenghtSliderRef.GetComponent<Slider>().onValueChanged.AddListener(delegate { SetLamasLenght(); });
 
@@ -878,7 +919,7 @@ public class ARObjectScript : MonoBehaviour
         }
     }
 
-    void UpdateLamasLenghtSlider()
+    public void UpdateLamasLenghtSlider()
     {
         GameObject sliderObj = GetSliderFromSpecificSubPanel("SetLamasLenghtSubPanel");
 
@@ -925,7 +966,15 @@ public class ARObjectScript : MonoBehaviour
         
         if(_CustomSplineInstantiateScript != null)
         {
-            _CustomSplineInstantiateScript.SetLamasLenghtByNum(newLenght, _MaxLamasLenghtDistance, _lamasLenghtSliderRef, _lamasFeedbackLenghtText);
+            if(_ARObjectManager.GetPoolActiveState())
+            {
+                _CustomSplineInstantiateScript.SetLamasLenghtByNum(newLenght, _MaxLamasLenghtDistanceWithPool, _lamasLenghtSliderRef, _lamasFeedbackLenghtText);
+            }
+            else
+            {
+                _CustomSplineInstantiateScript.SetLamasLenghtByNum(newLenght, _MaxLamasLenghtDistance, _lamasLenghtSliderRef, _lamasFeedbackLenghtText);
+            }
+                
         }
         
    }
