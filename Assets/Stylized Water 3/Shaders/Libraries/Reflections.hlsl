@@ -35,7 +35,12 @@ float4 _WaterSSRParams;
 //X: Enabled bool
 //Y: Accept skybox hits
 
+#if _SCREEN_SPACE_REFLECTION //Using native SSR
+#define ALLOW_SSR 0
+#else
 #define ALLOW_SSR _WaterSSRParams.x > 0.5
+#endif
+
 #define SSR_REFLECT_SKY _WaterSSRParams.y > 0.5
 
 float4 _WaterSSRSettings;
@@ -124,6 +129,11 @@ float3 SampleReflections(float3 reflectionVector, float smoothness, float4 scree
 
 	//Output separately, for underwater rendering
 	renderedReflections = 0;
+	
+	#if _SCREEN_SPACE_REFLECTION //Unity 6.6+
+	reflections = SampleScreenSpaceReflection(screenPos, positionWS, smoothness);
+	//return reflections;
+	#endif
 	
 	#if !_DISABLE_DEPTH_TEX
 	if(ssrEnabled && ALLOW_SSR)

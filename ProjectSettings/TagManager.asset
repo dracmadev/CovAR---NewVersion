@@ -15,6 +15,7 @@ TagManager:
   - FluidraLogoObj
   - GroundPlaneStage
   - WebRequestManager
+  - PoolObj
   layers:
   - Default
   - TransparentFX

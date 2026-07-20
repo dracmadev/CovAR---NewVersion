@@ -900,6 +900,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1580199538}
     m_Modifications:
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 535968442}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnFlipFlopCreatePool
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ARObjectManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3509115113201699791, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_Name
@@ -5424,6 +5459,8 @@ MonoBehaviour:
   _MovmentFeedbackGO: {fileID: 5518047774292776789, guid: d96ec8ee70ef4454b8b2dc4659131db5,
     type: 3}
   _RotationFeedbackGO: {fileID: 5518047774292776789, guid: 831b6d8b32089af49b64f6a7e3e9e538,
+    type: 3}
+  _PoolPrefab: {fileID: 522519068147965715, guid: f7167307eb4c5ba43b3ae0a01cc8de18,
     type: 3}
   _GroundRollerManipulatePanelName: AP_ManipulateGroundRollerPanel
   _SubmergedRollerManipulatePanelName: AP_ManipulateSubmergedRollerPanel

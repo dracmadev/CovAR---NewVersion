@@ -92,18 +92,35 @@ namespace StylizedWater3
                         }, MessageType.Warning);
                     }
                 }
+                
+                EditorGUILayout.Separator();
+                
                 var waterLevelSource = property.FindPropertyRelative("waterLevelSource");
                 EditorGUILayout.PropertyField(waterLevelSource);
-
+                
                 if (waterLevelSource.intValue == (int)HeightQuerySystem.Interface.WaterLevelSource.FixedValue)
                 {
-                    EditorGUI.indentLevel++;
                     EditorGUILayout.PropertyField(property.FindPropertyRelative("waterLevel"));
-                    EditorGUI.indentLevel--;
                 }
-                
-                EditorGUI.indentLevel--;
+                if (waterLevelSource.intValue == (int)HeightQuerySystem.Interface.WaterLevelSource.Transform)
+                {
+                    EditorGUILayout.PropertyField(property.FindPropertyRelative("waterLevelTransform"), new GUIContent("Transform", "The transform to use to calculate the water level"));
+                }
 
+                if (waterLevelSource.intValue == (int)HeightQuerySystem.Interface.WaterLevelSource.Ocean &&
+                    !OceanFollowBehaviour.Instance)
+                {
+                    EditorGUILayout.HelpBox("No ocean is currently present", MessageType.Warning);
+                }
+
+                if (waterLevelSource.intValue != (int)HeightQuerySystem.Interface.WaterLevelSource.FixedValue)
+                {
+                    HeightQuerySystem.Interface interfaceObj = property.boxedValue as HeightQuerySystem.Interface;
+                    EditorGUILayout.HelpBox($"Water level: {interfaceObj.GetWaterLevel()}", MessageType.None, false);
+                }
+
+                EditorGUI.indentLevel--;
+                
                 if (EditorGUI.EndChangeCheck())
                 {
                     waveProfileMismatch = false;
@@ -120,11 +137,9 @@ namespace StylizedWater3
             }
             else
             {
-                #if UNITY_WEBGL
-                UI.DrawNotification("This technique is not supported on the WebGL/WebGPU platform." +
+                UI.DrawNotification(HeightQuerySystem.IsSupported() == false,"This technique is not supported on the current platform." +
                                     "\n\n" +
-                                    "It does not support asynchronous compute shaders, which this functionality relies on.", MessageType.Error);
-                #endif
+                                    "Unity reports asynchronous compute shaders are not supported, which this functionality relies on.", MessageType.Error);
                 
                 UI.DrawRenderFeatureSetupError(ref renderFeatureSetup);
 
@@ -149,57 +164,5 @@ namespace StylizedWater3
                 }
             }
         }
-
-        /*
-        private PropertyField waterObjectField;
-        private PropertyField waveProfileField;
-        
-        public override VisualElement CreatePropertyGUI(SerializedProperty property)
-        {
-            // Create property container element.
-            var container = new VisualElement();
-
-            Label headerLabel = new Label("Height interface");
-            container.Add(headerLabel);
-
-            var methodProperty = property.FindPropertyRelative("method");
-            // Create property fields.
-            var methodField = new PropertyField(methodProperty);
-            methodField.RegisterValueChangeCallback(OnMethodChange);
-
-            waterObjectField = new PropertyField(property.FindPropertyRelative("waterObject"));
-            var autoFindProperty = property.FindPropertyRelative("autoFind");
-            var autoFind = new PropertyField(autoFindProperty, "Auto find");
-            
-            waveProfileField = new PropertyField(property.FindPropertyRelative("waveProfile"));
-            
-            autoFind.RegisterValueChangeCallback(OnAutoFindChange);
-            
-            // Add fields to the container.
-            container.Add(methodField);
-
-            container.Add(waterObjectField);
-            container.Add(autoFind);
-            
-            container.Add(waveProfileField);
-            container.Add(new PropertyField(property.FindPropertyRelative("waterLevelSource")));
-            container.Add(new PropertyField(property.FindPropertyRelative("waterLevel")));
-            
-            return container;
-        }
-
-        private void OnMethodChange(SerializedPropertyChangeEvent evt)
-        {
-            HeightQuerySystem.Interface.Method method = (HeightQuerySystem.Interface.Method)evt.changedProperty.intValue;
-
-            waterObjectField.visible = method == HeightQuerySystem.Interface.Method.CPU;
-            waveProfileField.visible = method == HeightQuerySystem.Interface.Method.CPU;
-        }
-
-        private void OnAutoFindChange(SerializedPropertyChangeEvent evt)
-        {
-            waterObjectField.SetEnabled(!evt.changedProperty.boolValue);
-        }
-        */
     }
 }

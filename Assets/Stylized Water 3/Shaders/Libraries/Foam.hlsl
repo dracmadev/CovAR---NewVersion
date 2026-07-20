@@ -9,6 +9,7 @@
 #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl" //SRGBToLinear
 #include "Common.hlsl" //PackedUV
+//#include "../Flowmaps/Flowmap.hlsl"
 
 TEXTURE2D(_FoamTex);
 SAMPLER(sampler_FoamTex);
@@ -26,6 +27,7 @@ float CalculateCrestFoam(float minHeight, float maxHeight, float waveHeight)
 {
 	return smoothstep(minHeight, maxHeight, waveHeight);
 }
+
 
 float2 SampleFoamLayer(TEXTURE2D_PARAM(tex, samplerName), float2 uv, float2 tiling, float2 time, float speed, float subTiling, float subSpeed)
 {
@@ -47,8 +49,8 @@ float2 SampleFoamLayer(TEXTURE2D_PARAM(tex, samplerName), float2 uv, float2 tili
 float2 SampleFoamTexture(TEXTURE2D_PARAM(tex, samplerName), float3 positionWS, float2 uv, float2 tiling, float subTiling, float2 time, float speed, float subSpeed, float slopeMask, float slopeSpeed, float slopeStretch,
 	bool slopeFoamOn, bool distanceFoamOn, float distanceStart, float distanceEnd, float distanceTiling)
 {
-	float2 foam = SampleFoamLayer(TEXTURE2D_ARGS(tex, samplerName), uv, tiling, time, speed, subTiling, subSpeed);
-
+	float2 foam = SampleFoamLayer(TEXTURE2D_ARGS(tex, samplerName), uv, tiling, time, speed, subTiling, subSpeed);;
+	
 	#if _SURFACE_FOAM_DUAL
 	UNITY_BRANCH
 	if(distanceFoamOn)

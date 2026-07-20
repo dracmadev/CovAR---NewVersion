@@ -13,6 +13,7 @@ ScriptedImporter:
     shaderName: Standard
     hidden: 0
     type: 0
+    forceSimpleShadingOnMobile: 1
     autoIntegration: 1
     fogIntegration: 1
     lightCookies: 0
@@ -75,6 +76,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 287769
   packageName: Stylized Water 3
-  packageVersion: 3.2.6
+  packageVersion: 3.2.8
   assetPath: Assets/Stylized Water 3/Shaders/StylizedWater3_Standard.watershader3
-  uploadId: 895866
+  uploadId: 938902

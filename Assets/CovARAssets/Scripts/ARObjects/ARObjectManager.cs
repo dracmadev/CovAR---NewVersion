@@ -42,6 +42,10 @@ public class ARObjectManager : MonoBehaviour
     private GameObject _instantiatedFeedback;
     [SerializeField] private GameObject _RotationFeedbackGO;
 
+    [Header("Pool prefab:")]
+    [SerializeField] private GameObject _PoolPrefab;
+    bool bIsPoolActive = false;
+
     [Header("Panel Names depending on Product:")]
     [SerializeField] private string _GroundRollerManipulatePanelName;
     [SerializeField] private string _SubmergedRollerManipulatePanelName;
@@ -1128,6 +1132,51 @@ public class ARObjectManager : MonoBehaviour
 
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+
+    ////////////////////////////////////////////////////////// POOL PREFAB //////////////////////////////////////////////////////////////////////
+    
+    public void OnFlipFlopCreatePool()
+    {
+        if (bIsPoolActive)
+        {
+            DesactivePoolObj();
+        }
+        else
+        {
+            ActivePoolObj(_CurrentARObject, _PoolPrefab);
+        }
+    }
+
+
+    void ActivePoolObj(GameObject father, GameObject objToInstaciate)
+    {
+        if (objToInstaciate != null || father != null)
+        {
+            GameObject pool = Instantiate(objToInstaciate);
+
+            pool.transform.SetParent(father.transform);
+            pool.transform.localPosition = new Vector3(0f, 0f, 0f);
+            pool.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+
+            bIsPoolActive = true;
+        }
+    }
+
+    void DesactivePoolObj()
+    {
+        GameObject[] activePools = GameObject.FindGameObjectsWithTag("PoolObj");
+
+        foreach (GameObject decal in activePools)
+        {
+            Destroy(decal);
+        }
+
+        bIsPoolActive = false;
+    }
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

@@ -1,3 +1,24 @@
+3.2.8
+Verified and extended support for Unity 6.5.
+
+Fixed:
+- Render feature not executing for the main camera in Unity 6.5+ (affects all extensions too)
+
+3.2.7 (June 2nd 2026)
+
+Added:
+- Shader inspector: Option to force the "Simple Shading" mode on mobile platforms (now enabled by default).
+- New waterfall foam texture.
+- Support for SC Post Effects (for Unity 6) fog, ahead of its release.
+
+Changed:
+- Height Interface now displays the water level value actively being used.
+
+Fixed:
+- Occlusion Culling having an incorrect effect on the Ocean prefab.
+- Incorrect warning about WebGL not supporting GPU Height Queries in Unity 6.1+
+- Sparkles also being visible on the underwater surface.
+
 3.2.6 (April 7th 2026)
 Verified compatibility with Unity 6.4.
 

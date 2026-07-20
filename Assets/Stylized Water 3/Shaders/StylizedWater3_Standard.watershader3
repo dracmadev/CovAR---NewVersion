@@ -276,6 +276,8 @@
             #define UNDERWATER_ENABLED 0
             #endif
 
+            %mobile_keyword_modifiers%
+
             #include_library "Libraries/URP.hlsl"
             //#include "Assets/Amazing Assets/Curved World/Shaders/Core/CurvedWorldTransform.cginc"
 
@@ -337,6 +339,9 @@
 	            #pragma multi_compile _ _CLUSTER_LIGHT_LOOP
                 #pragma multi_compile_fragment _ _REFLECTION_PROBE_ATLAS
             #endif
+            
+            //Unity 6.6+
+            //%multi_compile_screen_space_reflections%
 
             //URP 15+ (2023.1+)
             #pragma multi_compile _ EVALUATE_SH_MIXED EVALUATE_SH_VERTEX

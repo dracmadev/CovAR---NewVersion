@@ -197,10 +197,12 @@ namespace StylizedWater3
         partial void AddFlowMapPass(ScriptableRenderer renderer, ref RenderingData renderingData);
         partial void DisposeFlowMapPass();
 
-        private bool IsInvalidContext(CameraType cameraType, CameraRenderType cameraRenderType)
+        private bool IsInvalidContext(Camera camera, CameraRenderType cameraRenderType)
         {
+            CameraType cameraType = camera.cameraType;
+            
             //Skip for any special use camera's (except scene view camera)
-            if (cameraType != CameraType.SceneView && (cameraType == CameraType.Preview || hideFlags != HideFlags.None))
+            if (cameraType != CameraType.SceneView && (cameraType == CameraType.Preview || camera.hideFlags != HideFlags.None))
             {
                 return true;
             }
@@ -224,7 +226,7 @@ namespace StylizedWater3
         {
             var currentCam = renderingData.cameraData.camera;
             
-            if(IsInvalidContext(currentCam.cameraType, renderingData.cameraData.renderType)) return;
+            if(IsInvalidContext(currentCam, renderingData.cameraData.renderType)) return;
      
             constantsSetup.Setup(this);
             renderer.EnqueuePass(constantsSetup);

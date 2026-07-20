@@ -663,10 +663,11 @@ float4 ForwardPass(Varyings input, FRONT_FACE_TYPE_REAL vertexFace : FRONT_FACE_
 	#endif
 
 #if _NORMALMAP
-	if(_SparkleIntensity > 0)
+	half3 sparkles = 0;
+	if(_SparkleIntensity > 0 && water.vFace > 0)
 	{
 		//Can piggyback on the tangent normal
-		half3 sparkles = mainLight.color * saturate(step(_SparkleSize, (water.tangentNormal.y))) * _SparkleIntensity;
+		sparkles = mainLight.color * saturate(step(_SparkleSize, (water.tangentNormal.y))) * _SparkleIntensity;
 	
 		#if !_UNLIT
 		//Fade out the effect as the sun approaches the horizon

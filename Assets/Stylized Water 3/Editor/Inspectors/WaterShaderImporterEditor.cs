@@ -25,6 +25,7 @@ namespace StylizedWater3
         private SerializedProperty hidden;
         private SerializedProperty type;
 
+        private SerializedProperty forceSimpleShadingOnMobile;
         private SerializedProperty autoIntegration;
         private SerializedProperty fogIntegration;
 
@@ -67,6 +68,7 @@ namespace StylizedWater3
             hidden = settings.FindPropertyRelative("hidden");
             type = settings.FindPropertyRelative("type");
             
+            forceSimpleShadingOnMobile = settings.FindPropertyRelative("forceSimpleShadingOnMobile");
             lightCookies = settings.FindPropertyRelative("lightCookies");
             additionalLightCaustics = settings.FindPropertyRelative("additionalLightCaustics");
             additionalLightTranslucency = settings.FindPropertyRelative("additionalLightTranslucency");
@@ -161,6 +163,11 @@ namespace StylizedWater3
             EditorGUI.indentLevel--;
 
             EditorGUILayout.PropertyField(type);
+            
+            EditorGUILayout.Separator();
+            
+            EditorGUILayout.LabelField("Overrides", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(forceSimpleShadingOnMobile);
 
             if (type.intValue == (int)WaterShaderImporter.WaterShaderSettings.ShaderType.WaterSurface)
             {
@@ -353,12 +360,15 @@ namespace StylizedWater3
         {
             importer = (WaterShaderImporter)target;
 
-            string filePath = $"{Application.dataPath.Replace("Assets", string.Empty)}Temp/{importer.settings.shaderName}(Generated Code).shader";
-
+            string folder = $"{Application.dataPath.Replace("Assets", string.Empty)}Temp/";
+            if(Directory.Exists(folder) == false) Directory.CreateDirectory(folder);
+            
             string templatePath = importer.GetTemplatePath();
             string[] lines = File.ReadAllLines(templatePath);
             
             string code = TemplateParser.CreateShaderCode(importer.GetTemplatePath(), ref lines, importer, tessellation);
+            
+            string filePath = $"{folder}{importer.settings.shaderName}(Generated Code).shader";
             File.WriteAllText(filePath, code);
 
             if (!File.Exists(filePath))

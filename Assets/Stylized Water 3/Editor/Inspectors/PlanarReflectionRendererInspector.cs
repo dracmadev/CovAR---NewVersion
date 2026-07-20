@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.XR;
 
 namespace StylizedWater3
@@ -36,6 +37,7 @@ namespace StylizedWater3
 
         private Bounds curBounds;
         private bool waterLayerError;
+        private bool gpuOcclusionCulling;
 
         private bool previewReflection
         {
@@ -77,6 +79,7 @@ namespace StylizedWater3
             ValidateWaterObjectLayer();
 
             curBounds = renderer.CalculateBounds();
+            gpuOcclusionCulling = UniversalRenderPipeline.asset.gpuResidentDrawerEnableOcclusionCullingInCameras;
 
             RenderPipelineManager.endCameraRendering += OnEndCameraRendering;
         }
@@ -116,6 +119,8 @@ namespace StylizedWater3
             {
                 EditorGUILayout.HelpBox("Rendering is temporarily paused, while the editor finishes compiling shaders", MessageType.Info);
             }
+            
+            UI.DrawNotification(gpuOcclusionCulling, "GPU Occlusion Culling is enabled, this can cause some objects to disappear in the reflection.", MessageType.Warning);
             
             using (new EditorGUILayout.HorizontalScope())
             {

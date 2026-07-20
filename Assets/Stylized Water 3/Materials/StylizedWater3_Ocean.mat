@@ -32,6 +32,7 @@ Material:
   - _RECEIVEDYNAMICEFFECTSHEIGHT_ON
   - _RECEIVEDYNAMICEFFECTSNORMAL_ON
   - _RECEIVEDYNAMICEFFECTS_ON
+  - _SCREENSPACEREFLECTIONSENABLED_ON
   - _SHARP_INERSECTION
   - _SIMPLE_LIGHTING
   - _SURFACE_FOAM
@@ -263,7 +264,7 @@ Material:
     - _RimTiling: 0.025
     - _RiverModeOn: 0
     - _SHARP_INERSECTIONOn: 1
-    - _ScreenSpaceReflectionsEnabled: 0
+    - _ScreenSpaceReflectionsEnabled: 1
     - _ShadingMode: 1
     - _ShadowStrength: 1
     - _ShoreLineLength: 3.1

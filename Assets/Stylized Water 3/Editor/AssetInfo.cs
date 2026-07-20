@@ -19,7 +19,7 @@ using Object = UnityEngine.Object;
 
 namespace StylizedWater3
 {
-    public class AssetInfo
+    public static class AssetInfo
     {
         private const string THIS_FILE_GUID = "b15801d8ff7e9574288149dd4cebaa68";
         
@@ -27,7 +27,7 @@ namespace StylizedWater3
         public const string ASSET_ID = "287769";
         public const string ASSET_ABRV = "SW3";
 
-        public const string INSTALLED_VERSION = "3.2.6";
+        public const string INSTALLED_VERSION = "3.2.7";
         
         private static readonly Dictionary<string, int> REQUIRED_PATCH_VERSIONS = new Dictionary<string, int>()
         {
@@ -119,6 +119,25 @@ namespace StylizedWater3
             }
 
             return request.Result[0];
+        }
+        
+        public static bool IsMobilePlatform
+        {
+            get
+            {
+                BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
+                bool mobile = false;
+
+                //test
+                //target = BuildTarget.iOS;
+
+                mobile |= target == BuildTarget.iOS;
+                mobile |= target == BuildTarget.Android;
+                mobile |= target == BuildTarget.Switch;
+                mobile |= target == BuildTarget.Switch2;
+
+                return mobile;
+            }
         }
 
         //Sorry, as much as I hate to intrude on an entire project, this is the only way in Unity to track importing or updating an asset

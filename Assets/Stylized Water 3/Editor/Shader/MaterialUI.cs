@@ -824,12 +824,17 @@ namespace StylizedWater3
                     MaterialEditor.EndProperty();
                 }
 
-                if ((EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android ||
-                     EditorUserBuildSettings.activeBuildTarget == BuildTarget.iOS ||EditorUserBuildSettings.activeBuildTarget == BuildTarget.Switch) && _ShadingMode.floatValue == 1f)
+                if (AssetInfo.IsMobilePlatform)
                 {
                     EditorGUILayout.Space();
-                    
-                    UI.DrawNotification("The current shading mode is not intended to be used on mobile hardware", MessageType.Warning);
+                    if (importer.settings.forceSimpleShadingOnMobile)
+                    {
+                        UI.DrawNotification("The Simple shading mode is internally forced on mobile platforms. This override can be disabled on the shader settings.");
+                    }
+                    else
+                    {
+                        UI.DrawNotification((_ShadingMode.floatValue == 1f), "The current shading mode is not intended to be used on mobile hardware", MessageType.Warning);
+                    }
                 }
                 
                 EditorGUILayout.Space();

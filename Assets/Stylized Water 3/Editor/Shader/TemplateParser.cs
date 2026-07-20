@@ -318,6 +318,15 @@ namespace StylizedWater3
                     continue;
                 }
                 
+                if (Matches("%multi_compile_screen_space_reflections%"))
+                {
+                    #if UNITY_6000_6_OR_NEWER
+                    AddLine("#pragma multi_compile_fragment _ _SCREEN_SPACE_REFLECTION");
+                    #endif
+                    
+                    continue;
+                }
+                
                 if (line.Contains("%render_queue_offset%"))
                 {
                     int offset = 0;
@@ -383,6 +392,19 @@ namespace StylizedWater3
                         importer.configurationState.dynamicEffects = true;
                         
                         AddLine($"#pragma multi_compile _ {ShaderParams.Keywords.DynamicEffects}");
+                    }
+
+                    continue;
+                }
+
+                if (Matches("%mobile_keyword_modifiers%"))
+                {
+                    if (importer.settings.forceSimpleShadingOnMobile)
+                    {
+                        AddLine("#if defined(SHADER_API_MOBILE) || defined(SHADER_API_SWITCH) || defined(SHADER_API_SWITCH2)");
+                        AddLine("#undef _ADVANCED_SHADING");
+                        AddLine("#define _ADVANCED_SHADING 0");
+                        AddLine("#endif");
                     }
 
                     continue;

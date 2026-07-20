@@ -140,10 +140,6 @@ namespace StylizedWater3
             
             public void Readback(UnsafeCommandBuffer cmd)
             {
-                //Array was disposed of after readback request. Forced to recreate it
-                //https://forum.unity.com/threads/asyncgpureadback-requestintonativearray-causes-invalidoperationexception-on-nativearray.1011955
-                //AllocateReadbackBuffer();
-                
                 //Query may have been disposed, but an async readback was still pending...
                 if (hasPendingRequest)
                 {
@@ -151,7 +147,7 @@ namespace StylizedWater3
                 }
                 hasPendingRequest = true;
                 
-                //After the readback request is complete Unity will dispose of this array automatically. Possibly when 'GetData' is called.
+                //After the readback request is completed Unity will dispose of this array automatically. Possibly when 'GetData' is called.
                 //Hence a swap-buffer method is employed
                 ValidateNativeBuffer(ref readbackBuffers[0]);
                 ValidateNativeBuffer(ref readbackBuffers[1]);
@@ -159,7 +155,7 @@ namespace StylizedWater3
                 NativeArray<float> nextBuffer = readbackBuffers[NextBufferIndex()];
                 
 #if UNITY_EDITOR
-                //Unity dev: Remove when bug is fixed
+                //Track it validity and access permissions for the NativeArray, verify the buffer can be safely read from
                 AtomicSafetyHandle ash = NativeArrayUnsafeUtility.GetAtomicSafetyHandle(nextBuffer);
                 AtomicSafetyHandle.CheckReadAndThrow(ash);
                 AtomicSafetyHandle.CheckDeallocateAndThrow(ash);

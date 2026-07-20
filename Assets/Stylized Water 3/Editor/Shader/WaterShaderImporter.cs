@@ -349,6 +349,8 @@ namespace StylizedWater3
                 PostProcessing
             }
             public ShaderType type;
+            [Tooltip("Enable to disable the Advanced Shading mode on mobile platforms (including Nintendo Switch 1 & 2). Unity internally decides which platforms that is!")]
+            public bool forceSimpleShadingOnMobile = true;
             
             [Tooltip("Before compiling the shader, check whichever asset is present in the project and activate its integration")]
             public bool autoIntegration = true;

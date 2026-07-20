@@ -7,17 +7,6 @@ float _WaterFogDisabled;
 
 //Authors of third-party fog solutions can reach out to have their method integrated here
 
-#ifdef SCPostEffects
-//Macros normally used for cross-RP compatibility
-#define LINEAR_DEPTH(depth) Linear01Depth(depth, _ZBufferParams)
-
-//Legacy (pre v2.2.1)
-#define DECLARE_TEX(textureName) TEXTURE2D(textureName);
-#define DECLARE_RT(textureName) TEXTURE2D_X(textureName);
-#define SAMPLE_TEX(textureName, samplerName, uv) SAMPLE_TEXTURE2D_LOD(textureName, samplerName, uv, 0)
-#define SAMPLE_RT_LOD(textureName, samplerName, uv, mip) SAMPLE_TEXTURE2D_X_LOD(textureName, samplerName, uv, mip)
-#endif
-
 #ifdef AtmosphericHeightFog
 //For versions older than 3.2.0, uncomment this
 //bool AHF_Enabled;
@@ -58,6 +47,7 @@ void ApplyFog(inout float3 color, float fogFactor, float4 screenPos, float3 posi
 #endif
 
 #ifdef AtmosphericHeightFog
+	//If you see an error here, update the asset to v3.2.0 or newer, or uncomment the `AHF_Enabled` declaration at the top
 	if (AHF_Enabled)
 	{
 		float4 fogParams = GetAtmosphericHeightFog(positionWS.xyz);
@@ -66,11 +56,7 @@ void ApplyFog(inout float3 color, float fogFactor, float4 screenPos, float3 posi
 #endif
 
 #ifdef SCPostEffects
-	//Distance or height fog enabled
-	if(_DistanceParams.z == 1 || _DistanceParams.w == 1)
-	{
-		ApplyTransparencyFog(positionWS, normalizedUV, foggedColor.rgb);
-	}
+	ApplyTransparencyFog(positionWS, normalizedUV, foggedColor.rgb);
 #endif
 
 #ifdef COZY
