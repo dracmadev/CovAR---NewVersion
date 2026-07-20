@@ -219,6 +219,11 @@ public class ARObjectManager : MonoBehaviour
 
                 SetCurrentARObjectState("DefaultState");
 
+                if(bIsPoolActive)
+                {
+                    ActivePoolObj(_CurrentARObject, _PoolPrefab);
+                }
+
                 break;
             }
         }
