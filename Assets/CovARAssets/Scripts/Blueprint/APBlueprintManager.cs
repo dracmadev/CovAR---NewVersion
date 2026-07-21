@@ -1,4 +1,7 @@
+using System.Collections;
 using UnityEngine;
+
+
 
 public class APBlueprintManager : MonoBehaviour
 {
@@ -18,6 +21,9 @@ public class APBlueprintManager : MonoBehaviour
     [SerializeField] private St_OrderData _OrderData;
     private WebRequestManager _WebRequestManager;
     string LastPanelBeforeBlueprintPopUp;
+
+    private TakeScreenShootAndShare _TakeScreenShootAndShareScript;
+
 
     void Start()
     {
@@ -50,6 +56,10 @@ public class APBlueprintManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("WebRequestManager"))
         {
             _WebRequestManager = GameObject.FindGameObjectWithTag("WebRequestManager").GetComponent<WebRequestManager>();
+        }
+        if(GameObject.FindGameObjectWithTag("TakeScreenshootManager"))
+        {
+            _TakeScreenShootAndShareScript = GameObject.FindGameObjectWithTag("TakeScreenshootManager").GetComponent<TakeScreenShootAndShare>();
         }
 
         _OrderData._CurrentDate = System.DateTime.Now.ToString("dd/MM/yyyy");
@@ -92,7 +102,7 @@ public class APBlueprintManager : MonoBehaviour
        
     }
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////////// GETTER /////////////////////////////////////////////////////////////////////////
 
@@ -142,6 +152,11 @@ public class APBlueprintManager : MonoBehaviour
         if(_WebRequestManager != null)
         {
             _WebRequestManager.OnSaveProjectAndOrderDataFromAstralpool();
+        }
+
+        if(_TakeScreenShootAndShareScript != null)
+        {
+            _TakeScreenShootAndShareScript.OnClickTakeScreenShootAndShare();
         }
     }
   

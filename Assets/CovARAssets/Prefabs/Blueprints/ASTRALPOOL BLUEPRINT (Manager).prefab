@@ -16634,6 +16634,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5903677595079127099}
@@ -16644,12 +16649,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnClickDownloadAndSaveBlueprit
       objectReference: {fileID: 0}
     - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: APBlueprintManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: APBlueprintManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,

@@ -91,9 +91,7 @@ public class TakeScreenShootAndShare : MonoBehaviour
             filename = "Photo_" + _GeolocalizationManager.GetCountry() + "_" + _GeolocalizationManager.GetPostCode() + "_" + GetCurrentDate() + ".png";
         }
         else
-        {
-           
-              
+        {  
             SubjectName = LocalizationManager.Localize("ScreenshootAndShare.Blueprint.Title");
             DescripName = LocalizationManager.Localize("ScreenshootAndShare.Blueprint.Descrip");
             
