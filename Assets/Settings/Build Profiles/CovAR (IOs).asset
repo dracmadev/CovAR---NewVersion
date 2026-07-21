@@ -10,20 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 15003, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: CovAR
+  m_Name: CovAR (IOs)
   m_EditorClassIdentifier: 
   m_AssetVersion: 1
-  m_BuildTarget: 13
+  m_BuildTarget: 9
   m_Subtarget: 0
-  m_PlatformId: b9b35072a6f44c2e863f17467ea3dc13
+  m_PlatformId: ad48d16a66894befa4d8181998c3cb09
   m_PlatformBuildProfile:
-    rid: 2822762322988892268
-  m_OverrideGlobalSceneList: 1
-  m_Scenes:
-  - m_enabled: 1
-    m_path: Assets/CovARAssets/Scenes/RenolitOne/Scene_Login.unity
-  - m_enabled: 1
-    m_path: Assets/CovARAssets/Scenes/RenolitOne/Scene_ARScene.unity
+    rid: 7675156793356451930
+  m_OverrideGlobalSceneList: 0
+  m_Scenes: []
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
@@ -34,12 +30,12 @@ MonoBehaviour:
     - line: '|   AndroidProfiler: 0'
     - line: '|   AndroidFilterTouchesWhenObscured: 0'
     - line: '|   AndroidEnableSustainedPerformanceMode: 0'
-    - line: '|   defaultScreenOrientation: 3'
+    - line: '|   defaultScreenOrientation: 0'
     - line: '|   targetDevice: 2'
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
     - line: '|   companyName: Arpool'
-    - line: '|   productName: ''CovAR '''
+    - line: '|   productName: CovAR'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
     - line: '|   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b:
@@ -111,7 +107,7 @@ MonoBehaviour:
     - line: '|   androidApplicationEntry: 2'
     - line: '|   defaultIsNativeResolution: 1'
     - line: '|   macRetinaSupport: 0'
-    - line: '|   runInBackground: 1'
+    - line: '|   runInBackground: 0'
     - line: '|   muteOtherAudioSources: 0'
     - line: '|   Prepare IOS For Recording: 0'
     - line: '|   Force IOS Speakers When Recording: 0'
@@ -196,11 +192,11 @@ MonoBehaviour:
     - line: '|     Android: com.vuforia.engine.VuforiaEngine'
     - line: '|     Lumin: com.PTCInc.VuforiaEngine'
     - line: '|     Standalone: com.PTCInc.VuforiaEngine'
-    - line: '|     iPhone: com.vuforia.engine.VuforiaEngine'
+    - line: '|     iPhone: com.Arpool.Covar'
     - line: '|   buildNumber:'
     - line: '|     Standalone: 0'
     - line: '|     VisionOS: 0'
-    - line: '|     iPhone: 0'
+    - line: '|     iPhone: 10'
     - line: '|     tvOS: 0'
     - line: '|   overrideDefaultApplicationIdentifier: 1'
     - line: '|   AndroidBundleVersionCode: 1144'
@@ -297,8 +293,8 @@ MonoBehaviour:
     - line: '|   AndroidTargetArchitectures: 2'
     - line: '|   AndroidSplashScreenScale: 0'
     - line: '|   androidSplashScreen: {instanceID: 0}'
-    - line: '|   AndroidKeystoreName: X:/25001- FLUIDRA-VOLET/25001-KEYSTORE/Covar.keystore'
-    - line: '|   AndroidKeyaliasName: arpool'
+    - line: '|   AndroidKeystoreName: ''{inproject}: '''
+    - line: '|   AndroidKeyaliasName: '
     - line: '|   AndroidEnableArmv9SecurityFeatures: 0'
     - line: '|   AndroidEnableArm64MTE: 0'
     - line: '|   AndroidBuildApkPerCpuArchitecture: 0'
@@ -310,7 +306,7 @@ MonoBehaviour:
     - line: '|   AndroidEnableTango: 0'
     - line: '|   androidEnableBanner: 1'
     - line: '|   androidUseLowAccuracyLocation: 0'
-    - line: '|   androidUseCustomKeystore: 1'
+    - line: '|   androidUseCustomKeystore: 0'
     - line: '|   m_AndroidBanners:'
     - line: '|   - width: 320'
     - line: '|     height: 180'
@@ -326,7 +322,7 @@ MonoBehaviour:
     - line: '|   - m_BuildTarget: '
     - line: '|     m_Icons:'
     - line: '|     - serializedVersion: 2'
-    - line: '|       m_Icon: {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       m_Icon: {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 128'
     - line: '|       m_Height: 128'
@@ -335,273 +331,273 @@ MonoBehaviour:
     - line: '|   - m_BuildTarget: Android'
     - line: '|     m_Icons:'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: b15ee11232b424d68898398fe3cab2d0,
         type: 3}'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       m_Width: 192'
+    - line: '|       m_Height: 192'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: fe689abc1067e4869a58c87d14482078,
+        type: 3}'
+    - line: '|       m_Width: 144'
+    - line: '|       m_Height: 144'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: 827b731c62d8d42c093899fa44179bb2,
+        type: 3}'
+    - line: '|       m_Width: 96'
+    - line: '|       m_Height: 96'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: d85ccead4ae714b0682b281b94267e7f,
+        type: 3}'
+    - line: '|       m_Width: 72'
+    - line: '|       m_Height: 72'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: 6fae8ff752f494bacb3c562bed7dea2d,
+        type: 3}'
+    - line: '|       m_Width: 48'
+    - line: '|       m_Height: 48'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: 98e9bf2eec31e492d858fd08e8223ca4,
+        type: 3}'
+    - line: '|       m_Width: 36'
+    - line: '|       m_Height: 36'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: b15ee11232b424d68898398fe3cab2d0,
+        type: 3}'
+    - line: '|       m_Width: 192'
+    - line: '|       m_Height: 192'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: fe689abc1067e4869a58c87d14482078,
+        type: 3}'
+    - line: '|       m_Width: 144'
+    - line: '|       m_Height: 144'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: 827b731c62d8d42c093899fa44179bb2,
+        type: 3}'
+    - line: '|       m_Width: 96'
+    - line: '|       m_Height: 96'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: d85ccead4ae714b0682b281b94267e7f,
+        type: 3}'
+    - line: '|       m_Width: 72'
+    - line: '|       m_Height: 72'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: 6fae8ff752f494bacb3c562bed7dea2d,
+        type: 3}'
+    - line: '|       m_Width: 48'
+    - line: '|       m_Height: 48'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: 98e9bf2eec31e492d858fd08e8223ca4,
+        type: 3}'
+    - line: '|       m_Width: 36'
+    - line: '|       m_Height: 36'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: '
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: 17890dd0942584ef7b1886ffc15250a1,
+        type: 3}'
+    - line: '|       - {fileID: 2800000, guid: 44f5763023bff4d3dbfb13b858cff6ce,
         type: 3}'
     - line: '|       m_Width: 432'
     - line: '|       m_Height: 432'
     - line: '|       m_Kind: 2'
     - line: '|       m_SubKind: '
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: 2c78137d6929a46249f124bad6c3c8a8,
         type: 3}'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: b4f6488d420d24b3fa919a0d3a53bcf2,
         type: 3}'
     - line: '|       m_Width: 324'
     - line: '|       m_Height: 324'
     - line: '|       m_Kind: 2'
     - line: '|       m_SubKind: '
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: ad05b3745e8844194bae1994e47cd9b3,
         type: 3}'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: 78781f500fd7e4133b37547cebfe0231,
         type: 3}'
     - line: '|       m_Width: 216'
     - line: '|       m_Height: 216'
     - line: '|       m_Kind: 2'
     - line: '|       m_SubKind: '
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: 96655ac7a5e9f46d0af3ba32b5ce1d2c,
         type: 3}'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: 02ad1a4d05ea64249bdee469ef9fe40c,
         type: 3}'
     - line: '|       m_Width: 162'
     - line: '|       m_Height: 162'
     - line: '|       m_Kind: 2'
     - line: '|       m_SubKind: '
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: aebd9fdb8f30d4d18b318f4312877849,
         type: 3}'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: 71bdaccaa006c43bf9b5eaa2ef7bad56,
         type: 3}'
     - line: '|       m_Width: 108'
     - line: '|       m_Height: 108'
     - line: '|       m_Kind: 2'
     - line: '|       m_SubKind: '
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: 7b3a41568325b49058f0f996eb569a3b,
         type: 3}'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
+    - line: '|       - {fileID: 2800000, guid: 626c896dc88974a9fb360ba573bb43e5,
         type: 3}'
     - line: '|       m_Width: 81'
     - line: '|       m_Height: 81'
     - line: '|       m_Kind: 2'
     - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 192'
-    - line: '|       m_Height: 192'
-    - line: '|       m_Kind: 1'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 144'
-    - line: '|       m_Height: 144'
-    - line: '|       m_Kind: 1'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 96'
-    - line: '|       m_Height: 96'
-    - line: '|       m_Kind: 1'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 72'
-    - line: '|       m_Height: 72'
-    - line: '|       m_Kind: 1'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 48'
-    - line: '|       m_Height: 48'
-    - line: '|       m_Kind: 1'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 36'
-    - line: '|       m_Height: 36'
-    - line: '|       m_Kind: 1'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 192'
-    - line: '|       m_Height: 192'
-    - line: '|       m_Kind: 0'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 144'
-    - line: '|       m_Height: 144'
-    - line: '|       m_Kind: 0'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 96'
-    - line: '|       m_Height: 96'
-    - line: '|       m_Kind: 0'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 72'
-    - line: '|       m_Height: 72'
-    - line: '|       m_Kind: 0'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 48'
-    - line: '|       m_Height: 48'
-    - line: '|       m_Kind: 0'
-    - line: '|       m_SubKind: '
-    - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 96fff01e1248c3045b9c3860ac9448dd,
-        type: 3}'
-    - line: '|       m_Width: 36'
-    - line: '|       m_Height: 36'
-    - line: '|       m_Kind: 0'
-    - line: '|       m_SubKind: '
     - line: '|   - m_BuildTarget: iPhone'
     - line: '|     m_Icons:'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 50f07d81dcf4c4fbb8b2c326e7d4b6bb,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 1024'
     - line: '|       m_Height: 1024'
     - line: '|       m_Kind: 4'
     - line: '|       m_SubKind: App Store'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 83a6483f53e5f448a84f14d9e27ee822,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 60'
     - line: '|       m_Height: 60'
     - line: '|       m_Kind: 2'
     - line: '|       m_SubKind: iPhone'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: b3252f95d1a3a4cd58871ff4716e5d8b,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 40'
     - line: '|       m_Height: 40'
     - line: '|       m_Kind: 2'
     - line: '|       m_SubKind: iPhone'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: b3252f95d1a3a4cd58871ff4716e5d8b,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 40'
     - line: '|       m_Height: 40'
     - line: '|       m_Kind: 2'
     - line: '|       m_SubKind: iPad'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: f9da296bf616b458d98a63f8f7557004,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 20'
     - line: '|       m_Height: 20'
     - line: '|       m_Kind: 2'
     - line: '|       m_SubKind: iPad'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: dd034f60ad00b407089fd2248eb2bae0,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 87'
     - line: '|       m_Height: 87'
     - line: '|       m_Kind: 1'
     - line: '|       m_SubKind: iPhone'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 753491ea5c3de4f928409d7f8e96b80b,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 58'
     - line: '|       m_Height: 58'
     - line: '|       m_Kind: 1'
     - line: '|       m_SubKind: iPhone'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: ead39ea5b70b3401090170549ec78dda,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 29'
     - line: '|       m_Height: 29'
     - line: '|       m_Kind: 1'
     - line: '|       m_SubKind: iPhone'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 753491ea5c3de4f928409d7f8e96b80b,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 58'
     - line: '|       m_Height: 58'
     - line: '|       m_Kind: 1'
     - line: '|       m_SubKind: iPad'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: ead39ea5b70b3401090170549ec78dda,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 29'
     - line: '|       m_Height: 29'
     - line: '|       m_Kind: 1'
     - line: '|       m_SubKind: iPad'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: e5d044c008db542bf8371f7e7c91bb50,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 120'
     - line: '|       m_Height: 120'
     - line: '|       m_Kind: 3'
     - line: '|       m_SubKind: iPhone'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: b36a145ee04964f5a8fbc998f53ad10f,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 80'
     - line: '|       m_Height: 80'
     - line: '|       m_Kind: 3'
     - line: '|       m_SubKind: iPhone'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: b36a145ee04964f5a8fbc998f53ad10f,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 80'
     - line: '|       m_Height: 80'
     - line: '|       m_Kind: 3'
     - line: '|       m_SubKind: iPad'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: b3252f95d1a3a4cd58871ff4716e5d8b,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 40'
     - line: '|       m_Height: 40'
     - line: '|       m_Kind: 3'
     - line: '|       m_SubKind: iPad'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 73c9e6fc8fd374b119e143a8bc52bf28,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 180'
     - line: '|       m_Height: 180'
     - line: '|       m_Kind: 0'
     - line: '|       m_SubKind: iPhone'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: e5d044c008db542bf8371f7e7c91bb50,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 120'
     - line: '|       m_Height: 120'
     - line: '|       m_Kind: 0'
     - line: '|       m_SubKind: iPhone'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 4cbc9362b367d44d58da2b6146f50c17,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 167'
     - line: '|       m_Height: 167'
     - line: '|       m_Kind: 0'
     - line: '|       m_SubKind: iPad'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 6cb233dc65f0b459daf2ad80d17034da,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 152'
     - line: '|       m_Height: 152'
     - line: '|       m_Kind: 0'
     - line: '|       m_SubKind: iPad'
     - line: '|     - m_Textures:'
-    - line: '|       - {fileID: 2800000, guid: 819aa9af392f0436686712974e387eb9,
+    - line: '|       - {fileID: 2800000, guid: c389cf6c391e4224992338a094334753,
         type: 3}'
     - line: '|       m_Width: 76'
     - line: '|       m_Height: 76'
@@ -721,6 +717,9 @@ MonoBehaviour:
     - line: '|   - serializedVersion: 3'
     - line: '|     m_BuildTarget: Android'
     - line: '|     m_Formats: 01000000'
+    - line: '|   - serializedVersion: 3'
+    - line: '|     m_BuildTarget: iOS'
+    - line: '|     m_Formats: 03000000'
     - line: '|   playModeTestRunnerEnabled: 0'
     - line: '|   runPlayModeTestAsEditModeTest: 0'
     - line: '|   actionOnDotNetUnhandledException: 1'
@@ -728,9 +727,12 @@ MonoBehaviour:
     - line: '|   enableInternalProfiler: 0'
     - line: '|   logObjCUncaughtExceptions: 1'
     - line: '|   enableCrashReportAPI: 0'
-    - line: '|   cameraUsageDescription: Camera access required for target detection
-        and tracking'
-    - line: '|   locationUsageDescription: '
+    - line: '|   cameraUsageDescription: "Esta aplicaci\xF3n necesita acceso a la
+        c\xE1mara para'
+    - line: '|     funciones de realidad aumentada."'
+    - line: '|   locationUsageDescription: "Esta aplicaci\xF3n necesita acceso a
+        la ubicaci\xF3n'
+    - line: '|     para funciones clave de la apliaci\xF3n."'
     - line: '|   microphoneUsageDescription: '
     - line: '|   bluetoothUsageDescription: '
     - line: '|   macOSTargetOSVersion: 11.0'
@@ -1136,10 +1138,10 @@ MonoBehaviour:
     - line: '|       PointOfService: False'
     - line: '|       RecordedCallsFolder: False'
     - line: '|       Contacts: False'
-    - line: '|       Proximity: False'
     - line: '|       InternetClient: True'
     - line: '|       CodeGeneration: False'
     - line: '|       BackgroundMediaPlayback: False'
+    - line: '|       Proximity: False'
     - line: '|   metroTargetDeviceFamilies:'
     - line: '|     Desktop: False'
     - line: '|     Holographic: False'
@@ -1219,8 +1221,8 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2822762322988892268
-      type: {class: AndroidPlatformBuildSettings, ns: UnityEditor.Android, asm: UnityEditor.Android.Extensions}
+    - rid: 7675156793356451930
+      type: {class: iOSPlatformSettings, ns: UnityEditor.iOS, asm: UnityEditor.iOS.Extensions}
       data:
         m_Development: 0
         m_ConnectProfiler: 0
@@ -1231,15 +1233,9 @@ MonoBehaviour:
         m_ExplicitNullChecks: 0
         m_ExplicitDivideByZeroChecks: 0
         m_ExplicitArrayBoundsChecks: 0
-        m_CompressionType: 2
+        m_CompressionType: 0
         m_InstallInBuildFolder: 0
-        m_BuildSubtarget: 0
-        m_BuildSystem: 1
-        m_ExportAsGoogleAndroidProject: 0
-        m_DebugSymbolLevel: 1
-        m_DebugSymbolFormat: 5
-        m_CurrentDeploymentTargetId: __builtin__target_default
-        m_BuildType: 2
-        m_BuildAppBundle: 0
-        m_IPAddressToConnect: 
+        m_iOSXcodeBuildConfig: 1
         m_SymlinkSources: 0
+        m_PreferredXcode: 
+        m_SymlinkTrampoline: 0
