@@ -423,6 +423,81 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &88360742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88360743}
+  - component: {fileID: 88360745}
+  - component: {fileID: 88360744}
+  m_Layer: 0
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &88360743
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88360742}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1005284809}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &88360744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88360742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.13333334, g: 0.17254902, b: 0.3803922, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &88360745
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88360742}
+  m_CullTransparentMesh: 1
 --- !u!1 &121569581
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +963,8 @@ MonoBehaviour:
     _PanelRef: {fileID: 1876910168}
   - _PanelName: SetPasswordPanel
     _PanelRef: {fileID: 4662924}
+  - _PanelName: Terms&ConditionsPanel
+    _PanelRef: {fileID: 1364467496}
   transitionTime: 0.5
   firstPanelToShow: LoginPanel
   currentPanelOnScreenGameObject: {fileID: 0}
@@ -1383,6 +1460,536 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46e33ddf996ce104996ea08075f97d71, type: 3}
+--- !u!1 &294537442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 294537443}
+  - component: {fileID: 294537444}
+  m_Layer: 0
+  m_Name: CreateUserContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &294537443
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294537442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2062714123}
+  m_Father: {fileID: 688766081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &294537444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294537442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 50
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 5
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!1001 &299945630
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1045031510}
+    m_Modifications:
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957359499106498821, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_Name
+      value: P_SimpleUIText
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_text
+      value: "1. Objeto\n\nLas presentes Condiciones Generales de Uso regulan el
+        uso de la aplicaci\xF3n inform\xE1tica SPACEPOOLS-AR  \npersonalizada para
+        SPACEPOOLS (la \u201CAplicaci\xF3n\u201D) y del sitio web\_https://arpoolvisualizations.com/
+        \nya sea con su actual nombre o con cualquier otra denominaci\xF3n con la
+        que pueda figurar\nen el futuro, de ARPOOL SL con NIF B64113509 y domicilio
+        social en Calle Caspe 37,\n2\xBA-1\xBA Barcelona CP:08010. La Aplicaci\xF3n
+        y el Sitio Web est\xE1n dirigidos exclusivamente a\nusuarios residentes en
+        la Uni\xF3n Europea. Los usuarios que residan o se encuentren\ndomiciliados
+        en cualquier otro lugar y que decidan acceder y/o utilizar esta Aplicaci\xF3n
+        y/o\nSitio Web deber\xE1n asegurarse de que tal acceso y/o utilizaci\xF3n
+        cumple con la legislaci\xF3n\nlocal aplicable. Al acceder y utilizar esta
+        Aplicaci\xF3n y/o Sitio Web usted (\u201CUsuario\u201D) (i)\nreconoce que
+        ha le\xEDdo y aceptado estas Condiciones Generales de Uso y (ii) se compromete\na
+        cumplir con todos sus t\xE9rminos y condiciones. Asimismo, el Usuario reconoce
+        y acepta\nque el acceso y uso de esta Aplicaci\xF3n y/o Sitio Web estar\xE1
+        sujeto a las Condiciones\nGenerales de Uso que se encuentren en vigor en
+        el momento en que acceda a los mismos.\nARPOOL SL se reserva el derecho de
+        modificar las presentes Condiciones Generales\nde Uso, as\xED como cualesquiera
+        otras condiciones generales o particulares que resulten de\naplicaci\xF3n.
+        En tal caso, el Usuario podr\xE1 notificar a SPACEPOOLS o ARPOOL SL, a\ntrav\xE9s
+        del Servicio de Asistencia T\xE9cnica que no acepta cualquier eventual modificaci\xF3n
+        de\nlas presentes Condiciones Generales de Uso.\n\n2. Contenidos\n\nA trav\xE9s
+        de la Aplicaci\xF3n, ARPOOL SL facilita a SPACEPOOLS, y a los Usuarios de
+        la\nAplicaci\xF3n que \xE9ste designe, un programa de realidad aumentada
+        para su uso en\ndispositivos m\xF3viles, orientada al sector de los fabricantes,
+        distribuidores y constructores\nde piscinas, que permite a SPACEPOOLS la
+        carga de sus productos en la aplicaci\xF3n para\nexhibirlos, en base a la
+        elecci\xF3n del cliente, en la ubicaci\xF3n prevista para la construcci\xF3n
+        o\ninstalaci\xF3n de la piscina, aprovechando las ventajas que ofrece la
+        posibilidad de ofrecer a\nlos clientes una previsualizaci\xF3n in situ y
+        en tres dimensiones del resultado del producto o\nservicio que pretende encargar
+        (\u201CServicio\u201D). La Aplicaci\xF3n, facilita al Usuario el acceso a\ndiversos
+        contenidos, informaci\xF3n y datos proporcionados por SPACEPOOLS y ARPOOL
+        SL \nen relaci\xF3n con el Servicio (los \u201CContenidos\u201D). ARPOOL
+        SL se reserva el derecho\na modificar en cualquier momento la presentaci\xF3n,
+        la configuraci\xF3n y ubicaci\xF3n de la\nAplicaci\xF3n y/o el Sitio Web,
+        as\xED como las correspondientes condiciones de acceso y uso.\nLos Contenidos
+        proporcionados a trav\xE9s de la Aplicaci\xF3n y/o Sitio Web podr\xE1n ser
+        objeto\nde eventuales actualizaciones no reflejadas en cada momento en la
+        Aplicaci\xF3n y/o Sitio\nWeb.\nARPOOL SL act\xFAa como desarrollador de la
+        Aplicaci\xF3n y prestador de los servicios\nnecesarios para su uso y funcionamiento.
+        Sera\u0301 responsabilidad exclusiva de SPACEPOOLS\nque los elementos, productos,
+        componentes y dem\xE1s im\xE1genes por \xE9ste proporcionados y\nutilizadas
+        para el desarrollo del Servicio no est\xE9n sujetos a limitaciones en su
+        uso que no\ndependan de SPACEPOOLS. ARPOOL SL \xFAnicamente pone a disposici\xF3n
+        de\nSPACEPOOLS y de los Usuarios que \xE9ste designe, una herramienta de
+        realidad aumentada,\norientada a facilitar la comercializaci\xF3n de piscinas.
+        El Usuario exonera a AR POOL de\ncualquier responsabilidad derivada de los
+        elementos aportados por SPACEPOOLS. Sin \nperjuicio de lo anterior, ARPOOL
+        SL manifiesta y garantiza que: Esta\u0301 constituida como\nsociedad mercantil
+        en Espa\xF1a, es titular de la Aplicaci\xF3n y del C\xF3digo Fuente, en el
+        sentido\nen que se define en el Real Decreto Legislativo 1/1996, de 12 de
+        abril, por el que se\naprueba el texto refundido de la Ley de Propiedad Intelectual,
+        cuenta con la capacidad\nnecesaria para ceder los derechos de uso de la Explotaci\xF3n
+        de la Aplicaci\xF3n, a\nARPOOL. La Aplicaci\xF3n es legible y utilizable
+        en su forma actual, y es plenamente\nfuncional, sin perjuicio de su encriptaci\xF3n,
+        en su caso, para la protecci\xF3n de los derechos\nsobre los mismos, que
+        asume toda la responsabilidad por la integridad y funcionalidad de\nla Aplicaci\xF3n,
+        dejando constancia que la Aplicaci\xF3n se ha desarrollado, a nivel operativo,\nsobre
+        sistemas operativos, software, assets y plug-ins desarrollados por terceros,\ncareciendo
+        en este sentido de responsabilidad alguna por las actualizaciones,\nmodificaciones,
+        variaciones, cancelaciones o cualquier otro tipo de cambio en los referidos\nelementos.
+        No obstante, en caso de que el sistema operativo o los sistemas operativos\nsobre
+        la base de los cuales se ha desarrollado la Aplicaci\xF3n desaparezcan, el
+        software o los\nassets o plug-ins, sean discontinuados o, de alguna otra
+        forma, pierdan su capacidad\noperativa, ARPOOL SL podr\xE1 dejar de actualizarlos
+        y no queda obligado a ofrecer al\nusuario una nueva versi\xF3n de la aplicaci\xF3n
+        adaptada al sistema operativo, software, asset o\nplug-in que sustituya al
+        desaparecido, sin perjuicio de su compromiso de realizar sus\nmejores esfuerzos
+        para mantener la operatividad de la Aplicaci\xF3n. Las actualizaciones\nser\xE1n
+        anunciadas de forma previa con instrucciones para su descarga y, cuando se
+        prevea\nque las mismas puedan impedir de forma temporal el uso de la Aplicaci\xF3n,
+        se realizar\xE1n\nfuera de los horarios comerciales habituales. ARPOOL SL
+        no asume responsabilidad\nalguna por las limitaciones en el uso o, incluso,
+        imposibilidad de uso de la Aplicaci\xF3n que\npuedan derivar de que el Usuario
+        no actualice la Aplicaci\xF3n y/o el sistema operativo que\nsirva de base
+        a la Aplicaci\xF3n a medida que aparezcan sus respectivas actualizaciones.\n\n3.
+        Acceso y uso\n\nEl acceso a la Aplicaci\xF3n y/o Sitio Web estar\xE1 limitado
+        a mayores de 18 a\xF1os. El Usuario no\npodr\xE1 (i) autorizar a terceros
+        a utilizar su cuenta, ni podr\xE1 permitir a personas menores de\n18 a\xF1os
+        el acceso a la Aplicaci\xF3n a trav\xE9s de su cuenta; ni (ii) tampoco podr\xE1
+        permitir que\npersonas menores de 18 a\xF1os aparezcan en las im\xE1genes
+        que se tomen en el uso de la\nAplicaci\xF3n, a menos que los menores vayan
+        acompa\xF1ados por su padre/madre/tutor legal\ny \xE9ste lo autorice de forma
+        previa, expresa y por escrito. El Usuario reconoce y acepta que\nel acceso
+        y uso de la Aplicaci\xF3n y/o Sitio Web tiene lugar libre y conscientemente,
+        bajo su\nexclusiva responsabilidad. ARPOOL SL no ser\xE1 en ning\xFAn caso
+        responsable de (i)\ncualquier uso contrario a la Ley, la moral, las buenas
+        costumbres y el orden p\xFAblico que el\nUsuario y/o terceros pudieran hacer
+        de la Aplicaci\xF3n y/o Sitio Web, ni de (ii) los da\xF1os y\nperjuicios
+        que pudieran derivarse del mismo. Sin perjuicio de lo anterior, ARPOOL SL\npondr\xE1
+        en conocimiento de las autoridades cualquiera de los anteriores usos de su\nAplicaci\xF3n
+        y/o Sitio Web tan pronto tenga conocimiento de los mismos. El Usuario se\ncompromete
+        a hacer un uso adecuado y l\xEDcito de la Aplicaci\xF3n y/o Sitio Web de\nconformidad
+        con la legislaci\xF3n aplicable y las presentes Condiciones Generales de
+        Uso. El\nUsuario deber\xE1 abstenerse de (i) hacer un uso no autorizado o
+        fraudulento de la\nAplicaci\xF3n y/o Sitio Web; (ii) acceder o intentar acceder
+        a recursos restringidos de la\nAplicaci\xF3n y/o Sitio Web; (iii) utilizar
+        la Aplicaci\xF3n y/o Sitio Web con fines o efectos\nil\xEDcitos, ilegales,
+        contrarios a lo establecido en las presentes Condiciones Generales de Uso,\nlesivos
+        de los derechos e intereses de terceros, o que de cualquier forma puedan
+        da\xF1ar,\ninutilizar o sobrecargar o impedir la normal utilizaci\xF3n o
+        disfrute de la Aplicaci\xF3n y/o Sitio\nWeb; (iv) provocar da\xF1os en la
+        Aplicaci\xF3n y/o Sitio Web o en los sistemas de sus proveedores o \nde terceros;
+        (v) introducir o difundir virus inform\xE1ticos o cualesquiera\notros sistemas
+        f\xEDsicos o l\xF3gicos que sean susceptibles de provocar da\xF1os en los
+        sistemas de\nARPOOL SL, de sus proveedores o de terceros, (vi) intentar acceder,
+        utilizar y/o\nmanipular los datos de ARPOOL SL, terceros proveedores y otros
+        usuarios; (vii)\nreproducir, copiar, distribuir, transformar o modificar
+        los Contenidos, permitir el acceso a\nterceros a trav\xE9s de cualquier modalidad
+        de comunicaci\xF3n p\xFAblica, a menos que se cuente\ncon la autorizaci\xF3n
+        del titular de los correspondientes derechos o ello este\u0301 legalmente\npermitido;
+        (viii) obtener o intentar obtener los contenidos empleando para ello medios
+        o\nprocedimientos distintos de los que, seg\xFAn los casos, se hayan puesto
+        a su disposici\xF3n a\neste efecto. El Usuario \xFAnicamente podr\xE1 acceder
+        a la Aplicaci\xF3n y/o Sitio Web a trav\xE9s de\nlos medios autorizados.
+        ARPOOL SL no ser\xE1 responsable en caso de que el Usuario no\ndisponga de
+        un dispositivo compatible o haya descargado una versi\xF3n de la Aplicaci\xF3n\nincompatible
+        con su dispositivo. Cada Usuario \xFAnicamente tendr\xE1 vinculada a su cuenta
+        un\ndispositivo, motivo por el cual ARPOOL SL recabar\xE1 el n\xFAmero de
+        identificaci\xF3n del\ndispositivo en el que se descargue la Aplicaci\xF3n.
+        Se permitir\xE1 la migraci\xF3n de la Aplicaci\xF3n\na otro dispositivo,
+        con eliminaci\xF3n del anterior, con un m\xE1ximo de 3 migraciones por a\xF1o\nnatural,
+        para de este modo cubrir eventualidades tales como sustituci\xF3n del dispositivo\nvinculado
+        a la Aplicaci\xF3n por p\xE9rdida, robo, aver\xEDa o mera sustituci\xF3n
+        por un nuevo\ndispositivo.\nLa Aplicaci\xF3n, para su correcto uso y mantenimiento,
+        debe tener conexi\xF3n a la red de\ninternet. Sin perjuicio de que pueda
+        usarse de forma puntual sin la citada conexi\xF3n, se\nadvierte expresamente
+        que el servicio y operativa de la Aplicaci\xF3n pueden verse afectados\ne,
+        incluso, interrumpidos, en caso de que la misma se mantenga sin conexi\xF3n
+        por periodos\nprolongados.\n\xA1ATENCI\xD3N! Dado que ARPOOL SL genera im\xE1genes
+        de realidad aumentada a\ntrav\xE9s del dispositivo en el que la Aplicaci\xF3n
+        se encuentre operativa, algunos\nelementos del entorno pueden quedar ocultos
+        por las im\xE1genes de realidad\naumentada. En consecuencia, el Usuario debe
+        evitar en todo momento desplazarse\npor el lugar en el que se est\xE9n generando
+        las im\xE1genes de realidad aumentada\nsirvi\xE9ndose de la Aplicaci\xF3n
+        como gu\xEDa y debe mantener el grado de atenci\xF3n\nnecesario para moverse
+        e interactuar de forma segura y sin peligro con el entorno.\nARPOOL 3D SL
+        no asume responsabilidad alguna por los da\xF1os y perjuicios que\npuedan
+        generarse como consecuencia de un uso que prescinda de las anteriores\ninstrucciones.\n\n4.
+        Condiciones adicionales para el acceso y uso\n\nEl acceso a la Aplicaci\xF3n
+        estar\xE1 sujeto en todo caso al previo registro del Usuario mediante\nla
+        cumplimentaci\xF3n del correspondiente formulario (\u201CFormulario de Registro\u201D),
+        que ser\xE1\npreviamente facilitado al Usuario. SPACEPOOLS y ARPOOL SL se
+        reservan el derecho\nde aceptar o rechazar libremente la solicitud de registro
+        por parte del Usuario. Los datos\nintroducidos por el Usuario en el Formulario
+        de Registro deber\xE1n ser exactos, actuales y\nveraces en todo momento,
+        el nombre, apellidos, nombre de la empresa, n\xFAmero de\nidentificaci\xF3n
+        de la empresa del Usuario (CIF / VAT NUMBER). El acceso y uso de la\nAplicaci\xF3n
+        o del \xE1rea espec\xEDfica del Sitio Web estar\xE1\u0301 sujeta una contrase\xF1a
+        designada por\nel Usuario al rellenar el Formulario de Registro y el acceso
+        se reputara\u0301 realizado por dicho\nUsuario, quien responder\xE1 en todo
+        caso de tal acceso y uso. El Usuario ser\xE1 responsable en\ntodo momento
+        de la custodia de su contrase\xF1a, asumiendo, en consecuencia, cualesquiera\nda\xF1os
+        y perjuicios que pudieran derivarse de su uso indebido, as\xED\u0301 como
+        de la cesi\xF3n,\nrevelaci\xF3n o extrav\xEDo de la misma. En caso de olvido
+        de la contrase\xF1a o cualquier otra\ncircunstancia que suponga un riesgo
+        de acceso y/o utilizaci\xF3n por parte de terceros no\nautorizados, el Usuario
+        lo comunicara\u0301 inmediatamente a SPACEPOOLS o ARPOOL SL\na fin de que
+        e\u0301stos estos procedan inmediatamente al bloqueo y habiliten la sustituci\xF3n
+        de\nla misma por el propio Usuario. En todo caso, cualesquiera operaciones
+        realizadas antes\nde dicha comunicaci\xF3n se reputar\xE1n efectuadas por
+        el Usuario, quien ser\xE1 responsable y\npagara\u0301 los gastos y/o da\xF1os
+        que se deriven de cualquier acceso y/o uso no autorizado que\nse realice
+        con anterioridad a dicha comunicaci\xF3n. El Usuario tiene en todo momento\nconstancia
+        de cu\xE1les son los usos realizados de la Aplicaci\xF3n, ya que tiene acceso,
+        a trav\xE9s\nde la propia Aplicaci\xF3n, a la informaci\xF3n relativa a im\xE1genes
+        tomadas, expedientes\nabiertos y dem\xE1s informaci\xF3n relativa al trabajo
+        desarrollado por el Usuario mediante la\nAplicaci\xF3n.\n\n5. Derechos de
+        propiedad intelectual e industrial\n\nEl Usuario reconoce y acepta que todos
+        los derechos de propiedad intelectual e industrial\nsobre los contenidos
+        y/o cualesquiera otros elementos insertados en la Aplicaci\xF3n y/o\nSitio
+        Web (incluyendo, sin limitaci\xF3n, marcas, logotipos, nombres comerciales,
+        textos,\nim\xE1genes, gr\xE1ficos, dise\xF1os, sonidos, bases de datos, software,
+        diagramas de flujo,\npresentaci\xF3n, audio y v\xEDdeo), pertenecen a ARPOOL
+        SL o a SPACEPOOLS. ARPOOL SL y \nSPACEPOOLS autorizan al Usuario a utilizar,
+        visualizar, imprimir, descargar y\n almacenar los contenidos y/o los elementos
+        insertados en la Aplicaci\xF3n y/o Sitio Web\nexclusivamente para su uso
+        en el marco de las relaciones comerciales con SPACEPOOLS y\nlos clientes
+        del propio Usuario o de SPACEPOOLS, absteni\xE9ndose de realizar sobre los\nmismos
+        cualquier acto de descompilacio\u0301n, ingenier\xEDa inversa, modificaci\xF3n,
+        divulgaci\xF3n o\nsuministro. Cualquier otro uso o explotaci\xF3n de cualesquiera
+        contenidos y/u otros\nelementos insertados en la Aplicaci\xF3n y/o Sitio
+        Web distinto de los aqu\xED\u0301 expresamente\nprevistos estar\xE1 sujeto
+        a la autorizaci\xF3n previa de  ARPOOL SL y de SPACEPOOLS\n\n6. Protecci\xF3n
+        de datos\n\nLos datos personales (en lo sucesivo, los \u201CDatos\u201D)
+        que el Usuario proporciona por medio\ndel Formulario de Registro se integrara\u0301n
+        en un fichero de datos personales del que es\nresponsabilidad de ARPOOL SL.
+        ARPOOL SL se compromete a tratar los datos de\ncar\xE1cter personal que pueda
+        recabar en el marco del presente contrato y como\nconsecuencia de la utilizaci\xF3n
+        de la aplicaci\xF3n, \xFAnicamente con el fin de prestar los\nServicios.
+        En caso de que para la ejecuci\xF3n de los servicios solicitados el Usuario\nproporcione
+        datos de car\xE1cter personal de terceras personas a ARPOOL SL, el Usuario\ngarantiza
+        a ARPOOL SL que \xE9stas han sido informadas con car\xE1cter previo a su\ninclusi\xF3n,
+        de los extremos contenidos en la presente cl\xE1usula. ARPOOL SL comunicar\xE1\na
+        SPACEPOOLS los datos facilitados por el Usuario, cuando sea necesario en
+        el marco de\nlos servicios contratados, y para gestionar y mantener la relaci\xF3n
+        con el Usuario o\nSPACEPOOLS, o cuando sea requerido a tal efecto por cualquier
+        autoridad competente. En\nparticular, tendr\xE1n acceso a los mismos aquellas
+        empresas a las que ARPOOL SL haya\nencomendado los servicios de soporte t\xE9cnico,
+        inform\xE1tico y de gesti\xF3n, y siempre dentro\ndel l\xEDmite necesario
+        para la correcta ejecuci\xF3n de dichos servicios. El Usuario, y los\nterceros
+        cuyos datos \xE9ste facilite, tienen el derecho a ejercitar en todo momento,
+        en los\nt\xE9rminos establecidos por la legislaci\xF3n vigente, sus derechos
+        de acceso, cancelaci\xF3n,\nrectificaci\xF3n o supresi\xF3n de datos, solicitar
+        que se limite el tratamiento, oponerse al\nmismo, solicitar la portabilidad
+        de sus datos, as\xED como revocar el consentimiento prestado,\ndirigi\xE9ndose
+        por escrito a la direcci\xF3n ARPOOL SL Calle Caspe 37, 2\xBA-1\xBA Barcelona
+        CP:08010, o la direcci\xF3n\n de correo electr\xF3nico info@arpoolvisualizations.com,
+        indicando claramente el derecho que\n desea ejercitar y acompa\xF1ando su
+        Documento Nacional de Identidad o documento\n identificativo similar que
+        acredite su identidad. Asimismo, podr\xE1 presentar una\n reclamaci\xF3n
+        ante la Agencia Espa\xF1ola de Protecci\xF3n de Datos. Al suscribir las presentes\n
+        Condiciones Generales de Uso el Usuario acepta la inclusi\xF3n de sus datos
+        de car\xE1cter\n personal en el fichero titularidad de SPACEPOOLS y AR POOL
+        para los fines que resultan\n del presente documento y que han sido citados
+        con anterioridad.\n\n7. R\xE9gimen de garant\xEDas y de responsabilidad\n\nARPOOL
+        SL velara\u0301 por alcanzar la mayor disponibilidad y continuidad posible
+        en el\nfuncionamiento de la Aplicaci\xF3n y/o Sitio Web. Sin embargo, ello
+        no implica que el Usuario\ntenga un derecho a la disponibilidad permanente
+        e ininterrumpida de la Aplicaci\xF3n y/o\nSitio Web. ARPOOL SL adopta diversas
+        medidas de protecci\xF3n para salvaguardar la\nAplicaci\xF3n y/o Sitio Web
+        y los Contenidos de ataques inform\xE1ticos de terceros. ARPOOL SL \nsolamente
+        responder\xE1 ante los Usuarios en los casos en los que se produzca un\n
+        da\xF1o por una transmisi\xF3n incorrecta, incompleta o tard\xEDa de datos
+        o por la falta de\n disponibilidad de la Aplicaci\xF3n y/o Sitio Web debido
+        a fallas imputables \xFAnica y\n directamente a ARPOOL SL. Asimismo, si (i)
+        el uso de la Aplicaci\xF3n y/o Sitio Web o (ii)\nla transmisi\xF3n de datos
+        a trav\xE9s de los mismos diera lugar a perjuicios o desperfectos del\nhardware
+        o software del Usuario, ARPOOL SL responder\xE1\u0301 de los mismos en tanto
+        en\ncuanto se acredite que dichos da\xF1os han sido directa y \xFAnicamente
+        causados por la\nAplicaci\xF3n y/o Sitio Web. Con la suscripci\xF3n de las
+        presentes Condiciones Generales de\nUso, el Usuario declara que mantendr\xE1
+        indemne a ARPOOL SL frente a cualquier\nreclamaci\xF3n contra la misma, su
+        sociedad matriz, directores, socios, empleados, abogados\ny agentes derivada
+        del (i) incumplimiento por parte del Usuario de cualquier disposici\xF3n\ncontenida
+        en las presentes Condiciones Generales de Uso o de cualquier ley o regulaci\xF3n\naplicable
+        a las mismas, (ii) del incumplimiento o violaci\xF3n de los derechos de terceros\nincluyendo,
+        a t\xEDtulo meramente enunciativo, los clientes o potenciales clientes del
+        Usuario,\n(iii) de cualquier da\xF1o o perjuicio causado por el Usuario en
+        el uso del Servicio a un\ntercero y (iv) del incumplimiento del uso permitido
+        de la Aplicaci\xF3n y/o Sitio Web. El\nacceso del Usuario a la Aplicaci\xF3n
+        quedara\u0301 a discreci\xF3n de SPACEPOOLS. ARPOOL SL\nprovee al Usuario
+        de un servicio sobre la base de productos de SPACEPOOLS.\nSPACEPOOLS podr\xE1
+        aceptar o rechazar el mantenimiento del acceso a la Aplicaci\xF3n al\nUsuario
+        en cualquier momento. El Usuario renuncia y exonera a ARPOOL SL de\ncualesquiera
+        obligaciones, reclamaciones o da\xF1os surgidos como consecuencia de la\nrelaci\xF3n
+        con SPACEPOOLS. ARPOOL SL no se constituir\xE1\u0301 como parte en cualesquiera\ndisputas
+        entre el Usuario y SPACEPOOLS. Toda responsabilidad u obligaci\xF3n nacida
+        en\nvirtud de la relaci\xF3n entre el Usuario y SPACEPOOLS descansa \xFAnicamente
+        en el Usuario y\nSPACEPOOLS, con todas las implicaciones que ello conlleva.\n\n8.
+        Notificaciones\n\nARPOOL SL podr\xE1 realizar las notificaciones oportunas
+        a trav\xE9s de la Aplicaci\xF3n y/o\nSitio Web, a trav\xE9s de la direcci\xF3n
+        de correo electr\xF3nico facilitada por el Usuario en el\nFormulario de Registro,
+        mediante SMS, a trav\xE9s de correo ordinario a la direcci\xF3n\nfacilitada
+        por el Usuario en el Formulario de Registro. El Usuario, a su vez podr\xE1
+        cursar\nnotificaciones a ARPOOL SL a trav\xE9s del Servicio de Asistencia
+        T\xE9cnica.\n\n9. Cesi\xF3n\n\nEl Usuario no podr\xE1 ceder sus derechos
+        y obligaciones de las presentes Condiciones\nGenerales de Uso sin el previo
+        consentimiento escrito de ARPOOL SL y de\nSPACEPOOLS. ARPOOL SL podr\xE1
+        ceder su posici\xF3n contractual, sin fines comerciales\ndistintos a los
+        asumidos en virtud de las presentes Condiciones Generales de Uso, a\ncualquier
+        entidad comprendida dentro de su grupo de sociedades, en todo el mundo, as\xED\u0301\ncomo
+        a cualquier persona o entidad que le suceda en el ejercicio de su negocio
+        por\ncualesquiera t\xEDtulos.\n\n10. Ley aplicable y jurisdicci\xF3n\n\nLas
+        presentes Condiciones Generales de Uso, as\xED como la relaci\xF3n entre
+        ARPOOL SL y\nel Usuario, se regir\xE1n e interpretar\xE1n con arreglo la
+        ley espa\xF1ola. De este modo, la\nactividad de ARPOOL SL queda sometida,
+        entre otras normas que le resulta aplicables,\na la Ley 34/2002, de 11 de
+        julio, de servicios de la sociedad de la informaci\xF3n y de\ncomercio electr\xF3nico.
+        Las partes acuerdan someterse a la jurisdicci\xF3n exclusiva de los\njuzgados
+        y tribunales de la ciudad de Barcelona para la resoluci\xF3n de cualquier\ncontroversia
+        en relaci\xF3n con las presentes Condiciones Generales de Uso o la relaci\xF3n\nentre
+        las mismas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 52.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 51.475647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 40.636024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 42.855537
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.3647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284295712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990606438210741698, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+        type: 3}
+      propertyPath: LocalizationKey
+      value: Login.Terms&Conditions.Body
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 641fbd8d8e80d7d4c9f6ca111b771d74, type: 3}
+--- !u!224 &299945631 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1590617698195355040, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
+    type: 3}
+  m_PrefabInstance: {fileID: 299945630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &304506208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,6 +2051,69 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!1 &311460712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311460713}
+  - component: {fileID: 311460714}
+  m_Layer: 0
+  m_Name: ReturnButtonContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &311460713
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311460712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1130022735}
+  m_Father: {fileID: 688766081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &311460714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311460712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 50
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 3
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -1892,6 +2562,96 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &429123533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 429123534}
+  - component: {fileID: 429123537}
+  - component: {fileID: 429123536}
+  - component: {fileID: 429123535}
+  m_Layer: 0
+  m_Name: Viewport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &429123534
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429123533}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1045031510}
+  m_Father: {fileID: 2046188571}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &429123535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429123533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
+--- !u!114 &429123536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429123533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &429123537
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429123533}
+  m_CullTransparentMesh: 1
 --- !u!224 &444963291 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1162399778072298528, guid: 46e33ddf996ce104996ea08075f97d71,
@@ -2117,6 +2877,170 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
     type: 3}
   m_PrefabInstance: {fileID: 456513208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &472492841
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1649732411}
+    m_Modifications:
+    - target: {fileID: 815246144238254654, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_Name
+      value: P_TitleText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215922571839779863, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: LocalizationKey
+      value: Login.Panel.TerminosDeServicio
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_text
+      value: "T\xE9rminos de servicio"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.3803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284558627
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 08f91ba4ff844224192815cd019894af, type: 3}
+--- !u!224 &472492842 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+    type: 3}
+  m_PrefabInstance: {fileID: 472492841}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &487695873
 GameObject:
@@ -3015,6 +3939,132 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 595575634}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &609283846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 609283847}
+  - component: {fileID: 609283850}
+  - component: {fileID: 609283849}
+  - component: {fileID: 609283848}
+  m_Layer: 0
+  m_Name: Scrollbar Vertical
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &609283847
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609283846}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1005284809}
+  m_Father: {fileID: 2046188571}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2713.042, y: 1090}
+  m_SizeDelta: {x: 64.0418, y: 1090}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &609283848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609283846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 88360744}
+  m_HandleRect: {fileID: 88360743}
+  m_Direction: 2
+  m_Value: 1
+  m_Size: 0.068125
+  m_NumberOfSteps: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &609283849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609283846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.34474012, g: 0.38256493, b: 0.5754717, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &609283850
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609283846}
+  m_CullTransparentMesh: 1
 --- !u!1 &613717534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3407,6 +4457,199 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &668700287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 668700288}
+  - component: {fileID: 668700291}
+  - component: {fileID: 668700290}
+  - component: {fileID: 668700289}
+  m_Layer: 0
+  m_Name: TermsAndConditionsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &668700288
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668700287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1633775281}
+  - {fileID: 1758823996}
+  - {fileID: 1343224862}
+  - {fileID: 688766081}
+  m_Father: {fileID: 1364467497}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &668700289
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668700287}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &668700290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668700287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cad4e159193b24ab586cb5ecb3bf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Component: 1
+  myPanel: {fileID: 0}
+  myButton: {fileID: 0}
+  mySlider: {fileID: 0}
+  myText: {fileID: 0}
+  myInputField: {fileID: 0}
+  myDropdown: {fileID: 0}
+  St_ButtonBehaviourData:
+    _buttonText: {fileID: 0}
+    _buttonImage: {fileID: 0}
+    bShowText: 0
+    bChangeImage: 0
+    _buttonImageChanged: {fileID: 0}
+    bButtonInMobileMode: 0
+    bHasAnimation: 0
+    key: 
+    bHaveTutorialPopUp: 0
+  St_TutorialPopUpData:
+    onClickDuration: 0
+    popUpTitle: 
+    popUpContentList: []
+    defaultPopUpRef: {fileID: 0}
+    bUseAnimation: 0
+    _AnimCont: {fileID: 0}
+  buttonType: 0
+  inputFieldType: 0
+  St_InputFieldBehaviourData:
+    _min: 0
+    _max: 0
+    _maxLenght: 0
+    bRemeberMe: 0
+    playerPrefName: 
+    _eyeGameObj: {fileID: 0}
+    _eyeOpen: {fileID: 0}
+    _eyeClosed: {fileID: 0}
+    _eyeClosedColor: {r: 0, g: 0, b: 0, a: 0}
+    _eyeOpenColor: {r: 0, g: 0, b: 0, a: 0}
+    key: 
+  St_DropdownBehaviourData:
+    bOptionsManually: 0
+    enumTypeName: 
+    defaultValue: 0
+    key: 
+  St_TextBehaviourData:
+    key: 
+  St_SliderBehaviourData:
+    sliderMin: 0
+    sliderMax: 0
+    sliderResult: 0
+  St_ToggleBehaviourScript:
+    _OnActiveToggle: {fileID: 0}
+    _UnActiveToggle: {fileID: 0}
+    _OnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    bCurrentToggleState: 0
+    bDependsOnPlayerPref: 0
+    _PlayerPref: 
+  St_DefaultPopUpBehaviourData:
+    _PopUpTitle: {fileID: 0}
+    _PopUpDescription: {fileID: 0}
+    _PopUpImage: {fileID: 0}
+    _PopUpButtonsList: []
+    _PopUpAnimator: {fileID: 0}
+    popUpTitle: 
+    popUpContentList: []
+  bPremiumBehaviour: 0
+  _UIPremiumBehaviour:
+    bOnlyForPremiumUsers: 0
+    _ImageDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _GetPremiumButton: {fileID: 0}
+  bFeatureNotAviable: 0
+  _ButtonsToHideArray: []
+--- !u!114 &668700291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668700287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfac7096d293ff14091ff782a3c11f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Component: 1
+  myPanel: {fileID: 0}
+  myButton: {fileID: 0}
+  mySlider: {fileID: 0}
+  myInputField: {fileID: 0}
+  myText: {fileID: 0}
+  animationType: 6
+  UI_ComponentStruct:
+    animationDuration: 0.5
+    appearEase: 3
+    disapearEase: 2
+    hiddenPositionOnXAxis: 3000
+    offsetPositionOnXAxisForMobileMode: 0
+    offsetPositionOnYAxisForMobileMode: 0
+    hiddenPositionOnYAxis: 3000
+    bDontStartHide: 0
+  UI_ButtonOnClickAnimType: 0
+  UI_ButtonOnClickDefaultStruct:
+    scaleUpFactor: 0
+    animationDuration: 0
+    easeType: 0
+  UI_ButtonOnClickGoSidesStruct:
+    moveAmount: 0
+    animationDuration: 0
+  UI_ButtonOnClickSwipeStruct:
+    animationDuration: 0
+    bDontDoFlipFlop: 0
+  UI_ButtonOnSelectedData:
+    bActiveSelectedState: 0
+    bStartSelected: 0
+    DeselectWhenYouClick: 0
+    _SelectButtonMode: 0
+    offsetPositionOnXAxisForSelectedMode: 0
+    _OnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _OnSelectedSprite: {fileID: 0}
+    _UnSelectedSprite: {fileID: 0}
+  UI_InputFieldStruct:
+    animDuration: 0
+    shakeStrenght: 0
+    originalInputFieldColor: {r: 0, g: 0, b: 0, a: 0}
+    wrongInputFieldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &688580435
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,6 +4702,70 @@ MonoBehaviour:
   m_Padding:
     m_Left: 250
     m_Right: 250
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!1 &688766080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 688766081}
+  - component: {fileID: 688766082}
+  m_Layer: 0
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &688766081
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688766080}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 311460713}
+  - {fileID: 294537443}
+  m_Father: {fileID: 668700288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -0.09814453, y: 128.33324}
+  m_SizeDelta: {x: -0.19628906, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &688766082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688766080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
@@ -6224,6 +7531,42 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1005284808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1005284809}
+  m_Layer: 0
+  m_Name: Sliding Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1005284809
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005284808}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 88360743}
+  m_Father: {fileID: 609283847}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 5}
+  m_SizeDelta: {x: -0.000015259, y: -10}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1020693872
 GameObject:
   m_ObjectHideFlags: 0
@@ -6422,6 +7765,69 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!1 &1045031509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1045031510}
+  - component: {fileID: 1045031511}
+  m_Layer: 0
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1045031510
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045031509}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 299945631}
+  m_Father: {fileID: 429123534}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.0002}
+  m_SizeDelta: {x: 10.4734, y: 16000}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1045031511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045031509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -7048,6 +8454,185 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1001 &1130022734
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 311460713}
+    m_Modifications:
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 238429580}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TravelToPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HUDManagerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: LoginPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416355544905883458, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3509115113201699791, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_Name
+      value: Return_SpriteButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.38431376
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.18823531
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384604789750884614, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.15294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81, type: 3}
+--- !u!224 &1130022735 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5578429148590640579, guid: e8c2ea4ec7b3c5b48a99c394e8f57d81,
+    type: 3}
+  m_PrefabInstance: {fileID: 1130022734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1133610511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8108,6 +9693,69 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1328677092}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1343224861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343224862}
+  - component: {fileID: 1343224863}
+  m_Layer: 0
+  m_Name: Terms&ConditionsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1343224862
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343224861}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2046188571}
+  m_Father: {fileID: 668700288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 4, y: 1100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1343224863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343224861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 50
+    m_Right: 50
+    m_Top: 5
+    m_Bottom: 5
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1354599428
 GameObject:
   m_ObjectHideFlags: 0
@@ -8277,6 +9925,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1364467496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1364467497}
+  - component: {fileID: 1364467499}
+  - component: {fileID: 1364467500}
+  m_Layer: 0
+  m_Name: TermsAndConditionsPanell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1364467497
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364467496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 668700288}
+  m_Father: {fileID: 1420296924}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1364467499
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364467496}
+  m_CullTransparentMesh: 1
+--- !u!114 &1364467500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364467496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab5779321d9fe843b56febfb629f395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _TermsAndConditionsScrollRect: {fileID: 2046188572}
+  _AcceptButton: {fileID: 2062714124}
 --- !u!1001 &1385694786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8784,6 +10492,7 @@ RectTransform:
   - {fileID: 2002586358}
   - {fileID: 1876910169}
   - {fileID: 613717535}
+  - {fileID: 1364467497}
   - {fileID: 4662925}
   m_Father: {fileID: 1354599429}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8983,6 +10692,69 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1429293355}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1442217263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1442217264}
+  - component: {fileID: 1442217265}
+  m_Layer: 0
+  m_Name: TitlieContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1442217264
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442217263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1649710055}
+  m_Father: {fileID: 1758823996}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1442217265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442217263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1001 &1447696876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10092,6 +11864,460 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1633775280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1633775281}
+  - component: {fileID: 1633775285}
+  - component: {fileID: 1633775284}
+  - component: {fileID: 1633775283}
+  - component: {fileID: 1633775282}
+  m_Layer: 0
+  m_Name: TermsAndConditionsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1633775281
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633775280}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1649732411}
+  m_Father: {fileID: 668700288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -875}
+  m_SizeDelta: {x: 0, y: 1750}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1633775282
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633775280}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1633775283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633775280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cad4e159193b24ab586cb5ecb3bf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Component: 1
+  myPanel: {fileID: 0}
+  myButton: {fileID: 0}
+  mySlider: {fileID: 0}
+  myText: {fileID: 0}
+  myInputField: {fileID: 0}
+  myDropdown: {fileID: 0}
+  St_ButtonBehaviourData:
+    _buttonText: {fileID: 0}
+    _buttonImage: {fileID: 0}
+    bShowText: 0
+    bChangeImage: 0
+    _buttonImageChanged: {fileID: 0}
+    bButtonInMobileMode: 0
+    bHasAnimation: 0
+    key: 
+    bHaveTutorialPopUp: 0
+  St_TutorialPopUpData:
+    onClickDuration: 0
+    popUpTitle: 
+    popUpContentList: []
+    defaultPopUpRef: {fileID: 0}
+    bUseAnimation: 0
+    _AnimCont: {fileID: 0}
+  buttonType: 0
+  inputFieldType: 0
+  St_InputFieldBehaviourData:
+    _min: 0
+    _max: 0
+    _maxLenght: 0
+    bRemeberMe: 0
+    playerPrefName: 
+    _eyeGameObj: {fileID: 0}
+    _eyeOpen: {fileID: 0}
+    _eyeClosed: {fileID: 0}
+    _eyeClosedColor: {r: 0, g: 0, b: 0, a: 0}
+    _eyeOpenColor: {r: 0, g: 0, b: 0, a: 0}
+    key: 
+  St_DropdownBehaviourData:
+    bOptionsManually: 0
+    enumTypeName: 
+    defaultValue: 0
+    key: 
+  St_TextBehaviourData:
+    key: 
+  St_SliderBehaviourData:
+    sliderMin: 0
+    sliderMax: 0
+    sliderResult: 0
+  St_ToggleBehaviourScript:
+    _OnActiveToggle: {fileID: 0}
+    _UnActiveToggle: {fileID: 0}
+    _OnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    bCurrentToggleState: 0
+    bDependsOnPlayerPref: 0
+    _PlayerPref: 
+  St_DefaultPopUpBehaviourData:
+    _PopUpTitle: {fileID: 0}
+    _PopUpDescription: {fileID: 0}
+    _PopUpImage: {fileID: 0}
+    _PopUpButtonsList: []
+    _PopUpAnimator: {fileID: 0}
+    popUpTitle: 
+    popUpContentList: []
+  bPremiumBehaviour: 0
+  _UIPremiumBehaviour:
+    bOnlyForPremiumUsers: 0
+    _ImageDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _GetPremiumButton: {fileID: 0}
+  bFeatureNotAviable: 0
+  _ButtonsToHideArray: []
+--- !u!114 &1633775284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633775280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfac7096d293ff14091ff782a3c11f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Component: 1
+  myPanel: {fileID: 0}
+  myButton: {fileID: 0}
+  mySlider: {fileID: 0}
+  myInputField: {fileID: 0}
+  myText: {fileID: 0}
+  animationType: 6
+  UI_ComponentStruct:
+    animationDuration: 0.5
+    appearEase: 3
+    disapearEase: 2
+    hiddenPositionOnXAxis: 3000
+    offsetPositionOnXAxisForMobileMode: 0
+    offsetPositionOnYAxisForMobileMode: 0
+    hiddenPositionOnYAxis: 3000
+    bDontStartHide: 0
+  UI_ButtonOnClickAnimType: 0
+  UI_ButtonOnClickDefaultStruct:
+    scaleUpFactor: 0
+    animationDuration: 0
+    easeType: 0
+  UI_ButtonOnClickGoSidesStruct:
+    moveAmount: 0
+    animationDuration: 0
+  UI_ButtonOnClickSwipeStruct:
+    animationDuration: 0
+    bDontDoFlipFlop: 0
+  UI_ButtonOnSelectedData:
+    bActiveSelectedState: 0
+    bStartSelected: 0
+    DeselectWhenYouClick: 0
+    _SelectButtonMode: 0
+    offsetPositionOnXAxisForSelectedMode: 0
+    _OnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _OnSelectedSprite: {fileID: 0}
+    _UnSelectedSprite: {fileID: 0}
+  UI_InputFieldStruct:
+    animDuration: 0
+    shakeStrenght: 0
+    originalInputFieldColor: {r: 0, g: 0, b: 0, a: 0}
+    wrongInputFieldColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &1633775285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633775280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
+  m_ChildAlignment: 1
+  m_Spacing: -15
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!1001 &1649710054
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1442217264}
+    m_Modifications:
+    - target: {fileID: 815246144238254654, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_Name
+      value: P_TitleText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215922571839779863, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: LocalizationKey
+      value: Login.Terms&Conditions.Descrip
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_text
+      value: Lee y acepte los terminos y las condiciones para continuar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.3803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605744816309404417, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284558627
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 08f91ba4ff844224192815cd019894af, type: 3}
+--- !u!224 &1649710055 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7983374598841801396, guid: 08f91ba4ff844224192815cd019894af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1649710054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1649732410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649732411}
+  - component: {fileID: 1649732412}
+  m_Layer: 0
+  m_Name: TitlieContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1649732411
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649732410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 472492842}
+  m_Father: {fileID: 1633775281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1649732412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649732410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1001 &1649956897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10881,6 +13107,223 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1758823995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1758823996}
+  - component: {fileID: 1758824000}
+  - component: {fileID: 1758823999}
+  - component: {fileID: 1758823998}
+  - component: {fileID: 1758823997}
+  m_Layer: 0
+  m_Name: TermsAndConditionsDescripContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1758823996
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758823995}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1442217264}
+  m_Father: {fileID: 668700288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -263.34}
+  m_SizeDelta: {x: 0, y: 123.31}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1758823997
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758823995}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1758823998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758823995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cad4e159193b24ab586cb5ecb3bf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Component: 1
+  myPanel: {fileID: 0}
+  myButton: {fileID: 0}
+  mySlider: {fileID: 0}
+  myText: {fileID: 0}
+  myInputField: {fileID: 0}
+  myDropdown: {fileID: 0}
+  St_ButtonBehaviourData:
+    _buttonText: {fileID: 0}
+    _buttonImage: {fileID: 0}
+    bShowText: 0
+    bChangeImage: 0
+    _buttonImageChanged: {fileID: 0}
+    bButtonInMobileMode: 0
+    bHasAnimation: 0
+    key: 
+    bHaveTutorialPopUp: 0
+  St_TutorialPopUpData:
+    onClickDuration: 0
+    popUpTitle: 
+    popUpContentList: []
+    defaultPopUpRef: {fileID: 0}
+    bUseAnimation: 0
+    _AnimCont: {fileID: 0}
+  buttonType: 0
+  inputFieldType: 0
+  St_InputFieldBehaviourData:
+    _min: 0
+    _max: 0
+    _maxLenght: 0
+    bRemeberMe: 0
+    playerPrefName: 
+    _eyeGameObj: {fileID: 0}
+    _eyeOpen: {fileID: 0}
+    _eyeClosed: {fileID: 0}
+    _eyeClosedColor: {r: 0, g: 0, b: 0, a: 0}
+    _eyeOpenColor: {r: 0, g: 0, b: 0, a: 0}
+    key: 
+  St_DropdownBehaviourData:
+    bOptionsManually: 0
+    enumTypeName: 
+    defaultValue: 0
+    key: 
+  St_TextBehaviourData:
+    key: 
+  St_SliderBehaviourData:
+    sliderMin: 0
+    sliderMax: 0
+    sliderResult: 0
+  St_ToggleBehaviourScript:
+    _OnActiveToggle: {fileID: 0}
+    _UnActiveToggle: {fileID: 0}
+    _OnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnActiveToggleColor: {r: 0, g: 0, b: 0, a: 0}
+    bCurrentToggleState: 0
+    bDependsOnPlayerPref: 0
+    _PlayerPref: 
+  St_DefaultPopUpBehaviourData:
+    _PopUpTitle: {fileID: 0}
+    _PopUpDescription: {fileID: 0}
+    _PopUpImage: {fileID: 0}
+    _PopUpButtonsList: []
+    _PopUpAnimator: {fileID: 0}
+    popUpTitle: 
+    popUpContentList: []
+  bPremiumBehaviour: 0
+  _UIPremiumBehaviour:
+    bOnlyForPremiumUsers: 0
+    _ImageDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
+    _GetPremiumButton: {fileID: 0}
+  bFeatureNotAviable: 0
+  _ButtonsToHideArray: []
+--- !u!114 &1758823999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758823995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfac7096d293ff14091ff782a3c11f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Component: 1
+  myPanel: {fileID: 0}
+  myButton: {fileID: 0}
+  mySlider: {fileID: 0}
+  myInputField: {fileID: 0}
+  myText: {fileID: 0}
+  animationType: 6
+  UI_ComponentStruct:
+    animationDuration: 0.5
+    appearEase: 3
+    disapearEase: 2
+    hiddenPositionOnXAxis: 3000
+    offsetPositionOnXAxisForMobileMode: 0
+    offsetPositionOnYAxisForMobileMode: 0
+    hiddenPositionOnYAxis: 3000
+    bDontStartHide: 0
+  UI_ButtonOnClickAnimType: 0
+  UI_ButtonOnClickDefaultStruct:
+    scaleUpFactor: 0
+    animationDuration: 0
+    easeType: 0
+  UI_ButtonOnClickGoSidesStruct:
+    moveAmount: 0
+    animationDuration: 0
+  UI_ButtonOnClickSwipeStruct:
+    animationDuration: 0
+    bDontDoFlipFlop: 0
+  UI_ButtonOnSelectedData:
+    bActiveSelectedState: 0
+    bStartSelected: 0
+    DeselectWhenYouClick: 0
+    _SelectButtonMode: 0
+    offsetPositionOnXAxisForSelectedMode: 0
+    _OnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _UnSelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    _OnSelectedSprite: {fileID: 0}
+    _UnSelectedSprite: {fileID: 0}
+  UI_InputFieldStruct:
+    animDuration: 0
+    shakeStrenght: 0
+    originalInputFieldColor: {r: 0, g: 0, b: 0, a: 0}
+    wrongInputFieldColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &1758824000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758823995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
+  m_ChildAlignment: 1
+  m_Spacing: -15
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1774316479
 GameObject:
   m_ObjectHideFlags: 0
@@ -11253,7 +13696,7 @@ PrefabInstance:
     - target: {fileID: 4244733015126699861, guid: eb593374e392cb34cb5fc1d5f1ec52db,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: CreateUserPanel
+      value: Terms&ConditionsPanel
       objectReference: {fileID: 0}
     - target: {fileID: 4244733015126699861, guid: eb593374e392cb34cb5fc1d5f1ec52db,
         type: 3}
@@ -13095,6 +15538,315 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &2046188570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2046188571}
+  - component: {fileID: 2046188574}
+  - component: {fileID: 2046188573}
+  - component: {fileID: 2046188572}
+  m_Layer: 0
+  m_Name: Scroll View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2046188571
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046188570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 429123534}
+  - {fileID: 609283847}
+  m_Father: {fileID: 1343224862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2046188572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046188570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 1045031510}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 429123534}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 609283848}
+  m_HorizontalScrollbarVisibility: 2
+  m_VerticalScrollbarVisibility: 2
+  m_HorizontalScrollbarSpacing: -3
+  m_VerticalScrollbarSpacing: -3
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2046188573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046188570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c53bf23192d22934c9b42554b82e6593, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2046188574
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046188570}
+  m_CullTransparentMesh: 1
+--- !u!1001 &2062714122
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 294537443}
+    m_Modifications:
+    - target: {fileID: 1729608519352776715, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_text
+      value: Aceptar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729608519352776715, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 650
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608170286761897853, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: LocalizationKey
+      value: Login.Input.Aceptar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231856693626634384, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_Name
+      value: Aceptar_TextButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606632989608833213, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606632989608833213, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790564998774202488, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790564998774202488, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790564998774202488, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 238429580}
+    - target: {fileID: 8790564998774202488, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790564998774202488, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TravelToPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790564998774202488, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HUDManagerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790564998774202488, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: CreateUserPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790564998774202488, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14f07dcfdc36a1745b19a9ce10a75eb4, type: 3}
+--- !u!224 &2062714123 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4044027102001078212, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2062714122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2062714124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8790564998774202488, guid: 14f07dcfdc36a1745b19a9ce10a75eb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2062714122}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2062965237 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7884359775046503753, guid: 46e33ddf996ce104996ea08075f97d71,
