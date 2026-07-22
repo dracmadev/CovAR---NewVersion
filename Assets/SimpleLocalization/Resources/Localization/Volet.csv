@@ -32,7 +32,7 @@ Login.Panel.CreacionUsuario.Instrucciones,"En caso de no poder crear un usuario,
 ,,,
 ,,,
 ,,,
-Login.SetPassword.Menu.Error,Error al actualizar la contraseña,Erreur lors de la mise à jour du mot de passe,Error updating password
+Login.SetPassword.Menu.Error,Error al actualizar la contraseña,Erreur de mise à jour du mot de passe,Password update error
 ,,,
 ,,,
 ,,,
@@ -554,7 +554,7 @@ La plateforme s'enroule entièrement dans un compartiment sous-marin recouvert d
 The platform rolls up completely inside an underwater compartment covered by a submerged conduit plate. This cover is suitable for pools under renovation or construction."
 Main.VoletTypeWindow.HelpPanel.RollersText,"Los rodillos para piscinas elevadas permiten una perfecta conservación de la cubierta.
 
-Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une parfaite préservation de la couverture.
+Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une protection optimale de la couverture.
 
 Ces enrouleurs facilitent la manipulation de la couverture d'été. Une fois rétractée, il est simple de la ranger, libérant ainsi l'espace de baignade. Ils sont équipés d'un système de freinage pour bloquer le cylindre et sont très résistants.","Rollers for above-ground pools ensure the cover is perfectly preserved.
 
@@ -750,7 +750,7 @@ FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE H
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -870,7 +870,7 @@ Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de co
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -885,7 +885,7 @@ FichaTecnica.ProductosAsociados.Tapas.Option4,Por encargo,Sur mesure,Custom made
 FichaTecnica.Anotaciones.Titulo,ANOTACIONES:,REMARQUES :,NOTES:
 FichaTecnica.Anotaciones.Input,Introduce texto...,Saisissez du texte...,Enter text...
 FichaTecnica.Titulo,PLANO TÉCNICO,PLAN TECHNIQUE,TECHNICAL PLAN
-FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Renseignez les informations client pour générer le dessin technique.,Complete the customer details to generate the technical drawing.
+FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Complétez les informations client afin de générer le dessin technique.,Complete the customer details in order to generate the technical drawing.
 FichaTecnica.EscribirNombre,Nombre del cliente...,Nom du client...,Customer name...
 FichaTecnica.EscribirCorreo,Correo del cliente...,Courriel du client...,Customer email...
 ,,,
@@ -1210,13 +1210,13 @@ juzgados y tribunales de la ciudad de Barcelona para la resolución de cualquier
 controversia en relación con las presentes Condiciones Generales de Uso o la relación
 entre las mismas.""","1. Objet
 
-Les présentes Conditions Générales d'Utilisation régissent l'utilisation de l'application logicielle SPACEPOOLS-AR, personnalisée pour SPACEPOOLS (l'« Application »), et du site web https://arpoolvisualizations.com/, quel que soit son nom actuel ou tout autre nom qu'il pourrait adopter ultérieurement, appartenant à ARPOOL SL, dont le numéro d'identification fiscale (NIF) est B64113509 et le siège social est situé Calle Caspe 37, 2º-1º, Barcelone, code postal : 08010. L'Application et le Site web sont exclusivement destinés aux utilisateurs résidant dans l'Union européenne. Les utilisateurs résidant ou domiciliés ailleurs qui choisissent d'accéder à cette Application et/ou à ce Site web et/ou de les utiliser doivent s'assurer que cet accès et/ou cette utilisation sont conformes à la législation locale applicable. En accédant à cette Application et/ou à ce Site web et en les utilisant, vous (« Utilisateur ») (i) reconnaissez avoir lu et accepté les présentes Conditions Générales d'Utilisation et (ii) vous engagez à respecter l'intégralité de leurs termes et conditions. L’Utilisateur reconnaît et accepte que l’accès à cette Application et/ou à ce Site Web et leur utilisation soient soumis aux Conditions Générales d’Utilisation en vigueur au moment de l’accès.
+Les présentes Conditions Générales d'Utilisation régissent l'utilisation de l'application logicielle SPACEPOOLS-AR, personnalisée pour SPACEPOOLS (l'« Application »), et du site web https://arpoolvisualizations.com/, quel que soit son nom actuel ou tout autre nom qu'il pourrait adopter ultérieurement, appartenant à ARPOOL SL, dont le numéro d'identification fiscale (NIF) est B64113509 et le siège social est situé Calle Caspe 37, 2º-1º, Barcelone, code postal : 08010. L'Application et le Site web sont exclusivement destinés aux utilisateurs résidant dans l'Union européenne. Les utilisateurs résidant ou domiciliés ailleurs qui choisissent d'accéder à cette Application et/ou à ce Site web et/ou de les utiliser doivent s'assurer que cet accès et/ou cette utilisation sont conformes à la législation locale applicable. En accédant à cette Application et/ou à ce Site web et en les utilisant, vous (« Utilisateur ») (i) reconnaissez avoir lu et accepté les présentes Conditions Générales d'Utilisation et (ii) vous engagez à respecter l'intégralité de leurs termes et conditions. L’Utilisateur reconnaît et accepte que l’accès à cette Application et/ou à ce Site Web et leur utilisation sont soumis aux Conditions Générales d’Utilisation en vigueur au moment de l’accès.
 
 ARPOOL SL se réserve le droit de modifier les présentes Conditions Générales d’Utilisation, ainsi que toutes autres conditions générales ou particulières applicables. Dans ce cas, l’Utilisateur peut informer SPACEPOOLS ou ARPOOL SL, via le Service d’Assistance Technique, qu’il n’accepte aucune modification des présentes Conditions Générales d’Utilisation.
 
 2. Contenu
 
-Par le biais de l’Application, ARPOOL SL fournit à SPACEPOOLS, et aux Utilisateurs de l’Application désignés par SPACEPOOLS, un programme de réalité augmentée pour appareils mobiles. Ce programme, destiné au secteur de la fabrication, de la distribution et de la construction de piscines, permet à SPACEPOOLS de télécharger ses produits dans l’Application et de les afficher, selon la sélection du client, à l’emplacement prévu pour la construction ou l’installation de la piscine. Ceci permet aux clients de bénéficier d’un aperçu tridimensionnel sur site du produit ou du service qu’ils envisagent de commander (« Service »). L'Application donne accès à l'Utilisateur à divers contenus, informations et données fournis par SPACEPOOLS et ARPOOL SL en lien avec le Service (le « Contenu »). ARPOOL SL se réserve le droit de modifier à tout moment la présentation, la configuration et l'emplacement de l'Application et/ou du Site Web, ainsi que les conditions d'accès et d'utilisation correspondantes.
+Par le biais de l’Application, ARPOOL SL fournit à SPACEPOOLS, et aux Utilisateurs de l’Application désignés par SPACEPOOLS, un programme de réalité augmentée pour appareils mobiles. Ce programme est destiné au secteur de la fabrication, de la distribution et de la construction de piscines, et permet à SPACEPOOLS d’y intégrer ses produits afin de les afficher, selon la sélection du client, à l’emplacement prévu pour la construction ou l’installation de la piscine. Ceci permet aux clients de bénéficier d’un aperçu tridimensionnel sur site du produit ou du service qu’ils envisagent de commander (« Service »). L'Application donne accès à l'Utilisateur à divers contenus, informations et données fournis par SPACEPOOLS et ARPOOL SL en lien avec le Service (le « Contenu »). ARPOOL SL se réserve le droit de modifier à tout moment la présentation, la configuration et l'emplacement de l'Application et/ou du Site Web, ainsi que les conditions d'accès et d'utilisation correspondantes.
 
 Le Contenu fourni par le biais de l'Application et/ou du Site Web peut faire l'objet de mises à jour qui ne sont pas systématiquement reflétées dans l'Application et/ou le Site Web.
 
@@ -1327,7 +1327,7 @@ ARPOOL SL reserves the right to modify these General Terms of Use, as well as an
 
 2. Content
 
-Through the Application, ARPOOL SL provides SPACEPOOLS, and the Application Users designated by SPACEPOOLS, with an augmented reality program for use on mobile devices. This program, geared towards the pool manufacturing, distribution, and construction sector, allows SPACEPOOLS to upload its products to the application and display them, based on the customer's selection, at the location planned for the pool's construction or installation. This leverages the advantages of offering customers an on-site, three-dimensional preview of the product or service they intend to order (""Service""). The Application provides the User with access to various content, information, and data provided by SPACEPOOLS and ARPOOL SL in relation to the Service (the “Content”). ARPOOL SL reserves the right to modify the presentation, configuration, and location of the Application and/or Website, as well as the corresponding access and usage conditions, at any time.
+Through the Application, ARPOOL SL provides SPACEPOOLS, and the Application Users designated by SPACEPOOLS, with an augmented reality program for use on mobile devices. This program is geared towards the pool manufacturing, distribution, and construction sector, and allows SPACEPOOLS to upload its products to the application to display them, based on the customer's selection, at the location planned for the pool's construction or installation. This leverages the advantages of offering customers an on-site, three-dimensional preview of the product or service they intend to order (""Service""). The Application provides the User with access to various content, information, and data provided by SPACEPOOLS and ARPOOL SL in relation to the Service (the “Content”). ARPOOL SL reserves the right to modify the presentation, configuration, and location of the Application and/or Website, as well as the corresponding access and usage conditions, at any time.
 The Content provided through the Application and/or Website may be subject to updates that are not reflected in the Application and/or Website at all times.
 ARPOOL SL acts as the developer of the Application and provider of the services necessary for its use and operation. It is the sole responsibility of SPACEPOOLS to ensure that the elements, products, components, and other images provided by it and used for the development of the Service are not subject to limitations on their use that are beyond SPACEPOOLS' control. ARPOOL SL only provides
 SPACEPOOLS and the Users it designates with an augmented reality tool,
@@ -1418,9 +1418,9 @@ The User may not assign their rights and obligations under these General Terms o
 
 These General Terms of Use, as well as the relationship between ARPOOL SL and the User, shall be governed by and construed in accordance with Spanish law. Thus, ARPOOL SL's activities are subject, among other applicable regulations, to Law 34/2002 of July 11, on Information Society Services and Electronic Commerce. The parties agree to submit to the exclusive jurisdiction of the courts of the city of Barcelona for the resolution of any dispute relating to these General Terms of Use or the relationship between them."
 Login.Terms&Conditions.Descrip,Lee y acepte los terminos y las condiciones para continuar,Veuillez lire et accepter les conditions générales pour continuer.,Read and accept the terms and conditions to continue
-,,,
-,,,
-,,,
+Login.Settings.MovileMode,Modo móvil,Mode mobile,Mobile mode
+Login.Settings.MovileMode.Option01,Modo desactivado,Mode arrêt,Off mode
+Login.Settings.MovileMode.Option02,Modo activado,Mode activé,Mode activated
 ,,,
 ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photo - CovAR,Photograph - CovAR
 ScreenshootAndShare.Photo.Descrip,Esta fotografía sacada con la aplicación  de CovAR.,Cette photographie a été prise à l'aide de l'application CovAR.,This photograph was taken using the CovAR application.

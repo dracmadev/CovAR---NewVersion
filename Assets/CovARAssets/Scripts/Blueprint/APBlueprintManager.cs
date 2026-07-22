@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -8,6 +9,7 @@ public class APBlueprintManager : MonoBehaviour
     [Header("ASTRALPOOL BLUEPRINT MANAGER")]
     [Space()]
     [Header("BLOCKS REFERENCES:")]
+    [SerializeField] private VerticalLayoutGroup _VerticalBoxGeneralBlock;
     [SerializeField] private APTopInformationBlock _APTopInformationBlock;
     [SerializeField] private APBasicInfoBlock _APBasicInfoBlock;
     [SerializeField] private APRelatedProductsBlock _APRelatedProductsBlock;
@@ -66,6 +68,23 @@ public class APBlueprintManager : MonoBehaviour
         _OrderData._Country = _GeolocalizationManager.GetCountry();
         _OrderData._PostCode = _GeolocalizationManager.GetPostCode();
 
+
+        if(_VerticalBoxGeneralBlock != null)
+        {
+            if (PlayerPrefs.GetInt("MobileMode") == 1)
+            {
+                _VerticalBoxGeneralBlock.padding.left = 250;
+                _VerticalBoxGeneralBlock.padding.right = 250;
+            }
+            else
+            {
+                _VerticalBoxGeneralBlock.padding.left = 0;
+                _VerticalBoxGeneralBlock.padding.right = 0;
+            }
+
+            LayoutRebuilder.ForceRebuildLayoutImmediate(_VerticalBoxGeneralBlock.GetComponent<RectTransform>());
+        }
+       
 
         InitBlocks();
 

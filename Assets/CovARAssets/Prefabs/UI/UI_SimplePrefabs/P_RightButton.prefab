@@ -234,7 +234,7 @@ MonoBehaviour:
     appearEase: 27
     disapearEase: 26
     hiddenPositionOnXAxis: 350
-    offsetPositionOnXAxisForMobileMode: 100
+    offsetPositionOnXAxisForMobileMode: 175
     offsetPositionOnYAxisForMobileMode: 0
     hiddenPositionOnYAxis: 350
     bDontStartHide: 0

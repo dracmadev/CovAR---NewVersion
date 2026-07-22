@@ -434,8 +434,8 @@ MonoBehaviour:
     animationDuration: 0.2
     appearEase: 27
     disapearEase: 26
-    hiddenPositionOnXAxis: 450
-    offsetPositionOnXAxisForMobileMode: 75
+    hiddenPositionOnXAxis: 650
+    offsetPositionOnXAxisForMobileMode: 175
     offsetPositionOnYAxisForMobileMode: 0
     hiddenPositionOnYAxis: 350
     bDontStartHide: 0

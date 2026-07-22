@@ -145,10 +145,10 @@ MonoBehaviour:
     animationDuration: 0
     appearEase: 0
     disapearEase: 0
-    hiddenPositionOnXAxis: 0
+    hiddenPositionOnXAxis: 650
     offsetPositionOnXAxisForMobileMode: 0
     offsetPositionOnYAxisForMobileMode: 0
-    hiddenPositionOnYAxis: 0
+    hiddenPositionOnYAxis: 650
     bDontStartHide: 0
   UI_ButtonOnClickAnimType: 1
   UI_ButtonOnClickDefaultStruct:
