@@ -11,6 +11,7 @@ public class InGameSettingsBehaviour : MonoBehaviour
     [SerializeField] private Sprite _MovileModeActive;
     [SerializeField] private Sprite _MovileModeUnactive;
 
+    HUDManagerScript _HUDManagerScript;
 
     void Start()
     {
@@ -36,6 +37,11 @@ public class InGameSettingsBehaviour : MonoBehaviour
         if(_HelpModeButton != null)
         {
             _HelpModeButton.onClick.AddListener(OnClickSetHelpMode);
+        }
+
+        if (GameObject.FindGameObjectWithTag("HUD"))
+        {
+            _HUDManagerScript = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
         }
     }
 
@@ -90,6 +96,11 @@ public class InGameSettingsBehaviour : MonoBehaviour
         {
             PlayerPrefs.SetInt("HelpMode", 1);
         }
+    }
+
+    public void OnClickCloseSettings()
+    {
+        _HUDManagerScript.TravelToPanel(_HUDManagerScript.GetLastPanelOnScreenName());
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

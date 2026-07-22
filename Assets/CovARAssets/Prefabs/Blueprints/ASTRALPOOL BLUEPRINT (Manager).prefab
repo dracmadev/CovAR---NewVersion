@@ -17215,7 +17215,7 @@ PrefabInstance:
     - target: {fileID: 6990606438210741698, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}
       propertyPath: LocalizationKey
-      value: FichaTecnica.InfoBasica.Titulo
+      value: FichaTecnica.MaterialInfo.Titulo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

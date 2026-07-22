@@ -1,12 +1,10 @@
 using Assets.SimpleLocalization.Scripts;
 using System.Collections;
-using System.Drawing;
 using System.Text;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+
 
 public class WebRequestManager : MonoBehaviour
 {
