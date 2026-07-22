@@ -831,7 +831,18 @@ Catalog.Lamas.Material.Title,Material,Matériel,Material
 ,,,
 InGame.PlaneFinderPanel.InfoText,"Apunte hacia el suelo hasta que aparezca una marca, a continuación, púlsela.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
 InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit
-,,,
+InGame.Help.Mode.Movment,Mover modelo,Sélectionnez un modèle de volet,Move model
+InGame.Help.Mode.MovmentDescrip,Permite mover el modelo de cubierta arrastrando el modelo con el dedo.,Il vous permet de déplacer le modèle de couverture en le faisant glisser avec votre doigt.,Il vous permet de déplacer le modèle de couverture en le faisant glisser avec votre doigt.
+InGame.Help.Mode.Rotation,Rotar modelo,Modèle de rotation,Modèle de rotation
+InGame.Help.Mode.RotationDescrip,Permite rotar el modelo con el la barra deslizadora.,Il vous permet de faire pivoter le modèle à l'aide de la barre de défilement.,Il vous permet de faire pivoter le modèle à l'aide de la barre de filetage.
+InGame.Help.Mode.SetModelLenght,Anchura del modelo,Largeur du modèle,Largeur du
+InGame.Help.Mode.SetModelLenghtDescrip,Permite modificar la anchura del modelo con la barra deslizadora,Permet de modifier la largeur du modèle à l'aide du curseur.,Permet de modifier la largeur du modèle à l'aide du parcours.
+InGame.Help.Mode.SetLamasLenght,Longitud de la persiana,Longueur de l'aveugle,Durée de la cécité
+InGame.Help.Mode.SetLamasLenghtDescrip,Permite modificar la longitud de la persiana con la barra deslizadora,Elle permet de régler la longueur du store grâce à la barre coulissante.,Elle permet d'ajuster la longueur du magasin grâce à la barre coulissante.
+InGame.Help.Mode.Blueprint,Plano técnico,dessin technique,technique de dessin
+InGame.Help.Mode.BlueprintDescrip,Permite acceder al plano tècnico del modelo seleccionado,Il permet d'accéder au dessin technique du modèle sélectionné.,Il permet d'accéder au dessin technique du modèle sélectionné.
+InGame.Help.Mode.Catalogo,Catálogo,Catalogue,Catalogue
+InGame.Help.Mode.CatalogDescrip,"Accede al catalogo completo para poder cambiar el modelo, el color, el material de las lamas o su color.","Accédez au catalogue complet pour modifier le modèle, la couleur, le matériau des lattes ou la couleur.","Accédez au catalogue complet pour modifier le modèle, la couleur, la matière des lattes ou la couleur."
 ,,,
 ,,,
 ,,,
@@ -1419,8 +1430,8 @@ The User may not assign their rights and obligations under these General Terms o
 These General Terms of Use, as well as the relationship between ARPOOL SL and the User, shall be governed by and construed in accordance with Spanish law. Thus, ARPOOL SL's activities are subject, among other applicable regulations, to Law 34/2002 of July 11, on Information Society Services and Electronic Commerce. The parties agree to submit to the exclusive jurisdiction of the courts of the city of Barcelona for the resolution of any dispute relating to these General Terms of Use or the relationship between them."
 Login.Terms&Conditions.Descrip,Lee y acepte los terminos y las condiciones para continuar,Veuillez lire et accepter les conditions générales pour continuer.,Read and accept the terms and conditions to continue
 Login.Settings.MovileMode,Modo móvil,Mode mobile,Mobile mode
-Login.Settings.MovileMode.Option01,Modo desactivado,Mode arrêt,Off mode
-Login.Settings.MovileMode.Option02,Modo activado,Mode activé,Mode activated
+Login.Settings.HelpMode,Modo ayuda,Mode d'aide,Help mode
+,,,
 ,,,
 ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photo - CovAR,Photograph - CovAR
 ScreenshootAndShare.Photo.Descrip,Esta fotografía sacada con la aplicación  de CovAR.,Cette photographie a été prise à l'aide de l'application CovAR.,This photograph was taken using the CovAR application.

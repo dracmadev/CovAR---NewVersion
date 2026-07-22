@@ -5,6 +5,9 @@ public class InGameSettingsBehaviour : MonoBehaviour
     [Header("IN GAME SETTINGS")]
     [Header("Movile mode")]
     [SerializeField] private Button _MovileModeButton;
+    [Header("Help mode")]
+    [SerializeField] private Button _HelpModeButton;
+    [Header("Sprites:")]
     [SerializeField] private Sprite _MovileModeActive;
     [SerializeField] private Sprite _MovileModeUnactive;
 
@@ -18,6 +21,7 @@ public class InGameSettingsBehaviour : MonoBehaviour
     void Update()
     {
         OnUpdateMovileMode();
+        OnUpdateHelpMode();
     }
 
     /////////////////////////////////////////////////////////////////// INIT //////////////////////////////////////////////////////////////////////////
@@ -27,6 +31,11 @@ public class InGameSettingsBehaviour : MonoBehaviour
         if(_MovileModeButton != null)
         {
             _MovileModeButton.onClick.AddListener(OnClickSetMobileMode);
+        }
+
+        if(_HelpModeButton != null)
+        {
+            _HelpModeButton.onClick.AddListener(OnClickSetHelpMode);
         }
     }
 
@@ -59,6 +68,28 @@ public class InGameSettingsBehaviour : MonoBehaviour
         }
     }
 
+    void OnUpdateHelpMode()
+    {
+        if (PlayerPrefs.GetInt("HelpMode") == 1)
+        {
+            _HelpModeButton.image.sprite = _MovileModeActive;
+        }
+        else
+        {
+            _HelpModeButton.image.sprite = _MovileModeUnactive;
+        }
+    }
 
+    void OnClickSetHelpMode()
+    {
+        if (PlayerPrefs.GetInt("HelpMode") == 1)
+        {
+            PlayerPrefs.SetInt("HelpMode", 0);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("HelpMode", 1);
+        }
+    }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
