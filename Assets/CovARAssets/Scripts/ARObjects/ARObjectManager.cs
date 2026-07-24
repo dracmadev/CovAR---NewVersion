@@ -1099,15 +1099,18 @@ public class ARObjectManager : MonoBehaviour
         }
     }
 
-    void DesactiveFeedbackDecal()
+    public void DesactiveFeedbackDecal()
     {
-
-        GameObject[] decalsActius = GameObject.FindGameObjectsWithTag("MovmentDecal");
-
-        foreach (GameObject decal in decalsActius)
+        if(GameObject.FindGameObjectsWithTag("MovmentDecal") != null)
         {
-            Destroy(decal);
+            GameObject[] decalsActius = GameObject.FindGameObjectsWithTag("MovmentDecal");
+
+            foreach (GameObject decal in decalsActius)
+            {
+                Destroy(decal);
+            }
         }
+       
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

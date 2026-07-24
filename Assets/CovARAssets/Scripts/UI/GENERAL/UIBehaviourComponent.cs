@@ -149,14 +149,15 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
                 Debug.LogError("UIBehaviourComponent -> No s'ha trobat cap objecte amb el tag DefaultPopUp (Alvaro)");
             }           
         }
+        /*
         if(bFeatureNotAviable)
         {
-            InitNotAviableFeatureBehaviour();
+            InitNotAviableFeatureBehaviour(bFeatureNotAviable);
         }
         else
         {
             InitPermiumBehaviour();
-        }
+        }*/
     }
     void InitDropdown()
     {
@@ -907,16 +908,18 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
 
     //////////////////////////////////////////////////////// NOT AVIABLE ////////////////////////////////////////////////////////////////
 
-    void InitNotAviableFeatureBehaviour()
+    public void InitNotAviableFeatureBehaviour(bool active)
     {
-        myButton.interactable = false;
-
-        if (buttonType == E_ButtonType.ImageButton)
+        if(!active)
         {
-            St_ButtonBehaviourData._buttonText.color = _UIPremiumBehaviour._TextDesactiveColor;
-            St_ButtonBehaviourData._buttonImage.color = _UIPremiumBehaviour._ImageDesactiveColor;
+            myButton.interactable = false;
+            myButton.GetComponent<CanvasGroup>().alpha = 0.5f;
         }
-
+        else
+        {
+            myButton.interactable = true;
+            myButton.GetComponent<CanvasGroup>().alpha = 1f;
+        }
     }
 
 

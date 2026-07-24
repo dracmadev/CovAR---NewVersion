@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2416355544905883458}
   - component: {fileID: 6105153959242871141}
   - component: {fileID: 730935661668733717}
+  - component: {fileID: 3923643191027131034}
   m_Layer: 5
   m_Name: P_SpriteButton
   m_TagString: Untagged
@@ -261,3 +262,15 @@ MonoBehaviour:
     _GetPremiumButton: {fileID: 0}
   bFeatureNotAviable: 0
   _ButtonsToHideArray: []
+--- !u!225 &3923643191027131034
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3509115113201699791}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
