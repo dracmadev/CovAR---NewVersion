@@ -12,6 +12,7 @@ public class St_TutorialInfoData
     public string _DescripKey;
     public float _xOffset;
     public float _yOffset;
+    public Color _PanelColor;
     public bool bNoInteractPanelIsActive;
     public bool bContinueButtonIsActive;
     public bool bLeftFeedbackObj;

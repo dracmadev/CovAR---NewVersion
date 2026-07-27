@@ -67,6 +67,8 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
     [Space()]
     [Header("Is This feature not Aviable yet?")]
     [SerializeField] private bool bFeatureNotAviable;
+    [Header("On click feedback:")]
+    [SerializeField] private GameObject _OnClickAnimFeedback;
 
     [Header("Buttons you want to Hide:")]
     [SerializeField] private GameObject[] _ButtonsToHideArray;
@@ -149,15 +151,11 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
                 Debug.LogError("UIBehaviourComponent -> No s'ha trobat cap objecte amb el tag DefaultPopUp (Alvaro)");
             }           
         }
-        /*
-        if(bFeatureNotAviable)
+        
+        if(_OnClickAnimFeedback != null)
         {
-            InitNotAviableFeatureBehaviour(bFeatureNotAviable);
+            _OnClickAnimFeedback.SetActive(false);
         }
-        else
-        {
-            InitPermiumBehaviour();
-        }*/
     }
     void InitDropdown()
     {
@@ -433,7 +431,13 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
         }
     }
 
-
+    public void SetStateOfOnClickAnim(bool state)
+    {
+        if(_OnClickAnimFeedback != null)
+        {
+            _OnClickAnimFeedback.SetActive(state);
+        }
+    }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

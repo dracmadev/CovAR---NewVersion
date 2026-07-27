@@ -95,8 +95,9 @@ public class UIBehaviourComponentEditor : Editor
                 }
                 //Premium State
                 SerializedProperty bFeatureNotAviable = serializedObject.FindProperty("bFeatureNotAviable");
-
+                SerializedProperty onClickAnimFeedback = serializedObject.FindProperty("_OnClickAnimFeedback");
                 EditorGUILayout.PropertyField(bFeatureNotAviable, true);
+                EditorGUILayout.PropertyField(onClickAnimFeedback, true);
                 break;
 
             case E_UIComponents.Slider:

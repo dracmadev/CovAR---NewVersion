@@ -48,7 +48,7 @@ En cas de problème d'accès à l'application, veuillez contacter infomarketing@
 If you have any problems accessing the application, please contact infomarketing@fluidra.com"
 Login.Panel.CambiarDispositivo.Title,Cambiar de dispositivo,Dispositif de commutation,Switch device
 Login.Panel.CambiarDispositivo.Texto,Migrar la licencia liberará este usuario del anterior dispositivo y lo vinculará al actual. La migración debe realizarse solo en el caso que quiera vincular esta licencia de uso a otro dispositivo.,La migration de la licence libérera cet utilisateur de l'appareil précédent et l'associera à l'appareil actuel. La migration ne doit être effectuée que si vous souhaitez associer cette licence à un autre appareil.,Migrating the license will release this user from the previous device and link it to the current one. Migration should only be performed if you want to link this license to another device.
-Login.Panel.CambiarDispositivo.Cambiado,La aplicación se ha vinculado a este dispositivo correctamente,L'application a été associée avec succès à cet appareil.,The app has been successfully linked to this device
+Login.Panel.CambiarDispositivo.Cambiado,La aplicación se ha vinculado a este dispositivo correctamente,L'application s'est connectée avec succès à cet appareil.,The app has successfully linked to this device
 Login.Input.ClaveActual,clave actual...,clé actuelle...,current key...
 Login.Input.NuevaClave,nueva clave...,nouvelle clé...,new key...
 Login.Input.RepetirNuevaClave,repetir nueva clave...,Répétez la nouvelle touche...,Repeat new key...
@@ -115,7 +115,7 @@ La plateforme s'enroule entièrement dans un compartiment sous-marin recouvert d
 The platform rolls up completely inside an underwater compartment covered by a submerged conduit plate. This cover is suitable for pools under renovation or construction."
 Main.VoletTypeWindow.HelpPanel.RollersText,"Los rodillos para piscinas elevadas permiten una perfecta conservación de la cubierta.
 
-Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une parfaite préservation de la couverture.
+Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une protection optimale de la couverture.
 
 Ces enrouleurs facilitent la manipulation de la couverture d'été. Une fois rétractée, il est simple de la ranger, libérant ainsi l'espace de baignade. Ils sont équipés d'un système de freinage pour bloquer le cylindre et sont très résistants.","Rollers for above-ground pools ensure the cover is perfectly preserved.
 
@@ -311,7 +311,7 @@ FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE H
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -391,7 +391,7 @@ Catalog.Lamas.Material.Title,Material,Matériel,Material
 ,,,
 ,,,
 InGame.PlaneFinderPanel.InfoText,"Apunte hacia el suelo hasta que aparezca una marca, a continuación, púlsela.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
-InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit
+InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit.
 InGame.Help.Mode.Movment,Mover modelo,Sélectionnez un modèle de volet,Move model
 InGame.Help.Mode.MovmentDescrip,Permite mover el modelo de cubierta arrastrando el modelo con el dedo.,Il vous permet de déplacer le modèle de couverture en le faisant glisser avec votre doigt.,Il vous permet de déplacer le modèle de couverture en le faisant glisser avec votre doigt.
 InGame.Help.Mode.Rotation,Rotar modelo,Modèle de rotation,Modèle de rotation
@@ -403,7 +403,7 @@ InGame.Help.Mode.SetLamasLenghtDescrip,Permite modificar la longitud de la persi
 InGame.Help.Mode.Blueprint,Plano técnico,dessin technique,technique de dessin
 InGame.Help.Mode.BlueprintDescrip,Permite acceder al plano tècnico del modelo seleccionado,Il permet d'accéder au dessin technique du modèle sélectionné.,Il permet d'accéder au dessin technique du modèle sélectionné.
 InGame.Help.Mode.Catalogo,Catálogo,Catalogue,Catalogue
-InGame.Help.Mode.CatalogDescrip,"Accede al catalogo completo para poder cambiar el modelo, el color, el material de las lamas o su color.","Consultez le catalogue complet pour modifier le modèle, la couleur, le matériau des lattes ou la couleur.","Consultez le catalogue complet pour modifier le modèle, la couleur, la matière des lattes ou la couleur."
+InGame.Help.Mode.CatalogDescrip,"Accede al catalogo completo para poder cambiar el modelo, el color, el material de las lamas o su color.","Accédez au catalogue complet pour modifier le modèle, la couleur, le matériau des lattes ou la couleur.","Accédez au catalogue complet pour modifier le modèle, la couleur, la matière des lattes ou la couleur."
 ,,,
 ,,,
 ,,,
@@ -442,7 +442,7 @@ Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de co
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -457,7 +457,7 @@ FichaTecnica.ProductosAsociados.Tapas.Option4,Por encargo,Sur mesure,Custom made
 FichaTecnica.Anotaciones.Titulo,ANOTACIONES:,REMARQUES :,NOTES:
 FichaTecnica.Anotaciones.Input,Introduce texto...,Saisissez du texte...,Enter text...
 FichaTecnica.Titulo,PLANO TÉCNICO,PLAN TECHNIQUE,TECHNICAL PLAN
-FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Renseignez les informations client pour générer le dessin technique.,Complete the customer details to generate the technical drawing.
+FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Complétez les informations client afin de générer le dessin technique.,Complete the customer details in order to generate the technical drawing.
 FichaTecnica.EscribirNombre,Nombre del cliente...,Nom du client...,Customer name...
 FichaTecnica.EscribirCorreo,Correo del cliente...,Courriel du client...,Customer email...
 ,,,
@@ -992,8 +992,8 @@ These General Terms of Use, as well as the relationship between ARPOOL SL and th
 Login.Terms&Conditions.Descrip,Lee y acepte los terminos y las condiciones para continuar,Veuillez lire et accepter les conditions générales pour continuer.,Read and accept the terms and conditions to continue
 Login.Settings.MovileMode,Modo móvil,Mode mobile,Mobile mode
 Login.Settings.HelpMode,Modo ayuda,Mode d'aide,Help mode
-,,,
-,,,
+Login.Settings.RestartTutorial.Text,Hacer tutorial,Créer un tutoriel,Create a tutorial
+Login.Settings.RestartTutorial.Button,Reiniciar,Redémarrage,Reboot
 ,,,
 ,,,
 ,,,
@@ -1007,11 +1007,11 @@ ScreenshootAndShare.Blueprint.Descrip,Este plano técnico ha sido generado con l
 Tutorial.Button.Continue,Siguiente,Suivant,Next
 Tutorial.Button.Previous,Anterior,Ancien,Previous
 Tutorial.Info0.Title,Bienvenido a CovAR,Bienvenue sur CovAR,Welcome to CovAR
-Tutorial.Info0.Descrip,Sigue este tutorial paso a paso para enteder todas las funcionalidades de la app.,Suivez ce tutoriel étape par étape pour comprendre toutes les fonctionnalités de l'application.,Follow this step-by-step tutorial to understand all the app's features.
-Tutorial.Info1.Title,Colocar objeto,Objet à placer,Place object
-Tutorial.Info1.Descrip,En primer lugar posicione la cubierta en el espacio. Apunte al suelo hasta que apareza la marca y clique sobre la pantalla.,"Commencez par positionner le couvercle dans l'espace. Orientez-le vers le sol jusqu'à ce que le marqueur apparaisse, puis cliquez sur l'écran.","First, position the cover in space. Point it at the floor until the marker appears, then click on the screen."
+Tutorial.Info0.Descrip,Sigua el tutorial paso a paso para entender todas las funcionalidades de la app.,Suivez le tutoriel étape par étape pour comprendre toutes les fonctionnalités de l'application.,Follow the step-by-step tutorial to understand all the app's features.
+Tutorial.Info1.Title,Colocar objeto,Placer l'objet,Place object
+Tutorial.Info1.Descrip,"En primer lugar, posicione la cubierta en el espacio. Apunte al suelo hasta que apareza la marca y clique sobre la pantalla.","Tout d'abord, positionnez le couvercle dans l'espace. Orientez-le vers le sol jusqu'à ce que le marqueur apparaisse, puis cliquez sur l'écran.","First, position the cover in space. Point it at the floor until the marker appears and click on the screen."
 Tutorial.Info2.Title,Interfaz de CovAR,Interface CovAR,CovAR Interface
-Tutorial.Info2.Descrip,Existen dos menus para configurar tus cubiertas.,Il existe deux menus pour configurer vos volets.,There are two menus to configure your covers.
+Tutorial.Info2.Descrip,Existen dos menus para configurar las cubiertas.,Il existe deux menus pour configurer vos volets.,There are two menus for configuring the covers.
 Tutorial.Info3.Title,Interfaz izquierda,Interface gauche,Left interface
 Tutorial.Info3.Descrip,"Permite manipular la cubierta: mover, rotar, alargar el objecto, desplegar la persiana y abrir el plano técnico.","Il permet de manipuler le volet : le déplacer, le faire pivoter, allonger l'objet, déplier le store et ouvrir le plan technique.","It allows you to manipulate the cover: move, rotate, lengthen the object, unfold the blind and open the technical plan."
 Tutorial.Info4.Title,Interfaz derecha,Interface droite,Right interface
@@ -1025,14 +1025,14 @@ Tutorial.Info7.Descrip,Pulse el botón de modificar la largada de la cubierta y 
 Tutorial.Info8.Title,Desplegar persiana,Baissez le store,Extend blind
 Tutorial.Info8.Descrip,Pulse el botón de editar persiana y modifique su tamaño con la barra deslizadora o los botones '+' o '-' .,Appuyez sur le bouton d'édition le volet et ajuster sa taille à l'aide du curseur ou des boutons « + » ou « - ».,Press the edit blind button and modify its size using the slider bar or the '+' or '-' buttons.
 Tutorial.Info9.Title,Catálogo,Catalogue,Catalog
-Tutorial.Info9.Descrip,"Permite seleccionar diferentes modelos de persianas, cambiar el color de los soportes o cubiertas y seleccionar nuevos modelos de lamas.","Cela vous permet de sélectionner différents modèles de volets, de changer la couleur des supports ou des caches, et de choisir de nouveaux modèles de lames.","It allows you to select different models of blinds, change the color of the supports or covers, and select new slat models."
+Tutorial.Info9.Descrip,"Permite seleccionar diferentes modelos de persianas, cambiar el color de los soportes o cubiertas y seleccionar nuevos modelos de lamas. Pulse el botón del catalogo.","Cela vous permet de sélectionner différents modèles de volets, de changer la couleur des supports ou des caches, et de choisir de nouveaux modèles de lames. Appuyez sur le bouton du catalogue.","It allows you to select different blind models, change the color of the brackets or covers, and select new slat models. Click the catalog button."
 Tutorial.Info10.Descrip,"En primer lugar tenemos el selector de productos. Se puede seleccionar entre cubiertas exteriores, sumergidas, con revestimientos o editar las lamas. Escoja uno diferente.","Tout d'abord, voici le sélecteur de produit. Vous pouvez y choisir entre des volets hors-sol, immergées ou habillées, et même changer les lames. Choisissez-en un autre.","First, we have the product selector. You can choose between external covers, submerged covers, covers with coatings, or customize the slats. Pick a different one."
 Tutorial.Info11.Descrip,"En este apartado se puede visualizar y seleccionar los diferentes modelos asociados a cada producto. Escoja uno diferente. En caso de no poderse, cambie el producto a otro con más modelos.","Dans cette section, vous pouvez consulter et sélectionner les différents modèles associés à chaque produit. Choisissez-en un autre. Si vous ne parvenez pas à sélectionner un modèle précis, choisissez un produit proposant davantage de modèles.","In this section, you can view and select the different models associated with each product. Choose a different one. If you are unable to select a specific model, change the product to one with more available models."
-Tutorial.Info12.Descrip,"Por último, se permite cambiar el material o color de los diferentes soportes, revestimientos o de las lamas. Cambie el color actual a otro diferente.","Enfin, vous pouvez modifier le matériau ou la couleur des différents supports, revêtements ou lattes. Changez la couleur actuelle.","Finally, you can change the material or color of the different supports, coverings, or slats. Change the current color to a different one."
+Tutorial.Info12.Descrip,"Por último, se permite cambiar el material o color de los diferentes soportes, revestimientos o de las lamas. Cambie el color actual a otro diferente.","Enfin, vous pouvez modifier la matière ou la couleur des différents supports, revêtements ou lattes. Changez la couleur actuelle.","Finally, you can change the material or color of the different supports, coverings, or slats. Change the current color to a different one."
 Tutorial.Info13.Title,Crear piscina,Créer une piscine,Create a swimming pool
 Tutorial.Info13.Descrip,Pulse el botón de piscina para crear una de ejemplo. Pulse otra vez el botón para hacerla desaparecer.,Appuyez sur le bouton « pool » pour créer un pool d'exemple. Appuyez de nouveau sur le bouton pour le faire disparaître.,Press the pool button to create a sample pool. Press the button again to make it disappear.
 Tutorial.Info14.Title,Cámara,Caméra,Camera
-Tutorial.Info14.Descrip,Este botón permite abrir la cámara para que pueda hacer fotos a su cubierta y poder compartirlas. La opción se desbloqueara al acabar el tutorial.,Ce bouton ouvre l'appareil photo pour que vous puissiez prendre des photos de votre coque de téléphone et les partager. Cette option sera débloquée une fois le tutoriel terminé.,This button opens the camera so you can take photos of your phone case and share them. This option will be unlocked after you finish the tutorial.
+Tutorial.Info14.Descrip,Este botón permite abrir la cámara para que pueda hacer fotos a su cubierta y poder compartirlas. La opción se desbloqueará al acabar el tutorial.,Ce bouton ouvre l'appareil photo pour que vous puissiez prendre des photos de votre couverture et les partager. Cette option sera débloquée une fois le tutoriel terminé.,This button opens the camera so you can take photos of your cover and share them. This option will be unlocked after you finish the tutorial.
 Tutorial.Info15.Title,Plano técnico,dessin technique,Technical drawing
 Tutorial.Info15.Descrip,"Par acabar, pulse el botón del pláno técnico. ","Pour terminer, appuyez sur le bouton de dessin technique.","To finish, press the technical drawing button."
 Tutorial.Info16.Descrip,Debe rellenar la información antes de acceder al plano técnico.,Vous devez renseigner les informations avant d'accéder au plan technique.,You must fill in the information before accessing the technical plan.

@@ -1,6 +1,6 @@
 using Assets.SimpleLocalization.Scripts;
 using DG.Tweening;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +18,8 @@ public class TutorialStepManager : MonoBehaviour
     [SerializeField] private Button _ContinueButton;
     [SerializeField] private Button _PreviousButton;
     [SerializeField] private Button _CancelTutorialButton;
+    [SerializeField] private Image _TutorialPanel;
+    [SerializeField] private GameObject _TutorialStepComponent;
     [SerializeField] private GameObject _TutorialInfoPanel;
     [SerializeField] private GameObject _NoInteractPanel;
     [SerializeField] private GameObject _LeftRadialFeedback;
@@ -32,6 +34,7 @@ public class TutorialStepManager : MonoBehaviour
     [SerializeField] private GameObject _SetObjLenghtButton;
     [SerializeField] private GameObject _SetLamasLenghtButton;
     [SerializeField] private GameObject _OpenBlueprintButton;
+    [SerializeField] private GameObject _AcceptBlueprintPopUpButton;
     [SerializeField] private GameObject _CatalogButton;
     [SerializeField] private GameObject _TakePhotoButton;
     [SerializeField] private GameObject _CreatePoolButton;
@@ -58,19 +61,7 @@ public class TutorialStepManager : MonoBehaviour
 
     void Start()
     {
-        InitTutorialStepManager();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        OnUpdateTutorialState();
-    }
-
-    ///////////////////////////////////////////////////////////////////////////////////// INIT /////////////////////////////////////////////////////////////////////////////////////////////
-
-    private void InitTutorialStepManager()
-    {
         if (GameObject.FindGameObjectWithTag("HUD"))
         {
             _HUDManagerScript = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
@@ -86,6 +77,44 @@ public class TutorialStepManager : MonoBehaviour
             _rectTransform = _TutorialInfoPanel.GetComponent<RectTransform>();
             _initialPosition = _rectTransform.anchoredPosition;
         }
+
+        int tutorialState = PlayerPrefs.GetInt("TutorialDone", 0);
+
+        if (tutorialState == 0)
+        {
+            _LeftRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+            _RightRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+            _ProductRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+            _ModelRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+            _MaterialRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+
+            _TutorialStepComponent.gameObject.SetActive(true);
+
+            OnAnimTutorialInfoPanel(0, 0);
+
+            InitTutorialStepManager();
+        }
+        else if (tutorialState == 1)
+        {
+
+            _TutorialStepComponent.gameObject.SetActive(false);
+        }
+       
+
+       
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        OnUpdateTutorialState();
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////// INIT /////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void InitTutorialStepManager()
+    {
+
 
         _ContinueButton.onClick.RemoveListener(OnClickContinueButton);
         _ContinueButton.onClick.AddListener(OnClickContinueButton);
@@ -129,15 +158,72 @@ public class TutorialStepManager : MonoBehaviour
 
             _ContinueButton.gameObject.SetActive(_StepInfoData[index].bContinueButtonIsActive);
 
-            _LeftRadialFeedback.SetActive(_StepInfoData[index].bLeftFeedbackObj);
-            _RightRadialFeedback.SetActive(_StepInfoData[index].bRightFeedbackObj);
-            _ProductRadialFeedback.SetActive(_StepInfoData[index].bCatalogProductFeedbackObj);
-            _ModelRadialFeedback.SetActive(_StepInfoData[index].bCatalogModelFeedbackObj);
-            _MaterialRadialFeedback.SetActive(_StepInfoData[index].bCatalogMaterialFeedbackObj);
+            if(_StepInfoData[index].bLeftFeedbackObj)
+            {
+                _LeftRadialFeedback.GetComponent<UIAnimationComponent>().ShowPannel();
+            }
+            else
+            {
+                if(_LeftRadialFeedback.GetComponent<UIAnimationComponent>().GetIsPanelOnScreen())
+                {
+                    _LeftRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+                }
+            }
 
-            _InitProductData = _ARObjectManager.GetCurrentProductData();
-            _InitModelData = _ARObjectManager.GetCurrentModelData();
-            _InitMaterialData = _ARObjectManager.GetCurrentMaterialData();
+            if (_StepInfoData[index].bRightFeedbackObj)
+            {
+                _RightRadialFeedback.GetComponent<UIAnimationComponent>().ShowPannel();
+            }
+            else
+            {
+                if (_RightRadialFeedback.GetComponent<UIAnimationComponent>().GetIsPanelOnScreen())
+                {
+                    _RightRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+                }
+            }
+
+            if (_StepInfoData[index].bCatalogProductFeedbackObj)
+            {
+                _ProductRadialFeedback.GetComponent<UIAnimationComponent>().ShowPannel();
+            }
+            else
+            {
+                if (_ProductRadialFeedback.GetComponent<UIAnimationComponent>().GetIsPanelOnScreen())
+                {
+                    _ProductRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+                }
+            }
+
+            if (_StepInfoData[index].bCatalogModelFeedbackObj)
+            {
+                _ModelRadialFeedback.GetComponent<UIAnimationComponent>().ShowPannel();
+            }
+            else
+            {
+                if (_ModelRadialFeedback.GetComponent<UIAnimationComponent>().GetIsPanelOnScreen())
+                {
+                    _ModelRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+                }
+            }
+
+            if (_StepInfoData[index].bCatalogMaterialFeedbackObj)
+            {
+                _MaterialRadialFeedback.GetComponent<UIAnimationComponent>().ShowPannel();
+            }
+            else
+            {
+                if (_MaterialRadialFeedback.GetComponent<UIAnimationComponent>().GetIsPanelOnScreen())
+                {
+                    _MaterialRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+                }
+            }
+
+
+            _TutorialPanel.color = _StepInfoData[index]._PanelColor;
+
+           // _InitProductData = _ARObjectManager.GetCurrentProductData();
+            //_InitModelData = _ARObjectManager.GetCurrentModelData();
+            //_InitMaterialData = _ARObjectManager.GetCurrentMaterialData();
 
             currentTutorialState = _StepInfoData[index].currentStepState;
             SetTutorialCurrentState();
@@ -159,8 +245,13 @@ public class TutorialStepManager : MonoBehaviour
                 {
                     _HUDManagerScript.DeselectAllUIFromSpecificPanel(_HUDManagerScript.GetCurrentPanelOnScreenObj());
                     _HUDManagerScript.HideAllOfSubMenus();
+
+                    /*if (_HUDManagerScript.GetCurrentPanelOnScreenName() != "AP_ManipulateGroundRollerPanel")
+                    {
+                        _HUDManagerScript.TravelToPanel("AP_ManipulateGroundRollerPanel");
+                    }*/
                 }
-                    
+
                 if (_ARObjectManager != null)
                 {
                     _ARObjectManager.GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
@@ -325,21 +416,58 @@ public class TutorialStepManager : MonoBehaviour
             case E_TutorialActions.OnShowBlueprintPopUp:
                 if (_HUDManagerScript != null)
                 {
-                    if (_HUDManagerScript.GetCurrentPanelOnScreenName() == "BlueprintPopUpPanel")
+                    if (_HUDManagerScript.GetCurrentPanelOnScreenName() != "AP_ManipulateGroundRollerPanel")
                     {
-                        _HUDManagerScript.TravelToLastPanel();
+                        _HUDManagerScript.TravelToPanel("AP_ManipulateGroundRollerPanel");
                     }
                 }
                 SetButtonsState("All", false);
                 SetButtonsState("OpenBlueprintButton", true);
 
+                _OpenBlueprintButton.GetComponent<Button>().onClick.RemoveListener(OnClickContinueButton);
+                _OpenBlueprintButton.GetComponent<Button>().onClick.AddListener(OnClickContinueButton);
 
                 break;
 
             case E_TutorialActions.OnShowBlueprint:
+                
+                _OpenBlueprintButton.GetComponent<Button>().onClick.RemoveListener(OnClickContinueButton);
+                
+                if (_HUDManagerScript != null)
+                {
+                    if (_HUDManagerScript.GetCurrentPanelOnScreenName() != "BlueprintPopUpPanel")
+                    {
+                        _HUDManagerScript.TravelToPanel("BlueprintPopUpPanel");
+                    }
+                }
 
+                _AcceptBlueprintPopUpButton.GetComponent<Button>().onClick.RemoveListener(OnClickContinueButton);
+                _AcceptBlueprintPopUpButton.GetComponent<Button>().onClick.AddListener(OnClickContinueButton);
 
+                break;
+            case E_TutorialActions.OnBlueprint:
 
+                _AcceptBlueprintPopUpButton.GetComponent<Button>().onClick.RemoveListener(OnClickContinueButton);
+
+                if (_HUDManagerScript != null)
+                {
+                    if (_HUDManagerScript.GetCurrentPanelOnScreenName() != "AstralpoolBlueprintPanel")
+                    {
+                        _HUDManagerScript.TravelToPanel("AstralpoolBlueprintPanel");
+                    }
+                }
+
+                break;
+            case E_TutorialActions.OnEndTutorial:
+
+                if (_HUDManagerScript != null)
+                {
+                    if (_HUDManagerScript.GetCurrentPanelOnScreenName() != "AP_ManipulateGroundRollerPanel")
+                    {
+                        _HUDManagerScript.TravelToPanel("AP_ManipulateGroundRollerPanel");
+                    }
+                }
+                SetButtonsState("All", true);
                 break;
 
         }
@@ -461,10 +589,7 @@ public class TutorialStepManager : MonoBehaviour
             case E_TutorialActions.OnShowBlueprintPopUp:
                 if (_HUDManagerScript != null)
                 {
-                    if (_HUDManagerScript.GetCurrentPanelOnScreenName() == "BlueprintPopUpPanel")
-                    {
-                        OnClickContinueButton();
-                    }
+                    
                 }
                 break;
             case E_TutorialActions.OnShowBlueprint:
@@ -482,17 +607,24 @@ public class TutorialStepManager : MonoBehaviour
 
     void OnClickContinueButton()
     {
-
-        if (currentTutorialInfoNumber < _StepInfoData.Length - 1)
+        if(currentTutorialState == E_TutorialActions.OnEndTutorial)
         {
-            currentTutorialInfoNumber++;
-            SetTutorialInfo(currentTutorialInfoNumber);
-           
+            OnCloseTutorial();
         }
         else
         {
+            if (currentTutorialInfoNumber < _StepInfoData.Length - 1)
+            {
+                currentTutorialInfoNumber++;
+                SetTutorialInfo(currentTutorialInfoNumber);
 
+            }
+            else
+            {
+
+            }
         }
+       
     }
 
     void OnClickPreviousButton()
@@ -517,14 +649,21 @@ public class TutorialStepManager : MonoBehaviour
     {
        switch(button)
        { 
-            case "MoveObjButton": _MoveObjButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
-            case "RotateObjButton": _RotateObjButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
-            case "SetObjLenghtButton": _SetObjLenghtButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
-            case "SetLamasLenghtButton": _SetLamasLenghtButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
-            case "OpenBlueprintButton": _OpenBlueprintButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
-            case "CatalogButton": _CatalogButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
+            case "MoveObjButton": _MoveObjButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
+                _MoveObjButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(state); break;
+            case "RotateObjButton": _RotateObjButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
+                _RotateObjButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(state); break;
+            case "SetObjLenghtButton": _SetObjLenghtButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
+                _SetObjLenghtButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(state); break;
+            case "SetLamasLenghtButton": _SetLamasLenghtButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
+                _SetLamasLenghtButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(state); break;
+            case "OpenBlueprintButton": _OpenBlueprintButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
+                _OpenBlueprintButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(state); break;
+            case "CatalogButton": _CatalogButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
+                _CatalogButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(state); break;
             case "TakePhotoButton": _TakePhotoButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
-            case "CreatePoolButton": _CreatePoolButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
+            case "CreatePoolButton": _CreatePoolButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
+                _CreatePoolButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(state); break;
             case "HideLeftButtons": _HideLeftButtons.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
             case "HideRightButtons": _HideRightButtons.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
             case "SettingsButton": _SettingsButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
@@ -538,7 +677,16 @@ public class TutorialStepManager : MonoBehaviour
                 _CreatePoolButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
                 _HideLeftButtons.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
                 _HideRightButtons.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); 
-                _SettingsButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
+                _SettingsButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
+
+                _MoveObjButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
+                _RotateObjButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
+                _SetObjLenghtButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
+                _SetLamasLenghtButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
+                _OpenBlueprintButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
+                _CatalogButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
+                _CreatePoolButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
+                break;
        }
     }
 
@@ -564,6 +712,40 @@ public class TutorialStepManager : MonoBehaviour
         animSequence.Append(
             _rectTransform.DOScale(1.0f, 0.25f).SetEase(Ease.OutSine)
         );
+    }
+
+
+    public void OnCloseTutorial()
+    {
+        StartCoroutine(OnCloseTutorialCoroutine());
+    }
+
+    IEnumerator OnCloseTutorialCoroutine()
+    {
+        SetButtonsState("All", true);
+        OnAnimTutorialInfoPanel(0, 0);
+        PlayerPrefs.SetInt("TutorialDone", 1);
+        yield return new WaitForSeconds(0.3f);
+        currentTutorialInfoNumber = 0;
+        currentTutorialState = E_TutorialActions.Default;
+        _TutorialStepComponent.gameObject.SetActive(false);
+    }
+
+    public void OnRestartTutorial()
+    {
+        _LeftRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+        _RightRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+        _ProductRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+        _ModelRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+        _MaterialRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
+        _TutorialStepComponent.gameObject.SetActive(true);
+
+
+        _HUDManagerScript.TravelToPanel("PlaneFinderPanel");
+
+        OnAnimTutorialInfoPanel(0, 0);
+       
+        InitTutorialStepManager();
     }
 }
 

@@ -271,6 +271,7 @@ public class ARObjectManager : MonoBehaviour
                     {
                         GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.RotatingState);
                     }
+
                     UpdateARObjectSpecificState();
                 }
                 break;
