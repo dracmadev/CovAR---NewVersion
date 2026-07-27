@@ -254,7 +254,11 @@ public class TutorialStepManager : MonoBehaviour
 
                 if (_ARObjectManager != null)
                 {
-                    _ARObjectManager.GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
+                    if(_ARObjectManager.GetCurrentARObject() != null)
+                    {
+                        _ARObjectManager.GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState); 
+                    }
+                   
                     _ARObjectManager.DesactiveFeedbackDecal();
 
                     if (_ARObjectManager.GetCurrentARObject() != null)
@@ -277,14 +281,20 @@ public class TutorialStepManager : MonoBehaviour
                     _ARObjectManager.SetActivePlaneFinder(false);
                 }
                 _PreviousButton.gameObject.SetActive(false);
+                _ARObjectManager.SetIsObjectPlacedState(false);
+                Destroy(_ARObjectManager.GetCurrentARObject());
                 break;
 
             case E_TutorialActions.OnPlaceObject:
                 if (_ARObjectManager != null)
                 {
                     _ARObjectManager.SetActivePlaneFinder(true);
+                    _ARObjectManager.SetIsObjectPlacedState(false);
+                    Destroy(_ARObjectManager.GetCurrentARObject());
                 }
+               
                 _PreviousButton.gameObject.SetActive(true);
+               
                 break;
 
             case E_TutorialActions.OnMoveObject:
@@ -298,6 +308,7 @@ public class TutorialStepManager : MonoBehaviour
                 {
                     _ARObjectManager.GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
                     _ARObjectManager.DesactiveFeedbackDecal();
+                    _ARObjectManager.SetActivePlaneFinder(false);
                 }
                 SetButtonsState("All", false);
                 SetButtonsState("MoveObjButton", true);
@@ -465,6 +476,7 @@ public class TutorialStepManager : MonoBehaviour
                     if (_HUDManagerScript.GetCurrentPanelOnScreenName() != "AP_ManipulateGroundRollerPanel")
                     {
                         _HUDManagerScript.TravelToPanel("AP_ManipulateGroundRollerPanel");
+                        _HUDManagerScript.OnShowCompanyMark(true);
                     }
                 }
                 SetButtonsState("All", true);

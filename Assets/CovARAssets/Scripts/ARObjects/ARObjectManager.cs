@@ -586,6 +586,16 @@ public class ARObjectManager : MonoBehaviour
        
     }
 
+    public void SetPoolActiveState(bool state)
+    {
+        bIsPoolActive = state;
+    }
+
+    public void SetIsObjectPlacedState(bool state)
+    {
+        bARObjectPlaced = state;
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

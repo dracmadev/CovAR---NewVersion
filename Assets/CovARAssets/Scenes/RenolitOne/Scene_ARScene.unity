@@ -977,7 +977,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -2915,7 +2915,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -3387,7 +3387,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -4145,7 +4145,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -6233,7 +6233,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -7459,7 +7459,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -7776,7 +7776,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -10012,7 +10012,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -11480,7 +11480,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -12418,7 +12418,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -16242,7 +16242,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -17075,7 +17075,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -20114,7 +20114,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -21798,7 +21798,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -22134,7 +22134,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -22653,7 +22653,7 @@ PrefabInstance:
     - target: {fileID: 7994064633840285418, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
       propertyPath: UI_ButtonOnSelectedData.DeselectWhenYouClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011098847375718779, guid: 0d19f0b5f9ea56f43b6d3b5afde8df96,
         type: 3}
@@ -25659,7 +25659,7 @@ PrefabInstance:
     - target: {fileID: 6054600875639543138, guid: ddb84d2d07734214b9bb92a48a42db9c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.1636353
+      value: 2.1636963
       objectReference: {fileID: 0}
     - target: {fileID: 6070702892768686377, guid: ddb84d2d07734214b9bb92a48a42db9c,
         type: 3}
