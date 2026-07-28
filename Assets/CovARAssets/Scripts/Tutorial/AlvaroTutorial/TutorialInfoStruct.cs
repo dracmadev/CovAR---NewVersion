@@ -15,6 +15,7 @@ public class St_TutorialInfoData
     public Color _PanelColor;
     public bool bNoInteractPanelIsActive;
     public bool bContinueButtonIsActive;
+    public bool bFinishButtonIsActive;
     public bool bLeftFeedbackObj;
     public bool bRightFeedbackObj;
     public bool bCatalogProductFeedbackObj;

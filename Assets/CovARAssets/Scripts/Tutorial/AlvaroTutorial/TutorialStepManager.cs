@@ -17,6 +17,7 @@ public class TutorialStepManager : MonoBehaviour
     [SerializeField] private LocalizedTMPText _DescripText;
     [SerializeField] private Button _ContinueButton;
     [SerializeField] private Button _PreviousButton;
+    [SerializeField] private Button _FinishButton;
     [SerializeField] private Button _CancelTutorialButton;
     [SerializeField] private Image _TutorialPanel;
     [SerializeField] private GameObject _TutorialStepComponent;
@@ -158,7 +159,9 @@ public class TutorialStepManager : MonoBehaviour
 
             _ContinueButton.gameObject.SetActive(_StepInfoData[index].bContinueButtonIsActive);
 
-            if(_StepInfoData[index].bLeftFeedbackObj)
+            _FinishButton.gameObject.SetActive(_StepInfoData[index].bFinishButtonIsActive);
+
+            if (_StepInfoData[index].bLeftFeedbackObj)
             {
                 _LeftRadialFeedback.GetComponent<UIAnimationComponent>().ShowPannel();
             }
@@ -218,12 +221,7 @@ public class TutorialStepManager : MonoBehaviour
                 }
             }
 
-
             _TutorialPanel.color = _StepInfoData[index]._PanelColor;
-
-           // _InitProductData = _ARObjectManager.GetCurrentProductData();
-            //_InitModelData = _ARObjectManager.GetCurrentModelData();
-            //_InitMaterialData = _ARObjectManager.GetCurrentMaterialData();
 
             currentTutorialState = _StepInfoData[index].currentStepState;
             SetTutorialCurrentState();

@@ -4724,6 +4724,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 1
     bContinueButtonIsActive: 1
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4737,6 +4738,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 1
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4750,6 +4752,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 1
     bContinueButtonIsActive: 1
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4763,6 +4766,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 1
     bContinueButtonIsActive: 1
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 1
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4776,6 +4780,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 1
     bContinueButtonIsActive: 1
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 1
     bCatalogProductFeedbackObj: 0
@@ -4789,6 +4794,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4802,6 +4808,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4815,6 +4822,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4828,6 +4836,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4841,6 +4850,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4854,6 +4864,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 1
@@ -4867,6 +4878,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4880,6 +4892,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4893,6 +4906,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4906,6 +4920,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 1
     bContinueButtonIsActive: 1
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4919,6 +4934,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4932,6 +4948,7 @@ MonoBehaviour:
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 0
     bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4945,6 +4962,7 @@ MonoBehaviour:
     _PanelColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
     bNoInteractPanelIsActive: 1
     bContinueButtonIsActive: 1
+    bFinishButtonIsActive: 0
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4957,7 +4975,8 @@ MonoBehaviour:
     _yOffset: 0
     _PanelColor: {r: 1, g: 1, b: 1, a: 1}
     bNoInteractPanelIsActive: 1
-    bContinueButtonIsActive: 1
+    bContinueButtonIsActive: 0
+    bFinishButtonIsActive: 1
     bLeftFeedbackObj: 0
     bRightFeedbackObj: 0
     bCatalogProductFeedbackObj: 0
@@ -4968,6 +4987,7 @@ MonoBehaviour:
   _DescripText: {fileID: 821677788}
   _ContinueButton: {fileID: 533357887}
   _PreviousButton: {fileID: 1418011911}
+  _FinishButton: {fileID: 1545064869}
   _CancelTutorialButton: {fileID: 815249279}
   _TutorialPanel: {fileID: 2026831469}
   _TutorialStepComponent: {fileID: 337937567}
@@ -12719,7 +12739,7 @@ PrefabInstance:
         type: 3}
       propertyPath: St_TutorialPopUpData.popUpContentList.Array.data[0].popUpImage
       value: 
-      objectReference: {fileID: 21300000, guid: 328c8a5fd95960146ad89c2971c80241,
+      objectReference: {fileID: 21300000, guid: fb35697c7947e4542af049527fa76930,
         type: 3}
     - target: {fileID: 4492152910843917243, guid: bd942c569a0a4464a9caf6470401ecda,
         type: 3}
@@ -12765,7 +12785,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 328c8a5fd95960146ad89c2971c80241,
+      objectReference: {fileID: 21300000, guid: fb35697c7947e4542af049527fa76930,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12996,7 +13016,7 @@ PrefabInstance:
         type: 3}
       propertyPath: St_TutorialPopUpData.popUpContentList.Array.data[0].popUpImage
       value: 
-      objectReference: {fileID: 21300000, guid: 328c8a5fd95960146ad89c2971c80241,
+      objectReference: {fileID: 21300000, guid: fb35697c7947e4542af049527fa76930,
         type: 3}
     - target: {fileID: 4492152910843917243, guid: bd942c569a0a4464a9caf6470401ecda,
         type: 3}
@@ -13042,7 +13062,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 328c8a5fd95960146ad89c2971c80241,
+      objectReference: {fileID: 21300000, guid: fb35697c7947e4542af049527fa76930,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17590,6 +17610,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1545064869 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6630330832399557732, guid: ddb84d2d07734214b9bb92a48a42db9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2096090455712827028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1546362427
 GameObject:
   m_ObjectHideFlags: 0
@@ -18101,7 +18133,7 @@ PrefabInstance:
         type: 3}
       propertyPath: St_TutorialPopUpData.popUpContentList.Array.data[0].popUpImage
       value: 
-      objectReference: {fileID: 21300000, guid: 328c8a5fd95960146ad89c2971c80241,
+      objectReference: {fileID: 21300000, guid: fb35697c7947e4542af049527fa76930,
         type: 3}
     - target: {fileID: 4492152910843917243, guid: bd942c569a0a4464a9caf6470401ecda,
         type: 3}
@@ -18147,7 +18179,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 328c8a5fd95960146ad89c2971c80241,
+      objectReference: {fileID: 21300000, guid: fb35697c7947e4542af049527fa76930,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23011,7 +23043,7 @@ PrefabInstance:
         type: 3}
       propertyPath: St_TutorialPopUpData.popUpContentList.Array.data[0].popUpImage
       value: 
-      objectReference: {fileID: 21300000, guid: 328c8a5fd95960146ad89c2971c80241,
+      objectReference: {fileID: 21300000, guid: fb35697c7947e4542af049527fa76930,
         type: 3}
     - target: {fileID: 4492152910843917243, guid: bd942c569a0a4464a9caf6470401ecda,
         type: 3}
@@ -23057,7 +23089,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 328c8a5fd95960146ad89c2971c80241,
+      objectReference: {fileID: 21300000, guid: fb35697c7947e4542af049527fa76930,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25770,6 +25802,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630330832399557732, guid: ddb84d2d07734214b9bb92a48a42db9c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630330832399557732, guid: ddb84d2d07734214b9bb92a48a42db9c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630330832399557732, guid: ddb84d2d07734214b9bb92a48a42db9c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 333430096}
+    - target: {fileID: 6630330832399557732, guid: ddb84d2d07734214b9bb92a48a42db9c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630330832399557732, guid: ddb84d2d07734214b9bb92a48a42db9c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCloseTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630330832399557732, guid: ddb84d2d07734214b9bb92a48a42db9c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TutorialStepManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630330832399557732, guid: ddb84d2d07734214b9bb92a48a42db9c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7039857448312040195, guid: ddb84d2d07734214b9bb92a48a42db9c,
         type: 3}
