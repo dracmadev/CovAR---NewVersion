@@ -279,10 +279,12 @@ public class TutorialStepManager : MonoBehaviour
                 if (_ARObjectManager != null)
                 {
                     _ARObjectManager.SetActivePlaneFinder(false);
+                    _ARObjectManager.SetIsObjectPlacedState(false);
+                    Destroy(_ARObjectManager.GetCurrentARObject());
+
                 }
                 _PreviousButton.gameObject.SetActive(false);
-                _ARObjectManager.SetIsObjectPlacedState(false);
-                Destroy(_ARObjectManager.GetCurrentARObject());
+               
                 break;
 
             case E_TutorialActions.OnPlaceObject:
@@ -752,6 +754,11 @@ public class TutorialStepManager : MonoBehaviour
         _MaterialRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
         _TutorialStepComponent.gameObject.SetActive(true);
 
+
+        _ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType = E_ProductType.GroundRollerCover;
+
+        _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = 1f;
+        _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght = 0f;
 
         _HUDManagerScript.TravelToPanel("PlaneFinderPanel");
 

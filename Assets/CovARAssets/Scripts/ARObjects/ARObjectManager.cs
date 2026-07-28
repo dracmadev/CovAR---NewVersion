@@ -596,6 +596,11 @@ public class ARObjectManager : MonoBehaviour
         bARObjectPlaced = state;
     }
 
+    public void SetCovARType(E_PoolType newType)
+    {
+        _CurrentPoolType = newType;
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
