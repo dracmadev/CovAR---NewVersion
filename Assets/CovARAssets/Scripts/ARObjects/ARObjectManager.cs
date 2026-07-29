@@ -162,7 +162,12 @@ public class ARObjectManager : MonoBehaviour
     // Instanciación dinámica
     public void SetActiveARObject(E_PoolType _ARObjectToActive)
     {
-        if (_ARObjectToActive == E_PoolType.None) { return; }
+       
+        if (_ARObjectToActive == E_PoolType.None) 
+        {
+            Debug.Log("_ARObjectToActive is None...");
+            return; 
+        }
 
         _CurrentPoolType = _ARObjectToActive;
 
@@ -219,12 +224,17 @@ public class ARObjectManager : MonoBehaviour
 
                 SetCurrentARObjectState("DefaultState");
 
-                if(bIsPoolActive)
+                if (bIsPoolActive)
                 {
                     ActivePoolObj(_CurrentARObject, _PoolPrefab);
                 }
 
                 break;
+            }
+            else
+            {
+                Debug.Log("No sha trobat?    " + _ARObjectToActive.ToString());
+
             }
         }
     }
@@ -344,6 +354,8 @@ public class ARObjectManager : MonoBehaviour
             case E_ProductType.SubmergedRollerCover: _HUDManagerScrit.TravelToPanel(_SubmergedRollerManipulatePanelName); break;
             case E_ProductType.BencheAndCladdings: _HUDManagerScrit.TravelToPanel(_BenchRollerManipulatePanelName); break;
             case E_ProductType.FabricCover: _HUDManagerScrit.TravelToPanel(_FabricCoverManipulatePanelName); break;
+            case E_ProductType.DeckMountedIsolaCover: _HUDManagerScrit.TravelToPanel(_GroundRollerManipulatePanelName); break;
+            case E_ProductType.DeckMountedSlattedCover: _HUDManagerScrit.TravelToPanel(_GroundRollerManipulatePanelName); break;
         }
    
         _HUDManagerScrit.OnShowCompanyMark(true);
@@ -429,8 +441,6 @@ public class ARObjectManager : MonoBehaviour
                 break;
             }
         }
-       
-        
     }
 
     public void SetCurrentProductData(St_Product product)
@@ -446,7 +456,8 @@ public class ARObjectManager : MonoBehaviour
                 case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverProduct = product;
                                                 _CovARObjectData._CurrentModelProduct = product; break;
                 case E_ProductType.Lamas: _CovARObjectData._CurrentLamasProduct = product; break;
-
+                case E_ProductType.DeckMountedSlattedCover: _CovARObjectData._CurrentModelProduct = product; break;
+                case E_ProductType.DeckMountedIsolaCover: _CovARObjectData._CurrentModelProduct = product; break;
             }
 
            
@@ -507,6 +518,20 @@ public class ARObjectManager : MonoBehaviour
                         break;
 
                     case E_ProductType.Lamas: _CovARObjectData._CurrentLamasModel = model; break;
+                    case E_ProductType.DeckMountedIsolaCover:
+                        _CovARObjectData._CurrentModelModel = model;
+
+                        _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
+                        _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
+
+                        break;
+                    case E_ProductType.DeckMountedSlattedCover:
+                        _CovARObjectData._CurrentModelModel = model;
+
+                        _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
+                        _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
+
+                        break;
                 }
             }
 
@@ -543,7 +568,10 @@ public class ARObjectManager : MonoBehaviour
                     case E_ModelType.AP_LamasPVC: _CovARObjectData._CurrentLamasMaterial = material; break;
 
                     //////////////////////////////////////////////////////////// FABRIC COVER ////////////////////////////////////////////////////////////
-                   case E_ModelType.BAC_FabricCover: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
+                    case E_ModelType.BAC_FabricCover: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
+
+                    /////////////////////////////////////////////////// DECK MOUNTED SLATTED COVER ///////////////////////////////////////////////////////
+                    case E_ModelType.BAC_Rollfix: _CovARObjectData._CurrentModelMaterial = material; break;
 
 
                 }
@@ -669,6 +697,7 @@ public class ARObjectManager : MonoBehaviour
                 switch (GetFirstModelFromCurrentProduct(GetFirstProductFromCurrentCompany(_CurrentProductCatalog._CompanysArray[1]))._ModelType)
                 {
                     case E_ModelType.BAC_FabricCover: poolTypeToReturn = E_PoolType.BAC_FabricCover; break;
+                    case E_ModelType.BAC_Rollfix: poolTypeToReturn = E_PoolType.BAC_Rollfix; break;
                    
                 }
             }

@@ -588,6 +588,8 @@ public class ARObjectScript : MonoBehaviour
 
         // GET RIGHT FOOT
         _footRightObj = GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight);
+        //Debug.Log("I Getted the _footRightObj -> " + _footRightObj.gameObject.name);
+
 
         if(bFabricCoverEndSecuritySystemsActive)
         {
@@ -621,11 +623,16 @@ public class ARObjectScript : MonoBehaviour
         if(_footRightObj != null)
         {
             _footRightObj.transform.localPosition = new Vector3(currentSliderValue, _footRightObj.transform.localPosition.y, _footRightObj.transform.localPosition.z);
+            //Debug.Log("Setting the object " + _footRightObj.gameObject.name + " -> " + _footRightObj.transform.localPosition);
+        }
+        else
+        {
+            Debug.Log("Foot right is null?...");
         }
 
         if (bFabricCoverAxisBehaviourActive)
         {
-            
+
             if (_FabricCoverAxisList != null && _FabricCoverAxisList.Count != 0 && _rightBonesFromAxisCoversList != null)
             {
                 foreach (GameObject axisBone in _rightBonesFromAxisCoversList)

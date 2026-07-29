@@ -148,6 +148,12 @@ public class MaterialSlotBehaviour : MonoBehaviour
                 _ARObjectManager.SetFabricCoverMaterial(_CurrentMaterialData);
                 break;
             case E_ProductType.Lamas: _ARObjectManager.SetLamasMaterial(_CurrentMaterialData); break;
+            case E_ProductType.DeckMountedIsolaCover:
+                _ARObjectManager.SetCovARFootMaterial(_CurrentMaterialData);
+                break;
+            case E_ProductType.DeckMountedSlattedCover:
+                _ARObjectManager.SetCovARFootMaterial(_CurrentMaterialData);
+                break;
         }
     }
 }

@@ -17,5 +17,6 @@ public enum E_ModelType
     AP_LamasPolicarbonate = 11,
     AP_LamasPVC = 12,
     BAC_FabricCover = 13,
+    BAC_Rollfix = 14,
 
 }

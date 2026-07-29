@@ -752,8 +752,14 @@ public class TutorialStepManager : MonoBehaviour
         _MaterialRadialFeedback.GetComponent<UIAnimationComponent>().HidePannel();
         _TutorialStepComponent.gameObject.SetActive(true);
 
-
-        _ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType = E_ProductType.GroundRollerCover;
+        if(_ARObjectManager.GetCurrentCompanyRunning() == E_CompanyType.Astralpool)
+        {
+            _ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType = E_ProductType.GroundRollerCover;
+        }
+        else
+        {
+            //
+        }
 
         _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = 1f;
         _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght = 0f;

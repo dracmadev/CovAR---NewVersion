@@ -12,6 +12,7 @@ public enum E_PoolType
     AP_Lebanc_Big = 7,
     AP_Rousillon = 8,
     BAC_FabricCover = 9,
+    BAC_Rollfix = 10,
 
 
 }

@@ -8,4 +8,7 @@ public enum E_ProductType
     BencheAndCladdings = 3,
     FabricCover = 4,
     Lamas = 5,
+    DeckMountedIsolaCover = 6,
+    DeckMountedSlattedCover = 7,
+
 }
