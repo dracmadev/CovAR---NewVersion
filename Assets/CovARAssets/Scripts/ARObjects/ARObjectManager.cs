@@ -559,7 +559,7 @@ public class ARObjectManager : MonoBehaviour
                     case E_ModelType.AP_LeBancSmallFoot: _CovARObjectData._CurrentModelMaterial = material; break;
                     case E_ModelType.AP_LeBancBigFoot: _CovARObjectData._CurrentModelMaterial = material; break;
 
-                    //////////////////////////////////////////////////////////// CLADDINGS AND BENCHES ///////////////////////////////////////////////////
+                    //////////////////////////////////////////////////////////// CLADDINGS AND BENCHES //////////////////////////////////////////////////
                     case E_ModelType.AP_LeBancTopCladding: _CovARObjectData._CurrentTopCladdingMaterial = material; break;
                     case E_ModelType.AP_LeBancSidesCladding: _CovARObjectData._CurrentSidesCladdingMaterial = material; break;
 

@@ -174,8 +174,8 @@ public class ModelSlotBehaviour : MonoBehaviour
             case E_ModelType.AP_LeBancBigFoot: returnVar = E_PoolType.AP_Lebanc_Big; break;
             case E_ModelType.AP_LeBancTopCladding: returnVar = E_PoolType.None; break;
             case E_ModelType.AP_LeBancSidesCladding: returnVar = E_PoolType.None; break;
-            case E_ModelType.AP_LamasPolicarbonate: returnVar = E_PoolType.None; break;
-            case E_ModelType.AP_LamasPVC: returnVar = E_PoolType.None; break;
+            case E_ModelType.AP_LamasPolicarbonate: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            case E_ModelType.AP_LamasPVC: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
             case E_ModelType.BAC_FabricCover: returnVar = E_PoolType.BAC_FabricCover; break;
             case E_ModelType.BAC_Rollfix: returnVar = E_PoolType.BAC_Rollfix; break;
 
