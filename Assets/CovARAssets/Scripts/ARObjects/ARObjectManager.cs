@@ -304,33 +304,80 @@ public class ARObjectManager : MonoBehaviour
             case "SetLamasLenghtState":
                 if (GetCurrentARObject() != null)
                 {
-                    if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetLamasLenghtState)
+                    switch(GetCurrentARObject().GetComponent<ARObjectScript>().GetCoverType())
                     {
-                        GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
-                    }
-                    else
-                    {
-                        GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.SetLamasLenghtState);
-                    }
+                        case E_CoverType.LamasCover:
+                            
+                            if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetLamasLenghtState)
+                            {
+                                GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
+                            }
+                            else
+                            {
+                                GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.SetLamasLenghtState);
+                            }
 
-                    UpdateARObjectSpecificState();
+                            UpdateARObjectSpecificState();
+
+                        break;
+                        
+                        case E_CoverType.SlattedCover:
+                            
+                            if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetLamasLenghtState)
+                            {
+                                GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
+                            }
+                            else
+                            {
+                                GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.SetLamasLenghtState);
+                            }
+
+                            UpdateARObjectSpecificState();
+                            
+                        break;
+                        
+                        case E_CoverType.IsolaCover:
+
+                            if (GetCurrentARObject() != null)
+                            {
+                                if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetFabricCoverLenghtState)
+                                {
+                                    GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
+                                }
+                                else
+                                {
+                                    GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.SetFabricCoverLenghtState);
+                                }
+
+                                UpdateARObjectSpecificState();
+                            }
+
+                            break;
+                        
+                        case E_CoverType.FabricCover:
+
+                            if (GetCurrentARObject() != null)
+                            {
+                                if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetFabricCoverLenghtState)
+                                {
+                                    GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
+                                }
+                                else
+                                {
+                                    GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.SetFabricCoverLenghtState);
+                                }
+
+                                UpdateARObjectSpecificState();
+                            }
+
+                        break;
+                    }
                 }
                 break;
+            
             case "SetFabricCoverLenghtState":
-                if (GetCurrentARObject() != null)
-                {
-                    if (GetCurrentARObject().GetComponent<ARObjectScript>().GetARObjectCurrentState() == E_ARObjectStates.SetFabricCoverLenghtState)
-                    {
-                        GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.DefaultState);
-                    }
-                    else
-                    {
-                        GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectState(E_ARObjectStates.SetFabricCoverLenghtState);
-                    }
-
-                    UpdateARObjectSpecificState();
-                }
-                break;
+              
+            break;
         }
     }
 
@@ -571,7 +618,8 @@ public class ARObjectManager : MonoBehaviour
                     case E_ModelType.BAC_FabricCover: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
 
                     /////////////////////////////////////////////////// DECK MOUNTED SLATTED COVER ///////////////////////////////////////////////////////
-                    case E_ModelType.BAC_Rollfix: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_SlattedRollfix: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_IsolaRollfix: _CovARObjectData._CurrentModelMaterial = material; break;
 
 
                 }
@@ -631,6 +679,14 @@ public class ARObjectManager : MonoBehaviour
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    ////////////////////////////////////////////////////// ON UPDATE /////////////////////////////////////////////////////////////////////
+
+    
+
+
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ///////////////////////////////////////////////////// CATALOG BEHAVIOUR //////////////////////////////////////////////////////////////////
 
@@ -697,8 +753,8 @@ public class ARObjectManager : MonoBehaviour
                 switch (GetFirstModelFromCurrentProduct(GetFirstProductFromCurrentCompany(_CurrentProductCatalog._CompanysArray[1]))._ModelType)
                 {
                     case E_ModelType.BAC_FabricCover: poolTypeToReturn = E_PoolType.BAC_FabricCover; break;
-                    case E_ModelType.BAC_Rollfix: poolTypeToReturn = E_PoolType.BAC_Rollfix; break;
-                   
+                    case E_ModelType.BAC_SlattedRollfix: poolTypeToReturn = E_PoolType.BAC_SlattedRollfix; break;
+                    case E_ModelType.BAC_IsolaRollfix: poolTypeToReturn = E_PoolType.BAC_IsolaRollfix; break;
                 }
             }
             else
@@ -1088,12 +1144,16 @@ public class ARObjectManager : MonoBehaviour
     {
         ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
 
-        GameObject lamasCoverAxis = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.CoverAxisLamas);
-        if (lamasCoverAxis != null && lamasCoverAxis.TryGetComponent(out Renderer renderLamasCoverAxis))
+        List<GameObject> lamasCoverAxisList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.CoverAxisLamas);
+
+        foreach (GameObject lamaAxisObj in lamasCoverAxisList)
         {
-            Material[] matsAxis = renderLamasCoverAxis.materials;
-            matsAxis[0] = currentMatData._Material01;
-            renderLamasCoverAxis.materials = matsAxis; 
+            if (lamaAxisObj != null && lamaAxisObj.TryGetComponent(out Renderer renderLamasCoverAxis))
+            {
+                Material[] matsAxis = renderLamasCoverAxis.materials;
+                matsAxis[0] = currentMatData._Material01;
+                renderLamasCoverAxis.materials = matsAxis;
+            }
         }
 
         List<GameObject> lamasList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.Lama);

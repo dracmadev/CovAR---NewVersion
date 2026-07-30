@@ -329,7 +329,7 @@ MonoBehaviour:
   lamaPrefab: {fileID: 3582606339723511777, guid: 110872d682eafdb408e748b4cbd6c490,
     type: 3}
   _sliderValue: 0
-  _lamasSize: 0.065
+  _lamasSize: 0.06
   _currentMaxDistance: 15
   _initKnotIndex: 9
   _endtKnotIndex: 11
@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PoolType: 6
+  _CoverType: 1
   _MaxARObjectLenghtDistance: 5
   _MaxLamasLenghtDistance: 9
   _MaxARObjectLenghtDistanceWithPool: 2.3

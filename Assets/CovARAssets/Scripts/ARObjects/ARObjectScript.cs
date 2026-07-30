@@ -13,6 +13,7 @@ public class ARObjectScript : MonoBehaviour
     [Space(25)]
     [Header("Type of ARObject:")]
     [SerializeField] private E_PoolType _PoolType;
+    [SerializeField] private E_CoverType _CoverType;
     [SerializeField] private float _MaxARObjectLenghtDistance = 10f;
     [SerializeField] private float _MaxLamasLenghtDistance = 10f;
     [SerializeField] private float _MaxARObjectLenghtDistanceWithPool = 2.3f;
@@ -23,8 +24,7 @@ public class ARObjectScript : MonoBehaviour
 
     [Header("ARObject related products list:")]
     [SerializeField] private St_APRelatedProduct[] _ARObjectRelatedProductsList;
-
-
+    
     [Header("ARObject parts: (Automatic)")]
     [SerializeField] private List<ARObjectPartScript> _ARObjectSpecificPartsList = new();
     [Header("ARObject Bones: (Automatic)")]
@@ -267,6 +267,11 @@ public class ARObjectScript : MonoBehaviour
     public float GetARObjectMAXLamasLenghtWithPool()
     {
         return _MaxLamasLenghtDistanceWithPool;
+    }
+    
+    public E_CoverType GetCoverType()
+    {
+        return _CoverType;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -996,7 +1001,7 @@ public class ARObjectScript : MonoBehaviour
 
         if (_fabricCoverSliderRef != null)
         {
-            _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMin = 0.5f;
+            _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMin = 0f;
             _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxLamasLenghtDistance;
 
             _fabricCoverSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetFabricCoverLenght(); });
@@ -1182,14 +1187,10 @@ public class ARObjectScript : MonoBehaviour
         if (_fabricCoverSliderRef != null)
         {
             var sliderData = _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
-            sliderData.sliderMin = 0.5f;
+            sliderData.sliderMin = 0f;
             sliderData.sliderMax = _MaxLamasLenghtDistance;
 
-            if (newLenght < 0.5)
-            {
-                newLenght = 0.5f;
-            }
-            else if (newLenght > _MaxLamasLenghtDistance)
+            if (newLenght > _MaxLamasLenghtDistance)
             {
                 newLenght = _MaxLamasLenghtDistance;
             }

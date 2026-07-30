@@ -17,5 +17,6 @@ public enum E_ARObjectParts
     FabricCover = 12,
     StartSecuritySystem = 13,
     EndSecuritySystem = 14,
+    IsolaCover = 15,
 
 }

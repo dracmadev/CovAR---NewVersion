@@ -392,6 +392,23 @@ MonoBehaviour:
     _CompanyKey: Catalog.Company.Astralpool
     _CompanyLink: https://www.astralpool.com/es/es.html
     _ProductsArray:
+    - _ProductType: 6
+      _ProductSprite: {fileID: 21300000, guid: 06b764776e7a0de4d9da2c4921651f40, type: 3}
+      _ProductKey: Catalog.Product.DeckMountedIsolaCover
+      _ModelsArray:
+      - _ModelType: 15
+        _ModelGeneralType: 1
+        _ModelLogo: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.Rollfix
+        _BlueprintModelImage: {fileID: 0}
+        _MaterialsArray:
+        - _MaterialType: 1
+          _MaterialSprite: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5,
+            type: 3}
+          _MaterialKey: Catalog.Material.Metalic
+          _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
     - _ProductType: 7
       _ProductSprite: {fileID: 21300000, guid: eb06c13200c18f848a734aee07085b3a, type: 3}
       _ProductKey: Catalog.Product.DeckMountedSlattedCover
@@ -406,7 +423,7 @@ MonoBehaviour:
           _MaterialSprite: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5,
             type: 3}
           _MaterialKey: Catalog.Material.Metalic
-          _Material01: {fileID: 2100000, guid: 32366a65ea26fd94ea189a93238a8ab8, type: 2}
+          _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
     - _ProductType: 4
