@@ -373,6 +373,8 @@ Catalog.Model.Astralpool.LebancTopCladding,Revesitimiento superior,Revêtement s
 Catalog.Model.Astralpool.LebancSidesCladding,Revesitimientos laterales,Revêtement latéral,Sides cladding
 Catalog.Model.Astralpool.Rousillon,Rousillon,Rousillon,Rousillon
 Catalog.Model.BACPoolSystem.Rollfix,Rollfix,Rollfix,Rollfix
+Catalog.Model.BACPoolSystem.Whirpool,Whirlpool,Whirlpool,Whirlpool
+Catalog.Model.BACPoolSystem.Isola,Isola,Isola,Isola
 ,,,
 Catalog.Material.White,Blanco,Blanc,White
 Catalog.Material.Gray,Gris,Gris,Grey
@@ -1021,7 +1023,7 @@ Tutorial.Info2.Descrip,"La interfaz de CovAR se divide en dos columnas, cada una
 Tutorial.Info3.Title,Columna izquierda,Colonne de gauche,Left column
 Tutorial.Info3.Descrip,"Permite manipular la cubierta: moverla, rotarla, modificar su longitud, desplegar la persiana y abrir el plano técnico.","Il permet de manipuler la couverture : la déplacer, la faire pivoter, modifier sa longueur, déployer le store et ouvrir le plan technique.","It allows you to manipulate the cover: move it, rotate it, modify its length, deploy the blind and open the technical plan."
 Tutorial.Info4.Title,Columna derecha,Colonne de droite,Right column
-Tutorial.Info4.Descrip,"Permite abrir el catálogo, acceder a la cámara y crear una piscina de ejemplo.","Il vous permet d'ouvrir le catalogue, d'accéder à l'appareil photo et de créer un échantillon.","It allows you to open the catalog, access the camera, and create a sample pool."
+Tutorial.Info4.Descrip,"Permite abrir el catálogo, acceder a la cámara y crear una piscina de ejemplo.","Il vous permet d'ouvrir le catalogue, d'accéder à la caméra et de créer un échantillon.","It allows you to open the catalog, access the camera, and create a sample pool."
 Tutorial.Info5.Title,Mover modelo,Déplacer le modèle,Move model
 Tutorial.Info5.Descrip,Pulse el botón de movimiento y desplace con el dedo el modelo de cubierta por la pantalla de su dispositivo.,Appuyez sur le bouton de déplacement et faites glisser le modèle de couverture sur l'écran de votre appareil avec votre doigt.,Press the move button and drag the cover template across your device's screen with your finger.
 Tutorial.Info6.Title,Rotar objeto,Faire pivoter l'objet,Rotate object

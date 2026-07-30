@@ -19,5 +19,8 @@ public enum E_ModelType
     BAC_FabricCover = 13,
     BAC_SlattedRollfix = 14,
     BAC_IsolaRollfix = 15,
+    BAC_Whirloop = 16,
+    BAC_Isola = 17,
+
 
 }

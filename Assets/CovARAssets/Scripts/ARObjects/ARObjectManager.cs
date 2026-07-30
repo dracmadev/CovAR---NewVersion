@@ -1185,6 +1185,24 @@ public class ARObjectManager : MonoBehaviour
 
     }
 
+    public void SetIsolaCoverMaterial(St_Material currentMatData)
+    {
+        ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
+
+        List<GameObject> fabricCoverAxisList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.IsolaCover);
+
+        foreach (GameObject isolaObj in fabricCoverAxisList)
+        {
+            if (isolaObj != null && isolaObj.TryGetComponent(out Renderer renderFabricCover))
+            {
+                Material[] matsAxis = renderFabricCover.materials;
+                matsAxis[0] = currentMatData._Material01;
+                renderFabricCover.materials = matsAxis;
+            }
+        }
+
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

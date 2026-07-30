@@ -392,11 +392,11 @@ MonoBehaviour:
     _CompanyKey: Catalog.Company.Astralpool
     _CompanyLink: https://www.astralpool.com/es/es.html
     _ProductsArray:
-    - _ProductType: 6
-      _ProductSprite: {fileID: 21300000, guid: 06b764776e7a0de4d9da2c4921651f40, type: 3}
-      _ProductKey: Catalog.Product.DeckMountedIsolaCover
+    - _ProductType: 7
+      _ProductSprite: {fileID: 21300000, guid: eb06c13200c18f848a734aee07085b3a, type: 3}
+      _ProductKey: Catalog.Product.DeckMountedSlattedCover
       _ModelsArray:
-      - _ModelType: 15
+      - _ModelType: 14
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Rollfix
@@ -409,11 +409,11 @@ MonoBehaviour:
           _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
-    - _ProductType: 7
-      _ProductSprite: {fileID: 21300000, guid: eb06c13200c18f848a734aee07085b3a, type: 3}
-      _ProductKey: Catalog.Product.DeckMountedSlattedCover
+    - _ProductType: 6
+      _ProductSprite: {fileID: 21300000, guid: 06b764776e7a0de4d9da2c4921651f40, type: 3}
+      _ProductKey: Catalog.Product.DeckMountedIsolaCover
       _ModelsArray:
-      - _ModelType: 14
+      - _ModelType: 15
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Rollfix
@@ -457,7 +457,7 @@ MonoBehaviour:
           _Material01: {fileID: 2100000, guid: 9ecf4038a3f58ae498665d8618bdc08a, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
-    - _ProductType: 5
+    - _ProductType: 9
       _ProductSprite: {fileID: 21300000, guid: c6dd3467113fbc3448721d4ec2e1230f, type: 3}
       _ProductKey: Catalog.Product.Lamas
       _ModelsArray:
@@ -520,5 +520,36 @@ MonoBehaviour:
             type: 3}
           _MaterialKey: Catalog.Material.Azul
           _Material01: {fileID: 2100000, guid: 7178560b0981a1044a9590dd142d6722, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+    - _ProductType: 8
+      _ProductSprite: {fileID: 21300000, guid: 5cc09943bc3f8f64daaec31386cc211d, type: 3}
+      _ProductKey: Catalog.Model.BACPoolSystem.Isola
+      _ModelsArray:
+      - _ModelType: 17
+        _ModelGeneralType: 3
+        _ModelLogo: {fileID: 21300000, guid: 99b3e9537b08feb4ea520cd8f1592767, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.Isola
+        _BlueprintModelImage: {fileID: 0}
+        _MaterialsArray:
+        - _MaterialType: 4
+          _MaterialSprite: {fileID: 21300000, guid: 91f15f103b6e4ab45a52d6e57c7599ad,
+            type: 3}
+          _MaterialKey: Catalog.Material.Antracita
+          _Material01: {fileID: 2100000, guid: a28f56242b982c2449628b7edf16f2c0, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 1
+          _MaterialSprite: {fileID: 21300000, guid: 6065d87919f0de84ea1f165aa1f8f739,
+            type: 3}
+          _MaterialKey: Catalog.Material.White
+          _Material01: {fileID: 2100000, guid: c60a7f91cb618bb4ebab8856963942e5, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 3
+          _MaterialSprite: {fileID: 21300000, guid: 4639584b215be2f4eafeff565815eebe,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 2100000, guid: 5d5df99473122ca4ca5a4d6c748439a5, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}

@@ -10,5 +10,8 @@ public enum E_ProductType
     Lamas = 5,
     DeckMountedIsolaCover = 6,
     DeckMountedSlattedCover = 7,
+    IsolaCover = 8,
+    SlattedCover = 9,
+
 
 }

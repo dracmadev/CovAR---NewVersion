@@ -167,11 +167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 32366a65ea26fd94ea189a93238a8ab8, type: 2}
+      objectReference: {fileID: 2100000, guid: 1d80cf36a7b9b2f409a7176f1cf8da60, type: 2}
     - target: {fileID: 919132149155446097, guid: dbded1b08ef39cb42aeef12749438239,
         type: 3}
       propertyPath: m_Name
-      value: SkinnedCylinder (Back)
+      value: FloatingCilinderIsola
       objectReference: {fileID: 0}
     - target: {fileID: 5599172561849715410, guid: dbded1b08ef39cb42aeef12749438239,
         type: 3}
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ARObjectGeneralPart: 1
   _ARObjectPartData:
-    _ARObjectPartType: 3
+    _ARObjectPartType: 15
     _ARObjectPartReference: {fileID: 0}
   _ARObjectBoneData:
     partScript: {fileID: 0}
@@ -699,7 +699,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c60a7f91cb618bb4ebab8856963942e5, type: 2}
+      objectReference: {fileID: 2100000, guid: 1d80cf36a7b9b2f409a7176f1cf8da60, type: 2}
     - target: {fileID: 919132149155446097, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
       propertyPath: m_Name
@@ -818,7 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ARObjectGeneralPart: 1
   _ARObjectPartData:
-    _ARObjectPartType: 10
+    _ARObjectPartType: 15
     _ARObjectPartReference: {fileID: 0}
   _ARObjectBoneData:
     partScript: {fileID: 0}
@@ -1037,7 +1037,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 447c144d2a0f32b42b8536cdfd2d1781, type: 2}
+      objectReference: {fileID: 2100000, guid: 1d80cf36a7b9b2f409a7176f1cf8da60, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ARObjectGeneralPart: 1
   _ARObjectPartData:
-    _ARObjectPartType: 4
+    _ARObjectPartType: 15
     _ARObjectPartReference: {fileID: 0}
   _ARObjectBoneData:
     partScript: {fileID: 0}
@@ -1401,7 +1401,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c60a7f91cb618bb4ebab8856963942e5, type: 2}
+      objectReference: {fileID: 2100000, guid: 1d80cf36a7b9b2f409a7176f1cf8da60, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ARObjectGeneralPart: 1
   _ARObjectPartData:
-    _ARObjectPartType: 10
+    _ARObjectPartType: 15
     _ARObjectPartReference: {fileID: 0}
   _ARObjectBoneData:
     partScript: {fileID: 0}

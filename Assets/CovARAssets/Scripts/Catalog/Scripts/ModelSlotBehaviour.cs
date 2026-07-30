@@ -178,12 +178,12 @@ public class ModelSlotBehaviour : MonoBehaviour
             case E_ModelType.AP_LamasPVC: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
             case E_ModelType.BAC_FabricCover: returnVar = E_PoolType.BAC_FabricCover; break;
             case E_ModelType.BAC_SlattedRollfix: returnVar = E_PoolType.BAC_SlattedRollfix; break;
-            case E_ModelType.BAC_IsolaRollfix: returnVar = E_PoolType.BAC_IsolaRollfix; break;
-
+            case E_ModelType.BAC_IsolaRollfix: returnVar = E_PoolType.BAC_IsolaRollfix; _ARObjectManager.SetIsolaCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData()));  break;
+            case E_ModelType.BAC_Isola: returnVar = E_PoolType.None; break;
         }
 
         return returnVar;
-    }
+     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
