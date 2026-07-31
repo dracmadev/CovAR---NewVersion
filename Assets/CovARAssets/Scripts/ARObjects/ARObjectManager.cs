@@ -615,7 +615,9 @@ public class ARObjectManager : MonoBehaviour
                     case E_ModelType.AP_LamasPVC: _CovARObjectData._CurrentLamasMaterial = material; break;
 
                     //////////////////////////////////////////////////////////// FABRIC COVER ////////////////////////////////////////////////////////////
-                    case E_ModelType.BAC_FabricCover: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
+                    case E_ModelType.BAC_FabricCover_Multiversal: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
+                    case E_ModelType.BAC_FabricCover_Novatrend: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
+                    case E_ModelType.BAC_FabricCover_SwissTop: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
 
                     /////////////////////////////////////////////////// DECK MOUNTED SLATTED COVER ///////////////////////////////////////////////////////
                     case E_ModelType.BAC_SlattedRollfix: _CovARObjectData._CurrentModelMaterial = material; break;
@@ -752,7 +754,9 @@ public class ARObjectManager : MonoBehaviour
             {
                 switch (GetFirstModelFromCurrentProduct(GetFirstProductFromCurrentCompany(_CurrentProductCatalog._CompanysArray[1]))._ModelType)
                 {
-                    case E_ModelType.BAC_FabricCover: poolTypeToReturn = E_PoolType.BAC_FabricCover; break;
+                    case E_ModelType.BAC_FabricCover_Multiversal: poolTypeToReturn = E_PoolType.BAC_FabricCover_Multiversal; break;
+                    case E_ModelType.BAC_FabricCover_Novatrend: poolTypeToReturn = E_PoolType.BAC_FabricCover_Novatrend; break;
+                    case E_ModelType.BAC_FabricCover_SwissTop: poolTypeToReturn = E_PoolType.BAC_FabricCover_SwissTop; break;
                     case E_ModelType.BAC_SlattedRollfix: poolTypeToReturn = E_PoolType.BAC_SlattedRollfix; break;
                     case E_ModelType.BAC_IsolaRollfix: poolTypeToReturn = E_PoolType.BAC_IsolaRollfix; break;
                 }

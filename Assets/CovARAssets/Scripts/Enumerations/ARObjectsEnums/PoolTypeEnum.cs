@@ -11,9 +11,11 @@ public enum E_PoolType
     AP_Lebanc_Small = 6,
     AP_Lebanc_Big = 7,
     AP_Rousillon = 8,
-    BAC_FabricCover = 9,
+    BAC_FabricCover_Multiversal = 9,
     BAC_SlattedRollfix = 10,
     BAC_IsolaRollfix = 11,
+    BAC_FabricCover_Novatrend = 12,
+    BAC_FabricCover_SwissTop = 13,
 
 
 }

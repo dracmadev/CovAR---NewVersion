@@ -16,11 +16,13 @@ public enum E_ModelType
     AP_LeBancSidesCladding = 10,
     AP_LamasPolicarbonate = 11,
     AP_LamasPVC = 12,
-    BAC_FabricCover = 13,
     BAC_SlattedRollfix = 14,
     BAC_IsolaRollfix = 15,
     BAC_Whirloop = 16,
     BAC_Isola = 17,
+    BAC_FabricCover_Novatrend = 18,
+    BAC_FabricCover_Multiversal = 19,
+    BAC_FabricCover_SwissTop = 20,
 
 
 }

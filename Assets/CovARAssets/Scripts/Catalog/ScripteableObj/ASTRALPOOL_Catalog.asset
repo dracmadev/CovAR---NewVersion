@@ -430,31 +430,127 @@ MonoBehaviour:
       _ProductSprite: {fileID: 21300000, guid: 9578a5e4e23336e4a8f9d3d87c4966db, type: 3}
       _ProductKey: Catalog.Product.FabricCover
       _ModelsArray:
-      - _ModelType: 13
+      - _ModelType: 19
         _ModelGeneralType: 1
-        _ModelLogo: {fileID: 21300000, guid: 9578a5e4e23336e4a8f9d3d87c4966db, type: 3}
-        _ModelKey: Catalog.Product.FabricCover
+        _ModelLogo: {fileID: 21300000, guid: a319ff7fca1cc944aac15a435d293eda, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.Multiversal
         _BlueprintModelImage: {fileID: 0}
         _MaterialsArray:
         - _MaterialType: 3
-          _MaterialSprite: {fileID: 21300000, guid: 30eefac4e01b28c41b1259e814696349,
+          _MaterialSprite: {fileID: 21300000, guid: a319ff7fca1cc944aac15a435d293eda,
             type: 3}
           _MaterialKey: Catalog.Material.Gray
-          _Material01: {fileID: 2100000, guid: 447c144d2a0f32b42b8536cdfd2d1781, type: 2}
+          _Material01: {fileID: 2100000, guid: dd1f88649cd51ee478906b4de84fbee0, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
         - _MaterialType: 2
-          _MaterialSprite: {fileID: 21300000, guid: 1d5d8c6822598754197eab56ac3fe2f5,
+          _MaterialSprite: {fileID: 21300000, guid: 8dec3fd541b46434db1b2271a2d8ee26,
             type: 3}
           _MaterialKey: Catalog.Material.Black
-          _Material01: {fileID: 2100000, guid: 25544a2c926b216478c48fd08e0d675a, type: 2}
+          _Material01: {fileID: 2100000, guid: 49f4b46e9e1295e46912c5dc937cde80, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
         - _MaterialType: 4
-          _MaterialSprite: {fileID: 21300000, guid: b7ba1da5aaabcd3459cceb50c2a331d9,
+          _MaterialSprite: {fileID: 21300000, guid: b856493ccace0564582feb102da0ba2f,
             type: 3}
           _MaterialKey: Catalog.Material.Blue
-          _Material01: {fileID: 2100000, guid: 9ecf4038a3f58ae498665d8618bdc08a, type: 2}
+          _Material01: {fileID: 2100000, guid: 1d80cf36a7b9b2f409a7176f1cf8da60, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 5
+          _MaterialSprite: {fileID: 21300000, guid: 1c4e384ca188a8f4683b13098d854809,
+            type: 3}
+          _MaterialKey: Catalog.Material.Blue
+          _Material01: {fileID: 2100000, guid: cd78c98d40e3e9c49a49ef04ab242d12, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 12
+          _MaterialSprite: {fileID: 21300000, guid: b77d8161be767c84691d7cd541b67ba3,
+            type: 3}
+          _MaterialKey: Catalog.Material.Green
+          _Material01: {fileID: 2100000, guid: b668af8c1f241fd42a71493de2a316e7, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 18
+        _ModelGeneralType: 1
+        _ModelLogo: {fileID: 21300000, guid: b1c92b995b0f16d459a635601f16e570, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.Novatrend
+        _BlueprintModelImage: {fileID: 0}
+        _MaterialsArray:
+        - _MaterialType: 3
+          _MaterialSprite: {fileID: 21300000, guid: b1c92b995b0f16d459a635601f16e570,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 2100000, guid: dd1f88649cd51ee478906b4de84fbee0, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 2
+          _MaterialSprite: {fileID: 21300000, guid: 7585b182afb572e45b831d6853d22ead,
+            type: 3}
+          _MaterialKey: Catalog.Material.Black
+          _Material01: {fileID: 2100000, guid: 49f4b46e9e1295e46912c5dc937cde80, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 4
+          _MaterialSprite: {fileID: 21300000, guid: 7a2dbc2189c5e1c4d97231399125a375,
+            type: 3}
+          _MaterialKey: Catalog.Material.Blue
+          _Material01: {fileID: 2100000, guid: 1d80cf36a7b9b2f409a7176f1cf8da60, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 5
+          _MaterialSprite: {fileID: 21300000, guid: 830d4b46df381e448ba03eec63a8e7ff,
+            type: 3}
+          _MaterialKey: Catalog.Material.Blue
+          _Material01: {fileID: 2100000, guid: cd78c98d40e3e9c49a49ef04ab242d12, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 12
+          _MaterialSprite: {fileID: 21300000, guid: f00edcf69087cf94ea4a28674b41d301,
+            type: 3}
+          _MaterialKey: Catalog.Material.Green
+          _Material01: {fileID: 2100000, guid: b668af8c1f241fd42a71493de2a316e7, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 20
+        _ModelGeneralType: 1
+        _ModelLogo: {fileID: 21300000, guid: 5d4d7575a90ef9e47a3e2fa9786ccdf8, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.SwissTop
+        _BlueprintModelImage: {fileID: 0}
+        _MaterialsArray:
+        - _MaterialType: 3
+          _MaterialSprite: {fileID: 21300000, guid: 5d4d7575a90ef9e47a3e2fa9786ccdf8,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 2100000, guid: dd1f88649cd51ee478906b4de84fbee0, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 2
+          _MaterialSprite: {fileID: 21300000, guid: ee3b467585a5f634ca64a9ce0da069a3,
+            type: 3}
+          _MaterialKey: Catalog.Material.Black
+          _Material01: {fileID: 2100000, guid: 49f4b46e9e1295e46912c5dc937cde80, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 4
+          _MaterialSprite: {fileID: 21300000, guid: 6efc0205c86f51a428df07f1057e9cac,
+            type: 3}
+          _MaterialKey: Catalog.Material.Blue
+          _Material01: {fileID: 2100000, guid: 1d80cf36a7b9b2f409a7176f1cf8da60, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 5
+          _MaterialSprite: {fileID: 21300000, guid: fcb46d3815be3494b8270081eda58a65,
+            type: 3}
+          _MaterialKey: Catalog.Material.Blue
+          _Material01: {fileID: 2100000, guid: cd78c98d40e3e9c49a49ef04ab242d12, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 12
+          _MaterialSprite: {fileID: 21300000, guid: e206cde3baa0fc144b4d17b3b954ac6b,
+            type: 3}
+          _MaterialKey: Catalog.Material.Green
+          _Material01: {fileID: 2100000, guid: b668af8c1f241fd42a71493de2a316e7, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
     - _ProductType: 9

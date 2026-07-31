@@ -14,6 +14,7 @@ public enum E_MaterialType
     Black_White = 9,
     Black_Black = 10,
     Metalic = 11,
+    Green = 12,
 
 
 
