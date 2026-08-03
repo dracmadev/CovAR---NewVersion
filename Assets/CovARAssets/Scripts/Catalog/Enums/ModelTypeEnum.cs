@@ -23,6 +23,11 @@ public enum E_ModelType
     BAC_FabricCover_Novatrend = 18,
     BAC_FabricCover_Multiversal = 19,
     BAC_FabricCover_SwissTop = 20,
+    BAC_LamasDuotherm = 21,
+    BAC_LamasTwist = 22,
+    BAC_RollmaticPVC = 23,
+    BAC_RollmaticPolycarbonate = 24,
+    BAC_RollmaticPolycarbonatePro = 25,
 
 
 }
