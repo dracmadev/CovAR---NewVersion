@@ -28,6 +28,10 @@ public enum E_ModelType
     BAC_RollmaticPVC = 23,
     BAC_RollmaticPolycarbonate = 24,
     BAC_RollmaticPolycarbonatePro = 25,
+    BAC_SlattedRonda = 26,
+    BAC_SlattedLido = 27,
+    BAC_SlattedAcoe = 28,
+    BAC_SlattedDavos = 29,
 
 
 }

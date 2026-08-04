@@ -402,8 +402,74 @@ MonoBehaviour:
         _ModelKey: Catalog.Model.BACPoolSystem.Rollfix
         _BlueprintModelImage: {fileID: 0}
         _MaterialsArray:
-        - _MaterialType: 1
+        - _MaterialType: 11
           _MaterialSprite: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5,
+            type: 3}
+          _MaterialKey: Catalog.Material.Metalic
+          _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 26
+        _ModelGeneralType: 1
+        _ModelLogo: {fileID: 21300000, guid: a676bcce5fb823d4eaa29fefe056f9f3, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.Ronda
+        _BlueprintModelImage: {fileID: 0}
+        _MaterialsArray:
+        - _MaterialType: 11
+          _MaterialSprite: {fileID: 21300000, guid: a676bcce5fb823d4eaa29fefe056f9f3,
+            type: 3}
+          _MaterialKey: Catalog.Material.Metalic
+          _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 27
+        _ModelGeneralType: 1
+        _ModelLogo: {fileID: 21300000, guid: 8c55e2c65f181b148b28886489a2e413, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.Lido
+        _BlueprintModelImage: {fileID: 0}
+        _MaterialsArray:
+        - _MaterialType: 1
+          _MaterialSprite: {fileID: 21300000, guid: 8c55e2c65f181b148b28886489a2e413,
+            type: 3}
+          _MaterialKey: Catalog.Material.White
+          _Material01: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 3
+          _MaterialSprite: {fileID: 21300000, guid: 1af909c7c6d3e5b43ae7065485f5c6e4,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray
+          _Material01: {fileID: 2100000, guid: dd1f88649cd51ee478906b4de84fbee0, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 24
+          _MaterialSprite: {fileID: 21300000, guid: 8c55e2c65f181b148b28886489a2e413,
+            type: 3}
+          _MaterialKey: Catalog.Lido.SipoMahagoni
+          _Material01: {fileID: 2100000, guid: ae609c23b230e314ba2940a69291e991, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 28
+        _ModelGeneralType: 1
+        _ModelLogo: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.Acoe
+        _BlueprintModelImage: {fileID: 0}
+        _MaterialsArray:
+        - _MaterialType: 11
+          _MaterialSprite: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704,
+            type: 3}
+          _MaterialKey: Catalog.Material.Metalic
+          _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+      - _ModelType: 29
+        _ModelGeneralType: 1
+        _ModelLogo: {fileID: 21300000, guid: 9ed2eae2ae4b5914092f096427bd68a4, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.Davos
+        _BlueprintModelImage: {fileID: 0}
+        _MaterialsArray:
+        - _MaterialType: 11
+          _MaterialSprite: {fileID: 21300000, guid: 9ed2eae2ae4b5914092f096427bd68a4,
             type: 3}
           _MaterialKey: Catalog.Material.Metalic
           _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}

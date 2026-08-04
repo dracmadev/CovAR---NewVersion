@@ -378,12 +378,16 @@ Catalog.Model.BACPoolSystem.Isola,Isola,Isola,Isola
 Catalog.Model.BACPoolSystem.Multiversal,Multiversal,Multiversal,Multiversal
 Catalog.Model.BACPoolSystem.Novatrend,Novatrend,Novatrend,Novatrend
 Catalog.Model.BACPoolSystem.SwissTop,SwissTop,SwissTop,SwissTop
+Catalog.Model.BACPoolSystem.Acoe,Acoe,Acoe,Acoe
+Catalog.Model.BACPoolSystem.Ronda,Ronda,Ronda,Ronda
+Catalog.Model.BACPoolSystem.Davos,Davos,Davos,Davos
+Catalog.Model.BACPoolSystem.Lido,Lido,Lido,Lido
+,,,
 ,,,
 Catalog.Material.White,Blanco,Blanc,White
 Catalog.Material.Gray,Gris,Gris,Grey
 Catalog.Material.Antracita,Gris Antracita,Gris anthracite,Anthracite Grey
 Catalog.Material.Sand,Arena,Sable,Sand
-Catalog.Material.Green,Verde,Vert,Green
 Catalog.Material.Wood,Madera,Bois,Wood
 Catalog.Material.White&White,Blanco & Blanco,Blanc et blanc,White & White
 Catalog.Material.White&Black,Blanco & Gris Antracita,Blanc et gris anthracite,White & Anthracite Grey
@@ -413,6 +417,7 @@ Catalog.Lamas.Twist,Twist,Torsion,Twist
 Catalog.Lamas.RollmaticPVC,Rollmatic PVC,Rollmatic PVC,Rollmatic PVC
 Catalog.Lamas.RollmaticPolycarbonate,Rollmatic Polycarbonate,Polycarbonate Rollmatic,Rollmatic Polycarbonate
 Catalog.Lamas.RollmaticPolycarbonatePro,Rollmatic Polycarbonate Pro,Rollmatic Polycarbonate Pro,Rollmatic Polycarbonate Pro
+Catalog.Lido.SipoMahagoni,Sipo Mahagoni,Sipo Mahagoni,Sipo Mahagoni
 ,,,
 Catalog.Lamas.Model.Title,Modelo,Modèle,Model
 Catalog.Lamas.Material.Title,Material,Matériel,Material

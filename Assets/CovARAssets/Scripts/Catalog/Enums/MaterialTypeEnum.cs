@@ -26,6 +26,7 @@ public enum E_MaterialType
     SolarSmokey = 21,
     TranslucedBlued = 22,
     TranslucedSmokey = 23,
+    SipoMahagoni = 24,
 
 
 
