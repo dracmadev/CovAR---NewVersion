@@ -16,6 +16,17 @@ public enum E_PoolType
     BAC_IsolaRollfix = 11,
     BAC_FabricCover_Novatrend = 12,
     BAC_FabricCover_SwissTop = 13,
+    BAC_SlattedRonda = 14,
+    BAC_SlattedLido = 15,
+    BAC_SlattedAcoe = 16,
+    BAC_SlattedDavos = 17,
+    BAC_CladdingAcoe = 18,
+    BAC_CladdingQuadro = 19,
+    BAC_CladdingLido = 20,
+    BAC_CladdingDavos = 21,
+    BAC_IsolaAcoe = 22,
+    BAC_IsolaRonda = 23,
+    BAC_IsolaRondalino = 24,
 
 
 }

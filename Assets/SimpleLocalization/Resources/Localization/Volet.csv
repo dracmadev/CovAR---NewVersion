@@ -382,8 +382,8 @@ Catalog.Model.BACPoolSystem.Acoe,Acoe,Acoe,Acoe
 Catalog.Model.BACPoolSystem.Ronda,Ronda,Ronda,Ronda
 Catalog.Model.BACPoolSystem.Davos,Davos,Davos,Davos
 Catalog.Model.BACPoolSystem.Lido,Lido,Lido,Lido
-,,,
-,,,
+Catalog.Model.BACPoolSystem.Quadro,Quadro,Quadro,Quadro
+Catalog.Model.BACPoolSystem.Rondalino,Rondalino,Rondalino,Rondalino
 Catalog.Material.White,Blanco,Blanc,White
 Catalog.Material.Gray,Gris,Gris,Grey
 Catalog.Material.Antracita,Gris Antracita,Gris anthracite,Anthracite Grey

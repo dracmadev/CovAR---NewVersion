@@ -32,6 +32,12 @@ public enum E_ModelType
     BAC_SlattedLido = 27,
     BAC_SlattedAcoe = 28,
     BAC_SlattedDavos = 29,
-
+    BAC_CladdingAcoe = 30,
+    BAC_CladdingQuadro = 31,
+    BAC_CladdingLido = 32,
+    BAC_CladdingDavos = 33,
+    BAC_IsolaAcoe = 34,
+    BAC_IsolaRonda = 35,
+    BAC_IsolaRondalino = 36,
 
 }
