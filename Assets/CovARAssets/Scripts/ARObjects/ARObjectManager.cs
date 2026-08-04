@@ -613,15 +613,41 @@ public class ARObjectManager : MonoBehaviour
                     //////////////////////////////////////////////////////////// LAMAS  //////////////////////////////////////////////////////////////////
                     case E_ModelType.AP_LamasPolicarbonate: _CovARObjectData._CurrentLamasMaterial = material; break;
                     case E_ModelType.AP_LamasPVC: _CovARObjectData._CurrentLamasMaterial = material; break;
+    
+
+                    /////////////////////////////////////////////////// DECK MOUNTED SLATTED COVER ///////////////////////////////////////////////////////
+                    case E_ModelType.BAC_SlattedRollfix: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_SlattedRonda: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_SlattedLido: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_SlattedAcoe: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_SlattedDavos: _CovARObjectData._CurrentModelMaterial = material; break;
+
+                    /////////////////////////////////////////////////// DECK MOUNTED ISOLA COVER ///////////////////////////////////////////////////////
+                    case E_ModelType.BAC_IsolaRollfix: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_IsolaAcoe: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_IsolaRonda: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_IsolaRondalino: _CovARObjectData._CurrentModelMaterial = material; break;
+
+                    //////////////////////////////////////////////// BAC CLADDING AND BENCHES //////////////////////////////////////////////////////////////   
+                    case E_ModelType.BAC_CladdingAcoe: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_CladdingQuadro: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_CladdingLido: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_CladdingDavos: _CovARObjectData._CurrentModelMaterial = material; break;
 
                     //////////////////////////////////////////////////////////// FABRIC COVER ////////////////////////////////////////////////////////////
                     case E_ModelType.BAC_FabricCover_Multiversal: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
                     case E_ModelType.BAC_FabricCover_Novatrend: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
                     case E_ModelType.BAC_FabricCover_SwissTop: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
 
-                    /////////////////////////////////////////////////// DECK MOUNTED SLATTED COVER ///////////////////////////////////////////////////////
-                    case E_ModelType.BAC_SlattedRollfix: _CovARObjectData._CurrentModelMaterial = material; break;
-                    case E_ModelType.BAC_IsolaRollfix: _CovARObjectData._CurrentModelMaterial = material; break;
+                    ///////////////////////////////////////////////////////// ISOLA /////////////////////////////////////////////////////////////////////
+                    case E_ModelType.BAC_Whirloop: _CovARObjectData._CurrentLamasMaterial = material; break;
+
+                    //////////////////////////////////////////////////////// SLATTED ////////////////////////////////////////////////////////////////////
+                    case E_ModelType.BAC_RollmaticPVC: _CovARObjectData._CurrentLamasMaterial = material; break;
+                    case E_ModelType.BAC_RollmaticPolycarbonate: _CovARObjectData._CurrentLamasMaterial = material; break;
+                    case E_ModelType.BAC_RollmaticPolycarbonatePro: _CovARObjectData._CurrentLamasMaterial = material; break;
+                    case E_ModelType.BAC_LamasDuotherm: _CovARObjectData._CurrentLamasMaterial = material; break;
+                    case E_ModelType.BAC_LamasTwist: _CovARObjectData._CurrentLamasMaterial = material; break;
 
 
                 }
@@ -757,8 +783,22 @@ public class ARObjectManager : MonoBehaviour
                     case E_ModelType.BAC_FabricCover_Multiversal: poolTypeToReturn = E_PoolType.BAC_FabricCover_Multiversal; break;
                     case E_ModelType.BAC_FabricCover_Novatrend: poolTypeToReturn = E_PoolType.BAC_FabricCover_Novatrend; break;
                     case E_ModelType.BAC_FabricCover_SwissTop: poolTypeToReturn = E_PoolType.BAC_FabricCover_SwissTop; break;
+
                     case E_ModelType.BAC_SlattedRollfix: poolTypeToReturn = E_PoolType.BAC_SlattedRollfix; break;
+                    case E_ModelType.BAC_SlattedRonda: poolTypeToReturn = E_PoolType.BAC_SlattedRonda; break;
+                    case E_ModelType.BAC_SlattedLido: poolTypeToReturn = E_PoolType.BAC_SlattedLido; break;
+                    case E_ModelType.BAC_SlattedAcoe: poolTypeToReturn = E_PoolType.BAC_SlattedAcoe; break;
+                    case E_ModelType.BAC_SlattedDavos: poolTypeToReturn = E_PoolType.BAC_SlattedDavos; break;
+
                     case E_ModelType.BAC_IsolaRollfix: poolTypeToReturn = E_PoolType.BAC_IsolaRollfix; break;
+                    case E_ModelType.BAC_IsolaAcoe: poolTypeToReturn = E_PoolType.BAC_IsolaAcoe; break;
+                    case E_ModelType.BAC_IsolaRonda: poolTypeToReturn = E_PoolType.BAC_IsolaRonda; break;
+                    case E_ModelType.BAC_IsolaRondalino: poolTypeToReturn = E_PoolType.BAC_IsolaRondalino; break;
+
+                    case E_ModelType.BAC_CladdingAcoe: poolTypeToReturn = E_PoolType.BAC_CladdingAcoe; break;
+                    case E_ModelType.BAC_CladdingQuadro: poolTypeToReturn = E_PoolType.BAC_CladdingQuadro; break;
+                    case E_ModelType.BAC_CladdingLido: poolTypeToReturn = E_PoolType.BAC_CladdingLido; break;
+                    case E_ModelType.BAC_CladdingDavos: poolTypeToReturn = E_PoolType.BAC_CladdingDavos; break;
                 }
             }
             else
@@ -1305,9 +1345,34 @@ public class ARObjectManager : MonoBehaviour
                 case E_ModelType.AP_SvelteaManual: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 case E_ModelType.AP_Coverly: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 case E_ModelType.AP_Bellasun: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+               
                 case E_ModelType.AP_Rousillon: pool.transform.localPosition = new Vector3(0f, 0.035f, -0.56f); break;
+                
                 case E_ModelType.AP_LeBancBigFoot: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 case E_ModelType.AP_LeBancSmallFoot: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+
+
+                case E_ModelType.BAC_FabricCover_Multiversal: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_FabricCover_Novatrend: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_FabricCover_SwissTop: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+
+                case E_ModelType.BAC_SlattedRollfix: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_SlattedRonda: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_SlattedLido: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_SlattedAcoe: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_SlattedDavos: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                
+                case E_ModelType.BAC_IsolaRollfix: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_IsolaAcoe: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_IsolaRonda: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_IsolaRondalino: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                
+                case E_ModelType.BAC_CladdingAcoe: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_CladdingQuadro: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_CladdingLido: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_CladdingDavos: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+
+
             }
 
             pool.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);

@@ -164,24 +164,53 @@ public class ModelSlotBehaviour : MonoBehaviour
         switch (_CurrentModelData._ModelType)
         {
             case E_ModelType.None: returnVar = E_PoolType.None;  break;
+
             case E_ModelType.AP_Octeo: returnVar = E_PoolType.AP_Octeo; break;
             case E_ModelType.AP_Sveltea: returnVar = E_PoolType.AP_Sveltea; break;
             case E_ModelType.AP_SvelteaManual: returnVar = E_PoolType.AP_SvelteaManual; break;
             case E_ModelType.AP_Coverly: returnVar = E_PoolType.AP_Coverly; break;
             case E_ModelType.AP_Bellasun: returnVar = E_PoolType.AP_Bellasun; break;
+
             case E_ModelType.AP_Rousillon: returnVar = E_PoolType.AP_Rousillon; break;
+
             case E_ModelType.AP_LeBancSmallFoot: returnVar = E_PoolType.AP_Lebanc_Small; break;
             case E_ModelType.AP_LeBancBigFoot: returnVar = E_PoolType.AP_Lebanc_Big; break;
             case E_ModelType.AP_LeBancTopCladding: returnVar = E_PoolType.None; break;
             case E_ModelType.AP_LeBancSidesCladding: returnVar = E_PoolType.None; break;
+
             case E_ModelType.AP_LamasPolicarbonate: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
             case E_ModelType.AP_LamasPVC: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+
             case E_ModelType.BAC_FabricCover_Multiversal: returnVar = E_PoolType.BAC_FabricCover_Multiversal; _ARObjectManager.SetFabricCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
             case E_ModelType.BAC_FabricCover_Novatrend: returnVar = E_PoolType.BAC_FabricCover_Novatrend; _ARObjectManager.SetFabricCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
             case E_ModelType.BAC_FabricCover_SwissTop: returnVar = E_PoolType.BAC_FabricCover_SwissTop; _ARObjectManager.SetFabricCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+
             case E_ModelType.BAC_SlattedRollfix: returnVar = E_PoolType.BAC_SlattedRollfix; break;
-            case E_ModelType.BAC_IsolaRollfix: returnVar = E_PoolType.BAC_IsolaRollfix; _ARObjectManager.SetIsolaCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData()));  break;
-            case E_ModelType.BAC_Isola: returnVar = E_PoolType.None; break;
+            case E_ModelType.BAC_SlattedRonda: returnVar = E_PoolType.BAC_SlattedRonda; break;
+            case E_ModelType.BAC_SlattedLido: returnVar = E_PoolType.BAC_SlattedLido; break;
+            case E_ModelType.BAC_SlattedAcoe: returnVar = E_PoolType.BAC_SlattedAcoe; break;
+            case E_ModelType.BAC_SlattedDavos: returnVar = E_PoolType.BAC_SlattedDavos; break;
+
+            case E_ModelType.BAC_IsolaRollfix: returnVar = E_PoolType.BAC_IsolaRollfix; _ARObjectManager.SetIsolaCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            case E_ModelType.BAC_IsolaAcoe: returnVar = E_PoolType.BAC_IsolaAcoe; _ARObjectManager.SetIsolaCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            case E_ModelType.BAC_IsolaRonda: returnVar = E_PoolType.BAC_IsolaRonda; _ARObjectManager.SetIsolaCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            case E_ModelType.BAC_IsolaRondalino: returnVar = E_PoolType.BAC_IsolaRondalino; _ARObjectManager.SetIsolaCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            
+            case E_ModelType.BAC_CladdingAcoe: returnVar = E_PoolType.BAC_CladdingAcoe; break;
+            case E_ModelType.BAC_CladdingQuadro: returnVar = E_PoolType.BAC_CladdingQuadro; break;
+            case E_ModelType.BAC_CladdingLido: returnVar = E_PoolType.BAC_CladdingLido; break;
+            case E_ModelType.BAC_CladdingDavos: returnVar = E_PoolType.BAC_CladdingDavos; break; 
+
+
+            case E_ModelType.BAC_Isola: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            case E_ModelType.BAC_Whirloop: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+
+            case E_ModelType.BAC_LamasDuotherm: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            case E_ModelType.BAC_LamasTwist: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            case E_ModelType.BAC_RollmaticPVC: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            case E_ModelType.BAC_RollmaticPolycarbonate: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            case E_ModelType.BAC_RollmaticPolycarbonatePro: returnVar = E_PoolType.None; _ARObjectManager.SetLamasMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+
         }
 
         return returnVar;
