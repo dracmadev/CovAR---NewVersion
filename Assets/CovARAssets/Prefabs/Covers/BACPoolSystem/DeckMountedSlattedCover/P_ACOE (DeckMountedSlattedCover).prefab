@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 7648823103028033210}
   m_Layer: 0
   m_Name: P_ACOE (DeckMountedSlattedCover)
-  m_TagString: Untagged
+  m_TagString: ARObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
