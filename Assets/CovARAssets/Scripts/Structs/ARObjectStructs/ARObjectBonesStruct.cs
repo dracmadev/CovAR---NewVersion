@@ -15,6 +15,7 @@ public class St_ARObjectBonesData
     public E_SidesInLetters _BoneSide;
     public E_ARObjectComponentsDirection _BoneDirection;
     public E_ARObjectComponentsDirection _BoneSecondDirection;
+    public bool bDontRespectAbsolutDistance;
 
     public float sideLength;
 }

@@ -62,6 +62,8 @@ public class ARObjectScript : MonoBehaviour
     //OBJ LENGHT
     private  GameObject _lenghtSliderRef;
     private List<GameObject> _boneRightObjList = new List<GameObject>();
+    private List<GameObject> _boneRightObjListThatDontFollowAbsoluteDistance = new List<GameObject>();
+    private Dictionary<GameObject, float> _initialBoneXPositions = new Dictionary<GameObject, float>();
     private GameObject _footRightObj;
     private GameObject _feedbackLenghtText;
 
@@ -160,7 +162,7 @@ public class ARObjectScript : MonoBehaviour
         return _ARObjectState;
     }
 
-    public List<GameObject> GetAllBoneObjsBasedOnDirection(E_ARObjectComponentsDirection direction)
+    public List<GameObject> GetAllBoneObjsBasedOnDirection(E_ARObjectComponentsDirection direction, bool bDontRespectAbsolutDistance = false)
     {
         List<GameObject> foundBones = new List<GameObject>();
 
@@ -168,7 +170,7 @@ public class ARObjectScript : MonoBehaviour
 
         foreach (ARObjectPartScript part in allParts)
         {
-            if (part.GetBoneData() != null && part.GetBoneData()._BoneDirection == direction)
+            if (part.GetBoneData() != null && part.GetBoneData()._BoneDirection == direction && part.GetBoneData().bDontRespectAbsolutDistance == bDontRespectAbsolutDistance)
             {
                 foundBones.Add(part.gameObject);
             }
@@ -591,12 +593,29 @@ public class ARObjectScript : MonoBehaviour
         // GET RIGHT BONES
         _boneRightObjList = GetAllBoneObjsBasedOnDirection(E_ARObjectComponentsDirection.RIGHT);
 
+        //GET RIGHT BONES THAT DONT FOLLOW ABSOLUTE DISTANCE
+        _boneRightObjListThatDontFollowAbsoluteDistance = GetAllBoneObjsBasedOnDirection(E_ARObjectComponentsDirection.RIGHT, true);
+
+        if (_boneRightObjListThatDontFollowAbsoluteDistance.Count != 0)
+        {
+            _initialBoneXPositions.Clear();
+            foreach (GameObject boneObj in _boneRightObjListThatDontFollowAbsoluteDistance)
+            {
+                if (boneObj != null && !_initialBoneXPositions.ContainsKey(boneObj))
+                {
+                    _initialBoneXPositions.Add(boneObj, boneObj.transform.localPosition.x);
+                }
+            }
+        }
+
         // GET RIGHT FOOT
         _footRightObj = GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight);
         //Debug.Log("I Getted the _footRightObj -> " + _footRightObj.gameObject.name);
 
+        
 
-        if(bFabricCoverEndSecuritySystemsActive)
+
+        if (bFabricCoverEndSecuritySystemsActive)
         {
             ClearFabricCoverEndSecuritySystems();
         }
@@ -634,6 +653,29 @@ public class ARObjectScript : MonoBehaviour
         {
             Debug.Log("Foot right is null?...");
         }
+
+        //Moving bones that dont follow absolute distance
+        if (_boneRightObjListThatDontFollowAbsoluteDistance.Count != 0)
+        {
+            foreach (GameObject boneObj in _boneRightObjListThatDontFollowAbsoluteDistance)
+            {
+                if (boneObj == null) continue;
+
+                // Si per algun motiu no s'havia guardat la posició inicial, la guardem ara mateix com a seguretat
+                if (!_initialBoneXPositions.TryGetValue(boneObj, out float startX))
+                {
+                    startX = boneObj.transform.localPosition.x;
+                    _initialBoneXPositions[boneObj] = startX;
+                }
+
+                // Calculem la nova posició X usant 'currentSliderValue'
+                float targetX = startX + ((currentSliderValue - 1f) * 100f);
+                Vector3 currentPos = boneObj.transform.localPosition;
+
+                boneObj.transform.localPosition = new Vector3(targetX, currentPos.y, currentPos.z);
+            }
+        }
+
 
         if (bFabricCoverAxisBehaviourActive)
         {
@@ -768,6 +810,7 @@ public class ARObjectScript : MonoBehaviour
             sliderData.sliderResult = newLenght;
 
             Slider unitySlider = _lenghtSliderRef.GetComponent<UnityEngine.UI.Slider>();
+            
             if (unitySlider != null)
             {
                 float normalizedValue = 0f;
@@ -791,6 +834,21 @@ public class ARObjectScript : MonoBehaviour
         {
             Vector3 bonePos = boneObj.transform.localPosition;
             boneObj.transform.localPosition = new Vector3(newLenght * 100, bonePos.y, bonePos.z);
+        }
+
+        if (_boneRightObjListThatDontFollowAbsoluteDistance.Count != 0)
+        {
+            foreach (GameObject boneObj in _boneRightObjListThatDontFollowAbsoluteDistance)
+            {
+                if (boneObj != null && _initialBoneXPositions.TryGetValue(boneObj, out float startX))
+                {
+                    // Calculem la posició absoluta: Posició Inicial + Increment del Slider (partint de 1f com a base)
+                    float targetX = startX + ((newLenght - 1f) * 100f);
+
+                    Vector3 currentPos = boneObj.transform.localPosition;
+                    boneObj.transform.localPosition = new Vector3(targetX, currentPos.y, currentPos.z);
+                }
+            }
         }
 
         if (_footRightObj != null)
