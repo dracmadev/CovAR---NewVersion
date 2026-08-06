@@ -229,6 +229,7 @@ public class ARObjectManager : MonoBehaviour
                     ActivePoolObj(_CurrentARObject, _PoolPrefab);
                 }
 
+                
                 if(!AreCurrentLamasTypeCorrectly(_CurrentPoolType))
                 {
                    SetLamasAccorddingToCurrentModel(_CurrentPoolType);
@@ -937,7 +938,7 @@ public class ARObjectManager : MonoBehaviour
                 _CovARObjectData._CurrentLamasModel = modelToApply;
                 _CovARObjectData._CurrentLamasMaterial = materialToApply;
 
-                SetLamasMaterial(materialToApply);
+                SetIsolaCoverMaterial(materialToApply);
                 break;
             case E_PoolType.BAC_IsolaAcoe:
                 companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
@@ -949,7 +950,7 @@ public class ARObjectManager : MonoBehaviour
                 _CovARObjectData._CurrentLamasModel = modelToApply;
                 _CovARObjectData._CurrentLamasMaterial = materialToApply;
 
-                SetLamasMaterial(materialToApply);
+                SetIsolaCoverMaterial(materialToApply);
                 break;
             case E_PoolType.BAC_IsolaRonda:
                 companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
@@ -961,7 +962,7 @@ public class ARObjectManager : MonoBehaviour
                 _CovARObjectData._CurrentLamasModel = modelToApply;
                 _CovARObjectData._CurrentLamasMaterial = materialToApply;
 
-                SetLamasMaterial(materialToApply);
+                SetIsolaCoverMaterial(materialToApply);
                 break;
             case E_PoolType.BAC_IsolaRondalino:
                 companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
@@ -973,7 +974,7 @@ public class ARObjectManager : MonoBehaviour
                 _CovARObjectData._CurrentLamasModel = modelToApply;
                 _CovARObjectData._CurrentLamasMaterial = materialToApply;
 
-                SetLamasMaterial(materialToApply);
+                SetIsolaCoverMaterial(materialToApply);
                 break;
 
             case E_PoolType.BAC_CladdingAcoe:
@@ -1642,6 +1643,13 @@ public class ARObjectManager : MonoBehaviour
                     }
 
                     break;
+
+
+                case E_PoolType.BAC_IsolaRollfix: break;
+                case E_PoolType.BAC_IsolaAcoe: break;
+                case E_PoolType.BAC_IsolaRonda: break;
+                case E_PoolType.BAC_IsolaRondalino: break;
+
             }
         }
     }
@@ -1794,15 +1802,17 @@ public class ARObjectManager : MonoBehaviour
     {
         ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
 
-        List<GameObject> fabricCoverAxisList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.IsolaCover);
+        List<GameObject> isolaCoverParts = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.IsolaCover);
 
-        foreach (GameObject isolaObj in fabricCoverAxisList)
+        foreach (GameObject isolaObj in isolaCoverParts)
         {
             if (isolaObj != null && isolaObj.TryGetComponent(out Renderer renderFabricCover))
             {
                 Material[] matsAxis = renderFabricCover.materials;
                 matsAxis[0] = currentMatData._Material01;
                 renderFabricCover.materials = matsAxis;
+
+                Debug.Log("Material aplicat a: " + isolaObj.name   + "   // Mat ->  " + currentMatData._Material01.ToString());
             }
         }
 

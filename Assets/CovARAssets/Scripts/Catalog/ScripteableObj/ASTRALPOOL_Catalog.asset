@@ -458,7 +458,7 @@ MonoBehaviour:
         _ModelKey: Catalog.Model.BACPoolSystem.Rollfix
         _BlueprintModelImage: {fileID: 0}
         _MaterialsArray:
-        - _MaterialType: 1
+        - _MaterialType: 11
           _MaterialSprite: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5,
             type: 3}
           _MaterialKey: Catalog.Material.Metalic

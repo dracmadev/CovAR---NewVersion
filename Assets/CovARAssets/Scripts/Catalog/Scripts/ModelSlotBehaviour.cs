@@ -195,10 +195,10 @@ public class ModelSlotBehaviour : MonoBehaviour
             case E_ModelType.BAC_SlattedAcoe: returnVar = E_PoolType.BAC_SlattedAcoe; break;
             case E_ModelType.BAC_SlattedDavos: returnVar = E_PoolType.BAC_SlattedDavos; break;
 
-            case E_ModelType.BAC_IsolaRollfix: returnVar = E_PoolType.BAC_IsolaRollfix; _ARObjectManager.SetIsolaCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
-            case E_ModelType.BAC_IsolaAcoe: returnVar = E_PoolType.BAC_IsolaAcoe; _ARObjectManager.SetIsolaCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
-            case E_ModelType.BAC_IsolaRonda: returnVar = E_PoolType.BAC_IsolaRonda; _ARObjectManager.SetIsolaCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
-            case E_ModelType.BAC_IsolaRondalino: returnVar = E_PoolType.BAC_IsolaRondalino; _ARObjectManager.SetIsolaCoverMaterial(_ARObjectManager.GetFirstMaterialFromCurrentModel(GetCurrentModelData())); break;
+            case E_ModelType.BAC_IsolaRollfix: returnVar = E_PoolType.BAC_IsolaRollfix;  break;
+            case E_ModelType.BAC_IsolaAcoe: returnVar = E_PoolType.BAC_IsolaAcoe;  break;
+            case E_ModelType.BAC_IsolaRonda: returnVar = E_PoolType.BAC_IsolaRonda;break;
+            case E_ModelType.BAC_IsolaRondalino: returnVar = E_PoolType.BAC_IsolaRondalino; break;
             
             case E_ModelType.BAC_CladdingAcoe: returnVar = E_PoolType.BAC_CladdingAcoe; break;
             case E_ModelType.BAC_CladdingQuadro: returnVar = E_PoolType.BAC_CladdingQuadro; break;
