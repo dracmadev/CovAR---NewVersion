@@ -229,6 +229,14 @@ public class ARObjectManager : MonoBehaviour
                     ActivePoolObj(_CurrentARObject, _PoolPrefab);
                 }
 
+                if(!AreCurrentLamasTypeCorrectly(_CurrentPoolType))
+                {
+                   SetLamasAccorddingToCurrentModel(_CurrentPoolType);
+                    Debug.Log("Lamas type was not correct or null. Changing to the correct one for this model...");
+                }
+                
+
+
                 break;
             }
             else
@@ -474,9 +482,554 @@ public class ARObjectManager : MonoBehaviour
         return bIsPoolActive;
     }
 
+    public bool AreCurrentLamasTypeCorrectly(E_PoolType type)
+    {
+        bool answer = false;
+
+        switch(type)
+        {
+            case E_PoolType.None: break;
+
+            case E_PoolType.AP_Octeo: 
+
+                if(_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPVC || _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPolicarbonate)
+                {
+                    answer =  true;
+                }
+                else
+                {
+                    answer = false;
+                } 
+                break;
+ 
+            case E_PoolType.AP_Sveltea:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPVC || _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPolicarbonate)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.AP_SvelteaManual:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPVC || _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPolicarbonate)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.AP_Coverly:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPVC || _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPolicarbonate)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.AP_Bellasun:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPVC || _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPolicarbonate)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.AP_Lebanc_Small:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPVC || _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPolicarbonate)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.AP_Lebanc_Big:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPVC || _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPolicarbonate)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.AP_Rousillon:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPVC || _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.AP_LamasPolicarbonate)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+
+
+            case E_PoolType.BAC_SlattedRollfix:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist || 
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPVC ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonate ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonatePro )
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_SlattedRonda:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPVC ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonate ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonatePro)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_SlattedLido:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPVC ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonate ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonatePro)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_SlattedAcoe:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPVC ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonate ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonatePro)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_SlattedDavos:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPVC ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonate ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonatePro)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+
+
+            case E_PoolType.BAC_IsolaRollfix:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_Isola)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_IsolaAcoe:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_Isola)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_IsolaRonda:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_Isola)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_IsolaRondalino:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_Isola)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+
+
+            case E_PoolType.BAC_CladdingAcoe:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPVC ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonate ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonatePro)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_CladdingQuadro:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPVC ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonate ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonatePro)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_CladdingLido:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPVC ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonate ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonatePro)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_CladdingDavos:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPVC ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonate ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonatePro)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+
+
+        }
+
+        return answer;
+    }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////// SETTER  //////////////////////////////////////////////////////////////////
+    
+    public void SetLamasAccorddingToCurrentModel(E_PoolType type)
+    {
+        St_Company companyToApply = null;
+        St_Product productToApply = null;
+        St_Model modelToApply = null;
+        St_Material materialToApply = null;
+
+        switch (type)
+        {
+            case E_PoolType.None: break;
+
+            case E_PoolType.AP_Octeo:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.Astralpool);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.Lamas);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.AP_LamasPVC);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply); 
+                break;
+            case E_PoolType.AP_Sveltea:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.Astralpool);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.Lamas);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.AP_LamasPVC);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.AP_SvelteaManual:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.Astralpool);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.Lamas);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.AP_LamasPVC);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.AP_Coverly:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.Astralpool);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.Lamas);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.AP_LamasPVC);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.AP_Bellasun:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.Astralpool);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.Lamas);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.AP_LamasPVC);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.AP_Lebanc_Small:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.Astralpool);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.Lamas);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.AP_LamasPVC);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.AP_Lebanc_Big:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.Astralpool);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.Lamas);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.AP_LamasPVC);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.AP_Rousillon:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.Astralpool);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.Lamas);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.AP_LamasPVC);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+
+
+
+            case E_PoolType.BAC_SlattedRollfix:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_LamasDuotherm);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+
+                break;
+            case E_PoolType.BAC_SlattedRonda:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_LamasDuotherm);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.BAC_SlattedLido:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_LamasDuotherm);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.BAC_SlattedAcoe:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_LamasDuotherm);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.BAC_SlattedDavos:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_LamasDuotherm);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+
+            case E_PoolType.BAC_IsolaRollfix:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.IsolaCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_Isola);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.BAC_IsolaAcoe:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.IsolaCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_Isola);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.BAC_IsolaRonda:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.IsolaCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_Isola);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.BAC_IsolaRondalino:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.IsolaCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_Isola);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+
+            case E_PoolType.BAC_CladdingAcoe:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_LamasDuotherm);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.BAC_CladdingQuadro:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_LamasDuotherm);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.BAC_CladdingLido:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_LamasDuotherm);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+            case E_PoolType.BAC_CladdingDavos:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_LamasDuotherm);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
+        }
+        
+    }
+
+
+
     public void SetCurrentCompanyData(E_CompanyType company)
     {
         foreach(St_Company currentComp in _CurrentProductCatalog._CompanysArray)
@@ -564,7 +1117,9 @@ public class ARObjectManager : MonoBehaviour
                         _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
                         break;
 
-                    case E_ProductType.Lamas: _CovARObjectData._CurrentLamasModel = model; break;
+                    case E_ProductType.Lamas: _CovARObjectData._CurrentLamasModel = model;
+                                            _CovARObjectData._CurrentLamasModel = model;  break;
+
                     case E_ProductType.DeckMountedIsolaCover:
                         _CovARObjectData._CurrentModelModel = model;
 
@@ -579,6 +1134,12 @@ public class ARObjectManager : MonoBehaviour
                         _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
 
                         break;
+                    case E_ProductType.IsolaCover:
+                                _CovARObjectData._CurrentLamasModel = model;
+                                _CovARObjectData._CurrentLamasModel = model; break;
+                    case E_ProductType.SlattedCover:
+                                _CovARObjectData._CurrentLamasModel = model;
+                                _CovARObjectData._CurrentLamasModel = model; break;
                 }
             }
 

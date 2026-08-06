@@ -115,6 +115,9 @@ public class ModelSlotBehaviour : MonoBehaviour
         {
           
             _ARObjectManager.SetActiveARObject(GetPoolTypeBasedOnModelType());
+
+
+            Debug.Log("ModelCreated -> " + _CurrentModelData._ModelType.ToString() + "   //   Have Lamas? ->  " + _ARObjectManager.AreCurrentLamasTypeCorrectly(GetPoolTypeBasedOnModelType()) + "  //  WICH LAMAS? ->   " + _ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelType.ToString() );
         }
         
        
@@ -163,9 +166,10 @@ public class ModelSlotBehaviour : MonoBehaviour
 
         switch (_CurrentModelData._ModelType)
         {
-            case E_ModelType.None: returnVar = E_PoolType.None;  break;
+            case E_ModelType.None: returnVar = E_PoolType.None;  break; 
 
-            case E_ModelType.AP_Octeo: returnVar = E_PoolType.AP_Octeo; break;
+            case E_ModelType.AP_Octeo: returnVar = E_PoolType.AP_Octeo;
+                break;
             case E_ModelType.AP_Sveltea: returnVar = E_PoolType.AP_Sveltea; break;
             case E_ModelType.AP_SvelteaManual: returnVar = E_PoolType.AP_SvelteaManual; break;
             case E_ModelType.AP_Coverly: returnVar = E_PoolType.AP_Coverly; break;
