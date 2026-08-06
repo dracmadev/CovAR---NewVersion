@@ -117,7 +117,7 @@ public class ModelSlotBehaviour : MonoBehaviour
             _ARObjectManager.SetActiveARObject(GetPoolTypeBasedOnModelType());
 
 
-            Debug.Log("ModelCreated -> " + _CurrentModelData._ModelType.ToString() + "   //   Have Lamas? ->  " + _ARObjectManager.AreCurrentLamasTypeCorrectly(GetPoolTypeBasedOnModelType()) + "  //  WICH LAMAS? ->   " + _ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelType.ToString() );
+            //Debug.Log("ModelCreated -> " + _CurrentModelData._ModelType.ToString() + "   //   Have Lamas? ->  " + _ARObjectManager.AreCurrentLamasTypeCorrectly(GetPoolTypeBasedOnModelType()) + "  //  WICH LAMAS? ->   " + _ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelType.ToString() );
         }
         
        

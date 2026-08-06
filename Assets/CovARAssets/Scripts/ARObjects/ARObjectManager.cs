@@ -208,20 +208,6 @@ public class ARObjectManager : MonoBehaviour
                     _CovARObjectData._CurrentARObjectLenght = maxLenghtOfNewModel;
                 }
 
-                if (_CurrentProductSelected._ProductType != E_ProductType.FabricCover)
-                {
-                    newObjScript.SetLamasLenghtByNum(_CovARObjectData._CurrentLamasLenght);
-                    newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
-                }
-                else
-                {
-                    newObjScript.SetFabricCoverLenghtByNum(_CovARObjectData._CurrentLamasLenght);
-                    newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
-                    SpawnFabricCoverAxisObjects();
-                }
-
-                SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
-
                 SetCurrentARObjectState("DefaultState");
 
                 if (bIsPoolActive)
@@ -229,13 +215,74 @@ public class ARObjectManager : MonoBehaviour
                     ActivePoolObj(_CurrentARObject, _PoolPrefab);
                 }
 
-                
-                if(!AreCurrentLamasTypeCorrectly(_CurrentPoolType))
+                switch (_CurrentProductSelected._ProductType)
+                {
+                    case E_ProductType.GroundRollerCover:
+                        newObjScript.SetLamasLenghtByNum(_CovARObjectData._CurrentLamasLenght);
+                        newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                        break;
+                    case E_ProductType.SubmergedRollerCover:
+                        newObjScript.SetLamasLenghtByNum(_CovARObjectData._CurrentLamasLenght);
+                        newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                        break;
+                    case E_ProductType.BencheAndCladdings:
+                        newObjScript.SetLamasLenghtByNum(_CovARObjectData._CurrentLamasLenght);
+                        newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                        break;
+
+                    case E_ProductType.DeckMountedIsolaCover:
+                        newObjScript.SetFabricCoverLenghtByNum(_CovARObjectData._CurrentLamasLenght);
+                        newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                        break;
+                    case E_ProductType.DeckMountedSlattedCover:
+                        newObjScript.SetLamasLenghtByNum(_CovARObjectData._CurrentLamasLenght);
+                        newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                        break;
+
+                    case E_ProductType.FabricCover:
+                        newObjScript.SetFabricCoverLenghtByNum(_CovARObjectData._CurrentLamasLenght);
+                        newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
+                        SpawnFabricCoverAxisObjects();
+                        break;
+
+                }
+
+                if (!AreCurrentLamasTypeCorrectly(_CurrentPoolType))
                 {
                    SetLamasAccorddingToCurrentModel(_CurrentPoolType);
-                    Debug.Log("Lamas type was not correct or null. Changing to the correct one for this model...");
+                   Debug.Log("Lamas type was NOT correct or null. Changing to the correct one for this model...");
                 }
-                
+                else
+                {
+                    Debug.Log("Lamas type ARE correct. Let's apply " + _CovARObjectData._CurrentLamasMaterial._MaterialType.ToString() + "   to the LAMAS!" );
+                    
+                    switch (_CurrentProductSelected._ProductType)
+                    {
+                        case E_ProductType.GroundRollerCover:
+                            SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
+                            break;
+                        case E_ProductType.SubmergedRollerCover:
+                            SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
+                            break;
+                        case E_ProductType.BencheAndCladdings:
+                            SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
+                            break;
+
+                        case E_ProductType.DeckMountedIsolaCover:
+                            SetIsolaCoverMaterial(_CovARObjectData._CurrentLamasMaterial);
+                            break;
+                        case E_ProductType.DeckMountedSlattedCover:
+                            SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
+                            break;
+
+                        case E_ProductType.FabricCover:
+                            SetFabricCoverMaterial(_CovARObjectData._CurrentLamasMaterial);
+                            break;
+
+                    }
+                }
+
+                   
 
 
                 break;
@@ -1203,6 +1250,7 @@ public class ARObjectManager : MonoBehaviour
 
                     ///////////////////////////////////////////////////////// ISOLA /////////////////////////////////////////////////////////////////////
                     case E_ModelType.BAC_Whirloop: _CovARObjectData._CurrentLamasMaterial = material; break;
+                    case E_ModelType.BAC_Isola: _CovARObjectData._CurrentLamasMaterial = material; break;
 
                     //////////////////////////////////////////////////////// SLATTED ////////////////////////////////////////////////////////////////////
                     case E_ModelType.BAC_RollmaticPVC: _CovARObjectData._CurrentLamasMaterial = material; break;
@@ -1755,6 +1803,8 @@ public class ARObjectManager : MonoBehaviour
 
     public void SetLamasMaterial(St_Material currentMatData)
     {
+       // Debug.Log("SetLamasMaterial -> Material aplicat a: " + currentMatData._Material01.ToString());
+
         ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
 
         List<GameObject> lamasCoverAxisList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.CoverAxisLamas);
@@ -1800,6 +1850,8 @@ public class ARObjectManager : MonoBehaviour
 
     public void SetIsolaCoverMaterial(St_Material currentMatData)
     {
+        //_CovARObjectData._CurrentLamasMaterial = currentMatData;
+
         ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
 
         List<GameObject> isolaCoverParts = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.IsolaCover);
