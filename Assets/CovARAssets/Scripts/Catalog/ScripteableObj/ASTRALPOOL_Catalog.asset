@@ -576,7 +576,7 @@ MonoBehaviour:
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
     - _ProductType: 4
-      _ProductSprite: {fileID: 21300000, guid: 9578a5e4e23336e4a8f9d3d87c4966db, type: 3}
+      _ProductSprite: {fileID: 21300000, guid: 4c5300825c398244c9eae65dd637ea2f, type: 3}
       _ProductKey: Catalog.Product.FabricCover
       _ModelsArray:
       - _ModelType: 19
