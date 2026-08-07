@@ -1806,7 +1806,7 @@ PrefabInstance:
     - target: {fileID: -955545610891565809, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 89.76
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
@@ -1886,7 +1886,7 @@ MonoBehaviour:
     _BoneSide: 1
     _BoneDirection: 2
     _BoneSecondDirection: 1
-    bDontRespectAbsolutDistance: 0
+    bDontRespectAbsolutDistance: 1
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
