@@ -115,7 +115,7 @@ La plateforme s'enroule entièrement dans un compartiment sous-marin recouvert d
 The platform rolls up completely inside an underwater compartment covered by a submerged conduit plate. This cover is suitable for pools under renovation or construction."
 Main.VoletTypeWindow.HelpPanel.RollersText,"Los rodillos para piscinas elevadas permiten una perfecta conservación de la cubierta.
 
-Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une protection optimale de la couverture.
+Los rodillos para piscinas elevadas facilitan el manejo del cobertor de verano. Una vez recogido, es sencillo trasladarlo al lugar donde se almacena, dejando libre la zona de baño. Disponen de un dispositivo de frenado para bloquear el cilindro y son muy resistentes.","Les enrouleurs pour piscines hors-sol assurent une parfaite préservation de la couverture.
 
 Ces enrouleurs facilitent la manipulation de la couverture d'été. Une fois rétractée, il est simple de la ranger, libérant ainsi l'espace de baignade. Ils sont équipés d'un système de freinage pour bloquer le cylindre et sont très résistants.","Rollers for above-ground pools ensure the cover is perfectly preserved.
 
@@ -178,7 +178,7 @@ Te iremos explicando paso a paso como funciona la aplicación.
 
 Pulsa OK para empezar el tutorial.","Bienvenue dans le tutoriel CovAR.
 
-Nous allons vous guider pas à pas à travers le fonctionnement de l'application.
+Nous vous guiderons pas à pas à travers le fonctionnement de l'application.
 
 Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 
@@ -399,7 +399,7 @@ Catalog.Material.Green,Verde,Vert,Green
 Catalog.Material.Capuccino,Capuccino,Cappuccino,Cappuccino
 Catalog.Material.Translucent,Translucido,Translucide,Translucent
 Catalog.Material.Solar,Solar,Solaire,Solar
-Catalog.Material.TranslucentCristalClear,Cristal claro translucido,Cristal transparent et translucide,Clear translucent crystal
+Catalog.Material.TranslucentCristalClear,Cristal claro translucido,Cristal clair et translucide,Clear translucent crystal
 Catalog.Material.SolarBlued,Azul solar,Bleu solaire,Solar blue
 Catalog.Material.SolarCristalClear,Cristal claro solar,Cristal solaire transparent,Clear solar crystal
 Catalog.Material.SolarGreen,Verde solar,Vert solaire,Solar green
@@ -407,6 +407,8 @@ Catalog.Material.SolarSilver,Plata solar,argent solaire,Solar silver
 Catalog.Material.SolarSmokey,Solar Smokey,Solar Smokey,Solar Smokey
 Catalog.Material.TranslucedBlued,Azul translucido,Bleu translucide,Translucent blue
 Catalog.Material.TranslucedSmokey,Transluced Smokey,Fumé translucide,Translucent Smokey
+Catalog.Material.Gray&Gray,Gris & Gris,,
+Catalog.Material.Sipo&Sipo,Sipo Mahagoni & Sipo Mahagoni,,
 ,,,
 Catalog.Material.NoSideCladding,Quitar revesitimientos laterales,Retirer les revêtement latéral,Remove side claddings
 Catalog.CatalogPanel.SelectProduct,Producto:,Produit:,Product:
@@ -1032,7 +1034,7 @@ Login.Settings.RestartTutorial.Button,Reiniciar,Redémarrage,Reboot
 ,,,
 ,,,
 ,,,
-ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photo - CovAR,Photograph - CovAR
+ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photographie - CovAR,Photograph - CovAR
 ScreenshootAndShare.Photo.Descrip,Esta fotografía sacada con la aplicación  de CovAR.,Cette photographie a été prise à l'aide de l'application CovAR.,This photograph was taken using the CovAR application.
 ScreenshootAndShare.Blueprint.Title,Plano técnico,dessin technique,Technical drawing
 ScreenshootAndShare.Blueprint.Descrip,Este plano técnico ha sido generado con la aplicación  de CovAR.,Ce dessin technique a été généré à l'aide de l'application CovAR.,This technical drawing was generated using the CovAR application.
@@ -1052,7 +1054,7 @@ Tutorial.Info3.Title,Columna izquierda,Colonne de gauche,Left column
 Tutorial.Info3.Descrip,"Permite manipular la cubierta: moverla, rotarla, modificar su longitud, desplegar la persiana y abrir el plano técnico.","Il permet de manipuler la couverture : la déplacer, la faire pivoter, modifier sa longueur, déployer le store et ouvrir le plan technique.","It allows you to manipulate the cover: move it, rotate it, modify its length, deploy the blind and open the technical plan."
 Tutorial.Info4.Title,Columna derecha,Colonne de droite,Right column
 Tutorial.Info4.Descrip,"Permite abrir el catálogo, acceder a la cámara y crear una piscina de ejemplo.","Il vous permet d'ouvrir le catalogue, d'accéder à la caméra et de créer un échantillon.","It allows you to open the catalog, access the camera, and create a sample pool."
-Tutorial.Info5.Title,Mover modelo,Déplacer le modèle,Move model
+Tutorial.Info5.Title,Mover modelo,Modèle de déplacement,Move model
 Tutorial.Info5.Descrip,Pulse el botón de movimiento y desplace con el dedo el modelo de cubierta por la pantalla de su dispositivo.,Appuyez sur le bouton de déplacement et faites glisser le modèle de couverture sur l'écran de votre appareil avec votre doigt.,Press the move button and drag the cover template across your device's screen with your finger.
 Tutorial.Info6.Title,Rotar objeto,Faire pivoter l'objet,Rotate object
 Tutorial.Info6.Descrip,Pulse el botón de rotación y desplace el dedo por la barra inferior para girar el modelo.,Appuyez sur le bouton de rotation et faites glisser votre doigt le long de la barre inférieure pour faire pivoter le modèle.,Press the rotation button and slide your finger along the bottom bar to rotate the model.

@@ -548,6 +548,27 @@ MonoBehaviour:
           _Material01: {fileID: 2100000, guid: ae609c23b230e314ba2940a69291e991, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
+        - _MaterialType: 7
+          _MaterialSprite: {fileID: 21300000, guid: fce163d4b5dd8704884dffb6792ee569,
+            type: 3}
+          _MaterialKey: Catalog.Material.White&White
+          _Material01: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 25
+          _MaterialSprite: {fileID: 21300000, guid: 895a739e591c0344794a407dd887fb97,
+            type: 3}
+          _MaterialKey: Catalog.Material.Gray&Gray
+          _Material01: {fileID: 2100000, guid: dd1f88649cd51ee478906b4de84fbee0, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 26
+          _MaterialSprite: {fileID: 21300000, guid: a415e5e7f0e6244499b3be8ce7169565,
+            type: 3}
+          _MaterialKey: Catalog.Material.Sipo&Sipo
+          _Material01: {fileID: 2100000, guid: ae609c23b230e314ba2940a69291e991, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
       - _ModelType: 27
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 8c55e2c65f181b148b28886489a2e413, type: 3}

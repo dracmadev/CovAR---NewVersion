@@ -27,6 +27,8 @@ public enum E_MaterialType
     TranslucedBlued = 22,
     TranslucedSmokey = 23,
     SipoMahagoni = 24,
+    Gray_Gray = 25,
+    Wood_Wood = 26,
 
 
 
