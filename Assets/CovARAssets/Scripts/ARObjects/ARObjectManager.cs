@@ -215,6 +215,8 @@ public class ARObjectManager : MonoBehaviour
                     ActivePoolObj(_CurrentARObject, _PoolPrefab);
                 }
 
+                newObjScript.InitBonesThatDontFollowAbsoluteDistance();
+
                 switch (_CurrentProductSelected._ProductType)
                 {
                     case E_ProductType.GroundRollerCover:
@@ -281,10 +283,6 @@ public class ARObjectManager : MonoBehaviour
 
                     }
                 }
-
-                   
-
-
                 break;
             }
             else

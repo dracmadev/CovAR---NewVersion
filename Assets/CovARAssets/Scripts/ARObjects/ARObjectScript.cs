@@ -562,6 +562,23 @@ public class ARObjectScript : MonoBehaviour
 
     //////////////////////////////////////////////////////// SET AROBJECT LENGHT ////////////////////////////////////////////////////////////////////////
 
+    public void InitBonesThatDontFollowAbsoluteDistance()
+    {
+        _boneRightObjListThatDontFollowAbsoluteDistance = GetAllBoneObjsBasedOnDirection(E_ARObjectComponentsDirection.RIGHT, true);
+
+        if (_boneRightObjListThatDontFollowAbsoluteDistance.Count != 0)
+        {
+            // _initialBoneXPositions.Clear();
+            foreach (GameObject boneObj in _boneRightObjListThatDontFollowAbsoluteDistance)
+            {
+                if (boneObj != null && !_initialBoneXPositions.ContainsKey(boneObj))
+                {
+                    _initialBoneXPositions.Add(boneObj, boneObj.transform.localPosition.x);
+                }
+            }
+        }
+    }
+
     public void InitSetLenghtState()
     {
         _lenghtSliderRef = GetSliderFromSpecificSubPanel("SetARObjectLenghtSupPanel");
@@ -594,19 +611,6 @@ public class ARObjectScript : MonoBehaviour
         _boneRightObjList = GetAllBoneObjsBasedOnDirection(E_ARObjectComponentsDirection.RIGHT);
 
         //GET RIGHT BONES THAT DONT FOLLOW ABSOLUTE DISTANCE
-        _boneRightObjListThatDontFollowAbsoluteDistance = GetAllBoneObjsBasedOnDirection(E_ARObjectComponentsDirection.RIGHT, true);
-
-        if (_boneRightObjListThatDontFollowAbsoluteDistance.Count != 0)
-        {
-            _initialBoneXPositions.Clear();
-            foreach (GameObject boneObj in _boneRightObjListThatDontFollowAbsoluteDistance)
-            {
-                if (boneObj != null && !_initialBoneXPositions.ContainsKey(boneObj))
-                {
-                    _initialBoneXPositions.Add(boneObj, boneObj.transform.localPosition.x);
-                }
-            }
-        }
 
         // GET RIGHT FOOT
         _footRightObj = GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight);
