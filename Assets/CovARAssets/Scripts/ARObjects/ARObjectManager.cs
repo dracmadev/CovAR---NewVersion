@@ -1692,18 +1692,15 @@ public class ARObjectManager : MonoBehaviour
 
 
                 case E_PoolType.BAC_IsolaRollfix: break;
-                case E_PoolType.BAC_IsolaAcoe: break;
-                case E_PoolType.BAC_IsolaRonda: break;
-                case E_PoolType.BAC_IsolaRondalino: break;
-                case E_PoolType.BAC_SlattedAcoe:
-
-                    List<GameObject> acoeCoversList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.UpCoverPlane);
+                case E_PoolType.BAC_IsolaAcoe:
+                   
+                    List<GameObject> acoeIsolaCoversList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.UpCoverPlane);
 
                     if (_CurrentMaterialSelected._MaterialType == E_MaterialType.AcoeWithCladding)
                     {
-                        if(acoeCoversList.Count != 0)
+                        if (acoeIsolaCoversList.Count != 0)
                         {
-                            foreach (GameObject acoeCover in acoeCoversList)
+                            foreach (GameObject acoeCover in acoeIsolaCoversList)
                             {
                                 acoeCover.SetActive(true);
                             }
@@ -1711,9 +1708,38 @@ public class ARObjectManager : MonoBehaviour
                     }
                     else
                     {
-                        if (acoeCoversList.Count != 0)
+                        if (acoeIsolaCoversList.Count != 0)
                         {
-                            foreach (GameObject acoeCover in acoeCoversList)
+                            foreach (GameObject acoeCover in acoeIsolaCoversList)
+                            {
+                                acoeCover.SetActive(false);
+                            }
+                        }
+                    }
+
+                    break;
+
+                case E_PoolType.BAC_IsolaRonda: break;
+                case E_PoolType.BAC_IsolaRondalino: break;
+                case E_PoolType.BAC_SlattedAcoe:
+
+                    List<GameObject> acoeSlattedCoversList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.UpCoverPlane);
+
+                    if (_CurrentMaterialSelected._MaterialType == E_MaterialType.AcoeWithCladding)
+                    {
+                        if(acoeSlattedCoversList.Count != 0)
+                        {
+                            foreach (GameObject acoeCover in acoeSlattedCoversList)
+                            {
+                                acoeCover.SetActive(true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (acoeSlattedCoversList.Count != 0)
+                        {
+                            foreach (GameObject acoeCover in acoeSlattedCoversList)
                             {
                                 acoeCover.SetActive(false);
                             }

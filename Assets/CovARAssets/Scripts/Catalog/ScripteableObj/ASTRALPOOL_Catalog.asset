@@ -438,7 +438,7 @@ MonoBehaviour:
         - _MaterialType: 27
           _MaterialSprite: {fileID: 21300000, guid: 9836160494f74d94b96441e431752cc3,
             type: 3}
-          _MaterialKey: Catalog.Material.Metalic
+          _MaterialKey: Catalog.Material.AcoeWithCladding
           _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
@@ -482,6 +482,13 @@ MonoBehaviour:
           _MaterialSprite: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704,
             type: 3}
           _MaterialKey: Catalog.Material.Metalic
+          _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
+        - _MaterialType: 27
+          _MaterialSprite: {fileID: 21300000, guid: 9836160494f74d94b96441e431752cc3,
+            type: 3}
+          _MaterialKey: Catalog.Material.AcoeWithCladding
           _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
