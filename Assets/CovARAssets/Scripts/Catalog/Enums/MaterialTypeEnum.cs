@@ -29,6 +29,7 @@ public enum E_MaterialType
     SipoMahagoni = 24,
     Gray_Gray = 25,
     Wood_Wood = 26,
+    AcoeWithCladding = 27,
 
 
 

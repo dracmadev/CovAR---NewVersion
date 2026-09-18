@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2264558465662623888}
   - component: {fileID: 337807062693382049}
   m_Layer: 0
-  m_Name: P_DAVOS (deckMountedSlattedCover)
+  m_Name: P_QUADRO (deckMountedSlattedCover)
   m_TagString: ARObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dbe3ec647e1fb4cacdc970cf326bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PoolType: 17
+  _PoolType: 19
   _CoverType: 4
   _MaxARObjectLenghtDistance: 10
   _MaxLamasLenghtDistance: 10

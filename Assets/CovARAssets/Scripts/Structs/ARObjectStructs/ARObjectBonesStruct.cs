@@ -16,6 +16,7 @@ public class St_ARObjectBonesData
     public E_ARObjectComponentsDirection _BoneDirection;
     public E_ARObjectComponentsDirection _BoneSecondDirection;
     public bool bDontRespectAbsolutDistance;
+    public bool bDivideBy100;
 
     public float sideLength;
 }

@@ -1695,6 +1695,34 @@ public class ARObjectManager : MonoBehaviour
                 case E_PoolType.BAC_IsolaAcoe: break;
                 case E_PoolType.BAC_IsolaRonda: break;
                 case E_PoolType.BAC_IsolaRondalino: break;
+                case E_PoolType.BAC_SlattedAcoe:
+
+                    List<GameObject> acoeCoversList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.UpCoverPlane);
+
+                    if (_CurrentMaterialSelected._MaterialType == E_MaterialType.AcoeWithCladding)
+                    {
+                        if(acoeCoversList.Count != 0)
+                        {
+                            foreach (GameObject acoeCover in acoeCoversList)
+                            {
+                                acoeCover.SetActive(true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (acoeCoversList.Count != 0)
+                        {
+                            foreach (GameObject acoeCover in acoeCoversList)
+                            {
+                                acoeCover.SetActive(false);
+                            }
+                        }
+                    }
+
+
+                    break;
+                
 
             }
         }

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class ARObjectScript : MonoBehaviour
 {
@@ -642,7 +643,17 @@ public class ARObjectScript : MonoBehaviour
             if(boneObj != null)
             {
                 Vector3 bonePos = boneObj.transform.localPosition;
-                boneObj.transform.localPosition = new Vector3(currentSliderValue * 100, bonePos.y, bonePos.z);
+                
+                if (boneObj.GetComponent<ARObjectPartScript>().GetBoneData().bDivideBy100)
+                {
+                    boneObj.transform.localPosition = new Vector3(currentSliderValue, bonePos.y, bonePos.z);
+                }
+                else
+                {
+                    boneObj.transform.localPosition = new Vector3(currentSliderValue * 100, bonePos.y, bonePos.z);
+                }
+
+                   
                 _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght = currentSliderValue;
             }
            
@@ -674,6 +685,13 @@ public class ARObjectScript : MonoBehaviour
 
                 // Calculem la nova posició X usant 'currentSliderValue'
                 float targetX = startX + ((currentSliderValue - 1f) * 100f);
+
+                /*
+                if (boneObj.GetComponent<ARObjectPartScript>().GetBoneData().bDivideBy100)
+                {
+                    targetX /= 100f;
+                }*/
+
                 Vector3 currentPos = boneObj.transform.localPosition;
 
                 boneObj.transform.localPosition = new Vector3(targetX, currentPos.y, currentPos.z);
@@ -837,7 +855,17 @@ public class ARObjectScript : MonoBehaviour
         foreach (GameObject boneObj in _boneRightObjList)
         {
             Vector3 bonePos = boneObj.transform.localPosition;
-            boneObj.transform.localPosition = new Vector3(newLenght * 100, bonePos.y, bonePos.z);
+
+            if (boneObj.GetComponent<ARObjectPartScript>().GetBoneData().bDivideBy100)
+            {
+                boneObj.transform.localPosition = new Vector3(newLenght, bonePos.y, bonePos.z);
+            }
+            else
+            {
+                boneObj.transform.localPosition = new Vector3(newLenght * 100, bonePos.y, bonePos.z);
+            }
+
+                
         }
 
         if (_boneRightObjListThatDontFollowAbsoluteDistance.Count != 0)
@@ -847,7 +875,19 @@ public class ARObjectScript : MonoBehaviour
                 if (boneObj != null && _initialBoneXPositions.TryGetValue(boneObj, out float startX))
                 {
                     // Calculem la posició absoluta: Posició Inicial + Increment del Slider (partint de 1f com a base)
-                    float targetX = startX + ((newLenght - 1f) * 100f);
+
+                    float targetX = 0f;
+
+                    if (boneObj.GetComponent<ARObjectPartScript>().GetBoneData().bDivideBy100)
+                    {
+                        targetX = startX + ((newLenght - 1f));
+                    }
+                    else
+                    {
+                        targetX = startX + ((newLenght - 1f) * 100f);
+                    }
+
+                   
 
                     Vector3 currentPos = boneObj.transform.localPosition;
                     boneObj.transform.localPosition = new Vector3(targetX, currentPos.y, currentPos.z);
