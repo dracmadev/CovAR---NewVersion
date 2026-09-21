@@ -683,14 +683,22 @@ public class ARObjectScript : MonoBehaviour
                     _initialBoneXPositions[boneObj] = startX;
                 }
 
-                // Calculem la nova posició X usant 'currentSliderValue'
-                float targetX = startX + ((currentSliderValue - 1f) * 100f);
+                bool divideBy100 = boneObj.GetComponent<ARObjectPartScript>().GetBoneData().bDivideBy100;
 
-                /*
-                if (boneObj.GetComponent<ARObjectPartScript>().GetBoneData().bDivideBy100)
+                float sliderIncrement = currentSliderValue - 1f;
+
+                float targetX;
+
+                if (divideBy100)
                 {
-                    targetX /= 100f;
-                }*/
+                    // Exemple: X inicial 1.2 + increment 0.2 = 1.4
+                    targetX = startX + sliderIncrement;
+                }
+                else
+                {
+                    // Per als models que treballen en centímetres
+                    targetX = startX + sliderIncrement * 100f;
+                }
 
                 Vector3 currentPos = boneObj.transform.localPosition;
 
