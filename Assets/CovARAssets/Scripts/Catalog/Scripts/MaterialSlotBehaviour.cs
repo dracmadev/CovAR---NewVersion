@@ -141,6 +141,9 @@ public class MaterialSlotBehaviour : MonoBehaviour
                     case E_ModelType.AP_LeBancSmallFoot: _ARObjectManager.SetCovARFootMaterial(_CurrentMaterialData); break;
                     case E_ModelType.AP_LeBancTopCladding: _ARObjectManager.SetCovARCladdingsMaterial(_CurrentMaterialData); break;
                     case E_ModelType.AP_LeBancSidesCladding: _ARObjectManager.SetCovARCladdingsMaterial(_CurrentMaterialData); break;
+
+                    case E_ModelType.BAC_CladdingQuadro: _ARObjectManager.SetCovARFootMaterial(_CurrentMaterialData); break;
+                    case E_ModelType.BAC_CladdingLido: _ARObjectManager.SetCovARFootMaterial(_CurrentMaterialData); break;
                 }
 
                 break;

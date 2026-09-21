@@ -191,7 +191,7 @@ public class ModelSlotBehaviour : MonoBehaviour
 
             case E_ModelType.BAC_SlattedRollfix: returnVar = E_PoolType.BAC_SlattedRollfix; break;
             case E_ModelType.BAC_SlattedRonda: returnVar = E_PoolType.BAC_SlattedRonda; break;
-            case E_ModelType.BAC_SlattedLido: returnVar = E_PoolType.BAC_SlattedLido; break;
+          
             case E_ModelType.BAC_SlattedAcoe: returnVar = E_PoolType.BAC_SlattedAcoe; break;
             case E_ModelType.BAC_SlattedDavos: returnVar = E_PoolType.BAC_SlattedDavos; break;
 

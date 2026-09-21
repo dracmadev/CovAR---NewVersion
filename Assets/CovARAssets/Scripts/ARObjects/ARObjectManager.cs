@@ -1516,6 +1516,7 @@ public class ARObjectManager : MonoBehaviour
 
     public void SetCovARFootMaterial(St_Material currentMatData)
     {
+      
         ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
 
         GameObject footRight = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight); //RIGHT FOOT
@@ -1745,11 +1746,168 @@ public class ARObjectManager : MonoBehaviour
                             }
                         }
                     }
+                    break;
 
+                case E_PoolType.BAC_CladdingDavos:break;
+                case E_PoolType.BAC_CladdingQuadro: 
+                    
+                    GameObject quadro_TopCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.UpCoverPlane); //QUADRO CLADDING
+                    GameObject quadro_FrontCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FrontCoverPlane); //QUADRO CLADDING
+                    GameObject quadro_BackCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.BackCoverPlane); //QUADRO CLADDING
+
+                    //Debug.Log("quadro_TopCladding: " + quadro_TopCladding + " ----- " + "quadro_FronyCladding: " + quadro_FrontCladding + " ---- "+"quadro_BackCladding: " + quadro_BackCladding );
+
+                    quadro_TopCladding.TryGetComponent(out Renderer render_TopCladding);
+                    quadro_FrontCladding.TryGetComponent(out Renderer render_FrontCladding);
+                    quadro_BackCladding.TryGetComponent(out Renderer render_BackCladding);
+
+
+                    if (quadro_TopCladding != null && render_TopCladding != null)
+                    {
+                        Material[] matsTop = render_TopCladding.materials;
+
+                        if (matsTop.Length > 0 && currentMatData._Material01 != null)
+                        {
+                            matsTop[0] = currentMatData._Material01;
+                        }
+
+                        if (matsTop.Length > 1 && currentMatData._Material02 != null)
+                        {
+                            matsTop[1] = currentMatData._Material02;
+                        }
+
+                        if (matsTop.Length > 2 && currentMatData._Material03 != null)
+                        {
+                            matsTop[2] = currentMatData._Material03;
+                        }
+
+                        render_TopCladding.materials = matsTop;
+                    }
+
+                    if (quadro_FrontCladding != null && render_FrontCladding != null)
+                    {
+                        Material[] matsFront = render_FrontCladding.materials;
+
+                        if (matsFront.Length > 0 && currentMatData._Material01 != null)
+                        {
+                            matsFront[0] = currentMatData._Material01;
+                        }
+
+                        if (matsFront.Length > 1 && currentMatData._Material02 != null)
+                        {
+                            matsFront[1] = currentMatData._Material02;
+                        }
+
+                        if (matsFront.Length > 2 && currentMatData._Material03 != null)
+                        {
+                            matsFront[2] = currentMatData._Material03;
+                        }
+
+                        render_FrontCladding.materials = matsFront;
+                    }
+
+                    if (quadro_BackCladding != null && render_BackCladding != null)
+                    {
+                        Material[] matsBack = render_BackCladding.materials;
+
+                        if (matsBack.Length > 0 && currentMatData._Material01 != null)
+                        {
+                            matsBack[0] = currentMatData._Material01;
+                        }
+
+                        if (matsBack.Length > 1 && currentMatData._Material02 != null)
+                        {
+                            matsBack[1] = currentMatData._Material02;
+                        }
+
+                        if (matsBack.Length > 2 && currentMatData._Material03 != null)
+                        {
+                            matsBack[2] = currentMatData._Material03;
+                        }
+
+                        render_BackCladding.materials = matsBack;
+                    }
 
                     break;
-                
 
+                case E_PoolType.BAC_CladdingLido:
+
+                    GameObject lido_TopCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.UpCoverPlane); //QUADRO CLADDING
+                    GameObject lido_FrontCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FrontCoverPlane); //QUADRO CLADDING
+                    GameObject lido_BackCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.BackCoverPlane); //QUADRO CLADDING
+
+                    lido_TopCladding.TryGetComponent(out Renderer render_lido_TopCladding);
+                    lido_FrontCladding.TryGetComponent(out Renderer render_lido_FrontCladding);
+                    lido_BackCladding.TryGetComponent(out Renderer render_lido_BackCladding);
+
+
+                    if (lido_TopCladding != null && render_lido_TopCladding != null)
+                    {
+                        Material[] matsTop = render_lido_TopCladding.materials;
+
+                        if (matsTop.Length > 0 && currentMatData._Material01 != null)
+                        {
+                            matsTop[0] = currentMatData._Material01;
+                        }
+
+                        if (matsTop.Length > 1 && currentMatData._Material02 != null)
+                        {
+                            matsTop[1] = currentMatData._Material02;
+                        }
+
+                        if (matsTop.Length > 2 && currentMatData._Material03 != null)
+                        {
+                            matsTop[2] = currentMatData._Material03;
+                        }
+
+                        render_lido_TopCladding.materials = matsTop;
+                    }
+
+                    if (lido_FrontCladding != null && render_lido_FrontCladding != null)
+                    {
+                        Material[] matsFront = render_lido_FrontCladding.materials;
+
+                        if (matsFront.Length > 0 && currentMatData._Material01 != null)
+                        {
+                            matsFront[0] = currentMatData._Material01;
+                        }
+
+                        if (matsFront.Length > 1 && currentMatData._Material02 != null)
+                        {
+                            matsFront[1] = currentMatData._Material02;
+                        }
+
+                        if (matsFront.Length > 2 && currentMatData._Material03 != null)
+                        {
+                            matsFront[2] = currentMatData._Material03;
+                        }
+
+                        render_lido_FrontCladding.materials = matsFront;
+                    }
+
+                    if (lido_BackCladding != null && render_lido_BackCladding != null)
+                    {
+                        Material[] matsBack = render_lido_BackCladding.materials;
+
+                        if (matsBack.Length > 0 && currentMatData._Material01 != null)
+                        {
+                            matsBack[0] = currentMatData._Material01;
+                        }
+
+                        if (matsBack.Length > 1 && currentMatData._Material02 != null)
+                        {
+                            matsBack[1] = currentMatData._Material02;
+                        }
+
+                        if (matsBack.Length > 2 && currentMatData._Material03 != null)
+                        {
+                            matsBack[2] = currentMatData._Material03;
+                        }
+
+                        render_lido_BackCladding.materials = matsBack;
+                    }
+
+                    break;
             }
         }
     }
