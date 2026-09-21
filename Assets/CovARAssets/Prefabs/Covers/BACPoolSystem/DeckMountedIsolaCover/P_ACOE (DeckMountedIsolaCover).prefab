@@ -162,8 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _PoolType: 22
   _CoverType: 3
-  _MaxARObjectLenghtDistance: 10
-  _MaxLamasLenghtDistance: 10
+  _MaxARObjectLenghtDistance: 6
+  _MaxLamasLenghtDistance: 12
   _MaxARObjectLenghtDistanceWithPool: 2.3
   _MaxLamasLenghtDistanceWithPool: 4.1
   _ARObjectState: 0
