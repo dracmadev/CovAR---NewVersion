@@ -5665,6 +5665,7 @@ MonoBehaviour:
     _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
     _GetPremiumButton: {fileID: 0}
   bFeatureNotAviable: 0
+  _OnClickAnimFeedback: {fileID: 0}
   _ButtonsToHideArray: []
 --- !u!225 &2171830179990373486
 CanvasGroup:
@@ -6717,6 +6718,10 @@ MonoBehaviour:
   _CurrentCustomerEmailText: {fileID: 1716285098979823758}
   _CurrentOrderDate: {fileID: 5487156028649957472}
   _CurrentOrderLocation: {fileID: 8046724579045870492}
+  _CurrentCompanyImage: {fileID: 146828448101993850}
+  _AstralPoolSprite: {fileID: 21300000, guid: 09be1138cb3360c4290f2e3a7d765135, type: 3}
+  _BACPoolSystemSprite: {fileID: 21300000, guid: 364fbb6778e747a4cbb561e1cb666af4,
+    type: 3}
 --- !u!1 &4518886760745278793
 GameObject:
   m_ObjectHideFlags: 0
@@ -12550,6 +12555,7 @@ MonoBehaviour:
     _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
     _GetPremiumButton: {fileID: 0}
   bFeatureNotAviable: 0
+  _OnClickAnimFeedback: {fileID: 0}
   _ButtonsToHideArray: []
 --- !u!114 &5903677595079127099
 MonoBehaviour:

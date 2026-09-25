@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class APTopInformationBlock : MonoBehaviour
 {
@@ -11,9 +12,14 @@ public class APTopInformationBlock : MonoBehaviour
     [Header("OTHER INFO:")]
     [SerializeField] private TMP_Text _CurrentOrderDate;
     [SerializeField] private TMP_Text _CurrentOrderLocation;
+    [SerializeField] private Image _CurrentCompanyImage;
+
+    [Header("Companys sprite images:")]
+    [SerializeField] private Sprite _AstralPoolSprite;
+    [SerializeField] private Sprite _BACPoolSystemSprite;
+
 
     private WebRequestManager _WebRequestManager;
-
 
     /////////////////////////////////////////////////////////////////// DEFAULT FUNCTIONS //////////////////////////////////////////////////////////////////////////
     void Start()
@@ -43,6 +49,20 @@ public class APTopInformationBlock : MonoBehaviour
         _CurrentOrderLocation.text = orderLocation;
 
         _WebRequestManager.SetBasicOrderData(_OrderData);
+
+
+        if(_CurrentCompanyImage != null)
+        {
+            switch(_WebRequestManager.GetCurrentCompany())
+            {
+                case E_CompanyType.Astralpool:
+                    _CurrentCompanyImage.sprite = _AstralPoolSprite;
+                    break;
+                    case E_CompanyType.BACPoolSystems: 
+                    _CurrentCompanyImage.sprite = _BACPoolSystemSprite;
+                    break;
+            }
+        }
 
     }
 

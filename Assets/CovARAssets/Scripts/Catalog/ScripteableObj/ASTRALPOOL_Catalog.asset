@@ -400,7 +400,8 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Rollfix
-        _BlueprintModelImage: {fileID: 0}
+        _BlueprintModelImage: {fileID: 21300000, guid: 98ad60ca42e8827409810a0b7a52eb56,
+          type: 3}
         _MaterialsArray:
         - _MaterialType: 11
           _MaterialSprite: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5,
@@ -413,7 +414,8 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: a676bcce5fb823d4eaa29fefe056f9f3, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Ronda
-        _BlueprintModelImage: {fileID: 0}
+        _BlueprintModelImage: {fileID: 21300000, guid: d20a7f5210875db46a80ac65cc4c90d7,
+          type: 3}
         _MaterialsArray:
         - _MaterialType: 11
           _MaterialSprite: {fileID: 21300000, guid: a676bcce5fb823d4eaa29fefe056f9f3,
@@ -426,7 +428,8 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Acoe
-        _BlueprintModelImage: {fileID: 0}
+        _BlueprintModelImage: {fileID: 21300000, guid: 6e53285f4079cbb40a539c74c5ae7b03,
+          type: 3}
         _MaterialsArray:
         - _MaterialType: 11
           _MaterialSprite: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704,
@@ -450,7 +453,8 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Rollfix
-        _BlueprintModelImage: {fileID: 0}
+        _BlueprintModelImage: {fileID: 21300000, guid: 98ad60ca42e8827409810a0b7a52eb56,
+          type: 3}
         _MaterialsArray:
         - _MaterialType: 11
           _MaterialSprite: {fileID: 21300000, guid: 790c339c001e4794b8f58773663208a5,
@@ -463,7 +467,8 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Acoe
-        _BlueprintModelImage: {fileID: 0}
+        _BlueprintModelImage: {fileID: 21300000, guid: 6e53285f4079cbb40a539c74c5ae7b03,
+          type: 3}
         _MaterialsArray:
         - _MaterialType: 11
           _MaterialSprite: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704,
@@ -483,7 +488,8 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: d1bf724e98380fe4d86bfb6a090dac08, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Ronda
-        _BlueprintModelImage: {fileID: 0}
+        _BlueprintModelImage: {fileID: 21300000, guid: aee997adc0a7de840aa7a0775a8d0fe7,
+          type: 3}
         _MaterialsArray:
         - _MaterialType: 11
           _MaterialSprite: {fileID: 21300000, guid: d1bf724e98380fe4d86bfb6a090dac08,
@@ -496,7 +502,8 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: d41fbb35970619d47a5b73667e48246f, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Rondalino
-        _BlueprintModelImage: {fileID: 0}
+        _BlueprintModelImage: {fileID: 21300000, guid: c23712b490990a14cafa303182e2972a,
+          type: 3}
         _MaterialsArray:
         - _MaterialType: 11
           _MaterialSprite: {fileID: 21300000, guid: d41fbb35970619d47a5b73667e48246f,
@@ -513,7 +520,8 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 9ed2eae2ae4b5914092f096427bd68a4, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Davos
-        _BlueprintModelImage: {fileID: 0}
+        _BlueprintModelImage: {fileID: 21300000, guid: 67bc72c366278384f926b321ecb87bb5,
+          type: 3}
         _MaterialsArray:
         - _MaterialType: 11
           _MaterialSprite: {fileID: 21300000, guid: 9ed2eae2ae4b5914092f096427bd68a4,
@@ -526,7 +534,8 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 8ef4fa78239b3a2408127058addd8f64, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Quadro
-        _BlueprintModelImage: {fileID: 0}
+        _BlueprintModelImage: {fileID: 21300000, guid: e13cd481a19aa10498830b9e3af10d22,
+          type: 3}
         _MaterialsArray:
         - _MaterialType: 1
           _MaterialSprite: {fileID: 21300000, guid: 8ef4fa78239b3a2408127058addd8f64,
@@ -574,7 +583,8 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 8c55e2c65f181b148b28886489a2e413, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.Lido
-        _BlueprintModelImage: {fileID: 0}
+        _BlueprintModelImage: {fileID: 21300000, guid: af13ba558b3f24a4bb09b0ab8a0fa87f,
+          type: 3}
         _MaterialsArray:
         - _MaterialType: 1
           _MaterialSprite: {fileID: 21300000, guid: 8c55e2c65f181b148b28886489a2e413,
