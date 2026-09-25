@@ -141,7 +141,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _albedoColor: {r: 1, g: 0.5450644, b: 0.27897, a: 1}
+    - _albedoColor: {r: 0.972549, g: 0.5445697, b: 0.27843133, a: 1}
     - _tilingAlbedo: {r: 1, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

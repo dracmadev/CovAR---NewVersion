@@ -32,7 +32,7 @@ Login.Panel.CreacionUsuario.Instrucciones,"En caso de no poder crear un usuario,
 ,,,
 ,,,
 ,,,
-Login.SetPassword.Menu.Error,Error al actualizar la contraseña,Erreur de mise à jour du mot de passe,Password update error
+Login.SetPassword.Menu.Error,Error al actualizar la contraseña,Erreur lors de la mise à jour du mot de passe,Error updating password
 ,,,
 ,,,
 ,,,
@@ -178,7 +178,7 @@ Te iremos explicando paso a paso como funciona la aplicación.
 
 Pulsa OK para empezar el tutorial.","Bienvenue dans le tutoriel CovAR.
 
-Nous vous guiderons pas à pas à travers le fonctionnement de l'application.
+Nous allons vous guider pas à pas à travers le fonctionnement de l'application.
 
 Appuyez sur OK pour commencer le tutoriel.","Welcome to the CovAR tutorial.
 
@@ -212,7 +212,7 @@ Tutorial.Texto.Lamas1,Pulsa el botón para poder modificar el color de las lamas
 Tutorial.Texto.Lamas2,Selecciona el color que desees.,Sélectionnez la couleur que vous souhaitez.,Select the color you want.
 Tutorial.Texto.Screenshot,Pulsa el botón para realizar una captura de pantalla que se guardará en tu dispositivo y que también podrás compartir.,Appuyez sur le bouton pour prendre une capture d'écran qui sera enregistrée sur votre appareil et que vous pourrez également partager.,Press the button to take a screenshot that will be saved to your device and that you can also share.
 Tutorial.Texto.FichaTecnica1,Pulsa el botón para abrir la ficha técnica.,Appuyez sur le bouton pour ouvrir la fiche technique.,Press the button to open the technical data sheet.
-Tutorial.Texto.FichaTecnica2,"En la ficha técnica, podrás ver un resumen de la configuración de la persiana. Además de poder añadir el nombre del cliente, anotaciones, configurar otras opciones relacionadas con productos asociados a la persiana y hacer una captura de pantalla.","Dans les spécifications techniques, vous trouverez un résumé de la configuration du volet. Vous pouvez également ajouter le nom du client, des notes, configurer d'autres options relatives aux produits associés au volet et effectuer une capture d'écran.","In the technical specifications, you can see a summary of the blind's configuration. You can also add the customer's name, notes, configure other options related to products associated with the blind, and take a screenshot."
+Tutorial.Texto.FichaTecnica2,"En la ficha técnica, podrás ver un resumen de la configuración de la persiana. Además de poder añadir el nombre del cliente, anotaciones, configurar otras opciones relacionadas con productos asociados a la persiana y hacer una captura de pantalla.","Dans les spécifications techniques, vous trouverez un résumé de la configuration du volet. Vous pouvez également ajouter le nom du client, des notes, configurer d'autres options relatives aux produits associés au volet et effectuer une capture d'écran.","In the technical specifications, you'll see a summary of the blind's configuration. You can also add the customer's name, notes, configure other options related to products associated with the blind, and take a screenshot."
 Tutorial.Texto.FichaTecnica3,Pulsa el botón de la flecha para volver a la pantalla de configuración y continuar con el tutorial.,Appuyez sur la touche flèche pour revenir à l'écran des paramètres et poursuivre le tutoriel.,Press the arrow button to return to the settings screen and continue with the tutorial.
 Tutorial.Texto.HelpPopup,"Si en algún momento quieres recordar que es lo que hacen los botones del menú principal y del menú del diseño, manteniendo pulsado cualquiera de estos desplegará un texto explicativo sobre lo que hacen.","Si vous souhaitez à tout moment vous rappeler à quoi servent les boutons du menu principal et du menu de conception, il vous suffit d'appuyer longuement sur l'un d'eux pour afficher un texte explicatif.","If at any time you want to remember what the buttons in the main menu and the design menu do, pressing and holding any of them will display an explanatory text about what they do."
 Tutorial.Texto.EsconderMenus,"Si deseas esconder los botones del menú para visualizar mejor la pantalla, pulsa los botones que se encuentran encima de cada menú.","Pour masquer les boutons du menu et mieux visualiser l'écran, appuyez sur les boutons situés au-dessus de chaque menu.","If you want to hide the menu buttons to better view the screen, press the buttons located above each menu."
@@ -307,11 +307,11 @@ FichaTecnica.PopUp.InfoScreen.Warning,(Es importante rellenar los  datos del cli
 FichaTecnica.PopUp.LoadingScreen.Title,GENERANDO PLANO TÉCNICO...,GÉNÉRATION DE DESSINS TECHNIQUES...,GENERATING TECHNICAL DRAWING...
 FichaTecnica.PopUp.GoodScreen.Title,PLANO TÉCNICO CORRECTAMENTE DESCARGADO,DESSIN TECHNIQUE TÉLÉCHARGÉ AVEC SUCCÈS,TECHNICAL DRAWING SUCCESSFULLY DOWNLOADED
 FichaTecnica.PopUp.NoCustomNameScreen.Title,ESCRIBE EL NOMBRE Y CORREO DEL CLIENTE,ÉCRIVEZ LE NOM ET L'ADRESSE E-MAIL DU CLIENT,WRITE THE CUSTOMER'S NAME AND EMAIL
-FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE HA PODIDO GUARDAR,UN PROBLÈME EST SURVENU... LA COMMANDE N'A PAS PU ÊTRE SAUVEGARDÉE,THERE HAS BEEN A PROBLEM... THE ORDER COULDN'T BE SAVED
+FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE HA PODIDO GUARDAR,UN PROBLÈME EST SURVENU... LA COMMANDE N'A PAS PU ÊTRE SAUVEGARDÉE,THERE HAS BEEN A PROBLEM... THE ORDER COULD NOT BE SAVED
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -379,6 +379,7 @@ Catalog.Model.BACPoolSystem.Multiversal,Multiversal,Multiversal,Multiversal
 Catalog.Model.BACPoolSystem.Novatrend,Novatrend,Novatrend,Novatrend
 Catalog.Model.BACPoolSystem.SwissTop,SwissTop,SwissTop,SwissTop
 Catalog.Model.BACPoolSystem.Acoe,Acoe,Acoe,Acoe
+Catalog.Model.BACPoolSystem.AcoeWithClading,Acoe con revestimiento,Acoe avec revêtement,Acoe with cladding
 Catalog.Model.BACPoolSystem.Ronda,Ronda,Ronda,Ronda
 Catalog.Model.BACPoolSystem.Davos,Davos,Davos,Davos
 Catalog.Model.BACPoolSystem.Lido,Lido,Lido,Lido
@@ -420,7 +421,7 @@ Catalog.Lamas.RollmaticPVC,Rollmatic PVC,Rollmatic PVC,Rollmatic PVC
 Catalog.Lamas.RollmaticPolycarbonate,Rollmatic Polycarbonate,Polycarbonate Rollmatic,Rollmatic Polycarbonate
 Catalog.Lamas.RollmaticPolycarbonatePro,Rollmatic Polycarbonate Pro,Rollmatic Polycarbonate Pro,Rollmatic Polycarbonate Pro
 Catalog.Lido.SipoMahagoni,Sipo Mahagoni,Sipo Mahagoni,Sipo Mahagoni
-,,,
+Catalog.Colots.Title,Color,Couleur,Color
 Catalog.Lamas.Model.Title,Modelo,Modèle,Model
 Catalog.Lamas.Material.Title,Material,Matériel,Material
 ,,,
@@ -436,11 +437,11 @@ InGame.Help.Mode.RotationDescrip,Permite rotar el modelo con el la barra desliza
 InGame.Help.Mode.SetModelLenght,Anchura del modelo,Largeur du modèle,Largeur du
 InGame.Help.Mode.SetModelLenghtDescrip,Permite modificar la anchura del modelo con la barra deslizadora,Permet de modifier la largeur du modèle à l'aide du curseur.,Permet de modifier la largeur du modèle à l'aide du parcours.
 InGame.Help.Mode.SetLamasLenght,Longitud de la persiana,Longueur de l'aveugle,Durée de la cécité
-InGame.Help.Mode.SetLamasLenghtDescrip,Permite modificar la longitud de la persiana con la barra deslizadora,Elle permet de régler la longueur du store grâce à la barre coulissante.,Elle permet d'ajuster la longueur du magasin grâce à la barre coulissante.
+InGame.Help.Mode.SetLamasLenghtDescrip,Permite modificar la longitud de la persiana con la barra deslizadora,Il permet de régler la longueur du store grâce à la barre coulissante.,Il vous permet d'ajuster la longueur du magasin grâce à la barre coulissante.
 InGame.Help.Mode.Blueprint,Plano técnico,dessin technique,technique de dessin
 InGame.Help.Mode.BlueprintDescrip,Permite acceder al plano tècnico del modelo seleccionado,Il permet d'accéder au dessin technique du modèle sélectionné.,Il permet d'accéder au dessin technique du modèle sélectionné.
 InGame.Help.Mode.Catalogo,Catálogo,Catalogue,Catalogue
-InGame.Help.Mode.CatalogDescrip,"Accede al catalogo completo para poder cambiar el modelo, el color, el material de las lamas o su color.","Consultez le catalogue complet pour modifier le modèle, la couleur, le matériau des lattes ou la couleur.","Consultez le catalogue complet pour modifier le modèle, la couleur, la matière des lattes ou la couleur."
+InGame.Help.Mode.CatalogDescrip,"Accede al catalogo completo para poder cambiar el modelo, el color, el material de las lamas o su color.","Accédez au catalogue complet pour modifier le modèle, la couleur, le matériau des lattes ou la couleur.","Accédez au catalogue complet pour modifier le modèle, la couleur, la matière des lattes ou la couleur."
 ,,,
 ,,,
 ,,,
@@ -479,7 +480,7 @@ Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de co
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,moteur pour fosse sèche + kit d'encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -533,7 +534,7 @@ Login.HelperText.NoCumpleRequisitos,"Las contraseñas deben tener un mínimo de 
 Login.HelperText.EmailAlreadyOnBBDD,El correo ya existe en la base de datos.,L'adresse e-mail existe déjà dans la base de données.,The email address already exists in the database.
 Login.ReSetPassword.Menu.Descrip,Escribe el correo asociado a la cuenta y te enviaremos una nueva clave de acceso.,Saisissez l'adresse e-mail associée à votre compte et nous vous enverrons un nouveau code d'accès.,Enter the email address associated with the account and we will send you a new access code.
 Login.ReSetPassword.Menu.Button,Enviar,Envoyer,Send
-Login.Panel.ClaveOlvidada,Escribe tu correo,Saisissez votre adresse e-mail,Enter your email address
+Login.Panel.ClaveOlvidada,Escribe tu correo,Saisissez votre adresse e-mail,Enter your email
 Login.SetPassword.Menu.Title,Cambiar contraseña,Changer le mot de passe,Change password
 Login.SetPassword.Menu.ClaveActual,Contraseña actual...,Mot de passe actuel...,Current password...
 Login.SetPassword.Menu.NuevaClave,Nueva contraseña...,Nouveau mot de passe...,New password...
@@ -1034,7 +1035,7 @@ Login.Settings.RestartTutorial.Button,Reiniciar,Redémarrage,Reboot
 ,,,
 ,,,
 ,,,
-ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photographie - CovAR,Photograph - CovAR
+ScreenshootAndShare.Photo.Title,Fotografía - CovAR,Photo - CovAR,Photograph - CovAR
 ScreenshootAndShare.Photo.Descrip,Esta fotografía sacada con la aplicación  de CovAR.,Cette photographie a été prise à l'aide de l'application CovAR.,This photograph was taken using the CovAR application.
 ScreenshootAndShare.Blueprint.Title,Plano técnico,dessin technique,Technical drawing
 ScreenshootAndShare.Blueprint.Descrip,Este plano técnico ha sido generado con la aplicación  de CovAR.,Ce dessin technique a été généré à l'aide de l'application CovAR.,This technical drawing was generated using the CovAR application.
@@ -1053,14 +1054,14 @@ Tutorial.Info2.Descrip,"La interfaz de CovAR se divide en dos columnas, cada una
 Tutorial.Info3.Title,Columna izquierda,Colonne de gauche,Left column
 Tutorial.Info3.Descrip,"Permite manipular la cubierta: moverla, rotarla, modificar su longitud, desplegar la persiana y abrir el plano técnico.","Il permet de manipuler la couverture : la déplacer, la faire pivoter, modifier sa longueur, déployer le store et ouvrir le plan technique.","It allows you to manipulate the cover: move it, rotate it, modify its length, deploy the blind and open the technical plan."
 Tutorial.Info4.Title,Columna derecha,Colonne de droite,Right column
-Tutorial.Info4.Descrip,"Permite abrir el catálogo, acceder a la cámara y crear una piscina de ejemplo.","Il vous permet d'ouvrir le catalogue, d'accéder à l'appareil photo et de créer un échantillon.","It allows you to open the catalog, access the camera, and create a sample pool."
+Tutorial.Info4.Descrip,"Permite abrir el catálogo, acceder a la cámara y crear una piscina de ejemplo.","Il vous permet d'ouvrir le catalogue, d'accéder à la caméra et de créer un échantillon.","It allows you to open the catalog, access the camera, and create a sample pool."
 Tutorial.Info5.Title,Mover modelo,Déplacer le modèle,Move model
 Tutorial.Info5.Descrip,Pulse el botón de movimiento y desplace con el dedo el modelo de cubierta por la pantalla de su dispositivo.,Appuyez sur le bouton de déplacement et faites glisser le modèle de couverture sur l'écran de votre appareil avec votre doigt.,Press the move button and drag the cover template across your device's screen with your finger.
 Tutorial.Info6.Title,Rotar objeto,Faire pivoter l'objet,Rotate object
 Tutorial.Info6.Descrip,Pulse el botón de rotación y desplace el dedo por la barra inferior para girar el modelo.,Appuyez sur le bouton de rotation et faites glisser votre doigt le long de la barre inférieure pour faire pivoter le modèle.,Press the rotation button and slide your finger along the bottom bar to rotate the model.
 Tutorial.Info7.Title,Longitud de la cubierta,Longueur de couverture,Cover length
 Tutorial.Info7.Descrip,"Use el botón de longitud y utilice la barra inferior para modificar el tamaño de la cubierta. Para un ajuste más preciso, use los botones “+” y “-”.","Utilisez le bouton de longueur et la barre inférieure pour ajuster la taille de la couverture. Pour un réglage plus précis, utilisez les boutons « + » et « - ».","Use the length button and the bottom bar to adjust the cover size. For more precise adjustment, use the ""+"" and ""-"" buttons."
-Tutorial.Info8.Title,Desplegar persiana,Étendre l'aveuglement,Extend blind
+Tutorial.Info8.Title,Desplegar persiana,Étendre l'aveugle,Extend blind
 Tutorial.Info8.Descrip,"Pulse el botón de despliegue de la persiana y modifique su longitud con la barra inferior. Para un ajuste más preciso, use los botones “+” y “-”.","Appuyez sur le déclencheur et ajustez la longueur du déclenchement à l'aide de la barre inférieure. Pour un réglage plus précis, utilisez les boutons « + » et « - ».","Press the shutter release button and adjust its length using the bottom bar. For more precise adjustment, use the “+” and “-” buttons."
 Tutorial.Info9.Title,Catálogo,Catalogue,Catalog
 Tutorial.Info9.Descrip,"Desde el catálogo puede seleccionar modelos de cubierta, cambiar colores de soportes o revestimientos y escoger distintos modelos de lamas. Pulse el botón del catálogo.","Dans le catalogue, vous pouvez sélectionner des modèles de toiture, modifier les couleurs des supports ou du bardage et choisir différents modèles de lames. Cliquez sur le bouton Catalogue.","From the catalog, you can select roofing models, change the colors of supports or cladding, and choose different slat models. Click the catalog button."

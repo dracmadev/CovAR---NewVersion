@@ -10,6 +10,9 @@ public class MaterialBlockBehaviour : MonoBehaviour
     [SerializeField] private ScrollRect _scrollRect;
     [SerializeField] private RectTransform _viewportRT;
     [SerializeField] private RectTransform _contentRT;
+    [SerializeField] private CanvasGroup _TitleCG;
+    [SerializeField] private CanvasGroup _MyselfCG;
+
     [Header("Max slots before ScrollView can move?:")]
     [SerializeField] private int _MaxMaterialSlotsBeforeScrollCanMove;
 
@@ -39,6 +42,8 @@ public class MaterialBlockBehaviour : MonoBehaviour
         {
             _MaterialSlotsArray = GetComponentsInChildren<MaterialSlotBehaviour>(true);
         }
+
+
     }
 
     public void InitCatalogMaterialBlock(St_Material[] materialsList, St_Material currentSelected)
@@ -52,6 +57,7 @@ public class MaterialBlockBehaviour : MonoBehaviour
         _currentMaterialSelected = currentSelected;
 
         DoInitOnMaterialSlots();
+        ShowOrHideMaterialsBlock();
     }
 
     void DoInitOnMaterialSlots()
@@ -181,5 +187,22 @@ public class MaterialBlockBehaviour : MonoBehaviour
         targetY = Mathf.Clamp(targetY, minScroll, maxScroll);
 
         _contentRT.DOAnchorPosY(targetY, 0.4f).SetEase(Ease.OutCubic);
+    }
+
+    void ShowOrHideMaterialsBlock()
+    {
+        if (_MyselfCG != null && _TitleCG != null)
+        {
+            // Determine the target alpha based on your condition
+            float targetAlpha = (_IncomingMaterialsList.Length >= 2) ? 1f : 0f;
+
+            // Kill any existing tweens on these objects to avoid conflicts
+            _MyselfCG.DOKill();
+            _TitleCG.DOKill();
+
+            // Animate both CanvasGroups to the target alpha over 0.25 seconds using a Sine ease
+            _MyselfCG.DOFade(targetAlpha, 0.25f).SetEase(Ease.InOutSine);
+            _TitleCG.DOFade(targetAlpha, 0.25f).SetEase(Ease.InOutSine);
+        }
     }
 }

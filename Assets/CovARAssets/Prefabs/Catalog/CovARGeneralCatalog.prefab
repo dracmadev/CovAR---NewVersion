@@ -1473,6 +1473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8425246886531420858}
   - component: {fileID: 1882564492585828354}
+  - component: {fileID: 5273816861692411942}
   m_Layer: 0
   m_Name: 'MaterialsTitleContainer '
   m_TagString: Untagged
@@ -1526,6 +1527,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &5273816861692411942
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6212861015081740151}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6415325633193104969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,6 +1550,7 @@ GameObject:
   - component: {fileID: 9039464827343505479}
   - component: {fileID: 7933015383920960608}
   - component: {fileID: 2036000749593084058}
+  - component: {fileID: 1969398059480392175}
   m_Layer: 0
   m_Name: 'MaterialsContainer '
   m_TagString: Untagged
@@ -1605,6 +1619,8 @@ MonoBehaviour:
   _scrollRect: {fileID: 3737831186268598525}
   _viewportRT: {fileID: 7921665155135732796}
   _contentRT: {fileID: 3229178850509074617}
+  _TitleCG: {fileID: 5273816861692411942}
+  _MyselfCG: {fileID: 1969398059480392175}
   _MaxMaterialSlotsBeforeScrollCanMove: 4
   _MaterialSlotsArray: []
   _IncomingMaterialsList: []
@@ -1615,6 +1631,18 @@ MonoBehaviour:
     _Material01: {fileID: 0}
     _Material02: {fileID: 0}
     _Material03: {fileID: 0}
+--- !u!225 &1969398059480392175
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415325633193104969}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6560769051810602708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,6 +2238,7 @@ MonoBehaviour:
     _TextDesactiveColor: {r: 0, g: 0, b: 0, a: 0}
     _GetPremiumButton: {fileID: 0}
   bFeatureNotAviable: 0
+  _OnClickAnimFeedback: {fileID: 0}
   _ButtonsToHideArray: []
 --- !u!114 &4458207551536642460
 MonoBehaviour:
@@ -6179,7 +6208,7 @@ PrefabInstance:
     - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}
       propertyPath: m_text
-      value: Material
+      value: Color
       objectReference: {fileID: 0}
     - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}
@@ -6239,7 +6268,7 @@ PrefabInstance:
     - target: {fileID: 6990606438210741698, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}
       propertyPath: LocalizationKey
-      value: Catalog.Lamas.Material.Title
+      value: Catalog.Colots.Title
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

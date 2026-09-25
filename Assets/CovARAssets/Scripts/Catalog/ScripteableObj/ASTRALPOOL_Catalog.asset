@@ -438,10 +438,17 @@ MonoBehaviour:
           _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
-        - _MaterialType: 27
-          _MaterialSprite: {fileID: 21300000, guid: 9836160494f74d94b96441e431752cc3,
+      - _ModelType: 37
+        _ModelGeneralType: 1
+        _ModelLogo: {fileID: 21300000, guid: 9836160494f74d94b96441e431752cc3, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.AcoeWithClading
+        _BlueprintModelImage: {fileID: 21300000, guid: 6e53285f4079cbb40a539c74c5ae7b03,
+          type: 3}
+        _MaterialsArray:
+        - _MaterialType: 11
+          _MaterialSprite: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704,
             type: 3}
-          _MaterialKey: Catalog.Material.AcoeWithCladding
+          _MaterialKey: Catalog.Material.Metalic
           _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
@@ -477,10 +484,17 @@ MonoBehaviour:
           _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
-        - _MaterialType: 27
-          _MaterialSprite: {fileID: 21300000, guid: 9836160494f74d94b96441e431752cc3,
+      - _ModelType: 38
+        _ModelGeneralType: 1
+        _ModelLogo: {fileID: 21300000, guid: 9836160494f74d94b96441e431752cc3, type: 3}
+        _ModelKey: Catalog.Model.BACPoolSystem.AcoeWithClading
+        _BlueprintModelImage: {fileID: 21300000, guid: 6e53285f4079cbb40a539c74c5ae7b03,
+          type: 3}
+        _MaterialsArray:
+        - _MaterialType: 11
+          _MaterialSprite: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704,
             type: 3}
-          _MaterialKey: Catalog.Material.AcoeWithCladding
+          _MaterialKey: Catalog.Material.Metalic
           _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}

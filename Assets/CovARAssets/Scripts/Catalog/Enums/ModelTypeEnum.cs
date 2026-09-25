@@ -39,5 +39,7 @@ public enum E_ModelType
     BAC_IsolaAcoe = 34,
     BAC_IsolaRonda = 35,
     BAC_IsolaRondalino = 36,
+    BAC_SlattedAcoeCladding = 37,
+    BAC_IsolaAcoeCladding = 38,
 
 }

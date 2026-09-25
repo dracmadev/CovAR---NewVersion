@@ -193,10 +193,12 @@ public class ModelSlotBehaviour : MonoBehaviour
             case E_ModelType.BAC_SlattedRonda: returnVar = E_PoolType.BAC_SlattedRonda; break;
           
             case E_ModelType.BAC_SlattedAcoe: returnVar = E_PoolType.BAC_SlattedAcoe; break;
+            case E_ModelType.BAC_SlattedAcoeCladding: returnVar = E_PoolType.BAC_SlattedAcoeCladding; break;
             case E_ModelType.BAC_SlattedDavos: returnVar = E_PoolType.BAC_SlattedDavos; break;
 
             case E_ModelType.BAC_IsolaRollfix: returnVar = E_PoolType.BAC_IsolaRollfix;  break;
             case E_ModelType.BAC_IsolaAcoe: returnVar = E_PoolType.BAC_IsolaAcoe;  break;
+            case E_ModelType.BAC_IsolaAcoeCladding: returnVar = E_PoolType.BAC_IsolaAcoeCladding; break;
             case E_ModelType.BAC_IsolaRonda: returnVar = E_PoolType.BAC_IsolaRonda;break;
             case E_ModelType.BAC_IsolaRondalino: returnVar = E_PoolType.BAC_IsolaRondalino; break;
             

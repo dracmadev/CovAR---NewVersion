@@ -18,5 +18,7 @@ public enum E_ARObjectParts
     StartSecuritySystem = 13,
     EndSecuritySystem = 14,
     IsolaCover = 15,
+    FootLeft_Cladding = 16,
+    FootRight_Cladding = 17,
 
 }

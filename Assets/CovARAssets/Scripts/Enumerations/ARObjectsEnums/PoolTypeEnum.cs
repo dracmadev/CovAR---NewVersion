@@ -27,6 +27,8 @@ public enum E_PoolType
     BAC_IsolaAcoe = 22,
     BAC_IsolaRonda = 23,
     BAC_IsolaRondalino = 24,
+    BAC_SlattedAcoeCladding = 25,
+    BAC_IsolaAcoeCladding = 26,
 
 
 }

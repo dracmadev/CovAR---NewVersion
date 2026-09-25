@@ -676,6 +676,20 @@ public class ARObjectManager : MonoBehaviour
                     answer = false;
                 }
                 break;
+            case E_PoolType.BAC_SlattedAcoeCladding:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPVC ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonate ||
+                    _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_RollmaticPolycarbonatePro)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
             case E_PoolType.BAC_SlattedDavos:
                 if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasTwist ||
                     _CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_LamasDuotherm ||
@@ -703,6 +717,16 @@ public class ARObjectManager : MonoBehaviour
                 }
                 break;
             case E_PoolType.BAC_IsolaAcoe:
+                if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_Isola)
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
+                break;
+            case E_PoolType.BAC_IsolaAcoeCladding:
                 if (_CovARObjectData._CurrentLamasModel._ModelType == E_ModelType.BAC_Isola)
                 {
                     answer = true;
@@ -960,6 +984,18 @@ public class ARObjectManager : MonoBehaviour
 
                 SetLamasMaterial(materialToApply);
                 break;
+            case E_PoolType.BAC_SlattedAcoeCladding:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_LamasDuotherm);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetLamasMaterial(materialToApply);
+                break;
             case E_PoolType.BAC_SlattedDavos:
                 companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
                 productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.SlattedCover);
@@ -986,6 +1022,18 @@ public class ARObjectManager : MonoBehaviour
                 SetIsolaCoverMaterial(materialToApply);
                 break;
             case E_PoolType.BAC_IsolaAcoe:
+                companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
+                productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.IsolaCover);
+                modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_Isola);
+                materialToApply = GetFirstMaterialFromCurrentModel(modelToApply);
+
+                _CovARObjectData._CurrentLamasProduct = productToApply;
+                _CovARObjectData._CurrentLamasModel = modelToApply;
+                _CovARObjectData._CurrentLamasMaterial = materialToApply;
+
+                SetIsolaCoverMaterial(materialToApply);
+                break;
+            case E_PoolType.BAC_IsolaAcoeCladding:
                 companyToApply = GetSpecificCompanyFromCatalog(GetCurrentProductCatalog(), E_CompanyType.BACPoolSystems);
                 productToApply = GetSpecificProductFromCurrentCompany(companyToApply, E_ProductType.IsolaCover);
                 modelToApply = GetSpecificModelFromCurrentProduct(productToApply, E_ModelType.BAC_Isola);
@@ -1227,11 +1275,13 @@ public class ARObjectManager : MonoBehaviour
                     case E_ModelType.BAC_SlattedRonda: _CovARObjectData._CurrentModelMaterial = material; break;
                     case E_ModelType.BAC_SlattedLido: _CovARObjectData._CurrentModelMaterial = material; break;
                     case E_ModelType.BAC_SlattedAcoe: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_SlattedAcoeCladding: _CovARObjectData._CurrentModelMaterial = material; break;
                     case E_ModelType.BAC_SlattedDavos: _CovARObjectData._CurrentModelMaterial = material; break;
 
                     /////////////////////////////////////////////////// DECK MOUNTED ISOLA COVER ///////////////////////////////////////////////////////
                     case E_ModelType.BAC_IsolaRollfix: _CovARObjectData._CurrentModelMaterial = material; break;
                     case E_ModelType.BAC_IsolaAcoe: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_IsolaAcoeCladding: _CovARObjectData._CurrentModelMaterial = material; break;
                     case E_ModelType.BAC_IsolaRonda: _CovARObjectData._CurrentModelMaterial = material; break;
                     case E_ModelType.BAC_IsolaRondalino: _CovARObjectData._CurrentModelMaterial = material; break;
 
@@ -1396,10 +1446,12 @@ public class ARObjectManager : MonoBehaviour
                     case E_ModelType.BAC_SlattedRonda: poolTypeToReturn = E_PoolType.BAC_SlattedRonda; break;
                     case E_ModelType.BAC_SlattedLido: poolTypeToReturn = E_PoolType.BAC_SlattedLido; break;
                     case E_ModelType.BAC_SlattedAcoe: poolTypeToReturn = E_PoolType.BAC_SlattedAcoe; break;
+                    case E_ModelType.BAC_SlattedAcoeCladding: poolTypeToReturn = E_PoolType.BAC_SlattedAcoeCladding; break;
                     case E_ModelType.BAC_SlattedDavos: poolTypeToReturn = E_PoolType.BAC_SlattedDavos; break;
 
                     case E_ModelType.BAC_IsolaRollfix: poolTypeToReturn = E_PoolType.BAC_IsolaRollfix; break;
                     case E_ModelType.BAC_IsolaAcoe: poolTypeToReturn = E_PoolType.BAC_IsolaAcoe; break;
+                    case E_ModelType.BAC_IsolaAcoeCladding: poolTypeToReturn = E_PoolType.BAC_IsolaAcoeCladding; break;
                     case E_ModelType.BAC_IsolaRonda: poolTypeToReturn = E_PoolType.BAC_IsolaRonda; break;
                     case E_ModelType.BAC_IsolaRondalino: poolTypeToReturn = E_PoolType.BAC_IsolaRondalino; break;
 
@@ -1694,72 +1746,26 @@ public class ARObjectManager : MonoBehaviour
 
                 case E_PoolType.BAC_IsolaRollfix: break;
                 case E_PoolType.BAC_IsolaAcoe:
-                   
-                    List<GameObject> acoeIsolaCoversList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.UpCoverPlane);
-
-                    if (_CurrentMaterialSelected._MaterialType == E_MaterialType.AcoeWithCladding)
-                    {
-                        if (acoeIsolaCoversList.Count != 0)
-                        {
-                            foreach (GameObject acoeCover in acoeIsolaCoversList)
-                            {
-                                acoeCover.SetActive(true);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (acoeIsolaCoversList.Count != 0)
-                        {
-                            foreach (GameObject acoeCover in acoeIsolaCoversList)
-                            {
-                                acoeCover.SetActive(false);
-                            }
-                        }
-                    }
-
                     break;
 
                 case E_PoolType.BAC_IsolaRonda: break;
                 case E_PoolType.BAC_IsolaRondalino: break;
                 case E_PoolType.BAC_SlattedAcoe:
-
-                    List<GameObject> acoeSlattedCoversList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.UpCoverPlane);
-
-                    if (_CurrentMaterialSelected._MaterialType == E_MaterialType.AcoeWithCladding)
-                    {
-                        if(acoeSlattedCoversList.Count != 0)
-                        {
-                            foreach (GameObject acoeCover in acoeSlattedCoversList)
-                            {
-                                acoeCover.SetActive(true);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (acoeSlattedCoversList.Count != 0)
-                        {
-                            foreach (GameObject acoeCover in acoeSlattedCoversList)
-                            {
-                                acoeCover.SetActive(false);
-                            }
-                        }
-                    }
-                    break;
-
                 case E_PoolType.BAC_CladdingDavos:break;
                 case E_PoolType.BAC_CladdingQuadro: 
                     
                     GameObject quadro_TopCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.UpCoverPlane); //QUADRO CLADDING
                     GameObject quadro_FrontCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FrontCoverPlane); //QUADRO CLADDING
                     GameObject quadro_BackCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.BackCoverPlane); //QUADRO CLADDING
+                    GameObject quadro_RightFootCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight_Cladding); //RIGHT FOOT
+                    GameObject quadro_LeftFootCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootLeft_Cladding); //LEFT FOOT
 
-                    //Debug.Log("quadro_TopCladding: " + quadro_TopCladding + " ----- " + "quadro_FronyCladding: " + quadro_FrontCladding + " ---- "+"quadro_BackCladding: " + quadro_BackCladding );
 
                     quadro_TopCladding.TryGetComponent(out Renderer render_TopCladding);
                     quadro_FrontCladding.TryGetComponent(out Renderer render_FrontCladding);
                     quadro_BackCladding.TryGetComponent(out Renderer render_BackCladding);
+                    quadro_RightFootCladding.TryGetComponent(out Renderer render_RightFootCladding);
+                    quadro_LeftFootCladding.TryGetComponent(out Renderer render_LeftFootCladding);
 
 
                     if (quadro_TopCladding != null && render_TopCladding != null)
@@ -1828,7 +1834,98 @@ public class ARObjectManager : MonoBehaviour
                         render_BackCladding.materials = matsBack;
                     }
 
+                    if (quadro_RightFootCladding != null && render_RightFootCladding != null)
+                    {
+                        Material[] matsRightFoot = render_RightFootCladding.materials;
+
+                        if (matsRightFoot.Length > 0 && currentMatData._Material01 != null)
+                        {
+                            matsRightFoot[0] = currentMatData._Material01;
+                        }
+
+                        if (matsRightFoot.Length > 1 && currentMatData._Material02 != null)
+                        {
+                            matsRightFoot[1] = currentMatData._Material02;
+                        }
+
+                        if (matsRightFoot.Length > 2 && currentMatData._Material03 != null)
+                        {
+                            matsRightFoot[2] = currentMatData._Material03;
+                        }
+
+                        render_RightFootCladding.materials = matsRightFoot;
+                    }
+
+                    if (quadro_LeftFootCladding != null && render_LeftFootCladding != null)
+                    {
+                        Material[] matsLeftFootCladding = render_LeftFootCladding.materials;
+
+                        if (matsLeftFootCladding.Length > 0 && currentMatData._Material01 != null)
+                        {
+                            matsLeftFootCladding[0] = currentMatData._Material01;
+                        }
+
+                        if (matsLeftFootCladding.Length > 1 && currentMatData._Material02 != null)
+                        {
+                            matsLeftFootCladding[1] = currentMatData._Material02;
+                        }
+
+                        if (matsLeftFootCladding.Length > 2 && currentMatData._Material03 != null)
+                        {
+                            matsLeftFootCladding[2] = currentMatData._Material03;
+                        }
+
+                        render_LeftFootCladding.materials = matsLeftFootCladding;
+                    }
+
+                    switch(_CurrentMaterialSelected._MaterialType)
+                    {
+                        case E_MaterialType.White:  
+                            if(quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                            {
+                                quadro_LeftFootCladding.SetActive(false);
+                                quadro_RightFootCladding.SetActive(false);
+                            }
+                            break;
+                        case E_MaterialType.Gray:
+                            if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                            {
+                                quadro_LeftFootCladding.SetActive(false);
+                                quadro_RightFootCladding.SetActive(false);
+                            }
+                            break;
+                        case E_MaterialType.SipoMahagoni:
+                            if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                            {
+                                quadro_LeftFootCladding.SetActive(false);
+                                quadro_RightFootCladding.SetActive(false);
+                            }
+                            break;
+                        case E_MaterialType.White_White:
+                            if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                            {
+                                quadro_LeftFootCladding.SetActive(true);
+                                quadro_RightFootCladding.SetActive(true);
+                            }
+                            break;
+                        case E_MaterialType.Gray_Gray:
+                            if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                            {
+                                quadro_LeftFootCladding.SetActive(true);
+                                quadro_RightFootCladding.SetActive(true);
+                            }
+                            break;
+                        case E_MaterialType.Wood_Wood:
+                            if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                            {
+                                quadro_LeftFootCladding.SetActive(true);
+                                quadro_RightFootCladding.SetActive(true);
+                            }
+                            break;
+                    }
+
                     break;
+
 
                 case E_PoolType.BAC_CladdingLido:
 
@@ -2193,10 +2290,12 @@ public class ARObjectManager : MonoBehaviour
                 case E_ModelType.BAC_SlattedRonda: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 case E_ModelType.BAC_SlattedLido: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 case E_ModelType.BAC_SlattedAcoe: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_SlattedAcoeCladding: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 case E_ModelType.BAC_SlattedDavos: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 
                 case E_ModelType.BAC_IsolaRollfix: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 case E_ModelType.BAC_IsolaAcoe: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_IsolaAcoeCladding: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 case E_ModelType.BAC_IsolaRonda: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 case E_ModelType.BAC_IsolaRondalino: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 
