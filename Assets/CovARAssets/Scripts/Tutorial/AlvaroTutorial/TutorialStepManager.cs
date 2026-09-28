@@ -276,6 +276,7 @@ public class TutorialStepManager : MonoBehaviour
 
                 if (_ARObjectManager != null)
                 {
+                    _CancelTutorialButton.gameObject.SetActive(false);
                     _ARObjectManager.SetActivePlaneFinder(false);
                     _ARObjectManager.SetIsObjectPlacedState(false);
                     Destroy(_ARObjectManager.GetCurrentARObject());
@@ -288,6 +289,7 @@ public class TutorialStepManager : MonoBehaviour
             case E_TutorialActions.OnPlaceObject:
                 if (_ARObjectManager != null)
                 {
+                    _CancelTutorialButton.gameObject.SetActive(true);
                     _ARObjectManager.SetActivePlaneFinder(true);
                     _ARObjectManager.SetIsObjectPlacedState(false);
                     Destroy(_ARObjectManager.GetCurrentARObject());

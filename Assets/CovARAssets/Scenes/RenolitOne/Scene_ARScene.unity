@@ -21268,6 +21268,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 325568835}
     m_Modifications:
+    - target: {fileID: 365194378068354775, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701203396348368756, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701203396348368756, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701203396348368756, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2860150048931032220, guid: 637fa19fd7bd58b43b79a64872cc775e,
         type: 3}
       propertyPath: m_Name
@@ -21417,6 +21437,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[2].m_Text
       value: English
+      objectReference: {fileID: 0}
+    - target: {fileID: 4895319022102199648, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4895319022102199648, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0000038146973
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932157175635191663, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932157175635191663, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949574594467612315, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949574594467612315, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7399480163906959563, guid: 637fa19fd7bd58b43b79a64872cc775e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8591500357592114150, guid: 637fa19fd7bd58b43b79a64872cc775e,
         type: 3}
