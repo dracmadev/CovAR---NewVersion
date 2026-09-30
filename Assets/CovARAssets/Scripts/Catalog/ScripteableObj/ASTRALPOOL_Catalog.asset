@@ -383,7 +383,7 @@ MonoBehaviour:
         - _MaterialType: 4
           _MaterialSprite: {fileID: 21300000, guid: fb9253746be74c84087711e48fa7075e,
             type: 3}
-          _MaterialKey: Catalog.Material.Azul
+          _MaterialKey: ColorLama.AzulTransparenteNegro
           _Material01: {fileID: 2100000, guid: 7178560b0981a1044a9590dd142d6722, type: 2}
           _Material02: {fileID: 0}
           _Material03: {fileID: 0}
