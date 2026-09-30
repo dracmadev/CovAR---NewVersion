@@ -1,76 +1,146 @@
-/*
 using UnityEngine;
 using Firebase;
+using Firebase.Extensions;
 using Firebase.Messaging;
-using System.Threading.Tasks;
 
-// Aquesta línia només s'activa quan compiles per a Android
-#if UNITY_ANDROID
+#if UNITY_ANDROID && !UNITY_EDITOR
 using UnityEngine.Android;
 #endif
 
 public class FirebaseManager : MonoBehaviour
 {
-    void Start()
+    private FirebaseApp app;
+    private bool messagingInitialized;
+
+    private void Start()
     {
-        // 1. Comprovar dependències (necessari per a ambdós sistemes)
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-            var dependencyStatus = task.Result;
-            if (dependencyStatus == DependencyStatus.Available)
+        FirebaseApp.CheckAndFixDependenciesAsync()
+            .ContinueWithOnMainThread(task =>
             {
+                if (this == null)
+                    return;
+
+                if (task.IsCanceled)
+                {
+                    Debug.LogWarning(
+                        "Comprovació de dependències Firebase cancel·lada.");
+                    return;
+                }
+
+                if (task.IsFaulted)
+                {
+                    Debug.LogException(task.Exception);
+                    return;
+                }
+
+                if (task.Result != DependencyStatus.Available)
+                {
+                    Debug.LogError(
+                        "No s'han pogut resoldre les dependències: "
+                        + task.Result);
+                    return;
+                }
+
+                app = FirebaseApp.DefaultInstance;
                 InitializeFirebase();
-            }
-            else
-            {
-                Debug.LogError("No s'han pogut resoldre les dependències: " + dependencyStatus);
-            }
-        });
+            });
     }
 
-    void InitializeFirebase()
+    private void InitializeFirebase()
     {
-        // 2. Configurem els esdeveniments de recepció
+        if (messagingInitialized)
+            return;
+
         FirebaseMessaging.MessageReceived += OnMessageReceived;
         FirebaseMessaging.TokenReceived += OnTokenReceived;
+        messagingInitialized = true;
 
-        // 3. Obtenir el Token (per fer proves individuals)
-        FirebaseMessaging.GetTokenAsync().ContinueWith(task => {
-            if (task.IsCompleted)
+#if !UNITY_EDITOR && (UNITY_ANDROID || UNITY_IOS)
+        FirebaseMessaging.GetTokenAsync()
+            .ContinueWithOnMainThread(task =>
             {
+                if (this == null)
+                    return;
+
+                if (task.IsCanceled)
+                {
+                    Debug.LogWarning(
+                        "Obtenció del token Firebase cancel·lada.");
+                    return;
+                }
+
+                if (task.IsFaulted)
+                {
+                    Debug.LogException(task.Exception);
+                    return;
+                }
+
                 Debug.Log("Firebase Token: " + task.Result);
-            }
-        });
+            });
 
-        // 4. Llançar la petició de permís segons el sistema
-        Invoke("RequestNotificationPermission", 1.5f);
+        Invoke(nameof(RequestNotificationPermission), 1.5f);
+#endif
 
-        Debug.Log("Firebase Messaging inicialitzat correctament.");
+        Debug.Log("Firebase inicialitzat correctament.");
     }
 
-    void RequestNotificationPermission()
+    private void RequestNotificationPermission()
     {
-#if UNITY_ANDROID
-        // Codi específic per a Android 14 (API 34)
-        if (!Permission.HasUserAuthorizedPermission("android.permission.POST_NOTIFICATIONS"))
+#if UNITY_ANDROID && !UNITY_EDITOR
+        // El permís de notificacions existeix des d'Android 13 (API 33).
+        using (var version =
+               new AndroidJavaClass("android.os.Build$VERSION"))
         {
-            Debug.Log("Demanant permís nativament a Android...");
-            Permission.RequestUserPermission("android.permission.POST_NOTIFICATIONS");
-        }
-#elif UNITY_IOS
-        // Codi per a iPhone (Xcode s'encarregarà de la resta)
-        Debug.Log("Demanant permís a iOS...");
-        FirebaseMessaging.RequestPermissionAsync().ContinueWith(task => {
-            if (task.IsCompleted)
+            int apiLevel = version.GetStatic<int>("SDK_INT");
+
+            const string notificationPermission =
+                "android.permission.POST_NOTIFICATIONS";
+
+            if (apiLevel >= 33 &&
+                !Permission.HasUserAuthorizedPermission(
+                    notificationPermission))
             {
-                Debug.Log("Petició de permís a iOS finalitzada.");
+                Debug.Log("Demanant permís de notificacions a Android...");
+
+                Permission.RequestUserPermission(
+                    notificationPermission);
             }
-        });
+        }
+
+#elif UNITY_IOS && !UNITY_EDITOR
+        Debug.Log("Demanant permís de notificacions a iOS...");
+
+        FirebaseMessaging.RequestPermissionAsync()
+            .ContinueWithOnMainThread(task =>
+            {
+                if (this == null)
+                    return;
+
+                if (task.IsCanceled)
+                {
+                    Debug.LogWarning(
+                        "Petició de permís a iOS cancel·lada.");
+                    return;
+                }
+
+                if (task.IsFaulted)
+                {
+                    Debug.LogException(task.Exception);
+                    return;
+                }
+
+                // Completar la petició no confirma que s'hagi acceptat.
+                Debug.Log("Petició de permís a iOS finalitzada.");
+            });
 #endif
     }
 
-    private void OnMessageReceived(object sender, MessageReceivedEventArgs e)
+    private void OnMessageReceived(
+        object sender,
+        MessageReceivedEventArgs e)
     {
-        Debug.Log("Notificació rebuda!");
+        Debug.Log("Missatge Firebase rebut!");
+
         if (e.Message.Notification != null)
         {
             Debug.Log("Títol: " + e.Message.Notification.Title);
@@ -78,8 +148,21 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    private void OnTokenReceived(object sender, TokenReceivedEventArgs token)
+    private void OnTokenReceived(
+        object sender,
+        TokenReceivedEventArgs token)
     {
-        Debug.Log("Nou Token rebut: " + token.Token);
+        Debug.Log("Nou token Firebase rebut: " + token.Token);
     }
-}*/
+
+    private void OnDestroy()
+    {
+        CancelInvoke();
+
+        if (messagingInitialized)
+        {
+            FirebaseMessaging.MessageReceived -= OnMessageReceived;
+            FirebaseMessaging.TokenReceived -= OnTokenReceived;
+        }
+    }
+}
