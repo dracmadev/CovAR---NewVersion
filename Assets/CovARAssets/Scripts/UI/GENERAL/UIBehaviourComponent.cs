@@ -1012,6 +1012,13 @@ public class UIBehaviourComponent : MonoBehaviour, IPointerDownHandler, IPointer
         }
     }
 
+    public void OnClickForceHideButtonToStartState()
+    {
+        buttonsAreShown = true;
+        Vector3 originalScale = new Vector3(1,1,1);
+        myButton.transform.localScale = originalScale;
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
