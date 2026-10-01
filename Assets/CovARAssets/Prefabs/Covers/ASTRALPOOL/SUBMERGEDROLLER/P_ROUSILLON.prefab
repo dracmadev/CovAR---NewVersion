@@ -800,6 +800,8 @@ MonoBehaviour:
     _BoneSide: 2
     _BoneDirection: 1
     _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -847,6 +849,8 @@ MonoBehaviour:
     _BoneSide: 1
     _BoneDirection: 2
     _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -894,6 +898,8 @@ MonoBehaviour:
     _BoneSide: 0
     _BoneDirection: 0
     _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1083,6 +1089,8 @@ MonoBehaviour:
     _BoneSide: 2
     _BoneDirection: 1
     _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1130,6 +1138,8 @@ MonoBehaviour:
     _BoneSide: 1
     _BoneDirection: 2
     _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1331,6 +1341,8 @@ MonoBehaviour:
     _BoneSide: 2
     _BoneDirection: 1
     _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1378,6 +1390,8 @@ MonoBehaviour:
     _BoneSide: 1
     _BoneDirection: 2
     _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1424,13 +1438,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ARObjectGeneralPart: 1
   _ARObjectPartData:
-    _ARObjectPartType: 10
+    _ARObjectPartType: 3
     _ARObjectPartReference: {fileID: 0}
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
     _BoneDirection: 0
     _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
