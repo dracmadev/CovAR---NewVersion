@@ -18,8 +18,12 @@ MonoBehaviour:
   m_PlatformId: ad48d16a66894befa4d8181998c3cb09
   m_PlatformBuildProfile:
     rid: 7675156793356451930
-  m_OverrideGlobalSceneList: 0
-  m_Scenes: []
+  m_OverrideGlobalSceneList: 1
+  m_Scenes:
+  - m_enabled: 1
+    m_path: Assets/CovARAssets/Scenes/RenolitOne/Scene_Login.unity
+  - m_enabled: 1
+    m_path: Assets/CovARAssets/Scenes/RenolitOne/Scene_ARScene.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
@@ -166,8 +170,16 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 1.80'
-    - line: '|   preloadedAssets: []'
+    - line: '|   bundleVersion: 1.82'
+    - line: '|   preloadedAssets:'
+    - line: '|   - {fileID: 4800000, guid: e7c77f6eaab324a819efdc13b8125a39, type:
+        3}'
+    - line: '|   - {fileID: 4800000, guid: 6743a50a812740be8c0aa3fccc46fae9, type:
+        3}'
+    - line: '|   - {fileID: -2034815329306548863, guid: c515a27da07e9f644850235d5527cd08,
+        type: 2}'
+    - line: '|   - {fileID: 11400000, guid: 8432b1f69b5ca8a43ac9d773c23af13b, type:
+        2}'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   m_HolographicPauseOnTrackingLoss: 1'
@@ -196,7 +208,7 @@ MonoBehaviour:
     - line: '|   buildNumber:'
     - line: '|     Standalone: 0'
     - line: '|     VisionOS: 0'
-    - line: '|     iPhone: 12'
+    - line: '|     iPhone: 1'
     - line: '|     tvOS: 0'
     - line: '|   overrideDefaultApplicationIdentifier: 1'
     - line: '|   AndroidBundleVersionCode: 1144'
@@ -1105,7 +1117,6 @@ MonoBehaviour:
     - line: '|   syncCapabilities: 0'
     - line: '|   platformCapabilities:'
     - line: '|     WindowsStoreApps:'
-    - line: '|       EnterpriseAuthentication: False'
     - line: '|       OfflineMapsManagement: False'
     - line: '|       HumanInterfaceDevice: False'
     - line: '|       Location: False'
@@ -1118,6 +1129,7 @@ MonoBehaviour:
     - line: '|       InternetClientServer: False'
     - line: '|       VideosLibrary: False'
     - line: '|       Objects3D: False'
+    - line: '|       InternetClient: True'
     - line: '|       RemoteSystem: False'
     - line: '|       BlockedChatMessages: False'
     - line: '|       PhoneCall: False'
@@ -1139,9 +1151,9 @@ MonoBehaviour:
     - line: '|       RecordedCallsFolder: False'
     - line: '|       Contacts: False'
     - line: '|       Proximity: False'
-    - line: '|       InternetClient: True'
     - line: '|       CodeGeneration: False'
     - line: '|       BackgroundMediaPlayback: False'
+    - line: '|       EnterpriseAuthentication: False'
     - line: '|   metroTargetDeviceFamilies:'
     - line: '|     Desktop: False'
     - line: '|     Holographic: False'
