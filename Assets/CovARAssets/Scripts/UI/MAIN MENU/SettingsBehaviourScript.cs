@@ -30,8 +30,11 @@ public class SettingsBehaviourScript : MonoBehaviour
             _WebRequestManager = GameObject.FindGameObjectWithTag("WebRequestManager").GetComponent<WebRequestManager>();
         }
 
-
-        _DeleteUserButton.onClick.AddListener(OnClickDeleteUser);
+        if(_DeleteUserButton != null)
+        {
+            _DeleteUserButton.onClick.AddListener(OnClickDeleteUser);
+        }
+           
 
     }
 

@@ -124,6 +124,8 @@ public class HUDManagerScript : MonoBehaviour
         TutorialManager.OnExitTutorial += TravelToMainMenuFromTutorial;
         TutorialManager.OnPreviousPhaseTutorial += TravelToPreviousTutorialPhaseMenu;
 
+        //PlayerPrefs.SetInt("MobileModeCheck", 0);
+       
     }
 
     private void OnDisable()
@@ -297,7 +299,7 @@ public class HUDManagerScript : MonoBehaviour
         currentPanelOnScreenGameObject = GetUIPanelByName(firstPanelToShow);
         currentPanelOnScreenName = firstPanelToShow;
 
-     
+        OnMainMenuCheckTheMobileMode();
         TutorialManager.isTutorialActive = PlayerPrefs.GetInt("Tutorial") == 1;
         TutorialManager.SetPhase(0);
         
@@ -883,6 +885,57 @@ public class HUDManagerScript : MonoBehaviour
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////// MOBILE MODE ACTIONS /////////////////////////////////////////////////////////////////////
+
+
+    void OnMainMenuCheckTheMobileMode()
+    {
+        if (!bOnARScene)
+        {
+            int mobileModeCheck = PlayerPrefs.GetInt("MobileModeCheck", 0);
+
+            if (mobileModeCheck == 0)
+            {
+                Debug.Log("MobileModeCheck = 0, showing MobileModeSubPanel");
+
+                if(GetUISubPanelByName("MobileModeSubPanel") == null)
+                {
+                    Debug.LogError("MobileModeSubPanel not found in HUDManagerScript");
+                    return;
+                }
+
+                if (GetUISubPanelByName("MobileModeSubPanel").GetComponent<UIAnimationComponent>() == null)
+                {
+                    Debug.LogError("UIAnimationComponent not found on MobileModeSubPanel");
+                    return;
+                }
+
+                GetUISubPanelByName("MobileModeSubPanel").GetComponent<UIAnimationComponent>().ShowPannel();
+                PlayerPrefs.SetInt("MobileModeCheck", 1);
+            }
+            else if (mobileModeCheck == 1)
+            {
+                Debug.Log("MobileModeCheck = 1, not showing MobileModeSubPanel");
+                // Fer B: No fer res jejejej
+            }
+        }
+    }
+
+    public void OnClickSetMobileMode(bool active)
+    {
+        if (active)
+        {
+            PlayerPrefs.SetInt("MobileMode", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("MobileMode", 0);
+        }
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 }

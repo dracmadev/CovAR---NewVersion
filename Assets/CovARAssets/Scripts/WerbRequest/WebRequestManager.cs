@@ -19,7 +19,8 @@ public class WebRequestManager : MonoBehaviour
     [SerializeField] private St_OrderData _OrderData;
     [Header("ASTRALPOOL object data:")]
     [SerializeField] private St_AstralpoolProductData _AstralpoolObjectData;
-
+    [Header("CovAR version:")]
+    [SerializeField] private float _CurrentAppVersion;
 
     HUDManagerScript _HUDManagerScript;
     ARObjectManager _ARObjectManager;

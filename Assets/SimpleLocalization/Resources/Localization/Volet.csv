@@ -1033,6 +1033,10 @@ Login.Settings.MovileMode,Modo móvil,Mode mobile,Mobile mode
 Login.Settings.HelpMode,Modo ayuda,Mode d'aide,Help mode
 Login.Settings.RestartTutorial.Text,Hacer tutorial,Créer un tutoriel,Create a tutorial
 Login.Settings.RestartTutorial.Button,Reiniciar,Redémarrage,Reboot
+Login.PopUpMobileMode.Title,¿Que dispositivo está usando?,Quel appareil utilisez-vous ?,What device are you using?
+Login.PopUpMobileMode.Mobile,Dispositivo movil,appareil mobile,Mobile device
+Login.PopUpMobileMode.Tablet,Tablet,Tablet,Tablet
+Login.PopUpMobileMode.Descrip,"Si lo desea, más adelante puede canviar esta opción en el panel de configuración.","Si vous le souhaitez, vous pouvez modifier cette option ultérieurement dans le panneau des paramètres.","If you wish, you can change this option later in the settings panel."
 ,,,
 ,,,
 ,,,
