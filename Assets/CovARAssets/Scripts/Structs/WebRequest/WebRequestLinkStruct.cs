@@ -23,7 +23,7 @@ public class St_WebRequestLinkStruct
     public string _DeleteUserURL_BacPoolSystem;
     [Header("[GENERAL] -> CREATE USER LINK:")]
     public string _GetUserCompanyURL;
-    
+    public string _CheckLastAppVersion;
     [Header("AR SCENE LINKS:")]
     [Header("[ASTRALPOOL]")]
     public string _GetUserIDURL_Astralpool;

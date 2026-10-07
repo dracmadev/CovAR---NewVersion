@@ -51,6 +51,8 @@ public class WebRequestManager : MonoBehaviour
             _ARObjectManager = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
         }
 
+        
+
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1004,5 +1006,62 @@ public class WebRequestManager : MonoBehaviour
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+
+    ////////////////////////////////////////////////////////// APP VERSION BEHAVIOUR //////////////////////////////////////////////////////////
+    
+    public void WR_CheckAppVersion()
+    {
+        StartCoroutine(CheckAppVersionCoroutine());
+    }
+
+    IEnumerator CheckAppVersionCoroutine()
+    {
+        WWWForm form = new WWWForm();
+
+        string versionToSend = _CurrentAppVersion.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        form.AddField("appVersion", versionToSend);
+
+        using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._CheckLastAppVersion, form))
+        {
+            yield return www.SendWebRequest();
+           
+            string responseText = www.downloadHandler.text.Trim();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"[MISSATGE DE PHP] Result: {www.result} | Error: {www.error}");
+            }
+            else
+            {
+                Debug.Log("[MISSATGE DE PHP] CheckAppVersion: " + responseText);
+               
+                if (responseText == "appNotUpdated")
+                {
+                   Debug.Log("App is not updated, please update to the last version");
+                   _HUDManagerScript.GetUISubPanelByName("UpdateAppSubPanel").GetComponent<UIAnimationComponent>().ShowPannel();
+                }
+                else if (responseText == "appUpdated")
+                {
+                   Debug.Log("App is updated to the last version");
+                }
+                else
+                {
+                   Debug.Log("Error checking app version");
+                }
+            }
+        }
+    }
+
+    public void OnClickOpenMarketsOfCovAR()
+    {
+#if UNITY_IOS
+    Application.OpenURL("https://apps.apple.com/us/app/covar/id6754699058");
+#elif UNITY_ANDROID
+        Application.OpenURL("https://play.google.com/store/apps/details?id=com.Arpool.Covar");
+#endif
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }

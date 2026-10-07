@@ -1037,6 +1037,12 @@ Login.PopUpMobileMode.Title,¿Que dispositivo está usando?,Quel appareil utilis
 Login.PopUpMobileMode.Mobile,Dispositivo movil,appareil mobile,Mobile device
 Login.PopUpMobileMode.Tablet,Tablet,Tablet,Tablet
 Login.PopUpMobileMode.Descrip,"Si lo desea, más adelante puede canviar esta opción en el panel de configuración.","Si vous le souhaitez, vous pouvez modifier cette option ultérieurement dans le panneau des paramètres.","If you wish, you can change this option later in the settings panel."
+Login.UpdateAppPopUp.Title,Actualización disponible,Mise à jour disponible,Update available
+Login.UpdateAppPopUp.Descrip,Se recomienda actualizar a la última versión.,Il est recommandé de mettre à jour vers la dernière version.,It is recommended to update to the latest version.
+Login.UpdateAppPopUp.Update,Actualizar,Mise à jour,Update
+Login.UpdateAppPopUp.Close,Más tarde,Plus tard,Later
+,,,
+,,,
 ,,,
 ,,,
 ,,,

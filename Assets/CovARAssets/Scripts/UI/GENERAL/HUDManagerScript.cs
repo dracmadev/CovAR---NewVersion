@@ -63,6 +63,7 @@ public class HUDManagerScript : MonoBehaviour
     private bool isSubTraveling = false;
     float deltaTime;
 
+    private WebRequestManager _WebRequestManager;
     private ARObjectManager _ARObjectManager;
     private List<MovingFLuidraLogoScript> _MovingFLuidraLogoScript = new List<MovingFLuidraLogoScript>();
 
@@ -95,6 +96,11 @@ public class HUDManagerScript : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("ARObjectManager"))
         {
             _ARObjectManager = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
+        }
+
+        if (GameObject.FindGameObjectWithTag("WebRequestManager"))
+        {
+            _WebRequestManager = GameObject.FindGameObjectWithTag("WebRequestManager").GetComponent<WebRequestManager>();
         }
 
         GameObject[] logos = GameObject.FindGameObjectsWithTag("FluidraLogoObj");
@@ -299,7 +305,13 @@ public class HUDManagerScript : MonoBehaviour
         currentPanelOnScreenGameObject = GetUIPanelByName(firstPanelToShow);
         currentPanelOnScreenName = firstPanelToShow;
 
-        OnMainMenuCheckTheMobileMode();
+        if(!bOnARScene)
+        {
+            _WebRequestManager.WR_CheckAppVersion();
+            OnMainMenuCheckTheMobileMode();
+        }
+
+       
         TutorialManager.isTutorialActive = PlayerPrefs.GetInt("Tutorial") == 1;
         TutorialManager.SetPhase(0);
         
@@ -936,6 +948,9 @@ public class HUDManagerScript : MonoBehaviour
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+
+ 
 
 
 }
