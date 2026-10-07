@@ -161,11 +161,11 @@ public class WebRequestManager : MonoBehaviour
 
     IEnumerator WR_LoginAstralpoolCoroutine(string email, string password, HelperTextBehaviourScript _HelperText, Button loginButton)
     {
-        if (email != "" || password != "")
+        if (email != "")
         {
             WWWForm form = new WWWForm();
             form.AddField("correo", email);
-            form.AddField("loginPass", password);
+            //form.AddField("loginPass", password);
 
             using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._LoginLinkURL_Astralpool, form))
             {
@@ -183,7 +183,7 @@ public class WebRequestManager : MonoBehaviour
                     string echo = www.downloadHandler.text;
 
                     PlayerPrefs.SetString("UserEmail", email);
-                    PlayerPrefs.SetString("UserPassword", password);
+                    //PlayerPrefs.SetString("UserPassword", password);
                     PlayerPrefs.Save();
 
                     if (echo.StartsWith("loginCorrecto"))
@@ -208,11 +208,11 @@ public class WebRequestManager : MonoBehaviour
 
     IEnumerator WR_LoginBacPoolSystemCoroutine(string email, string password, HelperTextBehaviourScript _HelperText, Button loginButton)
     {
-        if (email != "" || password != "")
+        if (email != "" )
         {
             WWWForm form = new WWWForm();
             form.AddField("correo", email);
-            form.AddField("loginPass", password);
+            //form.AddField("loginPass", password);
 
             using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._LoginLinkURL_BacPoolSystem, form))
             {
@@ -226,11 +226,11 @@ public class WebRequestManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("[MISSATGE DE PHP] AstralPool Login: " + www.downloadHandler.text);
+                    Debug.Log("[MISSATGE DE PHP] BAC POOL SYSTEM Login: " + www.downloadHandler.text);
                     string echo = www.downloadHandler.text;
 
                     PlayerPrefs.SetString("UserEmail", email);
-                    PlayerPrefs.SetString("UserPassword", password);
+                   // PlayerPrefs.SetString("UserPassword", password);
                     PlayerPrefs.Save();
 
                     if (echo.StartsWith("loginCorrecto"))
