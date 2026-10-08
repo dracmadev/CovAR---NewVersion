@@ -83,7 +83,8 @@ public class APBasicInfoBlock : MonoBehaviour
 
         //TOP CLADDING
         //Debug.Log("TOP CLADDING MATERIAL: " + _ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialType);
-        if (_ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialType != E_MaterialType.None)
+        
+        if (_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType == E_ProductType.BencheAndCladdings && _ARObjectManager.GetCovARObjectData()._CurrentCompany._CompanyType == E_CompanyType.Astralpool)
         {
             _CanvasGroupTopCladdingBlock.alpha = 1f;
             _CurrentTopCladdingColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialKey);
@@ -96,7 +97,7 @@ public class APBasicInfoBlock : MonoBehaviour
         }
 
         //SIDES CLADDING
-        if (_ARObjectManager.GetCovARObjectData()._CurrentSidesCladdingMaterial._MaterialType != E_MaterialType.None)
+        if (_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType == E_ProductType.BencheAndCladdings && _ARObjectManager.GetCovARObjectData()._CurrentCompany._CompanyType == E_CompanyType.Astralpool)
         {
             _CanvasGroupSidesCladdingBlock.alpha = 1f;
             _CurrentSidesCladdingColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentSidesCladdingMaterial._MaterialKey);

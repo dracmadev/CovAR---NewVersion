@@ -20,5 +20,6 @@ public enum E_ARObjectParts
     IsolaCover = 15,
     FootLeft_Cladding = 16,
     FootRight_Cladding = 17,
+    Mask = 18,
 
 }

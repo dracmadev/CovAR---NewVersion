@@ -243,7 +243,11 @@ public class TutorialStepManager : MonoBehaviour
 
                 if (_HUDManagerScript != null)
                 {
-                    _HUDManagerScript.DeselectAllUIFromSpecificPanel(_HUDManagerScript.GetCurrentPanelOnScreenObj());
+                    if(_HUDManagerScript.GetCurrentPanelOnScreenObj() != null)
+                    {
+                        _HUDManagerScript.DeselectAllUIFromSpecificPanel(_HUDManagerScript.GetCurrentPanelOnScreenObj()); //AQUI
+                    }
+                    
                     _HUDManagerScript.HideAllOfSubMenus();
 
                     /*if (_HUDManagerScript.GetCurrentPanelOnScreenName() != "AP_ManipulateGroundRollerPanel")

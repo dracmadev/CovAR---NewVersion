@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class ARObjectManager : MonoBehaviour
 {
@@ -1170,14 +1171,14 @@ public class ARObjectManager : MonoBehaviour
                     case E_ProductType.None: break;
                     case E_ProductType.GroundRollerCover: _CovARObjectData._CurrentModelModel = model;
 
-                        _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
+                        //_CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
+                        //_CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
 
                         break;
                     case E_ProductType.SubmergedRollerCover: _CovARObjectData._CurrentModelModel = model;
 
-                        _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
+                        //_CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
+                        //_CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
 
                         break;
                     case E_ProductType.BencheAndCladdings: 
@@ -1207,8 +1208,8 @@ public class ARObjectManager : MonoBehaviour
                         _CovARObjectData._CurrentModelModel = model;
                         _CovARObjectData._CurrentFabricCoverModel = model;
 
-                        _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
+                        //_CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
+                        //_CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
                         break;
 
                     case E_ProductType.Lamas: _CovARObjectData._CurrentLamasModel = model;
@@ -1217,15 +1218,15 @@ public class ARObjectManager : MonoBehaviour
                     case E_ProductType.DeckMountedIsolaCover:
                         _CovARObjectData._CurrentModelModel = model;
 
-                        _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
+                        //_CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
+                        //_CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
 
                         break;
                     case E_ProductType.DeckMountedSlattedCover:
                         _CovARObjectData._CurrentModelModel = model;
 
-                        _CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        _CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
+                        //_CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
+                        //_CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
 
                         break;
                     case E_ProductType.IsolaCover:
@@ -2251,11 +2252,13 @@ public class ARObjectManager : MonoBehaviour
         {
             bIsPoolActive = false;
             DesactivePoolObj();
+            GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectMaskState(true);
         }
         else
         {
             bIsPoolActive = true;
             ActivePoolObj(_CurrentARObject, _PoolPrefab);
+            GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectMaskState(false);
         }
     }
 
@@ -2361,12 +2364,50 @@ public class ARObjectManager : MonoBehaviour
     
     public void OnClickRestartProject()
     {
+        /*
+        if(_HUDManagerScrit != null)
+        {
+            _HUDManagerScrit.HideAllOfSubMenus();
+        }
+
+
+        if (bIsPoolActive)
+        {
+            bIsPoolActive = false;
+            DesactivePoolObj();
+            GetCurrentARObject().GetComponent<ARObjectScript>().SetARObjectMaskState(true);
+        }
+
+        _CovARObjectData._CurrentARObjectLenght = 1f;
+        _CovARObjectData._CurrentLamasLenght = 0f;
+
+        _CurrentProductSelected = GetFirstProductFromCurrentCompany(_CovARObjectData._CurrentCompany);
+        _CurrentModelSelected = GetFirstModelFromCurrentProduct(_CurrentProductSelected);
+        _CurrentMaterialSelected  = GetFirstMaterialFromCurrentModel(_CovARObjectData._CurrentModelModel);
+
+
+        _CovARObjectData._CurrentModelProduct = _CurrentProductSelected;
+        _CovARObjectData._CurrentModelModel = _CurrentModelSelected;
+        _CovARObjectData._CurrentModelMaterial = _CurrentMaterialSelected;
+       
+      
+        _CovARObjectData._CurrentLamasModel = GetFirstModelFromCurrentProduct(_CovARObjectData._CurrentModelProduct);
+        _CovARObjectData._CurrentLamasMaterial = GetFirstMaterialFromCurrentModel(_CovARObjectData._CurrentLamasModel);
+
+
+       
+
+      
+
         Destroy(GetCurrentARObject());
         SetActivePlaneFinder(true);
         SetIsObjectPlacedState(false);
         _HUDManagerScrit.TravelToPanel("PlaneFinderPanel");
+        */
+
+        SceneManager.LoadScene("Scene_ARScene");
     }
-    
+
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

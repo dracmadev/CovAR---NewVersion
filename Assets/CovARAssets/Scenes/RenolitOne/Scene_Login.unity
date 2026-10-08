@@ -21740,7 +21740,7 @@ PrefabInstance:
     - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
         type: 3}
       propertyPath: _CurrentAppVersion
-      value: 1.81
+      value: 1.83
       objectReference: {fileID: 0}
     - target: {fileID: 7371051676014136714, guid: e31a8feccfb5af743990e79c842d6ec4,
         type: 3}
