@@ -411,7 +411,7 @@ Catalog.Material.TranslucedSmokey,Transluced Smokey,Fumé translucide,Translucen
 Catalog.Material.Gray&Gray,Gris & Gris,Gris & Gris,Gris & Gris
 Catalog.Material.Sipo&Sipo,Sipo Mahagoni & Sipo Mahagoni,Sipo Mahagoni & Sipo Mahagoni,Sipo Mahagoni & Sipo Mahagoni
 Catalog.Material.AcoeWithCladding,Con revestimiento ,Avec revêtement,With cladding
-Catalog.Material.NoSideCladding,Quitar revesitimientos laterales,Retirer les revêtement latéral,Remove side claddings
+Catalog.Material.NoSideCladding,Sin revesitimientos laterales,Sans doublure latérale,Without side claddings
 Catalog.CatalogPanel.SelectProduct,Producto:,Produit:,Product:
 Catalog.Lamas.Model.PVC,PVC,PVC,PVC
 Catalog.Lamas.Model.Policarbonat,Policarbonato,Polycarbonate,Polycarbonate
