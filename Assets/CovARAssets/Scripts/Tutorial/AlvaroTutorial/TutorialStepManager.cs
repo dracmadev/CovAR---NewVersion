@@ -42,6 +42,8 @@ public class TutorialStepManager : MonoBehaviour
     [SerializeField] private GameObject _HideLeftButtons;
     [SerializeField] private GameObject _HideRightButtons;
     [SerializeField] private GameObject _SettingsButton;
+    [SerializeField] private GameObject _RestartButton;
+
 
     HUDManagerScript _HUDManagerScript;
     ARObjectManager _ARObjectManager;
@@ -415,13 +417,7 @@ public class TutorialStepManager : MonoBehaviour
                 SetButtonsState("TakePhotoButton", true);
                 break;
             case E_TutorialActions.OnCreatePool:
-                if (_HUDManagerScript != null)
-                {
-                    if (_HUDManagerScript.GetCurrentPanelOnScreenName() == "CatalogPanel")
-                    {
-                        _HUDManagerScript.TravelToPanel("AP_ManipulateGroundRollerPanel");
-                    }
-                }
+               
                 SetButtonsState("All", false);
                 SetButtonsState("CreatePoolButton", true);
                 break;
@@ -483,7 +479,17 @@ public class TutorialStepManager : MonoBehaviour
                 }
                 SetButtonsState("All", true);
                 break;
-
+            case E_TutorialActions.OnShowRestartProject:
+                if (_HUDManagerScript != null)
+                {
+                    if (_HUDManagerScript.GetCurrentPanelOnScreenName() == "CatalogPanel")
+                    {
+                        _HUDManagerScript.TravelToPanel("AP_ManipulateGroundRollerPanel");
+                    }
+                }
+                SetButtonsState("All", false);
+                SetButtonsState("RestartButton", true);
+                break;
         }
     }
 
@@ -615,6 +621,9 @@ public class TutorialStepManager : MonoBehaviour
                     }
                 }
                 break;
+            case E_TutorialActions.OnShowRestartProject:
+               
+                break;
         }
     }
 
@@ -681,6 +690,7 @@ public class TutorialStepManager : MonoBehaviour
             case "HideLeftButtons": _HideLeftButtons.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
             case "HideRightButtons": _HideRightButtons.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
             case "SettingsButton": _SettingsButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
+            case "RestartButton":_RestartButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); break;
             case "All": _MoveObjButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
                 _RotateObjButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
                 _SetObjLenghtButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
@@ -692,6 +702,7 @@ public class TutorialStepManager : MonoBehaviour
                 _HideLeftButtons.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
                 _HideRightButtons.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state); 
                 _SettingsButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
+                _RestartButton.GetComponent<UIBehaviourComponent>().InitNotAviableFeatureBehaviour(state);
 
                 _MoveObjButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
                 _RotateObjButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
@@ -700,6 +711,8 @@ public class TutorialStepManager : MonoBehaviour
                 _OpenBlueprintButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
                 _CatalogButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
                 _CreatePoolButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
+                _RestartButton.GetComponent<UIBehaviourComponent>().SetStateOfOnClickAnim(false);
+
                 break;
        }
     }

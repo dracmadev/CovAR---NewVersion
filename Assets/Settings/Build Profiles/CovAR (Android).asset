@@ -170,7 +170,7 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 1.81'
+    - line: '|   bundleVersion: 1.83'
     - line: '|   preloadedAssets: []'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
@@ -203,7 +203,7 @@ MonoBehaviour:
     - line: '|     iPhone: 0'
     - line: '|     tvOS: 0'
     - line: '|   overrideDefaultApplicationIdentifier: 1'
-    - line: '|   AndroidBundleVersionCode: 1148'
+    - line: '|   AndroidBundleVersionCode: 1149'
     - line: '|   AndroidMinSdkVersion: 29'
     - line: '|   AndroidTargetSdkVersion: 0'
     - line: '|   AndroidPreferredInstallLocation: 1'
@@ -1103,7 +1103,7 @@ MonoBehaviour:
     - line: '|   syncCapabilities: 0'
     - line: '|   platformCapabilities:'
     - line: '|     WindowsStoreApps:'
-    - line: '|       CodeGeneration: False'
+    - line: '|       EnterpriseAuthentication: False'
     - line: '|       OfflineMapsManagement: False'
     - line: '|       HumanInterfaceDevice: False'
     - line: '|       Location: False'
@@ -1136,10 +1136,10 @@ MonoBehaviour:
     - line: '|       PointOfService: False'
     - line: '|       RecordedCallsFolder: False'
     - line: '|       Contacts: False'
-    - line: '|       Proximity: False'
     - line: '|       InternetClient: True'
+    - line: '|       CodeGeneration: False'
     - line: '|       BackgroundMediaPlayback: False'
-    - line: '|       EnterpriseAuthentication: False'
+    - line: '|       Proximity: False'
     - line: '|   metroTargetDeviceFamilies:'
     - line: '|     Desktop: False'
     - line: '|     Holographic: False'
@@ -1240,6 +1240,6 @@ MonoBehaviour:
         m_DebugSymbolFormat: 5
         m_CurrentDeploymentTargetId: __builtin__target_default
         m_BuildType: 2
-        m_BuildAppBundle: 1
+        m_BuildAppBundle: 0
         m_IPAddressToConnect: 
         m_SymlinkSources: 0

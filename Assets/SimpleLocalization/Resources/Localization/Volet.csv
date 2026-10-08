@@ -431,17 +431,22 @@ Catalog.Lamas.Material.Title,Material,Matériel,Material
 InGame.PlaneFinderPanel.InfoText,"Apunte hacia el suelo hasta que aparezca una marca, a continuación, púlsela.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
 InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit
 InGame.Help.Mode.Movment,Mover modelo,Sélectionnez un modèle de volet,Move model
-InGame.Help.Mode.MovmentDescrip,Permite mover el modelo de cubierta arrastrando el modelo con el dedo.,Il vous permet de déplacer le modèle de couverture en le faisant glisser avec votre doigt.,Il vous permet de déplacer le modèle de couverture en le faisant glisser avec votre doigt.
-InGame.Help.Mode.Rotation,Rotar modelo,Modèle de rotation,Modèle de rotation
-InGame.Help.Mode.RotationDescrip,Permite rotar el modelo con el la barra deslizadora.,Il vous permet de faire pivoter le modèle à l'aide de la barre de défilement.,Il vous permet de faire pivoter le modèle à l'aide de la barre de filetage.
-InGame.Help.Mode.SetModelLenght,Anchura del modelo,Largeur du modèle,Largeur du
-InGame.Help.Mode.SetModelLenghtDescrip,Permite modificar la anchura del modelo con la barra deslizadora,Permet de modifier la largeur du modèle à l'aide du curseur.,Permet de modifier la largeur du modèle à l'aide du parcours.
-InGame.Help.Mode.SetLamasLenght,Longitud de la persiana,Longueur de l'aveugle,Durée de la cécité
-InGame.Help.Mode.SetLamasLenghtDescrip,Permite modificar la longitud de la persiana con la barra deslizadora,Elle permet de régler la longueur du store grâce à la barre coulissante.,Elle permet d'ajuster la longueur du magasin grâce à la barre coulissante.
-InGame.Help.Mode.Blueprint,Plano técnico,dessin technique,technique de dessin
-InGame.Help.Mode.BlueprintDescrip,Permite acceder al plano tècnico del modelo seleccionado,Il permet d'accéder au dessin technique du modèle sélectionné.,Il permet d'accéder au dessin technique du modèle sélectionné.
-InGame.Help.Mode.Catalogo,Catálogo,Catalogue,Catalogue
-InGame.Help.Mode.CatalogDescrip,"Accede al catalogo completo para poder cambiar el modelo, el color, el material de las lamas o su color.","Accédez au catalogue complet pour modifier le modèle, la couleur, le matériau des lattes ou la couleur.","Accédez au catalogue complet pour modifier le modèle, la couleur, la matière des lattes ou la couleur."
+InGame.Help.Mode.MovmentDescrip,Permite mover el modelo de cubierta arrastrando el modelo con el dedo.,Il vous permet de déplacer le modèle de couverture en le faisant glisser avec votre doigt.,It allows you to move the cover model by dragging the model with your finger.
+InGame.Help.Mode.Rotation,Rotar modelo,Modèle de rotation,Rotate model
+InGame.Help.Mode.RotationDescrip,Permite rotar el modelo con el la barra deslizadora.,Il vous permet de faire pivoter le modèle à l'aide de la barre de défilement.,It allows you to rotate the model using the slider bar.
+InGame.Help.Mode.SetModelLenght,Anchura del modelo,Largeur du modèle,Model width
+InGame.Help.Mode.SetModelLenghtDescrip,Permite modificar la anchura del modelo con la barra deslizadora,Permet de modifier la largeur du modèle à l'aide du curseur.,Allows you to modify the width of the model using the slider bar.
+InGame.Help.Mode.SetLamasLenght,Longitud de la persiana,Longueur de l'aveugle,Length of the blind
+InGame.Help.Mode.SetLamasLenghtDescrip,Permite modificar la longitud de la persiana con la barra deslizadora,Elle permet de régler la longueur du store grâce à la barre coulissante.,It allows you to adjust the length of the blind using the sliding bar.
+InGame.Help.Mode.Blueprint,Plano técnico,dessin technique,Technical drawing
+InGame.Help.Mode.BlueprintDescrip,Permite acceder al plano tècnico del modelo seleccionado,Il permet d'accéder au dessin technique du modèle sélectionné.,It allows access to the technical drawing of the selected model
+InGame.Help.Mode.Catalogo,Catálogo,Catalogue,Catalog
+InGame.Help.Mode.CatalogDescrip,"Accede al catalogo completo para poder cambiar el modelo, el color, el material de las lamas o su color.","Accédez au catalogue complet pour modifier le modèle, la couleur, le matériau des lattes ou la couleur.","Access the complete catalog to change the model, color, slat material, or color."
+InGame.RestarPopUp.Title,Reiniciar proyecto,Projet de redémarrage,Restart project
+InGame.RestarPopUp.Descrip,¿Desea reiniciar su proyecto? Al hacerlo eliminará el objeto actual y empezará de zero un nuevo proyecto.,Souhaitez-vous redémarrer votre projet ? Cette action supprimera l’objet actuel et créera un nouveau projet à partir de zéro.,Do you want to restart your project? Doing so will delete the current object and start a new project from scratch.
+InGame.RestarPopUp.Restart,Reiniciar,Redémarrage,Restart 
+,,,
+,,,
 ,,,
 ,,,
 ,,,
@@ -1089,3 +1094,5 @@ Tutorial.Info16.Descrip,Debe rellenar la información solicitada antes de accede
 Tutorial.Info17.Descrip,Visualize de manera organizada y fácil toda la información sobre el proyecto que ha creado. También puede editar diferentes campos para complementar los elementos asociados a la cubierta,Consultez facilement et de manière organisée toutes les informations relatives au projet que vous avez créé. Vous pouvez également modifier différents champs pour ajouter des détails sur la toiture.,Easily view all the information about the project you've created in an organized way. You can also edit different fields to add details about the roof.
 Tutorial.Info18.Title,Fin del tutorial,Fin du tutoriel,End of tutorial
 Tutorial.Info18.Descrip,"Si tiene alguna duda, puede repetir este tutorial siempre que quiera desde el apartado de ""Reniciar tutorial"" en opciones. Pulse “Siguiente” o cierre el tutorial para pasar al modo de manipulación libre.","Si vous avez des questions, vous pouvez répéter ce tutoriel autant de fois que vous le souhaitez depuis la section « Recommencer le tutoriel » des options. Appuyez sur « Suivant » ou fermez le tutoriel pour passer en mode de manipulation libre.","If you have any questions, you can repeat this tutorial as often as you like from the ""Restart Tutorial"" section in the options. Press ""Next"" or close the tutorial to enter free manipulation mode."
+Tutorial.Info19.Title,Reiniciar proyecto,Projet de redémarrage,Restart project
+Tutorial.Info19.Descrip,"Este botón te permite reiniciar el proyecto actual, eliminando el objeto en pantalla para empezar un nuevo proyecto.","Ce bouton vous permet de redémarrer le projet en cours, en supprimant l'objet à l'écran pour démarrer un nouveau projet.","This button allows you to restart the current project, removing the object on screen to start a new project."

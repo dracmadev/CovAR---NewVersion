@@ -19,4 +19,5 @@ public enum E_TutorialActions
     OnShowBlueprint = 14,
     OnBlueprint = 15,   
     OnEndTutorial = 16,
+    OnShowRestartProject = 17,
 }

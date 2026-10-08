@@ -1,6 +1,7 @@
 using Assets.SimpleLocalization.Scripts;
 using System.Collections;
 using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -21,6 +22,7 @@ public class WebRequestManager : MonoBehaviour
     [SerializeField] private St_AstralpoolProductData _AstralpoolObjectData;
     [Header("CovAR version:")]
     [SerializeField] private float _CurrentAppVersion;
+    [SerializeField] private TMP_Text _AppVersionText;
 
     HUDManagerScript _HUDManagerScript;
     ARObjectManager _ARObjectManager;
@@ -1012,6 +1014,10 @@ public class WebRequestManager : MonoBehaviour
     
     public void WR_CheckAppVersion()
     {
+        if(_AppVersionText != null)
+        {
+            _AppVersionText.text = _CurrentAppVersion.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        }
         StartCoroutine(CheckAppVersionCoroutine());
     }
 
