@@ -23,10 +23,13 @@ public class WebRequestManager : MonoBehaviour
     [Header("CovAR version:")]
     [SerializeField] private float _CurrentAppVersion;
     [SerializeField] private TMP_Text _AppVersionText;
+    [Header("UI components needed (MainMenu):")]
+    [SerializeField] private SimpleMainMenuLoginBehaviour _SimpleMainMenuLoginBehaviour;
+
 
     HUDManagerScript _HUDManagerScript;
     ARObjectManager _ARObjectManager;
-
+   
 
     void Start()
     {
@@ -172,6 +175,11 @@ public class WebRequestManager : MonoBehaviour
             form.AddField("correo", email);
             //form.AddField("loginPass", password);
 
+            if(_SimpleMainMenuLoginBehaviour != null)
+            {
+                _SimpleMainMenuLoginBehaviour.SetLoginCGState(false);
+            }
+
             using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._LoginLinkURL_Astralpool, form))
             {
                 yield return www.SendWebRequest();
@@ -193,16 +201,27 @@ public class WebRequestManager : MonoBehaviour
 
                     if (echo.StartsWith("loginCorrecto"))
                     {
-                        _HUDManagerScript.OnClickMoveToScene("Scene_ARScene");
+                        //_HUDManagerScript.OnClickMoveToScene("Scene_ARScene");
+                        WR_GetCountry();
                         loginButton.gameObject.SetActive(true);
                     }
                     else if (echo == "loginIncorrecto")
                     {
+                        if (_SimpleMainMenuLoginBehaviour != null)
+                        {
+                            _SimpleMainMenuLoginBehaviour.SetLoginCGState(true);
+                        }
+
                         _HelperText.ShowLoginIncorrectMessage("loginIncorrecto");
                         loginButton.gameObject.SetActive(true);
                     }
                     else
                     {
+                        if (_SimpleMainMenuLoginBehaviour != null)
+                        {
+                            _SimpleMainMenuLoginBehaviour.SetLoginCGState(true);
+                        }
+
                         _HelperText.ShowLoginIncorrectMessage("Error");
                         loginButton.gameObject.SetActive(true);
                     }
@@ -218,6 +237,11 @@ public class WebRequestManager : MonoBehaviour
             WWWForm form = new WWWForm();
             form.AddField("correo", email);
             //form.AddField("loginPass", password);
+
+            if (_SimpleMainMenuLoginBehaviour != null)
+            {
+                _SimpleMainMenuLoginBehaviour.SetLoginCGState(false);
+            }
 
             using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._LoginLinkURL_BacPoolSystem, form))
             {
@@ -240,7 +264,8 @@ public class WebRequestManager : MonoBehaviour
 
                     if (echo.StartsWith("loginCorrecto"))
                     {
-                        _HUDManagerScript.OnClickMoveToScene("Scene_ARScene");
+                        //_HUDManagerScript.OnClickMoveToScene("Scene_ARScene");
+                        WR_GetCountry();
                         loginButton.gameObject.SetActive(true);
                     }
                     else if (echo == "loginIncorrecto")
@@ -278,6 +303,7 @@ public class WebRequestManager : MonoBehaviour
             loginButton.gameObject.SetActive(true);
         }
     }
+
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1069,5 +1095,123 @@ public class WebRequestManager : MonoBehaviour
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    /////////////////////////////////////////////////////////// COUNTRY BEHAVIOUR ////////////////////////////////////////////////////////////
+
+    public void WR_GetCountry()
+    {
+        StartCoroutine(GetCountryCoroutine());
+    }
+
+    IEnumerator GetCountryCoroutine()
+    {
+        WWWForm form = new WWWForm();
+
+        string company = GetCurrentCompany().ToString();
+        string emailSaved = PlayerPrefs.GetString("UserEmail");
+       
+        
+        form.AddField("email", emailSaved);
+        form.AddField("company", company); //  None, Astralpool,  BACPoolSystems 
+
+        using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._GetCountryFromSpecificCompany, form))
+        {
+            yield return www.SendWebRequest();
+
+            string responseText = www.downloadHandler.text.Trim();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"[MISSATGE DE PHP] Result: {www.result} | Error: {www.error}");
+            }
+            else
+            {
+                Debug.Log("[MISSATGE DE PHP] GetCountryCoroutine: " + responseText  + "     ||   Email: " + emailSaved + " // Company: " + company);
+
+                if (responseText == "None")
+                {
+                    if(_SimpleMainMenuLoginBehaviour != null)
+                    {
+                        _SimpleMainMenuLoginBehaviour.SetCountryCGState(true);
+                    }
+                        
+                }
+                else if (responseText == "IsCorrect")
+                {
+                   
+                    _HUDManagerScript.OnClickMoveToScene("Scene_ARScene");
+                  
+                }
+                else
+                {
+                   
+                }
+            }
+        }
+    }
+
+
+    public void WR_SetCountry(string newCountry, HelperTextBehaviourScript _HelperText)
+    {
+        StartCoroutine(SetCountryCoroutine(newCountry, _HelperText));
+    }
+
+    IEnumerator SetCountryCoroutine(string newCountry, HelperTextBehaviourScript _HelperText)
+    {
+        WWWForm form = new WWWForm();
+
+        string company = GetCurrentCompany().ToString();
+        string emailSaved = PlayerPrefs.GetString("UserEmail");
+
+
+        form.AddField("email", emailSaved);
+        form.AddField("company", company); //  None, Astralpool,  BACPoolSystems 
+        form.AddField("country", newCountry);
+
+        if (_SimpleMainMenuLoginBehaviour != null)
+        {
+            _SimpleMainMenuLoginBehaviour.SetCountryCGState(false);
+        }
+
+        _HelperText.ShowLoginCorrectMessage("LoginWait");
+
+        using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._SetCountryFromSpecificCompany, form))
+        {
+            yield return www.SendWebRequest();
+
+            string responseText = www.downloadHandler.text.Trim();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"[MISSATGE DE PHP] Result: {www.result} | Error: {www.error}");
+            }
+            else
+            {
+                Debug.Log("[MISSATGE DE PHP] SetCountryCoroutine: " + responseText + "     ||   NewCountry: " + newCountry);
+
+                if (responseText == "IsCorrect")
+                {
+                    if (_SimpleMainMenuLoginBehaviour != null)
+                    {
+                        _SimpleMainMenuLoginBehaviour.SetLoginCGState(true);
+                    }
+
+                    _HUDManagerScript.OnClickMoveToScene("Scene_ARScene");
+
+                }
+                else
+                {
+                    _HelperText.ShowLoginIncorrectMessage("Error");
+
+                    if (_SimpleMainMenuLoginBehaviour != null)
+                    {
+                        _SimpleMainMenuLoginBehaviour.SetLoginCGState(true);
+                    }
+                }
+            }
+        }
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }

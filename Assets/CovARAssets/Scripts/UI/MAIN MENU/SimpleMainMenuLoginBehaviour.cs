@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,10 @@ public class SimpleMainMenuLoginBehaviour : MonoBehaviour
     [Space()]
     [SerializeField] private TMP_InputField _EmailName;
     [SerializeField] private Button _LoginButton;
+    [SerializeField] private TMP_Dropdown _CountryDropdown;
+    [SerializeField] private Button _AcceptCountry;
+    [SerializeField] private CanvasGroup _LoginCG;
+    [SerializeField] private CanvasGroup _SetCountryCG;
     [SerializeField] private HelperTextBehaviourScript _HelperText;
 
 
@@ -34,6 +39,8 @@ public class SimpleMainMenuLoginBehaviour : MonoBehaviour
         }
 
         _LoginButton.onClick.AddListener(OnClickLoginBehaviour);
+
+        _AcceptCountry.onClick.AddListener(OnClickSetCountryBehaviour);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -61,5 +68,52 @@ public class SimpleMainMenuLoginBehaviour : MonoBehaviour
         }
 
     }
+
+    void OnClickSetCountryBehaviour()
+    {
+        if (_WebRequestManager != null)
+        {
+            _WebRequestManager.WR_SetCountry(GetDropdownValueAsString(), _HelperText);
+        }
+    }
+
+   
+
+    string GetDropdownValueAsString()
+    {
+        string answer = "None";
+
+        switch (_CountryDropdown.value)
+        {
+            case 0: answer = "Spain"; break;
+            case 1: answer = "Portugal"; break;
+            case 2: answer = "France"; break;
+        }
+        return answer;
+    }
+
+
+    public void SetLoginCGState(bool newState)
+    {
+        _LoginCG.DOKill();
+
+        _LoginCG.interactable = newState;
+        _LoginCG.blocksRaycasts = newState;
+
+        _LoginCG.DOFade(newState ? 1f : 0f, 0.2f).SetEase(Ease.OutSine);
+    }
+
+    public void SetCountryCGState(bool newState)
+    {
+        _SetCountryCG.DOKill();
+
+        _SetCountryCG.interactable = newState;
+        _SetCountryCG.blocksRaycasts = newState;
+
+        _SetCountryCG.DOFade(newState ? 1f : 0f, 0.2f).SetEase(Ease.OutSine);
+    }
+
+
+   
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

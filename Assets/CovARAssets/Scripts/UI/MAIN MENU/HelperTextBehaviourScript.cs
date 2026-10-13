@@ -57,6 +57,6 @@ public class HelperTextBehaviourScript : MonoBehaviour
         _TextHelper.color = _CorrectMessageColor;
 
 
-        _TextHelper.DOFade(0, 3f).SetDelay(5f).SetEase(Ease.InOutQuad);
+        _TextHelper.DOFade(0, 3f).SetDelay(12f).SetEase(Ease.InOutQuad);
     }
 }

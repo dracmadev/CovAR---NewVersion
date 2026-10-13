@@ -24,6 +24,8 @@ public class St_WebRequestLinkStruct
     [Header("[GENERAL] -> CREATE USER LINK:")]
     public string _GetUserCompanyURL;
     public string _CheckLastAppVersion;
+    public string _GetCountryFromSpecificCompany;
+    public string _SetCountryFromSpecificCompany;
     [Header("AR SCENE LINKS:")]
     [Header("[ASTRALPOOL]")]
     public string _GetUserIDURL_Astralpool;
