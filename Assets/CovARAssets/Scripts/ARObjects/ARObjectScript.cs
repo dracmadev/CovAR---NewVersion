@@ -633,6 +633,8 @@ public class ARObjectScript : MonoBehaviour
         if (_lenghtSliderRef == null) return;
         if (_boneRightObjList.Count == 0) return;
 
+        UpdateCladdingAveragePosition( _lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult);
+
         float currentSliderValue = (_lenghtSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderResult);
 
         foreach (GameObject boneObj in _boneRightObjList)
@@ -823,6 +825,8 @@ public class ARObjectScript : MonoBehaviour
     {
         InitSetLenghtState();
 
+        UpdateCladdingAveragePosition(newLenght);
+
         if (_boneRightObjList.Count == 0) return;
 
         if (_lenghtSliderRef != null)
@@ -928,31 +932,20 @@ public class ARObjectScript : MonoBehaviour
 
     private void InitBonesBySteps()
     {
-        var allParts = GetComponentsInChildren<ARObjectPartScript>(true);
-
-        foreach (var part in allParts)
+        if (_ARObjectManager == null ||
+            _ARObjectManager.GetCovARObjectData() == null)
         {
-            var boneData = part.GetBoneData();
-
-            if (boneData == null ||  !boneData.bSizeBySteps) //boneData._BoneDirection != E_ARObjectComponentsDirection.RIGHT ||
-            {
-                continue;
-            }
-
-            var steps = boneData._StepsArray;
-
-            if (steps == null || !steps.Any())
-            {
-                Debug.LogError( $"El bone '{part.name}' té bSizeBySteps actiu però no té steps.",  part);
-                continue;
-            }
-
-            float firstStep = steps.First();
-            float targetX = boneData.bDivideBy100 ? firstStep : firstStep * 100f;
-
-            Vector3 position = part.transform.localPosition;
-            part.transform.localPosition = new Vector3(targetX, position.y, position.z);
+            Debug.LogWarning(
+                "InitBonesBySteps: Falta el manager o les dades.",
+                this);
+            return;
         }
+
+        float currentLength = _ARObjectManager
+            .GetCovARObjectData()
+            ._CurrentARObjectLenght;
+
+        ApplyBonesSizeBySteps(currentLength);
     }
 
     private float GetUpperSizeStep(float requestedLength,IEnumerable<float> steps)
@@ -979,6 +972,8 @@ public class ARObjectScript : MonoBehaviour
     {
         var allParts = GetComponentsInChildren<ARObjectPartScript>(true);
 
+        //Debug.Log($"Applying bones size by steps for requested length: {requestedLength}");
+
         foreach (var part in allParts)
         {
             var boneData = part.GetBoneData();
@@ -1000,6 +995,43 @@ public class ARObjectScript : MonoBehaviour
             Vector3 position = part.transform.localPosition;
 
             part.transform.localPosition =  new Vector3(targetX, position.y, position.z);
+        }
+    }
+
+    private void UpdateCladdingAveragePosition(float sliderValue)
+    {
+        var claddingObjects = GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.CladdingMovingByAveragePosition);
+
+        foreach (GameObject claddingObj in claddingObjects)
+        {
+            if (claddingObj == null) continue;
+
+            var part = claddingObj.GetComponent<ARObjectPartScript>();
+            if (part == null) continue;
+
+            var partData = part.GetARObjectPartData();
+            if (partData == null) continue;
+
+            var steps = partData._StepsArray;
+
+            if (steps == null || !steps.Any())
+                continue;
+
+            float offset = partData._NegativeOffsetToSlider;
+
+            // Seleccionem la coberta que pot allotjar
+            // la mida del slider més els marges.
+            float selectedStep = GetUpperSizeStep(sliderValue + offset, steps);
+
+            // Amplada disponible entre els dos marges.
+            float usableWidth = selectedStep - offset;
+
+            // Centrem la peça segons l'espai que falta per omplir.
+            float targetX = (sliderValue - usableWidth) * 0.5f;
+
+            Vector3 position = claddingObj.transform.localPosition;
+
+            claddingObj.transform.localPosition = new Vector3(targetX, position.y, position.z);
         }
     }
 

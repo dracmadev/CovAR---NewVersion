@@ -525,6 +525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8040743082775803562}
+  - component: {fileID: 3483649014728363603}
   m_Layer: 0
   m_Name: QUADRO CLADDING
   m_TagString: Untagged
@@ -552,6 +553,59 @@ Transform:
   - {fileID: 5524261059499611748}
   m_Father: {fileID: 2264558465662623888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3483649014728363603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6674992420545771464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 1
+  _ARObjectPartData:
+    _ARObjectPartType: 19
+    _ARObjectPartReference: {fileID: 0}
+    _StepsArray:
+    - 4.6
+    - 5.1
+    - 5.6
+    - 6.1
+    - 6.6
+    _NegativeOffsetToSlider: 0.6
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 0
+    _BoneDirection: 0
+    _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}
 --- !u!1 &9204199048260689650
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +758,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 2
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1087,6 +1143,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1275,6 +1333,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1327,6 +1387,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 7
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1385,6 +1447,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1553,6 +1617,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 2
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1766,6 +1832,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1829,6 +1897,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 6
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1881,6 +1951,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -2076,6 +2148,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 16
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -2232,6 +2306,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 5
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -2284,6 +2360,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -2335,6 +2413,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -2398,6 +2478,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -2711,6 +2793,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 17
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -2855,6 +2939,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 1
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -3033,6 +3119,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -3085,6 +3173,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2

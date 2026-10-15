@@ -21,5 +21,6 @@ public enum E_ARObjectParts
     FootLeft_Cladding = 16,
     FootRight_Cladding = 17,
     Mask = 18,
+    CladdingMovingByAveragePosition = 19,
 
 }

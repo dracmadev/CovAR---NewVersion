@@ -11,4 +11,7 @@ public class St_ARObjectPart
     public E_ARObjectParts _ARObjectPartType;
     [Header("ARObject part reference: (Automatic)")]
     public GameObject _ARObjectPartReference;
+    [Header("ARObject Steps data: (Just In case of need them)")]
+    public float[] _StepsArray;
+    public float _NegativeOffsetToSlider;
 }

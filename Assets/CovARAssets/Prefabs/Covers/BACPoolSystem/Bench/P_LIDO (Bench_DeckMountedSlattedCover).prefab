@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &969389595091014423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6757848347797637314}
+  m_Layer: 0
+  m_Name: LIDO AXIS & LAMAS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6757848347797637314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969389595091014423}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1116071419044100113}
+  m_Father: {fileID: 2264558465662623888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650167997603174845
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,12 +62,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4586057725464113781}
-  - {fileID: 1116071419044100113}
-  - {fileID: 2189544461182059462}
-  - {fileID: 3072997006363151312}
-  - {fileID: 4657671804639678027}
-  - {fileID: 5524261059499611748}
+  - {fileID: 1546585929572134843}
+  - {fileID: 6757848347797637314}
   - {fileID: 331768761581275610}
   - {fileID: 8330334424285383611}
   m_Father: {fileID: 0}
@@ -54,8 +82,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _PoolType: 20
   _CoverType: 4
-  _MaxARObjectLenghtDistance: 5
-  _MaxLamasLenghtDistance: 15
+  _MaxARObjectLenghtDistance: 5.7
+  _MaxLamasLenghtDistance: 7
   _MaxARObjectLenghtDistanceWithPool: 2.3
   _MaxLamasLenghtDistanceWithPool: 4.1
   _ARObjectState: 0
@@ -520,13 +548,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7592772162447294815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1546585929572134843}
+  - component: {fileID: 5252866519759346034}
+  m_Layer: 0
+  m_Name: LIDO CLADDING
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1546585929572134843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592772162447294815}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4586057725464113781}
+  - {fileID: 2189544461182059462}
+  - {fileID: 3072997006363151312}
+  - {fileID: 4657671804639678027}
+  - {fileID: 5524261059499611748}
+  m_Father: {fileID: 2264558465662623888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5252866519759346034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592772162447294815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 1
+  _ARObjectPartData:
+    _ARObjectPartType: 19
+    _ARObjectPartReference: {fileID: 0}
+    _StepsArray:
+    - 4.3
+    - 4.8
+    - 5.3
+    - 5.8
+    - 6.3
+    _NegativeOffsetToSlider: 0.6
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 0
+    _BoneDirection: 0
+    _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}
 --- !u!1001 &646174701381197818
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2264558465662623888}
+    m_TransformParent: {fileID: 6757848347797637314}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
@@ -679,6 +797,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
@@ -686,6 +806,9 @@ MonoBehaviour:
     _BoneSecondDirection: 1
     bDontRespectAbsolutDistance: 1
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -728,6 +851,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -735,6 +860,9 @@ MonoBehaviour:
     _BoneSecondDirection: 2
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -761,7 +889,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2264558465662623888}
+    m_TransformParent: {fileID: 1546585929572134843}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5bab2ff267373904e91f1c845cfd30f8,
         type: 3}
@@ -781,7 +909,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5bab2ff267373904e91f1c845cfd30f8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5bab2ff267373904e91f1c845cfd30f8,
         type: 3}
@@ -865,17 +993,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ARObjectGeneralPart: 1
+  _ARObjectGeneralPart: 3
   _ARObjectPartData:
     _ARObjectPartType: 1
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
     _BoneDirection: 0
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
-    bDivideBy100: 0
+    bDivideBy100: 1
+    bSizeBySteps: 1
+    _StepsArray:
+    - 3.9
+    - 4.4
+    - 4.9
+    - 5.4
+    - 5.9
+    _NegativeOffsetToSlider: 0.2
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -908,7 +1046,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2264558465662623888}
+    m_TransformParent: {fileID: 1546585929572134843}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 15442fb0b39c2d8478047e81743d5965,
         type: 3}
@@ -968,7 +1106,7 @@ PrefabInstance:
     - target: {fileID: -5738948747032835564, guid: 15442fb0b39c2d8478047e81743d5965,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: -5738948747032835564, guid: 15442fb0b39c2d8478047e81743d5965,
         type: 3}
@@ -1003,7 +1141,7 @@ PrefabInstance:
     - target: {fileID: 8425657969955469774, guid: 15442fb0b39c2d8478047e81743d5965,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 8425657969955469774, guid: 15442fb0b39c2d8478047e81743d5965,
         type: 3}
@@ -1049,6 +1187,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1056,6 +1196,9 @@ MonoBehaviour:
     _BoneSecondDirection: 2
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1098,6 +1241,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 7
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1105,6 +1250,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1153,13 +1301,23 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
-    _BoneSide: 2
-    _BoneDirection: 1
-    _BoneSecondDirection: 1
-    bDontRespectAbsolutDistance: 1
+    _BoneSide: 0
+    _BoneDirection: 0
+    _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
     bDivideBy100: 1
+    bSizeBySteps: 1
+    _StepsArray:
+    - 4
+    - 4.5
+    - 5
+    - 5.5
+    - 6
+    _NegativeOffsetToSlider: 0.3
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1186,12 +1344,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2264558465662623888}
+    m_TransformParent: {fileID: 1546585929572134843}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a336357d0d150ec44a80510ed1d0c124,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.3
+      value: 1.2999998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a336357d0d150ec44a80510ed1d0c124,
         type: 3}
@@ -1201,12 +1359,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a336357d0d150ec44a80510ed1d0c124,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.41
+      value: 1.4099998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a336357d0d150ec44a80510ed1d0c124,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a336357d0d150ec44a80510ed1d0c124,
         type: 3}
@@ -1226,7 +1384,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a336357d0d150ec44a80510ed1d0c124,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a336357d0d150ec44a80510ed1d0c124,
         type: 3}
@@ -1236,7 +1394,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a336357d0d150ec44a80510ed1d0c124,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a336357d0d150ec44a80510ed1d0c124,
         type: 3}
@@ -1309,6 +1467,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 2
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1316,6 +1476,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1348,7 +1511,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2264558465662623888}
+    m_TransformParent: {fileID: 1546585929572134843}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2ea263d8d616845488132fcdc3a39431,
         type: 3}
@@ -1378,17 +1541,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2ea263d8d616845488132fcdc3a39431,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2ea263d8d616845488132fcdc3a39431,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2ea263d8d616845488132fcdc3a39431,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2ea263d8d616845488132fcdc3a39431,
         type: 3}
@@ -1443,7 +1606,7 @@ PrefabInstance:
     - target: {fileID: -5738948747032835564, guid: 2ea263d8d616845488132fcdc3a39431,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: -5738948747032835564, guid: 2ea263d8d616845488132fcdc3a39431,
         type: 3}
@@ -1473,7 +1636,7 @@ PrefabInstance:
     - target: {fileID: 8425657969955469774, guid: 2ea263d8d616845488132fcdc3a39431,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 8425657969955469774, guid: 2ea263d8d616845488132fcdc3a39431,
         type: 3}
@@ -1492,6 +1655,18 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4232962452881501137}
+    - targetCorrespondingSourceObject: {fileID: -907994703797819552, guid: 2ea263d8d616845488132fcdc3a39431,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7153678116866455302}
+    - targetCorrespondingSourceObject: {fileID: -907994703797819552, guid: 2ea263d8d616845488132fcdc3a39431,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7159847651694410177}
+    - targetCorrespondingSourceObject: {fileID: -907994703797819552, guid: 2ea263d8d616845488132fcdc3a39431,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8824151472794742979}
     - targetCorrespondingSourceObject: {fileID: -6362632739792155489, guid: 2ea263d8d616845488132fcdc3a39431,
         type: 3}
       insertIndex: -1
@@ -1519,13 +1694,182 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
-    _BoneSide: 2
-    _BoneDirection: 1
-    _BoneSecondDirection: 1
-    bDontRespectAbsolutDistance: 1
+    _BoneSide: 0
+    _BoneDirection: 0
+    _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
     bDivideBy100: 1
+    bSizeBySteps: 1
+    _StepsArray:
+    - 4
+    - 4.5
+    - 5
+    - 5.5
+    - 6
+    _NegativeOffsetToSlider: 0.3
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}
+--- !u!114 &7153678116866455302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769443661346639552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 3
+  _ARObjectPartData:
+    _ARObjectPartType: 0
+    _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 0
+    _BoneDirection: 0
+    _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 1
+    bSizeBySteps: 1
+    _StepsArray:
+    - 4
+    - 4.5
+    - 5
+    - 5.5
+    - 6
+    _NegativeOffsetToSlider: 0.3
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}
+--- !u!114 &7159847651694410177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769443661346639552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 3
+  _ARObjectPartData:
+    _ARObjectPartType: 0
+    _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 0
+    _BoneDirection: 0
+    _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 1
+    bSizeBySteps: 1
+    _StepsArray:
+    - 4
+    - 4.5
+    - 5
+    - 5.5
+    - 6
+    _NegativeOffsetToSlider: 0.3
+    sideLength: 0
+  _ARObjectBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParentType: 0
+    _SideRelated: 0
+    _ARObjectBones: []
+    _ARObjectReSizeDirection: 0
+    _bIsMovable: 1
+    _bIsShelfExtensible: 1
+    relatedSideBoneParent: {fileID: 0}
+    currentValue: 0
+    minValue: 0
+    maxValue: 0
+    currentShelfWidth: 0
+    startingPosition: {x: 0, y: 0, z: 0}
+  _ARObjectMultipleBoneParentData:
+    partScript: {fileID: 0}
+    _ARObjectBoneParents: []
+    _ARObjectReSizeDirection: 0
+  _CurrentARObject: {fileID: 0}
+--- !u!114 &8824151472794742979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769443661346639552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57cee01f9896e4686920886dc2d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ARObjectGeneralPart: 3
+  _ARObjectPartData:
+    _ARObjectPartType: 0
+    _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
+  _ARObjectBoneData:
+    partScript: {fileID: 0}
+    _BoneSide: 0
+    _BoneDirection: 0
+    _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
+    bDivideBy100: 1
+    bSizeBySteps: 1
+    _StepsArray:
+    - 4
+    - 4.5
+    - 5
+    - 5.5
+    - 6
+    _NegativeOffsetToSlider: 0.3
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1574,6 +1918,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 6
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1581,6 +1927,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1623,6 +1972,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1630,6 +1981,9 @@ MonoBehaviour:
     _BoneSecondDirection: 2
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1656,7 +2010,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2264558465662623888}
+    m_TransformParent: {fileID: 1546585929572134843}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5178297d62fe5814a81e5a5b77b6ca87,
         type: 3}
@@ -1666,7 +2020,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5178297d62fe5814a81e5a5b77b6ca87,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5178297d62fe5814a81e5a5b77b6ca87,
         type: 3}
@@ -1718,6 +2072,11 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 9a97f70798011ec49aa4958f6dc0b73c, type: 2}
+    - target: {fileID: -5738948747032835564, guid: 5178297d62fe5814a81e5a5b77b6ca87,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5178297d62fe5814a81e5a5b77b6ca87,
         type: 3}
       propertyPath: m_Name
@@ -1726,7 +2085,7 @@ PrefabInstance:
     - target: {fileID: 8425657969955469774, guid: 5178297d62fe5814a81e5a5b77b6ca87,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2
+      value: 1.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1767,6 +2126,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 5
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1774,6 +2135,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1816,13 +2180,23 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
-    _BoneSide: 2
-    _BoneDirection: 1
-    _BoneSecondDirection: 1
-    bDontRespectAbsolutDistance: 1
+    _BoneSide: 0
+    _BoneDirection: 0
+    _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
     bDivideBy100: 1
+    bSizeBySteps: 1
+    _StepsArray:
+    - 4
+    - 4.5
+    - 5
+    - 5.5
+    - 6
+    _NegativeOffsetToSlider: 0.3
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1871,6 +2245,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1878,6 +2254,9 @@ MonoBehaviour:
     _BoneSecondDirection: 2
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
