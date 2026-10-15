@@ -54,8 +54,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _PoolType: 19
   _CoverType: 4
-  _MaxARObjectLenghtDistance: 5
-  _MaxLamasLenghtDistance: 15
+  _MaxARObjectLenghtDistance: 6.4
+  _MaxLamasLenghtDistance: 7
   _MaxARObjectLenghtDistanceWithPool: 2.3
   _MaxLamasLenghtDistanceWithPool: 4.1
   _ARObjectState: 0
@@ -686,6 +686,9 @@ MonoBehaviour:
     _BoneSecondDirection: 1
     bDontRespectAbsolutDistance: 1
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -735,6 +738,9 @@ MonoBehaviour:
     _BoneSecondDirection: 2
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -880,6 +886,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1060,6 +1069,9 @@ MonoBehaviour:
     _BoneSecondDirection: 2
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1109,6 +1121,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1164,6 +1179,9 @@ MonoBehaviour:
     _BoneSecondDirection: 1
     bDontRespectAbsolutDistance: 1
     bDivideBy100: 1
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1324,6 +1342,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1534,6 +1555,9 @@ MonoBehaviour:
     _BoneSecondDirection: 1
     bDontRespectAbsolutDistance: 1
     bDivideBy100: 1
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1589,6 +1613,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1638,6 +1665,9 @@ MonoBehaviour:
     _BoneSecondDirection: 2
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1830,6 +1860,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1974,6 +2007,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -2018,11 +2054,19 @@ MonoBehaviour:
     _ARObjectPartReference: {fileID: 0}
   _ARObjectBoneData:
     partScript: {fileID: 0}
-    _BoneSide: 2
-    _BoneDirection: 1
-    _BoneSecondDirection: 1
-    bDontRespectAbsolutDistance: 1
+    _BoneSide: 0
+    _BoneDirection: 0
+    _BoneSecondDirection: 0
+    bDontRespectAbsolutDistance: 0
     bDivideBy100: 1
+    bSizeBySteps: 1
+    _StepsArray:
+    - 4.6
+    - 5.1
+    - 5.6
+    - 6.1
+    - 6.6
+    _NegativeOffsetToSlider: 0.2
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -2078,6 +2122,9 @@ MonoBehaviour:
     _BoneSecondDirection: 2
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -2270,6 +2317,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}

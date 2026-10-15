@@ -275,7 +275,7 @@ public class WebRequestManager : MonoBehaviour
                     }
                     else
                     {
-                        _HelperText.ShowLoginIncorrectMessage("Error");
+                        _HelperText.ShowLoginIncorrectMessage("Error"); 
                         loginButton.gameObject.SetActive(true);
                     }
                 }

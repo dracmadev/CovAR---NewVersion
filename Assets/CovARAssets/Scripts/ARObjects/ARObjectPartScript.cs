@@ -36,10 +36,7 @@ public class ARObjectPartScript : MonoBehaviour
 
     void InitObjectPart()
     {
-        _ARObjectPartData._ARObjectPartReference = this.gameObject;
-
-        
-        
+        _ARObjectPartData._ARObjectPartReference = this.gameObject;  
     }
 
     /////////////////////////////////////////////////////////////////////// GETTERS /////////////////////////////////////////////////////////////////////////////////////

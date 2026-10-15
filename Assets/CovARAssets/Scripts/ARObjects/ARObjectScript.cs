@@ -103,6 +103,9 @@ public class ARObjectScript : MonoBehaviour
 
         _ARObjectManager = GameObject.FindGameObjectWithTag("ARObjectManager").GetComponent<ARObjectManager>();
         _HUDManagerScript = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManagerScript>();
+
+        //Test
+        InitBonesBySteps();
     }
 
     void SetARObjectPartsList()
@@ -717,7 +720,12 @@ public class ARObjectScript : MonoBehaviour
             }
         }
 
+
+        ApplyBonesSizeBySteps(currentSliderValue);
+
         _feedbackLenghtText.GetComponent<TMP_Text>().text = currentSliderValue.ToString("F2") + "m";
+
+
     }
 
     public void MinusLenghtARObject()
@@ -911,6 +919,87 @@ public class ARObjectScript : MonoBehaviour
         if (_feedbackLenghtText != null)
         {
             _feedbackLenghtText.GetComponent<TMP_Text>().text = newLenght.ToString("F2") + "m";
+        }
+
+        ApplyBonesSizeBySteps(newLenght);
+
+    }
+
+
+    private void InitBonesBySteps()
+    {
+        var allParts = GetComponentsInChildren<ARObjectPartScript>(true);
+
+        foreach (var part in allParts)
+        {
+            var boneData = part.GetBoneData();
+
+            if (boneData == null ||  !boneData.bSizeBySteps) //boneData._BoneDirection != E_ARObjectComponentsDirection.RIGHT ||
+            {
+                continue;
+            }
+
+            var steps = boneData._StepsArray;
+
+            if (steps == null || !steps.Any())
+            {
+                Debug.LogError( $"El bone '{part.name}' té bSizeBySteps actiu però no té steps.",  part);
+                continue;
+            }
+
+            float firstStep = steps.First();
+            float targetX = boneData.bDivideBy100 ? firstStep : firstStep * 100f;
+
+            Vector3 position = part.transform.localPosition;
+            part.transform.localPosition = new Vector3(targetX, position.y, position.z);
+        }
+    }
+
+    private float GetUpperSizeStep(float requestedLength,IEnumerable<float> steps)
+    {
+        float lastStep = requestedLength;
+
+        foreach (float step in steps)
+        {
+            lastStep = step;
+
+            if (requestedLength <= step ||
+                Mathf.Approximately(requestedLength, step))
+            {
+                return step;
+            }
+        }
+
+        // Si excepcionalment se supera el màxim, conserva l'últim step.
+        return lastStep;
+    }
+
+
+    private void ApplyBonesSizeBySteps(float requestedLength)
+    {
+        var allParts = GetComponentsInChildren<ARObjectPartScript>(true);
+
+        foreach (var part in allParts)
+        {
+            var boneData = part.GetBoneData();
+
+            if (boneData == null || !boneData.bSizeBySteps)
+                continue;
+
+            var steps = boneData._StepsArray;
+
+            if (steps == null || !steps.Any())
+                continue;
+
+            float adjustedLength = requestedLength + boneData._NegativeOffsetToSlider;
+
+            float selectedStep = GetUpperSizeStep(adjustedLength, steps);
+
+            float targetX = boneData.bDivideBy100 ? selectedStep : selectedStep * 100f;
+
+            Vector3 position = part.transform.localPosition;
+
+            part.transform.localPosition =  new Vector3(targetX, position.y, position.z);
         }
     }
 

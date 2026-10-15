@@ -17,6 +17,9 @@ public class St_ARObjectBonesData
     public E_ARObjectComponentsDirection _BoneSecondDirection;
     public bool bDontRespectAbsolutDistance;
     public bool bDivideBy100;
+    public bool bSizeBySteps;
+    public float[] _StepsArray;
+    public float _NegativeOffsetToSlider;  
 
     public float sideLength;
 }
