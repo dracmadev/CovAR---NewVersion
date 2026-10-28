@@ -9,6 +9,11 @@ public class APRelatedProductsBlock : MonoBehaviour
 {
     [Header("[ASTRALPOOL] RELATED PRODUCTS BLOCK")]
     [Space()]
+    [Header("RELATED PRODUCTS PREFABS LIST:")]
+    [SerializeField] private GameObject[] _RelatedProductList;
+    [Header("UI COMPONENTS:")]
+    [SerializeField] private GameObject _RelatedProductsContainer;
+    [Space()]
     [Header("LED LIGHT:")]
     [SerializeField] private Toggle _LedLightCheckMark;
     [SerializeField] private CanvasGroup _CGLedLightBlock;
@@ -48,6 +53,8 @@ public class APRelatedProductsBlock : MonoBehaviour
     ARObjectManager _ARObjectManager;
 
     private Dictionary<E_APRelatedproducts, CanvasGroup> _canvasGroupMap;
+    private Dictionary<E_APRelatedproducts, BlueprintRelatedProductScript> _RelatedProductsPrefabDictionary;
+
 
     private WebRequestManager _WebRequestManager;
 
@@ -82,6 +89,8 @@ public class APRelatedProductsBlock : MonoBehaviour
 
 
         InitDictionaty();
+       
+
         ChooseWichRelatedProductsShow();
 
 
@@ -94,16 +103,89 @@ public class APRelatedProductsBlock : MonoBehaviour
     {
         _canvasGroupMap = new Dictionary<E_APRelatedproducts, CanvasGroup>()
         {
-            { E_APRelatedproducts.LedLights,       _CGLedLightBlock },
-            { E_APRelatedproducts.Electrolisis,    _CGElectrolisisBlock },
-            { E_APRelatedproducts.CoverConnect,    _CGCoverConnectBlock },
-            { E_APRelatedproducts.PoolMaterial,    _CGPoolMaterialBlock },
-            { E_APRelatedproducts.SecuritySystem,  _CGSecuritySystemBlock },
-            { E_APRelatedproducts.SubmergedModel, _CGSubmergedModelBlock },
-            { E_APRelatedproducts.Mecanics,        _CGMecanicsBlock },
-            { E_APRelatedproducts.Beam,            _CGBeamBlock },
-            { E_APRelatedproducts.Cover,           _CGConnectBlock }
+            //{ E_APRelatedproducts.LedLights_Astralpool,       _CGLedLightBlock },
+            { E_APRelatedproducts.Electrolisis_Astralpool,    _CGElectrolisisBlock },
+            { E_APRelatedproducts.CoverConnect_Astralpool,    _CGCoverConnectBlock },
+            { E_APRelatedproducts.PoolMaterial_Astralpool,    _CGPoolMaterialBlock },
+            { E_APRelatedproducts.SecuritySystem_Astralpool,  _CGSecuritySystemBlock },
+            { E_APRelatedproducts.SubmergedModel_Astralpool, _CGSubmergedModelBlock },
+            { E_APRelatedproducts.Mecanics_Astralpool,        _CGMecanicsBlock },
+            { E_APRelatedproducts.Beam_Astralpool,            _CGBeamBlock },
+            { E_APRelatedproducts.Cover_Astralpool,           _CGConnectBlock }
         };
+    }
+
+
+    void InitCreateRelatedProducts()
+    {
+        if (_ARObjectManager == null || _RelatedProductsContainer == null)
+            return;
+
+        GameObject currentObject = _ARObjectManager.GetCurrentARObject();
+        if (currentObject == null) return;
+
+        ARObjectScript arObj = currentObject.GetComponent<ARObjectScript>();
+        if (arObj == null) return;
+
+        var relatedProductsList = arObj.GetARObjectRelatedProductsList();
+        if (relatedProductsList == null || _RelatedProductList == null)
+            return;
+
+        // Recorrem els prefabs disponibles.
+        foreach (GameObject prefab in _RelatedProductList)
+        {
+            if (prefab == null) continue;
+
+            BlueprintRelatedProductScript prefabScript = prefab.GetComponent<BlueprintRelatedProductScript>();
+
+            if (prefabScript == null) continue;
+
+            // Comprovem si aquest producte correspon a l'objecte actual.
+            bool shouldCreate = false;
+
+            foreach (St_APRelatedProduct product in relatedProductsList)
+            {
+                if (product._RelatedProductType == prefabScript.GetRelatedProductType())
+                {
+                    shouldCreate = true;
+                    break;
+                }
+            }
+
+            if (!shouldCreate) continue;
+
+            // Evitem duplicar-lo si tornem a cridar la funció.
+            bool alreadyCreated = false;
+
+            foreach (Transform child in _RelatedProductsContainer.transform)
+            {
+                BlueprintRelatedProductScript existingScript = child.GetComponent<BlueprintRelatedProductScript>();
+
+                if (existingScript != null && existingScript.GetRelatedProductType() == prefabScript.GetRelatedProductType())
+                {
+                    alreadyCreated = true;
+                    break;
+                }
+            }
+
+            if (alreadyCreated) continue;
+
+            // Creem el prefab dins del contenidor.
+            GameObject instance = Instantiate( prefab,_RelatedProductsContainer.transform, false);
+
+            BlueprintRelatedProductScript instanceScript = instance.GetComponent<BlueprintRelatedProductScript>();
+
+            instanceScript.SetRelatedProductCurrentState(true);
+
+            CanvasGroup canvasGroup = instanceScript.GetCanvasGroupRP();
+
+            if (canvasGroup != null)
+            {
+                SetCanvasGroupActive(canvasGroup, false);
+            }
+
+            instance.SetActive(true);
+        }
     }
 
     public void ChooseWichRelatedProductsShow()
@@ -193,6 +275,9 @@ public class APRelatedProductsBlock : MonoBehaviour
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////////////////////////////////////////// GETTER /////////////////////////////////////////////////////////////////////////
+
+
+
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

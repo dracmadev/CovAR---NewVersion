@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class St_APRelatedProduct
 {
-    [Header("Type of Relatedproduct:")]
+    [Header("Type of Related product:")]
     public E_APRelatedproducts _RelatedProductType;
+
 }
