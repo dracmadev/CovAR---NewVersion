@@ -13,48 +13,12 @@ public class APRelatedProductsBlock : MonoBehaviour
     [SerializeField] private GameObject[] _RelatedProductList;
     [Header("UI COMPONENTS:")]
     [SerializeField] private GameObject _RelatedProductsContainer;
-    [Space()]
-    [Header("LED LIGHT:")]
-    [SerializeField] private Toggle _LedLightCheckMark;
-    [SerializeField] private CanvasGroup _CGLedLightBlock;
-    [Header("ELECTROLISIS:")]
-    [SerializeField] private Toggle _ElectrolisisCheckMark;
-    [SerializeField] private CanvasGroup _CGElectrolisisBlock;
-    [Header("COVER CONNECT:")]
-    [SerializeField] private TMP_Dropdown _CoverConnectDropdown_GroundRoller;
-    [SerializeField] private TMP_Dropdown _CoverConnectDropdown_Submerged;
-    [SerializeField] private CanvasGroup _CGCoverConnectBlock;
-    [Header("POOL MATERIAL:")]
-    [SerializeField] private TMP_Dropdown _PoolMaterialDropdown;
-    [SerializeField] private CanvasGroup _CGPoolMaterialBlock;
-    [Header("SECURITY SYSTEM:")]
-    [SerializeField] private CanvasGroup _SecuritySystemCG;
-    [SerializeField] private LocalizedTMPText _SecuritySystemText;
-    [SerializeField] private CanvasGroup _CGSecuritySystemBlock;
-    [SerializeField] private St_SecuritySystem[] _SecuritySystemsArray;
-    [Header("SUBMERGED MODEL:")]
-    [SerializeField] private TMP_Dropdown _SubmergedModelDropdown;
-    [SerializeField] private CanvasGroup _CGSubmergedModelBlock;
-    [Header("MECANICS:")]
-    [SerializeField] private TMP_Dropdown _MecanicsDropdown;
-    [SerializeField] private CanvasGroup _CGMecanicsBlock;
-    [Header("BEAM:")]
-    [SerializeField] private TMP_Dropdown _BeamDropdown;
-    [SerializeField] private GameObject _BeamText;
-    [SerializeField] private CanvasGroup _CGBeamBlock;
-    [Header("COVER:")]
-    [SerializeField] private TMP_Dropdown _CoverDropdown;
-    [SerializeField] private CanvasGroup _CGConnectBlock;
-
 
 
 
 
     ARObjectManager _ARObjectManager;
-
-    private Dictionary<E_APRelatedproducts, CanvasGroup> _canvasGroupMap;
-    private Dictionary<E_APRelatedproducts, BlueprintRelatedProductScript> _RelatedProductsPrefabDictionary;
-
+    APBlueprintManager _APBlueprintManager;
 
     private WebRequestManager _WebRequestManager;
 
@@ -78,43 +42,24 @@ public class APRelatedProductsBlock : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////////////////// INIT /////////////////////////////////////////////////////////////////////////
     
-    public void InitRelatedProduct(ARObjectManager objManager)
+    public void InitRelatedProduct(ARObjectManager objManager, APBlueprintManager blueprintManager)
     {
         _ARObjectManager = objManager;
+        _APBlueprintManager = blueprintManager;
 
         if (GameObject.FindGameObjectWithTag("WebRequestManager"))
         {
             _WebRequestManager = GameObject.FindGameObjectWithTag("WebRequestManager").GetComponent<WebRequestManager>();
         }
 
-
-        InitDictionaty();
-       
-
-        ChooseWichRelatedProductsShow();
-
+        InitCreateRelatedProducts();
 
         InitModelSpecificBehaviours();
 
 
     }
 
-    void InitDictionaty()
-    {
-        _canvasGroupMap = new Dictionary<E_APRelatedproducts, CanvasGroup>()
-        {
-            //{ E_APRelatedproducts.LedLights_Astralpool,       _CGLedLightBlock },
-            { E_APRelatedproducts.Electrolisis_Astralpool,    _CGElectrolisisBlock },
-            { E_APRelatedproducts.CoverConnect_Astralpool,    _CGCoverConnectBlock },
-            { E_APRelatedproducts.PoolMaterial_Astralpool,    _CGPoolMaterialBlock },
-            { E_APRelatedproducts.SecuritySystem_Astralpool,  _CGSecuritySystemBlock },
-            { E_APRelatedproducts.SubmergedModel_Astralpool, _CGSubmergedModelBlock },
-            { E_APRelatedproducts.Mecanics_Astralpool,        _CGMecanicsBlock },
-            { E_APRelatedproducts.Beam_Astralpool,            _CGBeamBlock },
-            { E_APRelatedproducts.Cover_Astralpool,           _CGConnectBlock }
-        };
-    }
-
+   
 
     void InitCreateRelatedProducts()
     {
@@ -127,11 +72,23 @@ public class APRelatedProductsBlock : MonoBehaviour
         ARObjectScript arObj = currentObject.GetComponent<ARObjectScript>();
         if (arObj == null) return;
 
-        var relatedProductsList = arObj.GetARObjectRelatedProductsList();
-        if (relatedProductsList == null || _RelatedProductList == null)
-            return;
+        if (_RelatedProductList == null) return;
 
-        // Recorrem els prefabs disponibles.
+        var relatedProductsList = arObj.GetARObjectRelatedProductsList();
+
+        // Eliminem els productes creats anteriorment.
+        foreach (Transform child in _RelatedProductsContainer.transform)
+        {
+            if (child.GetComponent<BlueprintRelatedProductScript>() == null)
+                continue;
+
+            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+        }
+
+        // Si no hi ha productes, deixem el contenidor net.
+        if (relatedProductsList == null) return;
+
         foreach (GameObject prefab in _RelatedProductList)
         {
             if (prefab == null) continue;
@@ -140,7 +97,6 @@ public class APRelatedProductsBlock : MonoBehaviour
 
             if (prefabScript == null) continue;
 
-            // Comprovem si aquest producte correspon a l'objecte actual.
             bool shouldCreate = false;
 
             foreach (St_APRelatedProduct product in relatedProductsList)
@@ -154,69 +110,13 @@ public class APRelatedProductsBlock : MonoBehaviour
 
             if (!shouldCreate) continue;
 
-            // Evitem duplicar-lo si tornem a cridar la funció.
-            bool alreadyCreated = false;
-
-            foreach (Transform child in _RelatedProductsContainer.transform)
-            {
-                BlueprintRelatedProductScript existingScript = child.GetComponent<BlueprintRelatedProductScript>();
-
-                if (existingScript != null && existingScript.GetRelatedProductType() == prefabScript.GetRelatedProductType())
-                {
-                    alreadyCreated = true;
-                    break;
-                }
-            }
-
-            if (alreadyCreated) continue;
-
-            // Creem el prefab dins del contenidor.
-            GameObject instance = Instantiate( prefab,_RelatedProductsContainer.transform, false);
+            GameObject instance = Instantiate(prefab, _RelatedProductsContainer.transform, false);
 
             BlueprintRelatedProductScript instanceScript = instance.GetComponent<BlueprintRelatedProductScript>();
 
-            instanceScript.SetRelatedProductCurrentState(true);
-
-            CanvasGroup canvasGroup = instanceScript.GetCanvasGroupRP();
-
-            if (canvasGroup != null)
-            {
-                SetCanvasGroupActive(canvasGroup, false);
-            }
-
+            instanceScript.SetCanvasGroupState(true);
+            instanceScript.SetAPBlueprintManagerVariable(_APBlueprintManager);
             instance.SetActive(true);
-        }
-    }
-
-    public void ChooseWichRelatedProductsShow()
-    {
-        if (_ARObjectManager == null || _ARObjectManager.GetCurrentARObject() == null) return;
-
-        ARObjectScript arObj = _ARObjectManager.GetCurrentARObject().GetComponent<ARObjectScript>();
-        if (arObj == null) return;
-
-        // 1.Amaguem TOTS els CanvasGroups per defecte
-        foreach (var kvp in _canvasGroupMap)
-        {
-            if (kvp.Value != null) SetCanvasGroupActive(kvp.Value, false);
-        }
-
-        // 2. Obtenim la llista d'enums de l'objecte actual
-        var relatedProductsList = arObj.GetARObjectRelatedProductsList();
-
-        if (relatedProductsList != null)
-        {
-            // 3. Activem NOMÉS els CanvasGroups  estan a la llista
-            foreach (St_APRelatedProduct product in relatedProductsList)
-            {
-                
-                E_APRelatedproducts currentEnum = product._RelatedProductType;
-
-                if (_canvasGroupMap.TryGetValue(currentEnum, out CanvasGroup cg))
-                {
-                    if (cg != null) SetCanvasGroupActive(cg, true);
-                }
-            }
         }
     }
 
@@ -224,7 +124,7 @@ public class APRelatedProductsBlock : MonoBehaviour
     {
         switch(_ARObjectManager.GetCurrentPoolTypeData())
         {
-            case E_PoolType.AP_Octeo: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
+                case E_PoolType.AP_Octeo: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
                 case E_PoolType.AP_Sveltea: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
                 case E_PoolType.AP_SvelteaManual: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
                 case E_PoolType.AP_Coverly: InitPoolMaterialBehaviour(); InitCoverConnectBehaviour(0); break;
@@ -237,46 +137,95 @@ public class APRelatedProductsBlock : MonoBehaviour
 
     void InitSubmergedTypeBehaviour()
     {
-        _SubmergedModelDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInSubmergedType(); });
-        _SubmergedModelDropdown.onValueChanged.AddListener(delegate { OnValueChangedInSubmergedType(); });
+        if (GetRelatedProductByType(E_APRelatedproducts.SubmergedModel_Astralpool).GetDropdown01RP() != null)
+        {
+            TMP_Dropdown submergedDropdown = GetRelatedProductByType(E_APRelatedproducts.SubmergedModel_Astralpool).GetDropdown01RP();
+            
+            submergedDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInSubmergedType(); });
+            submergedDropdown.onValueChanged.AddListener(delegate { OnValueChangedInSubmergedType(); });
+        }
+       
+       
     }
 
     void InitPoolMaterialBehaviour()
     {
-        _SecuritySystemCG.interactable = true;
+        if(GetRelatedProductByType(E_APRelatedproducts.SecuritySystem_Astralpool) != null)
+        {
+            GetRelatedProductByType(E_APRelatedproducts.SecuritySystem_Astralpool).GetButtonRP().interactable = true;
+        }
+           
 
-        _PoolMaterialDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInPoolMaterial(); });
-        _PoolMaterialDropdown.onValueChanged.AddListener(delegate { OnValueChangedInPoolMaterial(); });
+        if(GetRelatedProductByType(E_APRelatedproducts.PoolMaterial_Astralpool) != null)
+        {
+            TMP_Dropdown poolMaterialDropdown = GetRelatedProductByType(E_APRelatedproducts.PoolMaterial_Astralpool).GetDropdown01RP();
+            
+            poolMaterialDropdown.onValueChanged.RemoveListener(delegate { OnValueChangedInPoolMaterial(); });
+            poolMaterialDropdown.onValueChanged.AddListener(delegate { OnValueChangedInPoolMaterial(); });
+
+            Debug.Log("Pool Material Dropdown Initialized");
+        }
+
+       
     }
     
     void InitCoverConnectBehaviour(int option)
     {
-        if(option == 0)
+        if (GetRelatedProductByType(E_APRelatedproducts.CoverConnect_Astralpool) != null)
         {
-            _CoverConnectDropdown_GroundRoller.gameObject.SetActive(true);
-            _CoverConnectDropdown_Submerged.gameObject.SetActive(false);
-        }
-        else if (option == 1)
-        {
-            _CoverConnectDropdown_GroundRoller.gameObject.SetActive(false);
-            _CoverConnectDropdown_Submerged.gameObject.SetActive(true);
+            BlueprintRelatedProductScript coverConect = GetRelatedProductByType(E_APRelatedproducts.CoverConnect_Astralpool);
+            
+            if (option == 0)
+            {
+
+                coverConect.GetDropdown01RP().gameObject.SetActive(true);
+                coverConect.GetDropdown02RP().gameObject.SetActive(false);
+            }
+            else if (option == 1)
+            {
+                coverConect.GetDropdown01RP().gameObject.SetActive(false);
+                coverConect.GetDropdown02RP().gameObject.SetActive(true);
+            }
         }
     }
 
     void ForceSecuritySystemToOneOption(int option)
     {
-        //Debug.Log("FORCE SECURITY SYSTEM TO OPTION: " + option);
-        _SecuritySystemText.LocalizationKey = _SecuritySystemsArray[option]._SSKey;
-        _SecuritySystemText.Localize();
+        if (GetRelatedProductByType(E_APRelatedproducts.SecuritySystem_Astralpool) != null)
+        {
+            BlueprintRelatedProductScript securitySystem = GetRelatedProductByType(E_APRelatedproducts.SecuritySystem_Astralpool);
+            securitySystem.GetLocalizedTMPTextRP().LocalizationKey = securitySystem.GetSecuritySystemsArray()[option]._SSKey;
+            securitySystem.GetLocalizedTMPTextRP().Localize();
 
-        _SecuritySystemCG.interactable = false;
+            securitySystem.GetButtonRP().interactable = false;
+           
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////////////////////////////////////////// GETTER /////////////////////////////////////////////////////////////////////////
 
+    BlueprintRelatedProductScript GetRelatedProductByType(E_APRelatedproducts type)
+    {
+        if (_RelatedProductsContainer == null)
+            return null;
 
+        foreach (Transform child in _RelatedProductsContainer.transform)
+        {
+            // Ignora els prefabs antics pendents de destrucció.
+            if (!child.gameObject.activeSelf)
+                continue;
+
+            BlueprintRelatedProductScript script =
+                child.GetComponent<BlueprintRelatedProductScript>();
+
+            if (script != null && script.GetRelatedProductType() == type)
+                return script;
+        }
+
+        return null;
+    }
 
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -297,25 +246,63 @@ public class APRelatedProductsBlock : MonoBehaviour
 
     void OnValueChangedInSubmergedType()
     {
-        if(_CGSubmergedModelBlock.alpha != 0)
+        if (GetRelatedProductByType(E_APRelatedproducts.SubmergedModel_Astralpool).GetDropdown01RP() != null)
         {
-            int selectedIndex = _SubmergedModelDropdown.value;
+
+            int selectedIndex = GetRelatedProductByType(E_APRelatedproducts.SubmergedModel_Astralpool).GetDropdown01RP().value;
 
             if (selectedIndex == 0)
             {
-                SetCanvasGroupActive(_CGConnectBlock, true);
-                SetCanvasGroupActive(_CGCoverConnectBlock, true);
+                if(GetRelatedProductByType(E_APRelatedproducts.Cover_Astralpool) != null)
+                {
+                    GetRelatedProductByType(E_APRelatedproducts.Cover_Astralpool).SetCanvasGroupState(true);
+                    //SetCanvasGroupActive(_CGConnectBlock, true);
+                }
+               
+               
+                if (GetRelatedProductByType(E_APRelatedproducts.CoverConnect_Astralpool) != null)
+                {
+                   Debug.Log("SET COVER CONNECT ACTIVE");
+                    GetRelatedProductByType(E_APRelatedproducts.CoverConnect_Astralpool).SetCanvasGroupState(true);
+                }
 
-                _BeamText.SetActive(false);
-                _BeamDropdown.gameObject.SetActive(true);
+                if(GetRelatedProductByType(E_APRelatedproducts.Beam_Astralpool) != null)
+                {
+                    GetRelatedProductByType(E_APRelatedproducts.Beam_Astralpool).GetSubGameObjRP().SetActive(false);
+                    GetRelatedProductByType(E_APRelatedproducts.Beam_Astralpool).GetDropdown01RP().gameObject.SetActive(true);
+
+                    //_BeamText.SetActive(false);
+                    //_BeamDropdown.gameObject.SetActive(true);
+                }
+               
             }
             else if (selectedIndex == 1)
             {
-                SetCanvasGroupActive(_CGConnectBlock, false);
-                SetCanvasGroupActive(_CGCoverConnectBlock, false);
 
-                _BeamText.SetActive(true);
-                _BeamDropdown.gameObject.SetActive(false);
+                if (GetRelatedProductByType(E_APRelatedproducts.Cover_Astralpool) != null)
+                {
+                    GetRelatedProductByType(E_APRelatedproducts.Cover_Astralpool).SetCanvasGroupState(false);
+                    // SetCanvasGroupActive(_CGConnectBlock, false);
+                }
+
+
+                if (GetRelatedProductByType(E_APRelatedproducts.CoverConnect_Astralpool) != null)
+                {
+                   Debug.Log("SET COVER CONNECT INACTIVE");
+                    GetRelatedProductByType(E_APRelatedproducts.CoverConnect_Astralpool).SetCanvasGroupState(false);
+                }
+                
+                if (GetRelatedProductByType(E_APRelatedproducts.Beam_Astralpool) != null)
+                {
+                    GetRelatedProductByType(E_APRelatedproducts.Beam_Astralpool).GetSubGameObjRP().SetActive(true);
+                    GetRelatedProductByType(E_APRelatedproducts.Beam_Astralpool).GetDropdown01RP().gameObject.SetActive(false);
+
+                    //_BeamText.SetActive(true);
+                    //_BeamDropdown.gameObject.SetActive(false);
+                }
+
+
+
             }
             
         }
@@ -324,33 +311,44 @@ public class APRelatedProductsBlock : MonoBehaviour
 
     void OnValueChangedInPoolMaterial()
     {
-        if (_CGPoolMaterialBlock.alpha != 0)
+        if (GetRelatedProductByType(E_APRelatedproducts.PoolMaterial_Astralpool) != null)
         {
-            int selectedIndex = _PoolMaterialDropdown.value;
+            Debug.Log("Pool Material Dropdown Value Changed");
+            int selectedIndex = GetRelatedProductByType(E_APRelatedproducts.PoolMaterial_Astralpool).GetDropdown01RP().value;
+
+            BlueprintRelatedProductScript securitySystem = GetRelatedProductByType(E_APRelatedproducts.SecuritySystem_Astralpool);
 
             if (selectedIndex == 0)
             {
-                _SecuritySystemCG.interactable = true;
+                // _SecuritySystemCG.interactable = true;
+                securitySystem.GetButtonRP().interactable = true;
             }
             else if (selectedIndex == 1)
             {
-                _SecuritySystemCG.interactable = true;
+                //_SecuritySystemCG.interactable = true;
+                securitySystem.GetButtonRP().interactable = true;
             }
             else if (selectedIndex == 2)
             {
-                _SecuritySystemCG.interactable = false;
-                _SecuritySystemText.LocalizationKey = _SecuritySystemsArray[1]._SSKey;
-                _SecuritySystemText.Localize();
+                securitySystem.GetButtonRP().interactable = false;
+                _APBlueprintManager.SetCurrentSecuritySystemIndex(1);
+                //securitySystem.GetLocalizedTMPTextRP().LocalizationKey = securitySystem.GetSecuritySystemsArray()[1]._SSKey;
+                //securitySystem.GetLocalizedTMPTextRP().Localize();
+
             }
             else if (selectedIndex == 3)
             {
-                _SecuritySystemCG.interactable = true;
+                //_SecuritySystemCG.interactable = true;
+                securitySystem.GetButtonRP().interactable = true;
             }
             else if (selectedIndex == 4)
             {
-                _SecuritySystemCG.interactable = false;
-                _SecuritySystemText.LocalizationKey = _SecuritySystemsArray[2]._SSKey;
-                _SecuritySystemText.Localize();
+                securitySystem.GetButtonRP().interactable = false;
+                _APBlueprintManager.SetCurrentSecuritySystemIndex(2);
+
+                //securitySystem.GetLocalizedTMPTextRP().LocalizationKey = securitySystem.GetSecuritySystemsArray()[2]._SSKey;
+                //securitySystem.GetLocalizedTMPTextRP().Localize();
+
             }
 
         }
@@ -362,89 +360,141 @@ public class APRelatedProductsBlock : MonoBehaviour
     {
         if(_WebRequestManager != null)
         {
-            if(_CGLedLightBlock.alpha == 1)
+            //LED LIGHTS/////////////////////////////////////
+            if(GetRelatedProductByType(E_APRelatedproducts.LedLights_Astralpool) != null)
             {
-                _WebRequestManager.SetLedLights(_LedLightCheckMark.isOn.ToString());
+                if (GetRelatedProductByType(E_APRelatedproducts.LedLights_Astralpool).GetToggleRP() != null)
+                {
+                    _WebRequestManager.SetLedLights(GetRelatedProductByType(E_APRelatedproducts.LedLights_Astralpool).GetToggleRP().isOn.ToString());
+                }
+                else
+                {
+                    _WebRequestManager.SetLedLights("None");
+                }
+
             }
             else
             {
                 _WebRequestManager.SetLedLights("None");
             }
+            //////////////////////////////////////////////////
 
-            if (_CGElectrolisisBlock.alpha == 1)
+            //ELECTROLISIS/////////////////////////////////////
+            if (GetRelatedProductByType(E_APRelatedproducts.Electrolisis_Astralpool) != null)
             {
-                _WebRequestManager.SetElectrosisContact(_ElectrolisisCheckMark.isOn.ToString());
+                if (GetRelatedProductByType(E_APRelatedproducts.Electrolisis_Astralpool).GetToggleRP() != null)
+                {
+                    _WebRequestManager.SetElectrosisContact(GetRelatedProductByType(E_APRelatedproducts.Electrolisis_Astralpool).GetToggleRP().isOn.ToString());
+                }
+                else
+                {
+                    _WebRequestManager.SetElectrosisContact("None");
+                }
             }
             else
             {
                 _WebRequestManager.SetElectrosisContact("None");
             }
+            //////////////////////////////////////////////////
 
-            if (_CGCoverConnectBlock.alpha == 1)
+            //COVER CONNECT/////////////////////////////////////
+            if (GetRelatedProductByType(E_APRelatedproducts.CoverConnect_Astralpool) != null)
             {
                 if(_ARObjectManager.GetCurrentPoolTypeData() != E_PoolType.AP_Rousillon)
                 {
-                    _WebRequestManager.SetCoverConnect(_CoverConnectDropdown_GroundRoller.options[_CoverConnectDropdown_GroundRoller.value].text);
+                    TMP_Dropdown groundCoverConectDropdown = GetRelatedProductByType(E_APRelatedproducts.CoverConnect_Astralpool).GetDropdown01RP();
+
+                  _WebRequestManager.SetCoverConnect(groundCoverConectDropdown.options[groundCoverConectDropdown.value].text);
                 }
                 else
                 {
-                    _WebRequestManager.SetCoverConnect(_CoverConnectDropdown_Submerged.options[_CoverConnectDropdown_Submerged.value].text);
+                    TMP_Dropdown submergedCoverConectDropdown = GetRelatedProductByType(E_APRelatedproducts.CoverConnect_Astralpool).GetDropdown02RP();
+
+                    _WebRequestManager.SetCoverConnect(submergedCoverConectDropdown.options[submergedCoverConectDropdown.value].text);
                 }     
             }
             else
             {
                 _WebRequestManager.SetElectrosisContact("None");
             }
+            //////////////////////////////////////////////////
 
-            if (_CGPoolMaterialBlock.alpha == 1)
+            //POOL MATERIAL/////////////////////////////////////
+            if (GetRelatedProductByType(E_APRelatedproducts.PoolMaterial_Astralpool) != null)
             {
-                _WebRequestManager.SetPoolMaterial(_PoolMaterialDropdown.options[_PoolMaterialDropdown.value].text);
+                TMP_Dropdown poolMatDropdown = GetRelatedProductByType(E_APRelatedproducts.PoolMaterial_Astralpool).GetDropdown01RP();
+
+                _WebRequestManager.SetPoolMaterial(poolMatDropdown.options[poolMatDropdown.value].text);
             }
             else
             {
                 _WebRequestManager.SetPoolMaterial("None");
             }
+            //////////////////////////////////////////////////
 
-            if (_CGSecuritySystemBlock.alpha == 1)
+            //SECURITY SYSTEM/////////////////////////////////////
+            if (GetRelatedProductByType(E_APRelatedproducts.SecuritySystem_Astralpool) != null)
             {
+                LocalizedTMPText _SecuritySystemText = GetRelatedProductByType(E_APRelatedproducts.SecuritySystem_Astralpool).GetLocalizedTMPTextRP();
+                
                 _WebRequestManager.SetSecuritySystem(_SecuritySystemText.GetLocalizedText());
             }
             else
             {
                 _WebRequestManager.SetSecuritySystem("None");
             }
+            //////////////////////////////////////////////////
 
-            if (_CGSubmergedModelBlock.alpha == 1)
+
+            //SUBMERGED MODEL/////////////////////////////////////
+            if (GetRelatedProductByType(E_APRelatedproducts.SubmergedModel_Astralpool).GetDropdown01RP() != null)
             {
+                TMP_Dropdown _SubmergedModelDropdown = GetRelatedProductByType(E_APRelatedproducts.SubmergedModel_Astralpool).GetDropdown01RP();
+
                 _WebRequestManager.SetSubmergedModel(_SubmergedModelDropdown.options[_SubmergedModelDropdown.value].text);
             }
             else
             {
                 _WebRequestManager.SetSubmergedModel("None");
             }
+            //////////////////////////////////////////////////
 
-
-            if (_CGMecanicsBlock.alpha == 1)
+            //MECANICS/////////////////////////////////////
+            if (GetRelatedProductByType(E_APRelatedproducts.Mecanics_Astralpool) != null)
             {
+                TMP_Dropdown _MecanicsDropdown = GetRelatedProductByType(E_APRelatedproducts.Mecanics_Astralpool).GetDropdown01RP();
+
                 _WebRequestManager.SetMecanicsType(_MecanicsDropdown.options[_MecanicsDropdown.value].text);
             }
             else
             {
                 _WebRequestManager.SetMecanicsType("None");
             }
+            //////////////////////////////////////////////
 
-            if (_CGBeamBlock.alpha == 1)
+            //BEAM/////////////////////////////////////
+            if (GetRelatedProductByType(E_APRelatedproducts.Beam_Astralpool) != null)
             {
                 if (_ARObjectManager.GetCurrentPoolTypeData() == E_PoolType.AP_Rousillon)
                 {
-                    if(_SubmergedModelDropdown.value == 0)
+                    if (GetRelatedProductByType(E_APRelatedproducts.SubmergedModel_Astralpool).GetDropdown01RP() != null)
                     {
-                        _WebRequestManager.SetBeamType(_BeamDropdown.options[_BeamDropdown.value].text);
+                        TMP_Dropdown _SubmergedModelDropdown = GetRelatedProductByType(E_APRelatedproducts.SubmergedModel_Astralpool).GetDropdown01RP();
+
+                        if (_SubmergedModelDropdown.value == 0)
+                        {
+                            TMP_Dropdown _BeamDropdown = GetRelatedProductByType(E_APRelatedproducts.Beam_Astralpool).GetDropdown01RP();
+
+                            _WebRequestManager.SetBeamType(_BeamDropdown.options[_BeamDropdown.value].text);
+                        }
+                        else
+                        {
+                            GameObject _BeamText = GetRelatedProductByType(E_APRelatedproducts.Beam_Astralpool).GetSubGameObjRP();
+
+                            _WebRequestManager.SetBeamType(_BeamText.GetComponent<TMP_Text>().text);
+                        }
                     }
-                    else
-                    {
-                        _WebRequestManager.SetBeamType(_BeamText.GetComponent<TMP_Text>().text);
-                    }
+                   
                 }
                
             }
@@ -452,16 +502,19 @@ public class APRelatedProductsBlock : MonoBehaviour
             {
                 _WebRequestManager.SetBeamType("None");
             }
+            //////////////////////////////////////////////
 
-            if (_CGConnectBlock.alpha == 1)
+            //COVER/////////////////////////////////////
+            if (GetRelatedProductByType(E_APRelatedproducts.Cover_Astralpool) != null)
             {
+                TMP_Dropdown _CoverDropdown = GetRelatedProductByType(E_APRelatedproducts.Cover_Astralpool).GetDropdown01RP();
                 _WebRequestManager.SetCoverType(_CoverDropdown.options[_CoverDropdown.value].text);
             }
             else
             {
                 _WebRequestManager.SetCoverType("None");
             }
-
+            ////////////////////////////////////////////
         }
     }
 

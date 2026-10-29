@@ -11,13 +11,13 @@ public class APPopUpSecuritySystem : MonoBehaviour
     [SerializeField] private CanvasGroup _CGSecuritySystemPopUp;
     [SerializeField] private Image _CurrentSecuritySystemImage;
     [SerializeField] private LocalizedTMPText _CurrentSecuritySystemText;
-    [SerializeField] private LocalizedTMPText _CurrentSecuritySystemLocalizedText;
     [SerializeField] private Button _GoLeftButton;
     [SerializeField] private Button _GoRightButton;
     [SerializeField] private Button _AcceptButton;
     [Header("List of security systems:")]
     [SerializeField] private St_SecuritySystem[] _SecuritySystemsArray;
 
+    APBlueprintManager _APBlueprintManager;
     int currentIndex = 0;
 
     /////////////////////////////////////////////////////////////////// DEFAULT FUNCTIONS //////////////////////////////////////////////////////////////////////////
@@ -64,7 +64,10 @@ public class APPopUpSecuritySystem : MonoBehaviour
     //////////////////////////////////////////////////////////////////////////// SETTER /////////////////////////////////////////////////////////////////////////
 
 
-
+    public void SetValueOfAPBlueprintManager(APBlueprintManager _apBlueprintManager)
+    {
+        _APBlueprintManager = _apBlueprintManager;
+    }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -103,12 +106,14 @@ public class APPopUpSecuritySystem : MonoBehaviour
         if (currentIndex < _SecuritySystemsArray.Length - 1)
         {
             currentIndex++; 
+          
         }
         else
         {
             currentIndex = 0;
         }
 
+        _APBlueprintManager.SetCurrentSecuritySystemIndex(currentIndex);
         UpdateSecuritySystem();
     }
     public void OnClickGoLeft()
@@ -122,6 +127,7 @@ public class APPopUpSecuritySystem : MonoBehaviour
             currentIndex = _SecuritySystemsArray.Length - 1;
         }
 
+        _APBlueprintManager.SetCurrentSecuritySystemIndex(currentIndex);
         UpdateSecuritySystem();
     }
 
@@ -131,8 +137,8 @@ public class APPopUpSecuritySystem : MonoBehaviour
         _CurrentSecuritySystemText.LocalizationKey = _SecuritySystemsArray[currentIndex]._SSKey;
         _CurrentSecuritySystemText.Localize();
 
-        _CurrentSecuritySystemLocalizedText.LocalizationKey = _SecuritySystemsArray[currentIndex]._SSKey;
-        _CurrentSecuritySystemLocalizedText.Localize();
+        //_CurrentSecuritySystemLocalizedText.LocalizationKey = _SecuritySystemsArray[currentIndex]._SSKey;
+        //_CurrentSecuritySystemLocalizedText.Localize();
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

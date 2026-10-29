@@ -9,8 +9,6 @@ public class BlueprintRelatedProductScript : MonoBehaviour
     [Space()]
     [Header("Type of Related Product:")]
     [SerializeField] private E_APRelatedproducts _RelatedProductType;
-    [Header("State:")]
-    [SerializeField] private bool _bIsActive;
     [Header("UI Components:")]
     [SerializeField] private CanvasGroup _CanvasGroupRP;
     [SerializeField] private GameObject _SubGameObjRP;
@@ -23,18 +21,53 @@ public class BlueprintRelatedProductScript : MonoBehaviour
 
     [Header("Other components:")]
     [SerializeField] private St_SecuritySystem[] _SecuritySystemsArray;
-    
+    APBlueprintManager _APBlueprintManager;
     void Start()
     {
+        InitSecuritySystemPrefab();
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateSecutirySystemPrefab();
     }
+
+    /////////////////////////////////////////////////////////////////// INIT ///////////////////////////////////////////////////////////////////////
+
+    void InitSecuritySystemPrefab()
+    {
+        if(_RelatedProductType == E_APRelatedproducts.SecuritySystem_Astralpool)
+        {
+            if(_ButtonRP != null && _APBlueprintManager != null)
+            {
+                _ButtonRP.onClick.RemoveListener(_APBlueprintManager.GetPopUpSecuritySystemGO().OnClickOpenSecuritySystemPopUp);
+                _ButtonRP.onClick.AddListener(_APBlueprintManager.GetPopUpSecuritySystemGO().OnClickOpenSecuritySystemPopUp);
+            }
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////////// UPDATE //////////////////////////////////////////////////////////////////
+
+    void UpdateSecutirySystemPrefab()
+    {
+        if (_RelatedProductType == E_APRelatedproducts.SecuritySystem_Astralpool)
+        {
+            if (_LocalizeTextRP != null && _APBlueprintManager != null)
+            {
+               _LocalizeTextRP.LocalizationKey = _SecuritySystemsArray[_APBlueprintManager.GetCurrentSecuritySystemIndex()]._SSKey;
+                _LocalizeTextRP.Localize();
+              // Debug.Log("Localization Index: " + _APBlueprintManager.GetCurrentSecuritySystemIndex() + " | Localized Text: " + _LocalizeTextRP.GetLocalizedText());
+            }
+        }
+    }
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////////// GETTERS //////////////////////////////////////////////////////////////////////
     public E_APRelatedproducts GetRelatedProductType()
@@ -42,16 +75,6 @@ public class BlueprintRelatedProductScript : MonoBehaviour
         return _RelatedProductType;
     }
 
-    public bool GetRelatedProductCurrentState()
-    {
-        return _bIsActive;
-    }
-
-
-    public CanvasGroup GetCanvasGroupRP()
-    {
-        return _CanvasGroupRP;
-    }
 
     public GameObject GetSubGameObjRP()
     {
@@ -92,9 +115,29 @@ public class BlueprintRelatedProductScript : MonoBehaviour
 
     //////////////////////////////////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////////
     
-    public void SetRelatedProductCurrentState(bool bNewState)
+    public void SetCanvasGroupState(bool bNewState)
     {
-        _bIsActive = bNewState;
+        if (_CanvasGroupRP != null)
+        {
+            if(bNewState)
+            {
+                _CanvasGroupRP.alpha = 1f;
+                _CanvasGroupRP.interactable = true;
+                _CanvasGroupRP.blocksRaycasts = true;
+
+            }
+            else
+            {
+                _CanvasGroupRP.alpha = 0f;
+                _CanvasGroupRP.interactable = false;
+                _CanvasGroupRP.blocksRaycasts = false;
+            }
+        }
+    }
+
+    public void SetAPBlueprintManagerVariable(APBlueprintManager blueprintManager)
+    {
+       _APBlueprintManager = blueprintManager;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

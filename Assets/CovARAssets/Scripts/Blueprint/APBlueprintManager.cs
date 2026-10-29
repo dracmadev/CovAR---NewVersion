@@ -14,6 +14,7 @@ public class APBlueprintManager : MonoBehaviour
     [SerializeField] private APBasicInfoBlock _APBasicInfoBlock;
     [SerializeField] private APRelatedProductsBlock _APRelatedProductsBlock;
     [SerializeField] private BlueprintPopUpBehaviour _BlueprintPopUpBlock;
+    [SerializeField] private APPopUpSecuritySystem _APPopUpSecuritySystemBlock;
     [Header("Other references:")]
     [SerializeField] private ARObjectManager _ARObjectManager;
     [SerializeField] private HUDManagerScript _HUDManagerScript;
@@ -25,7 +26,7 @@ public class APBlueprintManager : MonoBehaviour
     string LastPanelBeforeBlueprintPopUp;
 
     private TakeScreenShootAndShare _TakeScreenShootAndShareScript;
-
+    private int currentSecuritySystemIndex = 0;
 
     void Start()
     {
@@ -85,6 +86,7 @@ public class APBlueprintManager : MonoBehaviour
             LayoutRebuilder.ForceRebuildLayoutImmediate(_VerticalBoxGeneralBlock.GetComponent<RectTransform>());
         }
        
+        _APPopUpSecuritySystemBlock.SetValueOfAPBlueprintManager(this);
 
         InitBlocks();
 
@@ -110,7 +112,7 @@ public class APBlueprintManager : MonoBehaviour
 
         if (_APRelatedProductsBlock != null)
         {
-            _APRelatedProductsBlock.InitRelatedProduct(_ARObjectManager);
+            _APRelatedProductsBlock.InitRelatedProduct(_ARObjectManager, this);
         }
 
         if(_APBasicInfoBlock != null)
@@ -128,6 +130,24 @@ public class APBlueprintManager : MonoBehaviour
     public St_OrderData GetOrderData()
     {
         return _OrderData;
+    }
+
+    public APPopUpSecuritySystem GetPopUpSecuritySystemGO()
+    {
+        return _APPopUpSecuritySystemBlock;
+    }
+
+    public int GetCurrentSecuritySystemIndex()
+    {
+        return currentSecuritySystemIndex;
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////// SETTER /////////////////////////////////////////////////////////////////////////
+    public void  SetCurrentSecuritySystemIndex(int newIndex)
+    {
+         currentSecuritySystemIndex = newIndex;
     }
 
 
