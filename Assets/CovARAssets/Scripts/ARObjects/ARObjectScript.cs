@@ -612,8 +612,6 @@ public class ARObjectScript : MonoBehaviour
         _footRightObj = GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight);
         //Debug.Log("I Getted the _footRightObj -> " + _footRightObj.gameObject.name);
 
-        
-
 
         if (bFabricCoverEndSecuritySystemsActive)
         {
@@ -725,6 +723,15 @@ public class ARObjectScript : MonoBehaviour
 
         _feedbackLenghtText.GetComponent<TMP_Text>().text = currentSliderValue.ToString("F2") + "m";
 
+        if (bFabricCoverEndSecuritySystemsActive)
+        {
+           CreateFabricCoverEndSecuritySystems();
+        }
+
+        if (bFabricCoverStartSecuritySystemsActive)
+        {
+           CreateFabricCoverStartSecuritySystems();
+        }
 
     }
 
@@ -1304,6 +1311,10 @@ public class ARObjectScript : MonoBehaviour
 
         _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght = currentSliderValue;
 
+        CreateFabricCoverAxis();
+        CreateFabricCoverEndSecuritySystems();
+        CreateFabricCoverStartSecuritySystems();
+
         if (_fabricCoverFeedbackText != null)
         {
             _fabricCoverFeedbackText.GetComponent<TMP_Text>().text = currentSliderValue.ToString("F2") + "m";
@@ -1373,6 +1384,10 @@ public class ARObjectScript : MonoBehaviour
 
             sliderObj.GetComponent<UnityEngine.UI.Slider>().value = normalizedStartingSliderValue;
         }
+
+        CreateFabricCoverAxis();
+        CreateFabricCoverEndSecuritySystems();
+        CreateFabricCoverStartSecuritySystems();
     }
 
     void AssignFabricCoverLenghtButtonsEvents()

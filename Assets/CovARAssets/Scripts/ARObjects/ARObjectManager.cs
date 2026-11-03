@@ -246,6 +246,7 @@ public class ARObjectManager : MonoBehaviour
                         newObjScript.SetFabricCoverLenghtByNum(_CovARObjectData._CurrentLamasLenght);
                         newObjScript.SetARObjectLenghtByNum(_CovARObjectData._CurrentARObjectLenght);
                         SpawnFabricCoverAxisObjects();
+                        SpawnFabricCoverSecuritySystem();
                         break;
 
                 }
@@ -270,18 +271,15 @@ public class ARObjectManager : MonoBehaviour
                         case E_ProductType.BencheAndCladdings:
                             SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
                             break;
-
                         case E_ProductType.DeckMountedIsolaCover:
                             SetIsolaCoverMaterial(_CovARObjectData._CurrentLamasMaterial);
                             break;
                         case E_ProductType.DeckMountedSlattedCover:
                             SetLamasMaterial(_CovARObjectData._CurrentLamasMaterial);
                             break;
-
                         case E_ProductType.FabricCover:
                             SetFabricCoverMaterial(_CovARObjectData._CurrentLamasMaterial);
                             break;
-
                     }
                 }
                 break;
@@ -2224,8 +2222,6 @@ public class ARObjectManager : MonoBehaviour
             arScript.CreateFabricCoverAxis();
         }
     }
-
-
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     ////////////////////////////////////////////////// SECURITY SYSTEM (Fabric Cover) ////////////////////////////////////////////////////////////
