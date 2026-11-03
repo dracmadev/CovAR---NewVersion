@@ -63,6 +63,251 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _MaxLamasLenghtDistance
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _MaxARObjectLenghtDistance
+      value: 6.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverAxisList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverAxisDataArray._MaxDistance
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverAxisDataArray._MinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverAxisDataArray._DistanceToLimits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverAxisDataArray._DistanceToLimits02
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverAxisDataArray._DistanceBetweenObjects
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverAxisDataArray.bOffsetDistanceToLimits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverAxisDataArray.bSpawnObjectsByDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverAxisDataArray._DistanceBetweenObjects02
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[0]._MaxDistance
+      value: 2.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[0]._MinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[1]._MaxDistance
+      value: 4.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[1]._MinDistance
+      value: 2.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[2]._MaxDistance
+      value: 6.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[2]._MinDistance
+      value: 4.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[0]._MaxDistance
+      value: 2.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[0]._MinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[1]._MaxDistance
+      value: 4.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[1]._MinDistance
+      value: 2.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[2]._MaxDistance
+      value: 6.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[2]._MinDistance
+      value: 4.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[0]._DistanceToLimits
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[1]._DistanceToLimits
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[2]._DistanceToLimits
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[0]._DistanceToLimits
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[1]._DistanceToLimits
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[2]._DistanceToLimits
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[0].bSpawnObjectsByNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[1].bSpawnObjectsByNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[2].bSpawnObjectsByNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[0]._NumberOfObjectsToSpawn
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[0].bOffsetDistanceToLimits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[1]._NumberOfObjectsToSpawn
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[1].bOffsetDistanceToLimits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[2]._NumberOfObjectsToSpawn
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverEndSecuritySystemsDataArray.Array.data[2].bOffsetDistanceToLimits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[0].bSpawnObjectsByNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[1].bSpawnObjectsByNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[2].bSpawnObjectsByNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[0]._NumberOfObjectsToSpawn
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[0].bOffsetDistanceToLimits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[1]._NumberOfObjectsToSpawn
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[1].bOffsetDistanceToLimits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[2]._NumberOfObjectsToSpawn
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.data[2].bOffsetDistanceToLimits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6451689619736233618, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
         type: 3}
       propertyPath: m_Name

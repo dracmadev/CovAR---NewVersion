@@ -37,20 +37,18 @@ public class ARObjectScript : MonoBehaviour
 
     [Header("Cover Fabric Axis Behaviour: ")]
     [SerializeField] private bool bFabricCoverAxisBehaviourActive = false;
-    [SerializeField] private float _DistanceBetweenAxis = 3.0f;
+    [SerializeField] private St_ARObjectFabricCoverData _FabricCoverAxisDataArray;
     [SerializeField] private GameObject _CustomFabricCoverAxisPrefab;
     [SerializeField] private List<GameObject> _FabricCoverAxisList;
 
     [Header("Cover Fabric Axis SecuritySystems: ")]
     [SerializeField] private bool bFabricCoverStartSecuritySystemsActive = false;
-    [SerializeField] private float _DistanceBetweenStartSecuritySystems = 1.0f;
-    [SerializeField] private float _DistanceBetweenStartSecuritySystemAndLimits = 0.2f;
+    [SerializeField] private St_ARObjectFabricCoverData[] _FabricCoverStartSecuritySystemsDataArray;
     [SerializeField] private GameObject _CustomFabricCoverStartSSPrefab;
     [SerializeField] private List<GameObject> _FabricCoverStartSSList;
     [Space()]
     [SerializeField] private bool bFabricCoverEndSecuritySystemsActive = false;
-    [SerializeField] private float _DistanceBetweenEndSecuritySystems = 1.0f;
-    [SerializeField] private float _DistanceBetweenEndsSecuritySystemAndLimits = 0.2f;
+    [SerializeField] private St_ARObjectFabricCoverData[] _FabricCoverEndSecuritySystemsDataArray;
     [SerializeField] private GameObject _CustomFabricCoverEndSSPrefab;
     [SerializeField] private List<GameObject> _FabricCoverEndSSList;
 
@@ -1486,75 +1484,255 @@ public class ARObjectScript : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-    ////////////////////////////////////////////////////////// FABRIC COVER AXIS ///////////////////////////////////////////////////////////////////////////
+  
+    //////////////////////////////////////////////// FABRIC COVER AXIS ////////////////////////////////////////////////////////
 
     public void CreateFabricCoverAxis()
     {
-        if (!bFabricCoverAxisBehaviourActive)
-        {
-            ClearFabricCoverAxis();
-            return;
-        }
-
-        // Netegem tant els eixos com els seus ossos abans de generar els nous
         ClearFabricCoverAxis();
 
-        if (_ARObjectManager == null || _ARObjectManager.GetCovARObjectData() == null || _CustomFabricCoverAxisPrefab == null)
+        if (!bFabricCoverAxisBehaviourActive) return;
+
+        if (_ARObjectManager == null ||  _ARObjectManager.GetCovARObjectData() == null ||_CustomFabricCoverAxisPrefab == null ||_FabricCoverAxisDataArray == null)
         {
             Debug.LogWarning("CreateFabricCoverAxis: Falten referències.");
             return;
         }
 
-        float currentLenght = _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght;
-        // Obtenim el valor actual de l'amplada de l'objecte (en metres)
-        float currentWidthValue = _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght;
+        float currentLength = _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght;
 
-        float nextAxisPositionMeters = _DistanceBetweenAxis;
+        float currentWidth = _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght;
 
-        while (nextAxisPositionMeters < currentLenght)
+        St_ARObjectFabricCoverData data = _FabricCoverAxisDataArray;
+
+        if (!IsValidFabricAxisValue(currentLength) || !IsValidFabricAxisValue(currentWidth) ||  currentLength <= 0f ||  currentWidth <= 0f)
         {
-            float targetZ = nextAxisPositionMeters;
+            return;
+        }
 
-            // 1. Instanciar l'eix intermedi
+        // Aquesta regla s'aplica segons la llargada de la lona.
+        if (currentLength < data._MinDistance ||  currentLength > data._MaxDistance)
+        {
+            return;
+        }
+
+        List<float> positions = CalculateFabricCoverAxisPositions( currentLength,data);
+
+        if (_FabricCoverAxisList == null)
+        {
+            _FabricCoverAxisList = new List<GameObject>();
+        }
+
+        if (_rightBonesFromAxisCoversList == null)
+        {
+            _rightBonesFromAxisCoversList = new List<GameObject>();
+        }
+
+        foreach (float targetZ in positions)
+        {
+            // Mateixa instanciació i transformació que al teu codi original.
             GameObject newAxis = Instantiate(_CustomFabricCoverAxisPrefab, this.transform);
+
             newAxis.transform.localPosition = new Vector3(0f, 0f, targetZ);
             newAxis.transform.localRotation = Quaternion.identity;
 
             _FabricCoverAxisList.Add(newAxis);
 
-            // 2. Buscar els ossos RIGHT que hi ha DINS d'aquest prefab acabat de crear
             List<GameObject> axisRightBones = GetRightBonesFromSpecificAxis(newAxis);
 
-            // 3. Afegir-los a la llista general de control i aplicar-los l'amplada immediatament
             foreach (GameObject boneObj in axisRightBones)
             {
-                if (boneObj != null)
-                {
-                    _rightBonesFromAxisCoversList.Add(boneObj);
+                if (boneObj == null) continue;
 
-                    // Apliquem l'amplada actual multiplicada per 100 en l'eix X local del os
-                    Vector3 bonePos = boneObj.transform.localPosition;
-                    boneObj.transform.localPosition = new Vector3(currentWidthValue * 100f, bonePos.y, bonePos.z);
-                }
+                _rightBonesFromAxisCoversList.Add(boneObj);
+
+                Vector3 bonePos = boneObj.transform.localPosition;
+
+                boneObj.transform.localPosition = new Vector3( currentWidth * 100f, bonePos.y, bonePos.z);
             }
-
-            nextAxisPositionMeters += _DistanceBetweenAxis;
         }
     }
 
-    // Funció auxiliar per buscar ossos RIGHT només dins de l'eix passat per paràmetre
+    private List<float> CalculateFabricCoverAxisPositions(float length, St_ARObjectFabricCoverData data)
+    {
+        List<float> positions = new List<float>();
+
+        const float tolerance = 0.00001f;
+
+        if (data.bSpawnObjectsByNumber == data.bSpawnObjectsByDistance)
+        {
+            Debug.LogWarning( "FabricCoverAxis: Activa només un mode de generació.");
+            return positions;
+        }
+
+        float minOffset = data.bOffsetDistanceToLimits? data._DistanceToLimits : 0f;
+
+        if (!IsValidFabricAxisValue(minOffset) || minOffset < 0f)
+        {
+            Debug.LogWarning("FabricCoverAxis: Offset no vàlid.");
+            return positions;
+        }
+
+        float maxOffset = minOffset;
+
+        // El segon offset només intervé si és superior al primer.
+        if (data.bOffsetDistanceToLimits)
+        {
+            if (!IsValidFabricAxisValue(data._DistanceToLimits02))
+            {
+                Debug.LogWarning("FabricCoverAxis: Segon offset no vàlid.");
+                return positions;
+            }
+
+            if (data._DistanceToLimits02 > minOffset)
+            {
+                maxOffset = data._DistanceToLimits02;
+            }
+        }
+
+        float availableLength = length - (2f * minOffset);
+
+        // No hi caben les barres dels extrems.
+        if (availableLength < -tolerance)
+        {
+            return positions;
+        }
+
+        // Els dos extrems coincideixen: una sola barra centrada.
+        if (availableLength <= tolerance)
+        {
+            positions.Add(length / 2f);
+            return positions;
+        }
+
+        // MODE PER NOMBRE
+        if (data.bSpawnObjectsByNumber)
+        {
+            int count = data._NumberOfObjectsToSpawn;
+
+            if (count <= 0)
+            {
+                Debug.LogWarning( "FabricCoverAxis: El nombre de barres ha de ser positiu.");
+                return positions;
+            }
+
+            // En aquest mode mantenim el marge base i repartim uniformement.
+            AddUniformFabricAxisPositions( positions, length, minOffset, count);
+
+            return positions;
+        }
+
+        // MODE PER DISTÀNCIA
+        float minSpacing = data._DistanceBetweenObjects;
+
+        if (!IsValidFabricAxisValue(minSpacing) || minSpacing <= 0f)
+        {
+            Debug.LogWarning( "FabricCoverAxis: La separació ha de ser positiva.");
+            return positions;
+        }
+
+        if (!IsValidFabricAxisValue(data._DistanceBetweenObjects02))
+        {
+            Debug.LogWarning("FabricCoverAxis: Segona separació no vàlida.");
+            return positions;
+        }
+
+        // Si el segon valor és 0 o no supera el primer,
+        // treballem amb una única separació de referència.
+        float maxSpacing = data._DistanceBetweenObjects02 > minSpacing ? data._DistanceBetweenObjects02: minSpacing;
+
+        // Nombre màxim d'espais que hi caben respectant el mínim.
+        int maxSpaces = Mathf.FloorToInt( (availableLength + tolerance) / minSpacing);
+
+        // Cas base: dues barres. Encara no hi cap una tercera.
+        if (maxSpaces < 2)
+        {
+            AddUniformFabricAxisPositions(positions, length, minOffset, 2);
+            return positions;
+        }
+
+        // Busquem una distribució uniforme que respecti tots dos intervals.
+        // Comencem per la que permet més barres.
+        for (int spaces = maxSpaces; spaces >= 2; spaces--)
+        {
+            // length = 2 * offset + spaces * spacing
+            float lowestOffset = Mathf.Max(minOffset, (length - spaces * maxSpacing) / 2f);
+
+            float highestOffset = Mathf.Min( maxOffset, (length - spaces * minSpacing) / 2f);
+
+            if (lowestOffset > highestOffset + tolerance)
+            {
+                continue;
+            }
+
+            // Escollim el marge vàlid més proper al marge mínim.
+            float offset = Mathf.Clamp(lowestOffset, minOffset, maxOffset);
+
+            AddUniformFabricAxisPositions( positions,length, offset, spaces + 1);
+
+            return positions;
+        }
+
+        // EXCEPCIÓ:
+        // No hi ha cap combinació que respecti tots els intervals.
+        // Augmentem el marge tant com sigui possible sense perdre barres.
+        int fallbackSpaces = maxSpaces;
+
+        float fallbackOffset = Mathf.Clamp( (length - fallbackSpaces * minSpacing) / 2f, minOffset, maxOffset );
+
+        float usefulLength = length - 2f * fallbackOffset;
+
+        // Els espais interiors respecten el rang.
+        // Només els dos espais exteriors poden superar el màxim.
+        float innerSpacing = Mathf.Clamp(usefulLength / fallbackSpaces, minSpacing, maxSpacing);
+
+        int innerSpaces = fallbackSpaces - 2;
+
+        float outerSpacing = (usefulLength - innerSpaces * innerSpacing) / 2f;
+
+        positions.Add(fallbackOffset);
+
+        // Barres interiors, simètriques respecte del centre.
+        for (int i = 0; i < fallbackSpaces - 1; i++)
+        {
+            positions.Add( fallbackOffset + outerSpacing + i * innerSpacing);
+        }
+
+        positions.Add(length - fallbackOffset);
+
+        return positions;
+    }
+
+    private void AddUniformFabricAxisPositions( List<float> positions,float length, float offset,int count)
+    {
+        if (count == 1)
+        {
+            positions.Add(length / 2f);
+            return;
+        }
+
+        float spacing = (length - 2f * offset) / (count - 1);
+
+        for (int i = 0; i < count; i++)
+        {
+            positions.Add(offset + i * spacing);
+        }
+    }
+
+    private bool IsValidFabricAxisValue(float value)
+    {
+        return !float.IsNaN(value) && !float.IsInfinity(value);
+    }
+
     private List<GameObject> GetRightBonesFromSpecificAxis(GameObject axisRoot)
     {
         List<GameObject> foundBones = new List<GameObject>();
 
-        // Busquem els scripts en els fills de l'objecte arrel de la barra creada
         ARObjectPartScript[] allParts = axisRoot.GetComponentsInChildren<ARObjectPartScript>(true);
 
         foreach (ARObjectPartScript part in allParts)
         {
-            // Si té dades d'os i la direcció és UP o RIGHT (en aquest cas filtrem per RIGHT basat en el teu enu)
-            if (part.GetBoneData() != null && part.GetBoneData()._BoneDirection == E_ARObjectComponentsDirection.RIGHT)
+            if (part.GetBoneData() != null &&part.GetBoneData()._BoneDirection ==E_ARObjectComponentsDirection.RIGHT)
             {
                 foundBones.Add(part.gameObject);
             }
@@ -1565,35 +1743,33 @@ public class ARObjectScript : MonoBehaviour
 
     public void ClearFabricCoverAxis()
     {
-        // Destruir eixos
         if (_FabricCoverAxisList != null)
         {
             foreach (GameObject axis in _FabricCoverAxisList)
             {
-                if (axis != null) Destroy(axis);
+                if (axis != null)
+                {
+                    Destroy(axis);
+                }
             }
+
             _FabricCoverAxisList.Clear();
         }
 
-        // Netejar la llista d'ossos vells (ja s'han destruït en esborrar els eixos pares)
-        _rightBonesFromAxisCoversList.Clear();
+        if (_rightBonesFromAxisCoversList != null)
+        {
+            _rightBonesFromAxisCoversList.Clear();
+        }
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-    ///////////////////////////////////////////////// FABRIC SECURITY SYSTEM START /////////////////////////////////////////////////////////////////////////////////////
-
+    //////////////////////////////////////////////// FABRIC SECURITY SYSTEM START ////////////////////////////////////////////////
 
     public void CreateFabricCoverStartSecuritySystems()
     {
-        if (!bFabricCoverStartSecuritySystemsActive)
-        {
-            ClearFabricCoverStartSecuritySystems();
-            return;
-        }
-
         ClearFabricCoverStartSecuritySystems();
+
+        if (!bFabricCoverStartSecuritySystemsActive) return;
 
         if (_ARObjectManager == null || _ARObjectManager.GetCovARObjectData() == null || _CustomFabricCoverStartSSPrefab == null)
         {
@@ -1603,91 +1779,41 @@ public class ARObjectScript : MonoBehaviour
 
         float totalWidth = _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght;
 
-        if (totalWidth <= 0 || _DistanceBetweenStartSecuritySystems <= 0) return;
-
-        // --- LÒGICA AMB MARGES ALS LÍMITS ---
-        // Calculem l'amplada útil real que ens queda per repartir els sistemes de seguretat
-        float usefulWidth = totalWidth - (2f * _DistanceBetweenStartSecuritySystemAndLimits);
-
-        // Control de seguretat: si la lona és tan estreta que els marges es trepitgen o no deixen espai,
-        // col·loquem un sol ancoratge al centre exacte i sortim.
-        if (usefulWidth <= 0)
+        if (_FabricCoverStartSSList == null)
         {
-            GameObject centerAnchor = Instantiate(_CustomFabricCoverStartSSPrefab, this.transform);
-            Vector3 prefabLocalPos = _CustomFabricCoverStartSSPrefab.transform.localPosition;
-            centerAnchor.transform.localPosition = new Vector3(totalWidth / 2f, prefabLocalPos.y, -0.1f);
-            centerAnchor.transform.localRotation = _CustomFabricCoverStartSSPrefab.transform.localRotation;
-            _FabricCoverStartSSList.Add(centerAnchor);
-            return;
+            _FabricCoverStartSSList = new List<GameObject>();
         }
 
-        // Calculem els espais necessaris basant-nos en l'amplada útil
-        int numberOfSpaces = Mathf.CeilToInt(usefulWidth / _DistanceBetweenStartSecuritySystems);
-
-        float calculatedDistance = usefulWidth / numberOfSpaces;
-        float minimumDistanceAllowed = _DistanceBetweenStartSecuritySystems / 2f;
-
-        if (calculatedDistance < minimumDistanceAllowed && numberOfSpaces > 1)
-        {
-            numberOfSpaces--;
-        }
-
-        int totalAnchors = numberOfSpaces + 1;
-        float finalDistanceBetweenAnchors = usefulWidth / numberOfSpaces;
-
-        // EL NOU CANVI: El punt d'inici en X ja no és 0, sinó el límit de marge que has definit
-        float startX = _DistanceBetweenStartSecuritySystemAndLimits;
-
-        // --- INSTANCIACIÓ ---
-        for (int i = 0; i < totalAnchors; i++)
-        {
-            // Calculem la posició X local sumant la distància a partir del marge inicial
-            float targetX = startX + (i * finalDistanceBetweenAnchors);
-
-            GameObject newAnchor = Instantiate(_CustomFabricCoverStartSSPrefab, this.transform);
-
-            Vector3 prefabLocalPos = _CustomFabricCoverStartSSPrefab.transform.localPosition;
-            Quaternion prefabLocalRot = _CustomFabricCoverStartSSPrefab.transform.localRotation;
-
-            newAnchor.transform.localPosition = new Vector3(targetX, prefabLocalPos.y, -0.1f);
-            newAnchor.transform.localRotation = prefabLocalRot;
-
-            _FabricCoverStartSSList.Add(newAnchor);
-        }
+        SpawnFabricCoverSecuritySystems(totalWidth,-0.1f, _FabricCoverStartSecuritySystemsDataArray,_CustomFabricCoverStartSSPrefab, _FabricCoverStartSSList, false);
     }
 
     public void ClearFabricCoverStartSecuritySystems()
     {
-        // Destruir els sistemes de seguretat de l'inici
-        if (_FabricCoverStartSSList != null)
+        if (_FabricCoverStartSSList == null) return;
+
+        foreach (GameObject anchor in _FabricCoverStartSSList)
         {
-            foreach (GameObject anchor in _FabricCoverStartSSList)
+            if (anchor != null)
             {
-                if (anchor != null)
-                {
-                    Destroy(anchor);
-                }
+                Destroy(anchor);
             }
-            _FabricCoverStartSSList.Clear();
         }
+
+        _FabricCoverStartSSList.Clear();
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    ////////////////////////////////////////////////////// SECURITY SYSTEM END //////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////// SECURITY SYSTEM END ////////////////////////////////////////////////////////
 
     public void CreateFabricCoverEndSecuritySystems()
     {
-        if (!bFabricCoverEndSecuritySystemsActive)
-        {
-            ClearFabricCoverEndSecuritySystems();
-            return;
-        }
-
         ClearFabricCoverEndSecuritySystems();
 
-        if (_ARObjectManager == null || _ARObjectManager.GetCovARObjectData() == null || _CustomFabricCoverEndSSPrefab == null)
+        if (!bFabricCoverEndSecuritySystemsActive) return;
+
+        if (_ARObjectManager == null || _ARObjectManager.GetCovARObjectData() == null ||_CustomFabricCoverEndSSPrefab == null)
         {
             Debug.LogWarning("CreateFabricCoverEndSecuritySystems: Falten referències.");
             return;
@@ -1696,77 +1822,153 @@ public class ARObjectScript : MonoBehaviour
         float totalWidth = _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght;
         float currentLength = _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght;
 
-        if (totalWidth <= 0 || _DistanceBetweenEndSecuritySystems <= 0) return;
-
-        // --- LÒGICA AMB MARGES ALS LÍMITS ---
-        float usefulWidth = totalWidth - (2f * _DistanceBetweenEndsSecuritySystemAndLimits);
-
-        // Control de seguretat si és massa estreta
-        if (usefulWidth <= 0)
+        if (_FabricCoverEndSSList == null)
         {
-            GameObject centerAnchor = Instantiate(_CustomFabricCoverEndSSPrefab, this.transform);
-            Vector3 prefabLocalPos = _CustomFabricCoverEndSSPrefab.transform.localPosition;
-
-            centerAnchor.transform.localPosition = new Vector3(totalWidth / 2f, prefabLocalPos.y, currentLength);
-
-            // Apliquem la rotació original del prefab + 180 graus a la Y
-            Quaternion targetRotation = _CustomFabricCoverEndSSPrefab.transform.localRotation * Quaternion.Euler(0f, 180f, 0f);
-            centerAnchor.transform.localRotation = targetRotation;
-
-            _FabricCoverEndSSList.Add(centerAnchor);
-            return;
+            _FabricCoverEndSSList = new List<GameObject>();
         }
 
-        int numberOfSpaces = Mathf.CeilToInt(usefulWidth / _DistanceBetweenEndSecuritySystems);
-        float calculatedDistance = usefulWidth / numberOfSpaces;
-        float minimumDistanceAllowed = _DistanceBetweenEndSecuritySystems / 2f;
-
-        if (calculatedDistance < minimumDistanceAllowed && numberOfSpaces > 1)
-        {
-            numberOfSpaces--;
-        }
-
-        int totalAnchors = numberOfSpaces + 1;
-        float finalDistanceBetweenAnchors = usefulWidth / numberOfSpaces;
-
-        float startX = _DistanceBetweenEndsSecuritySystemAndLimits;
-
-        // --- INSTANCIACIÓ ---
-        for (int i = 0; i < totalAnchors; i++)
-        {
-            float targetX = startX + (i * finalDistanceBetweenAnchors);
-
-            GameObject newAnchor = Instantiate(_CustomFabricCoverEndSSPrefab, this.transform);
-
-            Vector3 prefabLocalPos = _CustomFabricCoverEndSSPrefab.transform.localPosition;
-
-            // Calculem la rotació combinant la original del prefab amb un gir de 180 a la Y
-            Quaternion prefabLocalRot = _CustomFabricCoverEndSSPrefab.transform.localRotation;
-            Quaternion rotatedY = prefabLocalRot * Quaternion.Euler(0f, 180f, 0f);
-
-            newAnchor.transform.localPosition = new Vector3(targetX, prefabLocalPos.y, currentLength);
-            newAnchor.transform.localRotation = rotatedY; // Apliquem la rotació amb el gir de 180
-
-            _FabricCoverEndSSList.Add(newAnchor);
-        }
+        SpawnFabricCoverSecuritySystems(totalWidth, currentLength,_FabricCoverEndSecuritySystemsDataArray, _CustomFabricCoverEndSSPrefab,_FabricCoverEndSSList, true);
     }
 
     public void ClearFabricCoverEndSecuritySystems()
     {
-        if (_FabricCoverEndSSList != null)
+        if (_FabricCoverEndSSList == null) return;
+
+        foreach (GameObject anchor in _FabricCoverEndSSList)
         {
-            foreach (GameObject anchor in _FabricCoverEndSSList)
+            if (anchor != null)
             {
-                if (anchor != null)
-                {
-                    Destroy(anchor);
-                }
+                Destroy(anchor);
             }
-            _FabricCoverEndSSList.Clear();
+        }
+
+        _FabricCoverEndSSList.Clear();
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////// FUNCIONS AUXILIARS (SS) ////////////////////////////////////////////////////////
+
+    private St_ARObjectFabricCoverData GetFabricCoverSecuritySystemsData( float totalWidth,St_ARObjectFabricCoverData[] dataArray)
+    {
+        if (dataArray == null) return null;
+
+        St_ARObjectFabricCoverData selectedData = null;
+
+        foreach (St_ARObjectFabricCoverData data in dataArray)
+        {
+            if (data == null) continue;
+
+            if (totalWidth < data._MinDistance || totalWidth > data._MaxDistance)
+            {
+                continue;
+            }
+
+            // Si dos rangs comparteixen un límit, escollim el de màxim menor:
+            // 2.69 -> 2 tensors; 4.99 -> 3 tensors.
+            if (selectedData == null ||
+                data._MaxDistance < selectedData._MaxDistance)
+            {
+                selectedData = data;
+            }
+        }
+
+        return selectedData;
+    }
+
+    private void SpawnFabricCoverSecuritySystems(float totalWidth,float targetZ, St_ARObjectFabricCoverData[] dataArray,GameObject prefab,List<GameObject> spawnedObjects, bool rotateEnd)
+    {
+        if (float.IsNaN(totalWidth) || float.IsInfinity(totalWidth) ||totalWidth <= 0f)
+        {
+            return;
+        }
+
+        St_ARObjectFabricCoverData data = GetFabricCoverSecuritySystemsData(totalWidth, dataArray);
+
+        if (data == null)
+        {
+            Debug.LogWarning( $"FabricCoverSecuritySystems: No hi ha cap regla per a {totalWidth:F2} m.");
+            return;
+        }
+
+        // Cal activar exactament un dels dos modes.
+        if (data.bSpawnObjectsByNumber == data.bSpawnObjectsByDistance)
+        {
+            Debug.LogWarning("FabricCoverSecuritySystems: Activa només un mode: per nombre o per distància.");
+            return;
+        }
+
+        float offset = data.bOffsetDistanceToLimits ? data._DistanceToLimits : 0f;
+
+        if (float.IsNaN(offset) || float.IsInfinity(offset) || offset < 0f)
+        {
+            Debug.LogWarning("FabricCoverSecuritySystems: Offset no vàlid.");
+            return;
+        }
+
+        float usefulWidth = totalWidth - (2f * offset);
+
+        // Evitem crear menys tensors dels configurats o superposar-los.
+        if (usefulWidth <= 0f)
+        {
+            Debug.LogWarning("FabricCoverSecuritySystems: Els offsets no deixen amplada útil.");
+            return;
+        }
+
+        int totalAnchors;
+
+        if (data.bSpawnObjectsByNumber)
+        {
+            totalAnchors = data._NumberOfObjectsToSpawn;
+
+            if (totalAnchors <= 0)
+            {
+                Debug.LogWarning( "FabricCoverSecuritySystems: El nombre d'objectes ha de ser positiu.");
+                return;
+            }
+        }
+        else
+        {
+            float requestedDistance = data._DistanceBetweenObjects;
+
+            if (float.IsNaN(requestedDistance) || float.IsInfinity(requestedDistance) || requestedDistance <= 0f)
+            {
+                Debug.LogWarning("FabricCoverSecuritySystems: La distància ha de ser positiva.");
+                return;
+            }
+
+            // Mode per distància: repartiment uniforme entre els dos límits.
+            // La separació resultant no supera la distància configurada.
+            int numberOfSpaces = Mathf.CeilToInt(usefulWidth / requestedDistance);
+
+            totalAnchors = numberOfSpaces + 1;
+        }
+
+        float spacing = totalAnchors > 1 ? usefulWidth / (totalAnchors - 1) : 0f;
+
+        Vector3 prefabLocalPos = prefab.transform.localPosition;
+        Quaternion targetRotation = prefab.transform.localRotation;
+
+        if (rotateEnd)
+        {
+            targetRotation *= Quaternion.Euler(0f, 180f, 0f);
+        }
+
+        for (int i = 0; i < totalAnchors; i++)
+        {
+            // Si només es configura un tensor, el col·loquem al centre.
+            float targetX = totalAnchors == 1 ? totalWidth / 2f : offset + (i * spacing);
+
+            GameObject newAnchor = Instantiate(prefab, this.transform);
+
+            newAnchor.transform.localPosition = new Vector3(targetX, prefabLocalPos.y, targetZ);
+
+            newAnchor.transform.localRotation = targetRotation;
+
+            spawnedObjects.Add(newAnchor);
         }
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////////////// DESACTIVE MASK //////////////////////////////////////////////////////////////////////////
 
