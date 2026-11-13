@@ -25,7 +25,8 @@ public class WebRequestManager : MonoBehaviour
     [SerializeField] private TMP_Text _AppVersionText;
     [Header("UI components needed (MainMenu):")]
     [SerializeField] private SimpleMainMenuLoginBehaviour _SimpleMainMenuLoginBehaviour;
-
+    [Header("Dont use Login with Internet:")]
+    [SerializeField] private bool bDontUseLoginWithInternet = false;
 
     HUDManagerScript _HUDManagerScript;
     ARObjectManager _ARObjectManager;
@@ -162,9 +163,17 @@ public class WebRequestManager : MonoBehaviour
 
     public void WR_Login(string email, string password, HelperTextBehaviourScript _HelperText, Button loginButton)
     {
-        loginButton.gameObject.SetActive(false);
-        _HelperText.ShowLoginCorrectMessage("LoginWait");
-        StartCoroutine(WR_LoginCoroutine(email, password, _HelperText, loginButton));
+        if(!bDontUseLoginWithInternet)
+        {
+            loginButton.gameObject.SetActive(false);
+            _HelperText.ShowLoginCorrectMessage("LoginWait");
+            StartCoroutine(WR_LoginCoroutine(email, password, _HelperText, loginButton));
+        }
+        else
+        {
+            _HUDManagerScript.OnClickMoveToScene("Scene_ARScene");
+        }
+      
     }
 
     IEnumerator WR_LoginAstralpoolCoroutine(string email, string password, HelperTextBehaviourScript _HelperText, Button loginButton)

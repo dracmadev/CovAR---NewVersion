@@ -446,12 +446,19 @@ public class APRelatedProductsBlock : MonoBehaviour
             //////////////////////////////////////////////////
 
 
-            //SUBMERGED MODEL/////////////////////////////////////
-            if (GetRelatedProductByType(E_APRelatedproducts.SubmergedModel_Astralpool).GetDropdown01RP() != null)
-            {
-                TMP_Dropdown _SubmergedModelDropdown = GetRelatedProductByType(E_APRelatedproducts.SubmergedModel_Astralpool).GetDropdown01RP();
+            //SUBMERGED MODEL////////////////////////////////////
+            var relatedProduct = GetRelatedProductByType( E_APRelatedproducts.SubmergedModel_Astralpool);
 
-                _WebRequestManager.SetSubmergedModel(_SubmergedModelDropdown.options[_SubmergedModelDropdown.value].text);
+            TMP_Dropdown submergedDropdown = null;
+
+            if (relatedProduct != null)
+            {
+                submergedDropdown = relatedProduct.GetDropdown01RP();
+            }
+
+            if (submergedDropdown != null && submergedDropdown.value >= 0 && submergedDropdown.value < submergedDropdown.options.Count)
+            {
+                _WebRequestManager.SetSubmergedModel( submergedDropdown.options[submergedDropdown.value].text);
             }
             else
             {

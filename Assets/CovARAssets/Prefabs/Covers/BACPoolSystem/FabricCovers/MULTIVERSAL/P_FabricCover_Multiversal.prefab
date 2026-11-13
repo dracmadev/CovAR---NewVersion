@@ -80,6 +80,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
         type: 3}
+      propertyPath: _MaxLamasLenghtDistanceWithPool
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _MaxARObjectLenghtDistanceWithPool
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
       propertyPath: _FabricCoverAxisDataArray._MaxDistance
       value: 12
       objectReference: {fileID: 0}

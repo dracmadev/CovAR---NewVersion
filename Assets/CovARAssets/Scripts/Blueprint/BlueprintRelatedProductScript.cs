@@ -83,7 +83,15 @@ public class BlueprintRelatedProductScript : MonoBehaviour
 
     public TMP_Dropdown GetDropdown01RP()
     {
-        return _Dropdown01RP;
+        if(_Dropdown01RP != null)
+        {
+            return _Dropdown01RP;
+        }
+        else
+        {
+            return null;
+        }
+       
     }
     public TMP_Dropdown GetDropdown02RP()
     {

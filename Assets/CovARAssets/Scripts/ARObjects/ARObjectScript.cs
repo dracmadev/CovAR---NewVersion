@@ -1232,7 +1232,7 @@ public class ARObjectScript : MonoBehaviour
         if (_fabricCoverSliderRef != null)
         {
             _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMin = 0f;
-            _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _MaxLamasLenghtDistance;
+            _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData().sliderMax = _ARObjectManager.GetPoolActiveState() ? _MaxLamasLenghtDistanceWithPool : _MaxLamasLenghtDistance;
 
             _fabricCoverSliderRef.GetComponent<Slider>().onValueChanged.RemoveListener(delegate { SetFabricCoverLenght(); });
             _fabricCoverSliderRef.GetComponent<Slider>().onValueChanged.AddListener(delegate { SetFabricCoverLenght(); });
@@ -1422,16 +1422,15 @@ public class ARObjectScript : MonoBehaviour
 
         if (_boneUpObjList.Count == 0) return;
 
+        float maxLenght = _ARObjectManager.GetPoolActiveState() ? _MaxLamasLenghtDistanceWithPool : _MaxLamasLenghtDistance;
+
+        newLenght = Mathf.Clamp(newLenght, 0f, maxLenght);
+
         if (_fabricCoverSliderRef != null)
         {
             var sliderData = _fabricCoverSliderRef.GetComponent<UIBehaviourComponent>().GetSliderData();
             sliderData.sliderMin = 0f;
-            sliderData.sliderMax = _MaxLamasLenghtDistance;
-
-            if (newLenght > _MaxLamasLenghtDistance)
-            {
-                newLenght = _MaxLamasLenghtDistance;
-            }
+            sliderData.sliderMax = maxLenght;
 
             sliderData.sliderResult = newLenght;
 
@@ -1499,7 +1498,7 @@ public class ARObjectScript : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  
+
     //////////////////////////////////////////////// FABRIC COVER AXIS ////////////////////////////////////////////////////////
 
     public void CreateFabricCoverAxis()

@@ -1145,7 +1145,8 @@ public class ARObjectManager : MonoBehaviour
                 case E_ProductType.None: break;
                 case E_ProductType.GroundRollerCover: _CovARObjectData._CurrentModelProduct = product; break;
                 case E_ProductType.SubmergedRollerCover: _CovARObjectData._CurrentModelProduct = product; break;
-                case E_ProductType.BencheAndCladdings: _CovARObjectData._CurrentCladdingProduct = product; break;
+                case E_ProductType.BencheAndCladdings: _CovARObjectData._CurrentModelProduct = product; 
+                                                    _CovARObjectData._CurrentCladdingProduct = product; break;
                 case E_ProductType.FabricCover: _CovARObjectData._CurrentFabricCoverProduct = product;
                                                 _CovARObjectData._CurrentModelProduct = product; break;
                 case E_ProductType.Lamas: _CovARObjectData._CurrentLamasProduct = product; break;
@@ -1167,18 +1168,8 @@ public class ARObjectManager : MonoBehaviour
                 switch (_CurrentProductSelected._ProductType)
                 {
                     case E_ProductType.None: break;
-                    case E_ProductType.GroundRollerCover: _CovARObjectData._CurrentModelModel = model;
-
-                        //_CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        //_CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
-
-                        break;
-                    case E_ProductType.SubmergedRollerCover: _CovARObjectData._CurrentModelModel = model;
-
-                        //_CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        //_CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
-
-                        break;
+                    case E_ProductType.GroundRollerCover: _CovARObjectData._CurrentModelModel = model; break;
+                    case E_ProductType.SubmergedRollerCover: _CovARObjectData._CurrentModelModel = model; break;
                     case E_ProductType.BencheAndCladdings: 
                         
                         switch(model._ModelType)
@@ -1199,34 +1190,24 @@ public class ARObjectManager : MonoBehaviour
                                 break;
                             case E_ModelType.AP_LeBancTopCladding: _CovARObjectData._CurrentTopCladdingModel = model; break;
                             case E_ModelType.AP_LeBancSidesCladding: _CovARObjectData._CurrentSidesCladdingModel = model; break;
+
+                            case E_ModelType.BAC_CladdingLido: _CovARObjectData._CurrentModelModel = model; break;
+                            case E_ModelType.BAC_SlattedDavos: _CovARObjectData._CurrentModelModel = model; break;
+                            case E_ModelType.BAC_CladdingQuadro: _CovARObjectData._CurrentModelModel = model; break;
                         }
 
                         break;
                     case E_ProductType.FabricCover:
                         _CovARObjectData._CurrentModelModel = model;
-                        _CovARObjectData._CurrentFabricCoverModel = model;
-
-                        //_CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        //_CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
-                        break;
+                        _CovARObjectData._CurrentFabricCoverModel = model; break;
 
                     case E_ProductType.Lamas: _CovARObjectData._CurrentLamasModel = model;
                                             _CovARObjectData._CurrentLamasModel = model;  break;
 
                     case E_ProductType.DeckMountedIsolaCover:
-                        _CovARObjectData._CurrentModelModel = model;
-
-                        //_CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        //_CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
-
-                        break;
+                        _CovARObjectData._CurrentModelModel = model; break;
                     case E_ProductType.DeckMountedSlattedCover:
-                        _CovARObjectData._CurrentModelModel = model;
-
-                        //_CovARObjectData._CurrentTopCladdingMaterial._MaterialType = E_MaterialType.None;
-                        //_CovARObjectData._CurrentSidesCladdingMaterial._MaterialType = E_MaterialType.None;
-
-                        break;
+                        _CovARObjectData._CurrentModelModel = model; break;
                     case E_ProductType.IsolaCover:
                                 _CovARObjectData._CurrentLamasModel = model;
                                 _CovARObjectData._CurrentLamasModel = model; break;
@@ -1275,7 +1256,7 @@ public class ARObjectManager : MonoBehaviour
                     case E_ModelType.BAC_SlattedLido: _CovARObjectData._CurrentModelMaterial = material; break;
                     case E_ModelType.BAC_SlattedAcoe: _CovARObjectData._CurrentModelMaterial = material; break;
                     case E_ModelType.BAC_SlattedAcoeCladding: _CovARObjectData._CurrentModelMaterial = material; break;
-                    case E_ModelType.BAC_SlattedDavos: _CovARObjectData._CurrentModelMaterial = material; break;
+                    //case E_ModelType.BAC_SlattedDavos: _CovARObjectData._CurrentModelMaterial = material; break;
 
                     /////////////////////////////////////////////////// DECK MOUNTED ISOLA COVER ///////////////////////////////////////////////////////
                     case E_ModelType.BAC_IsolaRollfix: _CovARObjectData._CurrentModelMaterial = material; break;
@@ -1285,15 +1266,19 @@ public class ARObjectManager : MonoBehaviour
                     case E_ModelType.BAC_IsolaRondalino: _CovARObjectData._CurrentModelMaterial = material; break;
 
                     //////////////////////////////////////////////// BAC CLADDING AND BENCHES //////////////////////////////////////////////////////////////   
-                    case E_ModelType.BAC_CladdingAcoe: _CovARObjectData._CurrentModelMaterial = material; break;
+                   // case E_ModelType.BAC_CladdingAcoe: _CovARObjectData._CurrentModelMaterial = material; break;
+
                     case E_ModelType.BAC_CladdingQuadro: _CovARObjectData._CurrentModelMaterial = material; break;
                     case E_ModelType.BAC_CladdingLido: _CovARObjectData._CurrentModelMaterial = material; break;
-                    case E_ModelType.BAC_CladdingDavos: _CovARObjectData._CurrentModelMaterial = material; break;
+                    case E_ModelType.BAC_SlattedDavos: _CovARObjectData._CurrentModelMaterial = material; break;
 
                     //////////////////////////////////////////////////////////// FABRIC COVER ////////////////////////////////////////////////////////////
-                    case E_ModelType.BAC_FabricCover_Multiversal: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
-                    case E_ModelType.BAC_FabricCover_Novatrend: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
-                    case E_ModelType.BAC_FabricCover_SwissTop: _CovARObjectData._CurrentFabricCoverMaterial = material; break;
+                    case E_ModelType.BAC_FabricCover_Multiversal:  _CovARObjectData._CurrentModelMaterial = material;
+                                                                    _CovARObjectData._CurrentFabricCoverMaterial = material; break;
+                    case E_ModelType.BAC_FabricCover_Novatrend: _CovARObjectData._CurrentModelMaterial = material;
+                                                                _CovARObjectData._CurrentFabricCoverMaterial = material; break;
+                    case E_ModelType.BAC_FabricCover_SwissTop: _CovARObjectData._CurrentModelMaterial = material; 
+                                                                _CovARObjectData._CurrentFabricCoverMaterial = material; break;
 
                     ///////////////////////////////////////////////////////// ISOLA /////////////////////////////////////////////////////////////////////
                     case E_ModelType.BAC_Whirloop: _CovARObjectData._CurrentLamasMaterial = material; break;
@@ -2281,9 +2266,9 @@ public class ARObjectManager : MonoBehaviour
                 case E_ModelType.AP_LeBancSmallFoot: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
 
 
-                case E_ModelType.BAC_FabricCover_Multiversal: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
-                case E_ModelType.BAC_FabricCover_Novatrend: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
-                case E_ModelType.BAC_FabricCover_SwissTop: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
+                case E_ModelType.BAC_FabricCover_Multiversal: pool.transform.localPosition = new Vector3(0.2f, -0.023f, 0f); break;
+                case E_ModelType.BAC_FabricCover_Novatrend: pool.transform.localPosition = new Vector3(0.2f, -0.023f, 0f); break;
+                case E_ModelType.BAC_FabricCover_SwissTop: pool.transform.localPosition = new Vector3(0.2f, -0.023f, 0f); break;
 
                 case E_ModelType.BAC_SlattedRollfix: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
                 case E_ModelType.BAC_SlattedRonda: pool.transform.localPosition = new Vector3(0f, 0f, 0f); break;
@@ -2325,7 +2310,15 @@ public class ARObjectManager : MonoBehaviour
 
                 if(_CovARObjectData._CurrentLamasLenght > arScript.GetARObjectMAXLamasLenghtWithPool())
                 {
-                    arScript.SetLamasLenghtByNum(arScript.GetARObjectMAXLamasLenghtWithPool());
+                    if(_CovARObjectData._CurrentModelProduct._ProductType == E_ProductType.FabricCover)
+                    {
+                        arScript.SetFabricCoverLenghtByNum(arScript.GetARObjectMAXLamasLenghtWithPool());
+                    }
+                    else
+                    {
+                        arScript.SetLamasLenghtByNum(arScript.GetARObjectMAXLamasLenghtWithPool());
+                    }
+                       
                 }
             }
            
