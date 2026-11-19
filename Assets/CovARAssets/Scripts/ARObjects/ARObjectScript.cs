@@ -23,6 +23,9 @@ public class ARObjectScript : MonoBehaviour
     [Header("Current ARObject state: (Exposed for debug)")]
     [SerializeField] private E_ARObjectStates _ARObjectState;
 
+   
+    private bool bMoveARObjectWithoutDependingFromStateMachine;
+
     [Header("ARObject related products list:")]
     [SerializeField] private St_APRelatedProduct[] _ARObjectRelatedProductsList;
     
@@ -77,7 +80,12 @@ public class ARObjectScript : MonoBehaviour
     private List<GameObject> _boneParentsList = new List<GameObject>();
     private List<GameObject> _rightBonesFromAxisCoversList = new List<GameObject>();
 
-
+    //Move obj 2nd Behaviour
+    private bool _isDirectDragging;
+    private bool _directDragUsesTouch;
+    private int _directDragTouchId;
+    private Plane _directDragPlane;
+    private Vector3 _directDragOffset;
 
 
     void Start()
@@ -88,6 +96,16 @@ public class ARObjectScript : MonoBehaviour
     private void Update()
     {
         ARObjectBehaviour();
+
+
+        if (bMoveARObjectWithoutDependingFromStateMachine)
+        {
+            ARObjectDirectDragBehaviour();
+        }
+        else
+        {
+            _isDirectDragging = false;
+        }
     }
 
     ////////////////////////////////////////////////////////////////////// INIT ////////////////////////////////////////////////////////////
@@ -287,6 +305,10 @@ public class ARObjectScript : MonoBehaviour
         _ARObjectState = newState;
     }
 
+    public void SetbMoveARObjectWithoutDependingFromStateMachine(bool newState)
+    {
+        bMoveARObjectWithoutDependingFromStateMachine = newState;
+    }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -298,7 +320,12 @@ public class ARObjectScript : MonoBehaviour
         switch (_ARObjectState)
         {
             case E_ARObjectStates.DefaultState: break;
-            case E_ARObjectStates.MovingState: ARObjectMovingXZAxisBehaviour(); break;
+            case E_ARObjectStates.MovingState:
+                if (!bMoveARObjectWithoutDependingFromStateMachine)
+                {
+                    ARObjectMovingXZAxisBehaviour();
+                }
+                break;
             case E_ARObjectStates.RotatingState: RotateYAxisARObject(); break;
             case E_ARObjectStates.SetLenghtState: /* O fa amb un lister al ON Value change*/  break;
         }
@@ -439,8 +466,117 @@ public class ARObjectScript : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    //////////////////////////////////////////////////////////// MOVE AR OBJECT 2nd BEHAVIOUR ////////////////////////////////////////////////////////////////////////////
+
+    private void ARObjectDirectDragBehaviour()
+    {
+        Camera arCamera = _ARObjectManager != null
+            ? _ARObjectManager.GetARCamera()
+            : null;
+
+        if (arCamera == null)
+        {
+            _isDirectDragging = false;
+            return;
+        }
+
+        var touch = Touchscreen.current?.primaryTouch;
+        var mouse = Mouse.current;
+
+        if (_isDirectDragging)
+        {
+            Vector2 screenPosition;
+
+            if (_directDragUsesTouch)
+            {
+                if (touch == null || !touch.press.isPressed ||
+                    touch.touchId.ReadValue() != _directDragTouchId)
+                {
+                    _isDirectDragging = false;
+                    return;
+                }
+
+                screenPosition = touch.position.ReadValue();
+            }
+            else
+            {
+                if (mouse == null || !mouse.leftButton.isPressed)
+                {
+                    _isDirectDragging = false;
+                    return;
+                }
+
+                screenPosition = mouse.position.ReadValue();
+            }
+
+            Ray dragRay = arCamera.ScreenPointToRay(screenPosition);
+
+            if (_directDragPlane.Raycast(dragRay, out float distance))
+            {
+                Vector3 target = dragRay.GetPoint(distance) + _directDragOffset;
+                target.y = transform.position.y;
+                transform.position = target;
+            }
+
+            return;
+        }
+
+        if (touch != null && touch.press.wasPressedThisFrame && touch.press.isPressed)
+        {
+            TryStartDirectDrag(arCamera, touch.position.ReadValue(), true,
+                touch.touchId.ReadValue());
+        }
+        else if (mouse != null && mouse.leftButton.wasPressedThisFrame &&
+                 mouse.leftButton.isPressed)
+        {
+            TryStartDirectDrag(arCamera, mouse.position.ReadValue(), false, 0);
+        }
+    }
+
+    private void TryStartDirectDrag(
+        Camera arCamera, Vector2 screenPosition, bool usesTouch, int touchId)
+    {
+        if (IsDirectDragPointerOverUI(screenPosition))
+            return;
+
+        int layerMask = LayerMask.GetMask("ARObject");
+        Ray ray = arCamera.ScreenPointToRay(screenPosition);
+
+        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity,
+                layerMask, QueryTriggerInteraction.Collide))
+            return;
+
+        if (hit.collider.GetComponentInParent<ARObjectScript>() != this)
+            return;
+
+        _directDragPlane = new Plane(Vector3.up, hit.point);
+        _directDragOffset = transform.position - hit.point;
+        _directDragUsesTouch = usesTouch;
+        _directDragTouchId = touchId;
+        _isDirectDragging = true;
+    }
+
+    private bool IsDirectDragPointerOverUI(Vector2 screenPosition)
+    {
+        EventSystem eventSystem = EventSystem.current;
+        if (eventSystem == null)
+            return false;
+
+        var eventData = new PointerEventData(eventSystem)
+        {
+            position = screenPosition
+        };
+
+        var results = new List<RaycastResult>();
+        eventSystem.RaycastAll(eventData, results);
+
+        return results.Exists(result => result.module is GraphicRaycaster);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     //////////////////////////////////////////////////////////// ROTATE /////////////////////////////////////////////////////////////////////////////
-    
+
     public void InitRotationState()
     {
         AssignRotationButtonsEvents();
@@ -733,6 +869,7 @@ public class ARObjectScript : MonoBehaviour
            CreateFabricCoverStartSecuritySystems();
         }
 
+        RefreshSpecificPartsColliders();
     }
 
     public void MinusLenghtARObject()
@@ -931,7 +1068,7 @@ public class ARObjectScript : MonoBehaviour
         }
 
         ApplyBonesSizeBySteps(newLenght);
-
+        RefreshSpecificPartsColliders();
     }
 
 
@@ -1035,6 +1172,17 @@ public class ARObjectScript : MonoBehaviour
             Vector3 position = claddingObj.transform.localPosition;
 
             claddingObj.transform.localPosition = new Vector3(targetX, position.y, position.z);
+        }
+    }
+
+    private void RefreshSpecificPartsColliders()
+    {
+        foreach (var part in GetComponentsInChildren<ARObjectPartScript>())
+        {
+            if (part.GetARGeneralObjectPart() == E_ARObjectGeneralParts.PoolSpecificPart)
+            {
+                part.RefreshSkinnedMeshCollider();
+            }
         }
     }
 

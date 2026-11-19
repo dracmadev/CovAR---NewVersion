@@ -14,6 +14,10 @@ public class ARObjectManager : MonoBehaviour
     [Header("First object to visualize:")]
     [SerializeField] private E_PoolType _CurrentPoolType;
 
+    [Header("General movement variables:")]
+    [SerializeField] private bool bMoveObjectFreely;
+
+
     // Lista de Prefabs del manager nuevo
     [Header("List of ARObjects (Prefabs):")]
     [SerializeField] private List<GameObject> _PoolPrefabs;
@@ -210,6 +214,7 @@ public class ARObjectManager : MonoBehaviour
                 }
 
                 SetCurrentARObjectState("DefaultState");
+                newObjScript.SetbMoveARObjectWithoutDependingFromStateMachine(bMoveObjectFreely);
 
                 if (bIsPoolActive)
                 {

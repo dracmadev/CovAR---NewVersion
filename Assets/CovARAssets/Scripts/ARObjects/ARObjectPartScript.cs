@@ -28,9 +28,13 @@ public class ARObjectPartScript : MonoBehaviour
 
     ARObjectManager _ARObjectManager;
     bool bAlreadyAdded;
+
+    private Mesh _bakedColliderMesh;
+
     void Start()
     {
         InitObjectPart();
+        RefreshSkinnedMeshCollider();
     }
 
 
@@ -80,43 +84,33 @@ public class ARObjectPartScript : MonoBehaviour
 
     private void OnDestroy()
     {
-       
+        if (_bakedColliderMesh != null)
+            Destroy(_bakedColliderMesh);
     }
 
-    /*
-    void AddAndDeleteARObjectPartsList(E_ARObjectParts part, bool add)
-    {
-        if(_ARObjectGeneralPart == E_ARObjectGeneralParts.PoolSpecificPart)
-        {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            if(_ARObjectPartData._ARObjectPartType == part)
-            {
-                if(_ARObjectManager != null)
-                {
-                    if(add)
-                    {
-                        //Debug.Log("****AD******");
-                        _ARObjectManager.GetCurrentARObject().GetComponent<ARObjectScript>().AddObjectToARObjectPartsList(this.gameObject, false);
-                        bAlreadyAdded = true;
-                    }
-                    else
-                    {
-                        //Debug.Log("****REMOVE******");
-                        _ARObjectManager.GetCurrentARObject().GetComponent<ARObjectScript>().RemoveObjectFromARPartsList(this.gameObject);
-                    }
-                }
-                else
-                {
-                   // Debug.Log("*******************NULL?*********************");
-                }
-            }
-            else
-            {
-               // Debug.Log("[" + _ARObjectPartData._ARObjectPartType + "] -> ******** NOT A CORRECT PART ************************");
-            }
+    ////////////////////////////////////////////////////////// UPDATE COLLIDERS //////////////////////////////////////////////////////////////////////////
+
+    public void RefreshSkinnedMeshCollider()
+    {
+        if (_ARObjectGeneralPart != E_ARObjectGeneralParts.PoolSpecificPart)
+            return;
+
+        if (!TryGetComponent<SkinnedMeshRenderer>(out var skinnedRenderer) ||
+            skinnedRenderer.sharedMesh == null ||
+            !TryGetComponent<MeshCollider>(out var meshCollider))
+        {
+            return;
         }
 
+        if (_bakedColliderMesh == null)
+            _bakedColliderMesh = new Mesh { name = $"{gameObject.name} Drag Mesh" };
+
+        meshCollider.sharedMesh = null;
+        skinnedRenderer.BakeMesh(_bakedColliderMesh, useScale: true);
+        meshCollider.sharedMesh = _bakedColliderMesh;
     }
-    */
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

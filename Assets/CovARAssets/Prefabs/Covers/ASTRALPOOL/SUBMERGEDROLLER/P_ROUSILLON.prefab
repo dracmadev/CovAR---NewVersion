@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7296876306739219997}
   - component: {fileID: 1257055116047719058}
   - component: {fileID: 5399501853029774992}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MaskCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 18
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -132,6 +134,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -162,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7906242092378976095}
   - component: {fileID: 4657153747621097485}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: P_ROUSILLON
   m_TagString: ARObject
   m_Icon: {fileID: 0}
@@ -220,17 +225,25 @@ MonoBehaviour:
   _ARObjectManager: {fileID: 0}
   _CustomSplineInstantiateScript: {fileID: 5701383158303906371}
   bFabricCoverAxisBehaviourActive: 0
-  _DistanceBetweenAxis: 3
+  _FabricCoverAxisDataArray:
+    _MinDistance: 0
+    _MaxDistance: 0
+    bOffsetDistanceToLimits: 0
+    _DistanceToLimits: 0
+    _DistanceToLimits02: 0
+    bSpawnObjectsByNumber: 0
+    _NumberOfObjectsToSpawn: 0
+    bSpawnObjectsByDistance: 0
+    _DistanceBetweenObjects: 0
+    _DistanceBetweenObjects02: 0
   _CustomFabricCoverAxisPrefab: {fileID: 0}
   _FabricCoverAxisList: []
   bFabricCoverStartSecuritySystemsActive: 0
-  _DistanceBetweenStartSecuritySystems: 1
-  _DistanceBetweenStartSecuritySystemAndLimits: 0.2
+  _FabricCoverStartSecuritySystemsDataArray: []
   _CustomFabricCoverStartSSPrefab: {fileID: 0}
   _FabricCoverStartSSList: []
   bFabricCoverEndSecuritySystemsActive: 0
-  _DistanceBetweenEndSecuritySystems: 1
-  _DistanceBetweenEndsSecuritySystemAndLimits: 0.2
+  _FabricCoverEndSecuritySystemsDataArray: []
   _CustomFabricCoverEndSSPrefab: {fileID: 0}
   _FabricCoverEndSSList: []
 --- !u!1 &1593563659264245816
@@ -244,7 +257,7 @@ GameObject:
   - component: {fileID: 6369907221720550650}
   - component: {fileID: 1113598348020162842}
   - component: {fileID: 5701383158303906371}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LamasSpline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +593,7 @@ GameObject:
   - component: {fileID: 3084540724336069985}
   - component: {fileID: 7522640271366625682}
   - component: {fileID: 1314167565948180872}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MaskCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,6 +705,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 18
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -699,6 +714,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -732,7 +750,7 @@ GameObject:
   - component: {fileID: 7263395799128356123}
   - component: {fileID: 6403870405221978446}
   - component: {fileID: 7391297227057517218}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PoolMaskCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,6 +862,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 18
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -851,6 +871,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -884,7 +907,7 @@ GameObject:
   - component: {fileID: 3805180852935785452}
   - component: {fileID: 451080127355782008}
   - component: {fileID: 6994119341639811412}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PoolMaskCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,6 +1019,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 18
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1003,6 +1028,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1103,6 +1131,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: cd8e451114534d347a2f11e8ad183a28, type: 2}
     - target: {fileID: -5988971838916165696, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5988971838916165696, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
       propertyPath: m_TagString
       value: ARObject
       objectReference: {fileID: 0}
@@ -1110,6 +1143,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cladding (Submerged)
+      objectReference: {fileID: 0}
+    - target: {fileID: -5266785677919700964, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5266785677919700964, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
@@ -1123,6 +1161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
       propertyPath: m_TagString
       value: ARObject
       objectReference: {fileID: 0}
@@ -1133,6 +1176,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2629027807311914165, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629027807311914165, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
       propertyPath: m_TagString
       value: ARObject
       objectReference: {fileID: 0}
@@ -1140,6 +1188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LeftBone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796784388878362308, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3796784388878362308, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
@@ -1162,6 +1215,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1882459393432754491}
+    - targetCorrespondingSourceObject: {fileID: -5266785677919700964, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6341337831537698906}
   m_SourcePrefab: {fileID: 100100000, guid: c856b12abf26c5746a4f476042eb518c, type: 3}
 --- !u!1 &14091528075436380 stripped
 GameObject:
@@ -1185,6 +1242,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
@@ -1192,6 +1251,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1234,6 +1296,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1241,6 +1305,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1283,6 +1350,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 5
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1290,6 +1359,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1310,6 +1382,28 @@ MonoBehaviour:
     _ARObjectBoneParents: []
     _ARObjectReSizeDirection: 0
   _CurrentARObject: {fileID: 0}
+--- !u!64 &6341337831537698906
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343938163396001269}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7629811779324647873, guid: c856b12abf26c5746a4f476042eb518c, type: 3}
 --- !u!4 &2577333915627381250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c856b12abf26c5746a4f476042eb518c,
@@ -1396,6 +1490,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a031f4bf20884464ebe117e4f93301dd, type: 2}
     - target: {fileID: -5988971838916165696, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5988971838916165696, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
       propertyPath: m_TagString
       value: ARObject
       objectReference: {fileID: 0}
@@ -1403,6 +1502,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cladding (Submerged)
+      objectReference: {fileID: 0}
+    - target: {fileID: -5266785677919700964, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5266785677919700964, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
@@ -1416,6 +1520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
       propertyPath: m_TagString
       value: ARObject
       objectReference: {fileID: 0}
@@ -1426,6 +1535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2629027807311914165, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629027807311914165, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
       propertyPath: m_TagString
       value: ARObject
       objectReference: {fileID: 0}
@@ -1433,6 +1547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LeftBone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796784388878362308, guid: c856b12abf26c5746a4f476042eb518c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3796784388878362308, guid: c856b12abf26c5746a4f476042eb518c,
         type: 3}
@@ -1478,6 +1597,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
@@ -1485,6 +1606,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1527,6 +1651,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1534,6 +1660,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1582,6 +1711,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 18
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1589,6 +1720,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1674,8 +1808,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8513424388201257645, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8513424388201257645, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
       propertyPath: m_TagString
       value: ARObject
+      objectReference: {fileID: 0}
+    - target: {fileID: -5988971838916165696, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5988971838916165696, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
         type: 3}
@@ -1709,6 +1853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
       propertyPath: m_TagString
       value: ARObject
       objectReference: {fileID: 0}
@@ -1719,6 +1868,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2629027807311914165, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629027807311914165, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
       propertyPath: m_TagString
       value: ARObject
       objectReference: {fileID: 0}
@@ -1726,6 +1880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LeftBone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796784388878362308, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3796784388878362308, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
         type: 3}
@@ -1764,6 +1923,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8523154228371182250}
+    - targetCorrespondingSourceObject: {fileID: -8513424388201257645, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1363070210838415531}
   m_SourcePrefab: {fileID: 100100000, guid: 2f2697bd9acf9dc47ae03b2f61536f20, type: 3}
 --- !u!1 &175651929063004191 stripped
 GameObject:
@@ -1787,6 +1950,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
@@ -1794,6 +1959,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1836,6 +2004,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1843,6 +2013,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1891,6 +2064,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 3
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1898,6 +2073,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1918,6 +2096,28 @@ MonoBehaviour:
     _ARObjectBoneParents: []
     _ARObjectReSizeDirection: 0
   _CurrentARObject: {fileID: 0}
+--- !u!64 &1363070210838415531
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3446970313567836665}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4068373912626513877, guid: 2f2697bd9acf9dc47ae03b2f61536f20, type: 3}
 --- !u!4 &5600640383379480233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1462160926247460349, guid: 2f2697bd9acf9dc47ae03b2f61536f20,
