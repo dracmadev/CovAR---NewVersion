@@ -7150,7 +7150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _CurrentCompanyRunning: 2
   _CurrentPoolType: 1
-  bMoveObjectFreely: 1
+  bMoveObjectFreely: 0
   _PoolPrefabs:
   - {fileID: 630147544002518466, guid: 5a1bc7294f33b9e4f872154dba162973, type: 3}
   - {fileID: 5707838377665097836, guid: fa6af5877e8286541bf4962d685218f2, type: 3}

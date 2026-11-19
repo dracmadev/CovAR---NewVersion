@@ -87,6 +87,12 @@ public class ARObjectScript : MonoBehaviour
     private Plane _directDragPlane;
     private Vector3 _directDragOffset;
 
+    //Rotate obj 2nd Behaviour
+    private bool _isDirectRotating;
+    private int _rotationTouchId;
+    private float _rotationStartScreenX;
+    private Vector3 _rotationStartLocalEuler;
+
 
     void Start()
     {
@@ -477,10 +483,12 @@ public class ARObjectScript : MonoBehaviour
         if (arCamera == null)
         {
             _isDirectDragging = false;
+            _isDirectRotating = false;
             return;
         }
 
-        var touch = Touchscreen.current?.primaryTouch;
+        var touchscreen = Touchscreen.current;
+        var primaryTouch = touchscreen?.primaryTouch;
         var mouse = Mouse.current;
 
         if (_isDirectDragging)
@@ -489,14 +497,37 @@ public class ARObjectScript : MonoBehaviour
 
             if (_directDragUsesTouch)
             {
-                if (touch == null || !touch.press.isPressed ||
-                    touch.touchId.ReadValue() != _directDragTouchId)
+                if (touchscreen == null)
                 {
                     _isDirectDragging = false;
+                    _isDirectRotating = false;
                     return;
                 }
 
-                screenPosition = touch.position.ReadValue();
+                var firstFinger = primaryTouch;
+                firstFinger = null;
+
+                foreach (var finger in touchscreen.touches)
+                {
+                    if (finger.press.isPressed &&
+                        finger.touchId.ReadValue() == _directDragTouchId)
+                    {
+                        firstFinger = finger;
+                        break;
+                    }
+                }
+
+                if (firstFinger == null)
+                {
+                    _isDirectDragging = false;
+                    _isDirectRotating = false;
+                    return;
+                }
+
+                screenPosition = firstFinger.position.ReadValue();
+
+                if (HandleDirectTouchRotation(arCamera, screenPosition))
+                    return;
             }
             else
             {
@@ -521,12 +552,18 @@ public class ARObjectScript : MonoBehaviour
             return;
         }
 
-        if (touch != null && touch.press.wasPressedThisFrame && touch.press.isPressed)
+        if (primaryTouch != null &&
+            primaryTouch.press.wasPressedThisFrame &&
+            primaryTouch.press.isPressed)
         {
-            TryStartDirectDrag(arCamera, touch.position.ReadValue(), true,
-                touch.touchId.ReadValue());
+            TryStartDirectDrag(
+                arCamera,
+                primaryTouch.position.ReadValue(),
+                true,
+                primaryTouch.touchId.ReadValue());
         }
-        else if (mouse != null && mouse.leftButton.wasPressedThisFrame &&
+        else if (mouse != null &&
+                 mouse.leftButton.wasPressedThisFrame &&
                  mouse.leftButton.isPressed)
         {
             TryStartDirectDrag(arCamera, mouse.position.ReadValue(), false, 0);
@@ -553,6 +590,7 @@ public class ARObjectScript : MonoBehaviour
         _directDragOffset = transform.position - hit.point;
         _directDragUsesTouch = usesTouch;
         _directDragTouchId = touchId;
+        _isDirectRotating = false;
         _isDirectDragging = true;
     }
 
@@ -571,6 +609,70 @@ public class ARObjectScript : MonoBehaviour
         eventSystem.RaycastAll(eventData, results);
 
         return results.Exists(result => result.module is GraphicRaycaster);
+    }
+
+    private bool HandleDirectTouchRotation(Camera arCamera, Vector2 firstFingerPosition)
+    {
+        var touchscreen = Touchscreen.current;
+
+        foreach (var finger in touchscreen.touches)
+        {
+            if (!finger.press.isPressed)
+                continue;
+
+            int fingerId = finger.touchId.ReadValue();
+            if (fingerId == _directDragTouchId)
+                continue;
+
+            Vector2 position = finger.position.ReadValue();
+
+            if (!_isDirectRotating)
+            {
+                if (!finger.press.wasPressedThisFrame ||
+                    IsDirectDragPointerOverUI(position))
+                {
+                    continue;
+                }
+
+                _isDirectRotating = true;
+                _rotationTouchId = fingerId;
+                _rotationStartScreenX = position.x;
+                _rotationStartLocalEuler = transform.localEulerAngles;
+            }
+
+            if (fingerId != _rotationTouchId)
+                continue;
+
+            float deltaX = position.x - _rotationStartScreenX;
+            float deltaYaw = -deltaX / Screen.width * 720f;
+
+            Vector3 angles = _rotationStartLocalEuler;
+            angles.y += deltaYaw;
+            transform.localRotation = Quaternion.Euler(angles);
+
+            // El teu slider fa servir: angleY = (0.5 - valor) * 360.
+            GameObject sliderObj = GetSliderFromSpecificSubPanel("RotationSubPanel");
+            if (sliderObj != null && sliderObj.TryGetComponent<Slider>(out var slider))
+            {
+                float yaw = Mathf.DeltaAngle(0f, angles.y);
+                slider.SetValueWithoutNotify(0.5f - yaw / 360f);
+            }
+
+            return true;
+        }
+
+        if (!_isDirectRotating)
+            return false;
+
+        // En aixecar el segon dit, torna a agafar la coberta
+        // des de la posició actual del primer dit.
+        Ray ray = arCamera.ScreenPointToRay(firstFingerPosition);
+        if (!_directDragPlane.Raycast(ray, out float distance))
+            return true;
+
+        _directDragOffset = transform.position - ray.GetPoint(distance);
+        _isDirectRotating = false;
+        return true;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

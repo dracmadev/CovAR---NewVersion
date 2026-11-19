@@ -1103,7 +1103,7 @@ MonoBehaviour:
     - line: '|   syncCapabilities: 0'
     - line: '|   platformCapabilities:'
     - line: '|     WindowsStoreApps:'
-    - line: '|       CodeGeneration: False'
+    - line: '|       EnterpriseAuthentication: False'
     - line: '|       OfflineMapsManagement: False'
     - line: '|       HumanInterfaceDevice: False'
     - line: '|       Location: False'
@@ -1138,8 +1138,8 @@ MonoBehaviour:
     - line: '|       Contacts: False'
     - line: '|       Proximity: False'
     - line: '|       InternetClient: True'
+    - line: '|       CodeGeneration: False'
     - line: '|       BackgroundMediaPlayback: False'
-    - line: '|       EnterpriseAuthentication: False'
     - line: '|   metroTargetDeviceFamilies:'
     - line: '|     Desktop: False'
     - line: '|     Holographic: False'
@@ -1240,6 +1240,6 @@ MonoBehaviour:
         m_DebugSymbolFormat: 5
         m_CurrentDeploymentTargetId: __builtin__target_default
         m_BuildType: 2
-        m_BuildAppBundle: 1
+        m_BuildAppBundle: 0
         m_IPAddressToConnect: 
         m_SymlinkSources: 0
