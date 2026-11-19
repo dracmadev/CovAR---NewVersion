@@ -1913,80 +1913,121 @@ public class ARObjectManager : MonoBehaviour
 
                 case E_PoolType.BAC_CladdingLido:
 
-                    GameObject lido_TopCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.UpCoverPlane); //QUADRO CLADDING
-                    GameObject lido_FrontCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FrontCoverPlane); //QUADRO CLADDING
-                    GameObject lido_BackCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.BackCoverPlane); //QUADRO CLADDING
+                    GameObject lido_TopCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.UpCoverPlane); //LIDO CLADDING
+                    GameObject lido_FrontCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FrontCoverPlane); //LIDO CLADDING
+                    GameObject lido_BackCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.BackCoverPlane); //LIDO CLADDING
+                    GameObject lido_Frame = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FrameStructure); //LIDO CLADDING
 
                     lido_TopCladding.TryGetComponent(out Renderer render_lido_TopCladding);
                     lido_FrontCladding.TryGetComponent(out Renderer render_lido_FrontCladding);
                     lido_BackCladding.TryGetComponent(out Renderer render_lido_BackCladding);
 
-
-                    if (lido_TopCladding != null && render_lido_TopCladding != null)
+                    if(currentMatData._MaterialType == E_MaterialType.Frame)
                     {
-                        Material[] matsTop = render_lido_TopCladding.materials;
-
-                        if (matsTop.Length > 0 && currentMatData._Material01 != null)
+                        if (lido_Frame != null)
                         {
-                            matsTop[0] = currentMatData._Material01;
+                            lido_Frame.SetActive(true);
+                        }
+                        if (lido_TopCladding != null)
+                        {
+                            lido_TopCladding.SetActive(false);
+                        }
+                        if (lido_FrontCladding != null)
+                        {
+                            lido_FrontCladding.SetActive(false);
+                        }
+                        if (lido_BackCladding != null)
+                        {
+                            lido_BackCladding.SetActive(false);
+                        }
+                    }
+                    else
+                    {
+                        if (lido_Frame != null)
+                        {
+                            lido_Frame.SetActive(false);
+                        }
+                        if (lido_TopCladding != null)
+                        {
+                            lido_TopCladding.SetActive(true);
+                        }
+                        if (lido_FrontCladding != null)
+                        {
+                            lido_FrontCladding.SetActive(true);
+                        }
+                        if (lido_BackCladding != null)
+                        {
+                            lido_BackCladding.SetActive(true);
                         }
 
-                        if (matsTop.Length > 1 && currentMatData._Material02 != null)
+                        if (lido_TopCladding != null && render_lido_TopCladding != null)
                         {
-                            matsTop[1] = currentMatData._Material02;
+                            Material[] matsTop = render_lido_TopCladding.materials;
+
+                            if (matsTop.Length > 0 && currentMatData._Material01 != null)
+                            {
+                                matsTop[0] = currentMatData._Material01;
+                            }
+
+                            if (matsTop.Length > 1 && currentMatData._Material02 != null)
+                            {
+                                matsTop[1] = currentMatData._Material02;
+                            }
+
+                            if (matsTop.Length > 2 && currentMatData._Material03 != null)
+                            {
+                                matsTop[2] = currentMatData._Material03;
+                            }
+
+                            render_lido_TopCladding.materials = matsTop;
                         }
 
-                        if (matsTop.Length > 2 && currentMatData._Material03 != null)
+                        if (lido_FrontCladding != null && render_lido_FrontCladding != null)
                         {
-                            matsTop[2] = currentMatData._Material03;
+                            Material[] matsFront = render_lido_FrontCladding.materials;
+
+                            if (matsFront.Length > 0 && currentMatData._Material01 != null)
+                            {
+                                matsFront[0] = currentMatData._Material01;
+                            }
+
+                            if (matsFront.Length > 1 && currentMatData._Material02 != null)
+                            {
+                                matsFront[1] = currentMatData._Material02;
+                            }
+
+                            if (matsFront.Length > 2 && currentMatData._Material03 != null)
+                            {
+                                matsFront[2] = currentMatData._Material03;
+                            }
+
+                            render_lido_FrontCladding.materials = matsFront;
                         }
 
-                        render_lido_TopCladding.materials = matsTop;
+                        if (lido_BackCladding != null && render_lido_BackCladding != null)
+                        {
+                            Material[] matsBack = render_lido_BackCladding.materials;
+
+                            if (matsBack.Length > 0 && currentMatData._Material01 != null)
+                            {
+                                matsBack[0] = currentMatData._Material01;
+                            }
+
+                            if (matsBack.Length > 1 && currentMatData._Material02 != null)
+                            {
+                                matsBack[1] = currentMatData._Material02;
+                            }
+
+                            if (matsBack.Length > 2 && currentMatData._Material03 != null)
+                            {
+                                matsBack[2] = currentMatData._Material03;
+                            }
+
+                            render_lido_BackCladding.materials = matsBack;
+                        }
                     }
 
-                    if (lido_FrontCladding != null && render_lido_FrontCladding != null)
-                    {
-                        Material[] matsFront = render_lido_FrontCladding.materials;
-
-                        if (matsFront.Length > 0 && currentMatData._Material01 != null)
-                        {
-                            matsFront[0] = currentMatData._Material01;
-                        }
-
-                        if (matsFront.Length > 1 && currentMatData._Material02 != null)
-                        {
-                            matsFront[1] = currentMatData._Material02;
-                        }
-
-                        if (matsFront.Length > 2 && currentMatData._Material03 != null)
-                        {
-                            matsFront[2] = currentMatData._Material03;
-                        }
-
-                        render_lido_FrontCladding.materials = matsFront;
-                    }
-
-                    if (lido_BackCladding != null && render_lido_BackCladding != null)
-                    {
-                        Material[] matsBack = render_lido_BackCladding.materials;
-
-                        if (matsBack.Length > 0 && currentMatData._Material01 != null)
-                        {
-                            matsBack[0] = currentMatData._Material01;
-                        }
-
-                        if (matsBack.Length > 1 && currentMatData._Material02 != null)
-                        {
-                            matsBack[1] = currentMatData._Material02;
-                        }
-
-                        if (matsBack.Length > 2 && currentMatData._Material03 != null)
-                        {
-                            matsBack[2] = currentMatData._Material03;
-                        }
-
-                        render_lido_BackCladding.materials = matsBack;
-                    }
+                    
 
                     break;
             }

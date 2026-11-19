@@ -295,7 +295,7 @@ public class WebRequestManager : MonoBehaviour
     IEnumerator WR_LoginCoroutine(string email, string password, HelperTextBehaviourScript _HelperText, Button loginButton)
     {
         StartCoroutine(WR_GetCompanyByLeadsCoroutine(email, _HelperText));
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         if (_CurrentAppCompany == E_CompanyType.Astralpool)
         {

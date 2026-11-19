@@ -459,9 +459,9 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 15
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 1
   m_Spacing: -15
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -1215,12 +1215,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _CurrentModelText: {fileID: 2900579890149315452}
   _CurrentModelImage: {fileID: 7482687344330211582}
+  _ModelBlockCG: {fileID: 1811661349535245596}
   _CurrentLamasText: {fileID: 1893975294920244384}
   _CurrentLamasImage: {fileID: 8298115601876803159}
+  _LamasModelBlockCG: {fileID: 1047652579200442907}
   _CurrentModelColorText: {fileID: 5589073544125846328}
   _CurrentLamasColorText: {fileID: 1874240295385294701}
   _CurrentTopCladdingColorText: {fileID: 4285070477608648881}
   _CurrentSidesCladdingColorText: {fileID: 4901366078684260763}
+  _ModelColorBlockCG: {fileID: 5290572517328039037}
+  _LamasModelColorBlockCG: {fileID: 3414270633763653689}
   _CanvasGroupTopCladdingBlock: {fileID: 1404538223906217446}
   _CanvasGroupSidesCladdingBlock: {fileID: 6222851714702378544}
   _CurrentModelLenghtInputText: {fileID: 8067683053616115926}
@@ -3406,6 +3410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4395021028509138375}
   - component: {fileID: 3912881077362174004}
+  - component: {fileID: 1047652579200442907}
   m_Layer: 0
   m_Name: LamasBlock
   m_TagString: Untagged
@@ -3460,6 +3465,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &1047652579200442907
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351148674809290934}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6531831961340895511
 GameObject:
   m_ObjectHideFlags: 0
@@ -3596,6 +3613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3737983892094729834}
   - component: {fileID: 7361021411540290740}
+  - component: {fileID: 1811661349535245596}
   m_Layer: 0
   m_Name: ModelBlock
   m_TagString: Untagged
@@ -3650,6 +3668,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &1811661349535245596
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6648822170644016580}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6675487184249342316
 GameObject:
   m_ObjectHideFlags: 0
@@ -6207,7 +6237,7 @@ PrefabInstance:
     - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}
       propertyPath: m_text
-      value: 'Lamas:'
+      value: 'Cubierta:'
       objectReference: {fileID: 0}
     - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}
@@ -6282,7 +6312,7 @@ PrefabInstance:
     - target: {fileID: 6990606438210741698, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}
       propertyPath: LocalizationKey
-      value: FichaTecnica.InfoBasica.ColorLamas
+      value: FichaTecinca.MaterialLama.Title
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9169,7 +9199,7 @@ PrefabInstance:
     - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}
       propertyPath: m_text
-      value: 'Material lamas:'
+      value: 'Cubierta:'
       objectReference: {fileID: 0}
     - target: {fileID: 6144878731566648987, guid: 641fbd8d8e80d7d4c9f6ca111b771d74,
         type: 3}

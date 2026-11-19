@@ -976,9 +976,7 @@ public class ARObjectScript : MonoBehaviour
     private void ApplyBonesSizeBySteps(float requestedLength)
     {
         var allParts = GetComponentsInChildren<ARObjectPartScript>(true);
-
-        //Debug.Log($"Applying bones size by steps for requested length: {requestedLength}");
-
+        
         foreach (var part in allParts)
         {
             var boneData = part.GetBoneData();
@@ -986,20 +984,20 @@ public class ARObjectScript : MonoBehaviour
             if (boneData == null || !boneData.bSizeBySteps)
                 continue;
 
+            Debug.Log($"Applying size by steps for part: {part.gameObject.name}, requested length: {requestedLength}");
+
             var steps = boneData._StepsArray;
 
             if (steps == null || !steps.Any())
                 continue;
 
             float adjustedLength = requestedLength + boneData._NegativeOffsetToSlider;
-
             float selectedStep = GetUpperSizeStep(adjustedLength, steps);
-
             float targetX = boneData.bDivideBy100 ? selectedStep : selectedStep * 100f;
 
             Vector3 position = part.transform.localPosition;
+            part.transform.localPosition = new Vector3(targetX, position.y, position.z);
 
-            part.transform.localPosition =  new Vector3(targetX, position.y, position.z);
         }
     }
 

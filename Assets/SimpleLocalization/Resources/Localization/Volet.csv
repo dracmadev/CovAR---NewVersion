@@ -123,7 +123,7 @@ These rollers make handling the summer cover easier. Once retracted, it's simple
 Main.PoseWindow.GuidanceText,Posiciona la persiana.  Pulsa el candado cuando hayas finalizado.,Positionnez le volet. Appuyez sur le verrou une fois terminé.,Position the blind. Press the lock when you're finished.
 Main.PoseWindow.HelpPanel.TranslationText,Utilice un dedo para mover el volet.,Utilisez un doigt pour déplacer la volée.,Use one finger to move the volley.
 Main.PoseWindow.HelpPanel.RotationText,Utilice el control deslizante en la pantalla para girar el volet.,Utilisez le curseur à l'écran pour faire pivoter le volet.,Use the slider on the screen to rotate the volet.
-Main.Volet.GuidanceText,Manten pulsado sobre un botón para conocer que hace.,Appuyez longuement sur un bouton pour découvrir sa fonction.,Press and hold a button to find out what it does.
+Main.Volet.GuidanceText,Manten pulsado sobre un botón para conocer que hace.,Maintenez le bouton enfoncé pour découvrir sa fonction.,Press and hold a button to find out what it does.
 DebugText.PasswordRecovery.UsuarioNoExiste,Este usuario no existe en nuestra base de datos.,Cet utilisateur n'existe pas dans notre base de données.,This user does not exist in our database.
 DebugText.PasswordRecovery.Error,La conexión ha fallado.,La connexion a échoué.,The connection has failed.
 DebugText.ChangePassword.Error,La conexión ha fallado.,La connexion a échoué.,The connection has failed.
@@ -421,6 +421,7 @@ Catalog.Lamas.RollmaticPVC,Rollmatic PVC,Rollmatic PVC,Rollmatic PVC
 Catalog.Lamas.RollmaticPolycarbonate,Rollmatic Polycarbonate,Polycarbonate Rollmatic,Rollmatic Polycarbonate
 Catalog.Lamas.RollmaticPolycarbonatePro,Rollmatic Polycarbonate Pro,Rollmatic Polycarbonate Pro,Rollmatic Polycarbonate Pro
 Catalog.Lido.SipoMahagoni,Sipo Mahagoni,Sipo Mahagoni,Sipo Mahagoni
+Catalog.Lido.Frame,Frame,Frame,Frame
 Catalog.Colots.Title,Color,Couleur,Color
 Catalog.Lamas.Model.Title,Modelo,Modèle,Model
 Catalog.Lamas.Material.Title,Material,Matériel,Material
@@ -458,7 +459,7 @@ FichaTecnica.InfoBasica.ColorLamas,Lamas:,LAMES:,Slats:
 FichaTecnica.InfoBasica.ColorTarima,Tarima:,Revêtement de sol :,Platform:
 FichaTecnica.InfoBasica.ColorRevestimientoSuperior,Revestimiento superior:,Revêtement supérieur :,Upper cladding:
 FichaTecnica.InfoBasica.ColorRevestimientoLateal,Color revestimientos:,Revêtements latéraux :,Side cladding:
-FichaTecinca.MaterialLama.Title,Material lamas:,MATERIAU DES LAMES:,Slat material:
+FichaTecinca.MaterialLama.Title,Cubierta:,Volet:,Deck:
 FichaTecnica.MaterialInfo.Titulo,INFORMACIÓN BÁSICA,INFORMATIONS DE BASE,BASIC INFORMATION
 FichaTecnica.ProductosAsociados.Titulo,PRODUCTOS ASOCIADOS,PRODUITS ASSOCIÉS,RELATED PRODUCTS
 FichaTecnica.BasicDropdownOptions.Option01,None,None,None
@@ -500,7 +501,7 @@ FichaTecnica.ProductosAsociados.Tapas.Option4,Por encargo,Sur mesure,Custom made
 FichaTecnica.Anotaciones.Titulo,ANOTACIONES:,REMARQUES :,NOTES:
 FichaTecnica.Anotaciones.Input,Introduce texto...,Saisissez du texte...,Enter text...
 FichaTecnica.Titulo,PLANO TÉCNICO,PLAN TECHNIQUE,TECHNICAL PLAN
-FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Complétez les informations client afin de générer le dessin technique.,Complete the customer details in order to generate the technical drawing.
+FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Renseignez les informations client pour générer le dessin technique.,Complete the customer details to generate the technical drawing.
 FichaTecnica.EscribirNombre,Nombre del cliente...,Nom du client...,Customer name...
 FichaTecnica.EscribirCorreo,Correo del cliente...,Courriel du client...,Customer email...
 ,,,

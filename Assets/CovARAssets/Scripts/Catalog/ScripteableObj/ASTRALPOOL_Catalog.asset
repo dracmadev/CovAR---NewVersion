@@ -442,11 +442,11 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 9836160494f74d94b96441e431752cc3, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.AcoeWithClading
-        _BlueprintModelImage: {fileID: 21300000, guid: 6e53285f4079cbb40a539c74c5ae7b03,
+        _BlueprintModelImage: {fileID: 21300000, guid: f22d1b8058f83e34f9eb24b50acea500,
           type: 3}
         _MaterialsArray:
         - _MaterialType: 11
-          _MaterialSprite: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704,
+          _MaterialSprite: {fileID: 21300000, guid: 9836160494f74d94b96441e431752cc3,
             type: 3}
           _MaterialKey: Catalog.Material.Metalic
           _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
@@ -488,11 +488,11 @@ MonoBehaviour:
         _ModelGeneralType: 1
         _ModelLogo: {fileID: 21300000, guid: 9836160494f74d94b96441e431752cc3, type: 3}
         _ModelKey: Catalog.Model.BACPoolSystem.AcoeWithClading
-        _BlueprintModelImage: {fileID: 21300000, guid: 6e53285f4079cbb40a539c74c5ae7b03,
+        _BlueprintModelImage: {fileID: 21300000, guid: f22d1b8058f83e34f9eb24b50acea500,
           type: 3}
         _MaterialsArray:
         - _MaterialType: 11
-          _MaterialSprite: {fileID: 21300000, guid: 4482ae0c2c5c5884da5ce65bdcf30704,
+          _MaterialSprite: {fileID: 21300000, guid: 9836160494f74d94b96441e431752cc3,
             type: 3}
           _MaterialKey: Catalog.Material.Metalic
           _Material01: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
@@ -621,6 +621,13 @@ MonoBehaviour:
           _Material01: {fileID: 2100000, guid: c0a277a4670320742942bd43700e5775, type: 2}
           _Material02: {fileID: 2100000, guid: c0a277a4670320742942bd43700e5775, type: 2}
           _Material03: {fileID: 2100000, guid: c0a277a4670320742942bd43700e5775, type: 2}
+        - _MaterialType: 28
+          _MaterialSprite: {fileID: 21300000, guid: 5411453289307d44dbdce766fddc770c,
+            type: 3}
+          _MaterialKey: Catalog.Lido.Frame
+          _Material01: {fileID: 0}
+          _Material02: {fileID: 0}
+          _Material03: {fileID: 0}
     - _ProductType: 4
       _ProductSprite: {fileID: 21300000, guid: 4c5300825c398244c9eae65dd637ea2f, type: 3}
       _ProductKey: Catalog.Product.FabricCover

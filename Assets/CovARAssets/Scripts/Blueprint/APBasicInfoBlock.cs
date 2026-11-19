@@ -12,14 +12,18 @@ public class APBasicInfoBlock : MonoBehaviour
     [Header("MODEL INFO:")]
     [SerializeField] private TMP_Text _CurrentModelText;
     [SerializeField] private Image _CurrentModelImage;
+    [SerializeField] private CanvasGroup _ModelBlockCG;
     [Header("LAMAS INFO:")]
     [SerializeField] private TMP_Text _CurrentLamasText;
     [SerializeField] private Image _CurrentLamasImage;
+    [SerializeField] private CanvasGroup _LamasModelBlockCG;
     [Header("COLORS:")]
     [SerializeField] private TMP_Text _CurrentModelColorText;
     [SerializeField] private TMP_Text _CurrentLamasColorText;
     [SerializeField] private TMP_Text _CurrentTopCladdingColorText;
     [SerializeField] private TMP_Text _CurrentSidesCladdingColorText;
+    [SerializeField] private CanvasGroup _ModelColorBlockCG;
+    [SerializeField] private CanvasGroup _LamasModelColorBlockCG;
     [SerializeField] private CanvasGroup _CanvasGroupTopCladdingBlock;
     [SerializeField] private CanvasGroup _CanvasGroupSidesCladdingBlock;
     [Header("DIMENSIONS:")]
@@ -66,57 +70,171 @@ public class APBasicInfoBlock : MonoBehaviour
     {
         if (_ARObjectManager == null) return;
 
-        //CURRENT MODEL (Name, image, blueprint image & color)
-        _CurrentModelText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._ModelKey); 
-        _CurrentModelImage.sprite = _ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialSprite;
-        _CurrentBlueprintModelImage.sprite = _ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage;
-        _CurrentModelColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialKey);
+        if(_WebRequestManager == null) return;
 
-        _WebRequestManager.SetModelBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialKey));
+        if (_WebRequestManager.GetCurrentCompany() == E_CompanyType.Astralpool) // -> ASTRALPOOL
+        {
+            //MODEL DATA
+            SetModelBlockData(true);
+            SetModelColorBlockData(true);
+            _WebRequestManager.SetModelBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialKey));
 
-        //CURRENT LAMAS (Name, image)
-        _CurrentLamasText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelKey);
-        _CurrentLamasImage.sprite = _ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialSprite;
-        _CurrentLamasColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey);
+            //LAMAS DATA
+            SetLamasBlockData(true);
+            SetLamasColorBlockData(true);
+            _WebRequestManager.SetLamasBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey));
+            
+            //BLUEPRINT IMAGE
+            SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
+           
+            //TOP CLADDING
+            if (_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType == E_ProductType.BencheAndCladdings && _ARObjectManager.GetCovARObjectData()._CurrentCompany._CompanyType == E_CompanyType.Astralpool)
+            {
+                SetTopCladdingData(true);
+            }
+            else
+            {
+                SetTopCladdingData(false);
+            }
 
-        _WebRequestManager.SetLamasBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey));
+            //SIDES CLADDING
+            if (_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType == E_ProductType.BencheAndCladdings && _ARObjectManager.GetCovARObjectData()._CurrentCompany._CompanyType == E_CompanyType.Astralpool)
+            {
+                SetSidesCladdingData(true);
+            }
+            else
+            {
+                SetSidesCladdingData(false);
+            }
 
-        //TOP CLADDING
-        //Debug.Log("TOP CLADDING MATERIAL: " + _ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialType);
+            //DIMENSIONS
+            SetDimensionsData();
+            _WebRequestManager.SetDimensions(_ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght.ToString() + " x " + _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght.ToString());
+
+            //INIT
+            InitDimensionsInputTextBehaviour();
+
+        }
+        else // -> BAC POOL SYSTEMS
+        {
+             switch(_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType)
+             {
+                case E_ProductType.DeckMountedSlattedCover:
+                    
+                    //MODEL DATA
+                    SetModelBlockData(true);
+                    SetModelColorBlockData(false);
+                    _WebRequestManager.SetModelBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialKey));
+
+                    //LAMAS DATA
+                    SetLamasBlockData(true);
+                    SetLamasColorBlockData(true);
+                    _WebRequestManager.SetLamasBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey));
+
+                    //BLUEPRINT IMAGE
+                    SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
+
+                   SetTopCladdingData(false);
+                   SetSidesCladdingData(false);
+
+                    //DIMENSIONS
+                    SetDimensionsData();
+                    _WebRequestManager.SetDimensions(_ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght.ToString() + " x " + _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght.ToString());
+
+                    //INIT
+                    InitDimensionsInputTextBehaviour();
+
+
+                    break;
+                case E_ProductType.DeckMountedIsolaCover:
+
+                    //MODEL DATA
+                    SetModelBlockData(true);
+                    SetModelColorBlockData(false);
+                    _WebRequestManager.SetModelBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialKey));
+
+                    //LAMAS DATA
+                    SetLamasBlockData(true);
+                    SetLamasColorBlockData(true);
+                    _WebRequestManager.SetLamasBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey));
+
+                    //BLUEPRINT IMAGE
+                    SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
+
+                    SetTopCladdingData(false);
+                    SetSidesCladdingData(false);
+
+                    //DIMENSIONS
+                    SetDimensionsData();
+                    _WebRequestManager.SetDimensions(_ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght.ToString() + " x " + _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght.ToString());
+
+                    //INIT
+                    InitDimensionsInputTextBehaviour();
+
+                    break;
+                case E_ProductType.BencheAndCladdings:
+
+                    //MODEL DATA
+                    SetModelBlockData(true);
+
+                    switch(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._ModelType)
+                    {
+                       case E_ModelType.BAC_CladdingDavos: SetModelColorBlockData(false); break;
+                       case E_ModelType.BAC_CladdingLido: SetModelColorBlockData(true); break;
+                       case E_ModelType.BAC_CladdingQuadro: SetModelColorBlockData(true); break;
+                    }
+                    
+                    _WebRequestManager.SetModelBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialKey));
+
+                    //LAMAS DATA
+                    SetLamasBlockData(true);
+                    SetLamasColorBlockData(true);
+                    _WebRequestManager.SetLamasBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey));
+
+                    //BLUEPRINT IMAGE
+                    SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
+
+                    SetTopCladdingData(false);
+                    SetSidesCladdingData(false);
+
+                    //DIMENSIONS
+                    SetDimensionsData();
+                    _WebRequestManager.SetDimensions(_ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght.ToString() + " x " + _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght.ToString());
+
+                    //INIT
+                    InitDimensionsInputTextBehaviour();
+
+                    break;
+                case E_ProductType.FabricCover:
+
+                    //MODEL DATA
+                    SetModelBlockData(true);
+                    SetModelColorBlockData(true);
+                    _WebRequestManager.SetModelBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialKey));
+
+                    //LAMAS DATA
+                    SetLamasBlockData(false);
+                    SetLamasColorBlockData(false);
+                    _WebRequestManager.SetLamasBasicInfo(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelKey), LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey));
+
+                    //BLUEPRINT IMAGE
+                    SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
+
+                    SetTopCladdingData(false);
+                    SetSidesCladdingData(false);
+
+                    //DIMENSIONS
+                    SetDimensionsData();
+                    _WebRequestManager.SetDimensions(_ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght.ToString() + " x " + _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght.ToString());
+
+                    //INIT
+                    InitDimensionsInputTextBehaviour();
+
+                    break;
+            }
+        }
+
         
-        if (_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType == E_ProductType.BencheAndCladdings && _ARObjectManager.GetCovARObjectData()._CurrentCompany._CompanyType == E_CompanyType.Astralpool)
-        {
-            _CanvasGroupTopCladdingBlock.alpha = 1f;
-            _CurrentTopCladdingColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialKey);
-            _WebRequestManager.SetTopCladdingColor(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialKey));
-        }
-        else
-        {
-            _CanvasGroupTopCladdingBlock.alpha = 0f;
-            _WebRequestManager.SetTopCladdingColor("None");
-        }
-
-        //SIDES CLADDING
-        if (_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType == E_ProductType.BencheAndCladdings && _ARObjectManager.GetCovARObjectData()._CurrentCompany._CompanyType == E_CompanyType.Astralpool)
-        {
-            _CanvasGroupSidesCladdingBlock.alpha = 1f;
-            _CurrentSidesCladdingColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentSidesCladdingMaterial._MaterialKey);
-            _WebRequestManager.SetSidesCladdingColor(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentSidesCladdingMaterial._MaterialKey));
-        }
-        else
-        {
-            _CanvasGroupSidesCladdingBlock.alpha = 0f;
-            _WebRequestManager.SetSidesCladdingColor("None");
-        }
-
-        //DIMENSIONS
-        _CurrentModelLenghtInputText.text = _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght.ToString();
-        _CurrentLamasLenghtInputText.text = _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght.ToString();
-
-        _WebRequestManager.SetDimensions(_ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght.ToString() + " x " + _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght.ToString());
-      
-        InitDimensionsInputTextBehaviour();
-
     }
 
     void InitDimensionsInputTextBehaviour()
@@ -139,7 +257,115 @@ public class APBasicInfoBlock : MonoBehaviour
 
     //////////////////////////////////////////////////////////////////////////// SETTER /////////////////////////////////////////////////////////////////////////
 
+    void SetModelBlockData(bool state)
+    {
+        if (state)
+        {
+           _ModelBlockCG.alpha = 1f;
+            _ModelBlockCG.gameObject.SetActive(true);
+        }
+        else
+        {
+            _ModelBlockCG.alpha = 0f;
+            _ModelBlockCG.gameObject.SetActive(false);
+        }
+        _CurrentModelText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._ModelKey);
+        _CurrentModelImage.sprite = _ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialSprite;
 
+    }
+
+    void SetLamasBlockData(bool state)
+    {
+        if (state)
+        {
+            _LamasModelBlockCG.alpha = 1f;
+            _LamasModelBlockCG.gameObject.SetActive(true);
+        }
+        else
+        {
+            _LamasModelBlockCG.alpha = 0f;
+            _LamasModelBlockCG.gameObject.SetActive(false);
+        }
+        _CurrentLamasText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasModel._ModelKey);
+        _CurrentLamasImage.sprite = _ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialSprite;
+    }
+
+    void SetModelColorBlockData(bool state)
+    {
+        if (state)
+        {
+            _ModelColorBlockCG.alpha = 1f;
+            _ModelColorBlockCG.gameObject.SetActive(true);
+        }
+        else
+        {
+            _ModelColorBlockCG.alpha = 0f;
+            _ModelColorBlockCG.gameObject.SetActive(false);
+        }
+
+
+        _CurrentModelColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentModelMaterial._MaterialKey);
+    }
+
+    void SetLamasColorBlockData(bool state)
+    {
+        if (state)
+        {
+            _LamasModelColorBlockCG.alpha = 1f;
+            _LamasModelBlockCG.gameObject.SetActive(true);
+        }
+        else
+        {
+            _LamasModelColorBlockCG.alpha = 0f;
+            _LamasModelBlockCG.gameObject.SetActive(false);
+        }
+        _CurrentLamasColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentLamasMaterial._MaterialKey);
+    }
+
+    void SetBlueprintTechnicalImage(Sprite image)
+    {
+        _CurrentBlueprintModelImage.sprite = image;
+    }
+
+    void SetTopCladdingData(bool state)
+    {
+        if (state)
+        {
+            _CanvasGroupTopCladdingBlock.alpha = 1f;
+            _CanvasGroupTopCladdingBlock.gameObject.SetActive(true);
+            _CurrentTopCladdingColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialKey);
+            _WebRequestManager.SetTopCladdingColor(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentTopCladdingMaterial._MaterialKey));
+        }
+        else
+        {
+            _CanvasGroupTopCladdingBlock.alpha = 0f;
+            _WebRequestManager.SetTopCladdingColor("None");
+            _CanvasGroupSidesCladdingBlock.gameObject.SetActive(false);
+        }
+    }
+
+    void SetSidesCladdingData(bool state)
+    {
+        if (state)
+        {
+            _CanvasGroupSidesCladdingBlock.alpha = 1f;
+            _CurrentSidesCladdingColorText.text = LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentSidesCladdingMaterial._MaterialKey);
+            _WebRequestManager.SetSidesCladdingColor(LocalizationManager.Localize(_ARObjectManager.GetCovARObjectData()._CurrentSidesCladdingMaterial._MaterialKey));
+            _CanvasGroupSidesCladdingBlock.gameObject.SetActive(true);
+        }
+        else
+        {
+            _CanvasGroupSidesCladdingBlock.alpha = 0f;
+            _WebRequestManager.SetSidesCladdingColor("None");
+            _CanvasGroupSidesCladdingBlock.gameObject.SetActive(false);
+        }
+    }
+
+    void SetDimensionsData()
+    {
+        _CurrentModelLenghtInputText.text = _ARObjectManager.GetCovARObjectData()._CurrentARObjectLenght.ToString();
+        _CurrentLamasLenghtInputText.text = _ARObjectManager.GetCovARObjectData()._CurrentLamasLenght.ToString();
+    }
 
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
