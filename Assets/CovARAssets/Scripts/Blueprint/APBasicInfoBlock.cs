@@ -32,6 +32,9 @@ public class APBasicInfoBlock : MonoBehaviour
     [SerializeField] private Color _WrongColorFeedback;
     [SerializeField] private Color _CurrentColor;
     [SerializeField] private Image _CurrentBlueprintModelImage;
+    [SerializeField] private Image _TopModelViewImage;
+    [SerializeField] private Sprite _GroundRollerTopViewImage;
+    [SerializeField] private Sprite _FabricCoverTopViewImage;
     [Header("ANNOTATIONS:")]
     [SerializeField] private TMP_InputField _AnnotationsInputText;
 
@@ -86,7 +89,8 @@ public class APBasicInfoBlock : MonoBehaviour
             
             //BLUEPRINT IMAGE
             SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
-           
+            SetBlueprintTopModelImage(_GroundRollerTopViewImage);
+
             //TOP CLADDING
             if (_ARObjectManager.GetCovARObjectData()._CurrentModelProduct._ProductType == E_ProductType.BencheAndCladdings && _ARObjectManager.GetCovARObjectData()._CurrentCompany._CompanyType == E_CompanyType.Astralpool)
             {
@@ -133,9 +137,10 @@ public class APBasicInfoBlock : MonoBehaviour
 
                     //BLUEPRINT IMAGE
                     SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
+                    SetBlueprintTopModelImage(_GroundRollerTopViewImage);
 
-                   SetTopCladdingData(false);
-                   SetSidesCladdingData(false);
+                    SetTopCladdingData(false);
+                    SetSidesCladdingData(false);
 
                     //DIMENSIONS
                     SetDimensionsData();
@@ -160,6 +165,7 @@ public class APBasicInfoBlock : MonoBehaviour
 
                     //BLUEPRINT IMAGE
                     SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
+                    SetBlueprintTopModelImage(_GroundRollerTopViewImage);
 
                     SetTopCladdingData(false);
                     SetSidesCladdingData(false);
@@ -193,6 +199,7 @@ public class APBasicInfoBlock : MonoBehaviour
 
                     //BLUEPRINT IMAGE
                     SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
+                    SetBlueprintTopModelImage(_GroundRollerTopViewImage);
 
                     SetTopCladdingData(false);
                     SetSidesCladdingData(false);
@@ -219,6 +226,7 @@ public class APBasicInfoBlock : MonoBehaviour
 
                     //BLUEPRINT IMAGE
                     SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
+                    SetBlueprintTopModelImage(_FabricCoverTopViewImage);
 
                     SetTopCladdingData(false);
                     SetSidesCladdingData(false);
@@ -325,6 +333,14 @@ public class APBasicInfoBlock : MonoBehaviour
     void SetBlueprintTechnicalImage(Sprite image)
     {
         _CurrentBlueprintModelImage.sprite = image;
+    }
+
+    void SetBlueprintTopModelImage(Sprite image)
+    {
+        if(_TopModelViewImage != null)
+        {
+            _TopModelViewImage.sprite = image;
+        }
     }
 
     void SetTopCladdingData(bool state)

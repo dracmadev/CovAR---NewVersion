@@ -1232,6 +1232,11 @@ MonoBehaviour:
   _WrongColorFeedback: {r: 0.92156863, g: 0.62113726, b: 0.62113726, a: 1}
   _CurrentColor: {r: 0.92156863, g: 0.92156863, b: 0.92156863, a: 1}
   _CurrentBlueprintModelImage: {fileID: 6469277190069317427}
+  _TopModelViewImage: {fileID: 1839558272974733012}
+  _GroundRollerTopViewImage: {fileID: 21300000, guid: 6d306f57cdca6aa44922c1c94f525b8f,
+    type: 3}
+  _FabricCoverTopViewImage: {fileID: 21300000, guid: 7f16b154aaef0e842bd4eb34932f3141,
+    type: 3}
   _AnnotationsInputText: {fileID: 3137273277995193902}
 --- !u!1 &1439666532812062724
 GameObject:
