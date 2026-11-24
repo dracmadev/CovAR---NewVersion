@@ -90,6 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
         type: 3}
+      propertyPath: _ARObjectRelatedProductsList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
       propertyPath: _FabricCoverAxisDataArray._DistanceToLimits
       value: 1
       objectReference: {fileID: 0}
@@ -127,6 +132,26 @@ PrefabInstance:
         type: 3}
       propertyPath: _FabricCoverStartSecuritySystemsDataArray.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _ARObjectRelatedProductsList.Array.data[0]._RelatedProductType
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _ARObjectRelatedProductsList.Array.data[1]._RelatedProductType
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _ARObjectRelatedProductsList.Array.data[2]._RelatedProductType
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
+      propertyPath: _ARObjectRelatedProductsList.Array.data[3]._RelatedProductType
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
         type: 3}

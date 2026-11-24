@@ -123,7 +123,7 @@ These rollers make handling the summer cover easier. Once retracted, it's simple
 Main.PoseWindow.GuidanceText,Posiciona la persiana.  Pulsa el candado cuando hayas finalizado.,Positionnez le volet. Appuyez sur le verrou une fois terminé.,Position the blind. Press the lock when you're finished.
 Main.PoseWindow.HelpPanel.TranslationText,Utilice un dedo para mover el volet.,Utilisez un doigt pour déplacer la volée.,Use one finger to move the volley.
 Main.PoseWindow.HelpPanel.RotationText,Utilice el control deslizante en la pantalla para girar el volet.,Utilisez le curseur à l'écran pour faire pivoter le volet.,Use the slider on the screen to rotate the volet.
-Main.Volet.GuidanceText,Manten pulsado sobre un botón para conocer que hace.,Maintenez le bouton enfoncé pour découvrir sa fonction.,Press and hold a button to find out what it does.
+Main.Volet.GuidanceText,Manten pulsado sobre un botón para conocer que hace.,Appuyez longuement sur un bouton pour découvrir sa fonction.,Press and hold a button to find out what it does.
 DebugText.PasswordRecovery.UsuarioNoExiste,Este usuario no existe en nuestra base de datos.,Cet utilisateur n'existe pas dans notre base de données.,This user does not exist in our database.
 DebugText.PasswordRecovery.Error,La conexión ha fallado.,La connexion a échoué.,The connection has failed.
 DebugText.ChangePassword.Error,La conexión ha fallado.,La connexion a échoué.,The connection has failed.
@@ -311,7 +311,7 @@ FichaTecnica.PopUp.BadScreen.Title,HA HABIDO ALGÚN PROBLEMA... LA ORDEN NO SE H
 FichaTecnica.PopUp.Download.Title,DESCARGAR PLANO TÈCNICO,TÉLÉCHARGER LE DESSIN TECHNIQUE,DOWNLOAD TECHNICAL DRAWING
 FichaTecnica.PopUp.Download.Text,"Selecciona la opción de descarga y espera unos segundos, el proceso puede llevar un tiempo.",Sélectionnez l'option de téléchargement et patientez quelques secondes ; le processus peut prendre un certain temps.,Select the download option and wait a few seconds; the process may take some time.
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option1,            -   ,-,-
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option2,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option3,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option4,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option1,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
@@ -430,7 +430,7 @@ Catalog.Lamas.Material.Title,Material,Matériel,Material
 ,,,
 ,,,
 InGame.PlaneFinderPanel.InfoText,"Apunte hacia el suelo hasta que aparezca una marca, a continuación, púlsela.","Orientez-le vers le sol jusqu'à ce qu'une marque apparaisse, puis appuyez.","Point it towards the ground until a mark appears, then press it."
-InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit
+InGame.CatalogPanel.InfoText,Seleccione un modelo de persiana y pulse editar,Sélectionnez un modèle de volet,Select a blind model and press edit.
 InGame.Help.Mode.Movment,Mover modelo,Sélectionnez un modèle de volet,Move model
 InGame.Help.Mode.MovmentDescrip,Permite mover el modelo de cubierta arrastrando el modelo con el dedo.,Il vous permet de déplacer le modèle de couverture en le faisant glisser avec votre doigt.,It allows you to move the cover model by dragging the model with your finger.
 InGame.Help.Mode.Rotation,Rotar modelo,Modèle de rotation,Rotate model
@@ -440,7 +440,7 @@ InGame.Help.Mode.SetModelLenghtDescrip,Permite modificar la anchura del modelo c
 InGame.Help.Mode.SetLamasLenght,Longitud de la persiana,Longueur de l'aveugle,Length of the blind
 InGame.Help.Mode.SetLamasLenghtDescrip,Permite modificar la longitud de la persiana con la barra deslizadora,Elle permet de régler la longueur du store grâce à la barre coulissante.,It allows you to adjust the length of the blind using the sliding bar.
 InGame.Help.Mode.Blueprint,Plano técnico,dessin technique,Technical drawing
-InGame.Help.Mode.BlueprintDescrip,Permite acceder al plano tècnico del modelo seleccionado,Il permet d'accéder au dessin technique du modèle sélectionné.,It allows access to the technical drawing of the selected model
+InGame.Help.Mode.BlueprintDescrip,Permite acceder al plano tècnico del modelo seleccionado,Il permet d'accéder au dessin technique du modèle sélectionné.,It allows access to the technical drawing of the selected model.
 InGame.Help.Mode.Catalogo,Catálogo,Catalogue,Catalog
 InGame.Help.Mode.CatalogDescrip,"Accede al catalogo completo para poder cambiar el modelo, el color, el material de las lamas o su color.","Accédez au catalogue complet pour modifier le modèle, la couleur, le matériau des lattes ou la couleur.","Access the complete catalog to change the model, color, slat material, or color."
 InGame.RestarPopUp.Title,Reiniciar proyecto,Projet de redémarrage,Restart project
@@ -486,7 +486,7 @@ Sumergida.Modelo.SumergidaTapaFuera.ModeloTapa,Modelo de cubierta:,Modèle de co
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option01,Tapa fuera del agua,Couvercle hors de l'eau,Lid out of the water
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.ModeloTapa.Option02,Tapa sumergida,Couvercle immergé,Submerged lid
 FichaTecnica.ProductosAsociados.Mecanismo,Mecánica:,Mécanique:,Mechanics:
-FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,Kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
+FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option02,Motor en fosa seca + kit empotrar pasamuros 210 mm,kit de moteur pour fosse sèche + encastrement mural de 210 mm,Dry pit motor + 210 mm wall penetration recess kit
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option03,Motor en el eje fijación bajo piedra de coronación,Moteur monté sur l'arbre sous la pierre de couronnement,Motor on the shaft mounting under the crowning stone
 FichaTecnica.ProductosAsociados.FichaTecnica.ProductosAsociados.Mecanica.Option04,Motor en el eje fijación en la pared,"Moteur sur arbre, montage mural","Motor on shaft, wall mounting"
 FichaTecnica.ProductosAsociados.Vigas,Viga:,Faisceau:,Beam:
@@ -504,6 +504,33 @@ FichaTecnica.Titulo,PLANO TÉCNICO,PLAN TECHNIQUE,TECHNICAL PLAN
 FichaTecnica.DescripPopUp,Complete los datos del cliente para poder generar el plano técnico.,Renseignez les informations client pour générer le dessin technique.,Complete the customer details to generate the technical drawing.
 FichaTecnica.EscribirNombre,Nombre del cliente...,Nom du client...,Customer name...
 FichaTecnica.EscribirCorreo,Correo del cliente...,Courriel du client...,Customer email...
+FichaTecnica.ProductosAsociados.PoolWithRoundCorners,Piscina con esquinas redondas,Piscine aux angles arrondis,Swimming pool with rounded corners
+FichaTecnica.ProductosAsociados.CutOutForStairs,Abertura para escaleras,Ouverture d'escalier,Cutout for stairs
+FichaTecnica.ProductosAsociados.CutOutForStairs.Option01,None,None,None
+FichaTecnica.ProductosAsociados.CutOutForStairs.Option02,Retira el recorte central,Retirez la découpe centrale,Remove center cutout
+FichaTecnica.ProductosAsociados.CutOutForStairs.Option03,Eliminar el recorte de la esquina,Retirez le coin découpé,Remove corner cutout
+FichaTecnica.ProductosAsociados.CutOutForStairs.Option04,Añadir recorte para escaleras romanas cuadradas,Ajouter une découpe pour l'escalier romain carré,Add cutout Square Roman Stairs
+FichaTecnica.ProductosAsociados.CutOutForStairs.Option05,Añadir recorte para escaleras romanas circulares,Ajouter une découpe pour l'escalier romain circulaire,Add cutout Round Roman Stairs
+FichaTecnica.ProductosAsociados.CutOutForStairs.Option06,Añadir recorte para escaleras romanas con forma libre,Prévoir une découpe pour un escalier romain de forme libre,Add cutout Free-form Roman Stairs
+FichaTecnica.ProductosAsociados.AddSelfEmergingFrontEdge,Añadir borde frontal autoemergente,Ajouter une bordure avant à apparition automatique,Add self-emerging front edge
+FichaTecnica.ProductosAsociados.AddFixingRail,Añadir riel de fijación,Ajouter un rail de montage,Add fixing rail
+FichaTecnica.ProductosAsociados.AddWindSafetySet,Añadir kit de seguridad contra el viento,Ajouter un kit de protection contre le vent,Add wind protection kit
+FichaTecnica.ProductosAsociados.AddSunProtectionWrap,Añadir una cubierta de protección solar,Ajouter une protection solaire,Add a sun protection cover
+FichaTecnica.ProductosAsociados.WindProtectionKit,Kit de seguridad contra el viento,kit de protection contre le vent,Wind protection kit
+FichaTecnica.ProductosAsociados.AddWindSafetySet.Option01,None,None,None
+FichaTecnica.ProductosAsociados.AddWindSafetySet.Option02,Tensores elásticos,tendeurs élastiques,Elastic tensioners
+FichaTecnica.ProductosAsociados.AddWindSafetySet.Option03,Correa de tensado rápido longitudinal,courroie longitudinale à tension rapide,Longitudinal quick tensioning strap
+FichaTecnica.ProductosAsociados.AddWindSafetySet.Option04,Clips BAC deslizantes,clips coulissants BAC,Slidable BAC clips
+FichaTecnica.ProductosAsociados.SpecialAncors,Anclajes especiales,Ancres spéciales,Special anchors
+FichaTecnica.ProductosAsociados.SpecialAncors.Option01,Estándar,Standard,Standard
+FichaTecnica.ProductosAsociados.SpecialAncors.Option02,Piquetas de acero retráctiles (tubo largo de 40 cm),Piquets de tente rétractables en acier (tube de 40 cm de long),"Retractable steel pegs  (long, 40 cm tube)"
+FichaTecnica.ProductosAsociados.SpecialAncors.Option03,Tacos para pared (90 mm),chevilles (90 mm),Wall anchors (90 mm)
+FichaTecnica.ProductosAsociados.SpecialAncors.Option04,Tacos para pared (160 mm),chevilles (160 mm),Wall anchors (160 mm)
+FichaTecnica.ProductosAsociados.SpecialAncors.Option05,Anclajes para madera (bases de acero inoxidable),Ancrages en bois (bases en acier inoxydable),Wooden anchors (stainless steel bases)
+FichaTecnica.ProductosAsociados.TensionSystem,Sistema de tensado,Système de tension,Tensioning system
+FichaTecnica.ProductosAsociados.TensionSystem.Option01,None,None,None
+FichaTecnica.ProductosAsociados.TensionSystem.Option02,Sistema de acortamiento rápido,Système de raccourcissement rapide,Shortened quick
+FichaTecnica.ProductosAsociados.TensionSystem.Option03,Ajustable fijo,Réglable fixe,Adjustable fixed
 ,,,
 ,,,
 Login.Input.Clave,*Contraseña...,*Mot de passe...,*Key...

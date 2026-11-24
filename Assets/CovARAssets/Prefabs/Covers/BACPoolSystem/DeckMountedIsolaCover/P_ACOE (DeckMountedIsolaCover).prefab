@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7358326939987834552}
   - component: {fileID: 3879188284253088}
   - component: {fileID: 8143058863993770186}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DimensionsCubeCladding(0.63x0.61)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1796369885724257738}
   - component: {fileID: 9078154744323642427}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: P_ACOE (DeckMountedIsolaCover)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,23 +166,37 @@ MonoBehaviour:
   _MaxARObjectLenghtDistanceWithPool: 2.3
   _MaxLamasLenghtDistanceWithPool: 4.1
   _ARObjectState: 0
-  _ARObjectRelatedProductsList: []
+  _ARObjectRelatedProductsList:
+  - _RelatedProductType: 10
+  - _RelatedProductType: 11
+  - _RelatedProductType: 12
+  - _RelatedProductType: 13
+  - _RelatedProductType: 14
+  - _RelatedProductType: 15
   _ARObjectSpecificPartsList: []
   _ARObjectBonesList: []
   _ARObjectManager: {fileID: 0}
   _CustomSplineInstantiateScript: {fileID: 0}
   bFabricCoverAxisBehaviourActive: 0
-  _DistanceBetweenAxis: 3
+  _FabricCoverAxisDataArray:
+    _MinDistance: 0
+    _MaxDistance: 0
+    bOffsetDistanceToLimits: 0
+    _DistanceToLimits: 0
+    _DistanceToLimits02: 0
+    bSpawnObjectsByNumber: 0
+    _NumberOfObjectsToSpawn: 0
+    bSpawnObjectsByDistance: 0
+    _DistanceBetweenObjects: 0
+    _DistanceBetweenObjects02: 0
   _CustomFabricCoverAxisPrefab: {fileID: 0}
   _FabricCoverAxisList: []
   bFabricCoverStartSecuritySystemsActive: 0
-  _DistanceBetweenStartSecuritySystems: 1
-  _DistanceBetweenStartSecuritySystemAndLimits: 0.2
+  _FabricCoverStartSecuritySystemsDataArray: []
   _CustomFabricCoverStartSSPrefab: {fileID: 0}
   _FabricCoverStartSSList: []
   bFabricCoverEndSecuritySystemsActive: 0
-  _DistanceBetweenEndSecuritySystems: 1
-  _DistanceBetweenEndsSecuritySystemAndLimits: 0.2
+  _FabricCoverEndSecuritySystemsDataArray: []
   _CustomFabricCoverEndSSPrefab: {fileID: 0}
   _FabricCoverEndSSList: []
 --- !u!1 &8827732446620569737
@@ -197,7 +211,7 @@ GameObject:
   - component: {fileID: 2194662180143271167}
   - component: {fileID: 557668228102061678}
   - component: {fileID: 5243606266851065485}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DimensionsCube(0.430x0.340)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,6 +385,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fbx_LeftAcoeFoot
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fe83e03a950d57646b5e59cf6bf8a495,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -387,6 +406,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6994378110620839955}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe83e03a950d57646b5e59cf6bf8a495,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3217519444075088456}
   m_SourcePrefab: {fileID: 100100000, guid: fe83e03a950d57646b5e59cf6bf8a495, type: 3}
 --- !u!4 &396942372216549215 stripped
 Transform:
@@ -416,6 +439,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 2
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -423,6 +448,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -443,6 +471,27 @@ MonoBehaviour:
     _ARObjectBoneParents: []
     _ARObjectReSizeDirection: 0
   _CurrentARObject: {fileID: 0}
+--- !u!65 &3217519444075088456
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065638219811714533}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0017410165, y: 0.003400002, z: 0.0048}
+  m_Center: {x: -0.0008758539, y: -1.15286544e-17, z: 0.0024017657}
 --- !u!1001 &891432644123637164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -536,10 +585,30 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1d80cf36a7b9b2f409a7176f1cf8da60, type: 2}
+    - target: {fileID: -4039096929560022823, guid: dbded1b08ef39cb42aeef12749438239,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2827974376089205874, guid: dbded1b08ef39cb42aeef12749438239,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2151647303948573312, guid: dbded1b08ef39cb42aeef12749438239,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dbded1b08ef39cb42aeef12749438239,
         type: 3}
       propertyPath: m_Name
       value: FloatingCilinderIsola
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dbded1b08ef39cb42aeef12749438239,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5599172561849715410, guid: dbded1b08ef39cb42aeef12749438239,
         type: 3}
@@ -555,6 +624,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626049031464299335, guid: dbded1b08ef39cb42aeef12749438239,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -572,6 +646,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7941472793969211391}
+    - targetCorrespondingSourceObject: {fileID: -4039096929560022823, guid: dbded1b08ef39cb42aeef12749438239,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2210824420950369160}
   m_SourcePrefab: {fileID: 100100000, guid: dbded1b08ef39cb42aeef12749438239, type: 3}
 --- !u!4 &852790260223988295 stripped
 Transform:
@@ -601,6 +679,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 15
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -608,6 +688,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -628,6 +711,28 @@ MonoBehaviour:
     _ARObjectBoneParents: []
     _ARObjectReSizeDirection: 0
   _CurrentARObject: {fileID: 0}
+--- !u!64 &2210824420950369160
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453085068167284085}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8187804500873675611, guid: dbded1b08ef39cb42aeef12749438239, type: 3}
 --- !u!1 &6097316501204170274 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2827974376089205874, guid: dbded1b08ef39cb42aeef12749438239,
@@ -650,6 +755,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
@@ -657,6 +764,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -699,6 +809,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -706,6 +818,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -804,6 +919,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+    - target: {fileID: -6526237641992757330, guid: 6544d8b448255cc48ae987528ca91320,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5638414621313678814, guid: 6544d8b448255cc48ae987528ca91320,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -885812626932842306, guid: 6544d8b448255cc48ae987528ca91320,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -698423295463110107, guid: 6544d8b448255cc48ae987528ca91320,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 67775325638618447, guid: 6544d8b448255cc48ae987528ca91320,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -816,6 +951,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6544d8b448255cc48ae987528ca91320,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6544d8b448255cc48ae987528ca91320,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -824,6 +964,16 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+    - target: {fileID: 2288449451198763981, guid: 6544d8b448255cc48ae987528ca91320,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936325762124003116, guid: 6544d8b448255cc48ae987528ca91320,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4445355866051103614, guid: 6544d8b448255cc48ae987528ca91320,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -834,6 +984,11 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+    - target: {fileID: 5273886148235556619, guid: 6544d8b448255cc48ae987528ca91320,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -908,10 +1063,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7877556220322851430, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3368624989934213833, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2827974376089205874, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2151647303948573312, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
         type: 3}
       propertyPath: m_Name
       value: SkinnedPlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5507734305775033479, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
         type: 3}
@@ -922,6 +1107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -6.4000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626049031464299335, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7205140776170859923, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
         type: 3}
@@ -1000,6 +1190,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 15
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1007,6 +1199,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1049,6 +1244,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1056,6 +1253,9 @@ MonoBehaviour:
     _BoneSecondDirection: 2
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1104,6 +1304,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
@@ -1111,6 +1313,9 @@ MonoBehaviour:
     _BoneSecondDirection: 1
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1153,6 +1358,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
@@ -1160,6 +1367,9 @@ MonoBehaviour:
     _BoneSecondDirection: 1
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1202,6 +1412,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1209,6 +1421,9 @@ MonoBehaviour:
     _BoneSecondDirection: 2
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1287,20 +1502,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7877556220322851430, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -7614585699261170104, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3368624989934213833, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2827974376089205874, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2151647303948573312, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
         type: 3}
       propertyPath: m_Name
       value: IsolaCover
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4426571392470025521, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626049031464299335, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7205140776170859923, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
         type: 3}
@@ -1350,6 +1600,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5314548524220561990}
+    - targetCorrespondingSourceObject: {fileID: -7029948723529949830, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2104909847036346325}
   m_SourcePrefab: {fileID: 100100000, guid: 6fe7c9bb1f7a3354dba268ae315d51be, type: 3}
 --- !u!4 &2042613867981220842 stripped
 Transform:
@@ -1385,6 +1639,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
@@ -1392,6 +1648,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1434,6 +1693,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 15
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -1441,6 +1702,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1461,6 +1725,28 @@ MonoBehaviour:
     _ARObjectBoneParents: []
     _ARObjectReSizeDirection: 0
   _CurrentARObject: {fileID: 0}
+--- !u!64 &2104909847036346325
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559366471583724449}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -462981019419857548, guid: 6fe7c9bb1f7a3354dba268ae315d51be, type: 3}
 --- !u!1 &4833863691716545371 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2151647303948573312, guid: 6fe7c9bb1f7a3354dba268ae315d51be,
@@ -1483,6 +1769,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1490,6 +1778,9 @@ MonoBehaviour:
     _BoneSecondDirection: 3
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1532,6 +1823,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
@@ -1539,6 +1832,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1581,6 +1877,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -1588,6 +1886,9 @@ MonoBehaviour:
     _BoneSecondDirection: 3
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -1681,6 +1982,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8558195092755292889, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7875121899666184913, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -7175667387363969454, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1691,10 +2002,25 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+    - target: {fileID: -5428832887838777866, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4748337656918590854, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
         type: 3}
       propertyPath: m_Name
       value: Fbx_AcoeEngancheObj (L)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1064499616035000900, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
         type: 3}
@@ -1706,6 +2032,11 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+    - target: {fileID: 1932253747868028912, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7478659956223888017, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1796,6 +2127,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8558195092755292889, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7875121899666184913, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -7175667387363969454, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1806,10 +2147,25 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+    - target: {fileID: -5428832887838777866, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4748337656918590854, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
         type: 3}
       propertyPath: m_Name
       value: Fbx_AcoeEngancheObj (R)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1064499616035000900, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
         type: 3}
@@ -1821,6 +2177,11 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8532fbe2d9aa29e42b5da2be0f84e443, type: 2}
+    - target: {fileID: 1932253747868028912, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7478659956223888017, guid: de96cfa51cfdfa140beeeb39ec71cdb4,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1906,6 +2267,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5988971838916165696, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -3230517834897953847, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
       propertyPath: m_AABB.m_Extent.x
@@ -1936,6 +2302,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_RollerAxis
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629027807311914165, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3060412424013799052, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
       propertyPath: m_AABB.m_Extent.x
@@ -1951,10 +2327,30 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 3796784388878362308, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182815924573000745, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6182815924573000745, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654349696990304371, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821623529969584324, guid: 2c6e87f8363c92b49b3e195f10149152,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8968278006239340185, guid: 2c6e87f8363c92b49b3e195f10149152,
         type: 3}
@@ -2004,6 +2400,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 1
@@ -2011,6 +2409,9 @@ MonoBehaviour:
     _BoneSecondDirection: 1
     bDontRespectAbsolutDistance: 1
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -2053,6 +2454,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 0
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 2
@@ -2060,6 +2463,9 @@ MonoBehaviour:
     _BoneSecondDirection: 1
     bDontRespectAbsolutDistance: 1
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -2108,6 +2514,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 15
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -2115,6 +2523,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -2157,6 +2568,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 10
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -2164,6 +2577,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -2267,6 +2683,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fbx_RightAcoeFoot
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fe83e03a950d57646b5e59cf6bf8a495,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2279,6 +2700,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3513902282675739502}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe83e03a950d57646b5e59cf6bf8a495,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 502989674471280445}
   m_SourcePrefab: {fileID: 100100000, guid: fe83e03a950d57646b5e59cf6bf8a495, type: 3}
 --- !u!1 &6965134663329815536 stripped
 GameObject:
@@ -2302,6 +2727,8 @@ MonoBehaviour:
   _ARObjectPartData:
     _ARObjectPartType: 1
     _ARObjectPartReference: {fileID: 0}
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
   _ARObjectBoneData:
     partScript: {fileID: 0}
     _BoneSide: 0
@@ -2309,6 +2736,9 @@ MonoBehaviour:
     _BoneSecondDirection: 0
     bDontRespectAbsolutDistance: 0
     bDivideBy100: 0
+    bSizeBySteps: 0
+    _StepsArray: []
+    _NegativeOffsetToSlider: 0
     sideLength: 0
   _ARObjectBoneParentData:
     partScript: {fileID: 0}
@@ -2329,6 +2759,27 @@ MonoBehaviour:
     _ARObjectBoneParents: []
     _ARObjectReSizeDirection: 0
   _CurrentARObject: {fileID: 0}
+--- !u!65 &502989674471280445
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965134663329815536}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.000600005, y: 0.0034000028, z: 0.004800001}
+  m_Center: {x: -0.00030534787, y: -4.5715504e-10, z: 0.0024017654}
 --- !u!4 &7774041706587537738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe83e03a950d57646b5e59cf6bf8a495,
