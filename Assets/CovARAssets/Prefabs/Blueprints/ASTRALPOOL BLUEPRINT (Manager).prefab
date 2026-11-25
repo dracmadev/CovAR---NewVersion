@@ -1235,6 +1235,8 @@ MonoBehaviour:
   _TopModelViewImage: {fileID: 1839558272974733012}
   _GroundRollerTopViewImage: {fileID: 21300000, guid: 6d306f57cdca6aa44922c1c94f525b8f,
     type: 3}
+  _IsolaCoverTopViewImage: {fileID: 21300000, guid: 3e552da7e7f9e8f4f976f794e98fd3b6,
+    type: 3}
   _FabricCoverTopViewImage: {fileID: 21300000, guid: 7f16b154aaef0e842bd4eb34932f3141,
     type: 3}
   _AnnotationsInputText: {fileID: 3137273277995193902}

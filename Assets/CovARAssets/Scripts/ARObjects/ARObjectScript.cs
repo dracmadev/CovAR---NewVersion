@@ -1223,7 +1223,7 @@ public class ARObjectScript : MonoBehaviour
             if (boneData == null || !boneData.bSizeBySteps)
                 continue;
 
-            Debug.Log($"Applying size by steps for part: {part.gameObject.name}, requested length: {requestedLength}");
+           // Debug.Log($"Applying size by steps for part: {part.gameObject.name}, requested length: {requestedLength}");
 
             var steps = boneData._StepsArray;
 

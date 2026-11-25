@@ -1734,9 +1734,7 @@ public class ARObjectManager : MonoBehaviour
 
 
                 case E_PoolType.BAC_IsolaRollfix: break;
-                case E_PoolType.BAC_IsolaAcoe:
-                    break;
-
+                case E_PoolType.BAC_IsolaAcoe:break;
                 case E_PoolType.BAC_IsolaRonda: break;
                 case E_PoolType.BAC_IsolaRondalino: break;
                 case E_PoolType.BAC_SlattedAcoe:
@@ -1748,6 +1746,7 @@ public class ARObjectManager : MonoBehaviour
                     GameObject quadro_BackCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.BackCoverPlane); //QUADRO CLADDING
                     GameObject quadro_RightFootCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootRight_Cladding); //RIGHT FOOT
                     GameObject quadro_LeftFootCladding = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FootLeft_Cladding); //LEFT FOOT
+                    GameObject quadro_Frame = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FrameStructure); //QUADRO FRAME STRUCTURE
 
 
                     quadro_TopCladding.TryGetComponent(out Renderer render_TopCladding);
@@ -1756,165 +1755,213 @@ public class ARObjectManager : MonoBehaviour
                     quadro_RightFootCladding.TryGetComponent(out Renderer render_RightFootCladding);
                     quadro_LeftFootCladding.TryGetComponent(out Renderer render_LeftFootCladding);
 
-
-                    if (quadro_TopCladding != null && render_TopCladding != null)
+                    if (currentMatData._MaterialType == E_MaterialType.Frame)
                     {
-                        Material[] matsTop = render_TopCladding.materials;
-
-                        if (matsTop.Length > 0 && currentMatData._Material01 != null)
+                        if (quadro_Frame != null)
                         {
-                            matsTop[0] = currentMatData._Material01;
+                            quadro_Frame.SetActive(true);
                         }
-
-                        if (matsTop.Length > 1 && currentMatData._Material02 != null)
+                        if (quadro_TopCladding != null)
                         {
-                            matsTop[1] = currentMatData._Material02;
+                            quadro_TopCladding.SetActive(false);
                         }
-
-                        if (matsTop.Length > 2 && currentMatData._Material03 != null)
+                        if (quadro_FrontCladding != null)
                         {
-                            matsTop[2] = currentMatData._Material03;
+                            quadro_FrontCladding.SetActive(false);
                         }
-
-                        render_TopCladding.materials = matsTop;
+                        if (quadro_BackCladding != null)
+                        {
+                            quadro_BackCladding.SetActive(false);
+                        }
+                        if (quadro_RightFootCladding != null)
+                        {
+                            quadro_RightFootCladding.SetActive(false);
+                        }
+                        if (quadro_LeftFootCladding != null)
+                        {
+                            quadro_LeftFootCladding.SetActive(false);
+                        }
                     }
-
-                    if (quadro_FrontCladding != null && render_FrontCladding != null)
+                    else
                     {
-                        Material[] matsFront = render_FrontCladding.materials;
-
-                        if (matsFront.Length > 0 && currentMatData._Material01 != null)
+                        ///////////////////FRAME MODE BEHAVIOUR////////////////////
+                        if (quadro_Frame != null)
                         {
-                            matsFront[0] = currentMatData._Material01;
+                            quadro_Frame.SetActive(false);
+                        }
+                        if (quadro_TopCladding != null)
+                        {
+                            quadro_TopCladding.SetActive(true);
+                        }
+                        if (quadro_FrontCladding != null)
+                        {
+                            quadro_FrontCladding.SetActive(true);
+                        }
+                        if (quadro_BackCladding != null)
+                        {
+                            quadro_BackCladding.SetActive(true);
+                        }
+                        /////////////////////////////////////////////////////////////////
+
+                        if (quadro_TopCladding != null && render_TopCladding != null)
+                        {
+                            Material[] matsTop = render_TopCladding.materials;
+
+                            if (matsTop.Length > 0 && currentMatData._Material01 != null)
+                            {
+                                matsTop[0] = currentMatData._Material01;
+                            }
+
+                            if (matsTop.Length > 1 && currentMatData._Material02 != null)
+                            {
+                                matsTop[1] = currentMatData._Material02;
+                            }
+
+                            if (matsTop.Length > 2 && currentMatData._Material03 != null)
+                            {
+                                matsTop[2] = currentMatData._Material03;
+                            }
+
+                            render_TopCladding.materials = matsTop;
                         }
 
-                        if (matsFront.Length > 1 && currentMatData._Material02 != null)
+                        if (quadro_FrontCladding != null && render_FrontCladding != null)
                         {
-                            matsFront[1] = currentMatData._Material02;
+                            Material[] matsFront = render_FrontCladding.materials;
+
+                            if (matsFront.Length > 0 && currentMatData._Material01 != null)
+                            {
+                                matsFront[0] = currentMatData._Material01;
+                            }
+
+                            if (matsFront.Length > 1 && currentMatData._Material02 != null)
+                            {
+                                matsFront[1] = currentMatData._Material02;
+                            }
+
+                            if (matsFront.Length > 2 && currentMatData._Material03 != null)
+                            {
+                                matsFront[2] = currentMatData._Material03;
+                            }
+
+                            render_FrontCladding.materials = matsFront;
                         }
 
-                        if (matsFront.Length > 2 && currentMatData._Material03 != null)
+                        if (quadro_BackCladding != null && render_BackCladding != null)
                         {
-                            matsFront[2] = currentMatData._Material03;
+                            Material[] matsBack = render_BackCladding.materials;
+
+                            if (matsBack.Length > 0 && currentMatData._Material01 != null)
+                            {
+                                matsBack[0] = currentMatData._Material01;
+                            }
+
+                            if (matsBack.Length > 1 && currentMatData._Material02 != null)
+                            {
+                                matsBack[1] = currentMatData._Material02;
+                            }
+
+                            if (matsBack.Length > 2 && currentMatData._Material03 != null)
+                            {
+                                matsBack[2] = currentMatData._Material03;
+                            }
+
+                            render_BackCladding.materials = matsBack;
                         }
 
-                        render_FrontCladding.materials = matsFront;
+                        if (quadro_RightFootCladding != null && render_RightFootCladding != null)
+                        {
+                            Material[] matsRightFoot = render_RightFootCladding.materials;
+
+                            if (matsRightFoot.Length > 0 && currentMatData._Material01 != null)
+                            {
+                                matsRightFoot[0] = currentMatData._Material01;
+                            }
+
+                            if (matsRightFoot.Length > 1 && currentMatData._Material02 != null)
+                            {
+                                matsRightFoot[1] = currentMatData._Material02;
+                            }
+
+                            if (matsRightFoot.Length > 2 && currentMatData._Material03 != null)
+                            {
+                                matsRightFoot[2] = currentMatData._Material03;
+                            }
+
+                            render_RightFootCladding.materials = matsRightFoot;
+                        }
+
+                        if (quadro_LeftFootCladding != null && render_LeftFootCladding != null)
+                        {
+                            Material[] matsLeftFootCladding = render_LeftFootCladding.materials;
+
+                            if (matsLeftFootCladding.Length > 0 && currentMatData._Material01 != null)
+                            {
+                                matsLeftFootCladding[0] = currentMatData._Material01;
+                            }
+
+                            if (matsLeftFootCladding.Length > 1 && currentMatData._Material02 != null)
+                            {
+                                matsLeftFootCladding[1] = currentMatData._Material02;
+                            }
+
+                            if (matsLeftFootCladding.Length > 2 && currentMatData._Material03 != null)
+                            {
+                                matsLeftFootCladding[2] = currentMatData._Material03;
+                            }
+
+                            render_LeftFootCladding.materials = matsLeftFootCladding;
+                        }
+
+                        switch (_CurrentMaterialSelected._MaterialType)
+                        {
+                            case E_MaterialType.White:
+                                if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                                {
+                                    quadro_LeftFootCladding.SetActive(false);
+                                    quadro_RightFootCladding.SetActive(false);
+                                }
+                                break;
+                            case E_MaterialType.Gray:
+                                if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                                {
+                                    quadro_LeftFootCladding.SetActive(false);
+                                    quadro_RightFootCladding.SetActive(false);
+                                }
+                                break;
+                            case E_MaterialType.SipoMahagoni:
+                                if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                                {
+                                    quadro_LeftFootCladding.SetActive(false);
+                                    quadro_RightFootCladding.SetActive(false);
+                                }
+                                break;
+                            case E_MaterialType.White_White:
+                                if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                                {
+                                    quadro_LeftFootCladding.SetActive(true);
+                                    quadro_RightFootCladding.SetActive(true);
+                                }
+                                break;
+                            case E_MaterialType.Gray_Gray:
+                                if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                                {
+                                    quadro_LeftFootCladding.SetActive(true);
+                                    quadro_RightFootCladding.SetActive(true);
+                                }
+                                break;
+                            case E_MaterialType.Wood_Wood:
+                                if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
+                                {
+                                    quadro_LeftFootCladding.SetActive(true);
+                                    quadro_RightFootCladding.SetActive(true);
+                                }
+                                break;
+                        }
+
                     }
-
-                    if (quadro_BackCladding != null && render_BackCladding != null)
-                    {
-                        Material[] matsBack = render_BackCladding.materials;
-
-                        if (matsBack.Length > 0 && currentMatData._Material01 != null)
-                        {
-                            matsBack[0] = currentMatData._Material01;
-                        }
-
-                        if (matsBack.Length > 1 && currentMatData._Material02 != null)
-                        {
-                            matsBack[1] = currentMatData._Material02;
-                        }
-
-                        if (matsBack.Length > 2 && currentMatData._Material03 != null)
-                        {
-                            matsBack[2] = currentMatData._Material03;
-                        }
-
-                        render_BackCladding.materials = matsBack;
-                    }
-
-                    if (quadro_RightFootCladding != null && render_RightFootCladding != null)
-                    {
-                        Material[] matsRightFoot = render_RightFootCladding.materials;
-
-                        if (matsRightFoot.Length > 0 && currentMatData._Material01 != null)
-                        {
-                            matsRightFoot[0] = currentMatData._Material01;
-                        }
-
-                        if (matsRightFoot.Length > 1 && currentMatData._Material02 != null)
-                        {
-                            matsRightFoot[1] = currentMatData._Material02;
-                        }
-
-                        if (matsRightFoot.Length > 2 && currentMatData._Material03 != null)
-                        {
-                            matsRightFoot[2] = currentMatData._Material03;
-                        }
-
-                        render_RightFootCladding.materials = matsRightFoot;
-                    }
-
-                    if (quadro_LeftFootCladding != null && render_LeftFootCladding != null)
-                    {
-                        Material[] matsLeftFootCladding = render_LeftFootCladding.materials;
-
-                        if (matsLeftFootCladding.Length > 0 && currentMatData._Material01 != null)
-                        {
-                            matsLeftFootCladding[0] = currentMatData._Material01;
-                        }
-
-                        if (matsLeftFootCladding.Length > 1 && currentMatData._Material02 != null)
-                        {
-                            matsLeftFootCladding[1] = currentMatData._Material02;
-                        }
-
-                        if (matsLeftFootCladding.Length > 2 && currentMatData._Material03 != null)
-                        {
-                            matsLeftFootCladding[2] = currentMatData._Material03;
-                        }
-
-                        render_LeftFootCladding.materials = matsLeftFootCladding;
-                    }
-
-                    switch(_CurrentMaterialSelected._MaterialType)
-                    {
-                        case E_MaterialType.White:  
-                            if(quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
-                            {
-                                quadro_LeftFootCladding.SetActive(false);
-                                quadro_RightFootCladding.SetActive(false);
-                            }
-                            break;
-                        case E_MaterialType.Gray:
-                            if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
-                            {
-                                quadro_LeftFootCladding.SetActive(false);
-                                quadro_RightFootCladding.SetActive(false);
-                            }
-                            break;
-                        case E_MaterialType.SipoMahagoni:
-                            if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
-                            {
-                                quadro_LeftFootCladding.SetActive(false);
-                                quadro_RightFootCladding.SetActive(false);
-                            }
-                            break;
-                        case E_MaterialType.White_White:
-                            if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
-                            {
-                                quadro_LeftFootCladding.SetActive(true);
-                                quadro_RightFootCladding.SetActive(true);
-                            }
-                            break;
-                        case E_MaterialType.Gray_Gray:
-                            if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
-                            {
-                                quadro_LeftFootCladding.SetActive(true);
-                                quadro_RightFootCladding.SetActive(true);
-                            }
-                            break;
-                        case E_MaterialType.Wood_Wood:
-                            if (quadro_LeftFootCladding != null && quadro_RightFootCladding != null)
-                            {
-                                quadro_LeftFootCladding.SetActive(true);
-                                quadro_RightFootCladding.SetActive(true);
-                            }
-                            break;
-                    }
-
+                    
                     break;
-
 
                 case E_PoolType.BAC_CladdingLido:
 

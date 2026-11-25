@@ -34,6 +34,7 @@ public class APBasicInfoBlock : MonoBehaviour
     [SerializeField] private Image _CurrentBlueprintModelImage;
     [SerializeField] private Image _TopModelViewImage;
     [SerializeField] private Sprite _GroundRollerTopViewImage;
+    [SerializeField] private Sprite _IsolaCoverTopViewImage;
     [SerializeField] private Sprite _FabricCoverTopViewImage;
     [Header("ANNOTATIONS:")]
     [SerializeField] private TMP_InputField _AnnotationsInputText;
@@ -165,7 +166,7 @@ public class APBasicInfoBlock : MonoBehaviour
 
                     //BLUEPRINT IMAGE
                     SetBlueprintTechnicalImage(_ARObjectManager.GetCovARObjectData()._CurrentModelModel._BlueprintModelImage);
-                    SetBlueprintTopModelImage(_GroundRollerTopViewImage);
+                    SetBlueprintTopModelImage(_IsolaCoverTopViewImage);
 
                     SetTopCladdingData(false);
                     SetSidesCladdingData(false);
