@@ -15,7 +15,7 @@ public class WebRequestManager : MonoBehaviour
     [Header("WEB REQUEST LINKS")]
     [SerializeField] private St_WebRequestLinkStruct _WebRequestLinkStruct;
     [Header("Current company")]
-    [SerializeField] static private E_CompanyType _CurrentAppCompany = E_CompanyType.Astralpool;
+    [SerializeField] static private E_CompanyType _CurrentAppCompany = E_CompanyType.None;
     [Header("Order Data:")]
     [SerializeField] private St_OrderData _OrderData;
     [Header("ASTRALPOOL object data:")]
@@ -290,12 +290,18 @@ public class WebRequestManager : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            _HelperText.ShowLoginIncorrectMessage("Error");
+            loginButton.gameObject.SetActive(true);
+        }
     }
 
     IEnumerator WR_LoginCoroutine(string email, string password, HelperTextBehaviourScript _HelperText, Button loginButton)
     {
+        
         StartCoroutine(WR_GetCompanyByLeadsCoroutine(email, _HelperText));
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
 
         if (_CurrentAppCompany == E_CompanyType.Astralpool)
         {
@@ -311,6 +317,8 @@ public class WebRequestManager : MonoBehaviour
         {
             loginButton.gameObject.SetActive(true);
         }
+        
+        
     }
 
 
@@ -362,10 +370,58 @@ public class WebRequestManager : MonoBehaviour
         }
     }
 
+    IEnumerator WR_GetCompanyByLeadsAndLoginCoroutine(string email, HelperTextBehaviourScript _HelperText, Button loginButton)
+    {
+        if (email != "")
+        {
+            WWWForm form = new WWWForm();
+            form.AddField("correo", email);
+
+            using (UnityWebRequest www = UnityWebRequest.Post(_WebRequestLinkStruct._GetUserCompanyURL, form))
+            {
+                yield return www.SendWebRequest();
+
+                if (www.result != UnityWebRequest.Result.Success)
+                {
+                    Debug.LogError(www.error);
+                    _HelperText.ShowLoginIncorrectMessage("Error");
+                }
+                else
+                {
+                    Debug.Log("[MISSATGE DE PHP] GetCompanyByLeadsCoroutine: " + www.downloadHandler.text);
+                    string echo = www.downloadHandler.text;
+
+                    if (echo.StartsWith("Astralpool"))
+                    {
+                        _CurrentAppCompany = E_CompanyType.Astralpool;
+                        WR_LoginAstralpoolCoroutine(email, "", _HelperText, loginButton);
+                        Debug.Log("[MISSATGE DE PHP] Login -> " + www.downloadHandler.text);
+                    }
+                    else if (echo == "BACPoolSystems")
+                    {
+                        _CurrentAppCompany = E_CompanyType.BACPoolSystems;
+                        WR_LoginBacPoolSystemCoroutine(email, "", _HelperText, loginButton);
+                        Debug.Log("[MISSATGE DE PHP] Login -> " + www.downloadHandler.text);
+                    }
+                    else if (echo == "NotInLeads")
+                    {
+                        _HelperText.ShowLoginIncorrectMessage("NotInLeads");
+                        _CurrentAppCompany = E_CompanyType.None;
+                    }
+                    else
+                    {
+                        _HelperText.ShowLoginIncorrectMessage("Error");
+                        _CurrentAppCompany = E_CompanyType.None;
+                    }
+                }
+            }
+        }
+    }
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////// CREATE USER //////////////////////////////////////////////////////////////////////
-    
+
     public void WR_CreateUser(string name, string surname, string email, string password, string country, string phone, string company, HelperTextBehaviourScript _HelperText, Button returnButton, Button createUserButton)
     {
         returnButton.interactable = false;
