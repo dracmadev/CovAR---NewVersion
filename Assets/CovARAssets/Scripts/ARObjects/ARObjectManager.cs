@@ -2221,14 +2221,18 @@ public class ARObjectManager : MonoBehaviour
     {
         ARObjectScript arScript = _CurrentARObject.GetComponent<ARObjectScript>();
 
-        GameObject fabricCoverAxis = arScript.GetARObjectSpecificPartBasedOnType(E_ARObjectParts.FabricCover);
-
-        if (fabricCoverAxis != null && fabricCoverAxis.TryGetComponent(out Renderer renderFabricCover))
+        List<GameObject> fabricCoverGOList = arScript.GetARObjectSpecificPartListBasedOnType(E_ARObjectParts.FabricCover);
+       
+        foreach(GameObject fabricObj in fabricCoverGOList)
         {
-            Material[] matsAxis = renderFabricCover.materials;
-            matsAxis[0] = currentMatData._Material01;
-            renderFabricCover.materials = matsAxis;
+            if (fabricObj != null && fabricObj.TryGetComponent(out Renderer renderFabricCover))
+            {
+                Material[] matsAxis = renderFabricCover.materials;
+                matsAxis[0] = currentMatData._Material01;
+                renderFabricCover.materials = matsAxis;
+            }
         }
+       
 
     }
 

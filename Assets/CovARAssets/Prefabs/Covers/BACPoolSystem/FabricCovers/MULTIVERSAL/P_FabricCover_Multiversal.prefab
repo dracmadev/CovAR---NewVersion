@@ -75,6 +75,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
         type: 3}
+      propertyPath: _CustomFabricCoverAxisPrefab
+      value: 
+      objectReference: {fileID: 3484093399869737977, guid: d8c3b294043454f439087f80d196965e,
+        type: 3}
+    - target: {fileID: 4756695503305106207, guid: 642e6ef169b5fd54b80b09a1d6fc02c2,
+        type: 3}
       propertyPath: _FabricCoverAxisList.Array.size
       value: 0
       objectReference: {fileID: 0}
