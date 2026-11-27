@@ -2400,6 +2400,11 @@ public class ARObjectManager : MonoBehaviour
                 arScript.UpdateLenghtSlider();
                 arScript.UpdateLamasLenghtSlider();
 
+                arScript.InitSetFabricCoverLenghtState();
+                arScript.UpdateFabricCoverLenghtSlider();
+
+                arScript.CreateFabricCoverAxis();
+
                 if (_CovARObjectData._CurrentARObjectLenght > arScript.GetARObjectMAXLenghtWithPool())
                 {
                     arScript.SetARObjectLenghtByNum(arScript.GetARObjectMAXLenghtWithPool());
@@ -2422,7 +2427,7 @@ public class ARObjectManager : MonoBehaviour
         }
     }
 
-    void DesactivePoolObj()
+    void  DesactivePoolObj()
     {
         GameObject[] activePools = GameObject.FindGameObjectsWithTag("PoolObj");
 
@@ -2437,9 +2442,13 @@ public class ARObjectManager : MonoBehaviour
         {
             arScript.InitSetLenghtState();
             arScript.InitSetLamasLenghtState();
+            arScript.InitSetFabricCoverLenghtState();
 
             arScript.UpdateLenghtSlider();
             arScript.UpdateLamasLenghtSlider();
+            arScript.UpdateFabricCoverLenghtSlider();
+
+            arScript.CreateFabricCoverAxis();
         }
     }
 

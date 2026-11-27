@@ -1619,7 +1619,7 @@ public class ARObjectScript : MonoBehaviour
         }
     }
 
-    void UpdateFabricCoverLenghtSlider()
+    public void UpdateFabricCoverLenghtSlider()
     {
         GameObject sliderObj = GetSliderFromSpecificSubPanel("SetFabricCoverLenghtSubPanel");
 
